@@ -39515,7 +39515,7 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
     bottom: 0
 }
 .thim-sc-steps.layout-4 .steps-wrapper .steps .tab-content {
-    padding-top: 51px
+    padding-top: 0px !important;
 }
 .thim-sc-steps.layout-4 .steps-wrapper .steps .tab-content .readmore {
     height: 35px;
@@ -39533,7 +39533,7 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
 }
 .thim-sc-steps.layout-4 .sc-steps-wrapper .inner-steps-wrapper {
     padding: 125px 0 65px;
-    background: rgba(0, 0, 0, .75);
+    background: rgba(0, 0, 0, .60);
     background-image: url();
     background-position: top center;
     background-repeat: no-repeat;

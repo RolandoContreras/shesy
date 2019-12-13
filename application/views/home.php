@@ -226,41 +226,41 @@
                     <h3 class="title">Ayudar a las personas a hacer crecer sus vidas. ¡Todos los días!</h3>
                   </div>
                   <div class="thim-courses-collection rounded-courses-collection">
-                    <div class="collection-frame items-5">
+                    <div class="collection-frame">
                       <ul class="slidee">
                         <li class="collection-item">
-                            <img width="271" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/desarrollo_personal.jpg';?>" class="lazyload">
+                            <img width="338" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/curso_online.jpg';?>" class="lazyload">
+                            <a class="collection-wrapper" href="#">
+                              <h4 class="name">Todos los Cursos</h4>
+                              <div class="number-courses">57 Videos</div>
+                            </a>
+                        </li>
+                        <li class="collection-item">
+                            <img width="338" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/desarrollo_personal.jpg';?>" class="lazyload">
                             <a class="collection-wrapper" href="#">
                               <h4 class="name">Desarrollo Personal</h4>
                               <div class="number-courses">9 Videos</div>
                             </a>
                         </li>
                         <li class="collection-item">
-                            <img width="271" height="177" alt="Liderazgo" data-src="<?php echo site_url().'static/page_front/images/liderazgo.jpg';?>" class="lazyload">
+                            <img width="338" height="177" alt="Liderazgo" data-src="<?php echo site_url().'static/page_front/images/liderazgo.jpg';?>" class="lazyload">
                             <a class="collection-wrapper" href="#">
-                              <h4 class="name">Liderazgo</h4>
+                              <h4 class="name">Crecimiento Profesional</h4>
                               <div class="number-courses">10 Videos</div>
                             </a>
                         </li>
                         <li class="collection-item">
-                            <img width="271" height="177" alt="Redes de Mercadeo" data-src="<?php echo site_url().'static/page_front/images/mlm.jpg';?>" class="lazyload">
+                            <img width="338" height="177" alt="Redes de Mercadeo" data-src="<?php echo site_url().'static/page_front/images/empresarial.jpg';?>" class="lazyload">
                             <a class="collection-wrapper" href="#">
-                              <h4 class="name">Redes de Mercadeo</h4>
+                              <h4 class="name">Finanzas</h4>
                               <div class="number-courses">15 Videos</div>
                             </a>
                         </li>
                         <li class="collection-item">
-                            <img width="271" height="177" alt="Marketing" data-src="<?php echo site_url().'static/page_front/images/marketing.jpg';?>" class="lazyload">
+                            <img width="338" height="177" alt="Marketing" data-src="<?php echo site_url().'static/page_front/images/marketing.jpg';?>" class="lazyload">
                             <a class="collection-wrapper" href="#">
-                              <h4 class="name">Marketing</h4>
+                              <h4 class="name">Extras</h4>
                               <div class="number-courses">20 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="271" height="177" alt="Empresarial" data-src="<?php echo site_url().'static/page_front/images/empresarial.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="#">
-                              <h4 class="name">Empresarial</h4>
-                              <div class="number-courses">26 Videos</div>
                             </a>
                         </li>
                       </ul>
@@ -354,147 +354,17 @@
         </div>
       </div>
       <div class="vc_row-full-width vc_clearfix"></div>
-      <!--START CATALOGO-->
-      <div class="vc_row wpb_row vc_row-fluid">
-        <div class="wpb_column vc_column_container vc_col-sm-12">
-          <div class=vc_column-inner>
-            <div class=wpb_wrapper>
-              <div class=vc_empty_space style="height: 66px"><span class=vc_empty_space_inner></span></div>
-              <div class=thim-courses-block-2>
-                <div class="row no-gutter">
-                  <div class="col-sm-3 intro-item">
-                    <div class=wrapper>
-                      <h3 class="title">Catalogo</h3>
-                      <p class="description">Encuentra productos exclusivos a un precio increíble por ser parte de nuestra empresa.</p>
-                      <a href="<?php echo site_url().'login';?>" class="view-courses-button">Ver todo el Catalogo</a>
-                    </div>
-                  </div>
-                  <div class="col-sm-3 course-item free ">
-                    <div class=featured-img>
-                        <a href="#" class="img-link">
-                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/home-1-bg-e1503480628724-379x416.jpg class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="#">ThimPress </a>
-                      </div>
-                      <h4 class="title">
-                          <a href="#">The Ultimate Ethical Hacking Boot Camp</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <div class="col-sm-3 course-item ">
-                    <div class="featured-img">
-                        <a href="">
-                            <img width="379" height="416" alt="Affiliate Marketing &#8211; A Beginner&#8217;s Guide" data-src="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/pexels-photo-40120-e1500018015404-1-379x416.jpg" class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="#">Margaret Hamilton </a>
-                      </div>
-                      <h4 class="title">
-                          <a href="#">Affiliate Marketing &#8211;
-                        A Beginner&#8217;s Guide</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <div class="col-sm-3 course-item free ">
-                    <div class=featured-img><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/aws-certified-solutions-architect-associate-2017/><img width=379 height=416
-                        alt="AWS Certified Solutions Architect &#8211; Associate 2017" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/shutterstock_184641842-5-e1503480067691-379x416.jpg
-                        class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=379 height=416 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/shutterstock_184641842-5-e1503480067691-379x416.jpg alt="AWS Certified Solutions Architect &#8211; Associate 2017" class></noscript>
-                      <a
-                        href=http://wordpresslms.thimpress.com/demo-coursify/courses/aws-certified-solutions-architect-associate-2017/ class=img-link></a>
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name><a href=http://wordpresslms.thimpress.com/demo-coursify/lp-profile/admin2/>Maxine Waters </a>
-                      </div>
-                      <h4 class="title"><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/aws-certified-solutions-architect-associate-2017/>AWS Certified Solutions
-                        Architect &#8211; Associate 2017</a>
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="row no-gutter">
-                  <div class="col-sm-3 course-item ">
-                    <div class=featured-img><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/learning-jquery-mobile-for-beginners/><img width=379 height=416 alt="Learning jQuery Mobile for Beginners"
-                        data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/designer-typography-table-shop-1-379x416.jpg
-                        class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=379 height=416 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/designer-typography-table-shop-1-379x416.jpg alt="Learning jQuery Mobile for Beginners" class></noscript>
-                      <a
-                        href=http://wordpresslms.thimpress.com/demo-coursify/courses/learning-jquery-mobile-for-beginners/ class=img-link></a>
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name><a href=http://wordpresslms.thimpress.com/demo-coursify/lp-profile/admin/>ThimPress </a>
-                      </div>
-                      <h4 class="title"><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/learning-jquery-mobile-for-beginners/>Learning jQuery Mobile for
-                        Beginners</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <div class="col-sm-3 course-item ">
-                    <div class=featured-img><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/the-ultimate-ethical-hacking-boot-camp-beginner-to-pro/><img width=379
-                        height=416 alt="The Ultimate Ethical Hacking Boot Camp: Beginner to Pro" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/pexels-photo-4-1-379x416.jpg
-                        class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=379 height=416 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/pexels-photo-4-1-379x416.jpg alt="The Ultimate Ethical Hacking Boot Camp: Beginner to Pro" class></noscript>
-                      <a
-                        href=http://wordpresslms.thimpress.com/demo-coursify/courses/the-ultimate-ethical-hacking-boot-camp-beginner-to-pro/ class=img-link></a>
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name><a href=http://wordpresslms.thimpress.com/demo-coursify/lp-profile/admin9/>Colt Steele </a>
-                      </div>
-                      <h4 class="title"><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/the-ultimate-ethical-hacking-boot-camp-beginner-to-pro/>The Ultimate
-                        Ethical Hacking Boot Camp: Beginner to Pro</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <div class="col-sm-3 course-item free ">
-                    <div class=featured-img><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/master-web-design-in-photoshop/><img width=379 height=416 alt="Master Web Design in Photoshop"
-                        data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/support-e1503481093533-379x416.jpg class=lazyload
-                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=379 height=416 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/support-e1503481093533-379x416.jpg alt="Master Web Design in Photoshop" class></noscript>
-                      <a
-                        href=http://wordpresslms.thimpress.com/demo-coursify/courses/master-web-design-in-photoshop/ class=img-link></a>
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name><a href=http://wordpresslms.thimpress.com/demo-coursify/lp-profile/admin9/>Colt Steele </a>
-                      </div>
-                      <h4 class="title"><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/master-web-design-in-photoshop/>Master Web Design in Photoshop</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <div class="col-sm-3 course-item ">
-                    <div class=featured-img><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/become-a-php-master-and-make-money-fast/><img width=379 height=416
-                        alt="Become a PHP Master and Make Money Fast" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/07/layer-1992-e1503481088985-379x416.jpg
-                        class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=379 height=416 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/07/layer-1992-e1503481088985-379x416.jpg alt="Become a PHP Master and Make Money Fast" class></noscript>
-                      <a
-                        href=http://wordpresslms.thimpress.com/demo-coursify/courses/become-a-php-master-and-make-money-fast/ class=img-link></a>
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name><a href=http://wordpresslms.thimpress.com/demo-coursify/lp-profile/admin8/>Laura Bush </a>
-                      </div>
-                      <h4 class="title"><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/become-a-php-master-and-make-money-fast/>Become a PHP Master and
-                        Make Money Fast</a>
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--END CATALOGO-->
-      <!--STAR ACERCA--->
+        
+    
+      
+      
+        <!--STAR ACERCA--->
       <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid overlay-y overflow-visible vc_custom_1503888570721 vc_row-has-fill vc_row-no-padding">
         <div class="wpb_column vc_column_container vc_col-sm-12">
           <div class="vc_column-inner">
             <div class="wpb_wrapper">
               <div class="thim-sc-steps layout-4">
-                <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background.jpg';?>); ">
+                <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background-2.jpg';?>); ">
                   <div class=inner-steps-wrapper>
                     <div class=container>
                       <div class=row>
@@ -504,9 +374,9 @@
                             <div class=steps>
                               <div class=tab-content>
                                 <div class="tab-pane active">
+                                  <p class=description>Somos una comunidad mundial con un solo objetivo, el cual es crear un mondo más próspero y transcendente, ayudando a personas en todos lados contribuimos con un legado diferente para nuestras generaciones.</p>
                                   <h4 class="tab-title">¿Por qué se parte de FK?</h4>
-                                  <p class=description>Student Registration and Administration Nemo enim ipsamvoluptatem quia voluptas sit atur aut odit aut fugit, sed quiaconsequuntur
-                                    magni res eos qui ratione voluptatem sequinesciunt. There are many variations of passages</p>
+                                  <p class=description>No solamente buscamos cambiar la mentalidad de las personas sino que a la vez los ayudamos a que obtengas dinero con nosotros, convirtiéndose en empresarios.</p>
                                   <a href="<?php echo site_url().'acerca';?>" class="readmore">Ver Más</a>
                                 </div>
                               </div>
@@ -531,8 +401,9 @@
         </div>
       </div>
       <!--END ACERCA---->
-      <div class="vc_row-full-width vc_clearfix"></div>
-    <div class="vc_row wpb_row vc_row-fluid thim-bg-positon-custom vc_custom_1503367722566 vc_row-has-fill vc_row-no-padding">
+          
+    <div class="vc_row-full-width vc_clearfix"></div>
+    <div class="vc_row wpb_row vc_row-fluid thim-bg-positon-custom vc_custom_1503367722566 vc_row-has-fill">
       <div class="wpb_column vc_column_container vc_col-sm-12">
         <div class=vc_column-inner>
           <div class=wpb_wrapper>
@@ -552,11 +423,138 @@
                   <span class="text">Comience en segundos</span>
               </a>
           </div>
+        </div>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-    </div>
-      <div class="vc_empty_space" style="height: 60px"><span class=vc_empty_space_inner></span></div>
+      <div class="vc_row-full-width vc_clearfix"></div>
+      <!--START CATALOGO-->
+      <div class="vc_row wpb_row vc_row-fluid">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+          <div class=vc_column-inner>
+            <div class=wpb_wrapper>
+              <div class=vc_empty_space style="height: 66px"><span class=vc_empty_space_inner></span></div>
+              <div class=thim-courses-block-2>
+                <div class="row no-gutter">
+                  <div class="col-sm-3 intro-item">
+                    <div class=wrapper>
+                      <h3 class="title">Catalogo</h3>
+                      <p class="description">Encuentra productos exclusivos a un precio increíble por ser parte de nuestra empresa.</p>
+                      <a href="<?php echo site_url().'login';?>" class="view-courses-button">Ver todo el Catalogo</a>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 course-item free">
+                    <div class=featured-img>
+                        <a href="#" class="img-link">
+                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/accesorios.jpg';?>" class="lazyload">
+                        </a>
+                    </div>
+                    <div class=content-item>
+                      <div class=name>
+                          <a href="#">Accesorio Mk1 </a>
+                      </div>
+                      <h4 class="title">
+                          <a href="#">Accesorio y vestido para dama.</a>
+                      </h4>
+                    </div>
+                  </div>
+                    <div class="col-sm-3 course-item free">
+                    <div class=featured-img>
+                        <a href="#" class="img-link">
+                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/inmobiliaria.jpg';?>" class="lazyload">
+                        </a>
+                    </div>
+                    <div class=content-item>
+                      <div class=name>
+                          <a href="#">Sama Cafetería</a>
+                      </div>
+                      <h4 class="title">
+                          <a href="#">Ven y disfruta de un momento placentero</a>
+                      </h4>
+                    </div>
+                  </div>
+                    <div class="col-sm-3 course-item free">
+                    <div class=featured-img>
+                        <a href="#" class="img-link">
+                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/marketing_2.jpg';?>" class="lazyload">
+                        </a>
+                    </div>
+                    <div class=content-item>
+                      <div class=name>
+                          <a href="#">Evolution Marketing </a>
+                      </div>
+                      <h4 class="title">
+                          <a href="#">Necesitas posicionar tu marka. Comunícate con nosotros.</a>
+                      </h4>
+                    </div>
+                  </div>
+                    <div class="col-sm-3 course-item free">
+                    <div class=featured-img>
+                        <a href="#" class="img-link">
+                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/paginas_web_1.jpg';?>" class="lazyload">
+                        </a>
+                    </div>
+                    <div class=content-item>
+                      <div class=name>
+                          <a href="#">Sistemas Web </a>
+                      </div>
+                      <h4 class="title">
+                          <a href="#">Si quieres un software para tu empresa, somos la mejor solución</a>
+                      </h4>
+                    </div>
+                  </div>
+                    <div class="col-sm-3 course-item free">
+                    <div class=featured-img>
+                        <a href="#" class="img-link">
+                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/cata1.jpg';?>" class="lazyload">
+                        </a>
+                    </div>
+                    <div class=content-item>
+                      <div class=name>
+                          <a href="#">Catalogos 2020 </a>
+                      </div>
+                      <h4 class="title">
+                          <a href="#">Promociona tu marca con nosotros</a>
+                      </h4>
+                    </div>
+                  </div>
+                    <div class="col-sm-3 course-item free">
+                    <div class=featured-img>
+                        <a href="#" class="img-link">
+                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/viajes.jpg';?>" class="lazyload">
+                        </a>
+                    </div>
+                    <div class=content-item>
+                      <div class=name>
+                          <a href="#">Travel Vacation</a>
+                      </div>
+                      <h4 class="title">
+                          <a href="#">Viaja por el mundo a descuentos increibles</a>
+                      </h4>
+                    </div>
+                  </div>
+                    <div class="col-sm-3 course-item free">
+                    <div class=featured-img>
+                        <a href="#" class="img-link">
+                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/rent_car.jpg';?>" class="lazyload">
+                        </a>
+                    </div>
+                    <div class=content-item>
+                      <div class=name>
+                          <a href="#">Renta de Autos </a>
+                      </div>
+                      <h4 class="title">
+                          <a href="#">Encuentranos en Latinoamerica y el </a>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--END CATALOGO-->
     <div class="vc_row-full-width vc_clearfix"></div>
     </div>
     </div>

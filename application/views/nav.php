@@ -91,8 +91,8 @@
           <div class="widget widget_text">
             <div class=textwidget>
               <ul>
-                <li><i class="fa fa-phone" aria-hidden=true></i> <a href=tel:0123456789>+(0123) 456 789</a></li>
-                <li><i class="fa fa-envelope"></i>  <a href="/cdn-cgi/l/email-protection#6e070008012e1a0607031e1c0b1d1d400d0103"><span class="__cf_email__" data-cfemail="d4bdbab2bb94a0bcbdb9a4a6b1a7a7fab7bbb9">[email&#160;protected]</span></a></li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i><a>+(51)1 224-8210</a></li>
+                <li><i class="fa fa-envelope"></i>  <a><span>contacto@culturafk.com</span></a></li>
               </ul>
             </div>
           </div>
