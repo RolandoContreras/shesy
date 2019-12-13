@@ -2,9 +2,9 @@
 <html lang="es">
 <?php $this->load->view("head");?>
 <body class="home-page bp-nouveau home page-template page-template-templates page-template-home-page page-template-templateshome-page-php page page-id-565 wp-embed-responsive theme-wordpress-lms pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 buy-through-membership header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
-  <div id=thim-preloading>
-    <div class=thim-loading-icon>
-      <div class=sk-folding-cube>
+  <div id="thim-preloading">
+    <div class="thim-loading-icon">
+      <div class="sk-folding-cube">
         <div class="sk-cube1 sk-cube"></div>
         <div class="sk-cube2 sk-cube"></div>
         <div class="sk-cube4 sk-cube"></div>
@@ -14,7 +14,6 @@
   </div>
   <div id="wrapper-container" class="content-pusher creative-right bg-type-color">
     <div class="overlay-close-menu"></div>
-    
     <header id="masthead" class="site-header affix-top template-layout-2 sticky-header has-retina-logo has-retina-logo-sticky palette-transparent header-overlay">
       <div class="header-wrapper header-v2 default">
         <div class="main-header container">
@@ -50,78 +49,51 @@
                             <div class="wpb_wrapper">
                               <div class="vc_wp_custommenu wpb_content_element">
                                 <div class="widget widget_nav_menu">
-                                  <h2 class="widgettitle">Cursos</h2>
+                                  <h2 class="widgettitle">Acerca de Cursos</h2>
                                   <div class="menu-mega-menu-container">
                                     <ul id="menu-mega-menu" class="menu">
-                                      <li id="menu-item-4117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                          <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">All Courses</a>
-                                      </li>
-                                      <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                          <a href="http://wordpresslms.thimpress.com/demo-coursify/courses/the-ultimate-ethical-hacking-boot-camp/" class="tc-menu-inner">Free Access Courses</a>
-                                      </li>
-                                      <li id="menu-item-4116" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4116 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                          <a href="http://wordpresslms.thimpress.com/demo-coursify/courses/affiliate-marketing-a-beginners-guide/" class="tc-menu-inner">Paid Courses</a>
-                                      </li>
-                <li id="menu-item-4110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4110 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                    <a href="http://wordpresslms.thimpress.com/demo-coursify/all-teachers/" class="tc-menu-inner">Our Teachers</a>
-                </li>
-                  <li id="menu-item-4111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4111 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="http://wordpresslms.thimpress.com/demo-coursify/become-an-instructor/" class="tc-menu-inner">Become an Instructor</a>
-                  </li>
-                  <li id="menu-item-4114" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4114 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="http://wordpresslms.thimpress.com/demo-coursify/lp-profile/admin/" class="tc-menu-inner">Instructor Profile</a>
-                  </li>
-                  <li id="menu-item-6728" class="menu-item menu-item-type-post_type_archive menu-item-object-lp_collection menu-item-6728 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="http://wordpresslms.thimpress.com/demo-coursify/collections/" class="tc-menu-inner">Collections</a>
-                  </li>
-                  </ul>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-                  <div class="wpb_column vc_column_container vc_col-sm-4">
+                                          <li id="menu-item-4117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                              <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Todos los Cursos</a>
+                                          </li>
+                                          <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                              <a href="<?php echo site_url().'courses/personal';?>" class="tc-menu-inner">Desarrollo Personal</a>
+                                          </li>
+                                          <li id="menu-item-4116" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4116 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                              <a href="<?php echo site_url().'courses/profetional';?>" class="tc-menu-inner">Crecimiento Profesional</a>
+                                          </li>
+                                          <li id="menu-item-4116" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4116 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                              <a href="<?php echo site_url().'courses/finance';?>" class="tc-menu-inner">Finanzas</a>
+                                          </li>
+                                          <li id="menu-item-4110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4110 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                             <a href="<?php echo site_url().'courses/extras';?>" class="tc-menu-inner">Extras</a>
+                                          </li>
+                                    </ul>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  <div class="wpb_column vc_column_container vc_col-sm-8">
                     <div class="vc_column-inner">
                       <div class="wpb_wrapper">
                         <div class="thim-courses-megamenu row">
                           <div class="course-item col-sm-12">
                             <div class="feature-img">
-                                <img width="300" height="300" alt="The Ultimate Ethical Hacking Boot Camp" data-src="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/home-1-bg-e1503480628724-300x300.jpg"
-                                class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                                <noscript>
-                                        <img width="300" height="300" alt="The Ultimate Ethical Hacking Boot Camp" data-src="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/home-1-bg-e1503480628724-300x300.jpg class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=300 height=300 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/home-1-bg-e1503480628724-300x300.jpg" alt="The Ultimate Ethical Hacking Boot Camp"></noscript>
-                                </noscript>
-                              <a href=http://wordpresslms.thimpress.com/demo-coursify/courses/the-ultimate-ethical-hacking-boot-camp/ class="img-link"></a>
+                                <img width="300" height="300" alt="Cursos Gratuitos" data-src="<?php echo site_url().'static/page_front/images/cursos_gratuitos.jpg';?>" class="lazyload">
                             </div>
                             <div class=course-detail>
                               <h3 class="title">
-                                  <a href="http://wordpresslms.thimpress.com/demo-coursify/courses/the-ultimate-ethical-hacking-boot-camp/">The Ultimate Ethical
-                                Hacking Boot Camp</a>
+                                  <a href="<?php echo site_url().'register';?>">Prueba nuestros cursos gratuitos</a>
                               </h3>
-                              <div class=price><span class=course-price>Free</span></div>
+                              <div class="price"><span class="course-price">¡Regístrate Gratis! </span></div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="wpb_column vc_column_container vc_col-sm-4">
-                    <div class=vc_column-inner>
-                      <div class=wpb_wrapper>
-                        <div class="wpb_single_image wpb_content_element vc_align_center">
-                          <figure class="wpb_wrapper vc_figure">
-                            <a href="#" target=_blank class="vc_single_image-wrapper vc_box_border_grey"><img width=252 height=359 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360.jpg 252w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360-211x300.jpg 211w"
-                                sizes="(max-width: 252px) 100vw, 252px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360.jpg
-                                class="vc_single_image-img attachment-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=252 height=359 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360.jpg 252w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360-211x300.jpg 211w" sizes="(max-width: 252px) 100vw, 252px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360.jpg class="vc_single_image-img attachment-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=252 height=359 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360.jpg class="vc_single_image-img attachment-full" alt srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360.jpg 252w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/menu-image_360-211x300.jpg 211w" sizes="(max-width: 252px) 100vw, 252px"></noscript></noscript>
-                            </a>
-                          </figure>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  </div>
-                  </p>
                   </div>
                   </li>
                   
@@ -140,9 +112,9 @@
       </div>
     </header>
     <?php $this->load->view("nav");?>
-    <div id=main-content>
-      <div id=home-main-content class="home-content home-page container" role=main>
-        <div data-vc-full-width=true data-vc-full-width-init=false data-vc-parallax=1.5 data-vc-parallax-image=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/07/woman-hand-desk-office-min.jpg
+    <div id="main-content">
+      <div id="home-main-content" class="home-content home-page container" role="main">
+          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/background.jpg';?>"
           class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
           <div class=overlay style="background-color: rgba(23,23,23,0.75)"></div>
           <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -152,10 +124,8 @@
                 <div class="vc_wp_text wpb_content_element thim-textbox-header">
                   <div class="widget widget_text">
                     <div class=textwidget>
-                      </p>
-                      <h3 style="text-align: center;">Bienvenido a la <strong><span class=highlightedLayerContent data-color-group=turquoise>Corporación FK </span> </strong></h3>
+                      <h3 style="text-align: center;">Bienvenido a la <strong><span class="highlightedLayerContent" data-color-group="turquoise">Corporación FK </span> </strong></h3>
                       <p style="text-align: center;">Nos enorgullecemos presentar el contenido más actualizado en nuestros cursos para tu desarrollo.</p>
-                      <p>
                     </div>
                   </div>
                 </div>
@@ -172,10 +142,11 @@
                         <div class="sk-child sk-bounce2"></div>
                         <div class="sk-child sk-bounce3"></div>
                       </div>
-                    </div><span class=widget-search-close></span></form>
+                    </div><span class=widget-search-close></span>
                     <ul class="courses-list-search list-unstyled"></ul>
                 </div>
-                <div class=vc_empty_space style="height: 48px"><span class=vc_empty_space_inner></span></div>
+                <div class="vc_empty_space" style="height: 48px"><span class="vc_empty_space_inner"></span></div>
+                <!--STAR WELCOME-->
                 <div class="vc_row wpb_row vc_inner vc_row-fluid list-iconbox">
                   <div class="wpb_column vc_column_container vc_col-sm-12">
                     <div class=vc_column-inner>
@@ -234,6 +205,7 @@
                     </div>
                   </div>
                 </div>
+                <!--END WELCOME-->
                 <div class="thim-sc-scroll-heading next-screen">
                   <div class=title data-scroll-to=#next-screen data-scroll-speed=700 data-scroll-offset>
                     <div class=text>Next</div>
@@ -248,6 +220,7 @@
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class="vc_column-inner">
               <div class="wpb_wrapper">
+                <!--START CURSOS-->
                 <div class="thim-courses-collection-wrapper">
                   <div class="thim-collection-info rounded-colection-info">
                     <h3 class="title">Ayudar a las personas a hacer crecer sus vidas. ¡Todos los días!</h3>
@@ -297,67 +270,7 @@
                       <a href="<?php echo site_url().'course';?>">Ver todos los cursos</a>
                   </div>
                 </div>
-                <div class="thim-sc-testimonials layout-1 ">
-                  <div class=slider-container>
-                    <div class="slider owl-carousel">
-                      <div class="item">
-                        <div class="content">“ You don&#039;t need a whole ecommerce system to sell your online courses. Paypal, Stripe payment methodsintegration can help
-                          you sell your courses out of the box. In the case you wannause WooCommerce, this awesome WordPress . ”</div>
-                        <div class=user-info><a href=http://thimpress.com class=title target=_blank>Long Black</a><span class=regency>Developer</span></div>
-                        <div class=thim-sc-social-links>
-                          <ul class=socials></ul>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="content">“ You don&#039;t need a whole ecommerce system to sell your online courses. Paypal, Stripe payment methodsintegration can help
-                          you sell your courses out of the box. In the case you wannause WooCommerce, this awesome WordPress . ”</div>
-                        <div class=user-info><a href=http://thimpress.com class=title target=_blank>Jack</a><span class=regency>CEO</span></div>
-                        <div class=thim-sc-social-links>
-                          <ul class=socials></ul>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="content">“ You don&#039;t need a whole ecommerce system to sell your online courses. Paypal, Stripe payment methodsintegration can help
-                          you sell your courses out of the box. In the case you wannause WooCommerce, this awesome WordPress . ”</div>
-                        <div class=user-info><a href=http://thimpress.com/ class=title target=_blank>Jenny Kita</a><span class=regency>Associate Marketing</span></div>
-                        <div
-                          class=thim-sc-social-links>
-                          <ul class=socials></ul>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="content">“ You don&#039;t need a whole ecommerce system to sell your online courses. Paypal, Stripe payment methodsintegration can help you
-                        sell your courses out of the box. In the case you wannause WooCommerce, this awesome WordPress . ”</div>
-                      <div class=user-info><a href=http://thimpress.com class=title target=_blank>Khoapq</a><span class=regency>Developer</span></div>
-                      <div class=thim-sc-social-links>
-                        <ul class=socials></ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class=slider-controls>
-                    <a class=slider-left href=javascript:;></a>
-                    <a class=slider-right href=javascript:;></a>
-                  </div>
-                  <div class="thumbnail-slider owl-carousel">
-                    <div class=item>
-                      <div class=content><img width=68 height=68 alt=support data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/support-e1503481093533-68x68.jpg
-                          class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=68 height=68 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/support-e1503481093533-68x68.jpg alt=support class></noscript></div>
-                    </div>
-                    <div class=item>
-                      <div class=content><img width=68 height=68 alt=home-1-bg data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/home-1-bg-e1503480628724-68x68.jpg
-                          class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=68 height=68 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/08/home-1-bg-e1503480628724-68x68.jpg alt=home-1-bg class></noscript></div>
-                    </div>
-                    <div class=item>
-                      <div class=content><img width=68 height=68 alt=1 data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/07/1-e1503480158750-68x68.jpg
-                          class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=68 height=68 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/07/1-e1503480158750-68x68.jpg alt=1 class></noscript></div>
-                    </div>
-                    <div class=item>
-                      <div class=content><img width=68 height=68 alt=shutterstock data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/shutterstock_184641842-5-e1503480067691-68x68.jpg
-                          class=lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgwidth=68 height=68 src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/06/shutterstock_184641842-5-e1503480067691-68x68.jpg alt=shutterstock class></noscript></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <!--END CURSOS-->
               <div class=vc_empty_space style="height: 60px"><span class=vc_empty_space_inner></span></div>
             </div>
           </div>
@@ -375,7 +288,7 @@
                         <h3 class="sc-title">Obtén nuevos conocimientos y gana en 5 sencillos pasos</h3>
                         <div class=steps>
                           <ul class="nav" role="tablist">
-                            <li class="nav-item active" data-toggle=tab href=#thim_5def1b33677ed-step-0 role="tab">
+                            <li class="nav-item active" data-toggle="tab" href="#thim_5def1b33677ed-step-0" role="tab">
                                 <a class=nav-link>1<span>paso</span></a>
                                 <p class=tab-title>Crea tu registro gratis</p>
                             </li>
@@ -441,9 +354,7 @@
         </div>
       </div>
       <div class="vc_row-full-width vc_clearfix"></div>
-      <!---------------->
       <!--START CATALOGO-->
-      <!---------------->
       <div class="vc_row wpb_row vc_row-fluid">
         <div class="wpb_column vc_column_container vc_col-sm-12">
           <div class=vc_column-inner>
@@ -576,53 +487,39 @@
           </div>
         </div>
       </div>
-      <!---------------->
       <!--END CATALOGO-->
-      <!---------------->
-      <div data-vc-full-width=true data-vc-full-width-init=false data-vc-stretch-content=true class="vc_row wpb_row vc_row-fluid overlay-y overflow-visible vc_custom_1503888570721 vc_row-has-fill vc_row-no-padding">
+      <!--STAR ACERCA--->
+      <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid overlay-y overflow-visible vc_custom_1503888570721 vc_row-has-fill vc_row-no-padding">
         <div class="wpb_column vc_column_container vc_col-sm-12">
-          <div class=vc_column-inner>
-            <div class=wpb_wrapper>
-              <div class="thim-sc-steps layout-4 ">
-                <div class=sc-steps-wrapper style="background-image: url(http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/07/layer-1992-e1503481088985.jpg); ">
+          <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+              <div class="thim-sc-steps layout-4">
+                <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background.jpg';?>); ">
                   <div class=inner-steps-wrapper>
                     <div class=container>
                       <div class=row>
                         <div class="col-lg-6 content-box">
                           <div class=steps-wrapper>
-                            <h3 class="sc-title">About us<br>Become a Teacher</h3>
+                            <h3 class="sc-title">Acerca de<br>Nosotros</h3>
                             <div class=steps>
-                              <ul class=nav role=tablist>
-                                <li class=nav-item><a class="nav-link active" data-toggle=tab href=#thim_5def1b33a20a7-step-0 role=tab>1<span>step</span></a></li>
-                                <li class=nav-item><a class="nav-link " data-toggle=tab href=#thim_5def1b33a20a7-step-1 role=tab>2<span>step</span></a></li>
-                                <li class=nav-item><a class="nav-link " data-toggle=tab href=#thim_5def1b33a20a7-step-2 role=tab>3<span>step</span></a></li>
-                              </ul>
                               <div class=tab-content>
-                                <div class="tab-pane active" id=thim_5def1b33a20a7-step-0 role=tabpanel>
-                                  <h4 class="tab-title">Why do you choose WordPress LMS?</h4>
+                                <div class="tab-pane active">
+                                  <h4 class="tab-title">¿Por qué se parte de FK?</h4>
                                   <p class=description>Student Registration and Administration Nemo enim ipsamvoluptatem quia voluptas sit atur aut odit aut fugit, sed quiaconsequuntur
-                                    magni res eos qui ratione voluptatem sequinesciunt. There are many variations of passages</p><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/
-                                    class=readmore>Read More</a></div>
-                                <div class="tab-pane " id=thim_5def1b33a20a7-step-1 role=tabpanel>
-                                  <h4 class="tab-title">Create a course for free in minutes.</h4>
-                                  <p class=description>Course creation has never been easier with the ability of creating courses in just minutes and require no coding knowledge.
-                                    Everything is minimal, very easy and comfortable. This WPLMS will change your life forever.</p><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/
-                                    class=readmore>Read More</a></div>
-                                <div class="tab-pane " id=thim_5def1b33a20a7-step-2 role=tabpanel>
-                                  <h4 class="tab-title">Flexible payment gateway with WPLMS</h4>
-                                  <p class=description>You want to use Stripe? or Paypal? or pay by cash? or offline payment? or via bank transfer? Everything is very easy.
-                                    Just focus on creating your best course and this LMS theme will help you collect all that you deserve.</p><a href=http://wordpresslms.thimpress.com/demo-coursify/courses/
-                                    class=readmore>Read More</a></div>
+                                    magni res eos qui ratione voluptatem sequinesciunt. There are many variations of passages</p>
+                                  <a href="<?php echo site_url().'acerca';?>" class="readmore">Ver Más</a>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                         <div class="col-lg-6 media-box">
-                          <div class=player-wrapper>
-                            <div class=player-inner><iframe src="https://player.vimeo.com/video/228674632?title=0&byline=0" width=640 height=268 webkitallowfullscreen mozallowfullscreen
-                                allowfullscreen></iframe></div>
+                          <div class="player-wrapper">
+                            <div class="player-inner">
+                                <iframe width="640" height="268" src="https://www.youtube.com/embed/3an7AqJVOes" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
                           </div>
-                          <div class=icon-play></div>
+                          <div class="icon-play"></div>
                         </div>
                       </div>
                     </div>
@@ -633,8 +530,8 @@
           </div>
         </div>
       </div>
+      <!--END ACERCA---->
       <div class="vc_row-full-width vc_clearfix"></div>
-      
     <div class="vc_row wpb_row vc_row-fluid thim-bg-positon-custom vc_custom_1503367722566 vc_row-has-fill vc_row-no-padding">
       <div class="wpb_column vc_column_container vc_col-sm-12">
         <div class=vc_column-inner>
@@ -643,9 +540,8 @@
                 <div class="vc_wp_text wpb_content_element thim-textbox">
                   <div class="widget widget_text">
                     <div class=textwidget>
-                      </p>
                       <p class=sub-title style="text-align: center;">¿QUÉ ESTÁ ESPERANDO?</p>
-                      <h3 class="title" style="text-align: center;">Únase a los cientos de personas y haga una diferencia en su vida.</h3>
+                        <h3 class="title" style="text-align: center;">Únase a los cientos de personas y haga una diferencia en su vida.</h3>
                       <p>
                     </div>
                   </div>
@@ -672,10 +568,7 @@
     <div id="tp_chameleon_list_google_fonts"></div>
       <div class="gallery-slider-content"></div>
       <script>
-        var _wpUtilSettings = {"ajax":{"url":"\/demo-coursify\/wp-admin\/admin-ajax.php"}};
-      </script>
-      <script>
-        var BP_Nouveau = {"ajaxurl":"http:\/\/wordpresslms.thimpress.com\/demo-coursify\/wp-admin\/admin-ajax.php","confirm":"Are you sure?","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","object_nav_parent":"#buddypress","objects":{"0":"activity","1":"members","4":"xprofile","7":"settings","8":"notifications"},"nonces":{"activity":"fcd5ecf43e","members":"9af41e8848","xprofile":"10dfc2af2b","settings":"8d89e10911","notifications":"d123f6179a"}};
+        var BP_Nouveau = {"ajaxurl":"","object_nav_parent":"#buddypress","objects":{"0":"activity","1":"members","4":"xprofile","7":"settings","8":"notifications"},"nonces":{"activity":"fcd5ecf43e","members":"9af41e8848","xprofile":"10dfc2af2b","settings":"8d89e10911"}};
       </script>
       <script>
         window.lazySizesConfig = window.lazySizesConfig || {};window.lazySizesConfig.lazyClass = 'lazyload';window.lazySizesConfig.loadingClass = 'lazyloading';window.lazySizesConfig.loadedClass = 'lazyloaded';lazySizesConfig.loadMode = 1;
@@ -689,5 +582,4 @@
       </script>
       <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
 </body>
-
 </html>

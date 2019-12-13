@@ -2488,7 +2488,7 @@ footer#colophon .site-info a:hover {
         top: 100%!important;
         right: auto!important;
         padding: 25px 30px!important;
-        min-width: 800px!important;
+        min-width: 600px!important;
         width: auto!important
     }
     .tc-menu-layout-builder .sub-menu .widget-title,
@@ -39534,7 +39534,7 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
 .thim-sc-steps.layout-4 .sc-steps-wrapper .inner-steps-wrapper {
     padding: 125px 0 65px;
     background: rgba(0, 0, 0, .75);
-    background-image: url(//wordpresslms.thimpress.com/demo-coursify/wp-content/themes/wordpress-lms/assets/images/sc-step-bg-2.png);
+    background-image: url();
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;

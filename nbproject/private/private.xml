@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
             <url>application/views/welcome.php</url>
             <bookmark id="1">
+                <name/>
+                <line>12</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>application/views/nav.php</url>
+            <bookmark id="2">
                 <name/>
                 <line>12</line>
                 <key/>
@@ -17,6 +25,7 @@
             <file>file:/C:/wamp64/www/shesy/application/views/header.php</file>
             <file>file:/C:/wamp64/www/shesy/static/page_front/css/autoptimize_single_04.css</file>
             <file>file:/C:/wamp64/www/shesy/application/views/head.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/page_front/js/autoptimize_282.js</file>
             <file>file:/C:/wamp64/www/shesy/application/views/home.php</file>
             <file>file:/C:/wamp64/www/shesy/application/views/footer.php</file>
             <file>file:/C:/wamp64/www/shesy/application/config/config.php</file>

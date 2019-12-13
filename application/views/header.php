@@ -1,13 +1,13 @@
-<header id=masthead class="site-header affix-top template-layout-2 sticky-header has-retina-logo has-retina-logo-sticky palette-transparent header-overlay">
+<header id="masthead" class="site-header affix-top template-layout-2 sticky-header has-retina-logo has-retina-logo-sticky palette-transparent header-overlay">
   <div class="header-wrapper header-v2 default">
     <div class="main-header container">
-      <div class="menu-mobile-effect navbar-toggle" data-effect=mobile-effect>
-        <div class=icon-wrap><span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></div>
+      <div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">
+        <div class="icon-wrap"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div>
       </div>
       <div class="width-logo">
         <a class="no-sticky-logo" href=http://wordpresslms.thimpress.com/demo-coursify/ title="Demo Coursify - WordPress LMS theme 2018" rel=home>
-            <img alt="Demo Coursify" width=131 height=45 data-src=http://wordpresslms.thimpress.com/demo-2/wp-content/uploads/sites/4/2017/09/logo-4.png class="logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-            <img alt="Demo Coursify" width=291 height=100 data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/09/logo-3x2.png class="retina-logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><imgclass=retina-logo src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/09/logo-3x2.png alt="Demo Coursify" width=291 height=100></noscript>          
+            <img alt="Logo " width=131 height=45 data-src=http://wordpresslms.thimpress.com/demo-2/wp-content/uploads/sites/4/2017/09/logo-4.png class="logo lazyload">
+            <img alt="Demo Coursify" width=291 height=100 data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2017/09/logo-3x2.png class="retina-logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
             <img alt="Demo Coursify" width=131 height=45 data-src=http://wordpresslms.thimpress.com/demo-2/wp-content/uploads/sites/4/2017/09/mobile-logo.png class="mobile-logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
             <noscript>
             <img class=mobile-logo src=http://wordpresslms.thimpress.com/demo-2/wp-content/uploads/sites/4/2017/09/mobile-logo.png alt="Demo Coursify" width=131 height=45>
