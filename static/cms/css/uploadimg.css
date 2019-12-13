@@ -1,0 +1,107 @@
+
+/*upload de images*/
+
+.btn-file > input {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    cursor: pointer;
+    direction: ltr;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-300px, 0px) scale(4);
+}
+
+
+.fileupload .btn {
+    vertical-align: middle;
+}
+.btn:first-child {
+}
+.btn-file {
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+.btn {
+   /* border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);*/
+}
+
+.btn {
+   /* -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F5F5F5;
+    background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #A2A2A2;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 4px 14px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;*/
+}
+
+.fileupload-exists .fileupload-new, .fileupload-new .fileupload-exists {
+    display: none;
+}
+.btn {
+   /* color: #333333;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);*/
+}
+
+select, input[type="file"] {
+    height: 30px;
+    line-height: 30px;
+}
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+    width: auto;
+}
+input, textarea, .uneditable-input {
+    margin-left: 0;
+}
+input, textarea, .uneditable-input {
+    margin-left: 0;
+}
+input, textarea, .uneditable-input {
+    width: 206px;
+}
+input, button, select, textarea {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+label, input, button, select, textarea {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+}
+button, input {
+    line-height: normal;
+}
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: middle;
+}
