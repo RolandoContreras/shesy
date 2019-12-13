@@ -1,11 +1,13 @@
 <head>
+  <title>Corporación FK | cambiemos el mundo</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Multiplica tu dinero en el mercado financiero con nosotros. BCA CAPITAL una empresa financiera que te ayudará a aumentar tus finanzas, Clic en el siguiente enlace.">
-  <meta name="author" content="Corporation WK">
-  <meta name="keyword" content="bca capital, bca club, finanzas, fondo de inversión, bca red, bca networkmarketing">
+  <meta name="description" content="Somos una comunidad mundial con un solo objetivo, el cual es crear un mondo más próspero y transcendente.">
+  <meta name="author" content="Corporation FK">
+  <meta name="keyword" content="coporación fk, fk social, fk embajadores, plataforma de cursos">
   <meta name="robots" content="Index, Follow">
   <link type="text/css" media="all" href="<?php echo site_url().'static/page_front/css/autoptimize_67.css';?>" rel="stylesheet">
+  <link rel="stylesheet" id="dashicons-css" href="<?php echo site_url().'static/page_front/css/autoptimize_5e.css';?>" type="text/css" media="all">
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-60x60.png';?>">
