@@ -124,7 +124,7 @@
                   <div class="widget widget_text">
                     <div class=textwidget>
                       <h3 style="text-align: center;">Bienvenido a la <strong><span class="highlightedLayerContent" data-color-group="turquoise">Corporación FK </span> </strong></h3>
-                      <p style="text-align: center;">Nos enorgullecemos presentar el contenido más actualizado en nuestros cursos para tu desarrollo.</p>
+                      <p style="text-align: center;">Somos una comunidad de desarrollo personal y emprendimiento.</p>
                     </div>
                   </div>
                 </div>

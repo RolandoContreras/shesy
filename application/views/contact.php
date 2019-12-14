@@ -14,7 +14,7 @@
   </div>
   <div id=wrapper-container class="content-pusher creative-right bg-type-color">
     <div class=overlay-close-menu></div>
-    <?php $this->load->view("header2");?>
+    <?php $this->load->view("header");?>
     <?php $this->load->view("nav");?>
     <div id=main-content>
       <section class=content-area>

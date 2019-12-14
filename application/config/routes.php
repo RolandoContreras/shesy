@@ -50,7 +50,7 @@ $route['fund'] = 'service';
 $route['club'] = 'service';
 $route['course_inversiones'] = 'service';
 $route['investment'] = 'service';
-$route['course_marketing'] = 'service';
+$route['courses'] = 'courses';
 
 $route['register/([0-9a-z_-]+)'] = "register/index/$1";
 $route['register/validate_username'] = "register/validate_username";
