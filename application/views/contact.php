@@ -145,43 +145,53 @@
             <div class="vc_wp_text wpb_content_element">
               <div class="widget widget_text">
                 <div class=textwidget>
-                  <div role=form class=wpcf7 id=wpcf7-f56-p34-o1 lang=en-US dir=ltr>
+                  <div role="form" class="wpcf7" id="wpcf7-f56-p34-o1">
                     <div class=screen-reader-response></div>
-                    <form class="wpcf7-form">
-                      <div style="display: none;">
-                          <input type=hidden name=_wpcf7 value=56><br><input type=hidden name=_wpcf7_version value=5.1.5><br><input type=hidden name=_wpcf7_locale
-                          value=en_US><br><input type=hidden name=_wpcf7_unit_tag value=wpcf7-f56-p34-o1><br><input type=hidden name=_wpcf7_container_post
-                          value=34>
-                      </div>
+                    <form class="wpcf7-form" action="javascript:void(0);" enctype="multipart/form-data">
                       <div class="row">
                         <div class="col-xs-12 col-sm-4">
                             <span class="wpcf7-form-control-wrap your-name">
-                                <input type=text name=your-name value size=40 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required=true aria-invalid=false placeholder=Name>
+                                <input type="text" name="name" id="name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Nombre">
                             </span>
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <span class="wpcf7-form-control-wrap your-email">
-                                <input type=email name=your-email value size=40 class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required=true aria-invalid=false placeholder=Email>
+                                <input type="email" name="email" id="email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" placeholder="Email">
                             </span>
                         </div>
                           <div class="col-xs-12 col-sm-4">
                               <span class="wpcf7-form-control-wrap your-email">
-                                  <input type=text name=your-email value size=40 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required=true aria-invalid=false placeholder=Subject>
+                                  <input type="text" name="subject" id="subject" size=40 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Título">
                               </span>
                           </div>
                         </div>
                         <div class="row">
                           <div class=col>
                               <span class="wpcf7-form-control-wrap your-message">
-                                  <textarea name=your-message cols=40 rows=10 class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required=true aria-invalid=false placeholder=Message></textarea>
+                                  <textarea name="message" id="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" placeholder="Mensaje"></textarea>
                               </span>
                           </div>
                         </div>
-                        <div class=heading-button>
-                            <input type="submit" value="Enviar Mensaje" class="wpcf7-form-control wpcf7-submit">
+                        <div class="row">
+                          <div class="col">
+                              <span class="wpcf7-form-control-wrap your-message">
+                                  <div class="g-recaptcha" data-sitekey="6LcW6sEUAAAAAAh3immabJ9S9rpvQFM2FDQsKTCL"></div>
+                              </span>
+                          </div>
                         </div>
-                        <div id="mostrar" class="wpcf7-response-output wpcf7-display-none"></div>
-                        <div id="success" class="wpcf7-response-output wpcf7-display-none"></div>
+                        <div class="heading-button">
+                            <button onclick="send_message();" class="wpcf7-form-control">Enviar Mensaje</button>
+                        </div>
+                        <br/>
+                        <div id="messages_respose" class="alert alert-success validation-errors" style="display:none;">
+                            <p class="user_login_id" style="text-align: center;">Gracias su mensaje ha sido enviado.</p>
+                        </div>
+                        <div id="captcha_messages" class="alert alert-danger validation-errors" style="display:none;">
+                            <p class="user_login_id" style="text-align: center;">Captcha no verificado</p>
+                        </div>
+                        <div id="error_messages" class="alert alert-danger validation-errors" style="display:none;">
+                            <p class="user_login_id" style="text-align: center;">Ingrese los datos correctamente</p>
+                        </div>
                 </form>
               </div>
             </div>
@@ -220,5 +230,8 @@
         WebFont.load({google:{families:['Roboto:400,300']}});
       </script>
       <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
+      <script src='https://www.google.com/recaptcha/api.js'></script>
+      <script src='<?php echo site_url().'static/page_front/js/script/contact.js';?>'></script>
+      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </body>
 </html>

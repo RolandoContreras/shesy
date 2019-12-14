@@ -32,6 +32,7 @@ class Contact extends CI_Controller {
          if($this->input->is_ajax_request()){   
                 $name = $this->input->post("name");
                 $email = $this->input->post("email");
+                $subject = $this->input->post("subject");
                 $message = $this->input->post("message");
 
                 //SAVE MESSAGES BD
@@ -39,6 +40,7 @@ class Contact extends CI_Controller {
                         $data = array(
                             'name' => $name,
                             'email' => $email,
+                            'subject' => $subject,
                             'comment' => $message,
                             'date_comment' => date("Y-m-d H:i:s"),
                             'active' => 1,

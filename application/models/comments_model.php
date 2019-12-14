@@ -18,9 +18,11 @@ BITSHARE S.A.C
 class comments_model_atributos{	
     var $comment_id='';
     var $name='';
+    var $subject='';
     var $email='';
     var $comment='';
     var $date_comment='';
+    var $active='';
     var $status_value='';
     var $updated_at='';
     var $updated_by='';
@@ -34,9 +36,11 @@ class Comments_Model extends CI_Model{
 	$this->table_id = 'comment_id';
         $this->customer_id='';
         $this->name='';
+        $this->subject='';
         $this->email='';
         $this->comment='';
 	$this->date_comment='';
+        $this->active='';
 	$this->status_value='';
         $this->updated_at='';
         $this->updated_by='';

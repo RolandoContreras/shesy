@@ -39,4 +39,7 @@
     var lpGlobalSettings = {"localize":{"button_ok":"OK","button_cancel":"Cancel","button_yes":"Yes","button_no":"No"}};
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <script>
+        var site = '<?php echo site_url();?>';
+  </script>
 </head>
