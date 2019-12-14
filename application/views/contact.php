@@ -175,7 +175,7 @@
                         <div class="row">
                           <div class="col">
                               <span class="wpcf7-form-control-wrap your-message">
-                                  <div class="g-recaptcha" data-sitekey="6LcW6sEUAAAAAAh3immabJ9S9rpvQFM2FDQsKTCL"></div>
+                                  <div class="g-recaptcha" data-sitekey="6LeGrccUAAAAAL42J6gQyQqSG3bPNnWHx85yS1UK"></div>
                               </span>
                           </div>
                         </div>
@@ -214,7 +214,7 @@
   <?php $this->load->view("footer_2");?>  
   <!--END FOOTER-->
   </div>
-  <div id=back-to-top><i class="fa fa-angle-up" aria-hidden=true></i></div>
+  <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
     <div class="gallery-slider-content"></div>
       <script>
         var BP_Nouveau = {"ajaxurl":"","object_nav_parent":"#buddypress","objects":{"0":"activity","1":"members","4":"xprofile","7":"settings","8":"notifications"},"nonces":{"activity":"fcd5ecf43e","members":"9af41e8848","xprofile":"10dfc2af2b","settings":"8d89e10911"}};
