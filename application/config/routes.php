@@ -42,14 +42,12 @@ $route['default_controller'] = "home";
 $route['404_override'] = 'errors/error_404';
 
 $route['home'] = 'home';
+
+$route['catalog'] = 'catalog';
+
 $route['login'] = 'login';
 $route['forget'] = 'forget';
 
-$route['service'] = 'service';
-$route['fund'] = 'service';
-$route['club'] = 'service';
-$route['course_inversiones'] = 'service';
-$route['investment'] = 'service';
 $route['courses'] = 'courses';
 $route['courses/personal'] = 'courses/all';
 $route['courses/profetional'] = 'courses/all';

@@ -422,6 +422,7 @@
         </div>
       </div>
     </div>
+    
       <div class="vc_row-full-width vc_clearfix"></div>
       <!--START CATALOGO-->
       <div class="vc_row wpb_row vc_row-fluid">
@@ -435,7 +436,7 @@
                     <div class=wrapper>
                       <h3 class="title">Catalogo</h3>
                       <p class="description">Encuentra productos exclusivos a un precio increíble por ser parte de nuestra empresa.</p>
-                      <a href="<?php echo site_url().'login';?>" class="view-courses-button">Ver todo el Catalogo</a>
+                      <a href="<?php echo site_url().'catalog';?>" class="view-courses-button">Ver todo el Catalogo</a>
                     </div>
                   </div>
                   <div class="col-sm-3 course-item free">
