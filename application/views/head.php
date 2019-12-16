@@ -39,13 +39,6 @@
     var lpGlobalSettings = {"localize":{"button_ok":"OK","button_cancel":"Cancel","button_yes":"Yes","button_no":"No"}};
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <style>.vc_custom_1500885875234{padding-top: 19px !important;}.vc_custom_1502099928023{margin-top: 0px !important;border-top-width: 0px !important;padding-top:
-        0px !important;background-image: url(http://wordpresslms.thimpress.com/wp-content/uploads/sites/4/2017/06/layer-6.jpg?id=3487) !important;background-position:
-        center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1501471808574{padding-top: 35px !important;}.vc_custom_1501839996783{margin-top:
-        78px !important;background-position: center;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1497509247620{padding:
-        0px !important;}.vc_custom_1497518620322{border-bottom-width: 200px !important;padding-top: 140px !important;}.vc_custom_1501055739385{padding-top:
-        38px !important;padding-bottom: 140px !important;}
-  </style>
   <script>
         var site = '<?php echo site_url();?>';
   </script>

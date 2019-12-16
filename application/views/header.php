@@ -15,15 +15,43 @@
                 <img alt="Logo FK" width="695" height="100" data-src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo-sticky lazyload">
             </a>
           </div>
+            <?php
+          $url = explode("/",uri_string());
+            if(isset($url[0])){
+                $nav = $url[0];
+            }else{
+                $nav = "";
+            }
+            
+            $home_syle = "";
+            $about_syle = "";
+            $courses_syle = "";
+            $contact_syle = "";
+            
+            switch ($nav) {
+                case "about":
+                    $about_syle = "current-menu-parent ";
+                    break;
+                case "courses":
+                    $courses_syle = "current-menu-parent ";
+                    break;
+                case "contact":
+                    $contact_syle = "current-menu-parent ";
+                    break;
+                default:
+                    $home_syle = "current-menu-parent ";
+                    break;
+            }
+          ?>
           <div class="width-navigation">
             <ul id="primary-menu" class="main-menu">
-                <li id=menu-item-22 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li id=menu-item-22 class="menu-item menu-item-type-custom menu-item-object-custom <?php echo $home_syle;?> menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url();?>" class="tc-menu-inner">Inicio</a>
                 </li>
-                <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $about_syle;?> menu-item-25 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'about';?>" class="tc-menu-inner">Acerca</a>
                 </li>
-                <li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
+                <li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $courses_syle;?> menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
                     <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Cursos</a>
                   <div class='tc-megamenu-wrapper tc-megamenu-holder mega-sub-menu sub-menu'>
                     <p>
@@ -81,7 +109,7 @@
                   </div>
                   </li>
                   
-                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $contact_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'contact';?>" class="tc-menu-inner">Contacto</a>
                   </li>
                   <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">

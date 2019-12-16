@@ -231,7 +231,7 @@
                           </div>
                           <div class=sub-content>
                             <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Diseñp Grafico en MAC</a>
+                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Diseño Grafico en MAC</a>
                             </h3>
                             <div class=date-comment>
                                 <span class=date-meta>Dic 29, 2019</span> 
@@ -287,7 +287,7 @@
                           </div>
                           <div class=sub-content>
                             <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Diseñp Grafico en MAC</a>
+                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Diseño Grafico en MAC</a>
                             </h3>
                             <div class=date-comment>
                                 <span class=date-meta>Dic 29, 2019</span> 
@@ -301,7 +301,7 @@
                           <div class=thumbnail>
                             <span class=sale><span class=text-sale>Gratis</span></span>
                             <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>" class="img_thumbnail">
-                                <img width="365" height="4052" alt="Finanzas para Principiantes" data-src="<?php echo site_url().'static/course/img/arte_creatividad';?>" class="lazyload">
+                                <img width="365" height="4052" alt="Finanzas para Principiantes" data-src="<?php echo site_url().'static/course/img/arte_creatividad.jpg';?>" class="lazyload">
                               </a>
                             <div class="review ">
                               <div class=sc-review-stars>
@@ -315,7 +315,7 @@
                           </div>
                           <div class=sub-content>
                             <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Diseño Grafico en MAC</a>
+                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Arte y Creatividad</a>
                             </h3>
                             <div class=date-comment>
                                 <span class=date-meta>Dic 29, 2019</span> 
