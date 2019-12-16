@@ -27,6 +27,7 @@
             $about_syle = "";
             $courses_syle = "";
             $contact_syle = "";
+            $catalog_syle = "";
             
             switch ($nav) {
                 case "about":
@@ -34,6 +35,9 @@
                     break;
                 case "courses":
                     $courses_syle = "current-menu-parent ";
+                    break;
+                case "catalog":
+                    $catalog_syle = "current-menu-parent ";
                     break;
                 case "contact":
                     $contact_syle = "current-menu-parent ";
@@ -108,7 +112,9 @@
                   </div>
                   </div>
                   </li>
-                  
+                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $catalog_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                      <a href="<?php echo site_url().'catalog';?>" class="tc-menu-inner">Catalogo</a>
+                  </li>
                   <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $contact_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'contact';?>" class="tc-menu-inner">Contacto</a>
                   </li>

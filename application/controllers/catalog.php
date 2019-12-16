@@ -22,4 +22,8 @@ class Catalog extends CI_Controller {
 	{
 		$this->load->view('catalog');
 	}
+        public function detail()
+	{
+		$this->load->view('catalog_detail');
+	}
 }

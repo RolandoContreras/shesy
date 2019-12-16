@@ -3,12 +3,6 @@
         <div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">Cerrar <i class="fa fa-times" aria-hidden=true></i></div>
         <div class="thim-mobile-search-cart ">
           <div class="thim-search-wrapper hidden-lg-up">
-            <form role="search" method="get" class="search-form" action="#">
-                <input type="search" class="search-field" placeholder="¿Qué quieres aprender hoy?" value name="s" title="¿Qué quieres aprender hoy?">
-                <button type="submit" class="search-submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-          </form>
           </div>
         </div>
         <?php
@@ -23,6 +17,7 @@
             $about_syle = "";
             $courses_syle = "";
             $contact_syle = "";
+            $catalog_syle = "";
             
             switch ($nav) {
                 case "about":
@@ -30,6 +25,9 @@
                     break;
                 case "courses":
                     $courses_syle = "current-menu-parent ";
+                    break;
+                case "catalog":
+                    $catalog_syle = "current-menu-parent ";
                     break;
                 case "contact":
                     $contact_syle = "current-menu-parent ";
@@ -105,7 +103,6 @@
               </p>
               </div>
               </li>
-              
               <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $contact_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                   <a href="<?php echo site_url().'contact';?>" class=tc-menu-inner>Contacto</a>
               </li>

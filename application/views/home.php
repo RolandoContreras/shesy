@@ -96,7 +96,9 @@
                   </div>
                   </div>
                   </li>
-                  
+                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                      <a href="<?php echo site_url().'catalog';?>" class="tc-menu-inner">Catalogo</a>
+                  </li>
                   <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'contact';?>" class="tc-menu-inner">Contacto</a>
                   </li>
@@ -129,12 +131,6 @@
                   </div>
                 </div>
                 <div class="thim-sc-course-search ">
-                  <form role="search" method="get" action="#">
-                      <input type="text" placeholder="¿Qué quieres aprender hoy?" class="form-control courses-search-input" autocomplete="off"/>
-                      <button type=submit>
-                          <i class="fa fa-search" aria-hidden="true"></i>
-                      </button>
-                   </form>
                     <div class=thim-loading-icon>
                       <div class=sk-three-bounce>
                         <div class="sk-child sk-bounce1"></div>

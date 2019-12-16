@@ -23,16 +23,16 @@
                 <div class="menu-programs-container">
                   <ul id="menu-programs" class="menu">
                     <li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href=# class=tc-menu-inner>Desarrollo Personal</a>
+                        <a href="<?php echo site_url().'courses/personal';?>" class=tc-menu-inner>Desarrollo Personal</a>
                     </li>
                     <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href=# class=tc-menu-inner>Crecimiento Profesional</a>
+                        <a href="<?php echo site_url().'courses/profetional';?>" class=tc-menu-inner>Crecimiento Profesional</a>
                     </li>
                     <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href=# class=tc-menu-inner>Finanzas</a>
+                        <a href="<?php echo site_url().'courses/finance';?>" class=tc-menu-inner>Finanzas</a>
                     </li>
                     <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href=# class=tc-menu-inner>Extras</a>
+                        <a href=<?php echo site_url().'courses/extra';?> class=tc-menu-inner>Extras</a>
                     </li>
                   </ul>
                 </div>
@@ -66,6 +66,9 @@
                     </li>
                     <li id=menu-item-4125 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4125 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         <a href="<?php echo site_url().'about';?>" class="tc-menu-inner">Acerca</a>
+                    </li>
+                    <li id=menu-item-20 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                        <a href="<?php echo site_url().'catalog';?>" class=tc-menu-inner>Catalogo</a>
                     </li>
                     <li id=menu-item-20 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>

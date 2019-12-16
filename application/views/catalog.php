@@ -19,7 +19,7 @@
   <div id=main-content>
     <section class=content-area>
       <div class="page-title layout-1">
-        <div class="main-top no-parallax" style=background-image:url(http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2018/08/bg.jpg);>
+        <div class="main-top no-parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/background.jpg';?>)">
           <span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
           <div class="content container">
             <div class=row>
@@ -69,21 +69,16 @@
                     <div class=wrapper>
                       <div class=feature-image>
                         <span class=onsale>Venta!</span>
-                        <a href="#">
+                        <a href="<?php echo site_url().'catalog/chocolates';?>">
                             <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/chocolates.jpg';?> 400w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 150w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 300w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 355w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 100w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/chocolates.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                         <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                         </a>
                     </div>
                     <div class=product-content>
                       <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
+                        <a href="<?php echo site_url().'catalog/chocolates';?>" class=product_name>Fabrica de Maletas</a></div>
                       <span class=price>
                       <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
                     </div>
                     </div>
                 <div class=clear></div>
@@ -103,11 +98,6 @@
                         <a href="#" class=product_name>Fabrica de Maletas</a></div>
                       <span class=price>
                       <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
                     </div>
                     </div>
                 <div class=clear></div>
@@ -127,11 +117,6 @@
                         <a href="#" class=product_name>Fabrica de Maletas</a></div>
                       <span class=price>
                       <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
                     </div>
                     </div>
                 <div class=clear></div>
@@ -151,11 +136,6 @@
                         <a href="#" class=product_name>Fabrica de Maletas</a></div>
                       <span class=price>
                       <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
                     </div>
                     </div>
                 <div class=clear></div>
@@ -174,11 +154,6 @@
                         <a href="#" class=product_name>Fabrica de Maletas</a></div>
                       <span class=price>
                       <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
                     </div>
                     </div>
                 <div class=clear></div>
@@ -198,11 +173,6 @@
                         <a href="#" class=product_name>Fabrica de Maletas</a></div>
                       <span class=price>
                       <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
                     </div>
                     </div>
                 <div class=clear></div>
@@ -222,11 +192,6 @@
                         <a href="#" class=product_name>Fabrica de Maletas</a></div>
                       <span class=price>
                       <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
                     </div>
                     </div>
                 <div class=clear></div>
@@ -246,11 +211,6 @@
                         <a href="#" class=product_name>Fabrica de Maletas</a></div>
                       <span class=price>
                       <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
                     </div>
                     </div>
                 <div class=clear></div>

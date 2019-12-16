@@ -44,6 +44,7 @@ $route['404_override'] = 'errors/error_404';
 $route['home'] = 'home';
 
 $route['catalog'] = 'catalog';
+$route['catalog/([0-9a-z_-]+)'] = 'catalog/detail';
 
 $route['login'] = 'login';
 $route['forget'] = 'forget';
