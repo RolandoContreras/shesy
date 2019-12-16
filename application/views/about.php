@@ -427,5 +427,11 @@
       <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='<?php echo site_url().'static/page_front/js/script/contact.js';?>'></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+       <style>.vc_custom_1500885875234{padding-top: 19px !important;}
+           .vc_custom_1502099928023{margin-top: 0px !important;border-top-width: 0px !important;padding-top:0px !important;}
+           .vc_custom_1497509247620{padding: 0px !important;}
+           .vc_custom_1497518620322{border-bottom-width: 200px !important;padding-top: 140px !important;}
+           .vc_custom_1501055739385{padding-top: 38px !important;padding-bottom: 140px !important;}
+      </style>
 </body>
 </html>

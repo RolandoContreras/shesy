@@ -180,7 +180,9 @@
                           </div>
                         </div>
                         <div class="heading-button">
-                            <button onclick="send_message();" class="lp-button button button-enroll-course">Enviar Mensaje</button>
+                            <a onclick="send_message();" href="javascript:void(0);" class="btn btn-primary btn-md">
+                                    <span class=text>Enviar Mensaje</span>
+                                </a>
                         </div>
                         <br/>
                         <div id="messages_respose" class="alert alert-success validation-errors" style="display:none;">
