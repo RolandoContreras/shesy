@@ -194,8 +194,7 @@
   </div>
 </div>
                           
-                          
-                          
+                                                   
                           
                           <div class="player-inner">
                                 <iframe width="365" height="250" src="https://www.youtube.com/embed/3an7AqJVOes" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

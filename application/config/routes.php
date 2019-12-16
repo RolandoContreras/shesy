@@ -51,6 +51,16 @@ $route['club'] = 'service';
 $route['course_inversiones'] = 'service';
 $route['investment'] = 'service';
 $route['courses'] = 'courses';
+$route['courses/personal'] = 'courses/all';
+$route['courses/profetional'] = 'courses/all';
+$route['courses/finance'] = 'courses/all';
+$route['courses/extras'] = 'courses/all';
+
+$route['courses/extras/([0-9a-z_-]+)'] = 'courses/detail';
+$route['courses/personal/([0-9a-z_-]+)'] = 'courses/detail';
+$route['courses/profetional/([0-9a-z_-]+)'] = 'courses/detail';
+$route['courses/finance/([0-9a-z_-]+)'] = 'courses/detail';
+
 
 $route['register/([0-9a-z_-]+)'] = "register/index/$1";
 $route['register/validate_username'] = "register/validate_username";

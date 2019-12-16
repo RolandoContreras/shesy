@@ -180,7 +180,7 @@
                           </div>
                         </div>
                         <div class="heading-button">
-                            <button onclick="send_message();" class="wpcf7-form-control">Enviar Mensaje</button>
+                            <button onclick="send_message();" class="lp-button button button-enroll-course">Enviar Mensaje</button>
                         </div>
                         <br/>
                         <div id="messages_respose" class="alert alert-success validation-errors" style="display:none;">

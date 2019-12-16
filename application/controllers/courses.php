@@ -22,4 +22,12 @@ class Courses extends CI_Controller {
 	{
 		$this->load->view('courses');
 	}
+        public function all()
+	{
+		$this->load->view('courses_detail');
+	}
+        public function detail()
+	{
+		$this->load->view('courses_detail');
+	}
 }
