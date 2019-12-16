@@ -70,9 +70,7 @@
                       <div class=feature-image>
                         <span class=onsale>Venta!</span>
                         <a href="#">
-                            <img width=400 height=400 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Fursten-hutchen-2.jpg 400w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-150x150.jpg 150w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-300x300.jpg 300w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-355x355.jpg 355w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-100x100.jpg 100w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2.jpg 600w"
-                          sizes="(max-width: 400px) 100vw, 400px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg
-                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/chocolates.jpg';?> 400w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 150w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 300w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 355w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 100w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/chocolates.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                         <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                         </a>
                     </div>
@@ -96,9 +94,7 @@
                       <div class=feature-image>
                         <span class=onsale>Venta!</span>
                         <a href="#">
-                            <img width=400 height=400 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg 400w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-150x150.jpg 150w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-300x300.jpg 300w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-355x355.jpg 355w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-100x100.jpg 100w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2.jpg 600w"
-                          sizes="(max-width: 400px) 100vw, 400px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg
-                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/cerveza.jpg';?> 400w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 150w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 300w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 355w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 100w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/cerveza.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                         <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                         </a>
                     </div>
@@ -122,9 +118,7 @@
                       <div class=feature-image>
                         <span class=onsale>Venta!</span>
                         <a href="#">
-                            <img width=400 height=400 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Princely-pencil-2.jpg 400w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-150x150.jpg 150w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-300x300.jpg 300w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-355x355.jpg 355w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-100x100.jpg 100w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2.jpg 600w"
-                          sizes="(max-width: 400px) 100vw, 400px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg
-                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/pen.jpg';?> 400w, <?php echo site_url().'static/catalog/pen.jpg';?> 150w, <?php echo site_url().'static/catalog/pen.jpg';?> 300w, <?php echo site_url().'static/catalog/pen.jpg';?> 355w, <?php echo site_url().'static/catalog/pen.jpg';?> 100w, <?php echo site_url().'static/catalog/pen.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/pen.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                         <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                         </a>
                     </div>
@@ -148,9 +142,7 @@
                       <div class=feature-image>
                         <span class=onsale>Venta!</span>
                         <a href="#">
-                            <img width=400 height=400 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Buschla-2.jpg 400w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-150x150.jpg 150w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-300x300.jpg 300w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-355x355.jpg 355w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-100x100.jpg 100w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2.jpg 600w"
-                          sizes="(max-width: 400px) 100vw, 400px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg
-                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/madre.jpg';?> 400w, <?php echo site_url().'static/catalog/madre.jpg';?> 150w, <?php echo site_url().'static/catalog/madre.jpg';?> 300w, <?php echo site_url().'static/catalog/madre.jpg';?> 355w, <?php echo site_url().'static/catalog/madre.jpg';?> 100w, <?php echo site_url().'static/catalog/madre.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/madre.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                         <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                         </a>
                     </div>
@@ -174,9 +166,30 @@
                       <div class=feature-image>
                         <span class=onsale>Venta!</span>
                         <a href="#">
-                            <img width=400 height=400 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg 400w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-150x150.jpg 150w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-300x300.jpg 300w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-355x355.jpg 355w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-100x100.jpg 100w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2.jpg 600w"
-                          sizes="(max-width: 400px) 100vw, 400px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg
-                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/cerveza.jpg';?> 400w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 150w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 300w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 355w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 100w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/cerveza.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                        </a>
+                    </div>
+                    <div class=product-content>
+                      <div class=title-product>
+                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
+                      <span class=price>
+                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
+                          <div class="description ">
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+                              eleifend leo.</p>
+                        </div>
+                    </div>
+                    </div>
+                <div class=clear></div>
+                </li>
+                
+                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
+                    <div class=wrapper>
+                      <div class=feature-image>
+                        <span class=onsale>Venta!</span>
+                        <a href="#">
+                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/cuaderno.jpg';?> 400w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 150w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 300w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 355w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 100w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/cuaderno.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                         <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                         </a>
                     </div>
@@ -200,9 +213,7 @@
                       <div class=feature-image>
                         <span class=onsale>Venta!</span>
                         <a href="#">
-                            <img width=400 height=400 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Klappkarte-Kreuzstich-400x400.jpg 400w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-150x150.jpg 150w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-300x300.jpg 300w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-355x355.jpg 355w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-100x100.jpg 100w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2.jpg 600w"
-                          sizes="(max-width: 400px) 100vw, 400px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg
-                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/anillo.jpg';?> 400w, <?php echo site_url().'static/catalog/anillo.jpg';?> 150w, <?php echo site_url().'static/catalog/anillo.jpg';?> 300w, <?php echo site_url().'static/catalog/anillo.jpg';?> 355w, <?php echo site_url().'static/catalog/anillo.jpg';?> 100w, <?php echo site_url().'static/catalog/anillo.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/anillo.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                         <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                         </a>
                     </div>
@@ -226,35 +237,7 @@
                       <div class=feature-image>
                         <span class=onsale>Venta!</span>
                         <a href="#">
-                            <img width=400 height=400 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Bracelet-2-400x400.jpg 400w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-150x150.jpg 150w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-300x300.jpg 300w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-355x355.jpg 355w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-100x100.jpg 100w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2.jpg 600w"
-                          sizes="(max-width: 400px) 100vw, 400px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg
-                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        <div class=quick-view><span><i class="fa fa-search"></i></span></div>
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                          <div class="description ">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                              ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                              eleifend leo.</p>
-                        </div>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-                
-                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="#">
-                            <img width=400 height=400 alt data-srcset="http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Wood-postcard-400x400.jpg 400w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-150x150.jpg 150w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-300x300.jpg 300w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-355x355.jpg 355w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-100x100.jpg 100w, http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2.jpg 600w"
-                          sizes="(max-width: 400px) 100vw, 400px" data-src=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/uploads/sites/4/2013/06/Brauhaus-2-400x400.jpg
-                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/conejo.jpg';?> 400w, <?php echo site_url().'static/catalog/conejo.jpg';?> 150w, <?php echo site_url().'static/catalog/conejo.jpg';?> 300w, <?php echo site_url().'static/catalog/conejo.jpg';?> 355w, <?php echo site_url().'static/catalog/conejo.jpg';?> 100w, <?php echo site_url().'static/catalog/conejo.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/conejo.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                         <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                         </a>
                     </div>
