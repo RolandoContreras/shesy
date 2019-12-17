@@ -125,8 +125,14 @@
                 <div class="vc_wp_text wpb_content_element thim-textbox-header">
                   <div class="widget widget_text">
                     <div class=textwidget>
-                      <h3 style="text-align: center;">Bienvenido a la <strong><span class="highlightedLayerContent" data-color-group="turquoise">Corporación FK </span> </strong></h3>
-                      <p style="text-align: center;">Somos una comunidad de desarrollo personal y emprendimiento.</p>
+                      <h3 style="text-align: center;">¡BIENVENIDO!</h3>
+                      <p style="text-align: center;">
+                              <img style="padding:15px; opacity: 0.5;" alt="Logo FK" width="200" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo">
+                          <br/>
+                      </p>
+                      <p style="text-align: center; padding-top:5px;">
+                              CULTURA DE EMPRENDEDORES CON PROPÓSITO
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -152,27 +158,27 @@
                                 <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                             </div>
                             <div class=box-content>
-                              <h3 class="title">Conviértete en un experto</h3>
+                              <h3 class="title">Talleres educativos</h3>
                             </div>
                           </div>
                         </div>
                         <div class="thim-sc-icon-box layout-2 default">
                           <div class=icon-box-wrapper style=" border-color: #df6c4f; color: #df6c4f;">
                             <div class=box-icon style="">
-                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <i class="fas fa-users"></i>
                             </div>
                             <div class=box-content>
-                              <h3 class="title">Profesores especializados</h3>
+                              <h3 class="title">Talleres de interacción</h3>
                             </div>
                           </div>
                         </div>
                         <div class="thim-sc-icon-box layout-2 default">
                           <div class=icon-box-wrapper style=" border-color: #49a942; color: #49a942;">
                             <div class=box-icon>
-                                <i class="fa fa-headphones" aria-hidden="true"></i>
+                                <i class="fa fa-hands-helping"></i>
                             </div>
                             <div class="box-content">
-                              <h3 class="title">Aprendizaje Online</h3>
+                              <h3 class="title">Ayudas sociales</h3>
                             </div>
                           </div>
                         </div>
@@ -182,17 +188,7 @@
                                 <i class="fa fa-trophy" aria-hidden="true"></i>
                             </div>
                             <div class="box-content">
-                              <h3 class="title">Los cursos más cotizados</h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="thim-sc-icon-box layout-2 default">
-                          <div class=icon-box-wrapper style=" border-color: #00bce4; color: #00bce4;">
-                            <div class="box-icon">
-                                <i class="fa fa-university" aria-hidden="true"></i>
-                            </div>
-                            <div class=box-content>
-                              <h3 class="title">Cursos y videos almacenados</h3>
+                              <h3 class="title">Emprendimiento</h3>
                             </div>
                           </div>
                         </div>
@@ -211,6 +207,7 @@
           </div>
         </div>
         <div class="vc_row-full-width vc_clearfix"></div>
+        
         <div id="next-screen" class="vc_row wpb_row vc_row-fluid thim-bg-top-center vc_custom_1502099498895 vc_row-has-fill vc_column-gap-10">
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class="vc_column-inner">
@@ -218,7 +215,7 @@
                 <!--START CURSOS-->
                 <div class="thim-courses-collection-wrapper">
                   <div class="thim-collection-info rounded-colection-info">
-                    <h3 class="title">Ayudar a las personas a hacer crecer sus vidas. ¡Todos los días!</h3>
+                    <h3 class="title">¡Nuestros Cursos! Te Ayudamos a hacer crecer tu vida.</h3>
                   </div>
                   <div class="thim-courses-collection rounded-courses-collection">
                     <div class="collection-frame">
@@ -271,36 +268,68 @@
           </div>
         </div>
       </div>
-      <div data-vc-full-width=true data-vc-full-width-init=false data-vc-stretch-content=true class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding">
+        <div class="vc_row-full-width vc_clearfix"></div>
+      <div data-vc-full-width="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding">
         <div class="wpb_column vc_column_container vc_col-sm-12">
           <div class=vc_column-inner>
+              <!--STAR ACERCA--->
+              <div class="wpb_wrapper">
+              <div class="thim-sc-steps layout-4">
+                <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background-2.jpg';?>); ">
+                  <div class=inner-steps-wrapper>
+                    <div class=container>
+                      <div class=row>
+                        <div class="col-lg-6 content-box">
+                          <div class=steps-wrapper>
+                              <h3 class="sc-title">¿Qué es <br>la embajada FK?</h3>
+                            <div class=steps>
+                              <div class=tab-content>
+                                <div class="tab-pane active">
+                                  <p class=description>Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
+                                  <a href="<?php echo site_url().'contact';?>" class="readmore">Postula a la Embajada FK</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 media-box">
+                          <div class="player-wrapper">
+                            <div class="player-inner">
+                                <iframe width="640" height="268" src="https://www.youtube.com/embed/3an7AqJVOes" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
+                          </div>
+                          <div class="icon-play"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END ACERCA---->
             <div class=wpb_wrapper>
-              <div class="thim-sc-steps layout-3 ">
+              <div class="thim-sc-steps layout-3">
                 <div class=container>
                   <div class=row>
                     <div class="col-md-12 heading">
                       <div class=steps-wrapper>
-                        <h3 class="sc-title">Obtén nuevos conocimientos y gana en 5 sencillos pasos</h3>
+                        <h3 class="sc-title">Conviértete en parte de nuestra cultura</h3>
                         <div class=steps>
                           <ul class="nav" role="tablist">
                             <li class="nav-item active" data-toggle="tab" href="#thim_5def1b33677ed-step-0" role="tab">
                                 <a class=nav-link>1<span>paso</span></a>
                                 <p class=tab-title>Crea tu registro gratis</p>
                             </li>
-                            <li class="nav-item " data-toggle="tab" href="#thim_5def1b33677ed-step-1" role="tab">
-                                <a class="nav-link">2<span>paso</span></a>
-                                <p class="tab-title">Selecciona tu plan</p>
-                            </li>
                             <li class="nav-item " data-toggle="tab" href="#thim_5def1b33677ed-step-2" role="tab">
-                                <a class="nav-link">3<span>paso</span></a>
+                                <a class="nav-link">2<span>paso</span></a>
                                 <p class="tab-title">Aprende con nosotros</p>
                             </li>
                             <li class="nav-item " data-toggle="tab" href="#thim_5def1b33677ed-step-3" role="tab">
-                                <a class=nav-link>4<span>paso</span></a>
+                                <a class=nav-link>3<span>paso</span></a>
                               <p class=tab-title>Comparte la información</p>
                             </li>
                             <li class="nav-item" data-toggle="tab" href="#thim_5def1b33677ed-step-4" role="tab">
-                                <a class="nav-link">5<span>paso</span></a>
+                                <a class="nav-link">4<span>paso</span></a>
                                 <p class="tab-title">Recibe una recompensa</p>
                             </li>
                           </ul>
@@ -319,10 +348,7 @@
                             <div class="tab-pane active" id="thim_5def1b33677ed-step-0" role="tabpanel">
                               <h4 class="tab-title">Crea tu registro gratis</h4>
                               <p class=description>Ve la pestaña registro, completa tus datos y el sistema te creará un usuario gratuitamente para que seas un nuevo socio.</p>
-                            </div>
-                            <div class="tab-pane" id="thim_5def1b33677ed-step-1" role="tabpanel">
-                              <h4 class="tab-title">Selecciona tu plan</h4>
-                              <p class=description>Selecciona uno de los planes de estudio que tenemos para que puedas acceder a todos los beneficios.</p>
+                              <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
                             </div>
                             <div class="tab-pane" id="thim_5def1b33677ed-step-2" role="tabpanel">
                               <h4 class="tab-title">Aprende con nosotros</h4>
@@ -349,76 +375,44 @@
         </div>
       </div>
       <div class="vc_row-full-width vc_clearfix"></div>
-        <!--STAR ACERCA--->
-      <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid overlay-y overflow-visible vc_custom_1503888570721 vc_row-has-fill vc_row-no-padding">
+      <div data-vc-full-width="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding">
         <div class="wpb_column vc_column_container vc_col-sm-12">
-          <div class="vc_column-inner">
-            <div class="wpb_wrapper">
-              <div class="thim-sc-steps layout-4">
-                <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background-2.jpg';?>); ">
-                  <div class=inner-steps-wrapper>
-                    <div class=container>
-                      <div class=row>
-                        <div class="col-lg-6 content-box">
-                          <div class=steps-wrapper>
-                            <h3 class="sc-title">Acerca de<br>Nosotros</h3>
-                            <div class=steps>
-                              <div class=tab-content>
-                                <div class="tab-pane active">
-                                  <p class=description>Somos una comunidad mundial con un solo objetivo, el cual es crear un mondo más próspero y transcendente, ayudando a personas en todos lados contribuimos con un legado diferente para nuestras generaciones.</p>
-                                  <h4 class="tab-title">¿Por qué se parte de FK?</h4>
-                                  <p class=description>No solamente buscamos cambiar la mentalidad de las personas sino que a la vez los ayudamos a que obtengas dinero con nosotros, convirtiéndose en empresarios.</p>
-                                  <a href="<?php echo site_url().'acerca';?>" class="readmore">Ver Más</a>
-                                </div>
+          <div class=vc_column-inner>
+            <div class="thim-sc-steps layout-3" style="padding-bottom: 0px !important; padding-top: 55px">
+                <div class=container>
+                  <div class=row>
+                    <div class="col-md-12 heading">
+                      <div class=steps-wrapper>
+                        <h3 class="sc-title">¿Te gustaría ser uno de nuestros docentes?</h3>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <img alt="group-4" data-src="<?php echo site_url().'static/page_front/images/layer_person.png';?>" class="lazyload" style="margin-top: -14%;">
+                    </div>
+                    <div class="col-md-6">
+                      <div class=steps-wrapper>
+                        <div class=steps>
+                          <div class=tab-content>
+                            <div class="tab-pane active" role="tabpanel">
+                              <p class=description>Si deseas ser parte de nuestro equipo, comunícate a nuestro número de WhatsApp o a través de la sección de contacto.</p>
+                              <p class=description>
+                                  <i class="fab fa-whatsapp"></i>
+                                   +(51) 926 344 838.
+                              </p>
+                              <div class="rounded-view-all-button">
+                                  <a href="<?php echo site_url().'contact';?>">Quiero ser Docente</a>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-lg-6 media-box">
-                          <div class="player-wrapper">
-                            <div class="player-inner">
-                                <iframe width="640" height="268" src="https://www.youtube.com/embed/3an7AqJVOes" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <div class="icon-play"></div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </div>
-      <!--END ACERCA---->
-          
-    <div class="vc_row-full-width vc_clearfix"></div>
-    <div class="vc_row wpb_row vc_row-fluid thim-bg-positon-custom vc_custom_1503367722566 vc_row-has-fill">
-      <div class="wpb_column vc_column_container vc_col-sm-12">
-        <div class=vc_column-inner>
-          <div class=wpb_wrapper>
-            <div class=vc_empty_space style="height: 84px"><span class=vc_empty_space_inner></span></div>
-                <div class="vc_wp_text wpb_content_element thim-textbox">
-                  <div class="widget widget_text">
-                    <div class=textwidget>
-                      <p class=sub-title style="text-align: center;">¿QUÉ ESTÁ ESPERANDO?</p>
-                        <h3 class="title" style="text-align: center;">Únase a los cientos de personas y haga una diferencia en su vida.</h3>
-                      <p>
-                    </div>
-                  </div>
-                </div>
-          <div class="vc_empty_space" style="height: 60px"><span class=vc_empty_space_inner></span></div>
-          <div class="thim-sc-button show-separator center">
-              <a href="<?php echo site_url().'register';?>" class="btn btn-primary btn-lg">
-                  <span class="text">Comience en segundos</span>
-              </a>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    
       <div class="vc_row-full-width vc_clearfix"></div>
       <!--START CATALOGO-->
       <div class="vc_row wpb_row vc_row-fluid">
@@ -437,52 +431,52 @@
                   </div>
                   <div class="col-sm-3 course-item free">
                     <div class=featured-img>
-                        <a href="#" class="img-link">
+                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
                             <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/accesorios.jpg';?>" class="lazyload">
                         </a>
                     </div>
                     <div class=content-item>
                       <div class=name>
-                          <a href="#">Accesorio Mk1 </a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Accesorio Mk1 </a>
                       </div>
                       <h4 class="title">
-                          <a href="#">Accesorio y vestido para dama.</a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Accesorio y vestido para dama.</a>
                       </h4>
                     </div>
                   </div>
                     <div class="col-sm-3 course-item free">
                     <div class=featured-img>
-                        <a href="#" class="img-link">
+                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
                             <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/inmobiliaria.jpg';?>" class="lazyload">
                         </a>
                     </div>
                     <div class=content-item>
                       <div class=name>
-                          <a href="#">Sama Cafetería</a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Sama Cafetería</a>
                       </div>
                       <h4 class="title">
-                          <a href="#">Ven y disfruta de un momento placentero</a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Ven y disfruta de un momento placentero</a>
                       </h4>
                     </div>
                   </div>
                     <div class="col-sm-3 course-item free">
                     <div class=featured-img>
-                        <a href="#" class="img-link">
+                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
                             <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/marketing_2.jpg';?>" class="lazyload">
                         </a>
                     </div>
                     <div class=content-item>
                       <div class=name>
-                          <a href="#">Evolution Marketing </a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Evolution Marketing </a>
                       </div>
                       <h4 class="title">
-                          <a href="#">Necesitas posicionar tu marka. Comunícate con nosotros.</a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Necesitas posicionar tu marka. Comunícate con nosotros.</a>
                       </h4>
                     </div>
                   </div>
                     <div class="col-sm-3 course-item free">
                     <div class=featured-img>
-                        <a href="#" class="img-link">
+                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
                             <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/paginas_web_1.jpg';?>" class="lazyload">
                         </a>
                     </div>
@@ -491,52 +485,52 @@
                           <a href="#">Sistemas Web </a>
                       </div>
                       <h4 class="title">
-                          <a href="#">Si quieres un software para tu empresa, somos la mejor solución</a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Si quieres un software para tu empresa, somos la mejor solución</a>
                       </h4>
                     </div>
                   </div>
                     <div class="col-sm-3 course-item free">
                     <div class=featured-img>
-                        <a href="#" class="img-link">
+                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
                             <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/cata1.jpg';?>" class="lazyload">
                         </a>
                     </div>
                     <div class=content-item>
                       <div class=name>
-                          <a href="#">Catalogos 2020 </a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Catalogos 2020 </a>
                       </div>
                       <h4 class="title">
-                          <a href="#">Promociona tu marca con nosotros</a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Promociona tu marca con nosotros</a>
                       </h4>
                     </div>
                   </div>
                     <div class="col-sm-3 course-item free">
                     <div class=featured-img>
-                        <a href="#" class="img-link">
+                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
                             <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/viajes.jpg';?>" class="lazyload">
                         </a>
                     </div>
                     <div class=content-item>
                       <div class=name>
-                          <a href="#">Travel Vacation</a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Travel Vacation</a>
                       </div>
                       <h4 class="title">
-                          <a href="#">Viaja por el mundo a descuentos increibles</a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Viaja por el mundo a descuentos increibles</a>
                       </h4>
                     </div>
                   </div>
                     <div class="col-sm-3 course-item free">
                     <div class=featured-img>
-                        <a href="#" class="img-link">
+                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
                             <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/rent_car.jpg';?>" class="lazyload">
                         </a>
                     </div>
                     <div class=content-item>
                       <div class=name>
-                          <a href="#">Renta de Autos </a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Renta de Autos </a>
                       </div>
                       <h4 class="title">
-                          <a href="#">Encuentranos en Latinoamerica y el </a>
+                          <a href="<?php echo site_url().'catalog/chocolates';?>">Encuentranos en Latinoamerica y el </a>
                       </h4>
                     </div>
                   </div>

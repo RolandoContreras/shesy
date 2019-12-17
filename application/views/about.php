@@ -60,7 +60,7 @@
                         <div class=wpb_wrapper>
                           <div class="thim-sc-scroll-heading ">
                             <div class=title data-scroll-to=#title1 data-scroll-speed=700 data-scroll-offset=-30>
-                              <div class=text>Nuestra Historia</div>
+                              <div class=text>¿Qué Somos?</div>
                             </div>
                             <div class=title data-scroll-to=#title2 data-scroll-speed=700 data-scroll-offset=-30>
                               <div class=text>Misión</div>
@@ -90,15 +90,11 @@
                                 <div class="col-sm-12 col-lg-6 text-content">
                                     <img data-src="<?php echo site_url().'static/page_front/images/layer-47.png';?>" class="bg-content lazyload">
                                   <div class=text-content-inner>
-                                    <h3 class="title-box">Nuestra Historia</h3>
-                                    <p class=sub-title>It is a long established fact that a reade.</p>
+                                    <h3 class="title-box">¿Qué Somos?</h3>
+                                    <p class=sub-title>Nuestra Historia.</p>
                                     <p class=underline></p>
                                     <div class=content>
-                                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium laudantium, totam rem aperiam, eaque ipsa
-                                        quae ab illo inventore veritatis,et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam,voluptatem
-                                        quia voluptas sit aspernatur aut odit aut fugit, sed quia,consequuntur magni dolores eos qui ratione voluptatem
-                                        sequi nesciunt.,Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, adipisci velit, sed quia non numquam
-                                        eius modi tempora</p>
+                                      <p>Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente. </p>
                                     </div>
                                   </div>
                                 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Dashboard - BCA CAPITAL</title>
+  <title>Dashboard - FK Coportación</title>
   <base href="<?php echo site_url();?>">
   <!--[if lt IE 10]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <meta charset="utf-8">

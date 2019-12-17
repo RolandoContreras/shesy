@@ -8,7 +8,7 @@
         <div class="row clearfix">
           <div class="col-xl-4 col-lg-4 col-md-5">
             <div class="user-profile compact">
-                <div class="up-head-w" style="background-image:url('<?php echo site_url().'static/page_front/images/header_image.jpg';?>')">
+                <div class="up-head-w" style="background-image:url('<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>')">
                 <div class="up-main-info">
                   <h2 class="up-header"> <?php echo $obj_customer->first_name." ".$obj_customer->last_name;?></h2>
                   <h6 class="up-sub-header"> Email: <?php echo $obj_customer->email;?> <br> Usuario: <?php echo "@".$obj_customer->username;?> <br> Documento: <?php echo $obj_customer->dni;?></h6>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <title>Oficina Virtual - BCA CAPITAL</title>
+  <title>Oficina Virtual - FK Corporación</title>
   <meta charset="utf-8">
   <meta content="ie=edge" http-equiv="x-ua-compatible">
   <meta name="description" content="Multiplica tu dinero en el mercado financiero con nosotros. BCA CAPITAL una empresa financiera que te ayudará a aumentar tus finanzas, Clic en el siguiente enlace.">
@@ -46,7 +45,7 @@
     .goog-tooltip { display: none !important; } .goog-tooltip:hover { display: none !important; } .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; } .goog-te-banner-frame.skiptranslate { display: none !important; } body { top: 0px !important; }
   </style>
   <style>
-    .layout-w .color-scheme-light .logo-w .logo > img { width: 200px; max-width: 100%; } .layout-w .color-scheme-dark .logo-w .logo > img { width: 200px; max-width: 100%; } #inputContecntCopy{ opacity: 0; position: absolute; top: 0; } #modal_url{ z-index: 99999;} *::first-letter { text-transform: uppercase; }
+    .layout-w .color-scheme-light .logo-w .logo > img { width: 100px; max-width: 100%; } .layout-w .color-scheme-dark .logo-w .logo > img { width: 100px; max-width: 100%; } #inputContecntCopy{ opacity: 0; position: absolute; top: 0; } #modal_url{ z-index: 99999;} *::first-letter { text-transform: uppercase; }
   </style>
   <style>
     .img-responsive { margin: 0 auto; width: 50px; margin-bottom: 5px; } .popover { min-width: 300px; max-width: 500px; } .popover .popover-content { padding: 10px; } .popover .popover-title { padding: 10px; } .tree li a { color: #000; } @media screen and (max-width: 1024px) { .arvore { } } @media screen and (min-width: 1250px) { .arvore { margin: 0 auto; } } .tree li a { border: none; padding: 0; margin: 0; } .tree li a:hover, .tree li a:hover + ul li a { background: none; border: none; } /*Connector styles on hover*/ .tree li a:hover + ul li::after, .tree li a:hover + ul li::before, .tree li a:hover + ul::before, .tree li a:hover + ul ul::before { border-color: #6C7A89; } .tree .init:before { border: none; } @media (max-width: 767px) { .responsive-tree { display: none; } }
@@ -71,7 +70,7 @@ window.smartsupp||(function(d) {
     <div class="layout-w">
       <div class="menu-mobile menu-activated-on-click color-scheme-dark">
         <div class="mm-logo-buttons-w" style="background: #3d2b16"> <a class="mm-logo" href="<?php echo site_url().'backoffice';?>"> 
-                <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" style="max-width: 100%; width: 100px;"> <span></span> </a>
+                <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" style="max-width: 100%; width: 70px;"> <span></span> </a>
           <div class="mm-buttons">
             <div class="mobile-menu-trigger">
               <div class="os-icon os-icon-hamburger-menu-1"></div>
@@ -85,13 +84,19 @@ window.smartsupp||(function(d) {
             if($kit_id > 0){ ?>
                 <li>
                   <a href="<?php echo site_url().'course';?>" target="_blank">
-                    <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #d3a40a; font-weight: 600; padding: 15px;"> 
-                      <img src="<?php echo site_url().'static/backoffice/images/icono.png';?>" class="animated infinite pulse delay-2s" style="max-width: 30%;"> 
+                    <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                       <span>Plataforma de Cursos</span>                
                   </div>
                   </a>
                 </li>
             <?php } ?>  
+            <li>
+                <a href="" target="_blank">
+                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
+                      <span>Catalogo de productos</span>                
+                  </div>
+                </a>
+             </li>
             <li>
               <a href="<?php echo site_url().'backoffice';?>" class="active" style="margin-top:30px;">
                 <div class="icon-w">
@@ -160,7 +165,7 @@ window.smartsupp||(function(d) {
       </div>
             <div class="menu-w selected-menu-color-bright menu-activated-on-hover menu-has-selected-link color-scheme-dark color-style-default sub-menu-color-bright menu-position-side menu-side-left menu-layout-compact sub-menu-style-over">
         <div class="logo-w" style="padding: 4px 1rem 4px 1.7rem !important;"> <a class="logo" style="width: 100%;" align="center"> 
-                <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" style="max-width: 150px;"> 
+                <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" style="max-width: 80px;"> 
             </a>          
         </div>
         <div class="logged-user-w avatar-inline">
@@ -180,13 +185,20 @@ window.smartsupp||(function(d) {
             if($kit_id > 0){ ?>
                 <li>
                     <a href="<?php echo site_url().'course';?>" target="_blank">
-                      <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #d3a40a; font-weight: 600; padding: 15px;"> 
-                          <img src="<?php echo site_url().'static/backoffice/images/icono.png';?>" class="animated infinite pulse delay-2s" style="max-width: 30%;"> 
+                      <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                           <span>Plataforma de Cursos</span>                
                       </div>
                     </a>
                  </li>
+                 <hr/>
             <?php } ?>
+                 <li>
+                    <a href="" target="_blank">
+                      <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
+                          <span>Catalogo de productos</span>                
+                      </div>
+                    </a>
+                 </li>
           <li class="sub-header"> <span>Menú</span> </li>
           <li>
             <a href="<?php echo site_url().'backoffice';?>" class="active">
