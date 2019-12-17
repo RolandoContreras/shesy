@@ -63,13 +63,13 @@
                               <div class=text>¿Qué Somos?</div>
                             </div>
                             <div class=title data-scroll-to=#title2 data-scroll-speed=700 data-scroll-offset=-30>
-                              <div class=text>Misión</div>
+                              <div class=text>¿Qué es la embajada?</div>
                             </div>
                             <div class=title data-scroll-to=#title3 data-scroll-speed=700 data-scroll-offset=-30>
                               <div class=text>Visión</div>
                             </div>
                             <div class=title data-scroll-to=#title4 data-scroll-speed=700 data-scroll-offset=-30>
-                              <div class=text>Nuestros Servicios</div>
+                              <div class=text>Características</div>
                             </div>
                           </div>
                         </div>
@@ -84,8 +84,21 @@
                             <section id=title1>
                               <div class="row no-gutters">
                                 <div class="col-sm-12 col-lg-6 image-box">
-                                    <img alt="Nuestra Historia" data-src="<?php echo site_url().'static/page_front/images/team.jpg';?>" class="lazyload">
-                                    <span class=number style="color: rgba(255,255,255,0.6)">01</span>
+                                 <div class="vc_column-inner vc_custom_1502095063222">
+                                      <div class="wpb_wrapper">
+                                        <div class="thim-sc-video-box layout-3">
+                                          <div class="video">
+                                              <div class="video-box" style="background-image: url(<?php echo site_url().'static/page_front/images/embajada_fk.jpg';?>)">
+                                              <div class="play-button">
+                                                  <a href="https://www.youtube.com/watch?v=Q10fsxKrbrg" class="video-thumbnail">
+                                                      <i class="icon-play"></i>
+                                                  </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 col-lg-6 text-content">
                                     <img data-src="<?php echo site_url().'static/page_front/images/layer-47.png';?>" class="bg-content lazyload">
@@ -105,21 +118,32 @@
                             <section id=title2>
                               <div class="row no-gutters">
                                 <div class="col-sm-12 col-lg-6 image-box">
-                                    <img alt="Mision" data-src="<?php echo site_url().'static/page_front/images/mision.jpg';?>" class="lazyload">
-                                    <span class=number style="color: rgba(255,255,255,0.6)">02</span>
+                                    <div class="vc_column-inner vc_custom_1502095063222">
+                                      <div class="wpb_wrapper">
+                                        <div class="thim-sc-video-box layout-3">
+                                          <div class="video">
+                                              <div class="video-box" style="background-image: url(<?php echo site_url().'static/page_front/images/vision.jpg';?>)">
+                                              <div class="play-button">
+                                                  <a href="https://www.youtube.com/watch?v=Q10fsxKrbrg" class="video-thumbnail">
+                                                      <i class="icon-play"></i>
+                                                  </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 col-lg-6 text-content">
                                     <img data-src="<?php echo site_url().'static/page_front/images/layer-47.png';?>" class="bg-content lazyload">
                                   <div class=text-content-inner>
-                                    <h3 class="title-box">Nuestra Misión</h3>
-                                    <p class=sub-title>It is a long established fact that a reade.</p>
+                                    <h3 class="title-box">¿Qué es la embajada FK?</h3>
                                     <p class=underline></p>
                                     <div class=content>
-                                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium laudantium, totam rem aperiam, eaque ipsa
-                                        quae ab illo inventore veritatis,et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam,voluptatem
-                                        quia voluptas sit aspernatur aut odit aut fugit, sed quia,consequuntur magni dolores eos qui ratione voluptatem
-                                        sequi nesciunt.,Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, adipisci velit, sed quia non numquam
-                                        eius modi tempora</p>
+                                      <p>Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
+                                      <a href="<?php echo site_url().'contact';?>" target="_self" class="btn btn-primary btn-md">
+                                            <span class=text>Postula a la Embajada FK</span>
+                                      </a>
                                     </div>
                                   </div>
                                 </div>
@@ -130,8 +154,8 @@
                             <section id=title3>
                               <div class="row no-gutters">
                                 <div class="col-sm-12 col-lg-6 image-box">
-                                    <img alt="Visión" data-src="<?php echo site_url().'static/page_front/images/vision.jpg';?>" class="lazyload">
-                                    <span class=number style="color: rgba(255,255,255,0.6)">03</span>
+                                    <img alt="Mision" data-src="<?php echo site_url().'static/page_front/images/mision.jpg';?>" class="lazyload">
+                                    <span class=number style="color: rgba(255,255,255,0.6)">02</span>
                                 </div>
                                 <div class="col-sm-12 col-lg-6 text-content">
                                     <img data-src="<?php echo site_url().'static/page_front/images/layer-47.png';?>" class="bg-content lazyload">
@@ -162,132 +186,105 @@
                         <div class=wpb_wrapper>
                           <div class="thim-sc-heading text-center layout-2 ">
                             <div class="heading-content">
-                              <h3 class="primary-heading">Nuestros servicios</h3>
+                              <h3 class="primary-heading">Características y valores</h3>
                             </div>
                             <p class=secondary-heading>Tantas metas académicas que esperamos que logre.</p><span class="underline"></span>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div data-vc-full-width=true data-vc-full-width-init=false class="vc_row wpb_row vc_row-fluid vc_row-o-equal-height vc_row-flex">
-                    <div class="wpb_column vc_column_container vc_col-sm-4">
-                      <div class=vc_column-inner>
-                        <div class=wpb_wrapper>
-                          <div class="thim-sc-icon-box layout-3 default">
-                            <div class=icon-box-wrapper style>
-                              <div class=box-icon>
-                                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                              </div>
-                              <div class=box-content>
-                                <h3 class="title">Habilidades</h3>
-                                <div class=description>
-                                  <p>Improved skills for building site to sell online courses successful, how to take that opportunity.</p>
-                                </div>
-                              </div>
+                        <div class="vc_row wpb_row vc_inner vc_row-fluid list-iconbox">
+                  <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class=vc_column-inner>
+                      <div class=wpb_wrapper>
+                        <div class="thim-sc-icon-box layout-2 default">
+                          <div class=icon-box-wrapper style>
+                            <div class=box-icon style="">
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <div class=box-content>
+                              <h3 class="title">Talleres educativos</h3>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="wpb_column vc_column_container vc_col-sm-4">
-                      <div class=vc_column-inner>
-                        <div class=wpb_wrapper>
-                          <div class="thim-sc-icon-box layout-3 default">
-                            <div class=icon-box-wrapper style>
-                              <div class=box-icon>
-                                  <i class="fa fa-lightbulb" aria-hidden="true"></i>
-                              </div>
-                              <div class=box-content>
-                                <h3 class="title">SELF LEARNING</h3>
-                                <div class=description>
-                                  <p>The most important thing we expect that you will be able to learn anything just by your self.</p>
-                                </div>
-                              </div>
+                        <div class="thim-sc-icon-box layout-2 default">
+                          <div class=icon-box-wrapper style=" border-color: #df6c4f; color: #df6c4f;">
+                            <div class=box-icon style="">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class=box-content>
+                              <h3 class="title">Talleres de interacción</h3>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="wpb_column vc_column_container vc_col-sm-4">
-                      <div class=vc_column-inner>
-                        <div class=wpb_wrapper>
-                          <div class="thim-sc-icon-box layout-3 default">
-                            <div class=icon-box-wrapper style>
-                              <div class=box-icon>
-                                  <i class="fa fa-archive" aria-hidden="true"></i>
-                              </div>
-                              <div class=box-content>
-                                <h3 class="title">KNOWLEDGE</h3>
-                                <div class=description>
-                                  <p>Get knowledge about online business, trend analysis, customer approaches, products marketing.</p>
-                                </div>
-                              </div>
+                        <div class="thim-sc-icon-box layout-2 default">
+                          <div class=icon-box-wrapper style=" border-color: #49a942; color: #49a942;">
+                            <div class=box-icon>
+                                <i class="fa fa-hands-helping"></i>
+                            </div>
+                            <div class="box-content">
+                              <h3 class="title">Ayudas sociales</h3>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="vc_row-full-width vc_clearfix"></div>
-                  <div data-vc-full-width=true data-vc-full-width-init=false class="vc_row wpb_row vc_row-fluid vc_row-o-equal-height vc_row-flex">
-                    <div class="wpb_column vc_column_container vc_col-sm-4">
-                      <div class=vc_column-inner>
-                        <div class=wpb_wrapper>
-                          <div class="thim-sc-icon-box layout-3 default">
-                            <div class=icon-box-wrapper style>
-                              <div class=box-icon>
-                                  <i class="fa fa-credit-card" aria-hidden="true"></i>
-                              </div>
-                              <div class=box-content>
-                                <h3 class="title">PAGOS INTERNACIONALES</h3>
-                                <div class=description>
-                                  <p>Get knowledge about online business, trend analysis, customer approaches, products marketing.</p>
-                                </div>
-                              </div>
+                        <div class="thim-sc-icon-box layout-2 default">
+                          <div class=icon-box-wrapper style=" border-color: #3d2b16; color: #3d2b16;">
+                            <div class="box-icon">
+                                <i class="fa fa-trophy" aria-hidden="true"></i>
+                            </div>
+                            <div class="box-content">
+                              <h3 class="title">Emprendimiento</h3>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="wpb_column vc_column_container vc_col-sm-4">
-                      <div class=vc_column-inner>
-                        <div class=wpb_wrapper>
-                          <div class="thim-sc-icon-box layout-3 default">
-                            <div class=icon-box-wrapper style>
-                              <div class=box-icon>
-                                  <i class="fa fa-bell" aria-hidden="true"></i>
-                              </div>
-                              <div class=box-content>
-                                <h3 class="title">KNOWLEDGE</h3>
-                                <div class=description>
-                                  <p>Get knowledge about online business, trend analysis, customer approaches, products marketing.</p>
-                                </div>
-                              </div>
+                          <div class="thim-sc-icon-box layout-2 default">
+                          <div class=icon-box-wrapper style=" border-color: #df6c4f; color: #df6c4f;">
+                            <div class="box-icon">
+                                <i class="fa fa-people-carry"></i>
+                            </div>
+                            <div class="box-content">
+                              <h3 class="title">Compromiso</h3>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="wpb_column vc_column_container vc_col-sm-4">
-                      <div class=vc_column-inner>
-                        <div class=wpb_wrapper>
-                          <div class="thim-sc-icon-box layout-3 default">
-                            <div class=icon-box-wrapper style>
-                              <div class=box-icon>
-                                  <i class="fa fa-cloud" aria-hidden="true"></i>
-                              </div>
-                              <div class=box-content>
-                                <h3 class="title">KNOWLEDGE</h3>
-                                <div class=description>
-                                  <p>Get knowledge about online business, trend analysis, customer approaches, products marketing.</p>
-                                </div>
-                              </div>
+                          <div class="thim-sc-icon-box layout-2 default">
+                          <div class=icon-box-wrapper style=" border-color: #00a78e; color:#00a78e;">
+                            <div class="box-icon">
+                                <i class="fa fa-eye"></i>
+                            </div>
+                            <div class="box-content">
+                              <h3 class="title">Amplia Visión</h3>
                             </div>
                           </div>
                         </div>
+                          <div class="thim-sc-icon-box layout-2 default">
+                          <div class=icon-box-wrapper style=" border-color: #ccc; color: #ccc;">
+                            <div class="box-icon">
+                                <i class="fa fa-comments"></i>
+                            </div>
+                            <div class="box-content">
+                              <h3 class="title">Comunicación</h3>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="thim-sc-icon-box layout-2 default">
+                          <div class=icon-box-wrapper style=" border-color: #011d3b; color: #011d3b;">
+                            <div class="box-icon">
+                                <i class="fa fa-award"></i>
+                            </div>
+                            <div class="box-content">
+                              <h3 class="title">Objetivos Claros</h3>
+                            </div>
+                          </div>
+                        </div>
+                          
+                          <div class="vc_empty_space" style="height: 60px"><span class="vc_empty_space_inner"></span></div>
                       </div>
                     </div>
                   </div>
+                </div>
+                  </div>
+                      
+                  
                   <div class="vc_row-full-width vc_clearfix"></div>
                   <div data-vc-full-width=true data-vc-full-width-init=false data-vc-parallax=1.5 data-vc-parallax-image="<?php echo site_url().'static/page_front/images/layer-background-2.jpg';?>" class="vc_row wpb_row vc_row-fluid vc_custom_1501839996783 thim-background-overlay vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                     <div class=overlay style="background-color: rgba(10,10,10,0.55)"></div>
