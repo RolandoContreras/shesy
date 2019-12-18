@@ -162,51 +162,51 @@ function dia_semana($mes,$dia,$anio){
 function mostrar_mes($mes){
 	switch($mes){
 		case 1:
-		$nom_mes = "Enero";
+		$nom_mes = "Ene";
 		break;
 		
 		case 2: 
-		$nom_mes = "Febrero";
+		$nom_mes = "Feb";
 		break;
 		 
 		case 3:
-		$nom_mes = "Marzo";
+		$nom_mes = "Mar";
 		break;
 		 
 		case 4:
-		$nom_mes = "Abril";
+		$nom_mes = "Abr";
 		break;
 		 
 		case 5:
-		$nom_mes = "Mayo";
+		$nom_mes = "May";
 		break;
 		 
 		case 6:
-		$nom_mes = "Junio";
+		$nom_mes = "Jun";
 		break;
 		 
 		case 7:
-		$nom_mes = "Julio";
+		$nom_mes = "Jul";
 		break;
 		 
 		case 8:
-		$nom_mes = "Agosto";
+		$nom_mes = "Ago";
 		break;
 		 
 		case 9:
-		$nom_mes = "Septiembre";
+		$nom_mes = "Sep";
 		break;
 		 
 		case 10:
-		$nom_mes = "Octubre";
+		$nom_mes = "Oct";
 		break;
 		 
 		case 11:
-		$nom_mes = "Noviembre";
+		$nom_mes = "Nov";
 		break;
 		 
 		case 12:
-		$nom_mes = "Diciembre";
+		$nom_mes = "Dic";
 		break;
 		
 	}

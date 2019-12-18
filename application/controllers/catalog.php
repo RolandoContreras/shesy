@@ -24,7 +24,22 @@ class Catalog extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('catalog');
+            
+            //get data catalog
+            $params = array(
+                        "select" =>"catalog.catalog_id,
+                                    catalog.summary,
+                                    catalog.name,
+                                    catalog.slug,
+                                    catalog.price,
+                                    catalog.img,
+                                    catalog.active,
+                                    catalog.date",
+                "where" => "catalog.active = 1",
+                "order" => "catalog.catalog_id DESC");
+            $data['obj_catalog'] = $this->obj_catalog->search($params);
+            //SEND DATA
+	    $this->load->view('catalog',$data);
 	}
         public function detail()
 	{

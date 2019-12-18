@@ -81,6 +81,9 @@
                           <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                               <span style="width:100%"></span>
                           </div> 
+                            <div class="product_meta">
+                                <span class="posted_in">Fecha: <a href="javascript:void(0);" rel="tag"><?php echo formato_fecha_dia_mes($obj_catalog->date);?></a></span>
+                            </div>
                             <a href="#reviews" class="woocommerce-review-link" rel="nofollow"></a>
                         </div>
                         <p class="price">
@@ -108,7 +111,6 @@
                     <section>
                       <h2>Productos Relacionados</h2>
                       <ul class="category-product product-grid row">
-                          
                           <?php
                           foreach ($obj_catalog_rand as $value) { ?>
                             <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">

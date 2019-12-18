@@ -53,7 +53,7 @@
                     <a href=javascript:; class="grid switchToGrid"><i class="fa fa-th"></i></a>
                     <a href=javascript:; class="list switchToList"><i class="fa fa-th-list"></i></a></div>
                   <p class=woocommerce-result-count>
-                    Showing 1&ndash;8 of 12 results</p>
+                    Showing 1&ndash;1 of 12 results</p>
                   <form class=woocommerce-ordering method=get>
                     <span>Sort by:</span> 
                     <select name=orderby class=orderby>
@@ -65,159 +65,29 @@
                   </form>
                 </div>
                 <ul class="category-product product-grid archive_switch row">
-                  <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/chocolates.jpg';?> 400w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 150w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 300w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 355w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 100w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/chocolates.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        <div class=quick-view><span><i class="fa fa-search"></i></span></div>
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-                
-                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="#">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/cerveza.jpg';?> 400w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 150w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 300w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 355w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 100w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/cerveza.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        <div class=quick-view><span><i class="fa fa-search"></i></span></div>
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-                
-                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="#">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/pen.jpg';?> 400w, <?php echo site_url().'static/catalog/pen.jpg';?> 150w, <?php echo site_url().'static/catalog/pen.jpg';?> 300w, <?php echo site_url().'static/catalog/pen.jpg';?> 355w, <?php echo site_url().'static/catalog/pen.jpg';?> 100w, <?php echo site_url().'static/catalog/pen.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/pen.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        <div class=quick-view><span><i class="fa fa-search"></i></span></div>
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-                
-                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="#">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/madre.jpg';?> 400w, <?php echo site_url().'static/catalog/madre.jpg';?> 150w, <?php echo site_url().'static/catalog/madre.jpg';?> 300w, <?php echo site_url().'static/catalog/madre.jpg';?> 355w, <?php echo site_url().'static/catalog/madre.jpg';?> 100w, <?php echo site_url().'static/catalog/madre.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/madre.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        <div class=quick-view><span><i class="fa fa-search"></i></span></div>
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-                
-                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="#">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/cerveza.jpg';?> 400w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 150w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 300w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 355w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 100w, <?php echo site_url().'static/catalog/cerveza.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/cerveza.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-                
-                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="#">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/cuaderno.jpg';?> 400w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 150w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 300w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 355w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 100w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/cuaderno.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        <div class=quick-view><span><i class="fa fa-search"></i></span></div>
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-                
-                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="#">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/anillo.jpg';?> 400w, <?php echo site_url().'static/catalog/anillo.jpg';?> 150w, <?php echo site_url().'static/catalog/anillo.jpg';?> 300w, <?php echo site_url().'static/catalog/anillo.jpg';?> 355w, <?php echo site_url().'static/catalog/anillo.jpg';?> 100w, <?php echo site_url().'static/catalog/anillo.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/anillo.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        <div class=quick-view><span><i class="fa fa-search"></i></span></div>
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-                
-                <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                    <div class=wrapper>
-                      <div class=feature-image>
-                        <span class=onsale>Venta!</span>
-                        <a href="#">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/conejo.jpg';?> 400w, <?php echo site_url().'static/catalog/conejo.jpg';?> 150w, <?php echo site_url().'static/catalog/conejo.jpg';?> 300w, <?php echo site_url().'static/catalog/conejo.jpg';?> 355w, <?php echo site_url().'static/catalog/conejo.jpg';?> 100w, <?php echo site_url().'static/catalog/conejo.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/conejo.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        <div class=quick-view><span><i class="fa fa-search"></i></span></div>
-                        </a>
-                    </div>
-                    <div class=product-content>
-                      <div class=title-product>
-                        <a href="#" class=product_name>Fabrica de Maletas</a></div>
-                      <span class=price>
-                      <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>&#36;</span>10.00</span></ins></span>
-                    </div>
-                    </div>
-                <div class=clear></div>
-                </li>
-
-
-  </ul>
+                  <?php 
+                  foreach ($obj_catalog  as $value) { ?>
+                      <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
+                        <div class=wrapper>
+                          <div class=feature-image>
+                            <span class=onsale>Venta!</span>
+                            <a href='<?php echo site_url()."catalog/$value->slug";?>'>
+                                <img width="400" height="400" alt data-srcset='<?php echo site_url()."static/catalog/$value->img";?> 400w, <?php echo site_url()."static/catalog/$value->img";?> 150w, <?php echo site_url()."static/catalog/$value->img";?> 300w, <?php echo site_url()."static/catalog/$value->img";?> 355w, <?php echo site_url()."static/catalog/$value->img";?> 100w, <?php echo site_url()."static/catalog/$value->img";?> 600w' sizes="(max-width: 400px) 100vw, 400px" data-src='<?php echo site_url()."static/catalog/$value->img";?>' class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <div class=quick-view><span><i class="fa fa-search"></i></span></div>
+                            </a>
+                        </div>
+                        <div class="product-content">
+                                  <div class="title-product">
+                                      <a href='<?php echo site_url()."catalog/$value->slug";?>' class=product_name><?php echo $value->name;?></a></div>
+                                  <span class=price>
+                                      <span class="woocommerce-Price-amount amount"><?php echo format_number_moneda_soles($value->price);?></span>
+                                  </span>
+                                </div>
+                        </div>
+                    <div class=clear></div>
+                    </li>
+                  <?php  } ?>
+                </ul>
 <!--  <nav class=woocommerce-pagination>
     <ul class=page-numbers>
       <li><span aria-current=page class='page-numbers current'>1</span></li>
