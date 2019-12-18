@@ -430,111 +430,24 @@
                       <a href="<?php echo site_url().'catalog';?>" class="view-courses-button">Ver todo el Catalogo</a>
                     </div>
                   </div>
-                  <div class="col-sm-3 course-item free">
-                    <div class=featured-img>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
-                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/accesorios.jpg';?>" class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Accesorio Mk1 </a>
+                    <?php 
+                    foreach ($catalog as $value) { ?>
+                        <div class="col-sm-3 course-item free">
+                        <div class=featured-img>
+                            <a href='<?php echo site_url()."catalog/$value->slug";?>' class="img-link">
+                                <img width=400 height=400 alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/catalog/$value->img";?>' class="lazyload">
+                            </a>
+                        </div>
+                        <div class=content-item>
+                          <div class=name>
+                              <a href="<?php echo site_url()."catalog/$value->slug";?>"><?php echo $value->name;?></a>
+                          </div>
+                          <h4 class="title">
+                              <a href="<?php echo site_url()."catalog/$value->slug";?>"><?php echo corta_texto($value->summary,50);?></a>
+                          </h4>
+                        </div>
                       </div>
-                      <h4 class="title">
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Accesorio y vestido para dama.</a>
-                      </h4>
-                    </div>
-                  </div>
-                    <div class="col-sm-3 course-item free">
-                    <div class=featured-img>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
-                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/inmobiliaria.jpg';?>" class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Sama Cafetería</a>
-                      </div>
-                      <h4 class="title">
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Ven y disfruta de un momento placentero</a>
-                      </h4>
-                    </div>
-                  </div>
-                    <div class="col-sm-3 course-item free">
-                    <div class=featured-img>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
-                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/marketing_2.jpg';?>" class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Evolution Marketing </a>
-                      </div>
-                      <h4 class="title">
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Necesitas posicionar tu marka. Comunícate con nosotros.</a>
-                      </h4>
-                    </div>
-                  </div>
-                    <div class="col-sm-3 course-item free">
-                    <div class=featured-img>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
-                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/paginas_web_1.jpg';?>" class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="#">Sistemas Web </a>
-                      </div>
-                      <h4 class="title">
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Si quieres un software para tu empresa, somos la mejor solución</a>
-                      </h4>
-                    </div>
-                  </div>
-                    <div class="col-sm-3 course-item free">
-                    <div class=featured-img>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
-                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/cata1.jpg';?>" class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Catalogos 2020 </a>
-                      </div>
-                      <h4 class="title">
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Promociona tu marca con nosotros</a>
-                      </h4>
-                    </div>
-                  </div>
-                    <div class="col-sm-3 course-item free">
-                    <div class=featured-img>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
-                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/viajes.jpg';?>" class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Travel Vacation</a>
-                      </div>
-                      <h4 class="title">
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Viaja por el mundo a descuentos increibles</a>
-                      </h4>
-                    </div>
-                  </div>
-                    <div class="col-sm-3 course-item free">
-                    <div class=featured-img>
-                        <a href="<?php echo site_url().'catalog/chocolates';?>" class="img-link">
-                            <img width=379 height=416 alt="The Ultimate Ethical Hacking Boot Camp" data-src="<?php echo site_url().'static/page_front/images/rent_car.jpg';?>" class="lazyload">
-                        </a>
-                    </div>
-                    <div class=content-item>
-                      <div class=name>
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Renta de Autos </a>
-                      </div>
-                      <h4 class="title">
-                          <a href="<?php echo site_url().'catalog/chocolates';?>">Encuentranos en Latinoamerica y el </a>
-                      </h4>
-                    </div>
-                  </div>
+                    <?php }?>
                 </div>
               </div>
             </div>

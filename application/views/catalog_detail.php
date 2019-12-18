@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html itemscope itemtype=http://schema.org/WebPage lang=en-US prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html>
 <?php $this->load->view("head");?>
 <body class="bp-nouveau product-template-default single single-product postid-1693 wp-embed-responsive theme-wordpress-lms pmpro-body-has-access woocommerce woocommerce-page woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 buy-through-membership header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
   <div id=thim-preloading>
@@ -51,26 +51,32 @@
                         <div id=slider class=flexslider>
                           <ul class="slides images">
                             <li class="main_product_thumbnai woocommerce-product-gallery__image">
-                                <img width="600" height="600" alt title="Chocolates" data-srcset="<?php echo site_url().'static/catalog/anillo.jpg';?> 600w, <?php echo site_url().'static/catalog/anillo.jpg';?> 150w, <?php echo site_url().'static/catalog/anillo.jpg';?> 300w, <?php echo site_url().'static/catalog/anillo.jpg';?> 355w, <?php echo site_url().'static/catalog/anillo.jpg';?> 100w, <?php echo site_url().'static/catalog/anillo.jpg';?> 400w" sizes="(max-width: 600px) 100vw, 600px" data-src="<?php echo site_url().'static/catalog/brazaletes.jpg';?>" class="attachment-shop_single size-shop_single wp-post-image lazyload">
+                                <img width="400" height="400" alt='<?php echo $obj_catalog->name;?>' title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src='<?php echo site_url()."static/catalog/$obj_catalog->img";?>' class="attachment-shop_single size-shop_single wp-post-image lazyload">
                             </li>
                             <li class="main_product_thumbnai woocommerce-product-gallery__image">
-                                <img width="600" height="600" alt title="Chocolates" data-srcset="<?php echo site_url().'static/catalog/pen.jpg';?> 600w, <?php echo site_url().'static/catalog/pen.jpg';?> 150w, <?php echo site_url().'static/catalog/pen.jpg';?> 300w, <?php echo site_url().'static/catalog/pen.jpg';?> 355w, <?php echo site_url().'static/catalog/pen.jpg';?> 100w, <?php echo site_url().'static/catalog/pen.jpg';?> 400w" sizes="(max-width: 600px) 100vw, 600px" data-src="<?php echo site_url().'static/catalog/pen.jpg';?>" class="attachment-shop_single size-shop_single wp-post-image lazyload">
+                                <img width="400" height="400" alt='<?php echo $obj_catalog->name;?>' title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img2";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src='<?php echo site_url()."static/catalog/$obj_catalog->img2";?>' class="attachment-shop_single size-shop_single wp-post-image lazyload">
+                            </li>
+                            <li class="main_product_thumbnai woocommerce-product-gallery__image">
+                                <img width="400" height="400" alt='<?php echo $obj_catalog->name;?>' title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img3";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src='<?php echo site_url()."static/catalog/$obj_catalog->img3";?>' class="attachment-shop_single size-shop_single wp-post-image lazyload">
                             </li>
                           </ul>
                         </div>
                         <div id="carousel" class="flexslider">
                           <ul class="slides flex-control-nav">
                             <li>
-                                <img width="600" height="600" alt title="Chocolates" data-srcset="<?php echo site_url().'static/catalog/anillo.jpg';?> 600w, <?php echo site_url().'static/catalog/anillo.jpg';?> 150w, <?php echo site_url().'static/catalog/anillo.jpg';?> 300w, <?php echo site_url().'static/catalog/anillo.jpg';?> 355w, <?php echo site_url().'static/catalog/anillo.jpg';?> 100w, <?php echo site_url().'static/catalog/anillo.jpg';?> 400w" sizes="(max-width: 600px) 100vw, 600px" data-src="<?php echo site_url().'static/catalog/brazaletes.jpg';?>" class="attachment-shop_single size-shop_single wp-post-image lazyload">
+                                <img width="600" height="600" alt title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src='<?php echo site_url()."static/catalog/$obj_catalog->img";?>' class="attachment-shop_single size-shop_single wp-post-image lazyload">
                             </li>
                             <li>
-                                <img width="600" height="600" alt title="Chocolates" data-srcset="<?php echo site_url().'static/catalog/pen.jpg';?> 600w, <?php echo site_url().'static/catalog/pen.jpg';?> 150w, <?php echo site_url().'static/catalog/pen.jpg';?> 300w, <?php echo site_url().'static/catalog/pen.jpg';?> 355w, <?php echo site_url().'static/catalog/pen.jpg';?> 100w, <?php echo site_url().'static/catalog/pen.jpg';?> 400w" sizes="(max-width: 600px) 100vw, 600px" data-src="<?php echo site_url().'static/catalog/pen.jpg';?>" class="attachment-shop_single size-shop_single wp-post-image lazyload">
+                                <img width="600" height="600" alt title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img2";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src="<?php echo site_url().'static/catalog/pen.jpg';?>" class="attachment-shop_single size-shop_single wp-post-image lazyload">
+                            </li>
+                            <li>
+                                <img width="600" height="600" alt title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img3";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src="<?php echo site_url().'static/catalog/pen.jpg';?>" class="attachment-shop_single size-shop_single wp-post-image lazyload">
                             </li>
                           </ul>
                         </div>
                       </div>
                       <div class="col-sm-7 right">
-                        <h1 class="product_title entry-title">Chocolates Importados</h1>
+                        <h1 class="product_title entry-title"><?php echo $obj_catalog->name;?></h1>
                         <div class=woocommerce-product-rating>
                           <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                               <span style="width:100%"></span>
@@ -78,12 +84,12 @@
                             <a href="#reviews" class="woocommerce-review-link" rel="nofollow"></a>
                         </div>
                         <p class="price">
-                            <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol>$</span>10.00</span>
+                            <span class="woocommerce-Price-amount amount">
+                                <?php echo format_number_moneda_soles($obj_catalog->price);?>
+                            </span>
                         </p>
                         <div class="description">
-                          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
-                            vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
-                            Mauris placerat eleifend leo.</p>
+                          <p><?php echo $obj_catalog->summary;?></p>
                         </div>
                       </div>
                     </div>
@@ -96,85 +102,33 @@
                       <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab" id=tab-description role=tabpanel
                         aria-labelledby=tab-title-description>
                         <h2>Descripción</h2>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                          ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                          eleifend leo.</p>
+                        <p><?php echo $obj_catalog->description;?></p>
                       </div>
                     </div>
                     <section>
                       <h2>Productos Relacionados</h2>
                       <ul class="category-product product-grid row">
-                        <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
-                          <div class=wrapper>
-                            <div class=feature-image>
-                                <a href="<?php echo site_url().'catalog/chocolates';?>">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/chocolates.jpg';?> 400w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 150w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 300w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 355w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 100w, <?php echo site_url().'static/catalog/chocolates.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/chocolates.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        </a>
-                            </div>
-                            <div class="product-content">
-                              <div class="title-product">
-                                  <a href="<?php echo site_url().'catalog/chocolates';?>" class=product_name>Cervezas Cusqueñas</a></div>
-                              <span class=price>
-                                  <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol></span>$9.50</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div class=clear></div>
-                        </li>
-                        
-                        <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-3473 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-postcard pmpro-has-access instock downloadable shipping-taxable purchasable product-type-simple">
-                          <div class=wrapper>
-                            <div class=feature-image>
-                                <a href="<?php echo site_url().'catalog/chocolates';?>">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/madre.jpg';?> 400w, <?php echo site_url().'static/catalog/madre.jpg';?> 150w, <?php echo site_url().'static/catalog/madre.jpg';?> 300w, <?php echo site_url().'static/catalog/madre.jpg';?> 355w, <?php echo site_url().'static/catalog/madre.jpg';?> 100w, <?php echo site_url().'static/catalog/madre.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/madre.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        </a>
-                            </div>
-                            <div class="product-content">
-                              <div class="title-product">
-                                  <a href="<?php echo site_url().'catalog/chocolates';?>" class=product_name>Cervezas Cusqueñas</a></div>
-                              <span class=price>
-                                  <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol></span>$9.50</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div class=clear></div>
-                        </li>
-                        
-                        <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-3473 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-postcard pmpro-has-access instock downloadable shipping-taxable purchasable product-type-simple">
-                          <div class=wrapper>
-                            <div class=feature-image>
-                                <a href="<?php echo site_url().'catalog/chocolates';?>">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/cuaderno.jpg';?> 400w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 150w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 300w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 355w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 100w, <?php echo site_url().'static/catalog/cuaderno.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/cuaderno.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        </a>
-                            </div>
-                            <div class="product-content">
-                              <div class="title-product">
-                                  <a href="<?php echo site_url().'catalog/chocolates';?>" class=product_name>Cervezas Cusqueñas</a></div>
-                              <span class=price>
-                                  <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol></span>$9.50</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div class=clear></div>
-                        </li>
-                        
-                        <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-3473 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-postcard pmpro-has-access instock downloadable shipping-taxable purchasable product-type-simple">
-                          <div class=wrapper>
-                            <div class=feature-image>
-                                <a href="<?php echo site_url().'catalog/chocolates';?>">
-                            <img width=400 height=400 alt data-srcset="<?php echo site_url().'static/catalog/conejo.jpg';?> 400w, <?php echo site_url().'static/catalog/conejo.jpg';?> 150w, <?php echo site_url().'static/catalog/conejo.jpg';?> 300w, <?php echo site_url().'static/catalog/conejo.jpg';?> 355w, <?php echo site_url().'static/catalog/conejo.jpg';?> 100w, <?php echo site_url().'static/catalog/conejo.jpg';?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url().'static/catalog/conejo.jpg';?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                        </a>
-                            </div>
-                            <div class="product-content">
-                              <div class="title-product">
-                                  <a href="<?php echo site_url().'catalog/chocolates';?>" class=product_name>Cervezas Cusqueñas</a></div>
-                              <span class=price>
-                                  <span class="woocommerce-Price-amount amount"><span class=woocommerce-Price-currencySymbol></span>$9.50</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div class=clear></div>
-                        </li>
+                          
+                          <?php
+                          foreach ($obj_catalog_rand as $value) { ?>
+                            <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
+                              <div class=wrapper>
+                                <div class=feature-image>
+                                    <a href='<?php echo site_url()."catalog/$value->slug";?>'>
+                                <img width=400 height=400 alt data-srcset='<?php echo site_url()."static/catalog/$value->img";?> 400w, <?php echo site_url()."static/catalog/$value->img";?> 150w, <?php echo site_url()."static/catalog/$value->img";?> 300w, <?php echo site_url()."static/catalog/$value->img";?> 355w, <?php echo site_url()."static/catalog/$value->img";?> 100w, <?php echo site_url()."static/catalog/$value->img";?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url()."static/catalog/$value->img";?>' class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            </a>
+                                </div>
+                                <div class="product-content">
+                                  <div class="title-product">
+                                      <a href='<?php echo site_url()."catalog/$value->slug";?>' class=product_name><?php echo $value->name;?></a></div>
+                                  <span class=price>
+                                      <span class="woocommerce-Price-amount amount"><?php echo format_number_moneda_soles($value->price);?></span>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class=clear></div>
+                            </li>
+                          <?php } ?>
                       </ul>
                     </section>
                   </div>

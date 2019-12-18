@@ -73,7 +73,7 @@
                                       </div>
                             <?php } ?>
                               <div class="form-group">
-                                    <label>Imagen 1</label>
+                                    <label>Imagen 1 (Tamaño 400 x 400)</label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
@@ -83,13 +83,13 @@
                               <?php 
                                   if(isset($obj_catalog->img2)){ ?>
                                       <div class="form-group">
-                                          <label>Imagen 1</label><br/>
+                                          <label>Imagen 2</label><br/>
                                           <img src='<?php echo site_url()."static/catalog/$obj_catalog->img2";?>' width="100" />
                                           <input class="form-control" type="hidden" name="img_3" id="img_3" value="<?php echo isset($obj_catalog)?$obj_catalog->img2:"";?>">
                                       </div>
                             <?php } ?>
                               <div class="form-group">
-                                    <label>Imagen 2</label>
+                                    <label>Imagen 2 (Tamaño 400 x 400)</label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file2" id="image_file2">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
@@ -98,13 +98,13 @@
                               <?php 
                                   if(isset($obj_catalog->img3)){ ?>
                                       <div class="form-group">
-                                          <label>Imagen 1</label><br/>
+                                          <label>Imagen 3</label><br/>
                                           <img src='<?php echo site_url()."static/catalog/$obj_catalog->img3";?>' width="100" />
                                           <input class="form-control" type="hidden" name="img_4" id="img_4" value="<?php echo isset($obj_catalog)?$obj_catalog->img3:"";?>">
                                       </div>
                             <?php } ?>
                               <div class="form-group">
-                                    <label>Imagen 3</label>
+                                    <label>Imagen 3 (Tamaño 400 x 400)</label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file3" id="image_file3">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>

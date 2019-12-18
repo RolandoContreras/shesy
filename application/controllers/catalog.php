@@ -2,6 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Catalog extends CI_Controller {
+        public function __construct(){
+        parent::__construct();
+        $this->load->model("catalog_model","obj_catalog");
+    }  
 
 	/**
 	 * Index Page for this controller.
@@ -24,6 +28,40 @@ class Catalog extends CI_Controller {
 	}
         public function detail()
 	{
-		$this->load->view('catalog_detail');
+            //get slug
+            $url = explode("/",uri_string());
+            $slug = $url[1];
+            
+            //get catalog
+            $params = array(
+                        "select" =>"catalog.catalog_id,
+                                    catalog.summary,
+                                    catalog.name,
+                                    catalog.slug,
+                                    catalog.price,
+                                    catalog.description,
+                                    catalog.img,
+                                    catalog.img2,
+                                    catalog.img3,
+                                    catalog.active,
+                                    catalog.date",
+                "where" => "catalog.slug = '$slug'");
+            $data['obj_catalog'] = $this->obj_catalog->get_search_row($params);
+            
+            //get catalog relacionado
+            $params = array(
+                        "select" =>"catalog.catalog_id,
+                                    catalog.summary,
+                                    catalog.name,
+                                    catalog.slug,
+                                    catalog.price,
+                                    catalog.img,
+                                    catalog.active",
+                "where" => "catalog.active = 1",
+                "order" => "rand()",
+                "limit" => "4",
+                );
+            $data['obj_catalog_rand'] = $this->obj_catalog->search($params);
+            $this->load->view('catalog_detail',$data);
 	}
 }

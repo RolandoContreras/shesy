@@ -61,7 +61,7 @@
                                 <td><?php echo strtoupper($value->name);?></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td><?php echo $value->price;?></td>
-                                <td><?php echo $value->summary;?></td>
+                                <td><?php echo corta_texto($value->summary,50);?></td>
                                 <td><img src='<?php echo site_url()."static/catalog/$value->img";?>' width="180"/></td>                                    
                                 <td><?php echo $value->price;?></td>
                                 <td>
