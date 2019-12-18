@@ -20,11 +20,10 @@ class D_catalog extends CI_Controller{
                                     catalog.img,
                                     catalog.active,
                                     catalog.date",
-                "where" => "catalog.active = 1 and catalog.status_value = 1",
+                "where" => "catalog.status_value = 1",
                 "order" => "catalog.catalog_id DESC");
            //GET DATA FROM CUSTOMER
         $obj_catalog = $this->obj_catalog->search($params);
-        
             
             /// VISTA
             $this->tmp_mastercms->set("obj_catalog",$obj_catalog);
@@ -47,7 +46,113 @@ class D_catalog extends CI_Controller{
           }
             $this->tmp_mastercms->render("dashboard/catalogo/catalog_form");    
     }
-       
+    
+    public function validate(){
+        
+        //GET CUSTOMER_ID
+        $catalog_id = $this->input->post("catalog_id");
+        $name = $this->input->post("name");
+        $slug = convert_slug($name);
+        $summary =  $this->input->post('summary');
+        $price =  $this->input->post('price');
+        $description =  $this->input->post('description');
+        $img_2 = $this->input->post("img_2");
+        $img_3 = $this->input->post("img_3");
+        $img_4 = $this->input->post("img_4");
+        $active =  $this->input->post('active');
+        
+        
+        if(isset($_FILES["image_file"]["name"])){
+                $config['upload_path']          = './static/catalog';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 3000;
+                $this->load->library('upload', $config);
+                    if ( ! $this->upload->do_upload('image_file')){
+                         $error = array('error' => $this->upload->display_errors());
+                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
+                    }else{
+                        $data = array('upload_data' => $this->upload->data());
+                    }
+                $img = $_FILES["image_file"]["name"];        
+                 if($img == ""){
+                     $img = $img_2;
+                 }   
+            }
+            
+          if(isset($_FILES["image_file2"]["name"])){
+                $config['upload_path']          = './static/course/img';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 3000;
+                $this->load->library('upload', $config);
+                    if ( ! $this->upload->do_upload('image_file2')){
+                         $error = array('error' => $this->upload->display_errors());
+                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
+                    }else{
+                        $data = array('upload_data' => $this->upload->data());
+                    }
+                $img2 = $_FILES["image_file2"]["name"];        
+                 if($img2 == ""){
+                     $img2 = $img_3;
+                 }   
+            }
+            
+         if(isset($_FILES["image_file3"]["name"])){
+                $config['upload_path']          = './static/course/img';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 3000;
+                $this->load->library('upload', $config);
+                    if ( ! $this->upload->do_upload('image_file3')){
+                         $error = array('error' => $this->upload->display_errors());
+                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
+                    }else{
+                        $data = array('upload_data' => $this->upload->data());
+                    }
+                $img3 = $_FILES["image_file3"]["name"];        
+                 if($img3 == ""){
+                     $img3 = $img_4;
+                 }   
+            }   
+            
+        
+        if($catalog_id != ""){
+             $data = array(
+                'name' => $name,
+                'slug' => $slug, 
+                'summary' => $summary,
+                'price' => $price,
+                'description' => $description,
+                'img' => $img,
+                'img2' => $img2,
+                'img3' => $img3,
+                'summary' => $summary,
+                'date' => date("Y-m-d H:i:s"),  
+                'active' => $active,  
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $_SESSION['usercms']['user_id']
+                );          
+             $this->obj_catalog->update($catalog_id, $data);
+        }else{
+            $data = array(
+                'name' => $name,
+                'slug' => $slug, 
+                'summary' => $summary,
+                'price' => $price,
+                'description' => $description,
+                'img' => $img,
+                'img2' => $img2,
+                'img3' => $img3,
+                'summary' => $summary,
+                'date' => date("Y-m-d H:i:s"),  
+                'active' => $active,  
+                'status_value' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $_SESSION['usercms']['user_id']
+                );          
+             $this->obj_catalog->insert($data);        
+            //SAVE DATA IN TABLE    
+        }    
+        redirect(site_url()."dashboard/catalogo");
+    }
         
     public function get_session(){          
         if (isset($_SESSION['usercms'])){

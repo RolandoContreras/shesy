@@ -68,8 +68,8 @@
                                   if(isset($obj_catalog)){ ?>
                                       <div class="form-group">
                                           <label>Imagen 1</label><br/>
-                                          <img src='<?php echo site_url()."static/course/img/$obj_videos->img";?>' width="100" />
-                                          <input class="form-control" type="hidden" name="img2" id="img2" value="<?php echo isset($obj_videos)?$obj_videos->img:"";?>">
+                                          <img src='<?php echo site_url()."static/catalog/$obj_catalog->img";?>' width="100" />
+                                          <input class="form-control" type="hidden" name="img_2" id="img_2" value="<?php echo isset($obj_catalog)?$obj_catalog->img:"";?>">
                                       </div>
                             <?php } ?>
                               <div class="form-group">
@@ -84,8 +84,8 @@
                                   if(isset($obj_catalog->img2)){ ?>
                                       <div class="form-group">
                                           <label>Imagen 1</label><br/>
-                                          <img src='<?php echo site_url()."static/course/img/$obj_videos->img2";?>' width="100" />
-                                          <input class="form-control" type="hidden" name="img3" id="img3" value="<?php echo isset($obj_videos)?$obj_videos->img2:"";?>">
+                                          <img src='<?php echo site_url()."static/catalog/$obj_catalog->img2";?>' width="100" />
+                                          <input class="form-control" type="hidden" name="img_3" id="img_3" value="<?php echo isset($obj_catalog)?$obj_catalog->img2:"";?>">
                                       </div>
                             <?php } ?>
                               <div class="form-group">
@@ -99,8 +99,8 @@
                                   if(isset($obj_catalog->img3)){ ?>
                                       <div class="form-group">
                                           <label>Imagen 1</label><br/>
-                                          <img src='<?php echo site_url()."static/course/img/$obj_videos->img3";?>' width="100" />
-                                          <input class="form-control" type="hidden" name="img4" id="img4" value="<?php echo isset($obj_videos)?$obj_videos->img2:"";?>">
+                                          <img src='<?php echo site_url()."static/catalog/$obj_catalog->img3";?>' width="100" />
+                                          <input class="form-control" type="hidden" name="img_4" id="img_4" value="<?php echo isset($obj_catalog)?$obj_catalog->img3:"";?>">
                                       </div>
                             <?php } ?>
                               <div class="form-group">
@@ -115,11 +115,11 @@
                                 <label for="inputState">Estado</label>
                                     <select name="active" id="active" class="form-control">
                                      <option value="">[ Seleccionar ]</option>
-                                      <option value="1" <?php if(isset($obj_videos)){
-                                          if($obj_videos->active == 1){ echo "selected";}
+                                      <option value="1" <?php if(isset($obj_catalog)){
+                                          if($obj_catalog->active == 1){ echo "selected";}
                                       }else{echo "";} ?>>Activo</option>
-                                      <option value="0" <?php if(isset($obj_kit)){
-                                          if($obj_videos->active == 0){ echo "selected";}
+                                      <option value="0" <?php if(isset($obj_catalog)){
+                                          if($obj_catalog->active == 0){ echo "selected";}
                                       }else{echo "";} ?>>Inactivo</option>
                                 </select>
                             </div>
