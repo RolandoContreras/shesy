@@ -86,6 +86,7 @@ class D_ranges extends CI_Controller{
                  }   
             }
         
+      if($range_id != "") {
         //UPDATE DATA
         $data = array(
                 'name' => $name,
@@ -98,6 +99,23 @@ class D_ranges extends CI_Controller{
                 );          
             //SAVE DATA IN TABLE    
             $this->obj_ranges->update($range_id, $data);
+         }else{
+                
+        //UPDATE DATA
+        $data = array(
+                'name' => $name,
+                'point_personal' => $point_personal,
+                'point_grupal' => $point_grupal,
+                'img' => $img,
+                'active' => $active,
+                'status_value' => 1,
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $_SESSION['usercms']['user_id']
+                );          
+            //SAVE DATA IN TABLE    
+            $this->obj_ranges->insert($data);
+         }   
+         
         redirect(site_url()."dashboard/rangos");
     }
     

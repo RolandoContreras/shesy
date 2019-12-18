@@ -180,12 +180,9 @@
             <div class="dropdown-menu dropdown-menu-right profile-notification">
               <div class="pro-head">
                   <img src="<?php echo site_url().'static/backoffice/images/avatar.png';?>" class="img-radius" alt="User-Profile-Image">
-                  <span><?php echo $_SESSION['customer']['name'];?></span>
+                  <span><?php echo $_SESSION['usercms']['name'];?></span>
               </div>
               <ul class="pro-body">
-                <li>
-                    <a href="<?php echo site_url().'course/profile';?>" class="dropdown-item"><i data-feather="user-plus"></i> Perfil</a>
-                </li>
                 <li>
                     <a href="<?php echo site_url().'login/logout';?>" class="dropdown-item"><i data-feather="power"></i> Salir</a>
                 </li>

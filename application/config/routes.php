@@ -133,6 +133,7 @@ $route['dashboard/facturas/validate'] = "d_invoices/validate";
 $route['dashboard/correos'] = "d_messages_masive"; 
 
 $route['dashboard/rangos'] = "d_ranges";
+$route['dashboard/rangos/load'] = "d_ranges/load";
 $route['dashboard/rangos/load/([0-9]+)'] = "d_ranges/load/$1";
 $route['dashboard/rangos/validate'] = "d_ranges/validate";
 

@@ -29,12 +29,15 @@
                     <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/rangos/validate";?>">
                         <div class="form-row">
                             <div class="form-group col-md-12">
+                          <?php if(isset($obj_ranges)){ ?>
                                   <div class="form-group">
                                         <label>ID</label>
-                                        <input class="form-control" type="text" value="<?php echo isset($obj_points->point_id)?$obj_points->point_id:"";?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
-                                        <input type="hidden" id="point_id" name="point_id" value="<?php echo isset($obj_points->point_id)?$obj_points->point_id:"";?>">
+                                        <input class="form-control" type="text" value="<?php echo isset($obj_ranges->range_id)?$obj_ranges->range_id:"";?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
+                                        <input type="hidden" id="range_id" name="range_id" value="<?php echo isset($obj_ranges->range_id)?$obj_ranges->range_id:"";?>">
                                   </div>
+                        <?php } ?>
                             </div>
+                            
                           <div class="form-group col-md-6">
                               <div class="form-group">
                                     <label>Nombre</label>
