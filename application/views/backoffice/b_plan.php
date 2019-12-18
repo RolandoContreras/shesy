@@ -13,7 +13,7 @@
       <div class="row">
               <div class="col-sm-12 col-xxl-12">
                 <div class="element-wrapper">
-                  <h6 class="element-header"> Planes </h6>
+                  <h6 class="element-header"> Pack </h6>
                   <div class="row">
                     <?php foreach ($obj_kit as $value) { ?>
                      <!--CREATE MODAL-->
@@ -63,7 +63,7 @@
                                 </div>
                                   <div class="plan-btn-w"> 
                                       <a href="#modal_<?php echo $value->kit_id;?>" rel="modal:open">
-                                          <button  class="mr-2 mb-2 btn btn-warning" <?php echo $value->active == "0"? "disabled":"";?>> Selecionar Plan</button>
+                                          <button  class="mr-2 mb-2 btn btn-warning" <?php echo $value->active == "0"? "disabled":"";?>> Selecionar Pack</button>
                                       </a> 
                                   </div>
                               </div>

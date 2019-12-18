@@ -75,7 +75,7 @@ $route['course/profile'] = "c_home/profile";
 
 $route['backoffice/profile'] = "b_profile";
 $route['backoffice/profile/update_password'] = "b_profile/update_password";
-$route['backoffice/profile/update_wallet'] = "b_profile/update_wallet";
+$route['backoffice/profile/update_bank'] = "b_profile/update_bank";
 
 $route['backoffice/plan'] = "b_plan";
 $route['backoffice/plan/create_invoice'] = "b_plan/create_invoice";
@@ -111,6 +111,11 @@ $route['dashboard/noticias'] = "d_news";
 $route['dashboard/noticias/load'] = "d_news/load";
 $route['dashboard/noticias/load/([0-9]+)'] = "d_news/load/$1";
 $route['dashboard/noticias/validate'] = "d_news/validate";
+
+$route['dashboard/catalogo'] = "d_catalog";
+$route['dashboard/catalogo/load'] = "d_catalog/load";
+$route['dashboard/catalogo/load/([0-9]+)'] = "d_catalog/load/$1";
+$route['dashboard/catalogo/validate'] = "d_catalog/validate";
 
 $route['dashboard/videos'] = "d_videos";
 $route['dashboard/videos/load'] = "d_videos/load";

@@ -11,7 +11,7 @@
                 </div>
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/';?>">Panel</a></li>
-                  <li class="breadcrumb-item"><a>Kit</a></li>
+                  <li class="breadcrumb-item"><a>Pack</a></li>
                 </ul>
               </div>
             </div>
@@ -23,7 +23,8 @@
               <div class="col-sm-12">
                 <div class="card">
                   <div class="card-header">
-                    <h5>Listado de Kit</h5>
+                    <h5>Listado de Pack</h5>
+                    <button class="btn btn-secondary" type="button" onclick="new_pack();"><span><span class="pcoded-micon"><i data-feather="plus"></i></span> Nuevo</span></button>
                   </div>
                   <div class="card-block">
                     <div class="table-responsive">

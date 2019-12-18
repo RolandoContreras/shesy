@@ -42,17 +42,32 @@ function change_pass(){
             } 
 }   
 
-function change_wallet(){
-    var wallet = document.getElementById("wallet").value;
-        if(wallet == ""){
+function change_bank(){
+    var bank_id = document.getElementById("bank_id").value;
+    var bank_account = document.getElementById("bank_account").value;
+    var bank_number = document.getElementById("bank_number").value;
+    var back_number_cci = document.getElementById("back_number_cci").value;
+        if(bank_id == ""){
             document.getElementById("wallet_error").style.display = "block";
-            $("#wallet").focus();
+            $("#bank_id").focus();
+        }else if(bank_account == ""){
+            document.getElementById("wallet_error").style.display = "block";
+            $("#bank_account").focus();
+        }else if(bank_number == ""){
+            document.getElementById("wallet_error").style.display = "block";
+            $("#bank_number").focus();
+        }else if(back_number_cci == ""){
+            document.getElementById("wallet_error").style.display = "block";
+            $("#back_number_cci").focus();
         }else{
                 $.ajax({
                    type: "post",
-                   url: site+"backoffice/profile/update_wallet",
+                   url: site+"backoffice/profile/update_bank",
                    dataType: "json",
-                   data: {wallet : wallet},
+                   data: {bank_id : bank_id,
+                          bank_account : bank_account,
+                          bank_number : bank_number,
+                          back_number_cci : back_number_cci},
                    success:function(data){          
                        if(data.status == "true"){
                            document.getElementById("wallet_error").style.display = "none";

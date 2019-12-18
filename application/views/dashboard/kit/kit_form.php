@@ -7,11 +7,11 @@
             <div class="row align-items-center">
               <div class="col-md-12">
                 <div class="page-header-title">
-                  <h5 class="m-b-10">Formulario de Kit</h5>
+                  <h5 class="m-b-10">Formulario de Pack</h5>
                 </div>
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/membresias';?>">Listado de Kit</a></li>
-                  <li class="breadcrumb-item"><a>Kit</a></li>
+                  <li class="breadcrumb-item"><a>Pack</a></li>
                 </ul>
               </div>
             </div>
@@ -30,11 +30,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <?php 
-                                if(isset($obj_videos)){ ?>
+                                if(isset($obj_kit)){ ?>
                                   <div class="form-group">
                                         <label>ID</label>
-                                        <input class="form-control" type="text" value="<?php echo isset($obj_videos->video_id)?$obj_videos->video_id:"";?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
-                                        <input type="hidden" id="video_id" name="video_id" value="<?php echo isset($obj_videos->video_id)?$obj_videos->video_id:"";?>">
+                                        <input class="form-control" type="text" value="<?php echo isset($obj_kit->kit_id)?$obj_kit->kit_id:"";?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
+                                        <input type="hidden" id="kit_id" name="kit_id" value="<?php echo isset($obj_kit->kit_id)?$obj_kit->kit_id:"";?>">
                                   </div>
                             <?php } ?>
                             </div>

@@ -59,6 +59,7 @@ class Dashboard extends CI_Controller {
                 $data_user_session['privilage'] = $obj_user->privilage;
                 $data_user_session['logged_usercms'] = "TRUE";
                 $data_user_session['status'] = $obj_user->status_value;
+                $_SESSION['usercms'] = $data_user_session;      
         }else{
             $this->form_validation->set_message('validar_user', "El correo y/o la contraseña no son correctas");
             return false;

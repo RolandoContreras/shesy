@@ -18,7 +18,10 @@ class B_profile extends CI_Controller {
                                     customer.email,
                                     customer.first_name,
                                     customer.last_name,
-                                    customer.btc_address,
+                                    customer.bank_id,
+                                    customer.bank_number,
+                                    customer.bank_account,
+                                    customer.bank_number_cci,
                                     customer.created_at,
                                     customer.date_start,
                                     customer.address,
@@ -76,15 +79,21 @@ class B_profile extends CI_Controller {
             }
     }
     
-    public function update_wallet(){
+    public function update_bank(){
              if($this->input->is_ajax_request()){   
                 //SELECT ID FROM CUSTOMER
-               $wallet = trim($this->input->post('wallet'));
+               $bank_id = trim($this->input->post('bank_id'));
+               $bank_account = trim($this->input->post('bank_account'));
+               $bank_number = trim($this->input->post('bank_number'));
+               $back_number_cci = trim($this->input->post('back_number_cci'));
                $customer_id = $_SESSION['customer']['customer_id'];
                
                     //UPDATE DATA EN CUSTOMER TABLE
                     $data = array(
-                        'btc_address' => $wallet,
+                        'bank_id' => $bank_id,
+                        'bank_account' => $bank_account,
+                        'bank_number' => $bank_number,
+                        'bank_number_cci' => $back_number_cci,
                         'updated_by' => $customer_id,
                         'updated_at' => date("Y-m-d H:i:s")
                     ); 

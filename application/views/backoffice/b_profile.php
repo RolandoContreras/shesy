@@ -8,7 +8,7 @@
         <div class="row clearfix">
           <div class="col-xl-4 col-lg-4 col-md-5">
             <div class="user-profile compact">
-                <div class="up-head-w" style="background-image:url('<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>')">
+                <div class="up-head-w" style="background-image:url('<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>');">
                 <div class="up-main-info">
                   <h2 class="up-header"> <?php echo $obj_customer->first_name." ".$obj_customer->last_name;?></h2>
                   <h6 class="up-sub-header"> Email: <?php echo $obj_customer->email;?> <br> Usuario: <?php echo "@".$obj_customer->username;?> <br> Documento: <?php echo $obj_customer->dni;?></h6>
@@ -94,7 +94,7 @@
                   </div>
                   <ul class="nav nav-tabs" style="padding: 20px;">
                     <li class="nav-item" style="cursor: pointer;"> 
-                        <a id="show_wallet" class="nav-link active show" align="center">Billetera BTC</a> 
+                        <a id="show_wallet" class="nav-link active show" align="center">Datos Bancarios</a> 
                     </li>
                     <li class="nav-item" style="cursor: pointer;"> 
                         <a id="show_pass" class="nav-link" align="center">Contraseña</a>                      
@@ -102,25 +102,40 @@
                   </ul>
                   <div class="body" style="margin-top: 30px;">
                     <div id="show_wallet_div">
-                        <form class="form-horizontal" onsubmit="change_wallet();" enctype="multipart/form-data" action="javascript:void(0);"> 
+                        <form class="form-horizontal" onsubmit="change_bank();" enctype="multipart/form-data" action="javascript:void(0);"> 
                             <div class="form-group"> 
-                                <label class="control-label"> Su hash de recibimiento </label> 
-                                <input type="text" name="wallet" value="<?php echo $obj_customer->btc_address;?>" id="wallet" class="form-control">
-                              <p>* Verificar los datos de recibimiento debido es bajo su responzabilidad.</p>
+                                <label class="control-label"> Nombre del Banco </label> 
+                                <select class="form-control" name="bank_id" id="bank_id">
+                                    <option value="">Seleccionar</option>
+                                    <option value="1" <?php echo $obj_customer->bank_id == 1?"selected":"";?>>BCP (Banco de Crédito)</option>
+                                    <option value="2" <?php echo $obj_customer->bank_id == 2?"selected":"";?>>Interbank</option>
+                                </select>
+                            </div>
+                            <div class="form-group"> 
+                                <label class="control-label"> Titular de la cuenta </label> 
+                                <input type="text" name="bank_account" value="<?php echo $obj_customer->bank_account;?>" id="bank_account" class="form-control">
+                            </div>
+                            <div class="form-group"> 
+                                <label class="control-label"> N° de cuenta Bancaria </label> 
+                                <input type="text" name="bank_number" value="<?php echo $obj_customer->bank_number;?>" id="bank_number" class="form-control">
+                            </div>
+                            <div class="form-group"> 
+                                <label class="control-label"> N° de cuenta CCI (Interbancario)  </label> 
+                                <input type="text" name="back_number_cci" value="<?php echo $obj_customer->bank_number_cci;?>" id="back_number_cci" class="form-control">
                             </div>
                             <div class="form-group has-feedback" style="display: none;" id="wallet_error">
                                 <div class="alert alert-danger validation-errors">
-                                    <p class="user_login_id" style="text-align: center;">Ingrese billetera valida</p>
+                                    <p class="user_login_id" style="text-align: center;">Ingrese datos validos</p>
                                 </div>
                             </div>
                             <div class="form-group">
                               <div class="col-lg-12" align="right"> 
-                                  <button class="mr-2 mb-2 btn btn-success" type="submit" style="margin-top: 30px;">Cambiar billetera de cobro <i class="os-icon os-icon-grid-18"></i></button>        
+                                  <button class="mr-2 mb-2 btn btn-success" type="submit" style="margin-top: 30px;">Guardar Datos Bancarios <i class="os-icon os-icon-grid-18"></i></button>        
                               </div>
                             </div>
                             <div class="form-group has-feedback" style="display: none;" id="wallet_success">
                                 <div class="alert alert-success validation-errors">
-                                    <p class="user_login_id" style="text-align: center;">Billetera cambiada con éxito.</p>
+                                    <p class="user_login_id" style="text-align: center;">Datos Bancarios Guardados.</p>
                                 </div>
                             </div>
                           </form>

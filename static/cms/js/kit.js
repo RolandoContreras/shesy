@@ -16,7 +16,10 @@ if($('#image_file').val() == ''){
             });
         }
 }
-
+function new_pack(){    
+     var url= 'dashboard/membresias/load';
+     location.href = site+url;
+}
 function edit_franchise(kit_id){    
      var url = 'dashboard/membresias/load/'+kit_id;
      location.href = site+url;   

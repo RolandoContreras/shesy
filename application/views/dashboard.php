@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="author" content="BCA CAPITAL" />
+  <meta name="author" content="Cultura Fk" />
   <meta name="robots" content="noindex, nofollow" />
   <!--START FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
@@ -41,7 +41,7 @@
         <div class="card-body text-center">
             
           <div class="mb-4">
-              <img src="<?php echo site_url().'static/page_front/images/logo/logo-black.png'?>" alt="logo" width="300"/>
+              <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png'?>" alt="logo" width="80"/>
           </div>
             <form method="get" id="login">
               <h3 class="mb-4">Login</h3>

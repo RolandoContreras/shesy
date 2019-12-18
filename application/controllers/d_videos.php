@@ -90,7 +90,7 @@ class D_videos extends CI_Controller{
         if(isset($_FILES["image_file"]["name"])){
                 $config['upload_path']          = './static/course/img';
                 $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 1000;
+                $config['max_size']             = 2000;
                 $this->load->library('upload', $config);
                     if ( ! $this->upload->do_upload('image_file')){
                          $error = array('error' => $this->upload->display_errors());

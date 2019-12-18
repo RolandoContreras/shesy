@@ -281,12 +281,13 @@
                       <div class=row>
                         <div class="col-lg-6 content-box">
                           <div class=steps-wrapper>
-                              <h3 class="sc-title">¿Qué es <br>la embajada FK?</h3>
+                              <h3 class="sc-title">¿Qué es la cultura FK?</h3>
                             <div class=steps>
                               <div class=tab-content>
                                 <div class="tab-pane active">
-                                  <p class=description>Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
-                                  <a href="<?php echo site_url().'contact';?>" class="readmore">Postula a la Embajada FK</a>
+                                  <p class=description>Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente. </p>
+                                  <p class=description>Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
+                                  <a href="<?php echo site_url().'about';?>" class="readmore">Más Información</a>
                                 </div>
                               </div>
                             </div>
@@ -295,7 +296,7 @@
                         <div class="col-lg-6 media-box">
                           <div class="player-wrapper">
                             <div class="player-inner">
-                                <iframe width="640" height="268" src="https://www.youtube.com/embed/3an7AqJVOes" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                             </div>
                           </div>
                           <div class="icon-play"></div>

@@ -90,7 +90,7 @@
                                           <div class="video">
                                               <div class="video-box" style="background-image: url(<?php echo site_url().'static/page_front/images/embajada_fk.jpg';?>)">
                                               <div class="play-button">
-                                                  <a href="https://www.youtube.com/watch?v=Q10fsxKrbrg" class="video-thumbnail">
+                                                  <a href="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" class="video-thumbnail">
                                                       <i class="icon-play"></i>
                                                   </a>
                                               </div>
@@ -124,7 +124,7 @@
                                           <div class="video">
                                               <div class="video-box" style="background-image: url(<?php echo site_url().'static/page_front/images/vision.jpg';?>)">
                                               <div class="play-button">
-                                                  <a href="https://www.youtube.com/watch?v=Q10fsxKrbrg" class="video-thumbnail">
+                                                  <a href="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" class="video-thumbnail">
                                                       <i class="icon-play"></i>
                                                   </a>
                                               </div>

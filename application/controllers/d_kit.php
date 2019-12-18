@@ -80,7 +80,7 @@ class D_kit extends CI_Controller{
             if(isset($_FILES["image_file"]["name"])){
                 $config['upload_path']          = './static/backoffice/images/plan';
                 $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 1000;
+                $config['max_size']             = 2000;
                 $this->load->library('upload', $config);
                     if ( ! $this->upload->do_upload('image_file')){
                          $error = array('error' => $this->upload->display_errors());
@@ -94,17 +94,37 @@ class D_kit extends CI_Controller{
                  }   
             }
             
-                    $data = array(
+            if($kit_id != ""){
+                 $data = array(
                             'name' => $name,
                             'price' => $price,
                             'point' => $point,
                             'img' => $img,
                             'description' => $description,
                             'active' => $active,
+                            'status_value' => 1,
+                            'updated_by' => $_SESSION['usercms']['user_id'],
+                            'updated_at' => date("Y-m-d H:i:s")
+                        );
+                    $this->obj_kit->update($kit_id, $data);
+            }else{
+                $data = array(
+                            'name' => $name,
+                            'price' => $price,
+                            'point' => $point,
+                            'img' => $img,
+                            'description' => $description,
+                            'active' => $active,
+                            'status_value' => 1,
                             'created_by' => $_SESSION['usercms']['user_id'],
                             'created_at' => date("Y-m-d H:i:s")
                         );
-                    $this->obj_kit->update($kit_id, $data);
+                    $this->obj_kit->insert($data);
+            }
+                
+                
+            
+                    
                     redirect(site_url()."dashboard/membresias");
         
     }

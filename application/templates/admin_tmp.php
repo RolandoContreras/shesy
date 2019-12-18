@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Dashboard - BCA CAPITAL</title>
+  <title>Dashboard - Cultura FK</title>
   <!--<base href="<?php echo site_url();?>">-->
   <!--[if lt IE 10]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <meta charset="utf-8">
@@ -48,7 +48,7 @@
       <div class="navbar-brand header-logo">
           <a href="<?php echo site_url().'course';?>" class="b-brand">
           <div class="b-bg">
-              <img src="<?php echo site_url().'static/page_front/images/logo/icono-negro.png';?>" alt="Logo" width="35"/>
+              <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" alt="Logo" width="35"/>
           </div>
               <span class="b-title">BCA CAPITAL</span>
           </a>
@@ -104,13 +104,13 @@
             <ul class="pcoded-submenu">
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/bonos";?>"><i class="icon-large icon-th"></i>Bonos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/categorias";?>"><i class="icon-large icon-th"></i>Categórías</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/catalogo";?>"><i class="icon-large icon-th"></i>Catalogo</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/clientes";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
-                <li class="pcoded-hasmenu"><a href="#"><i class="icon-large icon-th"></i>Correos Masivos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comentarios";?>"><i class="icon-large icon-th"></i>Comentarios</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas";?>"><i class="icon-large icon-th"></i>Facturas</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/membresias";?>"><i class="icon-large icon-th"></i>Kit</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/membresias";?>"><i class="icon-large icon-th"></i>Pack</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/pagos";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/puntos";?>"><i class="icon-large icon-th"></i>Puntos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/rangos";?>"><i class="icon-large icon-th"></i>Rangos</a></li>
@@ -156,7 +156,7 @@
     <div class="m-header"><a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
         <a href="<?php echo site_url().'course';?>" class="b-brand">
         <div class="b-bg">
-            <img src="<?php echo site_url().'static/page_front/images/logo/icono-negro.png';?>" alt="Logo" width="35"/>
+            <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" alt="Logo" width="35"/>
         </div>
             <span class="b-title">BCA CAPITAL</span></a>
     </div>
