@@ -55,18 +55,12 @@
                                           <li id="menu-item-4117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                               <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Todos los Cursos</a>
                                           </li>
-                                          <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                              <a href="<?php echo site_url().'courses/personal';?>" class="tc-menu-inner">Desarrollo Personal</a>
-                                          </li>
-                                          <li id="menu-item-4116" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4116 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                              <a href="<?php echo site_url().'courses/profetional';?>" class="tc-menu-inner">Crecimiento Profesional</a>
-                                          </li>
-                                          <li id="menu-item-4116" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4116 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                              <a href="<?php echo site_url().'courses/finance';?>" class="tc-menu-inner">Finanzas</a>
-                                          </li>
-                                          <li id="menu-item-4110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4110 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                             <a href="<?php echo site_url().'courses/extras';?>" class="tc-menu-inner">Extras</a>
-                                          </li>
+                                          <?php 
+                                              foreach ($obj_category_videos as $value) { ?>
+                                                    <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                                      <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
+                                                    </li>
+                                        <?php } ?>
                                     </ul>
                                 </div>
                                 </div>
@@ -96,9 +90,22 @@
                   </div>
                   </div>
                   </li>
-                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                  <li id="menu-item-3813" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3813 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'catalog';?>" class="tc-menu-inner">Catalogo</a>
+                      <ul class="sub-menu" style="display: none;">
+                          <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
+                                <a href='<?php echo site_url()."catalog";?>' class="tc-menu-inner tc-megamenu-title">Todos los Productos</a>
+                          </li>
+                          <?php 
+                          foreach ($obj_category_catalog as $value) { ?>
+                            <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
+                                <a href='<?php echo site_url()."catalog/$value->slug";?>' class="tc-menu-inner tc-megamenu-title"><?php echo  $value->name;?></a>
+                            </li>
+                          <?php  } ?> 
+                      </ul>
                   </li>
+                  
+                  
                   <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'contact';?>" class="tc-menu-inner">Contacto</a>
                   </li>
@@ -113,7 +120,7 @@
         </div>
       </div>
     </header>
-    <?php $this->load->view("nav");?>
+    <?php $this->load->view("nav",$obj_category_videos);?>
     <div id="main-content">
       <div id="home-main-content" class="home-content home-page container" role="main">
           <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/background.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">

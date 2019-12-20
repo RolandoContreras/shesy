@@ -48,12 +48,12 @@ class Panel extends CI_Controller{
                 //GET MES
                 $params = array(
                         "select" =>"sum(price) as total_mes,
-                                    (SELECT count(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.type = 1 and invoices.active = 2 and financy = 0) as count_total_mes,
-                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$primer_dia_ano' AND '$ultimo_dia_ano' AND invoices.type = 1 and invoices.active = 2 and financy = 0) as total_year,
-                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$pass_year-01-01' AND '$pass_year-12-31' AND invoices.type = 1 and invoices.active = 2 and financy = 0) as total_year_last,
-                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$pass_year_2-01-01' AND '$pass_year_2-12-31' AND invoices.type = 1 and invoices.active = 2 and financy = 0) as total_year_last_2,",
+                                    (SELECT count(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.type = 1 and invoices.active = 2) as count_total_mes,
+                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$primer_dia_ano' AND '$ultimo_dia_ano' AND invoices.type = 1 and invoices.active = 2) as total_year,
+                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$pass_year-01-01' AND '$pass_year-12-31' AND invoices.type = 1 and invoices.active = 2) as total_year_last,
+                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$pass_year_2-01-01' AND '$pass_year_2-12-31' AND invoices.type = 1 and invoices.active = 2) as total_year_last_2,",
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id'),
-                "where" => "date BETWEEN '$first_day_month' AND '$last_day_month' and invoices.type = 1 and invoices.active = 2 and financy = 0");
+                "where" => "date BETWEEN '$first_day_month' AND '$last_day_month' and invoices.type = 1 and invoices.active = 2");
             //GET DATA FROM CUSTOMER
             $obj_invoices = $this->obj_invoices->get_search_row($params);
             
@@ -70,7 +70,7 @@ class Panel extends CI_Controller{
         //GET TOTAL ROWS
         $params = array("select" =>"count(comment_id) as total_comments,
                                     (select count(*) from customer) as total_customer, 
-                                    (select count(*) from customer where financy = 1) as total_financy,
+                                    (select count(*) from customer) as total_financy,
                                     (select count(*) from customer where kit_id > 1 and active = 1) as total_activos,
                                     (select count(*) from customer where kit_id = 1 and active = 1) as total_position,
                                     (select count(*) from category) as total_category,

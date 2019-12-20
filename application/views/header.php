@@ -68,21 +68,15 @@
                                   <h2 class="widgettitle">Acerca de Cursos</h2>
                                   <div class="menu-mega-menu-container">
                                     <ul id="menu-mega-menu" class="menu">
-                                          <li id="menu-item-4117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                        <li id="menu-item-4117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                               <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Todos los Cursos</a>
-                                          </li>
-                                          <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                              <a href="<?php echo site_url().'courses/personal';?>" class="tc-menu-inner">Desarrollo Personal</a>
-                                          </li>
-                                          <li id="menu-item-4116" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4116 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                              <a href="<?php echo site_url().'courses/profetional';?>" class="tc-menu-inner">Crecimiento Profesional</a>
-                                          </li>
-                                          <li id="menu-item-4116" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4116 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                              <a href="<?php echo site_url().'courses/finance';?>" class="tc-menu-inner">Finanzas</a>
-                                          </li>
-                                          <li id="menu-item-4110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4110 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                             <a href="<?php echo site_url().'courses/extras';?>" class="tc-menu-inner">Extras</a>
-                                          </li>
+                                        </li>
+                                        <?php 
+                                              foreach ($obj_category_videos as $value) { ?>
+                                                    <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                                      <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
+                                                    </li>
+                                              <?php } ?>
                                     </ul>
                                 </div>
                                 </div>
@@ -112,9 +106,23 @@
                   </div>
                   </div>
                   </li>
-                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $catalog_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                  <li id="menu-item-3813" class="menu-item menu-item-type-custom menu-item-object-custom <?php echo $catalog_syle;?> menu-item-has-children menu-item-3813 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'catalog';?>" class="tc-menu-inner">Catalogo</a>
+                      <ul class="sub-menu" style="display: none;">
+                          <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
+                                <a href='<?php echo site_url()."catalog";?>' class="tc-menu-inner tc-megamenu-title">Todos los Productos</a>
+                          </li>
+                          <?php 
+                          foreach ($obj_category_catalog as $value) { ?>
+                            <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
+                                <a href='<?php echo site_url()."catalog/$value->slug";?>' class="tc-menu-inner tc-megamenu-title"><?php echo  $value->name;?></a>
+                            </li>
+                          <?php  } ?> 
+                      </ul>
                   </li>
+                  
+                  
+                  
                   <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $contact_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'contact';?>" class="tc-menu-inner">Contacto</a>
                   </li>

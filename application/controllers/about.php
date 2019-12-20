@@ -2,6 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class About extends CI_Controller {
+    public function __construct(){
+        parent::__construct();
+        $this->load->model("category_model","obj_category");
+    }   
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +24,24 @@ class About extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('about');
+            $params_category_videos = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 1 and active = 1",
+            );
+            //GET DATA COMMENTS
+            $data['obj_category_videos'] = $this->obj_category->search($params_category_videos);
+            
+            $params_category_catalog = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 2 and active = 1",
+            );
+            //GET DATA COMMENTS
+            $data['obj_category_catalog'] = $this->obj_category->search($params_category_catalog);
+            //SEND DATA
+            $this->load->view('about',$data);
 	}
 }

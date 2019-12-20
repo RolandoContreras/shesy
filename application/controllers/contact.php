@@ -5,6 +5,7 @@ class Contact extends CI_Controller {
     public function __construct() {
         parent::__construct();     
         $this->load->model('comments_model','obj_comments');
+        $this->load->model("category_model","obj_category");
     }
 
 	/**
@@ -24,7 +25,25 @@ class Contact extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('contact');
+            $params_category_videos = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 1 and active = 1",
+            );
+            //GET DATA COMMENTS
+            $data['obj_category_videos'] = $this->obj_category->search($params_category_videos);
+            
+            $params_category_catalog = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 2 and active = 1",
+            );
+            //GET DATA COMMENTS
+            $data['obj_category_catalog'] = $this->obj_category->search($params_category_catalog);
+            //SEND DATA
+            $this->load->view('contact',$data);
 	}
         public function send_messages(){
          //GET DATA BY POST

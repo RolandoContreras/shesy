@@ -5,6 +5,7 @@ class Home extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model("catalog_model","obj_catalog");
+        $this->load->model("category_model","obj_category");
     }   
         
 	/**
@@ -24,6 +25,24 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
+            
+            $params_category_videos = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 1 and active = 1",
+            );
+            //GET DATA COMMENTS
+            $data['obj_category_videos'] = $this->obj_category->search($params_category_videos);
+            
+            $params_category_catalog = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 2 and active = 1",
+            );
+            //GET DATA COMMENTS
+            $data['obj_category_catalog'] = $this->obj_category->search($params_category_catalog);
             
             //get catalog
             $params = array(
