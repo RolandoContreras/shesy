@@ -25,8 +25,11 @@ class customer_model_atributos{
     var $last_name='';
     var $dni='';
     var $address='';
-    var $btc_address='';
     var $country='';
+    var $bank_id='';
+    var $bank_account='';
+    var $bank_number='';
+    var $bank_number_cci='';
     var $phone='';
     var $active=''; 
     var $status_value='';
@@ -52,8 +55,11 @@ class Customer_Model extends CI_Model{
         $this->last_name='';
         $this->dni='';
         $this->address='';
-        $this->btc_address='';
         $this->country='';
+        $this->bank_id='';
+        $this->bank_account='';
+        $this->bank_number='';
+        $this->bank_number_cci='';
 	$this->phone='';
         $this->active='';
 	$this->status_value='';

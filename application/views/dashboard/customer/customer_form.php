@@ -60,18 +60,31 @@
                                 <label for="exampleFormControlTextarea1">Dirección</label>
                                 <textarea class="form-control" name="address" id="address" rows="3"><?php echo isset($obj_customer->address)?$obj_customer->address:"";?></textarea>
                             </div>
-                              <label for="inputState">Financiado</label>
-                                 <select name="financy" id="financy" class="form-control">
-                                    <option value="">[ Seleccionar ]</option>
+                              <div class="form-group">
+                                  <label>Nombre de Banco</label>
+                                  <select name="bank_id" id="bank_id" class="form-control">
+                                <option value="">[ Seleccionar ]</option>
                                     <option value="1" <?php if(isset($obj_customer)){
-                                        if($obj_customer->financy == 1){ echo "selected";}
-                                    }else{echo "";} ?>>Si</option>
-                                    <option value="0" <?php if(isset($obj_customer)){
-                                        if($obj_customer->financy == 0){ echo "selected";}
-                                    }else{echo "";} ?>>No</option>
+                                          if($obj_customer->bank_id == 1){ echo "selected";}
+                                      }else{echo "";} ?>>BCP (Banco de Crédito)</option>
+                                      <option value="2" <?php if(isset($obj_customer)){
+                                          if($obj_customer->bank_id == 2){ echo "selected";}
+                                      }else{echo "";} ?>>Interbank</option>
                                 </select>
+                              </div>
+                              <div class="form-group">
+                                  <label>Títular de Cuenta</label>
+                                  <input class="form-control" type="text" id="bank_account" name="bank_account" class="input-xlarge-fluid" placeholder="Títular de la Cuenta" value="<?php echo isset($obj_customer->bank_account)?$obj_customer->bank_account:"";?>">
+                              </div>
+                              <div class="form-group">
+                                  <label>Número de Cuenta</label>
+                                  <input class="form-control" type="text" id="bank_number" name="bank_number" class="input-xlarge-fluid" placeholder="Número de Cuenta" value="<?php echo isset($obj_customer->bank_number)?$obj_customer->bank_number:"";?>">
+                              </div>
+                              <div class="form-group">
+                                  <label>Número Interbancario CCI</label>
+                                  <input class="form-control" type="text" id="bank_number_cci" name="bank_number_cci" class="input-xlarge-fluid" placeholder="Número Interbancario" value="<?php echo isset($obj_customer->bank_number_cci)?$obj_customer->bank_number_cci:"";?>">
+                              </div>
                           </div>
-                            
                           <div class="form-group col-md-6">
                               <div class="form-group">
                                     <label>E-mail</label>
@@ -85,10 +98,7 @@
                                     <label>Telefono</label>
                                     <input class="form-control" type="text" id="phone" name="phone" class="input-small-fluid" placeholder="Telefono" value="<?php echo isset($obj_customer->phone)?$obj_customer->phone:"";?>">
                               </div>
-                              <div class="form-group">
-                                  <label>BTC Wallet</label>
-                                  <input class="form-control" type="text" id="btc_address" name="btc_address" class="input-xlarge-fluid" placeholder="Direccion de BitCoin" value="<?php echo isset($obj_customer->btc_address)?$obj_customer->btc_address:"";?>">
-                              </div>
+                              
                               <div class="form-group">
                                     <label>Fecha de Activación</label>
                                     <input class="form-control" type="text" id="date_start" name="date_start" class="input-small-fluid" placeholder="YYYY/mm/dd" value="<?php echo isset($obj_customer->date_start)?$obj_customer->date_start:"";?>">
@@ -97,12 +107,7 @@
                                     <label>Fecha de Creación</label>
                                     <input class="form-control" type="text" id="created_at" name="created_at" class="input-small-fluid" placeholder="Fecha de Creación" value="<?php echo isset($obj_customer->created_at)?$obj_customer->created_at:"";?>" disabled="">
                               </div>
-                              
-                          </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputState">Pais</label>
+                               <label for="inputState">Pais</label>
                                 <select name="pais" id="pais" class="form-control">
                                 <option value="">[ Seleccionar ]</option>
                                     <?php foreach ($obj_paises as $value ): ?>
@@ -121,7 +126,7 @@
                                     <?php endforeach; ?>
                                 </select>
                                 <br/>
-                                <label for="inputState">Kit</label>
+                              <label for="inputState">Kit</label>
                                 <select name="kit" id="kit" class="form-control">
                                 <option value="">[ Seleccionar ]</option>
                                     <?php foreach ($obj_kit as $value ): ?>
@@ -139,9 +144,8 @@
                                 </option>
                                     <?php endforeach; ?>
                             </select>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputState">Rango</label>
+                              <br/>
+                              <label for="inputState">Rango</label>
                                     <select name="rango" id="rango" class="form-control">
                                     <option value="">[ Seleccionar ]</option>
                                         <?php foreach ($obj_ranges as $value ): ?>
@@ -170,8 +174,7 @@
                                           if($obj_customer->active == 0){ echo "selected";}
                                       }else{echo "";} ?>>Inactivo</option>
                                 </select>
-                                
-                            </div>
+                          </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <button class="btn btn-danger" type="reset" onclick="cancelar_customer();">Cancelar</button>                    

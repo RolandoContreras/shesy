@@ -39,6 +39,8 @@
                                     aria-label="Position: activate to sort column ascending">Usuario</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Cliente</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
+                                    aria-label="Office: activate to sort column ascending">Banco</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">E-mail</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -56,6 +58,19 @@
                                 <th><?php echo $value->customer_id;?></th>
                                 <td><?php echo "@".$value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
+                                <td>
+                                    <?php if ($value->bank_id == 1) {
+                                        $valor = "BCP (Banco de Crédito)";
+                                        $stilo = "label label-info";
+                                    }else if($value->bank_id == 2){
+                                        $valor = "interbank";
+                                        $stilo = "label label-success";
+                                    }else{
+                                        $valor = "---";
+                                        $stilo = "";
+                                    } ?>
+                                    <span class="<?php echo $stilo;?>"><?php echo $valor;?></span>
+                                </td>
                                 <td><?php echo $value->email;?></td>
                                 <td><?php echo $value->kit;?></td>
                                 <td>

@@ -17,6 +17,7 @@ class D_customer extends CI_Controller{
                         "select" =>"customer.customer_id,
                                     customer.username,
                                     customer.first_name,
+                                    customer.bank_id,
                                     customer.email,
                                     customer.last_name,
                                     customer.created_at,
@@ -33,41 +34,6 @@ class D_customer extends CI_Controller{
             $modulos ='clientes'; 
             $seccion = 'Lista';        
             $link_modulo =  site_url().'dashboard/clientes'; 
-            
-            /// VISTA
-            $this->tmp_mastercms->set('link_modulo',$link_modulo);
-            $this->tmp_mastercms->set('modulos',$modulos);
-            $this->tmp_mastercms->set('seccion',$seccion);
-            $this->tmp_mastercms->set("obj_customer",$obj_customer);
-            $this->tmp_mastercms->render("dashboard/customer/customer_list");
-    }
-    
-    public function financiados(){  
-        
-           $this->get_session();
-           $params = array(
-                        "select" =>"customer.customer_id,
-                                    customer.username,
-                                    customer.first_name,
-                                    customer.email,
-                                    customer.last_name,
-                                    customer.calification,
-                                    customer.created_at,
-                                    customer.active,
-                                    franchise.name as franchise,
-                                    customer.status_value",
-                        "where" => "customer.financy = 1",
-                        "join" => array('franchise, franchise.franchise_id = customer.franchise_id'),
-                        "group" => "customer.customer_id"
-               
-               );
-           //GET DATA FROM CUSTOMER
-           $obj_customer= $this->obj_customer->search($params);
-  
-           /// PAGINADO
-            $modulos ='financiados'; 
-            $seccion = 'Lista';        
-            $link_modulo =  site_url().'dashboard/financiados'; 
             
             /// VISTA
             $this->tmp_mastercms->set('link_modulo',$link_modulo);
@@ -97,7 +63,6 @@ class D_customer extends CI_Controller{
                 'last_name   ' => $this->input->post('last_name'),
                 'username' => $this->input->post('username'),
                 'password' => $this->input->post('password'),
-                'financy' => $financy,
                 'range_id' => $range,
                 'email' => $this->input->post('email'),
                 'dni' => $this->input->post('dni'),  
@@ -106,7 +71,10 @@ class D_customer extends CI_Controller{
                 'country' => $this->input->post('pais'),
                 'kit_id' => $kit,
                 'address' => $this->input->post('address'),
-                'btc_address' => $this->input->post('btc_address'),
+                'bank_id' => $this->input->post('bank_id'),
+                'bank_account' => $this->input->post('bank_account'),
+                'bank_number' => $this->input->post('bank_number'),
+                'bank_number_cci' => $this->input->post('bank_number_cci'),
                 'active' => $this->input->post('active'),
                 'updated_at' => date("Y-m-d H:i:s"),
                 'updated_by' => $_SESSION['usercms']['user_id']
@@ -114,24 +82,6 @@ class D_customer extends CI_Controller{
             //SAVE DATA IN TABLE    
             $this->obj_customer->update($customer_id, $data);
         redirect(site_url()."dashboard/clientes");
-    }
-    
-    public function active_customer(){
-        //ACTIVE CUSTOMER
-        if($this->input->is_ajax_request()){  
-            
-                $customer_id = $this->input->post("customer_id");
-                if(count($customer_id) > 0){
-                    $data = array(
-                        'calification' => 1,
-                        'updated_at' => date("Y-m-d H:i:s"),
-                        'updated_by' => $_SESSION['usercms']['user_id'],
-                    ); 
-                    $this->obj_customer->update($customer_id,$data);
-                }
-                echo json_encode($data);            
-        exit();
-            }
     }
     
     public function load($obj_customer=NULL){
@@ -176,23 +126,6 @@ class D_customer extends CI_Controller{
             $this->tmp_mastercms->set('modulos',$modulos);
             $this->tmp_mastercms->set('seccion',$seccion);
             $this->tmp_mastercms->render("dashboard/customer/customer_form");    
-    }
-    
-    public function no_active_customer(){
-            //NO ACTIVE CUSTOMER
-        if($this->input->is_ajax_request()){   
-            $customer_id = $this->input->post("customer_id");
-                if(count($customer_id) > 0){
-                    $data = array(
-                        'calification' => 0,
-                        'updated_at' => date("Y-m-d H:i:s"),
-                        'updated_by' => $_SESSION['usercms']['user_id'],
-                    ); 
-                    $this->obj_customer->update($customer_id,$data);
-                }
-                echo json_encode($data);            
-        exit();
-            }
     }
     
     public function get_session(){          
