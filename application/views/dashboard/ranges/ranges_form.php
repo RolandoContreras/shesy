@@ -72,8 +72,8 @@
                               <div class="form-group">
                                     <label for="inputState">Estado</label>
                                     <select class="form-control" name="active" id="active">
-                                              <option value="1" <?php if($obj_ranges->active == 1){ echo "selected";}?>>Activo</option>
-                                             <option value="0" <?php if($obj_ranges->active == 0){ echo "selected";}?>>Inactivo</option>
+                                        <option value="1" <?php if(isset($obj_ranges->active) == 1){ echo "selected";}?>>Activo</option>
+                                        <option value="0" <?php if(isset($obj_ranges->active) == 0){ echo "selected";}?>>Inactivo</option>
                                     </select>
                               </div>
                           </div>

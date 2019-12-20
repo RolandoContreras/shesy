@@ -32,21 +32,34 @@
                     <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/categorias/validate";?>">
                         <div class="form-row">
                           <div class="form-group col-md-6">
+                              <?php 
+                                if(isset($obj_category)){ ?>
                               <div class="form-group">
                                     <label>ID</label>
                                     <input class="form-control" type="text" value="<?php echo isset($obj_category)?$obj_category->category_id:"";?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
                                     <input type="hidden" name="category_id" id="category_id" value="<?php echo isset($obj_category)?$obj_category->category_id:"";?>">
                               </div>
+                              <?php } ?>
                               <div class="form-group">
                                 <label>Nombre</label>
                                 <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_category->name)?$obj_category->name:"";?>" class="input-xlarge-fluid" placeholder="Nombre">
                               </div>
+                              <div class="form-group">
+                                <div class="form-group col-md-12">
+                                    <label for="inputState">Tipo</label>
+                                        <select name="type" id="type" class="form-control">
+                                         <option value="">[ Seleccionar ]</option>
+                                          <option value="1" <?php if(isset($obj_category)){
+                                              if($obj_category->type == 1){ echo "selected";}
+                                          }else{echo "";} ?>>Videos</option>
+                                          <option value="2" <?php if(isset($obj_category)){
+                                              if($obj_category->type == 2){ echo "selected";}
+                                          }else{echo "";} ?>>Catalogo</option>
+                                    </select>
+                                </div>
+                              </div>
                           </div>
                           <div class="form-group col-md-6">
-                              <div class="form-group">
-                                    <label>Slug</label>
-                                    <input class="form-control" type="text" id="slug" name="slug" value="<?php echo isset($obj_category->slug)?$obj_category->slug:"";?>" class="input-xlarge-fluid" placeholder="Slug">
-                              </div>
                               <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="inputState">Estado</label>

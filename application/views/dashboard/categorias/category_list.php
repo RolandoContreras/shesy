@@ -23,7 +23,8 @@
               <div class="col-sm-12">
                 <div class="card">
                   <div class="card-header">
-                    <h5>Listado de Bonos</h5>
+                    <h5>Listado de Categorías</h5>
+                    <button class="btn btn-secondary" type="button" onclick="new_category();"><span><span class="pcoded-micon"><i data-feather="plus"></i></span> Nuevo</span></button>
                   </div>
                   <div class="card-block">
                     <div class="table-responsive">
@@ -39,7 +40,7 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
                                     aria-label="Position: activate to sort column ascending">Nombre</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
-                                    aria-label="Office: activate to sort column ascending">Slug</th>
+                                    aria-label="Office: activate to sort column ascending">Tipo</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Estado</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 188px;"
@@ -52,7 +53,16 @@
                                 <tr>
                                 <th><?php echo $value->category_id;?></th>
                                 <td><?php echo strtoupper($value->name);?></td>
-                                <td><?php echo $value->slug;?></td>
+                                <td>
+                                    <?php if ($value->type == 1) {
+                                        $valor = "Videos";
+                                        $stilo = "label label-info";
+                                    }else{
+                                        $valor = "Catalogo";
+                                        $stilo = "label label-success";
+                                    } ?>
+                                    <span class="<?php echo $stilo;?>"><?php echo $valor;?></span>
+                                </td>
                                 <td>
                                     <?php if ($value->active == 0) {
                                         $valor = "No Activo";
@@ -77,7 +87,7 @@
                                 <tr>
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">Nombre</th>
-                                  <th rowspan="1" colspan="1">Slug</th>
+                                  <th rowspan="1" colspan="1">Tipo</th>
                                   <th rowspan="1" colspan="1">Estado</th>
                                   <th rowspan="1" colspan="1">Acciones</th>
                                 </tr>

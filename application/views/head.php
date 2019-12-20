@@ -2,9 +2,9 @@
   <title>Corporación FK | cambiemos el mundo</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Somos una comunidad de desarrollo personal y emprendimiento. Estudia">
+  <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
   <meta name="author" content="Corporation FK">
-  <meta name="keyword" content="coporación fk, fk social, fk embajadores, plataforma de cursos">
+  <meta name="keyword" content="Cultura Fk, fk, Fk embajadores, Fk social, Fk corporación, mlm, mmn">
   <meta name="robots" content="Index, Follow">
   <link type="text/css" media="all" href="<?php echo site_url().'static/page_front/css/autoptimize_67.css';?>" rel="stylesheet">
   <link rel="stylesheet" id="dashicons-css" href="<?php echo site_url().'static/page_front/css/autoptimize_5e.css';?>" type="text/css" media="all">

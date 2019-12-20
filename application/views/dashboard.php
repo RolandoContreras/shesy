@@ -44,7 +44,7 @@
               <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png'?>" alt="logo" width="80"/>
           </div>
             <form method="get" id="login">
-              <h3 class="mb-4">Login</h3>
+              <h3 class="mb-4">Administración</h3>
               <div class="input-group mb-3">
                   <input class="form-control" id="username" type="text" placeholder="Email">
               </div>

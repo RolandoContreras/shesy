@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Dashboard - Cultura FK</title>
-  <!--<base href="<?php echo site_url();?>">-->
-  <!--[if lt IE 10]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+  <title>Administración - Cultura FK</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Multiplica tu dinero en el mercado financiero con nosotros. BCA CAPITAL una empresa financiera que te ayudará a aumentar tus finanzas, Clic en el siguiente enlace.">
-  <meta name="author" content="Cevolution Web">
-  <meta name="keyword" content="bca capital, bca, cursos, cursos de forex, cursos de marketing digital, bca networkmarketing">
-  <meta name="robots" content="Index, Follow">
+  <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
+  <meta name="author" content="Cultura Fk">
+  <meta name="keyword" content="Cultura Fk, fk, Fk embajadores, Fk social, Fk corporación, mlm, mmn, cursos onlines, cursos liderazgo">
    <!--START FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-60x60.png';?>">
@@ -50,7 +47,7 @@
           <div class="b-bg">
               <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" alt="Logo" width="35"/>
           </div>
-              <span class="b-title">BCA CAPITAL</span>
+              <span class="b-title">Administración</span>
           </a>
           <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
       <div class="navbar-content scroll-div">
