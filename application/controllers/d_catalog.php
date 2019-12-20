@@ -6,6 +6,7 @@ class D_catalog extends CI_Controller{
         parent::__construct();
         $this->load->model("customer_model","obj_customer");
         $this->load->model("catalog_model","obj_catalog");
+        $this->load->model("category_model","obj_category");
     }   
                 
     public function index(){  
@@ -41,9 +42,19 @@ class D_catalog extends CI_Controller{
                          "where" => $where,
             ); 
             $obj_catalog  = $this->obj_catalog->get_search_row($params); 
+            
             //RENDER
             $this->tmp_mastercms->set("obj_catalog",$obj_catalog);
           }
+          
+         $params = array(
+                        "select" =>"category_id,
+                                    name",
+                "where" => "type = 2 and active = 1",
+            );
+            //GET DATA COMMENTS
+            $obj_category= $this->obj_category->search($params);
+            $this->tmp_mastercms->set("obj_category",$obj_category);
             $this->tmp_mastercms->render("dashboard/catalogo/catalog_form");    
     }
     
@@ -53,6 +64,12 @@ class D_catalog extends CI_Controller{
         $catalog_id = $this->input->post("catalog_id");
         $name = $this->input->post("name");
         $slug = convert_slug($name);
+        $bono_n1 = $this->input->post('bono_n1');
+        $bono_n2 = $this->input->post('bono_n2');
+        $bono_n3 = $this->input->post('bono_n3');
+        $bono_n4 = $this->input->post('bono_n4');
+        $bono_n5 = $this->input->post('bono_n5');
+        $category_id = $this->input->post('category_id');
         $summary =  $this->input->post('summary');
         $price =  $this->input->post('price');
         $description =  $this->input->post('description');
@@ -120,6 +137,12 @@ class D_catalog extends CI_Controller{
                 'slug' => $slug, 
                 'summary' => $summary,
                 'price' => $price,
+                'bono_n1' => $bono_n1,
+                'bono_n2' => $bono_n2,
+                'bono_n3' => $bono_n3,
+                'bono_n4' => $bono_n4,
+                'bono_n5' => $bono_n5,
+                'category_id' => $category_id,
                 'description' => $description,
                 'img' => $img,
                 'img2' => $img2,
@@ -137,6 +160,12 @@ class D_catalog extends CI_Controller{
                 'slug' => $slug, 
                 'summary' => $summary,
                 'price' => $price,
+                'bono_n1' => $bono_n1,
+                'bono_n2' => $bono_n2,
+                'bono_n3' => $bono_n3,
+                'bono_n4' => $bono_n4,
+                'bono_n5' => $bono_n5,
+                'category_id' => $category_id,
                 'description' => $description,
                 'img' => $img,
                 'img2' => $img2,

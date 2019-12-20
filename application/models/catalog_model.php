@@ -20,6 +20,11 @@ class catalog_model_atributos{
     var $name='';
     var $slug='';
     var $price='';
+    var $bono_n1='';
+    var $bono_n2='';
+    var $bono_n3='';
+    var $bono_n4='';
+    var $bono_n5='';
     var $description='';
     var $date='';
     var $img='';
@@ -43,6 +48,11 @@ class Catalog_Model extends CI_Model{
         $this->name='';
         $this->slug='';
         $this->price='';
+        $this->bono_n1='';
+        $this->bono_n2='';
+        $this->bono_n3='';
+        $this->bono_n4='';
+        $this->bono_n5='';
 	$this->description='';
         $this->date='';
         $this->img='';

@@ -59,9 +59,30 @@
                                   <textarea class="form-control" name="description" id="description" placeholder="Descripción"><?php echo isset($obj_catalog->description)?$obj_catalog->description:"";?></textarea>
                               </div>
                               
-                              
-                              
-                              
+                              <div class="form-group col-md-3">
+                                <div class="form-group">
+                                    <label>Bonificación N°1</label>
+                                    <input class="form-control" type="text" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_catalog->bono_n1)?$obj_catalog->bono_n1:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°1">
+                                </div>    
+                                  <div class="form-group">
+                                      <label>Bonificación N°2</label>
+                                      <input class="form-control" type="text" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_catalog->bono_n2)?$obj_catalog->bono_n2:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°2">
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Bonificación N°3</label>
+                                      <input class="form-control" type="text" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_catalog->bono_n3)?$obj_catalog->bono_n3:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°3">
+                                  </div>
+                              </div>
+                              <div class="form-group col-md-3">
+                                  <div class="form-group">
+                                      <label>Bonificación N°4</label>
+                                      <input class="form-control" type="text" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_catalog->bono_n4)?$obj_catalog->bono_n4:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°4">
+                                  </div>    
+                                  <div class="form-group">
+                                      <label>Bonificación N°5</label>
+                                      <input class="form-control" type="text" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_catalog->bono_n5)?$obj_catalog->bono_n5:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°5">
+                                  </div>
+                              </div>
                           </div>
                           <div class="form-group col-md-6">
                               <?php 
@@ -111,6 +132,25 @@
                                     </div>
                               </div>
                               
+                              <label for="inputState">Categoría</label>
+                                <select name="category_id" id="category_id" class="form-control">
+                                <option value="">[ Seleccionar ]</option>
+                                    <?php foreach ($obj_category as $value ): ?>
+                                <option value="<?php echo $value->category_id;?>"
+                                    <?php 
+                                            if(isset($obj_catalog->category_id)){
+                                                    if($obj_catalog->category_id==$value->category_id){
+                                                        echo "selected";
+                                                    }
+                                            }else{
+                                                      echo "";
+                                            }
+
+                                    ?>><?php echo $value->name;?>
+                                </option>
+                                    <?php endforeach; ?>
+                            </select>
+                              <br/>
                               <div class="form-group">
                                 <label for="inputState">Estado</label>
                                     <select name="active" id="active" class="form-control">
