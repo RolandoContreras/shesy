@@ -111,7 +111,7 @@
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/pagos";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/puntos";?>"><i class="icon-large icon-th"></i>Puntos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/rangos";?>"><i class="icon-large icon-th"></i>Rangos</a></li>
-                <?php if($_SESSION['usercms']['privilage'] == 2){ ?>
+                <?php if($_SESSION['usercms']['privilage'] > 1){ ?>
                 <li class="pcoded-hasmenu" ><a href="<?php echo site_url()."dashboard/usuarios";?>"><i class="icon-large icon-th"></i>Usuarios</a></li>
                 <?php } ?>
             </ul>

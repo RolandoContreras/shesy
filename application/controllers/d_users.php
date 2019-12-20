@@ -61,8 +61,6 @@ class D_Users extends CI_Controller{
             //SAVE DATA IN TABLE    
             $this->obj_users->insert($data);
         }
-        
-            
         redirect(site_url()."dashboard/usuarios");
     }
     

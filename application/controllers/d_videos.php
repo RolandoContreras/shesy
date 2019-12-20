@@ -19,9 +19,7 @@ class D_videos extends CI_Controller{
                                     videos.summary,
                                     videos.img,
                                     videos.video,
-                                    videos.module,
                                     videos.date,
-                                    videos.type_product,
                                     videos.active,
                                     category.name as categoria",
                 "join" => array( 'category, videos.category_id = category.category_id'),
@@ -79,8 +77,6 @@ class D_videos extends CI_Controller{
         //GET CUSTOMER_ID
         $video_id = $this->input->post("video_id");
         $name = $this->input->post("name");
-        $module =  $this->input->post('module');
-        $type_product =  $this->input->post('type_product');
         $img = $this->input->post("img2");
         $video =  $this->input->post('video');
         $summary =  $this->input->post('summary');
@@ -107,8 +103,6 @@ class D_videos extends CI_Controller{
         if($video_id != ""){
              $data = array(
                 'name' => $name,
-                'module' => $module,
-                'type_product' => $type_product,
                 'img' => $img,
                 'video' => $video,
                 'summary' => $summary,
@@ -122,8 +116,6 @@ class D_videos extends CI_Controller{
         }else{
             $data = array(
                 'name' => $name,
-                'module' => $module,
-                'type_product' => $type_product,
                 'video' => $video,
                 'img' => $img,
                 'summary' => $summary,

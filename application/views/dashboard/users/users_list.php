@@ -26,6 +26,7 @@
                 <div class="card">
                   <div class="card-header">
                     <h5>Listado de Usuario</h5>
+                    <button class="btn btn-secondary" type="button" onclick="nuevo_users();"><span><span class="pcoded-micon"><i data-feather="plus"></i></span> Nuevo</span></button>
                   </div>
                   <div class="card-block">
                     <div class="table-responsive">
@@ -64,8 +65,6 @@
                                     <?php 
                                     if ($value->privilage == 1){
                                         echo "<b>"."Control Simple"."</b>";
-                                    }elseif($value->privilage == 2){
-                                        echo "<b>"."Control Medio"."</b>";
                                     }else{
                                         echo "<b>"."Control Total"."</b>";
                                     }
@@ -170,4 +169,4 @@
     } );
 } );
 </script>
-<script src="static/cms/js/users.js"></script>
+<script src="<?php echo site_url();?>static/cms/js/users.js"></script>

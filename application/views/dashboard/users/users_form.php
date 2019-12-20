@@ -29,15 +29,17 @@
                     <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/usuarios/validate";?>">
                         <div class="form-row">
                             <div class="form-group col-md-12">
+                                <?php  if(isset($obj_users)){ ?>
                                   <div class="form-group">
                                         <label>ID</label>
                                         <input class="form-control" type="text" value="<?php echo isset($obj_users->user_id)?$obj_users->user_id:"";?>" placeholder="ID" disabled="">
                                         <input type="hidden" name="user_id" id="user_id" value="<?php echo isset($obj_users)?$obj_users->user_id:"";?>">
                                   </div>
+                                <?php } ?>
                             </div>
                           <div class="form-group col-md-6">
                               <div class="form-group">
-                                    <label>Usuario / E-mail</label>
+                                    <label>E-mail</label>
                                     <input class="form-control" type="text" id="email" name="email" value="<?php echo isset($obj_users->email)?$obj_users->email:"";?>" placeholder="E-mail">
                                 </div>
                                 <div class="form-group">
@@ -46,9 +48,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputState">Estado</label>
-                                    <select class="form-control" name="active" id="active">
-                                              <option value="1" <?php if($obj_users->active == 1){ echo "selected";}?>>Activo</option>
-                                             <option value="0" <?php if($obj_users->active == 0){ echo "selected";}?>>Inactivo</option>
+                                        <select name="active" id="active" class="form-control">
+                                         <option value="">[ Seleccionar ]</option>
+                                          <option value="1" <?php if(isset($obj_users)){
+                                              if($obj_users->active == 1){ echo "selected";}
+                                          }else{echo "";} ?>>Activo</option>
+                                          <option value="0" <?php if(isset($obj_kit)){
+                                              if($obj_users->active == 0){ echo "selected";}
+                                          }else{echo "";} ?>>Inactivo</option>
                                     </select>
                               </div>
                             </div>
@@ -64,9 +71,12 @@
                                 <div class="form-group">
                                       <label>Priveligios</label>
                                        <select class="form-control" name="privilage" id="privilage">
-                                            <option value="1" <?php if(isset($obj_users->privilage) == 1){echo "selected";}else{echo "";}?>>Control Simple</option>
-                                            <option value="2" <?php if(isset($obj_users->privilage) == 2){echo "selected";}else{echo "";}?>>Control Medio</option>
-                                            <option value="3" <?php if(isset($obj_users->privilage) == 3){echo "selected";}else{echo "";}?>>Control Total</option>
+                                            <option value="1" <?php if(isset($obj_users)){
+                                              if($obj_users->privilage == 1){ echo "selected";}
+                                              }else{echo "";} ?>>Control Simple</option>
+                                              <option value="2" <?php if(isset($obj_users)){
+                                                  if($obj_users->privilage == 2){ echo "selected";}
+                                              }else{echo "";} ?>>Control Total</option>
                                         </select>
                                 </div>
                           </div>

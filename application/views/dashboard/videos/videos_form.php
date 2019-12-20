@@ -50,6 +50,25 @@
                                   <label>Sumilla</label>
                                   <textarea class="form-control" name="summary" id="summary" placeholder="Sumilla"><?php echo isset($obj_videos->summary)?$obj_videos->summary:"";?></textarea>
                               </div>
+                              <br/>
+                              <label for="inputState">Categória</label>
+                                    <select name="category" id="category" class="form-control">
+                                    <option value="">[ Seleccionar ]</option>
+                                        <?php foreach ($obj_category as $value ): ?>
+                                    <option value="<?php echo $value->category_id;?>"
+                                        <?php 
+                                                if(isset($obj_videos->category_id)){
+                                                        if($obj_videos->category_id==$value->category_id){
+                                                            echo "selected";
+                                                        }
+                                                }else{
+                                                          echo "";
+                                                }
+                                        ?>><?php echo $value->name;?>
+                                    </option>
+                                        <?php endforeach; ?>
+                                </select>
+                              
                           </div>
                           <div class="form-group col-md-6">
                               <div class="form-group">
@@ -71,55 +90,8 @@
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                     </div>
                               </div>
-                          </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputState">Módulo</label>
-                                <select name="module" id="module" class="form-control">
-                                        <option value="">[ Seleccionar ]</option>
-                                      <option value="1" <?php if(isset($obj_videos)){
-                                          if($obj_videos->module == 1){ echo "selected";}
-                                      }else{echo "";} ?>>Básico</option>
-                                      <option value="2" <?php if(isset($obj_kit)){
-                                          if($obj_videos->module == 2){ echo "selected";}
-                                      }else{echo "";} ?>>Intermedio</option>
-                                      <option value="3" <?php if(isset($obj_kit)){
-                                          if($obj_videos->module == 3){ echo "selected";}
-                                      }else{echo "";} ?>>Avanzado</option>
-                                </select>
-                                <br/>
-                                <label for="inputState">Tipo</label>
-                                <select name="module" id="module" class="form-control">
-                                          <option value="">[ Seleccionar ]</option>
-                                          <option value="1" <?php if(isset($obj_videos)){
-                                              if($obj_videos->type_product == 1){ echo "selected";}
-                                          }else{echo "";} ?>>Principal</option>
-                                          <option value="2" <?php if(isset($obj_kit)){
-                                              if($obj_videos->type_product == 2){ echo "selected";}
-                                          }else{echo "";} ?>>Re-Consumos</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputState">Categória</label>
-                                    <select name="category" id="category" class="form-control">
-                                    <option value="">[ Seleccionar ]</option>
-                                        <?php foreach ($obj_category as $value ): ?>
-                                    <option value="<?php echo $value->category_id;?>"
-                                        <?php 
-                                                if(isset($obj_videos->category_id)){
-                                                        if($obj_videos->category_id==$value->category_id){
-                                                            echo "selected";
-                                                        }
-                                                }else{
-                                                          echo "";
-                                                }
-                                        ?>><?php echo $value->name;?>
-                                    </option>
-                                        <?php endforeach; ?>
-                                </select>
-                                <br/>
-                                <label for="inputState">Estado</label>
+                              <br/>
+                               <label for="inputState">Estado</label>
                                     <select name="active" id="active" class="form-control">
                                      <option value="">[ Seleccionar ]</option>
                                       <option value="1" <?php if(isset($obj_videos)){
@@ -129,8 +101,7 @@
                                           if($obj_videos->active == 0){ echo "selected";}
                                       }else{echo "";} ?>>Inactivo</option>
                                 </select>
-                                
-                            </div>
+                          </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <button class="btn btn-danger" type="reset" onclick="cancel_video();">Cancelar</button>                    
