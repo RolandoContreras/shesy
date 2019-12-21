@@ -143,6 +143,41 @@
                     </div>
                   </div>
                 </div>
+                
+            <div class="wpb_wrapper">
+              <div class="thim-sc-steps layout-4">
+                <div class=sc-steps-wrapper>
+                  <div class=inner-steps-wrapper>
+                    <div class=container>
+                      <div class=row>
+                        <div class="col-lg-6 content-box">
+                          <div class=steps-wrapper>
+                              <h3 class="sc-title">¿Qué es la cultura FK?</h3>
+                            <div class=steps>
+                              <div class=tab-content>
+                                <div class="tab-pane active">
+                                  <p class=description>Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente. </p>
+                                  <p class=description>Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
+                                  <a href="<?php echo site_url().'about';?>" class="readmore">Más Información</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 media-box">
+                          <div class="player-wrapper">
+                            <div class="player-inner">
+                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
+                          </div>
+                          <div class="icon-play"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
                 <div class="thim-sc-course-search ">
                     <div class=thim-loading-icon>
                       <div class=sk-three-bounce>
@@ -214,100 +249,40 @@
           </div>
         </div>
         <div class="vc_row-full-width vc_clearfix"></div>
-        
-        <div id="next-screen" class="vc_row wpb_row vc_row-fluid thim-bg-top-center vc_custom_1502099498895 vc_row-has-fill vc_column-gap-10">
-          <div class="wpb_column vc_column_container vc_col-sm-12">
-            <div class="vc_column-inner">
-              <div class="wpb_wrapper">
-                <!--START CURSOS-->
-                <div class="thim-courses-collection-wrapper">
-                  <div class="thim-collection-info rounded-colection-info">
-                    <h3 class="title">¡Nuestros Cursos! Te Ayudamos a hacer crecer tu vida.</h3>
-                  </div>
-                  <div class="thim-courses-collection rounded-courses-collection">
-                    <div class="collection-frame">
-                      <ul class="slidee">
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/curso_online.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/courses';?>">
-                              <h4 class="name">Todos los Cursos</h4>
-                              <div class="number-courses">57 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/desarrollo_personal.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/personal';?>">
-                              <h4 class="name">Desarrollo Personal</h4>
-                              <div class="number-courses">9 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Liderazgo" data-src="<?php echo site_url().'static/page_front/images/liderazgo.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/profetional';?>">
-                              <h4 class="name">Crecimiento Profesional</h4>
-                              <div class="number-courses">10 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Redes de Mercadeo" data-src="<?php echo site_url().'static/page_front/images/empresarial.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/finance';?>">
-                              <h4 class="name">Finanzas</h4>
-                              <div class="number-courses">15 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Marketing" data-src="<?php echo site_url().'static/page_front/images/marketing.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/extra';?>">
-                              <h4 class="name">Extras</h4>
-                              <div class="number-courses">20 Videos</div>
-                            </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class=rounded-view-all-button>
-                      <a href="<?php echo site_url().'course';?>">Ver todos los cursos</a>
-                  </div>
-                </div>
-                <!--END CURSOS-->
-              <div class=vc_empty_space style="height: 60px"><span class=vc_empty_space_inner></span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div class="vc_row-full-width vc_clearfix"></div>
+        <div id="next-screen" class="vc_row-full-width vc_clearfix"></div>
       <div data-vc-full-width="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding">
         <div class="wpb_column vc_column_container vc_col-sm-12">
-          <div class=vc_column-inner>
+          <div class="">
               <!--STAR ACERCA--->
               <div class="wpb_wrapper">
-              <div class="thim-sc-steps layout-4">
-                <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background-2.jpg';?>); ">
-                  <div class=inner-steps-wrapper>
+                  <div class="thim-sc-steps layout-4" style="padding:0px !important;">
+                      <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/fondo-abstracto.jpg';?>); ">
+                          <div class=inner-steps-wrapper style="background: none !important;">
                     <div class=container>
                       <div class=row>
+                          <div class="col-lg-6 media-box">
+                          <div class="player-wrapper">
+                            <div class="player-inner">
+                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
+                          </div>
+                          <div class="icon-play"></div>
+                        </div>
                         <div class="col-lg-6 content-box">
                           <div class=steps-wrapper>
-                              <h3 class="sc-title">¿Qué es la cultura FK?</h3>
+                              <h3 class="sc-title" style="color:black !important;">¿Qué es la embajada FK?</h3>
                             <div class=steps>
                               <div class=tab-content>
                                 <div class="tab-pane active">
-                                  <p class=description>Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente. </p>
-                                  <p class=description>Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
-                                  <a href="<?php echo site_url().'about';?>" class="readmore">Más Información</a>
+                                    <p class=description style="color:black !important;">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
+                                  <p class=description style="color:black !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
+                                  <a href="#" class="readmore">Postular a ser un emabajador </a>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6 media-box">
-                          <div class="player-wrapper">
-                            <div class="player-inner">
-                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <div class="icon-play"></div>
-                        </div>
+                        
                       </div>
                     </div>
                   </div>
@@ -422,6 +397,68 @@
         </div>
       </div>
       <div class="vc_row-full-width vc_clearfix"></div>
+       <div id="next-screen" class="vc_row wpb_row vc_row-fluid thim-bg-top-center vc_custom_1502099498895 vc_row-has-fill vc_column-gap-10">
+          <div class="wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner">
+              <div class="wpb_wrapper">
+                <!--START CURSOS-->
+                <div class="thim-courses-collection-wrapper">
+                  <div class="thim-collection-info rounded-colection-info">
+                    <h3 class="title">¡Nuestros Cursos! Te Ayudamos a hacer crecer tu vida.</h3>
+                  </div>
+                  <div class="thim-courses-collection rounded-courses-collection">
+                    <div class="collection-frame">
+                      <ul class="slidee">
+                        <li class="collection-item">
+                            <img width="338" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/curso_online.jpg';?>" class="lazyload">
+                            <a class="collection-wrapper" href="<?php echo site_url().'courses/courses';?>">
+                              <h4 class="name">Todos los Cursos</h4>
+                              <div class="number-courses">57 Videos</div>
+                            </a>
+                        </li>
+                        <li class="collection-item">
+                            <img width="338" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/desarrollo_personal.jpg';?>" class="lazyload">
+                            <a class="collection-wrapper" href="<?php echo site_url().'courses/personal';?>">
+                              <h4 class="name">Desarrollo Personal</h4>
+                              <div class="number-courses">9 Videos</div>
+                            </a>
+                        </li>
+                        <li class="collection-item">
+                            <img width="338" height="177" alt="Liderazgo" data-src="<?php echo site_url().'static/page_front/images/liderazgo.jpg';?>" class="lazyload">
+                            <a class="collection-wrapper" href="<?php echo site_url().'courses/profetional';?>">
+                              <h4 class="name">Crecimiento Profesional</h4>
+                              <div class="number-courses">10 Videos</div>
+                            </a>
+                        </li>
+                        <li class="collection-item">
+                            <img width="338" height="177" alt="Redes de Mercadeo" data-src="<?php echo site_url().'static/page_front/images/empresarial.jpg';?>" class="lazyload">
+                            <a class="collection-wrapper" href="<?php echo site_url().'courses/finance';?>">
+                              <h4 class="name">Finanzas</h4>
+                              <div class="number-courses">15 Videos</div>
+                            </a>
+                        </li>
+                        <li class="collection-item">
+                            <img width="338" height="177" alt="Marketing" data-src="<?php echo site_url().'static/page_front/images/marketing.jpg';?>" class="lazyload">
+                            <a class="collection-wrapper" href="<?php echo site_url().'courses/extra';?>">
+                              <h4 class="name">Extras</h4>
+                              <div class="number-courses">20 Videos</div>
+                            </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class=rounded-view-all-button>
+                      <a href="<?php echo site_url().'courses';?>">Ver todos los cursos</a>
+                  </div>
+                </div>
+                <!--END CURSOS-->
+              <div class=vc_empty_space style="height: 60px"><span class=vc_empty_space_inner></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
       <!--START CATALOGO-->
       <div class="vc_row wpb_row vc_row-fluid">
         <div class="wpb_column vc_column_container vc_col-sm-12">

@@ -65,9 +65,6 @@
                             <div class=title data-scroll-to=#title2 data-scroll-speed=700 data-scroll-offset=-30>
                               <div class=text>¿Qué es la embajada?</div>
                             </div>
-                            <div class=title data-scroll-to=#title3 data-scroll-speed=700 data-scroll-offset=-30>
-                              <div class=text>Visión</div>
-                            </div>
                             <div class=title data-scroll-to=#title4 data-scroll-speed=700 data-scroll-offset=-30>
                               <div class=text>Características</div>
                             </div>
@@ -82,97 +79,78 @@
                         <div class=wpb_wrapper>
                           <div class="thim-sc-image-box left ">
                             <section id=title1>
-                              <div class="row no-gutters">
-                                <div class="col-sm-12 col-lg-6 image-box">
-                                 <div class="vc_column-inner vc_custom_1502095063222">
-                                      <div class="wpb_wrapper">
-                                        <div class="thim-sc-video-box layout-3">
-                                          <div class="video">
-                                              <div class="video-box" style="background-image: url(<?php echo site_url().'static/page_front/images/embajada_fk.jpg';?>)">
-                                              <div class="play-button">
-                                                  <a href="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" class="video-thumbnail">
-                                                      <i class="icon-play"></i>
-                                                  </a>
+                                  <div class="wpb_wrapper">
+                                      <div class="thim-sc-steps layout-4">
+                                        <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/vision.jpg';?>); ">
+                                          <div class=inner-steps-wrapper>
+                                            <div class=container>
+                                              <div class=row>
+                                                <div class="col-lg-6 content-box">
+                                                  <div class=steps-wrapper>
+                                                      <h3 class="sc-title">¿Qué es la cultura FK?</h3>
+                                                    <div class=steps>
+                                                      <div class=tab-content>
+                                                        <div class="tab-pane active">
+                                                          <p class=description> Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
+                                                          <p class=description>Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
+                                                          <a href="#" class="readmore">Postular a ser un emabajador </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-6 media-box">
+                                                  <div class="player-wrapper">
+                                                    <div class="player-inner">
+                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                    </div>
+                                                  </div>
+                                                  <div class="icon-play"></div>
+                                                </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-12 col-lg-6 text-content">
-                                    <img data-src="<?php echo site_url().'static/page_front/images/layer-47.png';?>" class="bg-content lazyload">
-                                  <div class=text-content-inner>
-                                    <h3 class="title-box">¿Qué Somos?</h3>
-                                    <p class=sub-title>Nuestra Historia.</p>
-                                    <p class=underline></p>
-                                    <div class=content>
-                                      <p>Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente. </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                             </section>
                           </div>
                           <div class="thim-sc-image-box right ">
                             <section id=title2>
-                              <div class="row no-gutters">
-                                <div class="col-sm-12 col-lg-6 image-box">
-                                    <div class="vc_column-inner vc_custom_1502095063222">
-                                      <div class="wpb_wrapper">
-                                        <div class="thim-sc-video-box layout-3">
-                                          <div class="video">
-                                              <div class="video-box" style="background-image: url(<?php echo site_url().'static/page_front/images/vision.jpg';?>)">
-                                              <div class="play-button">
-                                                  <a href="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" class="video-thumbnail">
-                                                      <i class="icon-play"></i>
-                                                  </a>
+                                  <div class="wpb_wrapper">
+                                      <div class="thim-sc-steps layout-4">
+                                        <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/mision.jpg';?>); ">
+                                          <div class=inner-steps-wrapper>
+                                            <div class=container>
+                                              <div class=row>
+                                                  <div class="col-lg-6 media-box">
+                                                  <div class="player-wrapper">
+                                                    <div class="player-inner">
+                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                    </div>
+                                                  </div>
+                                                  <div class="icon-play"></div>
+                                                </div>
+                                                <div class="col-lg-6 content-box">
+                                                  <div class=steps-wrapper>
+                                                      <h3 class="sc-title">¿Qué es la embajada FK?</h3>
+                                                    <div class=steps>
+                                                      <div class=tab-content>
+                                                        <div class="tab-pane active">
+                                                          <p class=description>Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos</p>
+                                                          <p class=description>Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
+                                                          <a href="#" class="readmore">Postular a ser un emabajador </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-12 col-lg-6 text-content">
-                                    <img data-src="<?php echo site_url().'static/page_front/images/layer-47.png';?>" class="bg-content lazyload">
-                                  <div class=text-content-inner>
-                                    <h3 class="title-box">¿Qué es la embajada FK?</h3>
-                                    <p class=underline></p>
-                                    <div class=content>
-                                      <p>Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
-                                      <a href="<?php echo site_url().'contact';?>" target="_self" class="btn btn-primary btn-md">
-                                            <span class=text>Postula a la Embajada FK</span>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </section>
-                          </div>
-                          <div class="thim-sc-image-box left ">
-                            <section id=title3>
-                              <div class="row no-gutters">
-                                <div class="col-sm-12 col-lg-6 image-box">
-                                    <img alt="Mision" data-src="<?php echo site_url().'static/page_front/images/mision.jpg';?>" class="lazyload">
-                                    <span class=number style="color: rgba(255,255,255,0.6)">02</span>
-                                </div>
-                                <div class="col-sm-12 col-lg-6 text-content">
-                                    <img data-src="<?php echo site_url().'static/page_front/images/layer-47.png';?>" class="bg-content lazyload">
-                                  <div class=text-content-inner>
-                                    <h3 class="title-box">Nuestra Visión</h3>
-                                    <p class=sub-title>It is a long established fact that a reade.</p>
-                                    <p class=underline></p>
-                                    <div class=content>
-                                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium laudantium, totam rem aperiam, eaque ipsa
-                                        quae ab illo inventore veritatis,et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam,voluptatem
-                                        quia voluptas sit aspernatur aut odit aut fugit, sed quia,consequuntur magni dolores eos qui ratione voluptatem
-                                        sequi nesciunt.,Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, adipisci velit, sed quia non numquam
-                                        eius modi tempora</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                             </section>
                           </div>
                         </div>
