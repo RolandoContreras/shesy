@@ -47,10 +47,9 @@
                                 <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_videos->name)?$obj_videos->name:"";?>" class="input-xlarge-fluid" placeholder="Titulo">
                               </div>
                               <div class="form-group">
-                                  <label>Sumilla</label>
+                                  <label>Descripción</label>
                                   <textarea class="form-control" name="summary" id="summary" placeholder="Sumilla"><?php echo isset($obj_videos->summary)?$obj_videos->summary:"";?></textarea>
                               </div>
-                              <br/>
                               <label for="inputState">Categória</label>
                                     <select name="category" id="category" class="form-control">
                                     <option value="">[ Seleccionar ]</option>
@@ -68,29 +67,54 @@
                                     </option>
                                         <?php endforeach; ?>
                                 </select>
+                              <br/>
+                              <label for="inputState">Tipo</label>
+                                    <select name="type" id="type" class="form-control">
+                                     <option value="">[ Seleccionar ]</option>
+                                      <option value="1" <?php if(isset($obj_videos)){
+                                          if($obj_videos->type == 1){ echo "selected";}
+                                      }else{echo "";} ?>>Libre</option>
+                                      <option value="2" <?php if(isset($obj_videos)){
+                                          if($obj_videos->type == 2){ echo "selected";}
+                                      }else{echo "";} ?>>Pagado</option>
+                                </select>
                               
                           </div>
                           <div class="form-group col-md-6">
                               <div class="form-group">
-                                    <label>Video</label>
+                                    <label>Video Link</label>
                                     <input class="form-control" type="text" id="video" name="video" value="<?php echo isset($obj_videos->video)?$obj_videos->video:"";?>" class="input-xlarge-fluid" placeholder="Video">
                               </div>
                               <?php 
                                   if(isset($obj_videos)){ ?>
                                       <div class="form-group">
-                                          <label>Imagen Actual</label><br/>
+                                          <label>Imagen Principal</label><br/>
                                           <img src='<?php echo site_url()."static/course/img/$obj_videos->img";?>' width="100" />
                                           <input class="form-control" type="hidden" name="img2" id="img2" value="<?php echo isset($obj_videos)?$obj_videos->img:"";?>">
                                       </div>
                             <?php } ?>
                               <div class="form-group">
-                                    <label>Imagen</label>
+                                    <label>Imagen Principal 1000 x 500</label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                     </div>
                               </div>
-                              <br/>
+                              <?php 
+                                  if(isset($obj_videos)){ ?>
+                                      <div class="form-group">
+                                          <label>Imagen Secundaria</label><br/>
+                                          <img src='<?php echo site_url()."static/course/img/$obj_videos->img2";?>' width="100" />
+                                          <input class="form-control" type="hidden" name="img3" id="img3" value="<?php echo isset($obj_videos)?$obj_videos->img2:"";?>">
+                                      </div>
+                            <?php } ?>
+                              <div class="form-group">
+                                    <label>Imagen 365 x 405</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file_2" id="image_file_2">
+                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                    </div>
+                              </div>
                                <label for="inputState">Estado</label>
                                     <select name="active" id="active" class="form-control">
                                      <option value="">[ Seleccionar ]</option>

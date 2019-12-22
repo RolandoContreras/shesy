@@ -17,6 +17,7 @@ class D_videos extends CI_Controller{
                                     videos.category_id,
                                     videos.name,
                                     videos.summary,
+                                    videos.type,
                                     videos.img,
                                     videos.video,
                                     videos.date,
@@ -57,10 +58,10 @@ class D_videos extends CI_Controller{
       
           $params = array(
                         "select" =>"*",
-                         "where" => "active = 1",
+                         "where" => "type = 1 and active = 1",
             ); 
             $obj_category = $this->obj_category->search($params); 
-          
+            
             $modulos ='videos'; 
             $seccion = 'Formulario';        
             $link_modulo =  site_url().'dashboard/'.$modulos; 
@@ -77,8 +78,8 @@ class D_videos extends CI_Controller{
         //GET CUSTOMER_ID
         $video_id = $this->input->post("video_id");
         $name = $this->input->post("name");
-        $img = $this->input->post("img2");
         $video =  $this->input->post('video');
+        $type =  $this->input->post('type');
         $summary =  $this->input->post('summary');
         $category =  $this->input->post('category');
         $active =  $this->input->post('active');
@@ -86,7 +87,7 @@ class D_videos extends CI_Controller{
         if(isset($_FILES["image_file"]["name"])){
                 $config['upload_path']          = './static/course/img';
                 $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 2000;
+                $config['max_size']             = 3000;
                 $this->load->library('upload', $config);
                     if ( ! $this->upload->do_upload('image_file')){
                          $error = array('error' => $this->upload->display_errors());
@@ -100,10 +101,29 @@ class D_videos extends CI_Controller{
                  }   
             }
         
+        if(isset($_FILES["image_file_2"]["name"])){
+                $config['upload_path']          = './static/course/img';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 3000;
+                $this->load->library('upload', $config);
+                    if ( ! $this->upload->do_upload('image_file_2')){
+                         $error = array('error' => $this->upload->display_errors());
+                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
+                    }else{
+                        $data = array('upload_data' => $this->upload->data());
+                    }
+                $img_2 = $_FILES["image_file_2"]["name"];        
+                 if($img_2 == ""){
+                     $img_2 = $this->input->post("img3");
+                 }   
+            }
+        
         if($video_id != ""){
              $data = array(
                 'name' => $name,
                 'img' => $img,
+                'img2' => $img_2,
+                'type' => $type,
                 'video' => $video,
                 'summary' => $summary,
                 'category_id' => $category,
@@ -118,6 +138,8 @@ class D_videos extends CI_Controller{
                 'name' => $name,
                 'video' => $video,
                 'img' => $img,
+                'img2' => $img_2,
+                'type' => $type,
                 'summary' => $summary,
                 'category_id' => $category,
                 'date' => date("Y-m-d H:i:s"),  

@@ -41,8 +41,6 @@
                                     aria-label="Position: activate to sort column ascending">Título</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Categoría</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Modulo</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 188px;"
                                     aria-label="Start date: activate to sort column ascending">Imagen</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 135px;"
@@ -62,27 +60,14 @@
                             <td class="sorting_1"><?php echo $value->video_id;?></th>
                             <td><?php echo str_to_first_capital($value->name);?></td>
                             <td><?php echo str_to_first_capital($value->categoria);?></td>
-                            <td>
-                                <?php if ($value->module == 1) {
-                                    $valor = "Básico";
-                                    $stilo = "label label-success";
-                                }elseif($value->module == 2){
-                                    $valor = "Intermedio";
-                                    $stilo = "label label-info";
-                                }else{
-                                    $valor = "Avanzando";
-                                    $stilo = "label label-important";
-                                } ?>
-                                <span class="<?php echo $stilo;?>"><?php echo $valor;?></span>
-                            </td>
                             <td><img src='<?php echo site_url()."static/course/img/$value->img";?>' width="180"/></td>
                             <td><?php echo $value->video;?></td>
                             <td class="label-info">
-                                <?php if ($value->type_product == 1) {
-                                    $valor = "Principal";
+                                <?php if ($value->type == 1) {
+                                    $valor = "Libre";
                                     $stilo = "label label-success";
                                 }else{
-                                    $valor = "Re-Consumos";
+                                    $valor = "Pagado";
                                     $stilo = "label label-info";
                                 } ?>
                                 <span><?php echo $valor;?></span>
