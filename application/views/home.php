@@ -263,7 +263,7 @@
                           <div class="col-lg-6 media-box">
                           <div class="player-wrapper">
                             <div class="player-inner">
-                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                <iframe width="640" height="275" autoplay="false"  src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                             </div>
                           </div>
                           <div class="icon-play"></div>

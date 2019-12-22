@@ -55,6 +55,7 @@ class D_Users extends CI_Controller{
                'email' => $this->input->post('email'),
                'privilage' => $this->input->post('privilage'),
                'active' => $this->input->post('active'),
+               'status_value' => 1,
                'created_at' => date("Y-m-d H:i:s"),
                'created_by' => $_SESSION['usercms']['user_id'],
                 );          

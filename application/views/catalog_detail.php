@@ -94,6 +94,17 @@
                         <div class="description">
                           <p><?php echo $obj_catalog->summary;?></p>
                         </div>
+                        <form class="cart" action="" method="post" enctype="multipart/form-data">
+                            <div class="quantity">
+                                <input type="text" step="1" min="amount" name="amount" value="1" title="Cantidad" class="input-text qty text" size="4">
+                            </div>
+                            <button type="submit" name="add-to-cart"  class="single_add_to_cart_button button alt">Agregar al Carrito</button>
+                        </form>
+                        <div class="product_meta">
+                            <span class="posted_in">
+                                Categoría: <a href='<?php echo site_url()."catalog/$obj_catalog->category_slug";?>' rel="categoría"><?php echo $obj_catalog->category_name;?></a>
+                            </span>
+                        </div>
                       </div>
                     </div>
                     <div class="woocommerce-tabs wc-tabs-wrapper">

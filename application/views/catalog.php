@@ -53,14 +53,14 @@
                     <a href=javascript:; class="grid switchToGrid"><i class="fa fa-th"></i></a>
                     <a href=javascript:; class="list switchToList"><i class="fa fa-th-list"></i></a></div>
                   <p class=woocommerce-result-count>
-                    Showing 1&ndash;1 of 12 results</p>
-                  <form class=woocommerce-ordering method=get>
-                    <span>Sort by:</span> 
-                    <select name=orderby class=orderby>
-                        <option value=menu_order selected=selected>Ordenar por Defecto</option>
-                        <option value=date>Ordenar por novedad</option>
-                        <option value=price>Ordenar por precio mayor a menor: menor a mayor</option>
-                        <option value=price-desc>Ordenar por precio mayor a menor</option>
+                    Mostrando 12 de <?php echo $total;?> resultados</p>
+                  <form class=woocommerce-ordering method="get" action="<?php echo site_url().'catalog/forex-e-inversiones?order';?>">
+                    <span>Order por:</span> 
+                    <select name="orderby" class="orderby">
+                        <option value="menu_order">Ordenar por Defecto</option>
+                        <option value="date">Ordenar por novedad</option>
+                        <option value="price">Ordenar por precio menor a mayor</option>
+                        <option value="price-desc">Ordenar por precio mayor a menor</option>
                     </select>
                   </form>
                 </div>
@@ -71,32 +71,29 @@
                         <div class=wrapper>
                           <div class=feature-image>
                             <span class=onsale>Venta!</span>
-                            <a href='<?php echo site_url()."catalog/$value->slug";?>'>
+                            <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>'>
                                 <img width="400" height="400" alt data-srcset='<?php echo site_url()."static/catalog/$value->img";?> 400w, <?php echo site_url()."static/catalog/$value->img";?> 150w, <?php echo site_url()."static/catalog/$value->img";?> 300w, <?php echo site_url()."static/catalog/$value->img";?> 355w, <?php echo site_url()."static/catalog/$value->img";?> 100w, <?php echo site_url()."static/catalog/$value->img";?> 600w' sizes="(max-width: 400px) 100vw, 400px" data-src='<?php echo site_url()."static/catalog/$value->img";?>' class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                             <div class=quick-view><span><i class="fa fa-search"></i></span></div>
                             </a>
                         </div>
                         <div class="product-content">
-                                  <div class="title-product">
-                                      <a href='<?php echo site_url()."catalog/$value->slug";?>' class=product_name><?php echo $value->name;?></a></div>
-                                  <span class=price>
-                                      <span class="woocommerce-Price-amount amount"><?php echo format_number_moneda_soles($value->price);?></span>
-                                  </span>
-                                </div>
+                            <div class="title-product">
+                                <a href="<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>" class="product_name"><?php echo $value->name;?></a></div>
+                                    <span class="price">
+                                         <span class="woocommerce-Price-amount amount"><?php echo format_number_moneda_soles($value->price);?></span>
+                                    </span>
+                                <a href="#" data-quantity="1" data-product_sku="" class="button product_type_simple add_to_cart_button">Agregar al Carro</a>
+                        </div>    
                         </div>
                     <div class=clear></div>
                     </li>
                   <?php  } ?>
                 </ul>
-<!--  <nav class=woocommerce-pagination>
+  <nav class=woocommerce-pagination>
     <ul class=page-numbers>
-      <li><span aria-current=page class='page-numbers current'>1</span></li>
-      <li><a class=page-numbers href=http://wordpresslms.thimpress.com/demo-coursify/shop/page/2/>2</a>
-      </li>
-      <li><a class="next page-numbers" href=http://wordpresslms.thimpress.com/demo-coursify/shop/page/2/>&rarr;</a>
-      </li>
+        <?php echo $obj_pagination; ?>
     </ul>
-  </nav>-->
+  </nav>
   </main>
   </div>
   </main>
