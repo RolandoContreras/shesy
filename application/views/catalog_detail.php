@@ -127,13 +127,13 @@
                             <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
                               <div class=wrapper>
                                 <div class=feature-image>
-                                    <a href='<?php echo site_url()."catalog/$value->slug";?>'>
+                                    <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>'>
                                 <img width=400 height=400 alt data-srcset='<?php echo site_url()."static/catalog/$value->img";?> 400w, <?php echo site_url()."static/catalog/$value->img";?> 150w, <?php echo site_url()."static/catalog/$value->img";?> 300w, <?php echo site_url()."static/catalog/$value->img";?> 355w, <?php echo site_url()."static/catalog/$value->img";?> 100w, <?php echo site_url()."static/catalog/$value->img";?> 600w" sizes="(max-width: 400px) 100vw, 400px" data-src="<?php echo site_url()."static/catalog/$value->img";?>' class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                             </a>
                                 </div>
                                 <div class="product-content">
                                   <div class="title-product">
-                                      <a href='<?php echo site_url()."catalog/$value->slug";?>' class=product_name><?php echo $value->name;?></a></div>
+                                      <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>' class=product_name><?php echo $value->name;?></a></div>
                                   <span class=price>
                                       <span class="woocommerce-Price-amount amount"><?php echo format_number_moneda_soles($value->price);?></span>
                                   </span>
