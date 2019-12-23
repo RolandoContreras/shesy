@@ -31,9 +31,7 @@
   <!--END FAVICON-->
   <link rel="stylesheet" href="<?php echo site_url().'static/course/css/style.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/course/css/gallery.css';?>">
-  
   <script src="https://unpkg.com/feather-icons"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 
 <body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/header_image.jpg';?>'); background-size: cover;">
@@ -53,23 +51,16 @@
           <?php
           $url = explode("/",uri_string());
             if(isset($url[1])){
-                $nav = $url[1];
+                $nav = "course";
             }else{
                 $nav = "";
             }
-            $profile_syle = "";
+            
             $course_syle = "";
-            $document_syle = "";
             $home_syle = "";
             
             switch ($nav) {
-                case "profile":
-                    $profile_syle = "active";
-                    break;
-                case "forex":
-                    $course_syle = "active";
-                    break;
-                case "mkt":
+                case "course":
                     $course_syle = "active";
                     break;
                 default:
@@ -136,9 +127,6 @@
                   <span><?php echo $_SESSION['customer']['name'];?></span>
               </div>
               <ul class="pro-body">
-                <li>
-                    <a href="<?php echo site_url().'course/profile';?>" class="dropdown-item"><i data-feather="user-plus"></i> Perfil</a>
-                </li>
                 <li>
                     <a href="<?php echo site_url().'login/logout';?>" class="dropdown-item"><i data-feather="power"></i> Salir</a>
                 </li>

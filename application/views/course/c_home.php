@@ -24,7 +24,7 @@
                     
                     <div class="card">
                       <div class="card-header">
-                        <h5>Todos los Videos</h5>
+                        <h5><?php echo $category_name;?></h5>
                       </div>
                       <div class="card-block">
                         <div class="grid">

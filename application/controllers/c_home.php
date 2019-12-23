@@ -14,22 +14,16 @@ class C_home extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER_ID
         $kid_id = $_SESSION['customer']['kit_id'];
-        
-            //get category_curses
-            $params_category_videos = array(
-                        "select" =>"category_id,
-                                    slug,
-                                    name",
-                "where" => "type = 1 and active = 1",
-            );
-            //GET DATA COMMENTS
-            $obj_category_videos = $this->obj_category->search($params_category_videos);
+        //GET NAV CURSOS
+        $obj_category_videos = $this->nav_videos();
         
         if($kid_id > 0){
             $where = "videos.active = 1";
         }else{
             $where = "videos.type = 1 and videos.active = 1";
         }
+        
+        $category_name = "Todos los videos";
         
          //get catalog
             $params = array(
@@ -71,12 +65,9 @@ class C_home extends CI_Controller {
             $obj_pagination = $this->pagination->create_links();
             /// DATA
             $obj_videos = $this->obj_videos->search_data($params, $config["per_page"],$this->uri->segment(2));
-            //send total row
-            $total = $config["total_rows"];
         //GET DATA FROM CUSTOMER
         
-        
-        $this->tmp_course->set("total",$total);
+        $this->tmp_course->set("category_name",$category_name);
         $this->tmp_course->set("obj_pagination",$obj_pagination);
         $this->tmp_course->set("obj_category_videos",$obj_category_videos);
         $this->tmp_course->set("obj_videos",$obj_videos);
@@ -85,25 +76,17 @@ class C_home extends CI_Controller {
     
     public function category($category)
 	{
-            //GET NAV
-             //get category_curses
-            $params_category_videos = array(
-                        "select" =>"category_id,
-                                    slug,
-                                    name",
-                "where" => "type = 1 and active = 1",
-            );
-            //GET DATA COMMENTS
-            $obj_category_videos = $this->obj_category->search($params_category_videos);
-            
-            
+            //GET NAV CURSOS
+            $obj_category_videos = $this->nav_videos();
             
             //get data catalog
             $params_categogory_id = array(
-                        "select" =>"category_id",
+                        "select" =>"category_id,
+                                    name",
                 "where" => "slug like '%$category%'");
             $obj_category = $this->obj_category->get_search_row($params_categogory_id);
             $category_id = $obj_category->category_id;
+            $category_name = "Videos - ".$obj_category->name;
             
              //get catalog
             $params = array(
@@ -148,59 +131,75 @@ class C_home extends CI_Controller {
             //send total row
            
             //SEND DATA
+            $this->tmp_course->set("category_name",$category_name);
             $this->tmp_course->set("obj_pagination",$obj_pagination);
             $this->tmp_course->set("obj_category_videos",$obj_category_videos);
             $this->tmp_course->set("obj_videos",$obj_videos);
             $this->tmp_course->render("course/c_home");
 	}
     
-    public function all()
-    {
-        //GET SESION ACTUALY
-        $this->get_session();
-        //GET CUSTOMER_ID
-        $url = explode("/",uri_string());
-        $category = $url[1];
-        $module = $url[2];
-        
-        if($module == "basic"){
-            $module_id = 1;
-        }elseif($module == "intermediate"){
-            $module_id = 2;
-        }else{
-            $module_id = 3;
-        }
-        
-        //GET ID CATEGORY
-        $params = array(
-                "select" =>"category_id",
-        "where" => "slug like '%$category%'and active = 1",
-        "order" => "category_id DESC");
-        //GET DATA FROM CUSTOMER
-        $obj_category = $this->obj_category->get_search_row($params);
-        
-        if($obj_category->category_id == 1){
-            $text_name = "Forex e Inversiones";
-        }else{
-            $text_name = "Marketing y redes sociales";
-        }
-        
-        //GET VIDEO DATA
-        $params = array(
-                "select" =>"name,
-                            summary,
-                            img,
-                            video,
-                            date",
-        "where" => "category_id = $obj_category->category_id and module = $module_id and active = 1",
-        "order" => "video_id DESC");
-        //GET DATA FROM CUSTOMER
-        $obj_videos = $this->obj_videos->search($params);
-        
-        $this->tmp_course->set("obj_videos",$obj_videos);
-        $this->tmp_course->set("text_name",$text_name);
-        $this->tmp_course->render("course/c_all");
-    }
+    public function detail($slug)
+	{
+            
+            //get nav cursos
+            $obj_category_videos = $this->nav_videos();
+             
+             //get data catalog
+            $params_categogory_id = array(
+                        "select" =>"category_id",
+                "where" => "slug like '%$slug%'");
+            $obj_category = $this->obj_category->get_search_row($params_categogory_id);
+            $category_id = $obj_category->category_id;
+             
+            $url = explode("/",uri_string());
+            $slug_2 = $url[2];
+            
+            
+            //get catalog
+             //get catalog
+            $params = array(
+                        "select" =>"videos.video_id,
+                                    videos.summary,
+                                    videos.type,
+                                    videos.name,
+                                    videos.slug,
+                                    videos.video,
+                                    videos.description,
+                                    videos.img,
+                                    videos.img2,
+                                    videos.date,
+                                    videos.active,
+                                    category.slug as category_slug,
+                                    category.name as category_name,
+                                    videos.date",
+                "join" => array( 'category, category.category_id = videos.category_id'),
+                "where" => "videos.slug = '$slug_2' and videos.category_id = $category_id and videos.active = 1");
+            $obj_videos = $this->obj_videos->get_search_row($params);
+            //get catalog relacionado
+            
+            //get catalog
+            $params = array(
+                        "select" =>"videos.video_id,
+                                    videos.summary,
+                                    videos.type,
+                                    videos.name,
+                                    videos.img2,
+                                    videos.slug,
+                                    videos.date,
+                                    videos.active,
+                                    category.slug as category_slug,
+                                    videos.date",
+                "join" => array( 'category, category.category_id = videos.category_id'),
+                "where" => "videos.category_id = $category_id and videos.active = 1",
+                "order" => "videos.category_id ASC");
+            $obj_videos_all = $this->obj_videos->search($params);
+            //SEND DATA
+            
+            $this->tmp_course->set("obj_category_videos",$obj_category_videos);
+            $this->tmp_course->set("obj_videos_all",$obj_videos_all);
+            $this->tmp_course->set("obj_videos",$obj_videos);
+            $this->tmp_course->render("course/c_detail");
+	}
     
     public function document()
     {
@@ -254,6 +253,17 @@ class C_home extends CI_Controller {
         $this->tmp_course->set("obj_customer",$obj_customer);
         $this->tmp_course->render("course/c_profile");
     }
+    
+     public function nav_videos(){
+            $params_category_videos = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 1 and active = 1",
+            );
+            //GET DATA COMMENTS
+            return $obj_category_videos = $this->obj_category->search($params_category_videos);
+        }
     
     public function get_session(){          
         if (isset($_SESSION['customer'])){
