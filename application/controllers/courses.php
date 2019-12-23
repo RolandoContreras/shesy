@@ -235,7 +235,7 @@ class Courses extends CI_Controller {
             return $obj_category_videos = $this->obj_category->search($params_category_videos);
         }
         
-         public function nav_catalogo(){
+        public function nav_catalogo(){
            $params_category_catalog = array(
                         "select" =>"category_id,
                                     slug,

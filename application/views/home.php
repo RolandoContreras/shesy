@@ -409,41 +409,17 @@
                   <div class="thim-courses-collection rounded-courses-collection">
                     <div class="collection-frame">
                       <ul class="slidee">
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/curso_online.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/courses';?>">
-                              <h4 class="name">Todos los Cursos</h4>
-                              <div class="number-courses">57 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Desarrollo Personal" data-src="<?php echo site_url().'static/page_front/images/desarrollo_personal.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/personal';?>">
-                              <h4 class="name">Desarrollo Personal</h4>
-                              <div class="number-courses">9 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Liderazgo" data-src="<?php echo site_url().'static/page_front/images/liderazgo.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/profetional';?>">
-                              <h4 class="name">Crecimiento Profesional</h4>
-                              <div class="number-courses">10 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Redes de Mercadeo" data-src="<?php echo site_url().'static/page_front/images/empresarial.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/finance';?>">
-                              <h4 class="name">Finanzas</h4>
-                              <div class="number-courses">15 Videos</div>
-                            </a>
-                        </li>
-                        <li class="collection-item">
-                            <img width="338" height="177" alt="Marketing" data-src="<?php echo site_url().'static/page_front/images/marketing.jpg';?>" class="lazyload">
-                            <a class="collection-wrapper" href="<?php echo site_url().'courses/extra';?>">
-                              <h4 class="name">Extras</h4>
-                              <div class="number-courses">20 Videos</div>
-                            </a>
-                        </li>
+                         
+                        <?php 
+                        foreach ($courses as $value) { ?>
+                            <li class="collection-item">
+                                <img width="338" height="300" alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
+                                <a class="collection-wrapper" href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>'>
+                                  <h4 class="name"><?php echo $value->name;?></h4>
+                                  <div class="number-courses" style="padding:10px;"><?php echo corta_texto($value->summary,60);?></div>
+                                </a>
+                            </li>
+                        <?php } ?>
                       </ul>
                     </div>
                   </div>

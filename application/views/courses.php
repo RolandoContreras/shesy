@@ -106,7 +106,7 @@
                                     <span class=sale><span class=text-sale>Libre</span></span>
                                 <?php } ?>
                                 <a href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>' class="img_thumbnail">
-                                    <img width="365" height="4052" alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
+                                    <img width="365" height="405" alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
                                   </a>
                                 <div class="review ">
                                   <div class=sc-review-stars>
