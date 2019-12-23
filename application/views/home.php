@@ -144,14 +144,62 @@
                   </div>
                 </div>
                 
-            <div class="wpb_wrapper">
+                
+                <div class="thim-sc-image-box left">
+                            <section id=title2>
+                                  <div class="">
+                                      <div class="thim-sc-steps layout-4">
+                                        <div class=sc-steps-wrapper>
+                                            <div class=inner-steps-wrapper>
+                                            <div class=container>
+                                              <div class=row>
+                                                  <div class="col-lg-6 media-box">
+                                                  <div class="player-wrapper">
+                                                    <div class="player-inner">
+                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                    </div>
+                                                  </div>
+                                                  <div class="icon-play"></div>
+                                                </div>
+                                                <div class="col-lg-6 content-box">
+                                                  <div class=steps-wrapper>
+                                                      <h3 class="sc-title" style="text-align:left !important;">¿Qué es la embajada FK?</h3>
+                                                    <div>
+                                                      <div class=tab-content>
+                                                        <div class="tab-pane active" style="text-align:center !important;">
+                                                          <p class=description style="text-align:center !important;">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos</p>
+                                                          <p class=description style="text-align:center !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                            </section>
+                          </div>
+                
+                
+<!--            <div class="wpb_wrapper">
               <div class="thim-sc-steps layout-4">
                 <div class=sc-steps-wrapper>
                   <div class=inner-steps-wrapper>
                     <div class=container>
                       <div class=row>
-                        <div class="col-lg-6 content-box">
-                          <div class=steps-wrapper>
+                          <div class="col-lg-6 media-box">
+                          <div class="player-wrapper">
+                            <div class="player-inner">
+                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
+                          </div>
+                          <div class="icon-play"></div>
+                        </div>
+                        <div class="col-lg-6 content-box left">
+                          <div class=steps-wrapper left>
                               <h3 class="sc-title">¿Qué es la cultura FK?</h3>
                             <div class=steps>
                               <div class=tab-content>
@@ -164,20 +212,13 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6 media-box">
-                          <div class="player-wrapper">
-                            <div class="player-inner">
-                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <div class="icon-play"></div>
-                        </div>
+                        
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
                 <div class="thim-sc-course-search ">
                     <div class=thim-loading-icon>
                       <div class=sk-three-bounce>

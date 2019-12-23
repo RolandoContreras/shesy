@@ -20,14 +20,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/shesy/application/config/routes.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/courses_detail.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/d_videos.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/courses.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/videos/videos_form.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/courses.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/catalog.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/models/videos_model.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/templates/template_course.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/templates/admin_tmp.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/about.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/home.php</file>
         </group>
     </open-files>
 </project-private>

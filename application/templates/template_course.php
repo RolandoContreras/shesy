@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Cutura Fk - Plataforma de Cursos - </title>
+  <title>Universidad Fk - Plataforma de Cursos</title>
   <!--[if lt IE 10]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -42,7 +42,7 @@
           <div class="b-bg">
               <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" alt="Logo" width="35"/>
           </div>
-              <span class="b-title">Cursos FK</span>
+              <span class="b-title">Universidad FK</span>
           </a>
           <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
       <div class="navbar-content scroll-div">
@@ -102,7 +102,7 @@
         <div class="b-bg">
             <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" alt="Logo" width="35"/>
         </div>
-            <span class="b-title">Cursos FK</span></a>
+            <span class="b-title">Universidad FK</span></a>
     </div>
       <a class="mobile-menu" id="mobile-header" href="#!">
           <i class="feather icon-more-horizontal"></i>
