@@ -17,16 +17,16 @@
                 <div class="col-md-6">
                   <div class="profile-tile">
                     <a class="profile-tile-box">
-                        <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/membership.png';?>"> </div>
-                      <div class="pt-user-name"> <b><?php echo $obj_total->total_membership;?> Kits</b> <br> Membersgip </div>
+                        <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/libre.png';?>"> </div>
+                      <div class="pt-user-name"> <b><?php echo $obj_total->total_posicion;?> Kits</b> <br> Posición </div>
                     </a>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="profile-tile">
                     <a class="profile-tile-box" href="#">
-                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/inicio.png';?>"> </div>
-                      <div class="pt-user-name"> <b><?php echo $obj_total->total_inicio;?> Kits</b> <br> Inicio </div>
+                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/plan_1.png';?>"> </div>
+                      <div class="pt-user-name"> <b><?php echo $obj_total->total_pack_1;?> Kits</b> <br> Pack1 </div>
                     </a>
                   </div>
                 </div>
@@ -37,28 +37,8 @@
                 <div class="col-md-6">
                   <div class="profile-tile">
                     <a class="profile-tile-box" href="#">
-                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/apertura.png';?>"> </div>
-                      <div class="pt-user-name"> <b><?php echo $obj_total->total_apertura;?> Kits</b> <br> Apertura </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="profile-tile">
-                    <a class="profile-tile-box" href="#">
-                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/apertura_elite.png';?>"> </div>
-                      <div class="pt-user-name"> <b><?php echo $obj_total->total_elite;?> Kits</b> <br> Elite </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="profile-tile">
-                    <a class="profile-tile-box" href="#">
-                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/apertura_premium.png';?>"> </div>
-                      <div class="pt-user-name"> <b><?php echo $obj_total->total_premium;?> Kits</b> <br> Premium </div>
+                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/plan_2.png';?>"> </div>
+                      <div class="pt-user-name"> <b><?php echo $obj_total->total_pack_2;?> Kits</b> <br> Pack2 </div>
                     </a>
                   </div>
                 </div>

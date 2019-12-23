@@ -182,43 +182,6 @@
                                     </div>
                             </section>
                           </div>
-                
-                
-<!--            <div class="wpb_wrapper">
-              <div class="thim-sc-steps layout-4">
-                <div class=sc-steps-wrapper>
-                  <div class=inner-steps-wrapper>
-                    <div class=container>
-                      <div class=row>
-                          <div class="col-lg-6 media-box">
-                          <div class="player-wrapper">
-                            <div class="player-inner">
-                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <div class="icon-play"></div>
-                        </div>
-                        <div class="col-lg-6 content-box left">
-                          <div class=steps-wrapper left>
-                              <h3 class="sc-title">¿Qué es la cultura FK?</h3>
-                            <div class=steps>
-                              <div class=tab-content>
-                                <div class="tab-pane active">
-                                  <p class=description>Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente. </p>
-                                  <p class=description>Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
-                                  <a href="<?php echo site_url().'about';?>" class="readmore">Más Información</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>-->
                 <div class="thim-sc-course-search ">
                     <div class=thim-loading-icon>
                       <div class=sk-three-bounce>

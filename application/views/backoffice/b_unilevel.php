@@ -54,23 +54,16 @@
                               <a href="javascript:void(0);">
                                   <?php 
                                   switch ($obj_customer->kit_id) {
-                                        case 1:$kit = "Membership";$img = "membership.png";break;
-                                        case 2:$kit = "Inicio";$img = "inicio.png";break;
-                                        case 3:$kit = "Apertura";$img = "apertura.png";break;
-                                        case 4:$kit = "Elite";$img = "apertura_elite.png";break;
-                                        case 5:$kit = "Premium";$img = "apertura_premium.png";break;
-                                        default:$kit = "-";$img = "clear_position.png";break;
+                                        case 1:$kit = "Membership";$img = "pack_1.png";break;
+                                        case 2:$kit = "Inicio";$img = "pack_2.png";break;
+                                        default:$kit = "-";$img = "libre.png";break;
                                   }
                                   switch ($obj_customer->range_id) {
-                                        case 1:$range = "Star1";break;
-                                        case 2:$range = "Star2";break;
-                                        case 3:$range = "Star3";break;
-                                        case 4:$range = "Star4";break;
-                                        case 5:$range = "Star5";break;
-                                        case 6:$range = "Star6";break;
-                                        case 7:$range = "Star7";break;
-                                        case 8:$range = "Star8";break;
-                                        case 9:$range = "Star9";break;
+                                        case 1:$range = "Embajdor G1";break;
+                                        case 2:$range = "Embajdor G2";break;
+                                        case 3:$range = "Embajdor G3";break;
+                                        case 4:$range = "Embajdor G4";break;
+                                        case 5:$range = "Embajdor G5";break;
                                         default:$range = "-";break;
                                   }?>
                                   <div id="level-0" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $obj_customer->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $obj_customer->first_name." ".$obj_customer->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
@@ -83,24 +76,16 @@
                                   <ul>
                                       <?php foreach ($obj_customer_n2 as $value) {
                                             switch ($value->kit_id) {
-                                                    case 1:$kit = "Membership";$img = "membership.png";break;
-                                                    case 2:$kit = "Inicio";$img = "inicio.png";break;
-                                                    case 3:$kit = "Apertura";$img = "apertura.png";break;
-                                                    case 4:$kit = "Elite";$img = "apertura_elite.png";break;
-                                                    case 5:$kit = "Premium";$img = "apertura_premium.png";break;
-                                                    default:$kit = "-";$img = "clear_position.png";break;
+                                                    case 1:$kit = "Membership";$img = "pack_1.png";break;
+                                                    case 2:$kit = "Inicio";$img = "pack_2.png";break;
+                                                    default:$kit = "-";$img = "libre.png";break;
                                               }
                                             switch ($value->range_id) {
-                                                case 1:$range = "Star1";break;
-                                                case 2:$range = "Star2";break;
-                                                case 3:$range = "Star3";break;
-                                                case 4:$range = "Star4";break;
-                                                case 5:$range = "Star5";break;
-                                                case 6:$range = "Star6";break;
-                                                case 7:$range = "Star7";break;
-                                                case 8:$range = "Star8";break;
-                                                case 9:$range = "Star9";break;
-                                                default:$range = "-";break;
+                                                case 1:$range = "Embajdor G1";break;
+                                                case 2:$range = "Embajdor G2";break;
+                                                case 3:$range = "Embajdor G3";break;
+                                                case 4:$range = "Embajdor G4";break;
+                                                case 5:$range = "Embajdor G5";break;
                                         }?>
                                                 <li>
                                                     <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value->customer_id);?>">
@@ -115,24 +100,16 @@
                                                         <ul class="d-none d-sm-block">
                                                             <?php foreach ($obj_customer_n3 as $value3) { 
                                                                     switch ($value3->kit_id) {
-                                                                        case 1:$kit = "Membership";$img = "membership.png";break;
-                                                                        case 2:$kit = "Inicio";$img = "inicio.png";break;
-                                                                        case 3:$kit = "Apertura";$img = "apertura.png";break;
-                                                                        case 4:$kit = "Elite";$img = "apertura_elite.png";break;
-                                                                        case 5:$kit = "Premium";$img = "apertura_premium.png";break;
-                                                                        default:$kit = "-";$img = "clear_position.png";break;
+                                                                       case 1:$kit = "Membership";$img = "pack_1.png";break;
+                                                                       case 2:$kit = "Inicio";$img = "pack_2.png";break;
+                                                                       default:$kit = "-";$img = "libre.png";break;
                                                                       }
                                                                     switch ($value3->range_id) {
-                                                                        case 1:$range = "Star1";break;
-                                                                        case 2:$range = "Star2";break;
-                                                                        case 3:$range = "Star3";break;
-                                                                        case 4:$range = "Star4";break;
-                                                                        case 5:$range = "Star5";break;
-                                                                        case 6:$range = "Star6";break;
-                                                                        case 7:$range = "Star7";break;
-                                                                        case 8:$range = "Star8";break;
-                                                                        case 9:$range = "Star9";break;
-                                                                        default:$range = "-";break;
+                                                                        case 1:$range = "Embajdor G1";break;
+                                                                        case 2:$range = "Embajdor G2";break;
+                                                                        case 3:$range = "Embajdor G3";break;
+                                                                        case 4:$range = "Embajdor G4";break;
+                                                                        case 5:$range = "Embajdor G5";break;
                                                                 }?>
                                                                 <?php if($value->customer_id == $value3->parend_id){ ?>
                                                                     <li>
@@ -147,24 +124,16 @@
                                                                                  <ul class="d-none d-sm-block">
                                                                                      <?php 
                                                                                         foreach ($obj_customer_n4 as $value4) { switch ($value4->kit_id) {
-                                                                                                    case 1:$kit = "Membership";$img = "membership.png";break;
-                                                                                                    case 2:$kit = "Inicio";$img = "inicio.png";break;
-                                                                                                    case 3:$kit = "Apertura";$img = "apertura.png";break;
-                                                                                                    case 4:$kit = "Elite";$img = "apertura_elite.png";break;
-                                                                                                    case 5:$kit = "Premium";$img = "apertura_premium.png";break;
-                                                                                                    default:$kit = "-";$img = "clear_position.png";break;
+                                                                                                    case 1:$kit = "Membership";$img = "pack_1.png";break;
+                                                                                                   case 2:$kit = "Inicio";$img = "pack_2.png";break;
+                                                                                                   default:$kit = "-";$img = "libre.png";break;
                                                                                                   }
                                                                                                 switch ($value4->range_id) {
-                                                                                                    case 1:$range = "Star1";break;
-                                                                                                    case 2:$range = "Star2";break;
-                                                                                                    case 3:$range = "Star3";break;
-                                                                                                    case 4:$range = "Star4";break;
-                                                                                                    case 5:$range = "Star5";break;
-                                                                                                    case 6:$range = "Star6";break;
-                                                                                                    case 7:$range = "Star7";break;
-                                                                                                    case 8:$range = "Star8";break;
-                                                                                                    case 9:$range = "Star9";break;
-                                                                                                    default:$range = "-";break;
+                                                                                                    case 1:$range = "Embajdor G1";break;
+                                                                                                    case 2:$range = "Embajdor G2";break;
+                                                                                                    case 3:$range = "Embajdor G3";break;
+                                                                                                    case 4:$range = "Embajdor G4";break;
+                                                                                                    case 5:$range = "Embajdor G5";break;
                                                                                             }?>
                                                                                             <?php if($value3->customer_id == $value4->parend_id){ ?>
                                                                                                     <li>

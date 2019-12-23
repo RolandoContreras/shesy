@@ -79,8 +79,6 @@ window.smartsupp||(function(d) {
         </div>
         <div class="menu-and-user">
           <ul class="main-menu" style="background: #4a3116;">
-            <?php 
-            //$kit_id = $_SESSION['customer']['kit_id']; ?>
             <li>
               <a href="<?php echo site_url().'course';?>" target="_blank">
                 <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
@@ -178,9 +176,6 @@ window.smartsupp||(function(d) {
           </div>
         </div>
         <ul class="main-menu">
-            <?php 
-            $kit_id = $_SESSION['customer']['kit_id'];
-            if($kit_id > 0){ ?>
                 <li>
                     <a href="<?php echo site_url().'course';?>" target="_blank">
                       <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
@@ -189,7 +184,6 @@ window.smartsupp||(function(d) {
                     </a>
                  </li>
                  <hr/>
-            <?php } ?>
                  <li>
                     <a href="" target="_blank">
                       <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 

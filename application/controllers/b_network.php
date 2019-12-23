@@ -32,13 +32,12 @@ class B_network extends CI_Controller {
                         );
         $obj_referidos = $this->obj_unilevel->search($params);
         
-        
         //GET PLAN INFORMATION
         $params = array("select" =>"count(*) as total_membership,
-                                    (SELECT count(*) FROM unilevel JOIN customer ON customer.customer_id = unilevel.customer_id WHERE unilevel.parend_id = $customer_id and customer.kit_id = 2 and customer.status_value = 1) as total_inicio,
-                                    (SELECT count(*) FROM unilevel JOIN customer ON customer.customer_id = unilevel.customer_id WHERE unilevel.parend_id = $customer_id and customer.kit_id = 3 and customer.status_value = 1) as total_apertura,
-                                    (SELECT count(*) FROM unilevel JOIN customer ON customer.customer_id = unilevel.customer_id WHERE unilevel.parend_id = $customer_id and customer.kit_id = 4 and customer.status_value = 1) as total_elite,
-                                    (SELECT count(*) FROM unilevel JOIN customer ON customer.customer_id = unilevel.customer_id WHERE unilevel.parend_id = $customer_id and customer.kit_id = 5 and customer.status_value = 1) as total_premium",
+                                    (SELECT count(*) FROM unilevel JOIN customer ON customer.customer_id = unilevel.customer_id WHERE unilevel.parend_id = $customer_id and customer.kit_id = 0) as total_posicion,
+                                    (SELECT count(*) FROM unilevel JOIN customer ON customer.customer_id = unilevel.customer_id WHERE unilevel.parend_id = $customer_id and customer.kit_id = 1) as total_pack_1,
+                                    (SELECT count(*) FROM unilevel JOIN customer ON customer.customer_id = unilevel.customer_id WHERE unilevel.parend_id = $customer_id and customer.kit_id = 2) as total_pack_2
+                                    ",
                         "where" => "unilevel.parend_id = $customer_id and customer.kit_id = 1 and customer.status_value = 1",
                                     "join" => array('customer, customer.customer_id = unilevel.customer_id')
                         );
