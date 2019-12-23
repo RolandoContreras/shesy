@@ -62,110 +62,7 @@
                         <h3 class="primary-heading text_gress">Cursos Populares</h3>
                       </div>
                       <p class="secondary-heading text_gress"> Aprende todo lo que necesitas con nosotros, los cursos más cotizados del mercado aquí lo tendrás.</p>
-                      <span class="underline text_gress"></span>
                     </div>
-                    <div class="thim-sc-courses-carousel top-courses">
-                      <div class="inner-carousel owl-carousel owl-theme " data-cols=4 data-nav data-dots=true>
-                        <div class="post-486 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_tag-business course_tag-theme course_tag-wordpress pmpro-has-access course">
-                          <div class=content>
-                            <div class=thumbnail>
-                                <a href="<?php echo site_url().'courses/personal';?>" class=img_thumbnail>
-                                    <img width=365 height=405 alt="Desarrollo Personal" src="<?php echo site_url().'static/page_front/images/c_desarrollo_personal.jpg';?>" class="lazyload">
-                                </a>
-                              <div class="review ">
-                                <div class=sc-review-stars>
-                                  <div class=review-stars-rated title="1 out of 5 stars">
-                                    <div class="review-stars empty"></div>
-                                    <div class="review-stars filled" style=width:100%;></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="sub-content">
-                              <div class="title">
-                                  <a href="<?php echo site_url().'courses/personal';?>">Desarrollo Personal</a>
-                              </div>
-                              <div class="data-comment">
-                                  <span class="comment">Aprende todo lo que necesitas para que puedas mejorar como persona.</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="post-458 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_category-design course_tag-business course_tag-theme course_tag-wordpress pmpro-has-access course">
-                          <div class=content>
-                            <div class="thumbnail"><span class="sale"><span class=text-sale>Nuevo</span></span>
-                              <a href="<?php echo site_url().'courses/profetional';?>" class=img_thumbnail> 
-                                  <img width=365 height=405 alt="Desarrollo Profesional" src="<?php echo site_url().'static/page_front/images/c_crecimiento_profesional.jpg';?>" class="lazyload">
-                              </a>
-                              <div class="review ">
-                                <div class=sc-review-stars>
-                                  <div class=review-stars-rated title="5 out of 5 stars">
-                                    <div class="review-stars empty"></div>
-                                    <div class="review-stars filled" style=width:100%;></div>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class=sub-content>
-                            <div class=title><a href="<?php echo site_url().'courses/profetional';?>">Desarrollo Profesional</a>
-                            </div>
-                            <div class="data-comment">
-                                  <span class="comment">Aprende todo lo que necesitas para que puedas mejorar como persona.</span>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="post-444 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-web-development course_tag-business course_tag-theme course_tag-wordpress pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <a href="<?php echo site_url().'courses/finance';?>" class="img_thumbnail">
-                                <img width=365 height=405 alt="Desarrollo Financiero" src="<?php echo site_url().'static/page_front/images/c_crecimiento_finanzas.jpg';?>" class="lazyload">
-                            </a>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated title="5 out of 5 stars">
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class=sub-content>
-                            <div class=title>
-                                <a href="<?php echo site_url().'courses/finance';?>">Finanzas</a>
-                            </div>
-                            <div class="data-comment">
-                              <span class="comment">Aprende todo lo que necesitas para que puedas mejorar como persona.</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="post-437 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-photography course_tag-design course_tag-photoshop course_tag-web pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <a href="<?php echo site_url().'courses/extra';?>" class=img_thumbnail> 
-                                <img width=365 height=405 alt="Cursos Especializados" src="<?php echo site_url().'static/page_front/images/c_extras.jpg';?>" class="lazyload">
-                            </a>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated title="0 out of 5 stars">
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sub-content">
-                            <div class="title"><a href="<?php echo site_url().'courses/extra';?>">Cursos Especializados</a>
-                            </div>
-                            <div class="data-comment">
-                              <span class="comment">Aprende todo lo que necesitas para que puedas mejorar como persona.</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -173,201 +70,119 @@
           <div class="vc_row-full-width vc_clearfix"></div>
         </div>
     </div>
-    <div class="container site-content ">
-      <div class=row>
-          
-        <main id=main class="site-main col-sm-12 col-md-12 flex-first">
-          <article id=post-0 class="post-0 post type-post status-publish format-standard hentry pmpro-has-access page type-page">
-            <div class=entry-content>
-              <div id=lp-archive-courses class=lp-archive-courses>
-              <div class="archive-courses course-grid archive_switch" itemscope>
-                <div class="learn-press-courses row">
-                    
+  <div class="container site-content " style="transform: none;">
+  <div class="row" style="transform: none;">
+    <main id="main" class="site-main col-sm-12 col-md-9 flex-first">
+      <article id="post-0" class="post-0 post type-post status-publish format-standard hentry pmpro-has-access page type-page">
+        <div class="entry-content">
+          <div id="lp-archive-courses" class="lp-archive-courses">
+            <div class="thim-course-top">
+              <div class="display grid-list-switch lpr_course-switch " data-cookie="lpr_course-switch" data-layout="grid">
+                  <a href="javascript:;" class="grid switchToGrid switcher-active"><i class="fa fa-th"></i></a>
+                <a href="javascript:;" class="list switchToList"><i class="fa fa-th-list"></i></a>
+              </div>
+              <div class="course-index"><span>Mostrando 12 de <?php echo $total;?> resultados</span></div>
+              <div class="courses-searching">
+                  <form method="get" action="<?php echo site_url().'courses';?>">
+                    <input type="text" name="search" placeholder="Busca tu curso" class="form-control course-search-filter" autocomplete="off">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <span class="widget-search-close"></span>
+                </form>
+                <ul |  class="courses-list-search list-unstyled"></ul>
+              </div>
+            </div>
+            <div class="archive-courses course-grid archive_switch">
+              <div class="learn-press-courses row">
                   
-                      <article id=post-137 class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-137 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-web-development course_tag-hackers pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <span class=sale><span class=text-sale>Gratis</span></span>
-                            <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>" class="img_thumbnail">
-                                <img width="365" height="4052" alt="Finanzas para Principiantes" data-src="<?php echo site_url().'static/course/img/belleza.jpg';?>" class="lazyload">
-                              </a>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated title="5 out of 5 stars">
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
+                  <?php 
+                  foreach ($obj_videos as $value) { ?>
+                  <article id="post-486" class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-486 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_tag-business course_tag-theme course_tag-wordpress pmpro-has-access course">
+                          <div class="content">
+                            <div class="thumbnail">
+                                <?php 
+                                if($value->type == 1 ){ ?>
+                                    <span class=sale><span class=text-sale>Libre</span></span>
+                                <?php } ?>
+                                <a href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>' class="img_thumbnail">
+                                    <img width="365" height="4052" alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
+                                  </a>
+                                <div class="review ">
+                                  <div class=sc-review-stars>
+                                    <div class=review-stars-rated title="5 out of 5 stars">
+                                      <div class="review-stars empty"></div>
+                                      <div class="review-stars filled" style=width:100%;></div>
+                                    </div>
+                                  </div>
                                 </div>
+                                <div class="button-when-logged has-wishlist"></div>
                               </div>
-                            </div>
-                            <div class="button-when-logged has-wishlist"></div>
-                          </div>
-                          <div class=sub-content>
-                            <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Belleza y Maquillaje</a>
-                            </h3>
-                            <div class=date-comment>
-                                <span class=date-meta>Dic 29, 2019</span> 
-                            </div>
-                          </div>
-                        </div>
-                      </article>  
-                    
-                        <article id=post-137 class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-137 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-web-development course_tag-hackers pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <span class=sale><span class=text-sale>Gratis</span></span>
-                            <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>" class="img_thumbnail">
-                                <img width="365" height="4052" alt="Finanzas para Principiantes" data-src="<?php echo site_url().'static/course/img/diseño_grafico.jpg';?>" class="lazyload">
-                              </a>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated title="5 out of 5 stars">
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
+                            <div class="sub-content">
+                                <h3 class="title">
+                                    <a href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>'><?php echo $value->name;?></a>
+                                </h3>
+                                <div class="date-comment">
+                                    <span class="date-meta"><?php echo formato_fecha_dia_mes($value->date);?></span> 
                                 </div>
-                              </div>
-                            </div>
-                            <div class="button-when-logged has-wishlist"></div>
-                          </div>
-                          <div class=sub-content>
-                            <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Diseño Grafico en MAC</a>
-                            </h3>
-                            <div class=date-comment>
-                                <span class=date-meta>Dic 29, 2019</span> 
-                            </div>
-                          </div>
-                        </div>
-                      </article> 
-                    
-                    <article id=post-137 class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-137 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-web-development course_tag-hackers pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <span class=sale><span class=text-sale>Gratis</span></span>
-                            <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>" class="img_thumbnail">
-                                <img width="365" height="4052" alt="Finanzas para Principiantes" data-src="<?php echo site_url().'static/course/img/fotografia.jpg';?>" class="lazyload">
-                              </a>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated title="5 out of 5 stars">
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
+                                <div class="content-list">
+                                      <div class="course-description">
+                                          <p><?php echo corta_texto($value->summary, 300);?></p>
+                                      </div>
+                                      <ul class="courses_list_info">
+                                        <li><label>Repaso:</label>
+                                          <div class="review">
+                                            <div class="sc-review-stars">
+                                              <div class="review-stars-rated" title="5 out of 5 stars">
+                                                <div class="review-stars empty"></div>
+                                                <div class="review-stars filled" style="width:100%;"></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                      </ul>
                                 </div>
-                              </div>
                             </div>
-                            <div class="button-when-logged has-wishlist"></div>
-                          </div>
-                          <div class=sub-content>
-                            <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Fotografia GO PRO</a>
-                            </h3>
-                            <div class=date-comment>
-                                <span class=date-meta>Dic 29, 2019</span> 
-                            </div>
-                          </div>
                         </div>
-                      </article> 
-                    
-                    <article id=post-137 class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-137 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-web-development course_tag-hackers pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <span class=sale><span class=text-sale>Gratis</span></span>
-                            <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>" class="img_thumbnail">
-                                <img width="365" height="4052" alt="Finanzas para Principiantes" data-src="<?php echo site_url().'static/course/img/diseño_grafico.jpg';?>" class="lazyload">
-                              </a>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated title="5 out of 5 stars">
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="button-when-logged has-wishlist"></div>
-                          </div>
-                          <div class=sub-content>
-                            <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Diseño Grafico en MAC</a>
-                            </h3>
-                            <div class=date-comment>
-                                <span class=date-meta>Dic 29, 2019</span> 
-                            </div>
-                          </div>
-                        </div>
-                      </article> 
-                    
-                    <article id=post-137 class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-137 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-web-development course_tag-hackers pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <span class=sale><span class=text-sale>Gratis</span></span>
-                            <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>" class="img_thumbnail">
-                                <img width="365" height="4052" alt="Finanzas para Principiantes" data-src="<?php echo site_url().'static/course/img/arte_creatividad.jpg';?>" class="lazyload">
-                              </a>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated title="5 out of 5 stars">
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="button-when-logged has-wishlist"></div>
-                          </div>
-                          <div class=sub-content>
-                            <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Arte y Creatividad</a>
-                            </h3>
-                            <div class=date-comment>
-                                <span class=date-meta>Dic 29, 2019</span> 
-                            </div>
-                          </div>
-                        </div>
-                      </article> 
-                    
-                    <article id=post-137 class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-137 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-web-development course_tag-hackers pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <span class=sale><span class=text-sale>Gratis</span></span>
-                            <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>" class="img_thumbnail">
-                                <img width="365" height="4052" alt="Finanzas para Principiantes" data-src="<?php echo site_url().'static/course/img/educacion_primaria.jpg';?>" class="lazyload">
-                              </a>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated title="5 out of 5 stars">
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="button-when-logged has-wishlist"></div>
-                          </div>
-                          <div class=sub-content>
-                            <h3 class="title">
-                                <a href="<?php echo site_url().'courses/personal/finanzas-principiantes';?>">Educación para Primaria</a>
-                            </h3>
-                            <div class=date-comment>
-                                <span class=date-meta>Dic 29, 2019</span> 
-                            </div>
-                          </div>
-                        </div>
-                      </article> 
-        </div>    
-  <div class=thim-loading-icon>
-    <div class=sk-folding-cube>
-      <div class="sk-cube1 sk-cube"></div>
-      <div class="sk-cube2 sk-cube"></div>
-      <div class="sk-cube4 sk-cube"></div>
-      <div class="sk-cube3 sk-cube"></div>
+               </article>
+                  <?php } ?>
+            </div>
+            <nav class="learn-press-pagination">
+              <ul class="page-numbers">
+                <?php  echo $obj_pagination; ?>
+              </ul>
+            </nav>
+            <div class="thim-loading-icon">
+              <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+              </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </article>
+            </main>
+            <aside id="secondary" class="sidebar-courses widget-area col-md-3 sticky-sidebar flex-last" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+              <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static;">
+                <aside id="thim-courses-categories-2" class="widget widget_thim-courses-categories">
+                  <h4 class="widget-title">Categorías</h4>
+                  <ul class="courses-categories">
+                    <li class="cat-item ">
+                        <?php 
+                        foreach ($obj_category_videos as $value) { ?>
+                            <a href='<?php echo site_url()."courses/$value->slug";?>'><?php echo $value->name;?></a>
+                        <?php } ?>
+                    </li>
+                  </ul>
+                </aside>
+              </div>
+            </aside>
+        </div>
     </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </article>
-  </main>
-  </div>
-  </div>
-  </section>
+   </section>
   </div>
   <?php $this->load->view("footer_2");?>
   </div>

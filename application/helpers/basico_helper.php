@@ -96,6 +96,26 @@ function formato_fecha_dia_mes($fecha){
     return  $dia."/".$mostrar_mes;
 }
 
+function formato_fecha_dia($fecha){    
+    $dia=substr($fecha, 8, 2);
+    $mes=substr($fecha, 5, 2);
+    $anio=substr($fecha, 0, 4);
+    
+    $dia_semana = dia_semana($mes,$dia,$anio);
+    $mostrar_mes = mostrar_mes($mes);
+    return  $dia;
+}
+
+function formato_fecha_mes($fecha){    
+    $dia=substr($fecha, 8, 2);
+    $mes=substr($fecha, 5, 2);
+    $anio=substr($fecha, 0, 4);
+    
+    $dia_semana = dia_semana($mes,$dia,$anio);
+    $mostrar_mes = mostrar_mes($mes);
+    return  $mostrar_mes;
+}
+
 function last_month_day($month,$year){ 
       $day = date("d", mktime(0,0,0, $month+1, 0, $year));
       return date('Y-m-d', mktime(0,0,0, $month, $day, $year));

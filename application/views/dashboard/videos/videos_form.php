@@ -47,8 +47,12 @@
                                 <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_videos->name)?$obj_videos->name:"";?>" class="input-xlarge-fluid" placeholder="Titulo">
                               </div>
                               <div class="form-group">
-                                  <label>Descripción</label>
+                                  <label>Sumilla</label>
                                   <textarea class="form-control" name="summary" id="summary" placeholder="Sumilla"><?php echo isset($obj_videos->summary)?$obj_videos->summary:"";?></textarea>
+                              </div>
+                              <div class="form-group">
+                                  <label>Descripción</label>
+                                  <textarea class="form-control" name="description" id="description" placeholder="Description"><?php echo isset($obj_videos->description)?$obj_videos->description:"";?></textarea>
                               </div>
                               <label for="inputState">Categória</label>
                                     <select name="category" id="category" class="form-control">

@@ -78,9 +78,11 @@ class D_videos extends CI_Controller{
         //GET CUSTOMER_ID
         $video_id = $this->input->post("video_id");
         $name = $this->input->post("name");
+        $slug = convert_slug($name);
         $video =  $this->input->post('video');
         $type =  $this->input->post('type');
         $summary =  $this->input->post('summary');
+        $description =  $this->input->post('description');
         $category =  $this->input->post('category');
         $active =  $this->input->post('active');
         
@@ -121,11 +123,13 @@ class D_videos extends CI_Controller{
         if($video_id != ""){
              $data = array(
                 'name' => $name,
+                'slug' => $slug,
                 'img' => $img,
                 'img2' => $img_2,
                 'type' => $type,
                 'video' => $video,
                 'summary' => $summary,
+                'description' => $description, 
                 'category_id' => $category,
                 'date' => date("Y-m-d H:i:s"),  
                 'active' => $active,  
@@ -136,11 +140,13 @@ class D_videos extends CI_Controller{
         }else{
             $data = array(
                 'name' => $name,
+                'slug' => $slug,
                 'video' => $video,
                 'img' => $img,
                 'img2' => $img_2,
                 'type' => $type,
                 'summary' => $summary,
+                'description' => $description, 
                 'category_id' => $category,
                 'date' => date("Y-m-d H:i:s"),  
                 'active' => $active,  

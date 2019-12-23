@@ -20,6 +20,7 @@ class videos_model_atributos{
     var $category_id='';
     var $module='';
     var $name='';
+    var $slug='';
     var $type='';
     var $summary='';
     var $video='';
@@ -43,6 +44,7 @@ class Videos_Model extends CI_Model{
         $this->category_id='';
         $this->module='';
         $this->name='';
+        $this->slug='';
         $this->type='';
         $this->summary='';
         $this->video='';

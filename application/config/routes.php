@@ -53,15 +53,10 @@ $route['login'] = 'login';
 $route['forget'] = 'forget';
 
 $route['courses'] = 'courses';
-$route['courses/personal'] = 'courses/all';
-$route['courses/profetional'] = 'courses/all';
-$route['courses/finance'] = 'courses/all';
-$route['courses/extras'] = 'courses/all';
-
-$route['courses/extras/([0-9a-z_-]+)'] = 'courses/detail';
-$route['courses/personal/([0-9a-z_-]+)'] = 'courses/detail';
-$route['courses/profetional/([0-9a-z_-]+)'] = 'courses/detail';
-$route['courses/finance/([0-9a-z_-]+)'] = 'courses/detail';
+$route['courses/([0-9]+)'] = 'courses/index/$1';
+$route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';
+$route['courses/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
+$route['courses/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
 
 
 $route['register/([0-9a-z_-]+)'] = "register/index/$1";
