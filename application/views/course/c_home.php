@@ -31,7 +31,7 @@
                         <?php
                         foreach ($obj_videos as $value) { ?>
                           <figure class="effect-apollo">
-                              <img src="<?php echo site_url()."static/course/img/$value->img2";?>" alt="advance-3">
+                              <img width="365" height="405" src="<?php echo site_url()."static/course/img/$value->img2";?>" alt="advance-3">
                             <figcaption>
                                 <h2><span style="font-size: 32px !important;font-weight: 300 !important;"><?php echo $value->name;?></span></h2>
                               <p><?php echo corta_texto($value->summary, 100);?></p>

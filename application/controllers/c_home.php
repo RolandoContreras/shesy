@@ -190,7 +190,8 @@ class C_home extends CI_Controller {
                                     videos.date",
                 "join" => array( 'category, category.category_id = videos.category_id'),
                 "where" => "videos.category_id = $category_id and videos.active = 1",
-                "order" => "videos.category_id ASC");
+                "order" => "videos.category_id ASC",
+                "limit" => "3");
             $obj_videos_all = $this->obj_videos->search($params);
             //SEND DATA
             
