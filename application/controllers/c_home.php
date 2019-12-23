@@ -165,7 +165,6 @@ class C_home extends CI_Controller {
                                     videos.slug,
                                     videos.video,
                                     videos.description,
-                                    videos.img,
                                     videos.img2,
                                     videos.date,
                                     videos.active,

@@ -61,14 +61,11 @@
                           </ul>
                       </div>
                       <div class="course-thumbnail">
-                          <img alt=home-1-bg title=home-1-bg data-src='<?php echo site_url()."static/course/img/$obj_videos->img";?>' class="lazyload">
-                          <a href='<?php echo $obj_videos->video;?>' class="play-button video-thumbnail">
-                                  <span class="video-thumbnail hvr-push"></span>
-                              </a>
-                        <div class="time">
-                            <div class=date-start><?php echo formato_fecha_dia($obj_videos->date);?></div>
-                          <div class=month-start><?php echo formato_fecha_mes($obj_videos->date);?></div>
-                      </div>
+                        <div class="col-md-12">
+                          <div class="embed-responsive embed-responsive-16by9">
+                              <iframe class="embed-responsive-item" src="<?php echo $obj_videos->video;?>" allowfullscreen=""></iframe>
+                          </div>
+                        </div>
                     </div>
                     <div class="course-landing-summary has-social">
                     <div class=content-landing-1>

@@ -92,21 +92,6 @@
                               <?php 
                                   if(isset($obj_videos)){ ?>
                                       <div class="form-group">
-                                          <label>Imagen Principal</label><br/>
-                                          <img src='<?php echo site_url()."static/course/img/$obj_videos->img";?>' width="100" />
-                                          <input class="form-control" type="hidden" name="img2" id="img2" value="<?php echo isset($obj_videos)?$obj_videos->img:"";?>">
-                                      </div>
-                            <?php } ?>
-                              <div class="form-group">
-                                    <label>Imagen Principal 1000 x 500</label>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                    </div>
-                              </div>
-                              <?php 
-                                  if(isset($obj_videos)){ ?>
-                                      <div class="form-group">
                                           <label>Imagen Secundaria</label><br/>
                                           <img src='<?php echo site_url()."static/course/img/$obj_videos->img2";?>' width="100" />
                                           <input class="form-control" type="hidden" name="img3" id="img3" value="<?php echo isset($obj_videos)?$obj_videos->img2:"";?>">
