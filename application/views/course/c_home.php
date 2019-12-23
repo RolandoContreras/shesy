@@ -21,51 +21,38 @@
             <div class="page-wrapper">
               <div class="row">
                 <div class="col-sm-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h5>Marketing y redes sociales - vídeos</h5>
-                  </div>
-                  <div class="card-block">
-                    <div class="row text-center">
-                        <?php 
-                        foreach ($obj_videos_mkt as $value) { ?>
-                            <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12">
-                                <a href="<?php echo $value->video;?>" data-toggle="lightbox" data-gallery="mixedgallery">
-                                    <img src='<?php echo site_url()."static/course/img/$value->img";?>' class="img-fluid m-b-10" alt="">
-                                </a>
-                                <div class="card Design-sprint theme-bg2">
-                                    <div class="card-header borderless">
-                                        <span class="d-block text-white mt-2"><b><?php echo corta_texto(str_to_first_capital($value->name),14);?></b><br/><?php echo str_to_first_capital($value->summary);?></span> 
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>  
-                  </div>
-                </div>
-                </div> 
                     
-                  <div class="card">
-                    <div class="card-header">
-                      <h5>Forex e Inversiones - vídeos</h5>
-                    </div>
-                    <div class="card-block">
-                    <div class="row text-center">
-                        <?php 
-                        foreach ($obj_videos_fx as $value) { ?>
-                            <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12">
-                                <a href="<?php echo $value->video;?>" data-toggle="lightbox" data-gallery="mixedgallery">
-                                    <img src="<?php echo site_url()."static/course/img/$value->img";?>" class="img-fluid m-b-10" alt="">
-                                </a>
-                                <div class="card Design-sprint theme-bg2">
-                                    <div class="card-header borderless">
-                                        <span class="d-block text-white mt-2"><b><?php echo corta_texto(str_to_first_capital($value->name),14);?></b><br/><?php echo str_to_first_capital($value->summary);?></span> 
-                                    </div>
-                                </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <h5>Todos los Videos</h5>
+                      </div>
+                      <div class="card-block">
+                        <div class="grid">
+                        <?php
+                        foreach ($obj_videos as $value) { ?>
+                          <figure class="effect-apollo">
+                              <img src="<?php echo site_url()."static/course/img/$value->img2";?>" alt="advance-3">
+                            <figcaption>
+                                <h2><span style="font-size: 32px !important;font-weight: 300 !important;"><?php echo $value->name;?></span></h2>
+                              <p><?php echo corta_texto($value->summary, 100);?></p>
+                              <a href="<?php echo site_url()."course/$value->category_slug/$value->slug";?>">Ver Más</a>
+                            </figcaption>
+                          </figure>
+                        <?php } ?>
+                        </div>
+                      </div>
+                        
+                        <div class="row">
+                          <div class="col-sm-12 col-md-5"></div>
+                          <div class="col-sm-12 col-md-7">
+                            <div class="dataTables_paginate paging_simple_numbers">
+                              <ul class="pagination">
+                                <?php echo $obj_pagination; ?>
+                              </ul>
                             </div>
-                        <?php } ?>  
-                  </div>
-                </div>  
-                </div>  
+                          </div>
+                        </div>
+                    </div>
               </div>
             </div>
           </div>

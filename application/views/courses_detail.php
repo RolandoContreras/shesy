@@ -62,7 +62,7 @@
                       </div>
                       <div class="course-thumbnail">
                           <img alt=home-1-bg title=home-1-bg data-src='<?php echo site_url()."static/course/img/$obj_videos->img";?>' class="lazyload">
-                          <a href='<?php echo site_url()."static/course/video/$obj_videos->video";?>' class="play-button video-thumbnail">
+                          <a href='<?php echo $obj_videos->video;?>' class="play-button video-thumbnail">
                                   <span class="video-thumbnail hvr-push"></span>
                               </a>
                         <div class="time">

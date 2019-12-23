@@ -58,7 +58,6 @@ $route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
 
-
 $route['register/([0-9a-z_-]+)'] = "register/index/$1";
 $route['register/validate_username'] = "register/validate_username";
 $route['register/validate'] = "register/validate";
@@ -66,10 +65,10 @@ $route['register/validate'] = "register/validate";
 $route['backoffice'] = "b_home";
 
 $route['course'] = "c_home";
-$route['course/forex/([0-9a-z_-]+)'] = "c_home/all";
-$route['course/mkt/([0-9a-z_-]+)'] = "c_home/all";
-$route['course/document'] = "c_home/document";
-$route['course/profile'] = "c_home/profile";
+$route['course/([0-9]+)'] = 'c_home/index/$1';
+$route['course/([0-9a-z_-]+)'] = 'c_home/category/$1';
+$route['course/([0-9a-z_-]+)/([0-9]+)'] = 'c_home/category/$1';
+$route['course/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'c_home/detail/$1';
 
 $route['backoffice/profile'] = "b_profile";
 $route['backoffice/profile/update_password'] = "b_profile/update_password";

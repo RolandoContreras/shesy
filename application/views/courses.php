@@ -90,7 +90,7 @@
                     </button>
                     <span class="widget-search-close"></span>
                 </form>
-                <ul |  class="courses-list-search list-unstyled"></ul>
+                <ul class="courses-list-search list-unstyled"></ul>
               </div>
             </div>
             <div class="archive-courses course-grid archive_switch">
