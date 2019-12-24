@@ -162,13 +162,14 @@
                                                   <div class="icon-play"></div>
                                                 </div>
                                                 <div class="col-lg-6 content-box">
-                                                  <div class=steps-wrapper>
-                                                      <h3 class="sc-title" style="text-align:center !important;">¿Qué es la embajada FK?</h3>
+                                                    <div class=steps-wrapper style="margin-left:13%;">
+                                                      <h3 class="sc-title" style="text-align:left !important;">¿Qué es la cultura FK?</h3>
+                                                      <p class="description">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
+                                                      <p class="description">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
                                                     <div>
                                                       <div class=tab-content>
                                                         <div class="tab-pane active">
-                                                          <p class=description style="text-align:right !important;">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos</p>
-                                                          <p class=description style="text-align:right !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
+                                                          
                                                         </div>
                                                       </div>
                                                     </div>
@@ -181,6 +182,7 @@
                                       </div>
                                     </div>
                             </section>
+                    <div class="vc_empty_space" style="height: 48px"><span class="vc_empty_space_inner"></span></div>
                           </div>
                 <div class="thim-sc-course-search ">
                     <div class=thim-loading-icon>
@@ -192,7 +194,7 @@
                     </div><span class=widget-search-close></span>
                     <ul class="courses-list-search list-unstyled"></ul>
                 </div>
-                <div class="vc_empty_space" style="height: 48px"><span class="vc_empty_space_inner"></span></div>
+                
                 <!--STAR WELCOME-->
                 <div class="vc_row wpb_row vc_inner vc_row-fluid list-iconbox">
                   <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -238,6 +240,7 @@
                             </div>
                           </div>
                         </div>
+                          <div class="vc_empty_space" style="height: 48px"><span class="vc_empty_space_inner"></span></div>
                       </div>
                     </div>
                   </div>
@@ -279,7 +282,7 @@
                               <div class=tab-content>
                                 <div class="tab-pane active">
                                     <p class=description style="color:black !important;">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
-                                  <p class=description style="color:black !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
+                                  <p class="description div_hide" style="color:black !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
                                   <a href="#" class="readmore">Postular a ser un emabajador </a>
                                 </div>
                               </div>
