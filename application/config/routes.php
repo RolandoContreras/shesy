@@ -65,6 +65,12 @@ $route['register/validate'] = "register/validate";
 
 $route['backoffice'] = "b_home";
 
+$route['catalogo'] = "catalogo_home";
+$route['catalogo/([0-9]+)'] = 'catalogo_home/index/$1';
+$route['catalogo/([0-9a-z_-]+)'] = 'catalogo_home/category/$1';
+$route['catalogo/([0-9a-z_-]+)/([0-9]+)'] = 'catalogo_home/category/$1';
+$route['catalogo/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalogo_home/detail/$1';
+
 $route['course'] = "c_home";
 $route['course/([0-9]+)'] = 'c_home/index/$1';
 $route['course/([0-9a-z_-]+)'] = 'c_home/category/$1';

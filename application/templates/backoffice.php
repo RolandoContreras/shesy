@@ -87,7 +87,7 @@ window.smartsupp||(function(d) {
               </a>
             </li>
             <li>
-                <a href="" target="_blank">
+                <a href="<?php echo site_url().'catalogo';?>" target="_blank">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                       <span>Catalogo de productos</span>                
                   </div>
@@ -185,12 +185,12 @@ window.smartsupp||(function(d) {
                  </li>
                  <hr/>
                  <li>
-                    <a href="" target="_blank">
-                      <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
-                          <span>Catalogo de productos</span>                
-                      </div>
-                    </a>
-                 </li>
+                <a href="<?php echo site_url().'catalogo';?>" target="_blank">
+                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
+                      <span>Catalogo de productos</span>                
+                  </div>
+                </a>
+             </li>
           <li class="sub-header"> <span>Menú</span> </li>
           <li>
             <a href="<?php echo site_url().'backoffice';?>" class="active">
