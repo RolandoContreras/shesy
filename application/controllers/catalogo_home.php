@@ -191,8 +191,8 @@ class Catalogo_home extends CI_Controller {
                                     catalog.date",
                 "join" => array( 'category, category.category_id = catalog.category_id'),
                 "where" => "catalog.category_id = $category_id and catalog.active = 1",
-                "order" => "catalog.catalog_id DESC",
-                "limit" => "3");
+                "order" => "rand()",
+                "limit" => "6");
             $obj_catalog_all = $this->obj_catalog->search($params);
             //SEND DATA
             
@@ -203,7 +203,7 @@ class Catalogo_home extends CI_Controller {
 	}
     
     
-    public function profile()
+    public function invoices()
     {
         //GET SESION ACTUALY
         $this->get_session();

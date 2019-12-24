@@ -31,6 +31,8 @@
   <!--END FAVICON-->
   <link rel="stylesheet" href="<?php echo site_url().'static/course/css/style.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/course/css/gallery.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/ekko-lightbox.min.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/lightbox.min.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
@@ -50,18 +52,23 @@
           <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
           <?php
           $url = explode("/",uri_string());
+          
             if(isset($url[1])){
                 $nav = "course";
             }else{
-                $nav = "";
+                $nav = $url[0];
             }
             
             $course_syle = "";
             $home_syle = "";
+            $order_syle = "";
             
             switch ($nav) {
                 case "course":
                     $course_syle = "active";
+                    break;
+                case "order":
+                    $order_syle = "active";
                     break;
                 default:
                     $home_syle = "active";
@@ -71,7 +78,7 @@
           
           
           <li class="nav-item">
-              <a href="<?php echo site_url().'course';?>" class="nav-link <?php echo $home_syle;?>">
+              <a href="<?php echo site_url().'catalogo';?>" class="nav-link <?php echo $home_syle;?>">
                   <span class="pcoded-micon">
                        <i data-feather="home"></i>
                   </span>
@@ -93,7 +100,7 @@
             </ul>
         </li>
         <li class="nav-item">
-              <a href="<?php echo site_url().'course';?>" class="nav-link <?php echo $home_syle;?>">
+              <a href="<?php echo site_url().'catalogo';?>" class="nav-link <?php echo $order_syle;?>">
                   <span class="pcoded-micon">
                        <i data-feather="shopping-cart"></i>
                   </span>
@@ -101,7 +108,7 @@
               </a>
         </li>
         <li class="nav-item">
-              <a href="<?php echo site_url().'course';?>" class="nav-link <?php echo $home_syle;?>">
+              <a href="<?php echo site_url().'login/logout';?>" class="nav-link">
                   <span class="pcoded-micon">
                        <i data-feather="log-out"></i>
                   </span>
