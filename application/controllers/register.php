@@ -179,7 +179,7 @@ class Register extends CI_Controller {
             $data_customer_session['status'] = 1;
             $_SESSION['customer'] = $data_customer_session; 
             $data['status'] = "success";
-//            $this->message($username, $pass, $name, $email);
+            $this->message($username, $pass, $name, $email);
             echo json_encode($data);
             }
 	}
@@ -212,12 +212,12 @@ class Register extends CI_Controller {
                       <tr>
                         <td style='padding:0;background-color:#fff;border-radius:0 0 5px 5px;padding:32px'>
                           <p style='margin:0;padding-bottom:20px;color:#333333;line-height:22px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-                          Tu cuenta ha sido creada exitosamente accede a tu oficina virtual a través del siguiente enlace  <a href='http://mibcacapital.com' target='_blank' data-saferedirecturl='https://www.google.com/url?q=http://mibcacapital.com&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>mibcacapital.com</a> <br/>Encuentra aquí tus credenciales de ingreso. </p>
+                          Tu cuenta ha sido creada exitosamente accede a tu oficina virtual a través del siguiente enlace  <a href='https://culturafk.com/' target='_blank' data-saferedirecturl='https://www.google.com/url?q=http://mibcacapital.com&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>culturafk.com</a> <br/>Encuentra aquí tus credenciales de ingreso. </p>
                           <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
                           <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$username</strong></span>
                             <span style='display:block'><span style='width:101px;display:inline-block'>Contraseña: </span><strong>$pass</strong></span>
                           </p> 
-                          <a href='https://mibcacapital.com/login' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
+                          <a href='https://culturafk.com/login' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
                             target='_blank'>Iniciar Sesión</a>                          
                           </td>
                       </tr>
@@ -233,7 +233,7 @@ class Register extends CI_Controller {
                       <tr>
                         <td style='max-width:290px;display:inline-block;padding:0 19px 30px;box-sizing:border-box;text-align:left'>
                           <p style='margin:0;text-align:center;line-height:20px;color:#888888;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:12px'>
-                          Visítanos en  <a href='https://mibcacapital.com' style='color:#2d6ced;text-decoration:none' target='_blank'>www.mibcacapital.com</a></p>
+                          Visítanos en  <a href='https://culturafk.com/' style='color:#2d6ced;text-decoration:none' target='_blank'>www.culturafk.com</a></p>
                         </td>
                       </tr>
                     </tbody>
@@ -248,147 +248,12 @@ class Register extends CI_Controller {
   </table>
   </div>
                             .</html>", 70, "\n", true);
-                    $titulo = "Bienvenido - [BCA CAPITAL]";
+                    $titulo = "Bienvenido - [CULTURA FK]";
                     $headers = "MIME-Version: 1.0\r\n"; 
                     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-                    $headers .= "From: BCA CAPITAL <contacto@mibcacapital.com>\r\n";
+                    $headers .= "From: CULTURA FK <contacto@culturafk.com>\r\n";
                     $bool = mail("$email",$titulo,$mensaje,$headers);
                     
     }
-        
-        public function crear_registro() {
-            
-                //SET TIMEZONE AMERICA
-                date_default_timezone_set('America/Lima');
-                //GET DATA STRING
-                $data = $_POST['dataString']; 
-                //EXPLODE BY DEMILITER
-                $string =  explode('&', $data);
-                
-                //SET $VARIBLE
-                $username = strtolower($string[0]);
-                $customer_id = $string[14];
-                $pierna_customer = $string[15];
-                $point_left = $string[16];
-                $point_rigth = $string[17];
-                $identificator_param = $string[18];
-                
-                //validate username
-                $val = $this->validate_username_register($username);
-                if($val == 1){
-                    echo '<div class="alert alert-danger" style="text-align: center">Usuario no disponible.</div>';
-                }else{
-                    //SET $VARIBLE
-                    $name = $string[1];
-                    $password = $string[2];
-                    $last_name = $string[3];
-                    $address = $string[4];
-                    $phone = $string[5];
-                    $dni = $string[6];
-                    $email = $string[7];
-                    $dia = $string[8];
-                    $mes = $string[9];
-                    $ano = $string[10];
-                    $pais = $string[11];
-                    $region = $string[12];
-                    $city = $string[13];
-                    
-                    //PUT CUSTOMER_ID LIKE PAREND
-                    $parent_id = $customer_id;
-                    //SELECT PIERNA
-                    if($pierna_customer == 3){
-                        switch($point_left){
-                            case $point_left < $point_rigth:
-                                $last_id = 'z';
-                                //GET TO VERIFY UN ATUTHENTICATOR STRING
-                                $verify = 'd';
-                                $pierna_customer = 1;
-                                break;
-                            case $point_left > $point_rigth:
-                                $last_id = 'd';
-                                //GET TO VERIFY UN ATUTHENTICATOR STRING
-                                $verify = 'z';
-                                $pierna_customer = 2;
-                                break;
-                            case $point_left == $point_rigth:
-                                $last_id = 'z';
-                                //GET TO VERIFY UN ATUTHENTICATOR STRING
-                                $verify = 'd';
-                                $pierna_customer = 1;
-                                break;
-                        }
-                    }elseif ($pierna_customer == 1) {
-                            $last_id = 'z';
-                            //GET TO VERIFY UN ATUTHENTICATOR STRING
-                            $verify = 'd';
-                    }elseif ($pierna_customer == 2){
-                            $last_id = 'd';
-                            //GET TO VERIFY UN ATUTHENTICATOR STRING
-                            $verify = 'z';
-                    }
-                    
-                    //SELECT NEW IDENTIFICATOR
-                    $identificador_explo = explode(',', $identificator_param);
-                    $last_number = intval(preg_replace('/[^0-9]+/', '', $identificador_explo[0]), 10); 
-                    $last_number = $last_number + 1;
-                    $new_identification = $last_number.$last_id.",".$identificator_param;
-                    
-                    $params = array("select" => "identificador,customer_id,first_name,created_at",
-                        "where" => "identificador like '%$identificator_param' and position = $pierna_customer",
-                        "order" => "customer.created_at ASC");
-                    $obj_identificator = $this->obj_customer->search($params);
-                    
-                    foreach ($obj_identificator as $key => $value){
-                        
-                        if($value->identificador == "$new_identification"){
-                            //VERIDY NEW IDENTIFICATOR
-                            $new_identification = explode(',', $value->identificador);
-                            $last_number = intval(preg_replace('/[^0-9]+/', '', $new_identification[0]), 10); 
-                            $last_number = $last_number + 1;
-                            $new_identification = $last_number.$last_id.",".$value->identificador;
-                            
-                        }
-                    }
-                    
-                    //create date to DB
-                    $birth_date = "$ano-$mes-$dia";
-                    $data = array(
-                        'parents_id' => $customer_id,
-                        'franchise_id' => 6,
-                        'username' => $username,
-                        'email' => $email,
-                        'password' => $password,
-                        'position' => $pierna_customer,
-                        'position_temporal' => 1,
-                        'first_name' => $name,
-                        'last_name' => $last_name,
-                        'address' => $address,
-                        'phone' => $phone,
-                        'identificador' => $new_identification,
-                        'city' => $city,
-                        'dni' => $dni,
-                        'birth_date' => $birth_date,
-                        'country' => $pais,
-                        'region' => $region,
-                        'active' => 0,
-                        'status_value' => 1,
-                        'created_at' => date("Y-m-d H:i:s"),
-                    );
-                    $customer_id = $this->obj_customer->insert($data);
-                    //INSERT MESSAGE WELCOME
-                    $this->messages_welcome($name,$last_name,$customer_id,$username,$password);
-                    echo '<div class="alert alert-success" style="text-align: center">Registro creado correctamente.</div>';
-                    
-                    //SEND MESSAGES
-                    $images = site_url()."static/page_front/images/bienvenido2.jpg";
-                    $img_path = "<img src='$images' alt='Bienvenido'/>";
-                    $mensaje = wordwrap("<html><body><h1>Bienvenido a 3T Club</h1><p>Bienvenido ahora eres parte de la revolución 3T Club estamos muy contentos de que hayas tomado la mejor decisión en este tiempo.</p><p>Estamos para apoyarte en todo lo que necesites. Te dejamos tus datos de ingreso.</p><h4> >>>>>>> USUARIO: $username</h4><h4> >>>>>>> PASSWORD: $password</h4><p>$img_path</p></body></html>", 70, "\n", true);
-                    $titulo = "Bienvenido a 3T Club";
-                    $headers = "MIME-Version: 1.0\r\n"; 
-                    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-                    $headers .= "From: 3T Company: Travel - Training - Trade < noreplay@my3t.club >\r\n";
-                    $bool = mail("$email",$titulo,$mensaje,$headers);
-        }
-      }
         
 }

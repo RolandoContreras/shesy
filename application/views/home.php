@@ -156,19 +156,19 @@
                                                   <div class="col-lg-6 media-box">
                                                   <div class="player-wrapper">
                                                     <div class="player-inner">
-                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                                     </div>
                                                   </div>
                                                   <div class="icon-play"></div>
                                                 </div>
                                                 <div class="col-lg-6 content-box">
                                                   <div class=steps-wrapper>
-                                                      <h3 class="sc-title" style="text-align:left !important;">¿Qué es la embajada FK?</h3>
+                                                      <h3 class="sc-title" style="text-align:center !important;">¿Qué es la embajada FK?</h3>
                                                     <div>
                                                       <div class=tab-content>
-                                                        <div class="tab-pane active" style="text-align:center !important;">
-                                                          <p class=description style="text-align:center !important;">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos</p>
-                                                          <p class=description style="text-align:center !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
+                                                        <div class="tab-pane active">
+                                                          <p class=description style="text-align:right !important;">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos</p>
+                                                          <p class=description style="text-align:right !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
                                                         </div>
                                                       </div>
                                                     </div>

@@ -20,11 +20,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/shesy/application/views/backoffice/b_referred.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/templates/backoffice.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/backoffice/b_unilevel.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/b_network.php</file>
-            <file>file:/C:/wamp64/www/shesy/static/backoffice/images/plan/plan_2.png</file>
+            <file>file:/C:/wamp64/www/shesy/application/config/routes.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/page_front/js/script/register.js</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/register.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/home.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/register.php</file>
         </group>
     </open-files>
 </project-private>
