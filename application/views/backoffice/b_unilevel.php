@@ -54,8 +54,8 @@
                               <a href="javascript:void(0);">
                                   <?php 
                                   switch ($obj_customer->kit_id) {
-                                        case 1:$kit = "Membership";$img = "pack_1.png";break;
-                                        case 2:$kit = "Inicio";$img = "pack_2.png";break;
+                                        case 1:$kit = "Pack 1";$img = "pack_1.png";break;
+                                        case 2:$kit = "Pack 2";$img = "pack_2.png";break;
                                         default:$kit = "-";$img = "libre.png";break;
                                   }
                                   switch ($obj_customer->range_id) {
@@ -76,8 +76,8 @@
                                   <ul>
                                       <?php foreach ($obj_customer_n2 as $value) {
                                             switch ($value->kit_id) {
-                                                    case 1:$kit = "Membership";$img = "pack_1.png";break;
-                                                    case 2:$kit = "Inicio";$img = "pack_2.png";break;
+                                                    case 1:$kit = "Pack 1";$img = "pack_1.png";break;
+                                                    case 2:$kit = "Pack 2";$img = "pack_2.png";break;
                                                     default:$kit = "-";$img = "libre.png";break;
                                               }
                                             switch ($value->range_id) {
@@ -100,8 +100,8 @@
                                                         <ul class="d-none d-sm-block">
                                                             <?php foreach ($obj_customer_n3 as $value3) { 
                                                                     switch ($value3->kit_id) {
-                                                                       case 1:$kit = "Membership";$img = "pack_1.png";break;
-                                                                       case 2:$kit = "Inicio";$img = "pack_2.png";break;
+                                                                       case 1:$kit = "Pack 1";$img = "pack_1.png";break;
+                                                                       case 2:$kit = "Pack 2";$img = "pack_2.png";break;
                                                                        default:$kit = "-";$img = "libre.png";break;
                                                                       }
                                                                     switch ($value3->range_id) {
@@ -124,8 +124,8 @@
                                                                                  <ul class="d-none d-sm-block">
                                                                                      <?php 
                                                                                         foreach ($obj_customer_n4 as $value4) { switch ($value4->kit_id) {
-                                                                                                    case 1:$kit = "Membership";$img = "pack_1.png";break;
-                                                                                                   case 2:$kit = "Inicio";$img = "pack_2.png";break;
+                                                                                                    case 1:$kit = "Pack 1";$img = "pack_1.png";break;
+                                                                                                   case 2:$kit = "Pack 2";$img = "pack_2.png";break;
                                                                                                    default:$kit = "-";$img = "libre.png";break;
                                                                                                   }
                                                                                                 switch ($value4->range_id) {

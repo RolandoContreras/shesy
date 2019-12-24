@@ -25,7 +25,7 @@
                 <div class="col-md-6">
                   <div class="profile-tile">
                     <a class="profile-tile-box" href="#">
-                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/plan_1.png';?>"> </div>
+                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/pack_1.png';?>"> </div>
                       <div class="pt-user-name"> <b><?php echo $obj_total->total_pack_1;?> Kits</b> <br> Pack1 </div>
                     </a>
                   </div>
@@ -37,7 +37,7 @@
                 <div class="col-md-6">
                   <div class="profile-tile">
                     <a class="profile-tile-box" href="#">
-                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/plan_2.png';?>"> </div>
+                      <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/pack_2.png';?>"> </div>
                       <div class="pt-user-name"> <b><?php echo $obj_total->total_pack_2;?> Kits</b> <br> Pack2 </div>
                     </a>
                   </div>
@@ -76,19 +76,10 @@
                                               <?php 
                                               switch ($value->kit_id) {
                                                   case 1:
-                                                        echo "Membership";    
+                                                        echo "Pack 1";    
                                                       break;
                                                   case 2:
-                                                        echo "Inicio";    
-                                                      break;
-                                                  case 3:
-                                                        echo "Apertura";    
-                                                      break;
-                                                  case 4:
-                                                       echo "Elite"; 
-                                                      break;
-                                                  case 5:
-                                                      echo "Premium";   
+                                                        echo "Pack 2";    
                                                       break;
                                                   default:
                                                       echo "-";   
@@ -118,7 +109,6 @@
           </div>
         </div>
       </div>
-      <form method="post" id="formConfirmInvoice" action="" onsubmit="return sendWithValidation($(this));"> <input type="hidden" name="cofirm_invoice_id" id="cofirm_invoice_id" value="sss"> <input type="hidden" name="_token" value="VHHrXR8gvwphmQbkUhdNaQvjXNOYIYmGYF3DyXyk">        </form>
     </div>
   </div>
 </div>

@@ -69,7 +69,7 @@
                 </a>
             </div>
             <h4 class="auth-header">
-                NUEVO SOCIO
+                REGÍSTRATE
             </h4>
             <form class="form" action="javascript:void(0);">
                 <?php if(isset($obj_customer->username)){ ?>
@@ -81,11 +81,20 @@
                 <?php } ?>
                 <?php 
                  if(isset($obj_customer)){
-                     $parent_id = $obj_customer->customer_id;
-                 }else{
-                     $parent_id = "1";
-                 }
-                ?>
+                    $parent_id = $obj_customer->customer_id;
+                    ?>
+                <div class="form-group">
+                    <input class="form-control" type="checkbox" id="cbox2">
+                    <label for="">¿Desea cambiar de patrocinador?</label>
+                    <input style="display:none;" type="text" onkeyup="this.value=Numtext(this.value)" onblur="validate_username_2(this.value);" value="<?php echo $obj_customer->username;?>" class="form-control" id="show" style="text-transform:lowercase;">
+                    <input type="hidden" class="form-control" id="parent_id_2" name="parent_id_2" value="<?php echo $parent_id;?>">
+                    <span class="alert-1"></span>
+                </div>
+                 <?php }else{
+                     $parent_id = "1"; ?>
+                    <input type="text" id="parent_id" name="parent_id" value="<?php echo $parent_id;?>" style="display:none;">
+                <?php } ?>
+                 
                 <input type="text" id="parent_id" name="parent_id" value="<?php echo $parent_id;?>" style="display:none;">
                 <div class="form-group">
                     <label for="">Usuario</label>
@@ -224,6 +233,17 @@
 <script src="<?php echo site_url().'static/page_front/js/script/login/functions.js?r=3617';?>"></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/three.min.js';?>"></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/vanta.globe.min.js';?>"></script>
+<script>
+$(document).ready(function(){
+    $('#cbox2').click(function() {
+          if ($(this).is(':checked')) {
+            $("#show").show(500);
+    }
+   });
+});
+</script>
+
+
     <script>
         VANTA.GLOBE({
             el: ".vanta-bg",

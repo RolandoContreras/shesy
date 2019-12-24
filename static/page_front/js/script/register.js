@@ -1,5 +1,6 @@
 function register(){
     var parent_id = document.getElementById("parent_id").value;
+    var parent_id_2 = document.getElementById("parent_id_2").value;
     var username = document.getElementById("username").value;
     var pass = document.getElementById("pass").value;
     var name = document.getElementById("name").value;
@@ -10,10 +11,10 @@ function register(){
     var address = document.getElementById("address").value;
     var country = document.getElementById("country").value;
     //GET DATA RECAPTCHA
-//    var response = grecaptcha.getResponse();
-//        if(response.length == 0){
-//        document.getElementById("captcha_messages").style.display = "block";
-//    }else{
+    var response = grecaptcha.getResponse();
+        if(response.length == 0){
+        document.getElementById("captcha_messages").style.display = "block";
+    }else{
         //validate
         if(name == ""){
             document.getElementById("message_name").style.display = "block";
@@ -39,6 +40,9 @@ function register(){
         }else if(address == ""){
             document.getElementById("message_address").style.display = "block";
             $("#address").focus();
+        }else if(address == ""){
+            document.getElementById("message_address").style.display = "block";
+            $("#address").focus();
         }else if(country == ""){
             document.getElementById("message_pais").style.display = "block";
             $("#message_pais").focus();
@@ -52,8 +56,9 @@ function register(){
                         dataType: "json",
                         data: {name : name,
                                 parent_id : parent_id,
+                                parent_id_2 : parent_id_2,
                                 username : username,
-                               last_name : last_name,
+                                last_name : last_name,
                                 email : email,
                                 dni : dni,
                                 phone : phone,
@@ -76,7 +81,7 @@ function register(){
                 $("#email").focus();
             }
         }
-//    }
+    }
 }
 
 function validar_email( email ){
@@ -98,6 +103,27 @@ function validate_username(username){
                 $(".alert-0").removeClass('text-success').addClass('text-danger').html(data.print);
             }else{
                 $(".alert-0").removeClass('text-danger').addClass('text-success').html(data.print);
+            }
+        }            
+        });
+    }
+}
+
+function validate_username_2(username){
+    if(username == ""){
+        $(".alert-1").removeClass('text-success').addClass('text-danger').html("Usuario Invalido <i class='fa fa-times-circle-o' aria-hidden='true'></i>");
+    }else{
+        $.ajax({
+        type: "post",
+        url: site + "register/validate_username_2",
+        dataType: "json",
+        data: {username: username},
+        success:function(data){            
+            if(data.message == "true"){
+                document.getElementById("parent_id_2").value=data.value;
+                $(".alert-1").removeClass('text-danger').addClass('text-success').html(data.print);
+            }else{
+                $(".alert-1").removeClass('text-success').addClass('text-danger').html(data.print);
             }
         }            
         });

@@ -65,6 +65,29 @@ class Register extends CI_Controller {
             }
         }
         
+        public function validate_username_2() {
+            if ($this->input->is_ajax_request()) {
+                //SELECT ID FROM CUSTOMER
+            $username = str_to_minuscula(trim($this->input->post('username')));
+            $param_customer = array(
+                "select" => "customer_id,
+                            first_name,
+                            last_name",
+                "where" => "username = '$username'");
+            $customer = $this->obj_customer->get_search_row($param_customer);
+            
+            if (count($customer) > 0) {
+                $data['message'] = "true";
+                $data['value'] = "$customer->customer_id";
+                $data['print'] = "$customer->first_name $customer->last_name <i class='fa fa-check-square-o' aria-hidden='true'></i>";
+            } else {
+                $data['message'] = "false";
+                $data['print'] = "No encontrado! <i class='fa fa-times-circle-o' aria-hidden='true'></i>";
+            }
+            echo json_encode($data);
+            }
+        }
+        
         public function validate_username_register($username) {
                 //SELECT ID FROM CUSTOMER
             $param_customer = array(
@@ -92,6 +115,7 @@ class Register extends CI_Controller {
                 $data['status'] = "username";
             }else{
                 $parent_id = $this->input->post("parent_id");
+                $parent_id_2 = $this->input->post("parent_id_2");
                 $name = $this->input->post("name");
                 $last_name = $this->input->post("last_name");
                 $email = $this->input->post("email");
@@ -124,15 +148,20 @@ class Register extends CI_Controller {
                 $param_customer = array(
                             "select" => "ident",
                             "where" => "customer_id = $parent_id");
-               $customer = $this->obj_unilevel->get_search_row($param_customer);    
-               $ident =  $customer->ident;
-               //CRETE NEW IDENT 
-               $new_ident = $ident.",$parent_id";
+               $customer = $this->obj_unilevel->get_search_row($param_customer);  
+               
+               if(count($customer) > 0){
+                   $ident =  $customer->ident;
+                   $new_ident = $ident.",$parent_id";
+               }else{
+                   $new_ident = 1;
+               }
                
                 //CREATE UNILEVEL
                 $data_invoice = array(
                         'customer_id' => $customer_id,
                         'parend_id' => $parent_id,
+                        'new_parend_id' => $parent_id_2,
                         'ident' => $new_ident,
                         'status_value' => 1,
                         'created_at' => date("Y-m-d H:i:s"),
@@ -150,7 +179,7 @@ class Register extends CI_Controller {
             $data_customer_session['status'] = 1;
             $_SESSION['customer'] = $data_customer_session; 
             $data['status'] = "success";
-            $this->message($username, $pass, $name, $email);
+//            $this->message($username, $pass, $name, $email);
             echo json_encode($data);
             }
 	}
