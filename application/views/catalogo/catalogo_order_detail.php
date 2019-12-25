@@ -25,6 +25,9 @@
       <div class="container" id="printTable">
         <div>
           <div class="card">
+              <div class="card-header">
+                        <h5>Detalle de Compra</h5>
+                      </div>
             <div class="row invoice-contact">
               <div class="col-md-4"></div>
             </div>

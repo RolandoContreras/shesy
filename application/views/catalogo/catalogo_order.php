@@ -7,10 +7,9 @@
             <div class="row align-items-center">
               <div class="col-md-12">
                 <div class="page-header-title">
-                  <h5 class="m-b-10">Mantenimientos de Bonos</h5>
+                  <h5 class="m-b-10">Mis Compras</h5>
                 </div>
                 <ul class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/';?>">Panel</a></li>
                   <li class="breadcrumb-item"><a>Compras</a></li>
                 </ul>
               </div>
@@ -23,7 +22,7 @@
               <div class="col-sm-12">
                 <div class="card">
                   <div class="card-header">
-                    <h5>Listado de Bonos</h5>
+                    <h5>Todas mis Compras</h5>
                   </div>
                   <div class="card-block">
                     <div class="table-responsive">

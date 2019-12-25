@@ -57,24 +57,24 @@
           $url = explode("/",uri_string());
           
             if(isset($url[1])){
-                $nav = "course";
+                $nav = $url[1];
             }else{
                 $nav = $url[0];
             }
             
-            $course_syle = "";
+            $catalog_syle = "";
             $home_syle = "";
             $order_syle = "";
             
             switch ($nav) {
-                case "course":
-                    $course_syle = "active";
+                case "catalogo":
+                    $home_syle = "active";
                     break;
                 case "order":
                     $order_syle = "active";
                     break;
                 default:
-                    $home_syle = "active";
+                    $catalog_syle = "active";
                     break;
             }
           ?>
@@ -89,7 +89,7 @@
               </a>
         </li>
         <li class="nav-item pcoded-hasmenu">
-            <a href="#!" class="<?php echo $course_syle;?>">
+            <a href="#!" class="<?php echo $catalog_syle;?>">
                 <span class="pcoded-micon">
                     <i data-feather="airplay"></i>
                 </span>
