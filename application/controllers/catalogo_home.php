@@ -246,17 +246,39 @@ class Catalogo_home extends CI_Controller {
         
         //GET DATA PRICE CRIPTOCURRENCY
         $params = array(
+                        "select" =>"invoices.invoice_id,
+                                    invoices.type,
+                                    invoices.date,
+                                    invoices.total,
+                                    invoices.active,
+                                    invoices.sub_total,
+                                    invoices.igv,
+                                    invoices.total,
+                                    customer.email,
+                                    customer.phone,
+                                    customer.address,
+                                    customer.first_name,
+                                    customer.last_name,",
+                        "where" => "invoices.invoice_id = $invoice_id and invoices.type = 2 and invoices.status_value = 1",
+                        "join" => array('customer, customer.customer_id = invoices.customer_id'),
+                        );
+
+        $obj_invoices = $this->obj_invoices->get_search_row($params);
+        
+        //GET DATA PRICE CRIPTOCURRENCY
+        $params = array(
                         "select" =>"invoice_catalog.quantity,
-                                    invoice_catalog.date,
+                                    invoice_catalog.price,
                                     invoice_catalog.sub_total,
-                                    catalog.name,
-                                    catalog.price",
+                                    invoice_catalog.date,
+                                    catalog.name",
                         "where" => "invoice_catalog.invoice_id = $invoice_id",
                         "join" => array('catalog, invoice_catalog.catalog_id = catalog.catalog_id'),
                         );
 
         $obj_invoice_catalog = $this->obj_invoice_catalog->search($params);
         
+        $this->tmp_catalog->set("obj_invoices",$obj_invoices);
         $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
         $this->tmp_catalog->set("obj_invoice_catalog",$obj_invoice_catalog);
         $this->tmp_catalog->render("catalogo/catalogo_order_detail");

@@ -32,34 +32,46 @@
               <div class="row invoive-info">
                 <div class="col-md-4 col-xs-12 invoice-client-info">
                   <h6>Información de Cliente:</h6>
-                  <h6 class="m-0">Josephin Villa</h6>
-                  <p class="m-0 m-t-10">1065 Mandan Road, Columbia MO, Missouri. (123)-65202</p>
-                  <p class="m-0">(1234) - 567891</p>
-                  <p>demo@gmail.com</p>
+                  <h6 class="m-0"><?php echo $obj_invoices->first_name." ".$obj_invoices->last_name;?></h6>
+                  <p class="m-0 m-t-10"><?php echo $obj_invoices->address;?></p>
+                  <p class="m-0"><?php echo $obj_invoices->phone;?></p>
+                  <p><?php echo $obj_invoices->email;?></p>
                 </div>
                 <div class="col-md-4 col-sm-6">
                   <h6>Información de Compra :</h6>
                   <table class="table table-responsive invoice-table invoice-order table-borderless">
                     <tbody>
                       <tr>
-                          <th>Fecha :<?php echo formato_fecha_barras($obj_invoice_catalog->date);?></th>
-                        <td>November 14</td>
+                          <th>Fecha :</th>
+                        <td><?php echo formato_fecha_barras($obj_invoices->date);?></td>
                       </tr>
                       <tr>
                         <th>Estado :</th>
                         <td>
-                            <span class="label label-warning">Pending</span>
+                            <?php 
+                            if($obj_invoices->active == 1){
+                                $text = "Pendiente";
+                                $style = "label label-warning";
+                            }elseif($obj_invoices->active == 2){
+                                $text = "Pagado";
+                                $style = "label label-success";
+                            }else{
+                                $text = "Cancelado";
+                                $style = "label label-important";
+                            }
+                            ?>
+                            <span class="<?php echo $style?>"><?php echo $text?></span>
                         </td>
                       </tr>
                       <tr>
                         <th>Id :</th>
-                        <td>#146859</td>
+                        <td>#<?php echo $obj_invoices->invoice_id;?></td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                  <h6 class="m-b-20">Número de Factura <span>#123685479624</span></h6>
+                  <h6 class="m-b-20">Número de Factura <span>#<?php echo $obj_invoices->invoice_id;?></span></h6>
                 </div>
               </div>
               <div class="row">
@@ -68,40 +80,23 @@
                     <table class="table invoice-detail-table">
                       <thead>
                         <tr class="thead-default">
-                          <th>Description</th>
-                          <th>Quantity</th>
-                          <th>Amount</th>
+                          <th>Descripción</th>
+                          <th>Cantidad</th>
+                          <th>Importe</th>
                           <th>Total</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>
-                            <h6>Logo Design</h6>
-                            <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-                          </td>
-                          <td>6</td>
-                          <td>$200.00</td>
-                          <td>$1200.00</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <h6>Logo Design</h6>
-                            <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-                          </td>
-                          <td>7</td>
-                          <td>$100.00</td>
-                          <td>$700.00</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <h6>Logo Design</h6>
-                            <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-                          </td>
-                          <td>5</td>
-                          <td>$150.00</td>
-                          <td>$750.00</td>
-                        </tr>
+                          <?php  foreach ($obj_invoice_catalog as $value) { ?>
+                                <tr>
+                                  <td>
+                                    <h6><?php echo $value->name;?></h6>
+                                  </td>
+                                  <td><?php echo $value->quantity;?></td>
+                                  <td><?php echo $value->price;?></td>
+                                  <td><?php echo format_number_moneda_soles($value->sub_total);?></td>
+                               </tr>
+                          <?php } ?>
                       </tbody>
                     </table>
                   </div>
@@ -113,15 +108,11 @@
                     <tbody>
                       <tr>
                         <th>Sub Total :</th>
-                        <td>$4725.00</td>
+                        <td><?php echo format_number_moneda_soles($obj_invoices->sub_total);?></td>
                       </tr>
                       <tr>
-                        <th>Taxes (10%) :</th>
-                        <td>$57.00</td>
-                      </tr>
-                      <tr>
-                        <th>Discount (5%) :</th>
-                        <td>$45.00</td>
+                        <th>IGV (0%) :</th>
+                        <td><?php echo format_number_moneda_soles($obj_invoices->igv);?></td>
                       </tr>
                       <tr class="text-info">
                         <td>
@@ -130,7 +121,7 @@
                         </td>
                         <td>
                           <hr>
-                          <h5 class="text-primary">$4827.00</h5>
+                          <h5 class="text-primary"><?php echo format_number_moneda_soles($obj_invoices->total);?></h5>
                         </td>
                       </tr>
                     </tbody>
