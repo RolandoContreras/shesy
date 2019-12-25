@@ -284,6 +284,35 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->render("catalogo/catalogo_order_detail");
     }
     
+    public function add_cart() {
+        
+        if($this->input->is_ajax_request()){   
+               //GET SESION ACTUALY
+                $this->get_session();
+                //GET CUSTOMER_ID
+                $price = $this->input->post('price');
+                $catalog_id = $this->input->post('catalog_id');
+                $quantity = $this->input->post('quantity');
+                $name = $this->input->post('name');
+
+                //ADD CART
+                $data = array(
+                        'id'      => $catalog_id,
+                        'qty'     => $quantity,
+                        'price'   => $price,
+                        'name'    => "$name",
+                );
+                $cart_id = $this->cart->insert($data);
+                
+                if(count($cart_id) > 0){
+                    $data['status'] = "true";
+                }else{
+                    $data['status'] = "false";
+                }
+               echo json_encode($data); 
+        }
+    }
+    
      public function nav_catalogo(){
             $params_category_catalogo = array(
                         "select" =>"category_id,

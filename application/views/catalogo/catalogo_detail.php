@@ -64,6 +64,7 @@
                                           <div class="tab-content" id="v-pills-tabContent">
                                             <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                                 <h5 class="mt-3"><?php echo $obj_catalog->name;?></h5>
+                                                <h3><?php echo format_number_moneda_soles($obj_catalog->price);?></h3>
                                               <p class="mb-0" style="color:#888 !important;">
                                                   <br/>
                                                     <?php echo $obj_catalog->description;?>
@@ -79,12 +80,22 @@
                                                         <label class="col-form-label" style="color:#888 !important;">Ingrese Cantidad</label>
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0">
+                                                        <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="quantity" id="quantity">
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <button type="button" class="btn btn-glow-success btn-success" title="" data-toggle="tooltip" data-original-title="Agregar al Carrito"><i data-feather="shopping-cart"></i> Agregar</button>
+                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" data-toggle="tooltip" data-original-title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_catalog->catalog_id;?>','<?php echo $obj_catalog->price;?>','<?php echo $obj_catalog->name;?>');"><i data-feather="shopping-cart"></i> Agregar</button>
                                                     </div>
                                                 </div>
+                                                        <div class="form-group has-feedback" style="display: none;" id="quantity_error">
+                                                            <div class="alert alert-danger validation-errors">
+                                                                <p class="user_login_id" style="text-align: center;">La cantidad es invalida.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group has-feedback" style="display: none;" id="quantity_success">
+                                                            <div class="alert alert-success validation-errors">
+                                                                <p class="user_login_id" style="text-align: center;">Producto Agregado.</p>
+                                                            </div>
+                                                        </div>
                                               
                                             </div>
                                           </div>
@@ -120,4 +131,6 @@
       </div>
     </div>
   </section>
+<script src="<?php echo site_url();?>static/catalog/js/order.js"></script>
+
     

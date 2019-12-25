@@ -73,6 +73,8 @@ $route['catalogo/([0-9a-z_-]+)'] = 'catalogo_home/category/$1';
 $route['catalogo/([0-9a-z_-]+)/([0-9]+)'] = 'catalogo_home/category/$1';
 $route['catalogo/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalogo_home/detail/$1';
 
+$route['catalogo/order/add_cart'] = "catalogo_home/add_cart";
+
 
 
 $route['course'] = "c_home";
