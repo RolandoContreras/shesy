@@ -15,44 +15,22 @@ BITSHARE S.A.C
 * Fecha: 16/11/2016
 ****/
 
-class invoices_model_atributos{	
+class invoice_catalog_atributos{	
+    var $invoice_catalog_id='';
     var $invoice_id='';
-    var $customer_id='';
-    var $kit_id='';
-    var $sub_total='';
-    var $total='';
-    var $subject='';
-    var $type='';
-    var $date='';
-    var $active='';
-    var $status_value='';
-    var $created_at='';
-    var $created_by='';
-    var $updated_at='';
-    var $updated_by='';
+    var $catalog_id='';
 }
 
-class Invoices_Model extends CI_Model{ 
+class Invoice_catalog_Model extends CI_Model{ 
 
     public function __construct() {
         parent::__construct();  
-        $this->table = 'invoices';
-	$this->table_id = 'invoice_id';
+        $this->table = 'invoice_catalog';
+	$this->table_id = 'invoice_catalog';
+        $this->invoice_catalog_id='';
         $this->invoice_id='';
-        $this->customer_id='';
-        $this->kit_id='';
-        $this->sub_total='';
-        $this->total='';
-        $this->subject='';
-        $this->type='';
-        $this->date='';
-        $this->active='';
-	$this->status_value='';
-        $this->created_at='';
-        $this->created_by='';
-        $this->updated_at='';
-        $this->updated_by='';
-	$this->fields = new invoices_model_atributos();
+        $this->catalog_id='';
+	$this->fields = new invoice_catalog_atributos();
     }   
     
     public function fields(){
@@ -138,5 +116,14 @@ class Invoices_Model extends CI_Model{
         $dato = $query->row();
         return $dato;       
   }
+  
+   public function verificar_username($username,$password){        
+        $this->db->where('$username',$username);
+        $this->db->where('password', $password);
+        $this->db->from($this->table);
+        $query = $this->db->get();                     
+        return $query->row();        
+   }
+  
 } //FIN DEL MODELO EXTENDIDO
 ?>

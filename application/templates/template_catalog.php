@@ -34,6 +34,9 @@
   <link rel="stylesheet" href="<?php echo site_url().'static/course/css/ekko-lightbox.min.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/course/css/lightbox.min.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
+<script type="text/javascript">
+    var site = '<?php echo site_url();?>';
+  </script>
 </head>
 
 <body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/bg_shop.jpg';?>'); background-size: cover;">
@@ -100,7 +103,7 @@
             </ul>
         </li>
         <li class="nav-item">
-              <a href="<?php echo site_url().'catalogo';?>" class="nav-link <?php echo $order_syle;?>">
+              <a href="<?php echo site_url().'catalogo/order';?>" class="nav-link <?php echo $order_syle;?>">
                   <span class="pcoded-micon">
                        <i data-feather="shopping-cart"></i>
                   </span>

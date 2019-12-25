@@ -6,6 +6,8 @@ class Catalogo_home extends CI_Controller {
         $this->load->model("customer_model","obj_customer");
         $this->load->model("catalog_model","obj_catalog");
         $this->load->model("category_model","obj_category");
+        $this->load->model("invoices_model","obj_invoices");
+        $this->load->model("invoice_catalog_model","obj_invoice_catalog");
     }
 
     public function index()
@@ -203,49 +205,61 @@ class Catalogo_home extends CI_Controller {
 	}
     
     
-    public function invoices()
+    public function order()
     {
         //GET SESION ACTUALY
         $this->get_session();
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        
+        //get nav ctalogo
+        $obj_category_catalogo = $this->nav_catalogo();
+        
         //GET DATA PRICE CRIPTOCURRENCY
         $params = array(
-                        "select" =>"customer.username,
-                                    customer.email,
+                        "select" =>"invoices.invoice_id,
+                                    invoices.type,
+                                    invoices.date,
+                                    invoices.total,
+                                    invoices.active,
                                     customer.first_name,
-                                    customer.last_name,
-                                    customer.btc_address,
-                                    customer.created_at,
-                                    customer.date_start,
-                                    customer.address,
-                                    customer.phone,
-                                    customer.dni,
-                                    customer.active,
-                                    paises.nombre,
-                                    kit.kit_id,
-                                    kit.name as kit",
-                        "where" => "customer.customer_id = $customer_id and customer.status_value = 1 and paises.id_idioma = 7",
-                        "join" => array('kit, customer.kit_id = kit.kit_id',
-                                        'paises, customer.country = paises.id'),
+                                    customer.last_name,",
+                        "where" => "invoices.customer_id = $customer_id and invoices.type = 2 and invoices.status_value = 1",
+                        "join" => array('customer, customer.customer_id = invoices.customer_id'),
                         );
 
-        $obj_customer = $this->obj_customer->get_search_row($params);
+        $obj_invoices = $this->obj_invoices->search($params);
         
-        $kit = $obj_customer->kit_id;
-        if($kit == 1){
-            $text_course = "Prueba";
-        }elseif($kit == 2){
-            $text_course = "Inversiones y Marketing - Módulo Basico";
-        }elseif($kit == 3){
-            $text_course = "Inversiones y Marketing - Módulo Intermedio";
-        }else{
-            $text_course = "Inversiones y Marketing - Módulo Avanzando";
-        }
+        $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
+        $this->tmp_catalog->set("obj_invoices",$obj_invoices);
+        $this->tmp_catalog->render("catalogo/catalogo_order");
+    }
+    
+    public function order_detail($invoice_id)
+    {
+        //GET SESION ACTUALY
+        $this->get_session();
+        //GET CUSTOMER_ID
         
-        $this->tmp_course->set("text_course",$text_course);
-        $this->tmp_course->set("obj_customer",$obj_customer);
-        $this->tmp_course->render("course/c_profile");
+        //get nav ctalogo
+        $obj_category_catalogo = $this->nav_catalogo();
+        
+        //GET DATA PRICE CRIPTOCURRENCY
+        $params = array(
+                        "select" =>"invoice_catalog.quantity,
+                                    invoice_catalog.date,
+                                    invoice_catalog.sub_total,
+                                    catalog.name,
+                                    catalog.price",
+                        "where" => "invoice_catalog.invoice_id = $invoice_id",
+                        "join" => array('catalog, invoice_catalog.catalog_id = catalog.catalog_id'),
+                        );
+
+        $obj_invoice_catalog = $this->obj_invoice_catalog->search($params);
+        
+        $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
+        $this->tmp_catalog->set("obj_invoice_catalog",$obj_invoice_catalog);
+        $this->tmp_catalog->render("catalogo/catalogo_order_detail");
     }
     
      public function nav_catalogo(){
