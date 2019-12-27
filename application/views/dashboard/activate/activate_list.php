@@ -41,6 +41,8 @@
                                     aria-label="Position: activate to sort column ascending">Usuario</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Cliente</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
+                                    aria-label="Office: activate to sort column ascending">Tipo</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Imagen</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -62,6 +64,16 @@
                                 <td><?php echo $value->invoice_id;?></td>
                                 <td><b><?php echo "@".$value->username;?></b></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
+                                <td>
+                                    <?php if ($value->type == 1) {
+                                        $valor = "Activación";
+                                        $stilo = "label label-info";
+                                    }elseif($value->type == 2){
+                                        $valor = "Catalogo";
+                                        $stilo = "label label-warning";
+                                    }?>
+                                    <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
+                                </td>
                                 <td>
                                     <?php 
                                     if($value->img != ""){?>
@@ -91,12 +103,11 @@
                                     }?>
                                     <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
                                 </td>
-                            
                                 <td>
                                     <div class="operation">
                                         <div class="btn-group">
                                             <?php if ($value->active == 1) { ?>
-                                                    <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->kit_id;?>','<?php echo $value->price;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Activar</button>
+                                                    <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->kit_id;?>','<?php echo $value->total;?>','<?php echo $value->type;?>','<?php echo $value->sell_id;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -109,6 +120,7 @@
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">Usuario</th>
                                   <th rowspan="1" colspan="1">Cliente</th>
+                                  <th rowspan="1" colspan="1">Tipo</th>
                                   <th rowspan="1" colspan="1">Imagen</th>
                                   <th rowspan="1" colspan="1">Financiado</th>
                                   <th rowspan="1" colspan="1">Kit</th>

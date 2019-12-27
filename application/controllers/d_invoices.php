@@ -15,7 +15,8 @@ class D_invoices extends CI_Controller{
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
                                     invoices.img,
-                                    invoices.financy,
+                                    invoices.type,
+                                    invoices.total ,
                                     customer.customer_id,
                                     customer.username,
                                     customer.first_name,
@@ -53,7 +54,6 @@ class D_invoices extends CI_Controller{
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
                                     invoices.img,
-                                    invoices.financy,
                                     invoices.type,
                                     customer.customer_id,
                                     customer.username,
@@ -95,7 +95,6 @@ class D_invoices extends CI_Controller{
         $img = $this->input->post("img2");
         $date =  $this->input->post('date');
         $active =  $this->input->post('active');
-        $financy =  $this->input->post('financy');
                
             if(isset($_FILES["image_file"]["name"])){
                 $config['upload_path']          = './static/backoffice/invoice';
@@ -117,7 +116,6 @@ class D_invoices extends CI_Controller{
         $data = array(
                 'kit_id' => $kit_id,
                 'img' => $img,
-                'financy' => $financy,
                 'date' => $date,
                 'active' => $active,  
                 'updated_at' => date("Y-m-d H:i:s"),

@@ -32,7 +32,8 @@ class Sell_Model extends CI_Model{
     public function __construct() {
         parent::__construct();  
         $this->table = 'sell';
-	$this->sell_id = 'sell_id';
+	$this->table_id = 'sell_id';
+        $this->sell_id='';
         $this->invoice_id='';
         $this->date='';
         $this->active='';

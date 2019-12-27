@@ -58,7 +58,7 @@ class B_plan extends CI_Controller {
                 $data_sell = array(
                         'invoice_id' => $invoce_id,
                         'date' => date("Y-m-d H:i:s"),
-                        'active' => 0,
+                        'active' => 1,
                         'status_value' => 1,
                         'created_at' => date("Y-m-d H:i:s"),
                         'created_by' => $customer_id,

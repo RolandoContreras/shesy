@@ -35,12 +35,14 @@
                                 <tr role="row">
                                   <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 267px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
+                                    aria-label="Age: activate to sort column ascending">Importe</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
                                     aria-label="Position: activate to sort column ascending">Usuario</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Cliente</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Financiado</th>
+                                    aria-label="Age: activate to sort column ascending">Tipo</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Imagen</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -56,15 +58,16 @@
                               <tbody>
                                   <?php foreach ($obj_invoices as $key => $value): ?>
                                 <td><?php echo $value->invoice_id;?></td>
+                                <td><?php echo format_number_dolar($value->total);?></td>
                                 <td><?php echo "@".$value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>
-                                    <?php if ($value->financy == 1) {
-                                        $valor = "Si";
-                                        $stilo = "label label-success";
-                                    }else{
-                                        $valor = "No";
+                                    <?php if ($value->type == 1) {
+                                        $valor = "Activación";
                                         $stilo = "label label-info";
+                                    }else{
+                                        $valor = "Catalogo";
+                                        $stilo = "label label-waring";
                                     }?>
                                     <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
                                 </td>

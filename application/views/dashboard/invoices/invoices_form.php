@@ -121,18 +121,6 @@
                                       }else{echo "";} ?>>Pago Reconsumos</option>
                                     </select>
                               </div>
-                              <div class="form-group">
-                                    <label for="inputState">Financiado</label>
-                                        <select name="financy" id="financy" class="form-control">
-                                            <option value="">[ Seleccionar ]</option>
-                                            <option value="1" <?php if(isset($obj_invoices)){
-                                                if($obj_invoices->financy == 1){ echo "selected";}
-                                            }else{echo "";} ?>>Si</option>
-                                            <option value="0" <?php if(isset($obj_invoices)){
-                                                if($obj_invoices->financy == 0){ echo "selected";}
-                                            }else{echo "";} ?>>No</option>
-                                        </select>
-                              </div>
                           </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
