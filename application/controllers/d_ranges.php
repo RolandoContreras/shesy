@@ -48,13 +48,6 @@ class D_ranges extends CI_Controller{
             $this->tmp_mastercms->set("obj_ranges",$obj_ranges);
           }
       
-            $modulos ='rangos'; 
-            $seccion = 'Formulario';        
-            $link_modulo =  site_url().'dashboard/'.$modulos; 
-
-            $this->tmp_mastercms->set('link_modulo',$link_modulo);
-            $this->tmp_mastercms->set('modulos',$modulos);
-            $this->tmp_mastercms->set('seccion',$seccion);
             $this->tmp_mastercms->render("dashboard/ranges/ranges_form");    
     }
     
@@ -109,8 +102,8 @@ class D_ranges extends CI_Controller{
                 'img' => $img,
                 'active' => $active,
                 'status_value' => 1,
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $_SESSION['usercms']['user_id']
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $_SESSION['usercms']['user_id']
                 );          
             //SAVE DATA IN TABLE    
             $this->obj_ranges->insert($data);

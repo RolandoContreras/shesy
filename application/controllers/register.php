@@ -165,8 +165,10 @@ class Register extends CI_Controller {
                         'ident' => $new_ident,
                         'status_value' => 1,
                         'created_at' => date("Y-m-d H:i:s"),
+                        'created_by' => $customer_id,
                     );
                     $this->obj_unilevel->insert($data_invoice);
+                    
                     $data['status'] = "true";
             }
             //CREAR NUEVA SECION 

@@ -54,7 +54,7 @@
                     <a href=javascript:; class="list switchToList"><i class="fa fa-th-list"></i></a></div>
                   <p class=woocommerce-result-count>
                     Mostrando 12 de <?php echo $total;?> resultados</p>
-                  <form class=woocommerce-ordering method="get" action="<?php echo site_url().'catalog/forex-e-inversiones?order';?>">
+                  <form class=woocommerce-ordering method="get" action="<?php echo $url;?>">
                     <span>Order por:</span> 
                     <select name="orderby" class="orderby">
                         <option value="menu_order">Ordenar por Defecto</option>

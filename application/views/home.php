@@ -465,7 +465,7 @@
                     foreach ($catalog as $value) { ?>
                         <div class="col-sm-3 course-item free">
                         <div class=featured-img>
-                            <a href='<?php echo site_url()."catalog/$value->slug";?>' class="img-link">
+                            <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>' class="img-link">
                                 <img width=400 height=400 alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/catalog/$value->img";?>' class="lazyload">
                             </a>
                         </div>

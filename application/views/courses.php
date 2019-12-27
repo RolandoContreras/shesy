@@ -169,13 +169,12 @@
               <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static;">
                 <aside id="thim-courses-categories-2" class="widget widget_thim-courses-categories">
                   <h4 class="widget-title">Categorías</h4>
-                  <ul class="courses-categories">
-                    <li class="cat-item ">
-                        <?php 
-                        foreach ($obj_category_videos as $value) { ?>
-                            <a href='<?php echo site_url()."courses/$value->slug";?>'><?php echo $value->name;?></a>
-                        <?php } ?>
-                    </li>
+                  <ul class="courses-categories"><?php 
+                    foreach ($obj_category_videos as $value) { ?>
+                        <li class="cat-item ">
+                                <a href='<?php echo site_url()."courses/$value->slug";?>'><?php echo $value->name;?></a>
+                        </li>
+                    <?php } ?>
                   </ul>
                 </aside>
               </div>

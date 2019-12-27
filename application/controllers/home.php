@@ -37,11 +37,13 @@ class Home extends CI_Controller {
                                     catalog.summary,
                                     catalog.name,
                                     catalog.slug,
+                                    category.slug as category_slug,
                                     catalog.price,
                                     catalog.description,
                                     catalog.img,
                                     catalog.active,
                                     catalog.date",
+                "join" => array( 'category, category.category_id = catalog.category_id'),
                 "where" => "catalog.active = 1 and catalog.status_value = 1",
                 "order" => "catalog.catalog_id DESC");
             

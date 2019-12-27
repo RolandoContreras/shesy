@@ -32,6 +32,30 @@ class Catalog extends CI_Controller {
              $data['obj_category_videos'] = $this->nav_videos();
              $data['obj_category_catalog'] = $this->nav_catalogo();
              
+             if(isset($_GET['orderby'])){
+                $type = $_GET['orderby'];
+                    
+                switch ($type) {
+                    case 'menu_order':
+                        $order = "catalog.catalog_id ASC";
+                        break;
+                    case 'date':
+                        $order = "catalog.date DESC";
+                        break;
+                    case 'price':
+                        $order = "catalog.price ASC";
+                        break;
+                    case 'price-desc':
+                        $order = "catalog.price DESC";
+                        break;
+                    default:
+                        $order = "catalog.catalog_id ASC";
+                        break;
+                }
+            }else{
+                $order = "catalog.catalog_id DESC";
+            }
+
             //get catalog
             $params = array(
                         "select" =>"catalog.catalog_id,
@@ -44,7 +68,11 @@ class Catalog extends CI_Controller {
                                     category.slug as category_slug,
                                     catalog.date",
                 "join" => array( 'category, category.category_id = catalog.category_id'),
-                "where" => "catalog.active = 1");
+                "where" => "catalog.active = 1",
+                "order" =>  "$order");
+            
+            //send url for search
+            $data['url'] = site_url().'catalog';
             
              /// PAGINADO
             $config=array();
@@ -107,8 +135,11 @@ class Catalog extends CI_Controller {
             //GET NAV
              $data['obj_category_videos'] = $this->nav_videos();
              $data['obj_category_catalog'] = $this->nav_catalogo();
-
-            
+             
+             
+             //SEND URL FOR SEARCH
+             $data['url'] = site_url().'catalog/'.$category;
+             
             //get data catalog
             $params_categogory_id = array(
                         "select" =>"category_id",
