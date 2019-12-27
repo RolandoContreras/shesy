@@ -20,8 +20,8 @@ class D_activate extends CI_Controller{
            $params = array(
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
+                                    invoices.total,
                                     invoices.img,
-                                    invoices.financy,
                                     customer.customer_id,
                                     customer.username,
                                     customer.first_name,

@@ -35,12 +35,16 @@ class B_plan extends CI_Controller {
         if($this->input->is_ajax_request()){   
                 //SELECT ID FROM CUSTOMER
                $kit_id = trim($this->input->post('kit_id'));
+               $price = $this->input->post('price');
                $customer_id = $_SESSION['customer']['customer_id'];
                
                //INSERT INVOICE
                 $data_invoice = array(
                         'customer_id' => $customer_id,
                         'kit_id' => $kit_id,
+                        'sub_total' => $price,
+                        'igv' => 0,
+                        'total' => $price,
                         'type' => 1,
                         'date' => date("Y-m-d H:i:s"),
                         'active' => 0,

@@ -44,11 +44,11 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Imagen</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Financiado</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Kit</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Precio</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
+                                    aria-label="Age: activate to sort column ascending">Total</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Fecha</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -71,18 +71,9 @@
                                     }
                                     ?>
                                 </td>
-                                <td>
-                                    <?php if ($value->financy == 1) {
-                                        $valor = "Si";
-                                        $stilo = "label label-info";
-                                    }else{
-                                        $valor = "No";
-                                        $stilo = "label label-success";
-                                    }?>
-                                    <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
-                                </td>
                                 <td><?php echo $value->name;?></td>
                                 <td><?php echo format_number_dolar($value->price);?></td>
+                                <td><?php echo format_number_dolar($value->total);?></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td>
                                     <?php if ($value->active == 1) {
@@ -106,7 +97,6 @@
                                         <div class="btn-group">
                                             <?php if ($value->active == 1) { ?>
                                                     <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->kit_id;?>','<?php echo $value->price;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Activar</button>
-                                                    <button class="btn btn-secondary" type="button" onclick="active_financiada('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->kit_id;?>');"><span class="pcoded-micon"><i data-feather="user-check"></i></span> Financiada</button>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -123,6 +113,7 @@
                                   <th rowspan="1" colspan="1">Financiado</th>
                                   <th rowspan="1" colspan="1">Kit</th>
                                   <th rowspan="1" colspan="1">Precio</th>                                  
+                                  <th rowspan="1" colspan="1">Total</th>                                  
                                   <th rowspan="1" colspan="1">Fecha</th>
                                   <th rowspan="1" colspan="1">Estado</th>
                                   <th rowspan="1" colspan="1">Acciones</th>

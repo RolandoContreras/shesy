@@ -29,17 +29,34 @@
                                 </div>
                                 <div class="form-group"> 
                                     <div class="col-lg-12"> 
-                                        <label class="control-label"><br>Enviar el importe mostrado a la siguiente dirección:</label> <b>1N6aJYfsDJuUoQoc6YJ8Ndh6pwbczYrVWA</b> </div>
+                                        <label class="control-label"><br>Ahorro Dólares BCP:</label>
+                                        <b>125-26514981321</b>
+                                        <label class="control-label">Número Interbancario (CCI):</label>
+                                        <b>1351-125-26514981321-89</b>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                   <div class="col-lg-12"> 
-                                      <img src="<?php echo site_url().'static/backoffice/images/btc.png';?>">
+                                      <img width="100" src="<?php echo site_url().'static/backoffice/images/bcp_logo.png';?>">
+                                  </div>
+                                </div>
+                                  <div class="form-group"> 
+                                    <div class="col-lg-12"> 
+                                        <label class="control-label"><br>Ahorro Dólares BCP:</label>
+                                        <b>125-26514981321</b>
+                                        <label class="control-label">Número Interbancario (CCI):</label>
+                                        <b>1351-125-26514981321-89</b>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-lg-12"> 
+                                      <img width="100" src="<?php echo site_url().'static/backoffice/images/interbank_loco.png';?>">
                                   </div>
                                 </div>
                                 <div class="form-group"> 
                                     <div class="col-lg-12"> 
                                         <label class="control-label"><br/>
-                                            <a onclick='create_invoice("<?php echo $value->kit_id;?>");' style="cursor: pointer;  color: rgb(0,0,255);" >Si ya realizo el envío clic aquí :</a>
+                                            <a onclick='create_invoice("<?php echo $value->kit_id;?>","<?php echo $value->price;?>");' style="cursor: pointer;  color: rgb(0,0,255);" >Si ya realizo el envío clic aquí :</a>
                                         </label> 
                                     </div>
                                 </div>
