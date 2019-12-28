@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Olvidó su contraseña - BCA Capital</title>
+        <title>Registro - Corporacion FK</title>
         <base href="<?php echo site_url();?>"/>
         <meta charset="utf-8">
         <meta content="ie=edge" http-equiv="x-ua-compatible">
-        <meta name="description" content="Ganhe dinheiro no mercado multinível digital e financeiro, conheça a 18K Ronaldinho, uma empresa digital com produtos que aumentarão sua saúde física e financeira! #VEMPRATRIBO, a tribo lendária do R10! Clique no link e saiba mais.">
+        <meta name="description" content="Multiplica tu dinero en el mercado financiero con nosotros BCA CAPITAL, una empresa financiera que te ayudará a aumentar tus finanzas, Clic en el siguiente enlace">
         <meta name="author" content="Ingresar Oficina Virtual">
         <meta name="keyword" content="bca capital, bca">
         <meta content="width=device-width, initial-scale=1" name="viewport">
-        <link href="favicon.png" rel="shortcut icon">
-        <link href="apple-touch-icon.png" rel="apple-touch-icon">
+         <!--//STAR FAVICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-60x60.png';?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-72x72.png';?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-76x76.png';?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-114x114.png';?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-120x120.png';?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-144x144.png';?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-152x152.png';?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-180x180.png';?>">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo site_url().'static/page_front/images/logo/favico/android-icon-192x192.png';?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-32x32.png';?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-96x96.png';?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-16x16.png';?>">
+    <link rel="manifest" href="<?php echo site_url().'static/page_front/images/logo/favico/manifest.json';?>">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo site_url().'static/page_front/images/logo/favico/ms-icon-144x144.png';?>">
+    <meta name="theme-color" content="#ffffff">
+    <!--//END FAVICON-->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
         <link href="<?php echo site_url().'static/page_front/css/login/main.css?version=4.4.0';?>" rel="stylesheet">
                <style>
@@ -41,13 +58,14 @@
         <script>
             var site = '<?php echo site_url();?>';
         </script>
+        <script src="https://use.fontawesome.com/3aa4a6fd0b.js"></script>
     </head>
     <body class="auth-wrapper vanta-bg">
             <div class="all-wrapper menu-side">
         <div class="auth-box-w">
             <div class="logo-w">
                 <a href="<?php echo site_url();?>">
-                    <img src="<?php echo site_url().'static/page_front/images/logo/logo-black.png';?>" style="max-width: 350px;">
+                    <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" style="max-width: 150px;">
                 </a>
             </div>
             <h4 class="auth-header">
@@ -56,11 +74,11 @@
             <form class="form" action="javascript:void(0);">
                 <div class="form-group">
                     <label for="">Ingrese Usuario</label>
-                    <input type="text" class="form-control" id="code" name="code" placeholder="Usuario" autofocus="">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Usuario" autofocus="">
                     <div class="pre-icon os-icon os-icon-user-male-circle"></div>
                 </div>
                 <div class="form-group">
-                    <div class="g-recaptcha" data-sitekey="6Lc684YUAAAAAKbiFYJvMx83vmSSJHH8N03PXnKx"></div>
+                    <div class="g-recaptcha" data-sitekey="6LeGrccUAAAAAL42J6gQyQqSG3bPNnWHx85yS1UK"></div>
                 </div>
                 <div class="form-group has-feedback" style="display: none;" id="captcha_messages">
                     <div class="alert alert-danger validation-errors">
@@ -74,11 +92,11 @@
                 </div>
                 <div class="form-group has-feedback" style="display: none;" id="messages">
                     <div class="alert alert-success validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Mensaje eviado al correo.</p>
+                        <p class="user_login_id" style="text-align: center;">Datos de acceso enviados al correo.</p>
                     </div>
                 </div>  
                 <div class="buttons-w">
-                    <button onclick="login();" class="btn btn-primary btn-lg btn-block">Recuperar Contraseña</button>
+                    <button onclick="forget();" class="btn btn-primary btn-lg btn-block">Recuperar Contraseña</button>
                     <a href="<?php echo site_url().'login';?>" style="width: 100%; display: block; text-align: center;" class="link">Iniciar Sesión</a>
                     <div style="margin-top:20px;">
                         <style>
