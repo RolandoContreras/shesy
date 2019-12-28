@@ -112,7 +112,7 @@
     </div>
            </body>
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<script src='<?php echo site_url().'static/page_front/js/script/login.js';?>'></script>
+<script src='<?php echo site_url().'static/page_front/js/script/forget.js';?>'></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/jquery.min.js';?>"></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/popper.min.js';?>"></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/bootstrap.min.js';?>"></script>
