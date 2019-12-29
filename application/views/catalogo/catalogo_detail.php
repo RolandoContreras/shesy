@@ -131,6 +131,6 @@
       </div>
     </div>
   </section>
-<script src="<?php echo site_url();?>static/catalog/js/order.js"></script>
+<script src="<?php echo site_url();?>static/catalog/js/pay_order.js"></script>
 
     
