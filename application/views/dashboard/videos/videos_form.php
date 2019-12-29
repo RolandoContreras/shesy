@@ -48,11 +48,17 @@
                               </div>
                               <div class="form-group">
                                   <label>Sumilla</label>
-                                  <textarea class="form-control" name="summary" id="summary" placeholder="Sumilla"><?php echo isset($obj_videos->summary)?$obj_videos->summary:"";?></textarea>
+                                  <textarea name="summary" id="summary"><?php echo isset($obj_catalog->summary)?$obj_catalog->summary:"";?></textarea>
+                                    <script>
+                                            CKEDITOR.replace('summary');
+                                    </script>
                               </div>
                               <div class="form-group">
                                   <label>Descripción</label>
-                                  <textarea class="form-control" name="description" id="description" placeholder="Description"><?php echo isset($obj_videos->description)?$obj_videos->description:"";?></textarea>
+                                  <textarea name="description" id="description"><?php echo isset($obj_catalog->description)?$obj_catalog->description:"";?></textarea>
+                                    <script>
+                                            CKEDITOR.replace('description');
+                                    </script>
                               </div>
                               <label for="inputState">Categória</label>
                                     <select name="category" id="category" class="form-control">

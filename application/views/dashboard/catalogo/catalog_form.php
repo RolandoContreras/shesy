@@ -192,5 +192,5 @@
             // classic editor
             ClassicEditor.create(document.querySelector('#sumilla'))
         });
-    </script>
+</script>
 

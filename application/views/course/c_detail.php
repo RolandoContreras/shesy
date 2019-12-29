@@ -48,7 +48,8 @@
                                         <h6>Descripción</h6>
                                         <p><?php echo $obj_videos->description;?></p>
                                         <h6 class="mt-3">Categoría</h6>
-                                        <p class="text-primary mb-1"><a href="<?php echo site_url()."course/$obj_videos->category_slug";?>"><?php echo $obj_videos->category_name;?></a></p>
+                                        <p class="text-primary mb-1">
+                                            <a href="<?php echo site_url()."course/$obj_videos->category_slug";?>"><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $obj_videos->category_name;?></span></a></p>
                                 </div>
                             </div>
                               <div class="col-sm-12">
