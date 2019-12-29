@@ -82,13 +82,28 @@
                                 </div>
                                 <input type="text" name="result" id="result" disabled="" class="form-control">
                             </div>
+                            <?php 
+                            if($bank != ""){ ?>
+                                <div class="form-group has-feedback"  id="wallet_error">
+                                <div class="col-lg-12" align="left"> 
+                                    <label class="control-label"> Nombre del Banco:</label> 
+                                </div>
+                                <input type="text" name="wallet" disabled="" value="<?php echo $bank==1?"BCP (Crédito)":"Interbank";?>" id="wallet" class="form-control">
+                            </div>
                             <div class="form-group has-feedback"  id="wallet_error">
                                 <div class="col-lg-12" align="left"> 
-                                    <label class="control-label"> Billetera de Bitcoin:</label> 
+                                    <label class="control-label"> Número de Cuenta:</label> 
                                 </div>
-                                <input type="text" name="wallet" disabled="" value="<?php echo $bank;?>" id="wallet" class="form-control">
+                                <input type="text" name="wallet" disabled="" value="<?php echo $obj_customer->bank_number;?>" id="wallet" class="form-control">
+                            </div>
+                            <div class="form-group has-feedback"  id="wallet_error">
+                                <div class="col-lg-12" align="left"> 
+                                    <label class="control-label"> Número de Cuenta Interbancario:</label> 
+                                </div>
+                                <input type="text" name="wallet" disabled="" value="<?php echo $obj_customer->bank_number_cci;?>" id="wallet" class="form-control">
                                 <p>* Verificar los datos de recibimiento recuerde que es bajo su responzabilidad.</p>
                             </div>
+                            <?php } ?>
                             <?php
                             if($bank == null){
                                 $disable = "disabled"; ?>
@@ -136,7 +151,7 @@
                 <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1"> ID</th>
                 <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1"> Importe</th>
                 <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1"> Tax</th>
-                <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1"> Datos de Retiro</th>
+                <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1"> Banco</th>
                 <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1"> Fecha de Solicitud</th>
                 <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1"> Estado</th>
               </tr>
@@ -155,7 +170,7 @@
                             </td>
                             <td align="center">
                                 <span class="smaller lighter">
-                                    <?php echo $value->btc_address;?>
+                                    <?php echo $value->bank_id==1?"BCP (crédito)":"Interbank";?>
                                 </span>
                             </td>
                             <td align="center">

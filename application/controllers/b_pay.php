@@ -23,7 +23,8 @@ class B_pay extends CI_Controller {
                                     pay.pay_id,
                                     pay.descount,
                                     pay.active,
-                                    customer.bank_id",
+                                    customer.bank_id,
+                                    ",
                "join" => array('customer, pay.customer_id = customer.customer_id'),
                 "where" => "pay.customer_id = $customer_id and pay.status_value = 1",
                 "order" => "pay.date DESC",
@@ -33,7 +34,9 @@ class B_pay extends CI_Controller {
         
         //GET WALLET CUSTOMER
         $params = array(
-                "select" =>"bank_id",
+                "select" =>"bank_id,
+                            bank_number, 
+                            bank_number_cci",
         "where" => "customer_id = $customer_id");
            //GET DATA FROM CUSTOMER
         $obj_customer = $this->obj_customer->get_search_row($params);
@@ -51,6 +54,7 @@ class B_pay extends CI_Controller {
         $total_disponible = $obj_total_commissions->total_disponible;
         
         $this->tmp_backoffice->set("bank",$bank);
+        $this->tmp_backoffice->set("obj_customer",$obj_customer);
         $this->tmp_backoffice->set("total_comisiones",$total_comisiones);
         $this->tmp_backoffice->set("total_disponible",$total_disponible);
         $this->tmp_backoffice->set("obj_pay",$obj_pay);
@@ -93,7 +97,7 @@ class B_pay extends CI_Controller {
                         'status_value' => 1,
                         'date' => date("Y-m-d H:i:s"),
                         'created_at' => date("Y-m-d H:i:s"),
-                        'created_by' => $_SESSION['usercms']['user_id'],
+                        'created_by' => $customer_id,
                     ); 
                     $commissions_id = $this->obj_commissions->insert($data);
                     
@@ -120,7 +124,7 @@ class B_pay extends CI_Controller {
             if ($this->input->is_ajax_request()) {
                 //SELECT ID FROM CUSTOMER
             $amount = trim($this->input->post('amount'));
-            $tax = $amount * 0.05;
+            $tax = 0;
             $result = $amount - $tax;
             
             //SEDN DATA
