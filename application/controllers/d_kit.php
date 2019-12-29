@@ -47,12 +47,18 @@ class D_kit extends CI_Controller{
                                     price,
                                     point,
                                     img,
+                                    bono_n1,
+                                    bono_n2,
+                                    bono_n3,
+                                    bono_n4,
+                                    bono_n5,
                                     description,
                                     active,
                                     status_value",
                          "where" => "kit_id = $kit_id",
             ); 
             $obj_kit  = $this->obj_kit->get_search_row($params);
+            
             //RENDER
             $this->tmp_mastercms->set("obj_kit",$obj_kit);
           }
@@ -76,6 +82,11 @@ class D_kit extends CI_Controller{
         $point =  $this->input->post('point');
         $description =  $this->input->post('description');
         $active =  $this->input->post('active');
+        $bono_n1 = $this->input->post('bono_n1');
+        $bono_n2 = $this->input->post('bono_n2');
+        $bono_n3 = $this->input->post('bono_n3');
+        $bono_n4 = $this->input->post('bono_n4');
+        $bono_n5 = $this->input->post('bono_n5');
         
             if(isset($_FILES["image_file"]["name"])){
                 $config['upload_path']          = './static/backoffice/images/plan';
@@ -100,6 +111,11 @@ class D_kit extends CI_Controller{
                             'price' => $price,
                             'point' => $point,
                             'img' => $img,
+                            'bono_n1' => $bono_n1,
+                            'bono_n2' => $bono_n2,
+                            'bono_n3' => $bono_n3,
+                            'bono_n4' => $bono_n4,
+                            'bono_n5' => $bono_n5,
                             'description' => $description,
                             'active' => $active,
                             'status_value' => 1,
@@ -113,6 +129,11 @@ class D_kit extends CI_Controller{
                             'price' => $price,
                             'point' => $point,
                             'img' => $img,
+                            'bono_n1' => $bono_n1,
+                            'bono_n2' => $bono_n2,
+                            'bono_n3' => $bono_n3,
+                            'bono_n4' => $bono_n4,
+                            'bono_n5' => $bono_n5,
                             'description' => $description,
                             'active' => $active,
                             'status_value' => 1,

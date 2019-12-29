@@ -41,8 +41,6 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Precio</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Puntos</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Imagen</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Descripcion</th>
@@ -60,7 +58,6 @@
                             <th><?php echo $value->kit_id;?></th>
                             <td><?php echo str_to_first_capital($value->name);?></td>
                             <td><?php echo format_number_dolar($value->price);?></td>
-                            <td><?php echo format_number_miles($value->point);?></td>
                             <td>
                                 <img width="100" src="<?php echo site_url()."static/backoffice/images/plan/$value->img";?>" alt="<?php echo $value->name;?>"/>
                             </td>
@@ -70,7 +67,7 @@
                             <td>
                                 <?php if ($value->active == 0) {
                                     $valor = "No Activo";
-                                    $stilo = "label label-important";
+                                    $stilo = "label label-danger";
                                 }else{
                                     $valor = "Activo";
                                     $stilo = "label label-success";
@@ -93,7 +90,6 @@
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">Nombre</th>
                                   <th rowspan="1" colspan="1">Precio</th>
-                                  <th rowspan="1" colspan="1">Puntos</th>
                                   <th rowspan="1" colspan="1">Imagen</th>
                                   <th rowspan="1" colspan="1">Descripcion</th>
                                   <th rowspan="1" colspan="1">Estado</th>

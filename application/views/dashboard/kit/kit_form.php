@@ -52,9 +52,12 @@
                                         <input class="form-control" type="text" id="point" name="point" value="<?php echo isset($obj_kit->point)?$obj_kit->point:"";?>" class="input-xlarge-fluid" placeholder="Puntos">
                                 </div>
                                 <div class="form-group">
-                                        <label>Descripción</label>
-                                        <textarea class="form-control" name="description" id="" placeholder="Descripción" style="height: 200px;width: 100% !important" placeholder="Descripcion"><?php echo isset($obj_kit->description)?$obj_kit->description:"";?></textarea>
-                                </div>
+                                  <label>Descripción</label>
+                                  <textarea name="description" id="description"><?php echo isset($obj_kit->description)?$obj_kit->description:"";?></textarea>
+                                    <script>
+                                            CKEDITOR.replace('description');
+                                    </script>
+                              </div>
                             </div>
                           <div class="form-group col-md-6">
                               <?php 
@@ -71,6 +74,30 @@
                                         <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                     </div>
+                              </div>
+                              <div class="form-group col-md-3">
+                                <div class="form-group">
+                                    <label>Bonificación N°1</label>
+                                    <input class="form-control" type="text" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_kit->bono_n1)?$obj_kit->bono_n1:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°1">
+                                </div>    
+                                  <div class="form-group">
+                                      <label>Bonificación N°2</label>
+                                      <input class="form-control" type="text" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_kit->bono_n2)?$obj_kit->bono_n2:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°2">
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Bonificación N°3</label>
+                                      <input class="form-control" type="text" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_kit->bono_n3)?$obj_kit->bono_n3:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°3">
+                                  </div>
+                              </div>
+                              <div class="form-group col-md-3">
+                                  <div class="form-group">
+                                      <label>Bonificación N°4</label>
+                                      <input class="form-control" type="text" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_kit->bono_n4)?$obj_kit->bono_n4:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°4">
+                                  </div>    
+                                  <div class="form-group">
+                                      <label>Bonificación N°5</label>
+                                      <input class="form-control" type="text" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_kit->bono_n5)?$obj_kit->bono_n5:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°5">
+                                  </div>
                               </div>
                               <div class="form-group">
                                     <label for="inputState">Estado</label>

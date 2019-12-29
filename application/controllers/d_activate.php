@@ -9,7 +9,6 @@ class D_activate extends CI_Controller{
         $this->load->model("invoices_model","obj_invoices");
         $this->load->model("unilevel_model","obj_unilevel");
         $this->load->model("kit_model","obj_kit");
-        $this->load->model("sell_model","obj_sell");
         $this->load->model("bonus_model","obj_bonus");
         $this->load->model("points_model","obj_points");
     }   
@@ -27,14 +26,12 @@ class D_activate extends CI_Controller{
                                     customer.username,
                                     customer.first_name,
                                     customer.last_name,
-                                    sell.sell_id,
                                     kit.kit_id,
                                     kit.price,
                                     kit.name,
                                     invoices.active",
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id',
-                                 'customer, invoices.customer_id = customer.customer_id',
-                                'sell, invoices.invoice_id = sell.invoice_id'),
+                                 'customer, invoices.customer_id = customer.customer_id'),
                 "where" => "invoices.status_value = 1",
                 "order" => "invoices.invoice_id ASC");
            //GET DATA FROM CUSTOMER
@@ -63,20 +60,7 @@ class D_activate extends CI_Controller{
                 $kit_id = $this->input->post("kit_id");
                 $total = $this->input->post("total");
                 $type = $this->input->post("type");
-                $sell_id = $this->input->post("sell_id");
                 
-                //GET DATA TODAY
-                $today = date('Y-m-j');
-                //insert data on sell table
-                
-                //UPDATE TABLE  
-                    $data = array(
-                        'active' => 2,
-                        'updated_at' => date("Y-m-d H:i:s"),
-                        'updated_by' => $_SESSION['usercms']['user_id'],
-                    ); 
-                    $this->obj_sell->update($invoice_id,$data);
-                    
                     //GET DATA CUSTOMER UNILEVEL
                     $params = array(
                             "select" =>"parend_id,
@@ -92,7 +76,7 @@ class D_activate extends CI_Controller{
                         $new_parend_id = $obj_unilevel->new_parend_id;
                         
                         //INSERT AMOUNT ON COMMISION TABLE    
-                        $this->pay_unilevel($total,$ident,$new_parend_id,$sell_id);
+                        $this->pay_unilevel($total,$ident,$new_parend_id,$invoice_id);
                         //INSERT AMOUNT ON COMMISION TABLE    
                         $this->add_points($total,$ident);
                     }
@@ -103,7 +87,7 @@ class D_activate extends CI_Controller{
                         $data = array(
                             'active' => 1,
                             'kit_id' => $kit_id,
-                            'date_start' => $today,
+                            'date_start' => date("Y-m-d H:i:s"),
                             'updated_at' => date("Y-m-d H:i:s"),
                             'updated_by' => $_SESSION['usercms']['user_id'],
                         ); 
@@ -123,7 +107,7 @@ class D_activate extends CI_Controller{
             }
     }
         
-    public function pay_unilevel($total,$ident,$new_parend_id,$sell_id){
+    public function pay_unilevel($total,$ident,$new_parend_id,$invoice_id){
                 
                 $new_ident = explode(",", $ident);
                 rsort($new_ident);
@@ -144,7 +128,7 @@ class D_activate extends CI_Controller{
                             $total_0 = $total * 0.05; 
                             //INSERT COMMISSION TABLE
                             $data = array(
-                                'sell_id' => $sell_id,
+                                'invoice_id' => $invoice_id,
                                 'customer_id' => $new_parend_id,
                                 'bonus_id' => 1,
                                 'amount' => $total_0,
@@ -184,7 +168,7 @@ class D_activate extends CI_Controller{
                                           break;
                                     }
                                     $data = array(
-                                        'sell_id' => $sell_id,
+                                        'invoice_id' => $invoice_id,
                                         'customer_id' => $new_ident[$x],
                                         'bonus_id' => 1,
                                         'amount' => $amount,
@@ -196,7 +180,6 @@ class D_activate extends CI_Controller{
                                     ); 
                                     $this->obj_commissions->insert($data);
                                 }
-
                             }
                         }
                         

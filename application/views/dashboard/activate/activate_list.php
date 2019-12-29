@@ -107,7 +107,7 @@
                                     <div class="operation">
                                         <div class="btn-group">
                                             <?php if ($value->active == 1) { ?>
-                                                    <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->kit_id;?>','<?php echo $value->total;?>','<?php echo $value->type;?>','<?php echo $value->sell_id;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
+                                                    <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->kit_id;?>','<?php echo $value->total;?>','<?php echo $value->type;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
                                             <?php } ?>
                                         </div>
                                     </div>

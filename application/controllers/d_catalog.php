@@ -78,7 +78,6 @@ class D_catalog extends CI_Controller{
         $img_4 = $this->input->post("img_4");
         $active =  $this->input->post('active');
         
-        
         if(isset($_FILES["image_file"]["name"])){
                 $config['upload_path']          = './static/catalog';
                 $config['allowed_types']        = 'gif|jpg|png';
