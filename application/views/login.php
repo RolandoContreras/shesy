@@ -102,8 +102,9 @@
                     </div>
                 </div>  
                 <div class="buttons-w">
-                    <button onclick="login();" class="btn btn-primary btn-lg btn-block">Iniciar Sesión</button>
+                    <button onclick="login();" class="btn btn-primary btn-lg btn-block">Iniciar Sesión</button><br/>
                     <a href="<?php echo site_url().'forget';?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
+                    <a href="<?php echo site_url();?>" style="width: 100%; display: block; text-align: center;" class="link">Volver Inicio</a>
                     <div style="margin-top:20px;">
                         <style>
                             .langselector img {

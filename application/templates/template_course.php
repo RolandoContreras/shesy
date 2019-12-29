@@ -34,7 +34,7 @@
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-<body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/header_image.jpg';?>'); background-size: cover;">
+<body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/bg_black.jpg';?>'); background-size: cover;">
   <nav class="pcoded-navbar menu-light brand-lightblue menupos-static">
     <div class="navbar-wrapper">
       <div class="navbar-brand header-logo">
@@ -75,7 +75,7 @@
                   <span class="pcoded-micon">
                        <i data-feather="home"></i>
                   </span>
-                  <span class="pcoded-mtext">Tablero</span>
+                  <span class="pcoded-mtext">Inicio</span>
               </a>
         </li>
         <li class="nav-item pcoded-hasmenu">
@@ -91,6 +91,14 @@
                         <li><a href='<?php echo site_url()."course/$value->slug";?>' class=""><?php echo $value->name;?></a></li>          
                 <?php } ?>
             </ul>
+        </li>
+        <li class="nav-item">
+              <a href="<?php echo site_url().'login/logout';?>" class="nav-link">
+                  <span class="pcoded-micon">
+                       <i data-feather="log-out"></i>
+                  </span>
+                  <span class="pcoded-mtext">Salir</span>
+              </a>
         </li>
     </ul>
     </div>
@@ -113,26 +121,6 @@
             <a href="#!" class="full-screen" onclick="javascript:toggleFullScreen()">
                 <i data-feather="maximize"></i>
             </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li>
-          <div class="dropdown drp-user">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i data-feather="settings"></i>
-              </a>
-            <div class="dropdown-menu dropdown-menu-right profile-notification">
-              <div class="pro-head">
-                  <img src="<?php echo site_url().'static/backoffice/images/avatar.png';?>" class="img-radius" alt="User-Profile-Image">
-                  <span><?php echo $_SESSION['customer']['name'];?></span>
-              </div>
-              <ul class="pro-body">
-                <li>
-                    <a href="<?php echo site_url().'login/logout';?>" class="dropdown-item"><i data-feather="power"></i> Salir</a>
-                </li>
-              </ul>
-            </div>
-          </div>
         </li>
       </ul>
     </div>

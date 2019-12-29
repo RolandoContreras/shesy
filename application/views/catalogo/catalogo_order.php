@@ -84,9 +84,11 @@
                               </tbody>
                               <tfoot>
                                 <tr>
-                                  <th rowspan="1" colspan="1">ID</th>
-                                  <th rowspan="1" colspan="1">Nombre</th>
-                                  <th rowspan="1" colspan="1">Porcentaje</th>
+                                  <th rowspan="1" colspan="1">ID Compra</th>
+                                  <th rowspan="1" colspan="1">Fecha</th>
+                                  <th rowspan="1" colspan="1">Cliente</th>
+                                  <th rowspan="1" colspan="1">Concepto</th>
+                                  <th rowspan="1" colspan="1">Total</th>
                                   <th rowspan="1" colspan="1">Estado</th>
                                   <th rowspan="1" colspan="1">Acciones</th>
                                 </tr>

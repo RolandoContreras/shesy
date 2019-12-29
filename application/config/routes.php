@@ -68,6 +68,15 @@ $route['backoffice'] = "b_home";
 $route['catalogo'] = "catalogo_home";
 $route['catalogo/([0-9]+)'] = 'catalogo_home/index/$1';
 $route['catalogo/order'] = "catalogo_home/order";
+
+$route['catalogo/pay_order'] = "catalogo_home/pay_order";
+$route['catalogo/pay_order/update_cart'] = "catalogo_home/update_cart";
+$route['catalogo/pay_order/delete_cart'] = "catalogo_home/delete_cart";
+$route['catalogo/pay_order/process_pay_invoice'] = "catalogo_home/process_pay_invoice";
+
+
+
+
 $route['catalogo/order/([0-9]+)'] = "catalogo_home/order_detail/$1";
 $route['catalogo/([0-9a-z_-]+)'] = 'catalogo_home/category/$1';
 $route['catalogo/([0-9a-z_-]+)/([0-9]+)'] = 'catalogo_home/category/$1';

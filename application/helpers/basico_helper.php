@@ -66,6 +66,11 @@ function format_number_dolar($number){
     return "$".$number;
 }
 
+function quitar_coma_number($number){
+    $number = str_replace(',','',$number);
+    return $number;
+}
+
 function convert_mayuscula($string){
     $string = strtoupper($string);
     return $string;

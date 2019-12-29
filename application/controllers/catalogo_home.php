@@ -204,7 +204,6 @@ class Catalogo_home extends CI_Controller {
             $this->tmp_catalog->render("catalogo/catalogo_detail");
 	}
     
-    
     public function order()
     {
         //GET SESION ACTUALY
@@ -284,6 +283,36 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->render("catalogo/catalogo_order_detail");
     }
     
+    public function pay_order()
+    {
+        //GET SESION ACTUALY
+        $this->get_session();
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        
+        //get nav ctalogo
+        $obj_category_catalogo = $this->nav_catalogo();
+        
+        //GET DATA PRICE CRIPTOCURRENCY
+        $params = array(
+                        "select" =>"invoices.invoice_id,
+                                    invoices.type,
+                                    invoices.date,
+                                    invoices.total,
+                                    invoices.active,
+                                    customer.first_name,
+                                    customer.last_name,",
+                        "where" => "invoices.customer_id = $customer_id and invoices.type = 2 and invoices.status_value = 1",
+                        "join" => array('customer, customer.customer_id = invoices.customer_id'),
+                        );
+
+        $obj_invoices = $this->obj_invoices->search($params);
+        
+        $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
+        $this->tmp_catalog->set("obj_invoices",$obj_invoices);
+        $this->tmp_catalog->render("catalogo/catalogo_pay_order");
+    }
+    
     public function add_cart() {
         
         if($this->input->is_ajax_request()){   
@@ -294,7 +323,7 @@ class Catalogo_home extends CI_Controller {
                 $catalog_id = $this->input->post('catalog_id');
                 $quantity = $this->input->post('quantity');
                 $name = $this->input->post('name');
-
+                
                 //ADD CART
                 $data = array(
                         'id'      => $catalog_id,
@@ -309,6 +338,101 @@ class Catalogo_home extends CI_Controller {
                 }else{
                     $data['status'] = "false";
                 }
+               echo json_encode($data); 
+        }
+    }
+    
+    public function update_cart() {
+        
+        if($this->input->is_ajax_request()){   
+               //GET SESION ACTUALY
+                $this->get_session();
+                //GET CUSTOMER_ID
+                
+                $qty = $this->input->post('qty');
+                $id = $this->input->post('id');
+                //UPDATE CART
+                $data = array(
+                        'rowid' => "$id",
+                        'qty'   => $qty
+                );
+
+                $this->cart->update($data);
+                
+               $data['status'] = "true";
+               echo json_encode($data); 
+        }
+    }
+    
+    public function delete_cart() {
+        
+        if($this->input->is_ajax_request()){   
+               //GET SESION ACTUALY
+                $this->get_session();
+                //GET CUSTOMER_ID
+                
+                $id = $this->input->post('id');
+               //UPDATE CART
+                $data = array(
+                        'rowid' => "$id",
+                        'qty'   => 0
+                );
+
+                $this->cart->update($data);
+                
+               $data['status'] = "true";
+               echo json_encode($data); 
+        }
+    }
+    
+    public function process_pay_invoice() {
+        
+        if($this->input->is_ajax_request()){   
+               //GET SESION ACTUALY
+                $this->get_session();
+                //GET CUSTOMER_ID
+                
+                //INSERT ON INVOICE
+               $customer_id = $_SESSION['customer']['customer_id'];
+               $price =  $this->cart->format_number($this->cart->total());
+               //NOT USER IGV
+               //IGV = 0;
+               
+               $price = explode(".", $price);
+               $price = $price[0];
+               $price= quitar_coma_number($price) ; 
+                
+               //INSERT INVOICE
+                $data_invoice = array(
+                        'customer_id' => $customer_id,
+                        'sub_total' => $price,
+                        'igv' => 0,
+                        'total' => $price,
+                        'type' => 2,
+                        'date' => date("Y-m-d H:i:s"),
+                        'active' => 1,
+                        'status_value' => 1,
+                        'created_at' => date("Y-m-d H:i:s"),
+                        'created_by' => $customer_id,
+                    );
+                   $invoce_id = $this->obj_invoices->insert($data_invoice);
+                   
+                //INSERT INVOICE CATALOG
+                foreach ($this->cart->contents() as $items) {
+                    $data_invoice_catalog = array(
+                    'invoice_id' => $invoce_id,
+                    'catalog_id' => $items['id'],
+                    'price' => $items['price'],
+                    'quantity' => $items['qty'],
+                    'sub_total' => $items['subtotal'],
+                    'date' => date("Y-m-d H:i:s")
+                        );
+                    $this->obj_invoice_catalog->insert($data_invoice_catalog);
+                }   
+               $data['status'] = "true";
+               
+               //DESTROY CART
+               $this->cart->destroy();
                echo json_encode($data); 
         }
     }

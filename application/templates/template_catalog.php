@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="<?php echo site_url().'static/course/css/ekko-lightbox.min.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/course/css/lightbox.min.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
-<script type="text/javascript">
+  <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
 </head>
@@ -85,7 +85,7 @@
                   <span class="pcoded-micon">
                        <i data-feather="home"></i>
                   </span>
-                  <span class="pcoded-mtext">Tablero</span>
+                  <span class="pcoded-mtext">Inicio</span>
               </a>
         </li>
         <li class="nav-item pcoded-hasmenu">
@@ -141,6 +141,24 @@
             </a>
         </li>
       </ul>
+    </div>
+      <div class="collapse navbar-collapse">
+       <?php 
+        //count data cart
+        $cart = count($this->cart->contents());
+       if($cart > 0){ ?>
+            <ul class="navbar-nav ml-auto">
+                <li>
+                  <div class="dropdown drp-user">
+                      <a href="<?php echo site_url().'catalogo/pay_order';?>">
+                          <span class="btn-glow-dark theme-bg" title="Pagar Compra" data-toggle="tooltip" data-placement="bottom" data-original-title="Pagar Compra" style="padding: 10px;border-radius: 10px;">
+                              <i data-feather="shopping-cart" style="color: white;"></i>
+                          </span>
+                      </a>
+                  </div>
+                </li>
+              </ul>
+       <?php } ?>   
     </div>
   </header>
                 </li>

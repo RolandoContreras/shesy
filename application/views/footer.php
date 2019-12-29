@@ -98,9 +98,9 @@
                   <div class="wpb_wrapper">
                     <div class="thim-sc-social-links ">
                       <ul class="socials">
-                        <li><a target="_blank" href="https://facebook.com/thimpress">Facebook</a></li>
-                        <li><a target="_blank" href="https://youtube.com/thimpress">Youtube</a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/">Instagram</a></li>
+                        <li><a target="_blank" href="https://facebook.com">Facebook</a></li>
+                        <li><a target="_blank" href="https://youtube.com">Youtube</a></li>
+                        <li><a target="_blank" href="https://www.instagram.com">Instagram</a></li>
                       </ul>
                     </div>
                   </div>
