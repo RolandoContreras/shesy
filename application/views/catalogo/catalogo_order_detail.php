@@ -96,8 +96,8 @@
                                     <h6><?php echo $value->name;?></h6>
                                   </td>
                                   <td><?php echo $value->quantity;?></td>
-                                  <td><?php echo $value->price;?></td>
-                                  <td><?php echo format_number_moneda_soles($value->sub_total);?></td>
+                                  <td>$<?php echo $value->price;?></td>
+                                  <td>$<?php echo $value->sub_total;?></td>
                                </tr>
                           <?php } ?>
                       </tbody>
@@ -111,11 +111,11 @@
                     <tbody>
                       <tr>
                         <th>Sub Total :</th>
-                        <td><?php echo format_number_moneda_soles($obj_invoices->sub_total);?></td>
+                        <td>$<?php echo $obj_invoices->sub_total;?></td>
                       </tr>
                       <tr>
                         <th>IGV (0%) :</th>
-                        <td><?php echo format_number_moneda_soles($obj_invoices->igv);?></td>
+                        <td>$<?php echo $obj_invoices->igv;?></td>
                       </tr>
                       <tr class="text-info">
                         <td>
@@ -124,7 +124,7 @@
                         </td>
                         <td>
                           <hr>
-                          <h5 class="text-primary"><?php echo format_number_moneda_soles($obj_invoices->total);?></h5>
+                          <h5 class="text-primary">$<?php echo $obj_invoices->total;?></h5>
                         </td>
                       </tr>
                     </tbody>

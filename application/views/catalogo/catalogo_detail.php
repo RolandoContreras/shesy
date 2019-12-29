@@ -62,19 +62,23 @@
                                         </div>
                                         <div class="col-md-9 col-sm-12">
                                           <div class="tab-content" id="v-pills-tabContent">
-                                            <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                              <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" style="color:#888 !important;">
                                                 <h5 class="mt-3"><?php echo $obj_catalog->name;?></h5>
-                                                <h3><?php echo format_number_moneda_soles($obj_catalog->price);?></h3>
-                                              <p class="mb-0" style="color:#888 !important;">
+                                                <h3>
+                                                    <span class="badge badge-pill badge-info" style="font-size: 100%;">$<?php echo $obj_catalog->price;?></span>
+                                                    
+                                                </h3>
                                                   <br/>
                                                     <?php echo $obj_catalog->description;?>
-                                                    <h6 class="mt-3">Categoría</h6>
-                                                        <p class="text-primary mb-1"><a href="<?php echo site_url()."catalogo/$obj_catalog->category_slug";?>"><?php echo $obj_catalog->category_name;?></a></p>
+                                                        <h6 class="mt-3">Categoría</h6>
+                                                        <p class="text-primary mb-1">
+                                                            <a href="<?php echo site_url()."catalogo/$obj_catalog->category_slug";?>"><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $obj_catalog->category_name;?></span></a>
+                                                        </p>
                                                         <hr>
-                                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                        Guarde su producto en el carrito y siga comprando.
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                     </div>
+                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                    Guarde su producto en el carrito y siga comprando.
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                 </div>
                                                 <div class="row form-group">
                                                     <div class="col-sm-2">
                                                         <label class="col-form-label" style="color:#888 !important;">Ingrese Cantidad</label>

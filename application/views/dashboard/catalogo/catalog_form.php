@@ -50,13 +50,20 @@
                                   <label>Precio</label>
                                   <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price)?$obj_catalog->price:"";?>" class="input-xlarge-fluid" placeholder="Precio">
                               </div>
+                              
                               <div class="form-group">
-                                  <label>Sumilla</label>
-                                  <textarea class="form-control" name="summary" id="summary" placeholder="Sumilla"><?php echo isset($obj_catalog->summary)?$obj_catalog->summary:"";?></textarea>
+                               <label>Sumilla</label>
+                                   <textarea name="summary" id="summary" placeholder="Sumilla"><?php echo isset($obj_catalog->summary)?$obj_catalog->summary:"";?></textarea>
+                                    <script>
+                                            CKEDITOR.replace('summary');
+                                    </script>
                               </div>
                               <div class="form-group">
                                   <label>Descripción</label>
-                                  <textarea class="form-control" name="description" id="description" placeholder="Descripción"><?php echo isset($obj_catalog->description)?$obj_catalog->description:"";?></textarea>
+                                  <textarea name="description" id="description"><?php echo isset($obj_catalog->description)?$obj_catalog->description:"";?></textarea>
+                                    <script>
+                                            CKEDITOR.replace('description');
+                                    </script>
                               </div>
                               
                               <div class="form-group col-md-3">
@@ -180,3 +187,10 @@
   </div>
 </div>
 <script src="<?php echo site_url().'static/cms/js/catalog.js'?>"></script>
+<script type="text/javascript">
+        $(window).on('load', function() {
+            // classic editor
+            ClassicEditor.create(document.querySelector('#sumilla'))
+        });
+    </script>
+

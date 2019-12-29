@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/animate.min.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
@@ -223,11 +224,9 @@
 <script src="<?php echo site_url().'static/cms/js/core/jquery.flot.tooltip.min.js';?>"></script>
 
 <script src="<?php echo site_url().'static/cms/js/core/dashboard-analytics.js';?>"></script>
-  
-  
-  <script>
-      feather.replace()
-  </script>
-</body>
+<script>
+  feather.replace();
+</script>
 
+</body>
 </html>

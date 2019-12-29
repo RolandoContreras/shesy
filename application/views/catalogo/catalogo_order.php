@@ -58,7 +58,7 @@
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>Compra de Producto</td>
                                 <td class="text-c-green">
-                                    <span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $value->total;?></span>
+                                    <span class="badge badge-pill badge-success" style="font-size: 100%;">$<?php echo $value->total;?></span>
                                 </td>
                                 <td>
                                     <?php if ($value->active == 1) {
