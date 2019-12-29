@@ -8,7 +8,7 @@
   <div class="content-i">
     <div class="content-box">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="element-wrapper" style="padding-bottom: 0;">
             <h6 class="element-header">Historial Financiero <small class="text-muted">Detalle de Ganancias</small> </h6>
           </div>
@@ -23,36 +23,31 @@
                 <div class="tab-pane active" id="tab_overview">
                   <div class="el-tablo">
                     <div class="label"> Ganacia Total </div>
-                    <div class="value" id="bonustotal"><?php echo format_number_dolar($obj_total->total);?></div>
+                    <div class="value" id="bonustotal">$<?php echo $obj_total->total;?></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-8">
-          <div class="element-wrapper">
+        <div class="col-md-6">
+          <div class="element-wrapper" style="padding-bottom: 0;">
             <h6 class="element-header">Historial Financiero <small class="text-muted">Detalle de Ganancias</small> </h6>
-            <div class="row">
-              <div class="col-md-6">
-                <a class="element-box el-tablo centered trend-in-corner smaller" style="border-radius: 4px; padding: 0.5rem 2rem;">
-                  <div class="display-5" style="font-size: 30px;"> 
-                      <span id="totalInd"><?php echo format_number_dolar($obj_total->total_direct);?></span> 
+          </div>
+          <div class="element-box">
+            <div class="os-tabs-w">
+              <div class="os-tabs-controls">
+                <ul class="nav nav-tabs smaller">
+                  <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tab_overview">Financeiro</a> </li>
+                </ul>
+              </div>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab_overview">
+                  <div class="el-tablo">
+                    <div class="label"> Ganacia Unilevel </div>
+                    <div class="value" id="bonustotal">$<?php echo $obj_total->total_unilevel;?></div>
                   </div>
-                  <div class="label"> Bônus De Referido Directo </div>
-                </a>
-              </div>
-              <div class="col-md-6">
-                <a class="element-box el-tablo centered trend-in-corner smaller" style="border-radius: 4px; padding: 0.5rem 2rem;">
-                  <div class="display-5" style="font-size: 30px;"><span id="totalBin"><?php echo format_number_dolar($obj_total->total_unilevel);?></span> </div>
-                  <div class="label"> Bônus Unilevel </div>
-                </a>
-              </div>
-              <div class="col-md-12">
-                <a class="element-box el-tablo centered trend-in-corner smaller" style="border-radius: 4px; padding: 0.5rem 2rem;">
-                  <div class="display-5" style="font-size: 30px;"> <span id="totalDl"><?php echo format_number_dolar($obj_total->total_maching);?></span> </div>
-                  <div class="label"> Maching </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>

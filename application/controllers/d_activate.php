@@ -58,9 +58,20 @@ class D_activate extends CI_Controller{
                 $invoice_id = $this->input->post("invoice_id");
                 $customer_id = $this->input->post("customer_id");
                 $kit_id = $this->input->post("kit_id");
-                $total = $this->input->post("total");
                 $type = $this->input->post("type");
                 
+                
+                    //GET DATA FROM TABLE KIT
+                    $params = array(
+                            "select" =>"bono_n1,
+                                        bono_n2,
+                                        bono_n3,
+                                        bono_n4,
+                                        bono_n5",
+                            "where" => "kit_id = $kit_id"
+                    );
+                    //GET DATA FROM BONUS
+                    $obj_kit = $this->obj_kit->get_search_row($params);
                     //GET DATA CUSTOMER UNILEVEL
                     $params = array(
                             "select" =>"parend_id,
@@ -76,9 +87,9 @@ class D_activate extends CI_Controller{
                         $new_parend_id = $obj_unilevel->new_parend_id;
                         
                         //INSERT AMOUNT ON COMMISION TABLE    
-                        $this->pay_unilevel($total,$ident,$new_parend_id,$invoice_id);
+                        $this->pay_unilevel($ident,$new_parend_id,$invoice_id, $obj_kit->bono_n1,$obj_kit->bono_n2,$obj_kit->bono_n3,$obj_kit->bono_n4,$obj_kit->bono_n5);
                         //INSERT AMOUNT ON COMMISION TABLE    
-                        $this->add_points($total,$ident);
+                        $this->add_points($ident,$obj_kit->bono_n1,$obj_kit->bono_n2,$obj_kit->bono_n3,$obj_kit->bono_n4,$obj_kit->bono_n5);
                     }
                     
                     //verify if type = 1 "activayte kit" or type = 2 "buy catalog" 
@@ -107,7 +118,7 @@ class D_activate extends CI_Controller{
             }
     }
         
-    public function pay_unilevel($total,$ident,$new_parend_id,$invoice_id){
+    public function pay_unilevel($ident,$new_parend_id,$invoice_id,$bono_n1,$bono_n2,$bono_n3,$bono_n4,$bono_n5){
                 
                 $new_ident = explode(",", $ident);
                 rsort($new_ident);
@@ -125,13 +136,12 @@ class D_activate extends CI_Controller{
                         
                         if($obj_customer->active == 1){
                             //GET 5%
-                            $total_0 = $total * 0.05; 
                             //INSERT COMMISSION TABLE
                             $data = array(
                                 'invoice_id' => $invoice_id,
                                 'customer_id' => $new_parend_id,
                                 'bonus_id' => 1,
-                                'amount' => $total_0,
+                                'amount' => $bono_n1,
                                 'active' => 1,
                                 'status_value' => 1,
                                 'date' => date("Y-m-d H:i:s"),
@@ -155,16 +165,16 @@ class D_activate extends CI_Controller{
                                     //INSERT COMMISSION TABLE
                                     switch ($x) {
                                         case 1:
-                                          $amount = $total * 0.04;      
+                                          $amount = $bono_n2;      
                                           break;
                                         case 2:
-                                          $amount = $total * 0.03;      
+                                          $amount = $bono_n3;      
                                           break;
                                         case 3:
-                                          $amount = $total * 0.02;      
+                                          $amount = $bono_n4;      
                                           break;
                                         case 4:
-                                          $amount = $total * 0.01;      
+                                          $amount = $bono_n5;      
                                           break;
                                     }
                                     $data = array(
@@ -187,7 +197,7 @@ class D_activate extends CI_Controller{
                 }
         }    
         
-    public function add_points($total,$ident){
+    public function add_points($ident,$bono_n1,$bono_n2,$bono_n3,$bono_n4,$bono_n5){
         
                 //GET PERCENT FROM BONUS
                $new_ident = explode(",", $ident);
@@ -204,12 +214,30 @@ class D_activate extends CI_Controller{
                                 );
                                 //GET DATA FROM BONUS
                                 $obj_customer = $this->obj_customer->get_search_row($params);
-
+                                
                                 if($obj_customer->active == 1){
+                                    switch ($x) {
+                                        case 0:
+                                          $point = $bono_n1;      
+                                          break;
+                                        case 1:
+                                          $point = $bono_n2;      
+                                          break;
+                                        case 2:
+                                          $point = $bono_n3;      
+                                          break;
+                                        case 3:
+                                          $point = $bono_n4;      
+                                          break;
+                                        case 4:
+                                          $point = $bono_n5;      
+                                          break;
+                                    }
+                                    
                                     //INSERT POINTS TABLE
                                        $data = array(
                                           'customer_id' => $new_ident[$x] ,
-                                          'point' => $total ,
+                                          'point' => $point ,
                                           'date' => date("Y-m-d H:i:s"),
                                           'active' => 1,
                                           'status_value' => 1,

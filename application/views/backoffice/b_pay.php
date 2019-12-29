@@ -10,9 +10,9 @@
         <h6 class="element-header">¿Dudas sobre el retiro? <small>Consulte las reglas de retiro.</small> </h6>
         <div class="element-box">
           <div class="alert alert-success" role="alert"> <strong>Reglas de Retiro </strong><br> 
-                Las solicitudes de retiro se realizan solamente días hábiles (lunes a viernes).<br>
+                Las solicitudes de retiro se realizan los fines de mes.<br>
                 El importe mínimo de retiro es de $10.
-                Los pagos se procesan en 24 horas hábiles
+                Los pagos se procesan en las primeras 24 horas hábiles de realizar la solicitud
             </div>
         </div>
       </div>
@@ -25,13 +25,13 @@
                     <div class="col-md-6">
                       <div class="element-box el-tablo">
                         <div class="label"> GANANCIA TOTAL </div>
-                        <div class="value"> US$ <?php echo $total_comisiones!=""?$total_comisiones:"0.00";?> </div>
+                        <div class="value"> $<?php echo $total_comisiones!=""?$total_comisiones:"0.00";?> </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="element-box el-tablo">
                         <div class="label"> GANANCIA DISPONIBLE </div>
-                        <div class="value"> US$ <?php echo $total_disponible!=""?$total_disponible:"0.00";?> </div>
+                        <div class="value"> $<?php echo $total_disponible!=""?$total_disponible:"0.00";?> </div>
                       </div>
                     </div>
                   </div>
@@ -86,15 +86,15 @@
                                 <div class="col-lg-12" align="left"> 
                                     <label class="control-label"> Billetera de Bitcoin:</label> 
                                 </div>
-                                <input type="text" name="wallet" disabled="" value="<?php echo $wallet;?>" id="wallet" class="form-control">
+                                <input type="text" name="wallet" disabled="" value="<?php echo $bank;?>" id="wallet" class="form-control">
                                 <p>* Verificar los datos de recibimiento recuerde que es bajo su responzabilidad.</p>
                             </div>
                             <?php
-                            if($wallet == null){
+                            if($bank == null){
                                 $disable = "disabled"; ?>
                             <div class="element-box">
-                              <div class="alert alert-warning" role="alert"> <strong>Necesita vincular su billetera </strong><br> 
-                                    Para solicitar un retiro primero debe vincular su billetera de bitcoin<br> dar clic en el siguiente enlace para poder hacerlo:
+                              <div class="alert alert-warning" role="alert"> <strong>Necesita agregar su cuenta bancaria </strong><br> 
+                                    Para solicitar un retiro primero debe vincular su cuenta bancaria<br> dar clic en el siguiente enlace para poder hacerlo:
                                     <a href="<?php echo site_url().'backoffice/profile';?>">Clic Aquí</a>
                                 </div>
                             </div>

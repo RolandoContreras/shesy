@@ -23,7 +23,7 @@ class B_pay extends CI_Controller {
                                     pay.pay_id,
                                     pay.descount,
                                     pay.active,
-                                    customer.btc_address",
+                                    customer.bank_id",
                "join" => array('customer, pay.customer_id = customer.customer_id'),
                 "where" => "pay.customer_id = $customer_id and pay.status_value = 1",
                 "order" => "pay.date DESC",
@@ -33,11 +33,11 @@ class B_pay extends CI_Controller {
         
         //GET WALLET CUSTOMER
         $params = array(
-                "select" =>"btc_address",
+                "select" =>"bank_id",
         "where" => "customer_id = $customer_id");
            //GET DATA FROM CUSTOMER
         $obj_customer = $this->obj_customer->get_search_row($params);
-        $wallet = $obj_customer->btc_address;
+        $bank = $obj_customer->bank_id;
         
         //GET TOTAL COMMISION
         $params = array(
@@ -50,7 +50,7 @@ class B_pay extends CI_Controller {
         $total_comisiones = $obj_total_commissions->total_comissions;
         $total_disponible = $obj_total_commissions->total_disponible;
         
-        $this->tmp_backoffice->set("wallet",$wallet);
+        $this->tmp_backoffice->set("bank",$bank);
         $this->tmp_backoffice->set("total_comisiones",$total_comisiones);
         $this->tmp_backoffice->set("total_disponible",$total_disponible);
         $this->tmp_backoffice->set("obj_pay",$obj_pay);

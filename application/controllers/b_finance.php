@@ -18,8 +18,7 @@ class B_finance extends CI_Controller {
         
         //GET PLAN INFORMATION
         $params = array("select" =>"sum(amount) as total_maching,
-                                    (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 1 and status_value = 1) as total_direct,
-                                    (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 2 and status_value = 1) as total_unilevel,
+                                    (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 1 and status_value = 1) as total_unilevel,
                                     (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and status_value = 1) as total",
                         "where" => "customer_id = $customer_id and bonus_id = 3 and status_value = 1",
                                     );
@@ -34,8 +33,7 @@ class B_finance extends CI_Controller {
                                     commissions.status_value,
                                     bonus.name as bonus",
                 "join" => array( 'bonus, commissions.bonus_id = bonus.bonus_id',
-                                 'sell, commissions.sell_id = sell.sell_id',
-                                 'invoices, sell.invoice_id = invoices.invoice_id',
+                                 'invoices, commissions.invoice_id = invoices.invoice_id',
                                  'customer, invoices.customer_id = customer.customer_id'),
                 "where" => "commissions.customer_id = $customer_id and commissions.status_value = 1",
                 "order" => "commissions.commissions_id DESC",
@@ -56,8 +54,8 @@ class B_finance extends CI_Controller {
         $customer_id = $_SESSION['customer']['customer_id'];
         
         //GET DATA COMISION
-        //TYPE 1 -  PLAN
-        //TYPE 2 -  MENSUALY
+        //TYPE 1 -  plan
+        //TYPE 2 -  catalog
                 $params = array(
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
