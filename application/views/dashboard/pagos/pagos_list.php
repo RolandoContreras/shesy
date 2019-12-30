@@ -44,7 +44,7 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Nombres</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Wallet</th>
+                                    aria-label="Age: activate to sort column ascending">Banco</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Importe</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -65,10 +65,22 @@
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td><b><?php echo "@".$value->username;?></b></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
-                                <td><?php echo $value->btc_address;?></td>
+                                <td>
+                                    <?php if ($value->bank_id == 1) {
+                                        $valor = "BCP (Crédito)";
+                                        $stilo = "label label-info";
+                                    }elseif($value->active == 2){
+                                        $valor = "Interbank";
+                                        $stilo = "label label-success";
+                                    }?>
+                                    <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
+                                </td>
                                 <td><?php echo format_number_dolar($value->amount);?></td>
                                 <td><?php echo format_number_dolar($value->descount);?></td>
-                                <td><?php echo format_number_dolar($value->amount_total);?></td>
+                                <td>
+                                    <span class="badge badge-pill badge-success" style="font-size: 100%;">$<?php echo $value->amount_total;?></span>
+                                </td>
+                                
                                 <td>
                                     <?php if ($value->active == 1) {
                                         $valor = "Es espera";
@@ -78,7 +90,7 @@
                                         $stilo = "label label-success";
                                     }elseif($value->active == 3){
                                         $valor = "Cancelado";
-                                        $stilo = "label label-important";
+                                        $stilo = "label label-danger";
                                     } ?>
                                     <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
                                 </td>
@@ -98,7 +110,7 @@
                                   <th rowspan="1" colspan="1">Fecha</th>
                                   <th rowspan="1" colspan="1">Usuario</th>
                                   <th rowspan="1" colspan="1">Nombres</th>
-                                  <th rowspan="1" colspan="1">Wallet</th>
+                                  <th rowspan="1" colspan="1">Banco</th>
                                   <th rowspan="1" colspan="1">Importe</th>
                                   <th rowspan="1" colspan="1">Tax</th>
                                   <th rowspan="1" colspan="1">Total</th>

@@ -23,7 +23,7 @@ class D_pays extends CI_Controller{
                                     customer.customer_id,
                                     customer.first_name,
                                     customer.username,
-                                    customer.btc_address,
+                                    customer.bank_id,
                                     customer.last_name",
                         "join" => array('customer, pay.customer_id = customer.customer_id'),
                         "order" => "pay.pay_id DESC"

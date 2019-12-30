@@ -26,7 +26,7 @@
                     <h5>Datos</h5>
                   </div>
                   <div class="card-body">
-                    <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/membresias/validate";?>">
+                    <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/pagos/validate";?>">
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                   <div class="form-group">
@@ -63,7 +63,7 @@
                                         <input class="form-control" stype="text" id="amount" name="amount" value="<?php echo isset($obj_pays->amount)?$obj_pays->amount:0;?>" class="input-xlarge-fluid">
                                 </div>
                                 <div class="form-group">
-                                        <label>Descuento 5%</label>
+                                        <label>Descuento 0%</label>
                                         <input class="form-control" type="text" id="descount" name="descount" value="<?php echo isset($obj_pays->descount)?$obj_pays->descount:0;?>" class="input-xlarge-fluid">
                                 </div>
                               <div class="form-group">
