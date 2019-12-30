@@ -163,7 +163,7 @@
                                                 <div class="col-lg-6 content-box">
                                                     <center>
                                                     <div class=steps-wrapper style="">
-                                                      <h3 class="sc-title" style="text-align:center !important;">¿Qué es la cultura FK?</h3>
+                                                      <h3 class="sc-title respondive_title" style="text-align:center !important;">¿Qué es la cultura FK?</h3>
                                                       <p class="description respondive_d">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
                                                       <p class="description respondive_d div_hide">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
                                                     <div>

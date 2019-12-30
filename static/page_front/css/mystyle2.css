@@ -4,6 +4,9 @@
 .thim-sc-steps .steps-wrapper .steps .tab-content .readmore:hover {
     background-color: #b8860b !important;
 }
+.thim-sc-steps .steps-wrapper .steps .tab-content .readmore {
+    background-color: #b8860b !important;
+}
 .rounded-view-all-button a {
     background-color: #b8860b !important;
 }
@@ -69,6 +72,10 @@ footer#colophon.dark {
     }
 }
 @media only screen and (min-width: 768px) {
+    .respondive_d{
+        color: white !important;
+        margin-left: 100px !important;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -88,6 +95,15 @@ footer#colophon.dark {
     .respondive_d{
         color: white !important;
         margin-left: 0px !important;
+    }
+}
+@media only screen and (min-width: 1365px) {
+    .respondive_d{
+        color: white !important;
+        margin-left: 100px !important;
+    }
+    .respondive_title{
+        margin-left: 70px !important;
     }
 }
 

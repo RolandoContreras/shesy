@@ -32,19 +32,6 @@ header#masthead.palette-transparent .main-header .width-navigation .main-menu>li
 header#masthead.palette-transparent .main-header .width-navigation .main-menu .current-menu-item>a {
     color: #18c1f0
 }
-header#masthead.palette-transparent .main-header .width-navigation li .sub-menu li a:hover {
-    color: #18c1f0
-}
-header#masthead.palette-transparent .main-header .header-right .widget_thim-login:before {
-    color: #18c1f0;
-    border-color: #18c1f0
-}
-header#masthead.palette-transparent .main-header .header-right .widget_thim-login a:hover {
-    color: #18c1f0!important
-}
-header#masthead.palette-transparent.affix #primary-menu>li>a:hover {
-    color: #18c1f0
-}
 header#masthead.palette-custom .widget_thim-login:before {
     color: #333
 }
@@ -3140,12 +3127,6 @@ body.mix-colors .course-collection-squared-2 .view-all-collections a {
 }
 .thim-sc-steps .steps-wrapper .steps .tab-content .description {
     color: #888
-}
-.thim-sc-steps .steps-wrapper .steps .tab-content .readmore {
-    background-color: #b8860b;
-}
-.thim-sc-steps .steps-wrapper .steps .tab-content .readmore:hover {
-    background-color: #b8860b;
 }
 .thim-sc-steps.layout-3 .steps-wrapper .steps .nav .nav-item .tab-title:hover {
     color: #202121
