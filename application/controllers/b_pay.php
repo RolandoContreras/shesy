@@ -70,10 +70,6 @@ class B_pay extends CI_Controller {
             $result = trim($this->input->post('result'));
             $total_disponible = trim($this->input->post('total_disponible'));
             
-            $tax = number_format($tax, 2);
-            $result = number_format($result, 2);
-            
-            
             if($amount >= 10){
                 //INSERT PAY TABLE
                     $data = array(

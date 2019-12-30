@@ -90,7 +90,7 @@
                                 </div>
                           </div>
                         </div>
-                          <div class="row">
+                            <div class="row">
                                   <div class="col-sm-12">
                                     <div class="card">
                                       <div class="card-header">
@@ -98,25 +98,23 @@
                                       </div>
                                     </div>
                                   </div>
-                                <div class="col-md-12 col-xl-4">
+                                <div class="col-sm-12">
                                     <div class="card theme-bg2 visitor">
                                       <div class="card-block text-center">
                                           <img class="img-female" src="<?php echo site_url().'static/page_front/images/visa-background.png';?>" alt="visitor-user">
                                             <h5 class="text-white m-0">Pagar con Pago Efectivo</h5>
                                             <img width="100" src="<?php echo site_url().'static/page_front/images/pagoefectivo.png';?>" alt="visitor-user"><br/>
+                                            <button type="button" class="btn btn-primary" onclick="process_pay_invoice();"><i data-feather="dollar-sign"></i> Pagar</button>                                            
                                       </div>
-                                        
                                     </div>
-                                    <button type="button" class="btn btn-primary" onclick="process_pay_invoice();"><i data-feather="dollar-sign"></i> Pagar</button>                                            
+                                    
                                   </div>
-                              <div class="col-md-12 col-xl-2">
-                                  </div>
+                            </div>
+                            <div class="form-group has-feedback" style="display: none;" id="pay_success_2">
+                                <div class="alert alert-success validation-errors">
+                                    <p class="user_login_id" style="text-align: center;">Pedido pagado con éxito en unos minutos estamos procesando su compra.</p>
                                 </div>
-                                <div class="form-group has-feedback" style="display: none;" id="pay_success_2">
-                                    <div class="alert alert-success validation-errors">
-                                        <p class="user_login_id" style="text-align: center;">Pedido pagado con éxito en unos minutos estamos procesando su compra.</p>
-                                    </div>
-                                </div>
+                            </div>
                           
                       </div>
                     </div>
