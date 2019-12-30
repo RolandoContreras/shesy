@@ -66,10 +66,10 @@
                                 <td><b><?php echo "@".$value->username;?></b></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>
-                                    <?php if ($value->active == 1) {
+                                    <?php if ($value->bank_id == 1) {
                                         $valor = "BCP  (crédito)";
                                         $stilo = "label label-info";
-                                    }elseif($value->active == 2){
+                                    }elseif($value->bank_id == 2){
                                         $valor = "Interbank";
                                         $stilo = "label label-success";
                                     } ?>
@@ -77,7 +77,9 @@
                                 </td>
                                 <td><?php echo format_number_dolar($value->amount);?></td>
                                 <td><?php echo format_number_dolar($value->descount);?></td>
-                                <td><?php echo format_number_dolar($value->amount_total);?></td>
+                                <td>
+                                    <span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo format_number_dolar($value->amount_total);?></span>
+                                        </td>
                                 <td>
                                     <?php if ($value->active == 1) {
                                         $valor = "Es espera";
@@ -87,16 +89,19 @@
                                         $stilo = "label label-success";
                                     }elseif($value->active == 3){
                                         $valor = "Cancelado";
-                                        $stilo = "label label-important";
+                                        $stilo = "label label-danger";
                                     } ?>
                                     <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
                                 </td>
                                 <td align="center">
                                     <div class="operation">
-                                            <div class="btn-group">
+                                        <?php 
+                                        if($value->active == 1){ ?>
+                                                <div class="btn-group">
                                                     <button class="btn btn-secondary" type="button" onclick="pagado('<?php echo $value->pay_id;?>');"><span class="pcoded-micon"><i data-feather="dollar-sign"></i></span> Pagado</button>
                                                     <button class="btn btn-secondary" type="button" onclick="devolver('<?php echo $value->pay_id;?>');"><span class="pcoded-micon"><i data-feather="x-circle"></i></span> Devolver</button>
-                                          </div>
+                                                </div>
+                                            <?php } ?>
                                     </div>
                                 </td>
                             </tr>
