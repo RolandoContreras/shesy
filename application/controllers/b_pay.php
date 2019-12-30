@@ -70,46 +70,51 @@ class B_pay extends CI_Controller {
             $result = trim($this->input->post('result'));
             $total_disponible = trim($this->input->post('total_disponible'));
             
-            if($amount >= 10){
-                //INSERT PAY TABLE
-                    $data = array(
-                        'customer_id' => $customer_id,
-                        'amount' => $amount,
-                        'descount' => $tax,
-                        'amount_total' => $result,
-                        'active' => 1,
-                        'status_value' => 1,
-                        'date' => date("Y-m-d H:i:s"),
-                        'created_at' => date("Y-m-d H:i:s"),
-                        'created_by' => $customer_id,
-                    ); 
-                    $pay_id = $this->obj_pay->insert($data);
-                
-                    //INSERT COMMISSION TABLE
-                    $data = array(
-                        'customer_id' => $customer_id,
-                        'amount' => -$amount,
-                        'active' => 2,
-                        'status_value' => 1,
-                        'date' => date("Y-m-d H:i:s"),
-                        'created_at' => date("Y-m-d H:i:s"),
-                        'created_by' => $customer_id,
-                    ); 
-                    $commissions_id = $this->obj_commissions->insert($data);
-                    
-                //INSERT PAY COMISSIONS TABLE
-                    $data = array(
-                        'pay_id' => $pay_id,
-                        'commissions_id' => $commissions_id,
-                        'status_value' => 1,
-                        'created_at' => date("Y-m-d H:i:s"),
-                        'created_by' => $customer_id,
-                    ); 
-                    $this->obj_pay_commission->insert($data);    
-              $message = 2;   
+            if($total_disponible >= $result){
+                    if($amount >= 10){
+                        //INSERT PAY TABLE
+                            $data = array(
+                                'customer_id' => $customer_id,
+                                'amount' => $amount,
+                                'descount' => $tax,
+                                'amount_total' => $result,
+                                'active' => 1,
+                                'status_value' => 1,
+                                'date' => date("Y-m-d H:i:s"),
+                                'created_at' => date("Y-m-d H:i:s"),
+                                'created_by' => $customer_id,
+                            ); 
+                            $pay_id = $this->obj_pay->insert($data);
+
+                            //INSERT COMMISSION TABLE
+                            $data = array(
+                                'customer_id' => $customer_id,
+                                'amount' => -$amount,
+                                'active' => 2,
+                                'status_value' => 1,
+                                'date' => date("Y-m-d H:i:s"),
+                                'created_at' => date("Y-m-d H:i:s"),
+                                'created_by' => $customer_id,
+                            ); 
+                            $commissions_id = $this->obj_commissions->insert($data);
+
+                        //INSERT PAY COMISSIONS TABLE
+                            $data = array(
+                                'pay_id' => $pay_id,
+                                'commissions_id' => $commissions_id,
+                                'status_value' => 1,
+                                'created_at' => date("Y-m-d H:i:s"),
+                                'created_by' => $customer_id,
+                            ); 
+                            $this->obj_pay_commission->insert($data);    
+                      $message = 2;   
+                    }else{
+                      $message = 1;   
+                    }
             }else{
-              $message = 1;   
+                $message = 1;   
             }
+            
             //SEDN DATA
                 $data['status'] = $message;
             echo json_encode($data);
