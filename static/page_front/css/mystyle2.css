@@ -1,0 +1,95 @@
+.border-radius-30{
+    border-radius:30px !important; 
+}
+.thim-sc-steps .steps-wrapper .steps .tab-content .readmore:hover {
+    background-color: #b8860b !important;
+}
+.rounded-view-all-button a {
+    background-color: #b8860b !important;
+}
+.thim-courses-block-2 .intro-item::before {
+    background-color: #b8860b !important;
+}
+#back-to-top{
+    background: #b8860b !important; 
+}
+#back-to-top:hover {
+    background: #b8860b !important; 
+}
+footer#colophon .copyright-area .copyright-content a{
+    color: #b8860b !important;
+}
+footer#colophon .copyright-area .copyright-content a:hover {
+    color: #b8860b !important;
+}
+header#masthead.site-header.palette-transparent .width-navigation .main-menu > li.current-menu-parent > a {
+    color: #b8860b !important;
+}
+header#masthead.site-header.palette-transparent .width-navigation .main-menu > li.current-menu-parent > a:hover {
+    color: #b8860b !important;
+}
+.thim-breadcrumb-primary-color .page-title .breadcrumb-content #breadcrumbs {
+    background: #b8860b !important;
+}
+footer#colophon.dark .footer .widget-title::after {
+    border-bottom-color: #b8860b !important;
+}
+.thim-course-top .lpr_course-switch a.switcher-active, .thim-course-top .lpr_course-switch a:hover {
+    background-color: #b8860b !important;
+}
+.black{
+    color:black !important;
+}
+footer#colophon.dark {
+    background-color: #000 !important;
+    color: #acacac;
+}
+.vc_custom_1501054848736 {
+    background-color: #936b09 !important;
+}
+.btn-primary:hover, #popup_panel #popup_ok:hover {
+    background: #b8860b !important;
+    border-color: #b8860b !important;
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 736px) {
+    .respondive_d{
+        color: white !important;
+        margin-left: 100px !important;
+        padding-bottom: 40px !important;
+    }
+    .respondive_a{
+        color: black !important;
+        margin-left: 60px !important;
+    }
+}
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .respondive_a{
+        color: black !important;
+        margin-left: 40px !important;
+    }
+    .respondive_d{
+        color: white !important;
+        margin-left: 0px !important;
+    }
+}
+
+
+

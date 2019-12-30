@@ -264,7 +264,7 @@
                       
                   
                   <div class="vc_row-full-width vc_clearfix"></div>
-                  <div data-vc-full-width=true data-vc-full-width-init=false data-vc-parallax=1.5 data-vc-parallax-image="<?php echo site_url().'static/page_front/images/layer-background-2.jpg';?>" class="vc_row wpb_row vc_row-fluid vc_custom_1501839996783 thim-background-overlay vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+<!--                  <div data-vc-full-width=true data-vc-full-width-init=false data-vc-parallax=1.5 data-vc-parallax-image="<?php echo site_url().'static/page_front/images/layer-background-2.jpg';?>" class="vc_row wpb_row vc_row-fluid vc_custom_1501839996783 thim-background-overlay vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                     <div class=overlay style="background-color: rgba(10,10,10,0.55)"></div>
                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-has-fill">
                       <div class="vc_column-inner vc_custom_1497518620322">
@@ -368,8 +368,8 @@
                   </div>
                 </div>
           </div>
-        </div>
-        <div class="vc_row-full-width vc_clearfix"></div>
+        </div>-->
+        <!--<div class="vc_row-full-width vc_clearfix"></div>-->
     </div>
     </article>
     </main>
