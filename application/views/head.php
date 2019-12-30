@@ -1,5 +1,5 @@
 <head>
-  <title>Corporación FK | cambiemos el mundo</title>
+  <title>Corporación FK | Cambiemos el mundo</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
@@ -30,7 +30,7 @@
   <style media="print">
     @media print{.pmpro_a-print{display:none;position:absolute;left:-9999px}}
   </style>
-  <title>Plataforma de Educación</title>
+  <link rel="stylesheet" id="dashicons-css" href="<?php echo site_url().'static/page_front/css/mystyle.css';?>" type="text/css" media="all">
   <link rel="stylesheet" id="dashicons-css" href="<?php echo site_url().'static/page_front/css/dashicons.min.css';?>" type="text/css" media="all">
   <link rel="stylesheet" id="dashicons-css" href="<?php echo site_url().'static/page_front/css/mystyle.css';?>" type="text/css" media="all">
   <!--[if lt IE 9]><linkrel=stylesheet id=vc_lte_ie9-css href=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css type=text/css media=screen><![endif]-->

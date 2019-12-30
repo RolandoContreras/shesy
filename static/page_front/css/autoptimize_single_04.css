@@ -219,23 +219,23 @@ header#masthead.palette-custom.header-magic-line .width-navigation li .sub-menu 
 }
 header#masthead.template-layout-2.palette-transparent .header-v2.style2 .width-navigation .main-menu li.current-menu-item>a,
 header#masthead.template-layout-2.palette-transparent .header-v2.style2 .width-navigation .main-menu li>a:hover {
-    color: #18c1f0!important
+    color: #b8860b !important;
 }
 .responsive .mobile-menu-container .inner-off-canvas .navbar-nav>li.current-menu-parent>a>a,
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.current-menu-item>a,
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.current-menu-parent>a {
-    color: #18c1f0!important
+    color: #b8860b !important;
 }
 .responsive .mobile-menu-container .inner-off-canvas .navbar-nav>li.current-menu-parent>a .icon-toggle,
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.current-menu-item .icon-toggle,
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.current-menu-parent .icon-toggle {
-    color: #18c1f0!important
+    color: #b8860b !important
 }
 header#masthead.site-header.palette-custom .width-navigation .main-menu>li.current-menu-parent>a {
-    color: #3498db!important
+    color: #b8860b!important
 }
 header#masthead.site-header.palette-custom .width-navigation .main-menu>li.current-menu-parent .icon-toggle {
-    color: #3498db!important
+    color: #b8860b!important
 }
 #thim-popup-login label[for=become_teacher],
 #thim-popup-login label[for=termFormField] {
@@ -311,13 +311,13 @@ header#masthead.palette-custom .width-navigation .widget_thim-login a.lost-pass-
     background-color: #fff
 }
 .page-title .breadcrumb-content #breadcrumbs li {
-    color: #18c1f0
+    color: #b8860b
 }
 .page-title .breadcrumb-content #breadcrumbs li a {
     color: #a9a9a9
 }
 .page-title .breadcrumb-content #breadcrumbs li a:hover {
-    color: #18c1f0
+    color: #b8860b
 }
 .page-title .breadcrumb-content #breadcrumbs li span.breadcrum-icon .fa:before {
     color: #a9a9a9
@@ -327,13 +327,13 @@ header#masthead.palette-custom .width-navigation .widget_thim-login a.lost-pass-
 }
 .page-title .breadcrumb-content .woocommerce-breadcrumb {
     background-color: #fff;
-    color: #18c1f0
+    color: #b8860b
 }
 .page-title .breadcrumb-content .woocommerce-breadcrumb a {
     color: #a9a9a9
 }
 .page-title .breadcrumb-content .woocommerce-breadcrumb a:hover {
-    color: #18c1f0
+    color: #b8860b
 }
 .page-title .breadcrumb-content .woocommerce-breadcrumb span.breadcrum-icon {
     color: #a9a9a9
@@ -577,7 +577,7 @@ footer#colophon.custom .footer-sidebars .list-link li a {
 }
 footer#colophon.dark .footer .widgettitle:after,
 footer#colophon.dark .footer .widget-title:after {
-    border-bottom-color: #18c1f0
+    border-bottom-color: #b8860b;
 }
 footer#colophon.dark .copyright-area #copyright-menu li a:hover {
     color: #18c1f0
@@ -586,10 +586,10 @@ footer#colophon a:hover {
     color: #18c1f0
 }
 footer#colophon .copyright-area .copyright-content a {
-    color: #18c1f0
+    color: #b8860b
 }
 footer#colophon .copyright-area .copyright-content a:hover {
-    color: #0a7998
+    color: #b8860b;
 }
 footer#colophon .footer-sidebars .list-link li a:hover {
     color: #18c1f0
@@ -598,10 +598,10 @@ footer#colophon.light .copyright-area #copyright-menu li a:hover {
     color: #18c1f0
 }
 #back-to-top {
-    background: #18c1f0
+    background: #b8860b;
 }
 #back-to-top:hover {
-    background: #0a7998
+    background: #0a7998;
 }
 #copyright-menu .menu-item a[href*="dribbble.com"]:hover:after,
 #copyright-menu .menu-item a[href*="facebook.com"]:hover:after,
@@ -748,13 +748,13 @@ input[type=submit]:hover {
 }
 .btn-primary,
 #popup_panel #popup_ok {
-    background: #18c1f0;
-    border: 1px solid #18c1f0
+    background: #b8860b;
+    border: 1px solid #b8860b;
 }
 .btn-primary:hover,
 #popup_panel #popup_ok:hover {
-    background: #0a7998;
-    border-color: #0a7998
+    background: #b8860b;
+    border-color: #b8860b;
 }
 @media(min-width:1400px) {
     body.home.responsive #wrapper-container .container {
@@ -958,7 +958,7 @@ div.wpb_content_element .wpcf7-form .heading-button button:hover {
 }
 
 .thim-breadcrumb-primary-color .page-title .breadcrumb-content #breadcrumbs {
-    background: #18c1f0
+    background: #b8860b;
 }
 .thim-breadcrumb-primary-color .page-title.layout-2 .breadcrumb-content .breadcrumbs-wrapper {
     background: #18c1f0
@@ -2243,7 +2243,7 @@ body.bbpress #bbpress-forums #bbp-search-form input#bbp_search:focus+.icon-searc
     background-color: #0d9fc8
 }
 .woocommerce .product span.onsale {
-    background: #18c1f0
+    background: #b8860b;
 }
 .woocommerce nav.woocommerce-pagination ul.page-numbers li .page-numbers:hover,
 .woocommerce nav.woocommerce-pagination ul.page-numbers li .page-numbers.current {
@@ -2252,10 +2252,10 @@ body.bbpress #bbpress-forums #bbp-search-form input#bbp_search:focus+.icon-searc
 }
 .product-filter .display a:hover i,
 .product-filter .display a.switcher-active i {
-    color: #18c1f0
+    color: #b8860b
 }
 .product-filter .dk-selected {
-    color: #18c1f0
+    color: #b8860b
 }
 .product-filter .dk-option-selected,
 .product-filter .dk-option-highlight {
@@ -2278,15 +2278,15 @@ ul.product-grid li.product .wrapper .product-content span.price>.amount,
 ul.product-list li.product .wrapper .product-content span.price>.amount,
 ul.product-grid li.product .wrapper .product-content span.price ins .amount,
 ul.product-list li.product .wrapper .product-content span.price ins .amount {
-    color: #18c1f0
+    color: #b8860b;
 }
 ul.product-grid li.product .wrapper .product-content a.button,
 ul.product-list li.product .wrapper .product-content a.button {
-    background: #18c1f0
+    background: #b8860b
 }
 ul.product-grid li.product .wrapper .product-content .added_to_cart,
 ul.product-list li.product .wrapper .product-content .added_to_cart {
-    background: #18c1f0
+    background: #b8860b
 }
 ul.product-grid li.product .wrapper .product-content .added_to_cart:hover,
 ul.product-list li.product .wrapper .product-content .added_to_cart:hover {
@@ -2865,13 +2865,13 @@ section.tags a:hover {
 .thim-sc-button .btn-primary,
 .thim-sc-button #popup_panel #popup_ok,
 #popup_panel .thim-sc-button #popup_ok {
-    background-color: #18c1f0
+    background-color: #b8860b;
 }
 .thim-sc-button .btn-primary:hover,
 .thim-sc-button #popup_panel #popup_ok:hover,
 #popup_panel .thim-sc-button #popup_ok:hover {
-    background-color: #0a7998;
-    border-color: #0a7998
+    background-color: #b8860b;
+    border-color: #b8860b;
 }
 .thim-sc-button .btn-secondary,
 .thim-sc-button #popup_panel #popup_cancel,
@@ -3031,7 +3031,7 @@ body:not(.mix-colors) .thim-sc-courses-carousel.style-1 .owl-nav .owl-next svg e
     color: #18c1f0
 }
 .rounded-view-all-button a {
-    background-color: #18c1f0
+    background-color: #b8860b;
 }
 .rounded-view-all-button a:hover {
     background: #0a7998
@@ -3059,7 +3059,7 @@ body.mix-colors .course-collection-squared-2 .view-all-collections a {
     background: rgba(24, 193, 240, .6)
 }
 .thim-courses-block-2 .intro-item:before {
-    background-color: #18c1f0
+    background-color: #b8860b;
 }
 .thim-courses-block-2 .intro-item .title {
     font-family: Roboto
@@ -3142,10 +3142,10 @@ body.mix-colors .course-collection-squared-2 .view-all-collections a {
     color: #888
 }
 .thim-sc-steps .steps-wrapper .steps .tab-content .readmore {
-    background-color: #18c1f0
+    background-color: #b8860b;
 }
 .thim-sc-steps .steps-wrapper .steps .tab-content .readmore:hover {
-    background-color: #0a7998
+    background-color: #b8860b;
 }
 .thim-sc-steps.layout-3 .steps-wrapper .steps .nav .nav-item .tab-title:hover {
     color: #202121

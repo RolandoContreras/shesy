@@ -39488,7 +39488,6 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
 }
 .thim-sc-steps.layout-3 .background-overlay:before {
     content: '';
-    background: #000;
     left: 0;
     right: 0;
     bottom: 0;

@@ -22,18 +22,12 @@
                 <h3 class="widget-title">Cursos</h3>
                 <div class="menu-programs-container">
                   <ul id="menu-programs" class="menu">
-                    <li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'courses/personal';?>" class=tc-menu-inner>Desarrollo Personal</a>
-                    </li>
-                    <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'courses/profetional';?>" class=tc-menu-inner>Crecimiento Profesional</a>
-                    </li>
-                    <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'courses/finance';?>" class=tc-menu-inner>Finanzas</a>
-                    </li>
-                    <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'courses/extra';?>" class=tc-menu-inner>Extras</a>
-                    </li>
+                     <?php 
+                      foreach ($obj_category_videos as $value) { ?>
+                          <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                              <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
+                          </li>
+                      <?php } ?> 
                   </ul>
                 </div>
               </aside>

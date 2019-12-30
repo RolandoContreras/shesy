@@ -124,7 +124,7 @@
     <div id="main-content">
       <div id="home-main-content" class="home-content home-page container" role="main">
           <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/background.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
-          <div class=overlay style="background-color: rgba(23,23,23,0.75)"></div>
+          <div class=overlay style="background-color: rgba(0,0,0,0.90)"></div>
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
               <div class=wpb_wrapper>
@@ -144,15 +144,14 @@
                   </div>
                 </div>
                 
-                
                 <div class="thim-sc-image-box left">
-                            <section id=title2>
+                            <section id="title2">
                                   <div class="">
                                       <div class="thim-sc-steps layout-4">
-                                        <div class=sc-steps-wrapper>
-                                            <div class=inner-steps-wrapper>
-                                            <div class=container>
-                                              <div class=row>
+                                        <div class="sc-steps-wrapper border-radius-30" style="background-image: url(<?php echo site_url().'static/page_front/images/layer_1.jpg';?>);">
+                                            <div class="inner-steps-wrapper border-radius-30">
+                                            <div class="container">
+                                              <div class="row">
                                                   <div class="col-lg-6 media-box">
                                                   <div class="player-wrapper">
                                                     <div class="player-inner">
@@ -161,7 +160,6 @@
                                                   </div>
                                                   <div class="icon-play"></div>
                                                 </div>
-                                                  
                                                 <div class="col-lg-6 content-box">
                                                     <center>
                                                     <div class=steps-wrapper style="">
@@ -176,9 +174,8 @@
                                                       </div>
                                                     </div>
                                                   </div>
-                                                        </center>
+                                                  </center>
                                                 </div>
-                                                      
                                               </div>
                                             </div>
                                           </div>
@@ -271,15 +268,7 @@
                           <div class=inner-steps-wrapper style="background: none !important;">
                     <div class=container>
                       <div class=row>
-                          <div class="col-lg-6 media-box">
-                          <div class="player-wrapper">
-                            <div class="player-inner">
-                                <iframe width="640" height="275" autoplay="false"  src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <div class="icon-play"></div>
-                        </div>
-                        <div class="col-lg-6 content-box">
+                          <div class="col-lg-6 content-box">
                           <div class=steps-wrapper>
                               <h3 class="sc-title" style="color:black !important;">¿Qué es la embajada FK?</h3>
                             <div class=steps>
@@ -293,7 +282,14 @@
                             </div>
                           </div>
                         </div>
-                        
+                          <div class="col-lg-6 media-box">
+                          <div class="player-wrapper">
+                            <div class="player-inner">
+                                <iframe width="640" height="275" autoplay="false"  src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
+                          </div>
+                          <div class="icon-play"></div>
+                        </div>
                       </div>
                     </div>
                   </div>

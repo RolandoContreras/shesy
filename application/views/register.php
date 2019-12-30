@@ -208,6 +208,7 @@
                 <div class="buttons-w">
                     <button onclick="register();" class="btn btn-primary btn-lg btn-block">Registar</button>
                     <a href="<?php echo site_url().'forget';?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
+                    <a href="<?php echo site_url();?>" style="width: 100%; display: block; text-align: center;" class="link">Volver Inicio</a>
                     <div style="margin-top:20px;">
                         <style>
                             .langselector img {
