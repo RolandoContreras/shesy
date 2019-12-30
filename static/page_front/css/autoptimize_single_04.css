@@ -224,7 +224,7 @@ header#masthead.template-layout-2.palette-transparent .header-v2.style2 .width-n
 .responsive .mobile-menu-container .inner-off-canvas .navbar-nav>li.current-menu-parent>a>a,
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.current-menu-item>a,
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.current-menu-parent>a {
-    color: #b8860b !important;
+    color: #b8860b;
 }
 .responsive .mobile-menu-container .inner-off-canvas .navbar-nav>li.current-menu-parent>a .icon-toggle,
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.current-menu-item .icon-toggle,

@@ -358,7 +358,7 @@
                     </div>
                   </div>
                 </div>
-                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background.jpg';?>);"></div>
+                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background-gold.jpg';?>);"></div>
               </div>
             </div>
           </div>
