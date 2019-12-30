@@ -25,6 +25,7 @@ class B_carrera extends CI_Controller {
                         "join" => array('ranges, customer.range_id = ranges.range_id'),
                         );
         $obj_customer = $this->obj_customer->get_search_row($params);
+        
         //GET RANGES
         $params = array(
                         "select" =>"ranges.range_id,
@@ -36,46 +37,14 @@ class B_carrera extends CI_Controller {
                         );
             $obj_range = $this->obj_ranges->search($params);
             
-            //GET POINT ACTUALLY
             $params = array(
-                            "select" =>"customer_id",
-                            "where" => "parend_id = $customer_id"
-                );
-            $obj_customer_unilevel = $this->obj_unilevel->search($params);
-            
-                foreach ($obj_customer_unilevel as $key => $value) {
-                    //GET DATA CUSTOMER REFERREL UNILEVEL
-                     $params = array(
-                                    "select" =>"sum(point) as total_point",
-                                    "where" => "customer_id = $value->customer_id"
-                        );
-                        $obj_points[$key] = $this->obj_points->get_search_row($params);
-                }
-                //GET MAX VALUE
-                $array = "";
-                $total_registros = count($obj_customer_unilevel);
-                for ($i = 0; $i <= $total_registros -1; $i++) {
-                       $point = $obj_points[$i]->total_point;
-                       $array .= $point.",";
-                }
-                
-                //DELETE LAST ,
-                $array = delete_last_caracter($array);
-                $array = explode(",", $array);
-                //ORDER ARRAY MAX TO MIN
-                arsort($array);
-                $cuenta = 0;
-                foreach ($array as $value) {
-                    $cuenta++;
-                    if($cuenta == 1){
-                        $point_grupal = $value;
-                    }elseif ($cuenta == 2) {
-                         $point_personal = $value;
-                    }
-                }
+                        "select" =>"sum(point) as total_point",
+                        "where" => "customer_id = $customer_id"
+                            );
+                    $point_personal = $this->obj_points->get_search_row($params);
+                    $point = $point_personal->total_point;
         
-        $this->tmp_backoffice->set("point_personal",$point_personal);
-        $this->tmp_backoffice->set("point_grupal",$point_grupal);
+        $this->tmp_backoffice->set("point",$point);
         $this->tmp_backoffice->set("obj_range",$obj_range);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
         $this->tmp_backoffice->render("backoffice/b_carrera");

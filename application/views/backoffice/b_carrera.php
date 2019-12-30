@@ -22,8 +22,8 @@
                 <div class="card">
                   <div class="body">
                     <div class="card-value float-right text-muted tile-icon"><i class="fas fa-award" style="font-size: 60px;"></i></div>
-                    <h3 class="mb-1">0 Pontos</h3>
-                    <div>Acumulador por el equipo menor</div>
+                    <h3 class="mb-1"><?php echo $point;?> Puntos</h3>
+                    <div>Total de Puntos Acumulados</div>
                   </div>
                 </div>
               </div>
@@ -44,26 +44,9 @@
                               </div>
                             </div>
                             <?php 
-                            $max_grupal = $value->point_grupal * 0.6;
-                            $max_personal = $value->point_grupal * 0.4;
-                            
-                            if($point_grupal > $max_grupal){
-                                $grupal =  $max_grupal;
-                            }else{
-                                $grupal =  $point_grupal;
-                            }
-                            
-                            if($point_personal > $max_personal){
-                                $personal =  $max_personal;
-                            }else{
-                                $personal =  $point_personal;
-                            }
-                            
-                            $total_points =  $personal + $grupal;
-                            
-                            $percent = ($total_points / $value->point_grupal)*100;
-                            $percent = number_format($percent, 2);
-                            $rest = $value->point_grupal - $total_points;
+                            $percent = ($point / $value->point_grupal)*100;
+                            $percent = format_number_miles($percent);
+                            $rest = $value->point_grupal - $point;
                                  
                             if($percent == 100){ ?>
                                  <div class="col-md-8">
