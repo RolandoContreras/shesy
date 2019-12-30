@@ -36,9 +36,19 @@
         </div>
         <div class="breadcrumb-content ">
           <div class="breadcrumbs-wrapper container">
-              <nav class=woocommerce-breadcrumb>
-                  <a href="<?php echo site_url();?>">Inicio</a>
-                  <span class=breadcrum-icon></span>Catalogo</nav>
+              <ul itemprop="breadcrumb" itemscope id="breadcrumbs" class="breadcrumbs">
+                <li itemprop="itemListElement">
+                    <a itemprop="item" href="<?php echo site_url();?>" title="Inicio">
+                        <span itemprop="name">Inicio</span>
+                    </a>
+                    <span class="breadcrum-icon">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </span>
+                </li>
+                <li itemprop="itemListElement">
+                    <span itemprop="name" title="Contacto" class="gold">Catalogo</span>
+                </li>
+              </ul>
           </div>
         </div>
       </div>

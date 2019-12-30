@@ -218,12 +218,6 @@ header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li.current-menu-parent .icon-toggle {
     color: #b8860b !important
 }
-header#masthead.site-header.palette-custom .width-navigation .main-menu>li.current-menu-parent>a {
-    color: #b8860b!important
-}
-header#masthead.site-header.palette-custom .width-navigation .main-menu>li.current-menu-parent .icon-toggle {
-    color: #b8860b!important
-}
 #thim-popup-login label[for=become_teacher],
 #thim-popup-login label[for=termFormField] {
     color: #888
@@ -737,11 +731,6 @@ input[type=submit]:hover {
 #popup_panel #popup_ok {
     background: #b8860b;
     border: 1px solid #b8860b;
-}
-.btn-primary:hover,
-#popup_panel #popup_ok:hover {
-    background: #b8860b;
-    border-color: #b8860b;
 }
 @media(min-width:1400px) {
     body.home.responsive #wrapper-container .container {

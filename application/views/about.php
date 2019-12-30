@@ -81,7 +81,7 @@
                             <section id=title1>
                                   <div class="wpb_wrapper">
                                       <div class="thim-sc-steps layout-4">
-                                        <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/vision.jpg';?>); ">
+                                        <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/layer_1.jpg';?>); ">
                                           <div class=inner-steps-wrapper>
                                             <div class=container>
                                               <div class=row>
@@ -91,9 +91,9 @@
                                                     <div class=steps>
                                                       <div class=tab-content>
                                                         <div class="tab-pane active">
-                                                          <p class=description> Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
-                                                          <p class=description>Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
-                                                          <a href="#" class="readmore">Postular a ser un emabajador </a>
+                                                          <p class="description white"> Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
+                                                          <p class="description white">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
+                                                          <a href="<?php echo site_url().'register';?>" class="readmore">Regístrate </a>
                                                         </div>
                                                       </div>
                                                     </div>
@@ -102,7 +102,7 @@
                                                 <div class="col-lg-6 media-box">
                                                   <div class="player-wrapper">
                                                     <div class="player-inner">
-                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                                     </div>
                                                   </div>
                                                   <div class="icon-play"></div>
@@ -118,9 +118,9 @@
                           <div class="thim-sc-image-box right ">
                             <section id=title2>
                                   <div class="wpb_wrapper">
-                                      <div class="thim-sc-steps layout-4">
-                                        <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/mision.jpg';?>); ">
-                                          <div class=inner-steps-wrapper>
+                                      <div class="thim-sc-steps layout-4" >
+                                        <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/fondo-abstracto.jpg';?>); ">
+                                          <div class="inner-steps-wrapper" style="background: rgba(0, 0, 0, 0) !important;">
                                             <div class=container>
                                               <div class=row>
                                                   <div class="col-lg-6 media-box">
@@ -133,12 +133,12 @@
                                                 </div>
                                                 <div class="col-lg-6 content-box">
                                                   <div class=steps-wrapper>
-                                                      <h3 class="sc-title">¿Qué es la embajada FK?</h3>
+                                                      <h3 class="sc-title black">¿Qué es la embajada FK?</h3>
                                                     <div class=steps>
                                                       <div class=tab-content>
                                                         <div class="tab-pane active">
-                                                          <p class=description>Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos</p>
-                                                          <p class=description>Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
+                                                          <p class="description black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos</p>
+                                                          <p class="description black">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
                                                           <a href="#" class="readmore">Postular a ser un emabajador </a>
                                                         </div>
                                                       </div>

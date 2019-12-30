@@ -25,10 +25,10 @@ footer#colophon .copyright-area .copyright-content a{
 footer#colophon .copyright-area .copyright-content a:hover {
     color: #b8860b !important;
 }
-header#masthead.site-header.palette-transparent .width-navigation .main-menu > li.current-menu-parent > a {
+header#masthead .site-header .palette-transparent .width-navigation .main-menu > li .current-menu-parent > a {
     color: #b8860b !important;
 }
-header#masthead.site-header.palette-transparent .width-navigation .main-menu > li.current-menu-parent > a:hover {
+header#masthead .site-header .palette-transparent .width-navigation .main-menu > li .current-menu-parent > a:hover {
     color: #b8860b !important;
 }
 .thim-breadcrumb-primary-color .page-title .breadcrumb-content #breadcrumbs {
@@ -53,6 +53,15 @@ footer#colophon.dark {
 .btn-primary:hover, #popup_panel #popup_ok:hover {
     background: #b8860b !important;
     border-color: #b8860b !important;
+}
+.white{
+    color: white !important;
+}
+.black{
+    color: black !important;
+}
+.gold{
+    color: #b8860b !important;
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -95,12 +104,14 @@ footer#colophon.dark {
     .respondive_d{
         color: white !important;
         margin-left: 0px !important;
+        font-size: 14px !important;
     }
 }
-@media only screen and (min-width: 1365px) {
+@media only screen and (min-width: 1364px) {
     .respondive_d{
         color: white !important;
         margin-left: 100px !important;
+        font-size: 13px;
     }
     .respondive_title{
         margin-left: 70px !important;

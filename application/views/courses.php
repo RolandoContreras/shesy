@@ -45,7 +45,7 @@
                     </span>
                 </li>
                 <li itemprop="itemListElement">
-                    <span itemprop="name" title="Contacto">Todos los Cursos</span>
+                    <span itemprop="name" title="Contacto" class="gold">Todos los Cursos</span>
                 </li>
               </ul>
             </div>
@@ -59,7 +59,7 @@
                   <div class=wpb_wrapper>
                     <div class="thim-sc-heading text-center layout-2 ">
                       <div class=heading-content>
-                        <h3 class="primary-heading text_gress">Cursos Populares</h3>
+                        <h3 class="gold primary-heading">Cursos Populares</h3>
                       </div>
                       <p class="secondary-heading text_gress"> Aprende todo lo que necesitas con nosotros, los cursos más cotizados del mercado aquí lo tendrás.</p>
                     </div>
