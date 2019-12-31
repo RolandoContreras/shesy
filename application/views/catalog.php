@@ -139,6 +139,6 @@
       <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='<?php echo site_url().'static/page_front/js/script/contact.js';?>'></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-      <script src="<?php echo site_url();?>static/page_front/js/script/cart.js"></script>
+      <script src="<?php echo site_url();?>static/page_front/js/script/cart_1.js"></script>
 </body>
 </html>
