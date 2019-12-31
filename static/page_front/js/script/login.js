@@ -28,6 +28,11 @@ function login(){
                        document.getElementById("captcha_messages").style.display = "none";
                        document.getElementById("messages").style.display = "block";
                        location.href = site + "backoffice";
+                   }else if(data.status == "true2"){
+                       document.getElementById("no_messages").style.display = "none";
+                       document.getElementById("captcha_messages").style.display = "none";
+                       document.getElementById("messages").style.display = "block";
+                       location.href = site + "catalogo/pay_order";
                    }else{
                        document.getElementById("captcha_messages").style.display = "none";
                        document.getElementById("no_messages").style.display = "block";

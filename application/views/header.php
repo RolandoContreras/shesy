@@ -120,9 +120,6 @@
                           <?php  } ?> 
                       </ul>
                   </li>
-                  
-                  
-                  
                   <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $contact_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'contact';?>" class="tc-menu-inner">Contacto</a>
                   </li>
@@ -133,6 +130,26 @@
                       <a href="<?php echo site_url().'login';?>" class="login">LOGIN</a>
                   </li>
             </ul>
+              <?php 
+        //count data cart
+        $cart = count($this->cart->contents());
+        if($cart > 0){ ?>
+              <a href="javascript:void(0);" onclick="validate_login();">
+              <div class="header-right">
+                  <div class="widget woocommerce widget_shopping_cart">
+                    <div class="minicart_hover green_yellow" id="header-mini-cart">
+                        <span class="cart-items-number">
+                            <span class="text">Carrito</span> 
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="wrapper-items-number">
+                            <span class="items-number">1</span></span>
+                      </span>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                </div>
+                  </a>
+              <?php } ?>  
           </div>
         </div>
       </div>

@@ -253,6 +253,33 @@ class Catalog extends CI_Controller {
             $this->load->view('catalog_detail',$data);
 	}
         
+        public function add_cart() {
+        
+        if($this->input->is_ajax_request()){   
+                //GET CUSTOMER_ID
+                $price = $this->input->post('price');
+                $catalog_id = $this->input->post('catalog_id');
+                $quantity = $this->input->post('quantity');
+                $name = $this->input->post('name');
+                
+                //ADD CART
+                $data = array(
+                        'id'      => $catalog_id,
+                        'qty'     => $quantity,
+                        'price'   => $price,
+                        'name'    => "$name",
+                );
+                $cart_id = $this->cart->insert($data);
+                
+                if(count($cart_id) > 0){
+                    $data['status'] = "true";
+                }else{
+                    $data['status'] = "false";
+                }
+               echo json_encode($data); 
+        }
+    }
+        
         public function nav_videos(){
             $params_category_videos = array(
                         "select" =>"category_id,

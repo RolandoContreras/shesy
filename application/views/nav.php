@@ -1,6 +1,21 @@
 <nav class="visible-xs mobile-menu-container mobile-effect">
       <div class=inner-off-canvas>
         <div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">Cerrar <i class="fa fa-times" aria-hidden=true></i></div>
+        <?php 
+        //count data cart
+        $cart = count($this->cart->contents());
+       if($cart > 0){ ?>
+        
+        <div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">
+            <div class="minicart_hover green_yellow" id="header-mini-cart">
+                        <span class="cart-items-number">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="wrapper-items-number">
+                            <span class="items-number">1</span></span>
+                      </span>
+                    </div>
+        </div>
+        <?php } ?>  
         <div class="thim-mobile-search-cart ">
           <div class="thim-search-wrapper hidden-lg-up">
           </div>
@@ -137,7 +152,13 @@
               <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                   <a href="<?php echo site_url().'login';?>" class=tc-menu-inner>Login</a>
               </li>
+              
         </ul>
+        <div class="header-right">
+                  <div class="widget woocommerce widget_shopping_cart">
+                    
+                  </div>
+                </div>
         <div class=off-canvas-widgetarea>
           <div class="widget widget_text">
             <div class=textwidget>

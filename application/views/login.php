@@ -68,7 +68,7 @@
                 </a>
             </div>
             <h4 class="auth-header">
-                OFICINA VIRTUAL
+                INICIAR SESIÓN
             </h4>
             <form class="form" action="javascript:void(0);">
                 <div class="form-group">
@@ -102,9 +102,10 @@
                     </div>
                 </div>  
                 <div class="buttons-w">
+                    <a href="<?php echo site_url().'register';?>" style="width: 100%; display: block; text-align: center;" class="link">¿Aún no tienes una cuenta?</a>
                     <button onclick="login();" class="btn btn-primary btn-lg btn-block">Iniciar Sesión</button><br/>
                     <a href="<?php echo site_url().'forget';?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
-                    <a href="<?php echo site_url();?>" style="width: 100%; display: block; text-align: center;" class="link">Volver Inicio</a>
+                    <a href="<?php echo site_url();?>" style="width: 100%; display: block; text-align: center;" class="link">Volver al Inicio</a>
                     <div style="margin-top:20px;">
                         <style>
                             .langselector img {

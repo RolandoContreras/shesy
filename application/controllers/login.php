@@ -17,7 +17,7 @@ class Login extends CI_Controller {
             header('Access-Control-Allow-Credentials: true');  
             header('Access-Control-Max-Age: 86400');   
         }
-
+        
             //GET DATA STRING
             $code = $this->input->post("code");
             $pass = $this->input->post("pass");
@@ -33,6 +33,9 @@ class Login extends CI_Controller {
                              "where" => "customer.username = '$code' and customer.password = '$pass' and customer.status_value = 1");
             
             $obj_customer_login = $this->obj_customer->total_records($params);
+            
+            
+            
             if ($obj_customer_login > 0){
                     $obj_customer = $this->obj_customer->get_search_row($params);
                     $data_customer_session['customer_id'] = $obj_customer->customer_id;
@@ -45,6 +48,14 @@ class Login extends CI_Controller {
                     $data_customer_session['status'] = $obj_customer->status_value;
                     $_SESSION['customer'] = $data_customer_session; 
                     $data['status'] = "true";
+                    
+                    //count data cart
+                    $cart = count($this->cart->contents());
+                    if($cart > 0){
+                        $data['status'] = "true2";
+                    }else{
+                        $data['status'] = "true";
+                    }
             }else{
                    $data['status'] = "false";
             }
@@ -83,6 +94,18 @@ class Login extends CI_Controller {
 
             echo json_encode($data); 
             exit(); 
+    }
+    
+    public function validate_cart(){
+        if($this->input->is_ajax_request()){
+            if(isset($_SESSION['customer'])){
+                $data['status'] = "true";
+            }else{
+                $data['status'] = "false";
+            }
+            echo json_encode($data); 
+            exit(); 
+        }
     }
     
      public function message($username, $pass, $name, $email){    

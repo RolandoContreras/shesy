@@ -74,6 +74,11 @@
                     </select>
                   </form>
                 </div>
+                  <div class="form-group has-feedback" style="display: none;" id="message_success">
+                    <div class="alert alert-success validation-errors">
+                        <p class="user_login_id" style="text-align: center;">Producto Agregado.</p>
+                    </div>
+                  </div>
                 <ul class="category-product product-grid archive_switch row">
                   <?php 
                   foreach ($obj_catalog  as $value) { ?>
@@ -90,9 +95,9 @@
                             <div class="title-product">
                                 <a href="<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>" class="product_name"><?php echo $value->name;?></a></div>
                                     <span class="price">
-                                         <span class="woocommerce-Price-amount amount"><?php echo format_number_moneda_soles($value->price);?></span>
+                                         <span class="woocommerce-Price-amount amount">$<?php echo $value->price;?></span>
                                     </span>
-                                <a href="#" data-quantity="1" data-product_sku="" class="button product_type_simple add_to_cart_button">Agregar al Carro</a>
+                            <a onclick="add_cart('<?php echo $value->catalog_id;?>','<?php echo $value->price;?>','<?php echo $value->name;?>');" class="button product_type_simple add_to_cart_button">Agregar al Carro</a>
                         </div>    
                         </div>
                     <div class=clear></div>
@@ -114,6 +119,7 @@
  <?php $this->load->view("footer_2");?>
     <!--END FOOTER-->
   </div>
+    
   <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
     <div class="gallery-slider-content"></div>
       <script>
@@ -133,5 +139,6 @@
       <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='<?php echo site_url().'static/page_front/js/script/contact.js';?>'></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+      <script src="<?php echo site_url();?>static/page_front/js/script/cart.js"></script>
 </body>
 </html>

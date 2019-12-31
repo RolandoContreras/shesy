@@ -88,7 +88,7 @@
                         </div>
                         <p class="price">
                             <span class="woocommerce-Price-amount amount">
-                                <?php echo format_number_moneda_soles($obj_catalog->price);?>
+                                <span class="badge badge-pill badge-info" style="font-size: 100%;">$<?php echo $obj_catalog->price;?></span>
                             </span>
                         </p>
                         <div class="description">
@@ -98,11 +98,13 @@
                             <div class="quantity">
                                 <input type="text" step="1" min="amount" name="amount" value="1" title="Cantidad" class="input-text qty text" size="4">
                             </div>
-                            <button type="submit" name="add-to-cart"  class="single_add_to_cart_button button alt">Agregar al Carrito</button>
+                            <button type="submit" name="add-to-cart" onclick="login_catalog();" class="single_add_to_cart_button button alt">Agregar al Carrito</button>
                         </form>
                         <div class="product_meta">
                             <span class="posted_in">
-                                Categoría: <a href='<?php echo site_url()."catalog/$obj_catalog->category_slug";?>' rel="categoría"><?php echo $obj_catalog->category_name;?></a>
+                                Categoría: <a href='<?php echo site_url()."catalog/$obj_catalog->category_slug";?>' rel="categoría">
+                                <span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $obj_catalog->category_name;?></span>
+                                </a>
                             </span>
                         </div>
                       </div>
@@ -135,7 +137,7 @@
                                   <div class="title-product">
                                       <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>' class=product_name><?php echo $value->name;?></a></div>
                                   <span class=price>
-                                      <span class="woocommerce-Price-amount amount"><?php echo format_number_moneda_soles($value->price);?></span>
+                                      <span class="woocommerce-Price-amount amount">$<?php echo $value->price;?></span>
                                   </span>
                                 </div>
                               </div>
@@ -167,6 +169,7 @@
   <script>
     lazySizes.init();
   </script>
+  <script src='<?php echo site_url().'static/page_front/js/script/login_catalog.js';?>'></script>
   <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
   <script>
     WebFont.load({google:{families:['Roboto:400,300']}});

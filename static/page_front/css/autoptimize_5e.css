@@ -15,7 +15,7 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-fill-mode: none;
-    animation-play-state: running
+    animation-play-state: runninga
 }
 .course-wishlist.heartbeat.ajaxload {
     animation-duration: .3s;

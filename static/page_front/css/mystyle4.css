@@ -63,6 +63,15 @@ footer#colophon.dark {
 .gold{
     color: #b8860b !important;
 }
+.product-info .right .cart .single_add_to_cart_button:hover, .product-info .right .cart .single_add_to_cart_button:focus, .product-info .right .cart .single_add_to_cart_button:active {
+    background: #b8860b !important;
+}
+.product-info .right .cart .single_add_to_cart_button {
+    background: #b8860b !important;
+}
+.green_yellow{
+    color:green !important;
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     
