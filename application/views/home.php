@@ -116,6 +116,29 @@
                       <a href="<?php echo site_url().'login';?>" class="login">LOGIN</a>
                   </li>
             </ul>
+        <?php 
+        //count data cart
+        $cart = count($this->cart->contents());
+        if($cart > 0){ ?>
+              <a href="javascript:void(0);" onclick="validate_login();">
+              <div class="header-right">
+                  <div class="widget woocommerce widget_shopping_cart">
+                    <div class="minicart_hover green_yellow" id="header-mini-cart">
+                        <span class="cart-items-number">
+                            <span class="text">Carrito</span> 
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="wrapper-items-number">
+                            <span class="items-number"><?php echo $cart;?></span></span>
+                      </span>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                  <div class="widget_shopping_cart_content" style="display: none; height: 67px; padding-top: 10px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                    <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
+                  </div>
+                </div>
+                  </a>
+              <?php } ?> 
           </div>
         </div>
       </div>
@@ -503,5 +526,6 @@
         WebFont.load({google:{families:['Roboto:400,300']}});
       </script>
       <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
+      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </body>
 </html>

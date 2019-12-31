@@ -11,7 +11,7 @@
                         <span class="cart-items-number">
                             <i class="fas fa-shopping-cart"></i>
                             <span class="wrapper-items-number">
-                            <span class="items-number">1</span></span>
+                            <span class="items-number"><?php echo $cart;?></span></span>
                       </span>
                     </div>
         </div>

@@ -94,11 +94,11 @@
                         <div class="description">
                           <p><?php echo $obj_catalog->summary;?></p>
                         </div>
-                        <form class="cart" action="" method="post" enctype="multipart/form-data">
+                        <form class="cart" method="post" action="javascript:void(0);">
                             <div class="quantity">
-                                <input type="text" step="1" min="amount" name="amount" value="1" title="Cantidad" class="input-text qty text" size="4">
+                                <input type="text" name="quantity" id="quantity" value="1" title="Cantidad" class="input-text qty text" size="4">
                             </div>
-                            <button type="submit" name="add-to-cart" onclick="login_catalog();" class="single_add_to_cart_button button alt">Agregar al Carrito</button>
+                            <button onclick="add_cart_number('<?php echo $obj_catalog->catalog_id;?>','<?php echo $obj_catalog->price;?>','<?php echo $obj_catalog->name;?>');" class="single_add_to_cart_button button alt">Agregar al Carrito</button>
                         </form>
                         <div class="product_meta">
                             <span class="posted_in">
@@ -107,7 +107,21 @@
                                 </a>
                             </span>
                         </div>
+                        <br/>
+                        <div class="form-group has-feedback" style="display: none;" id="message_success">
+                            <div class="alert alert-success validation-errors">
+                                <p class="user_login_id" style="text-align: center;">Producto Agregado.</p>
+                            </div>
+                          </div>
+                        <div class="form-group has-feedback" style="display: none;" id="quantity_error">
+                            <div class="alert alert-danger validation-errors">
+                                <p class="user_login_id" style="text-align: center;">Cantidad Invalida.</p>
+                            </div>
+                          </div>
                       </div>
+                        
+                        
+                        
                     </div>
                     <div class="woocommerce-tabs wc-tabs-wrapper">
                       <ul class="tabs wc-tabs" role=tablist>
@@ -169,7 +183,7 @@
   <script>
     lazySizes.init();
   </script>
-  <script src='<?php echo site_url().'static/page_front/js/script/login_catalog.js';?>'></script>
+  <script src="<?php echo site_url();?>static/page_front/js/script/cart.js"></script>
   <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
   <script>
     WebFont.load({google:{families:['Roboto:400,300']}});

@@ -263,16 +263,20 @@ class Catalog extends CI_Controller {
                 $name = $this->input->post('name');
                 
                 //ADD CART
-                $data = array(
+                if($quantity > 0){
+                    $data = array(
                         'id'      => $catalog_id,
                         'qty'     => $quantity,
                         'price'   => $price,
                         'name'    => "$name",
-                );
-                $cart_id = $this->cart->insert($data);
-                
-                if(count($cart_id) > 0){
-                    $data['status'] = "true";
+                    );
+                    $cart_id = $this->cart->insert($data);
+
+                    if(count($cart_id) > 0){
+                        $data['status'] = "true";
+                    }else{
+                        $data['status'] = "false";
+                    }
                 }else{
                     $data['status'] = "false";
                 }

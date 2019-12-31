@@ -142,10 +142,13 @@
                             <span class="text">Carrito</span> 
                             <i class="fas fa-shopping-cart"></i>
                             <span class="wrapper-items-number">
-                            <span class="items-number">1</span></span>
+                            <span class="items-number"><?php echo $cart;?></span></span>
                       </span>
                       <div class="clear"></div>
                     </div>
+                  </div>
+                  <div class="widget_shopping_cart_content" style="display: none; height: 67px; padding-top: 10px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                    <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
                   </div>
                 </div>
                   </a>
