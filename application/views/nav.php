@@ -5,16 +5,17 @@
         //count data cart
         $cart = count($this->cart->contents());
        if($cart > 0){ ?>
-        
-        <div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">
-            <div class="minicart_hover green_yellow" id="header-mini-cart">
-                        <span class="cart-items-number">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="wrapper-items-number">
-                            <span class="items-number"><?php echo $cart;?></span></span>
-                      </span>
-                    </div>
-        </div>
+            <a href="javascript:void(0);" onclick="validate_login();">|
+            <div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">
+                <div class="minicart_hover green_yellow" id="header-mini-cart">
+                    <span class="cart-items-number">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="wrapper-items-number">
+                        <span class="items-number"><?php echo $cart;?></span></span>
+                  </span>
+                </div>
+            </div>
+          </a>
         <?php } ?>  
         <div class="thim-mobile-search-cart ">
           <div class="thim-search-wrapper hidden-lg-up">

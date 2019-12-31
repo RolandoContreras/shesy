@@ -40,6 +40,25 @@ footer#colophon.dark .footer .widget-title::after {
 .thim-course-top .lpr_course-switch a.switcher-active, .thim-course-top .lpr_course-switch a:hover {
     background-color: #b8860b !important;
 }
+.page-title .breadcrumb-content .learn-press-course-buttons button, .page-title .main-top .learn-press-course-buttons button{
+    background:  #b8860b !important;
+}
+.page-title .breadcrumb-content .learn-press-course-buttons button:hover, .page-title .main-top .learn-press-course-buttons button:hover {
+    background:  #b8860b !important;
+}
+
+#lp-single-course .course-summary .landing-1 .course-landing-summary .course-curriculum .curriculum-sections .section .section-content .course-item .course-item-meta .lp-label{
+    background:  #b8860b !important;
+    border-color: #b8860b !important;
+}
+
+#learn-press-course-curriculum .section-header .step, #learn-press-course-curriculum .section-header .collapse, .lp-landing.learnpress-v3:not(.course-item-popup) #learn-press-course-curriculum .curriculum-sections .section .section-content .course-item:hover .section-item-link {
+    color: #b8860b !important;
+}
+body.learnpress-v3 .course-curriculum ul.curriculum-sections .section-content .course-format-icon {
+    color: #b8860b !important;
+}
+
 .black{
     color:black !important;
 }

@@ -154,7 +154,7 @@ class Courses extends CI_Controller {
             
             $data['obj_category_videos'] = $this->nav_videos();
             $data['obj_category_catalog'] = $this->nav_catalogo();
-             
+            
              //get data catalog
             $params_categogory_id = array(
                         "select" =>"category_id",

@@ -48,19 +48,6 @@
                   <div id=product-1693 class="post-1693 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary pmpro-has-access first instock shipping-taxable purchasable product-type-simple">
                     <div class="product-info row">
                       <div class="col-sm-5 left image-panel">
-                        <div id=slider class=flexslider>
-                          <ul class="slides images">
-                            <li class="main_product_thumbnai woocommerce-product-gallery__image">
-                                <img width="400" height="400" alt='<?php echo $obj_catalog->name;?>' title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src='<?php echo site_url()."static/catalog/$obj_catalog->img";?>' class="attachment-shop_single size-shop_single wp-post-image lazyload">
-                            </li>
-                            <li class="main_product_thumbnai woocommerce-product-gallery__image">
-                                <img width="400" height="400" alt='<?php echo $obj_catalog->name;?>' title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img2";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img2";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src='<?php echo site_url()."static/catalog/$obj_catalog->img2";?>' class="attachment-shop_single size-shop_single wp-post-image lazyload">
-                            </li>
-                            <li class="main_product_thumbnai woocommerce-product-gallery__image">
-                                <img width="400" height="400" alt='<?php echo $obj_catalog->name;?>' title="<?php echo $obj_catalog->name;?>" data-srcset='<?php echo site_url()."static/catalog/$obj_catalog->img3";?> 600w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 150w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 300w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 355w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 100w, <?php echo site_url()."static/catalog/$obj_catalog->img3";?> 400w' sizes="(max-width: 600px) 100vw, 600px" data-src='<?php echo site_url()."static/catalog/$obj_catalog->img3";?>' class="attachment-shop_single size-shop_single wp-post-image lazyload">
-                            </li>
-                          </ul>
-                        </div>
                         <div id="carousel" class="flexslider">
                           <ul class="slides flex-control-nav">
                             <li>
@@ -119,9 +106,6 @@
                             </div>
                           </div>
                       </div>
-                        
-                        
-                        
                     </div>
                     <div class="woocommerce-tabs wc-tabs-wrapper">
                       <ul class="tabs wc-tabs" role=tablist>
@@ -153,6 +137,7 @@
                                   <span class=price>
                                       <span class="woocommerce-Price-amount amount">$<?php echo $value->price;?></span>
                                   </span>
+                                    <a onclick="add_cart('<?php echo $value->catalog_id;?>','<?php echo $value->price;?>','<?php echo $value->name;?>');" class="button product_type_simple add_to_cart_button">Agregar al Carro</a>
                                 </div>
                               </div>
                               <div class=clear></div>

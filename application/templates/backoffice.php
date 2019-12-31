@@ -80,18 +80,22 @@ window.smartsupp||(function(d) {
         <div class="menu-and-user">
           <ul class="main-menu" style="background: #4a3116;">
             <li>
-              <a href="<?php echo site_url().'course';?>" target="_blank">
+            <center>
+              <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
                 <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
-                  <span>Plataforma de Cursos</span>                
-              </div>
+                      <span>Plataforma de Cursos</span>                
+                  </div>
               </a>
+             </center>
             </li>
             <li>
-                <a href="<?php echo site_url().'catalogo';?>" target="_blank">
+            <center>
+                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-secondary">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                       <span>Catalogo de productos</span>                
                   </div>
                 </a>
+                </center>
              </li>
             <li>
               <a href="<?php echo site_url().'backoffice';?>" class="active" style="margin-top:30px;">
@@ -177,7 +181,7 @@ window.smartsupp||(function(d) {
         </div>
         <ul class="main-menu">
                 <li>
-                    <a href="<?php echo site_url().'course';?>" target="_blank">
+                    <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
                       <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                           <span>Plataforma de Cursos</span>                
                       </div>
@@ -185,7 +189,7 @@ window.smartsupp||(function(d) {
                  </li>
                  <hr/>
                  <li>
-                <a href="<?php echo site_url().'catalogo';?>" target="_blank">
+                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-secondary">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                       <span>Catalogo de productos</span>                
                   </div>

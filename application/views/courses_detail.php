@@ -50,12 +50,12 @@
                         <div class=course-info>
                           <ul class="list-inline clearfix">
                               <li class="list-inline-item item-categories">
-                                  <label>Título</label>
-                                    <span class=cat-links>Has crecer tu marca personal</span>
+                                  <label class="gold">Título</label>
+                                    <span class="cat-links gold">Has crecer tu marca personal</span>
                               </li>
                               <li class="list-inline-item item-categories">
                                   <label>Categoría</label>
-                                  <span class=cat-links>Desarrollo Personal</span>
+                                  <span class="cat-links">Desarrollo Personal</span>
                               </li>
                         
                           </ul>
@@ -91,7 +91,7 @@
                           <div class="title">
                             <h2 class="course-curriculum-title">Contenido del Curso</h2>
                           </div>
-                            <span class="total-lessons">Total vídeos: <span class="text"><?php $total;?> Videos</span></span>
+                            <span class="total-lessons">Total vídeos: <span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $total;?></span></span>
                         </div>
                         <ul class=curriculum-sections>
                           <li class=section id=section-228>
@@ -110,12 +110,24 @@
                                           <span class=label>Título</span>
                                       </div>
                                     </div>
-                                      <a class=section-item-link href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>'>
-                                        <span class="item-name"><?php echo $value->name;?></span>
-                                        <span class="course-item-meta">
-                                            <span class="lp-label lp-label-preview">Vista previa</span>
-                                        </span>
-                                      </a>
+                                     <?php
+                                        if($value->type == 2){ ?>   
+                                        <a class=section-item-link href='<?php echo site_url().'login';?>'>
+                                                    <span class="item-name"><?php echo $value->name;?></span>
+                                                            <div class="meta-rank"><div class="rank"><span class="label">Iniciar Sesión</span></div></div>
+                                                    <span class="course-item-meta">
+                                                        <span class="lp-label lp-label-preview">Vista previa</span>
+                                                    </span>
+                                                </a>
+                                     <?php }else{ ?>
+                                            <a class=section-item-link href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>'>
+                                                <span class="item-name"><?php echo $value->name;?></span>
+                                                <span class="course-item-meta">
+                                                    <span class="lp-label lp-label-preview">Vista previa</span>
+                                                </span>
+                                            </a>
+                                     <?php } ?>   
+                                      
                                   </li>
                               <?php } ?>
                             </ul>
@@ -190,5 +202,6 @@
       <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='<?php echo site_url().'static/page_front/js/script/contact.js';?>'></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+      <script src='<?php echo site_url().'static/page_front/js/script/login_course.js';?>'></script>
 </body>
 </html>
