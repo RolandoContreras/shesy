@@ -59,8 +59,8 @@
                                         <span class="badge badge-pill badge-success" style="font-size: 100%;">$<?php echo $this->cart->format_number($items['subtotal']); ?></span>
                                     </th>
                                     <th>
-                                        <button type="button" class="btn btn-primary" onclick="update_order('<?php echo $items['rowid'];?>');"><i data-feather="rotate-cw"></i> Actualizar</button>
-                                        <button type="button" class="btn btn-danger" onclick="delete_order('<?php echo $items['rowid'];?>');"><i data-feather="trash-2"></i> Eliminar</button>
+                                        <button type="button" onclick="update_order('<?php echo $items['rowid'];?>');" class="btn btn-icon btn-rounded btn-outline-success"><i data-feather="rotate-cw"></i></button>
+                                        <button type="button" onclick="delete_order('<?php echo $items['rowid'];?>');" class="btn btn-icon btn-rounded btn-outline-danger"><i data-feather="trash-2"></i></button>
                                     </th>
                                 </tr>
                             <?php endforeach;?>
@@ -94,20 +94,16 @@
                                   <div class="col-sm-12">
                                     <div class="card">
                                       <div class="card-header">
-                                        <h5>Tipos de Pagos</h5>
+                                        <h5>Pago</h5>
                                       </div>
                                     </div>
                                   </div>
                                 <div class="col-sm-12">
-                                    <div class="card theme-bg2 visitor">
+                                    <!--<div class="card theme-bg2 visitor">-->
                                       <div class="card-block text-center">
-                                          <img class="img-female" src="<?php echo site_url().'static/page_front/images/visa-background.png';?>" alt="visitor-user">
-                                            <h5 class="text-white m-0">Pagar con Pago Efectivo</h5>
-                                            <img width="100" src="<?php echo site_url().'static/page_front/images/pagoefectivo.png';?>" alt="visitor-user"><br/>
                                             <button type="button" class="btn btn-primary" onclick="process_pay_invoice();"><i data-feather="dollar-sign"></i> Pagar</button>                                            
                                       </div>
-                                    </div>
-                                    
+<!--                                    </div>-->
                                   </div>
                             </div>
                             <div class="form-group has-feedback" style="display: none;" id="pay_success_2">
@@ -115,7 +111,6 @@
                                     <p class="user_login_id" style="text-align: center;">Pedido pagado con éxito en unos minutos estamos procesando su compra.</p>
                                 </div>
                             </div>
-                          
                       </div>
                     </div>
                   </div>

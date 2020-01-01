@@ -153,7 +153,10 @@
                       <a href="<?php echo site_url().'catalogo/pay_order';?>">
                           <span class="btn-glow-dark theme-bg" title="Pagar Compra" data-toggle="tooltip" data-placement="bottom" data-original-title="Pagar Compra" style="padding: 10px;border-radius: 10px;">
                               <i data-feather="shopping-cart" style="color: white;"></i>
+                              <span class="wrapper-items-number">
+                                        <span class="items-number"><?php echo $cart;?></span></span>
                           </span>
+                          
                       </a>
                   </div>
                 </li>
