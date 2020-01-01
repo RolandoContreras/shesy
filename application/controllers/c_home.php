@@ -67,6 +67,9 @@ class C_home extends CI_Controller {
             $obj_videos = $this->obj_videos->search_data($params, $config["per_page"],$this->uri->segment(2));
         //GET DATA FROM CUSTOMER
         
+            
+            
+        $this->tmp_course->set("kid_id",$kid_id);
         $this->tmp_course->set("category_name",$category_name);
         $this->tmp_course->set("obj_pagination",$obj_pagination);
         $this->tmp_course->set("obj_category_videos",$obj_category_videos);
@@ -131,6 +134,7 @@ class C_home extends CI_Controller {
             //send total row
            
             //SEND DATA
+            $this->tmp_course->set("kid_id",$kid_id);
             $this->tmp_course->set("category_name",$category_name);
             $this->tmp_course->set("obj_pagination",$obj_pagination);
             $this->tmp_course->set("obj_category_videos",$obj_category_videos);

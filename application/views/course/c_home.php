@@ -21,7 +21,17 @@
             <div class="page-wrapper">
               <div class="row">
                 <div class="col-sm-12">
-                    
+                    <?php 
+                    if($kid_id < 1){ ?>
+                        <div class="card">
+                        <div class="card-block">
+                          <div class="alert alert-success alert-dismissible fade show" role="alert">
+                              ¿Desea ver todo el contenido completo? Entonces adquiera un pack <a href="<?php echo site_url().'backoffice/plan';?>">Clic Aquí</a> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        </div>  
+                        </div>
+                      </div>
+                    <?php } ?>
                     <div class="card">
                       <div class="card-header">
                         <h5><?php echo $category_name;?></h5>
