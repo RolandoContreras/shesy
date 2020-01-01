@@ -20,15 +20,8 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/shesy/application/views/courses_detail.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_detail.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/catalog_detail.php</file>
-            <file>file:/C:/wamp64/www/shesy/static/page_front/css/mystyle6.css</file>
-            <file>file:/C:/wamp64/www/shesy/application/templates/backoffice.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/courses.php</file>
-            <file>file:/C:/wamp64/www/shesy/static/page_front/css/automatize_change1.css</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/head.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/nav.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/templates/template_catalog.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_pay_order.php</file>
         </group>
     </open-files>
 </project-private>

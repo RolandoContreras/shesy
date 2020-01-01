@@ -4,10 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
   <meta name="author" content="Corporation FK">
-  <meta name="keyword" content="Cultura Fk, fk, Fk embajadores, Fk social, Fk corporación, mlm, mmn">
+  <meta name="keyword" content="Cultura Fk, fk, Fk embajadores, Fk social, Fk corporación, mlm, mmn, culturafk.com">
   <meta name="robots" content="Index, Follow">
   <link type="text/css" media="all" href="<?php echo site_url().'static/page_front/css/autoptimize_67.css';?>" rel="stylesheet">
-  <link rel="stylesheet" id="dashicons-css" href="<?php echo site_url().'static/page_front/css/autoptimize_5e.css';?>" type="text/css" media="all">
+  <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/autoptimize_5e.css';?>" type="text/css" media="all">
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-60x60.png';?>">
@@ -30,7 +30,7 @@
   <style media="print">
     @media print{.pmpro_a-print{display:none;position:absolute;left:-9999px}}
   </style>
-  <link rel="stylesheet" id="dashicons-css" href="<?php echo site_url().'static/page_front/css/dashicons.min.css';?>" type="text/css" media="all">
+  <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/dashicons.min.css';?>" type="text/css" media="all">
   <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/mystyle6.css';?>" type="text/css" media="all">
   <!--[if lt IE 9]><linkrel=stylesheet id=vc_lte_ie9-css href=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css type=text/css media=screen><![endif]-->
   <link rel="stylesheet" id="thim-style-options-css" href="<?php echo site_url().'static/page_front/css/automatize_change1.css';?>" type="text/css" media="all">

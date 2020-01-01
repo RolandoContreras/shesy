@@ -22,24 +22,24 @@
           </div>
           <div class="width-logo">
               <a class="no-sticky-logo" href="<?php echo site_url();?>" title="Logo FK" rel="home">
-                <img alt="Logo FK" width="70" height="45" data-src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo lazyload">
-                <img  alt="Logo FK" width="291" height="100" data-src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo lazyload">
-                <img alt="Logo FK" width="131" height="45" data-src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="mobile-logo lazyload">
+                <img alt="Logo FK" width="70" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo lazyload">
+                <img  alt="Logo FK" width="291" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo lazyload">
+                <img alt="Logo FK" width="131" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="mobile-logo lazyload">
               </a>
             <a href="<?php echo site_url();?>" title="Logo FK" rel="home" class="sticky-logo">
-                <img alt="Logo FK" width="70" height="30" data-src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="lazyload">
-                <img alt="Logo FK" width="695" height="100" data-src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo-sticky lazyload">
+                <img alt="Logo FK" width="70" height="30" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="lazyload">
+                <img alt="Logo FK" width="695" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo-sticky lazyload">
             </a>
           </div>
           <div class="width-navigation">
             <ul id="primary-menu" class="main-menu">
-                <li id=menu-item-22 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url();?>" class="tc-menu-inner">Inicio</a>
                 </li>
-                <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'about';?>" class="tc-menu-inner">Acerca</a>
                 </li>
-                <li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
                     <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Cursos</a>
                   <div class='tc-megamenu-wrapper tc-megamenu-holder mega-sub-menu sub-menu'>
                     <p>
@@ -51,13 +51,13 @@
                                 <div class="widget widget_nav_menu">
                                   <h2 class="widgettitle">Acerca de Cursos</h2>
                                   <div class="menu-mega-menu-container">
-                                    <ul id="menu-mega-menu" class="menu">
-                                          <li id="menu-item-4117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                    <ul class="menu">
+                                          <li class="menu-item menu-item-type-post_type menu-item-object-page tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                               <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Todos los Cursos</a>
                                           </li>
                                           <?php 
                                               foreach ($obj_category_videos as $value) { ?>
-                                                    <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-lp_course tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                                       <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
                                                     </li>
                                         <?php } ?>
@@ -74,9 +74,9 @@
                         <div class="thim-courses-megamenu row">
                           <div class="course-item col-sm-12">
                             <div class="feature-img">
-                                <img width="300" height="300" alt="Cursos Gratuitos" data-src="<?php echo site_url().'static/page_front/images/cursos_gratuitos.jpg';?>" class="lazyload">
+                                <img width="300" height="300" alt="Cursos Gratuitos" src="<?php echo site_url().'static/page_front/images/cursos_gratuitos.jpg';?>" class="lazyload">
                             </div>
-                            <div class=course-detail>
+                            <div class="course-detail">
                               <h3 class="title">
                                   <a href="<?php echo site_url().'register';?>">Prueba nuestros cursos gratuitos</a>
                               </h3>
@@ -90,15 +90,15 @@
                   </div>
                   </div>
                   </li>
-                  <li id="menu-item-3813" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3813 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3813 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'catalog';?>" class="tc-menu-inner">Catalogo</a>
                       <ul class="sub-menu" style="display: none;">
-                          <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
+                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
                                 <a href='<?php echo site_url()."catalog";?>' class="tc-menu-inner tc-megamenu-title">Todos los Productos</a>
                           </li>
                           <?php 
                           foreach ($obj_category_catalog as $value) { ?>
-                            <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
                                 <a href='<?php echo site_url()."catalog/$value->slug";?>' class="tc-menu-inner tc-megamenu-title"><?php echo  $value->name;?></a>
                             </li>
                           <?php  } ?> 
@@ -106,13 +106,13 @@
                   </li>
                   
                   
-                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'contact';?>" class="tc-menu-inner">Contacto</a>
                   </li>
-                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'register';?>" class="login">REGISTRO</a>
                   </li>
-                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'login';?>" class="login">LOGIN</a>
                   </li>
             </ul>
@@ -132,9 +132,6 @@
                       </span>
                       <div class="clear"></div>
                     </div>
-                  </div>
-                  <div class="widget_shopping_cart_content" style="display: none; height: 67px; padding-top: 10px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
-                    <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
                   </div>
                 </div>
                   </a>
@@ -168,41 +165,41 @@
                 </div>
                 
                 <div class="thim-sc-image-box left">
-                            <section id="title2">
-                                  <div class="">
-                                      <div class="thim-sc-steps layout-4">
-                                        <div class="sc-steps-wrapper border-radius-30" style="background-image: url(<?php echo site_url().'static/page_front/images/layer_1.jpg';?>);">
-                                            <div class="inner-steps-wrapper border-radius-30">
-                                            <div class="container">
-                                              <div class="row">
-                                                  <div class="col-lg-6 media-box">
-                                                  <div class="player-wrapper respondive_c">
-                                                    <div class="player-inner">
-                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                                                    </div>
-                                                  </div>
-                                                  <div class="icon-play"></div>
-                                                </div>
-                                                <div class="col-lg-6 content-box">
-                                                    <center>
-                                                    <div class=steps-wrapper style="">
-                                                      <h3 class="sc-title respondive_title" style="text-align:center !important;">¿Qué es la cultura FK?</h3>
-                                                      <p class="description respondive_d">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
-                                                      <p class="description respondive_d div_hide">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
-                                                      
-                                                    <div>
-                                                        
-                                                    </div>
-                                                  </div>
-                                                  </center>
-                                                </div>
-                                              </div>
+                    <section id="title2">
+                          <div class="">
+                              <div class="thim-sc-steps layout-4">
+                                <div class="sc-steps-wrapper border-radius-30" style="background-image: url(<?php echo site_url().'static/page_front/images/layer_1.jpg';?>);">
+                                    <div class="inner-steps-wrapper border-radius-30">
+                                    <div class="container">
+                                      <div class="row">
+                                          <div class="col-lg-6 media-box">
+                                          <div class="player-wrapper respondive_c">
+                                            <div class="player-inner">
+                                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" allowfullscreen></iframe>
                                             </div>
                                           </div>
+                                          <div class="icon-play"></div>
+                                        </div>
+                                        <div class="col-lg-6 content-box">
+                                            <center>
+                                            <div class=steps-wrapper style="">
+                                              <h3 class="sc-title respondive_title" style="text-align:center !important;">¿Qué es la cultura FK?</h3>
+                                              <p class="description respondive_d">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
+                                              <p class="description respondive_d div_hide">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
+
+                                            <div>
+
+                                            </div>
+                                          </div>
+                                          </center>
                                         </div>
                                       </div>
                                     </div>
-                            </section>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                    </section>
                     <div class="vc_empty_space" style="height: 48px"><span class="vc_empty_space_inner"></span></div>
                           </div>
                 <div class="thim-sc-course-search ">
@@ -215,8 +212,6 @@
                     </div><span class=widget-search-close></span>
                     <ul class="courses-list-search list-unstyled"></ul>
                 </div>
-                
-                <!--STAR WELCOME-->
                 <div class="vc_row wpb_row vc_inner vc_row-fluid list-iconbox">
                   <div class="wpb_column vc_column_container vc_col-sm-12">
                     <div class=vc_column-inner>
@@ -266,7 +261,6 @@
                     </div>
                   </div>
                 </div>
-                <!--END WELCOME-->
                 <div class="thim-sc-scroll-heading next-screen">
                   <div class=title data-scroll-to=#next-screen data-scroll-speed=700 data-scroll-offset>
                     <div class=text>Next</div>
@@ -276,12 +270,11 @@
             </div>
           </div>
         </div>
-        <div class="vc_row-full-width vc_clearfix"></div>
-        <div id="next-screen" class="vc_row-full-width vc_clearfix"></div>
+    <div class="vc_row-full-width vc_clearfix"></div>
+     <div id="next-screen" class="vc_row-full-width vc_clearfix"></div>
       <div data-vc-full-width="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding">
         <div class="wpb_column vc_column_container vc_col-sm-12">
           <div class="">
-              <!--STAR ACERCA--->
               <div class="wpb_wrapper">
                   <div class="thim-sc-steps layout-4" style="padding:0px !important;">
                       <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/fondo-abstracto.jpg';?>); ">
@@ -305,7 +298,7 @@
                           <div class="col-lg-6 media-box">
                           <div class="player-wrapper">
                             <div class="player-inner">
-                                <iframe width="640" height="275" autoplay="false"  src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" allowfullscreen></iframe>
                             </div>
                           </div>
                           <div class="icon-play"></div>
@@ -316,7 +309,6 @@
                 </div>
               </div>
             </div>
-            <!--END ACERCA---->
             <div class=wpb_wrapper>
               <div class="thim-sc-steps layout-3">
                 <div class=container>
@@ -326,19 +318,19 @@
                         <h3 class="sc-title">Conviértete en parte de nuestra cultura</h3>
                         <div class=steps>
                           <ul class="nav" role="tablist">
-                            <li class="nav-item active" data-toggle="tab" href="#thim_5def1b33677ed-step-0" role="tab">
+                            <li class="nav-item active" data-toggle="tab" href="#step-0" role="tab">
                                 <a class=nav-link>1<span>paso</span></a>
                                 <p class=tab-title>Crea tu registro gratis</p>
                             </li>
-                            <li class="nav-item " data-toggle="tab" href="#thim_5def1b33677ed-step-2" role="tab">
+                            <li class="nav-item " data-toggle="tab" href="#step-2" role="tab">
                                 <a class="nav-link">2<span>paso</span></a>
                                 <p class="tab-title">Aprende con nosotros</p>
                             </li>
-                            <li class="nav-item " data-toggle="tab" href="#thim_5def1b33677ed-step-3" role="tab">
+                            <li class="nav-item " data-toggle="tab" href="#step-3" role="tab">
                                 <a class=nav-link>3<span>paso</span></a>
                               <p class=tab-title>Comparte la información</p>
                             </li>
-                            <li class="nav-item" data-toggle="tab" href="#thim_5def1b33677ed-step-4" role="tab">
+                            <li class="nav-item" data-toggle="tab" href="#step-4" role="tab">
                                 <a class="nav-link">4<span>paso</span></a>
                                 <p class="tab-title">Recibe una recompensa</p>
                             </li>
@@ -355,22 +347,25 @@
                       <div class=steps-wrapper>
                         <div class=steps>
                           <div class=tab-content>
-                            <div class="tab-pane active" id="thim_5def1b33677ed-step-0" role="tabpanel">
+                            <div class="tab-pane active" id="step-0" role="tabpanel">
                               <h4 class="tab-title">Crea tu registro gratis</h4>
                               <p class=description>Ve la pestaña registro, completa tus datos y el sistema te creará un usuario gratuitamente para que seas un nuevo socio.</p>
                               <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
                             </div>
-                            <div class="tab-pane" id="thim_5def1b33677ed-step-2" role="tabpanel">
+                            <div class="tab-pane" id="step-2" role="tabpanel">
                               <h4 class="tab-title">Aprende con nosotros</h4>
                               <p class=description>Participaran de la plataforma educativa Online que tenemos y podrás especializarte en el área que deseas desde la comodidad de tu hogar.</p>
+                              <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
                             </div>
-                            <div class="tab-pane" id="thim_5def1b33677ed-step-3" role="tabpanel">
+                            <div class="tab-pane" id="step-3" role="tabpanel">
                               <h4 class="tab-title">Comparte la información</h4>
                               <p class=description>Al compartir la información con tus amigos ganarás puntos que luego lo vas a poder canjear por dinero en efectivo.</p>
+                              <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
                             </div>
-                            <div class="tab-pane" id="thim_5def1b33677ed-step-4" role="tabpanel">
+                            <div class="tab-pane" id="step-4" role="tabpanel">
                               <h4 class="tab-title">Recibe una recompensa</h4>
                               <p class=description>La corporación FK ha creado un plan de compensación para todos los socios que quieran compartir el negocio, convirtiéndose en un empresario con nosotros.</p>
+                              <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
                             </div>
                           </div>
                         </div>
@@ -397,7 +392,7 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <img alt="group-4" data-src="<?php echo site_url().'static/page_front/images/layer_person.png';?>" class="lazyload" style="margin-top: -14%;">
+                      <img alt="group-4" src="<?php echo site_url().'static/page_front/images/layer_person.png';?>" class="lazyload" style="margin-top: -14%;">
                     </div>
                     <div class="col-md-6">
                       <div class=steps-wrapper>
@@ -424,11 +419,10 @@
         </div>
       </div>
       <div class="vc_row-full-width vc_clearfix"></div>
-       <div id="next-screen" class="vc_row wpb_row vc_row-fluid thim-bg-top-center vc_custom_1502099498895 vc_row-has-fill vc_column-gap-10">
+       <div class="vc_row wpb_row vc_row-fluid thim-bg-top-center vc_custom_1502099498895 vc_row-has-fill vc_column-gap-10">
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class="vc_column-inner">
               <div class="wpb_wrapper">
-                <!--START CURSOS-->
                 <div class="thim-courses-collection-wrapper">
                   <div class="thim-collection-info rounded-colection-info">
                     <h3 class="title">¡Nuestros Cursos! Te Ayudamos a hacer crecer tu vida.</h3>
@@ -436,11 +430,10 @@
                   <div class="thim-courses-collection rounded-courses-collection">
                     <div class="collection-frame">
                       <ul class="slidee">
-                         
                         <?php 
                         foreach ($courses as $value) { ?>
                             <li class="collection-item">
-                                <img width="338" height="300" alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
+                                <img width="338" height="300" alt="<?php echo $value->name;?>" src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
                                 <a class="collection-wrapper" href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>'>
                                   <h4 class="name"><?php echo $value->name;?></h4>
                                   <div class="number-courses" style="padding:10px;"><?php echo corta_texto($value->summary,60);?></div>
@@ -454,24 +447,20 @@
                       <a href="<?php echo site_url().'courses';?>">Ver todos los cursos</a>
                   </div>
                 </div>
-                <!--END CURSOS-->
-              <div class=vc_empty_space style="height: 60px"><span class=vc_empty_space_inner></span></div>
+              <div class="vc_empty_space" style="height: 60px"><span class=vc_empty_space_inner></span></div>
             </div>
           </div>
         </div>
       </div>
-      
-      
-      <!--START CATALOGO-->
       <div class="vc_row wpb_row vc_row-fluid">
         <div class="wpb_column vc_column_container vc_col-sm-12">
-          <div class=vc_column-inner>
-            <div class=wpb_wrapper>
-              <div class=vc_empty_space style="height: 66px"><span class=vc_empty_space_inner></span></div>
-              <div class=thim-courses-block-2>
+          <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+              <div class="vc_empty_space" style="height: 66px"><span class="vc_empty_space_inner"></span></div>
+              <div class="thim-courses-block-2">
                 <div class="row no-gutter">
                   <div class="col-sm-3 intro-item">
-                    <div class=wrapper>
+                    <div class="wrapper">
                       <h3 class="title">Catalogo</h3>
                       <p class="description">Encuentra productos exclusivos a un precio increíble por ser parte de nuestra empresa.</p>
                       <a href="<?php echo site_url().'catalog';?>" class="view-courses-button">Ver todo el Catalogo</a>
@@ -480,13 +469,13 @@
                     <?php 
                     foreach ($catalog as $value) { ?>
                         <div class="col-sm-3 course-item free">
-                        <div class=featured-img>
+                        <div class="featured-img">
                             <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>' class="img-link">
-                                <img width=400 height=400 alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/catalog/$value->img";?>' class="lazyload">
+                                <img width=400 height=400 alt="<?php echo $value->name;?>" src='<?php echo site_url()."static/catalog/$value->img";?>' class="lazyload">
                             </a>
                         </div>
-                        <div class=content-item>
-                          <div class=name>
+                        <div class="content-item">
+                          <div class="name">
                               <a href="<?php echo site_url()."catalog/$value->slug";?>"><?php echo $value->name;?></a>
                           </div>
                           <h4 class="title">
@@ -501,13 +490,10 @@
           </div>
         </div>
       </div>
-      <!--END CATALOGO-->
     <div class="vc_row-full-width vc_clearfix"></div>
     </div>
     </div>
-    <!--//START FOOTER-->
     <?php $this->load->view("footer");?>
-    <!--//START FOOTER-->
     </div>
     <div id=back-to-top><i class="fa fa-angle-up" aria-hidden=true></i></div>
     <div id="tp_chameleon_list_google_fonts"></div>

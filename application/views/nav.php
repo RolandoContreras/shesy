@@ -74,12 +74,12 @@
                               <h2 class="widgettitle">Acerca de Cursos</h2>
                               <div class="menu-mega-menu-container">
                                     <ul id="menu-mega-menu" class="menu">
-                                          <li id="menu-item-4117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                               <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Todos los Cursos</a>
                                           </li>
                                           <?php 
                                           foreach ($obj_category_videos as $value) { ?>
-                                              <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                              <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                                   <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
                                               </li>
                                           <?php } ?>
@@ -96,9 +96,9 @@
                     <div class="thim-courses-megamenu row">
                       <div class="course-item col-sm-12">
                             <div class="feature-img">
-                                <img width="300" height="300" alt="Cursos Gratuitos" data-src="<?php echo site_url().'static/page_front/images/cursos_gratuitos.jpg';?>" class="lazyload">
+                                <img width="300" height="300" alt="Cursos Gratuitos" src="<?php echo site_url().'static/page_front/images/cursos_gratuitos.jpg';?>" class="lazyload">
                             </div>
-                            <div class=course-detail>
+                            <div class="course-detail">
                               <h3 class="title">
                                   <a href="<?php echo site_url().'register';?>">Prueba nuestros cursos gratuitos</a>
                               </h3>
@@ -124,13 +124,13 @@
                             <div class="widget widget_nav_menu">
                               <h2 class="widgettitle">Acerca del Catalogo</h2>
                               <div class="menu-mega-menu-container">
-                                    <ul id="menu-mega-menu" class="menu">
-                                          <li id="menu-item-4117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                    <ul class="menu">
+                                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                               <a href="<?php echo site_url().'catalog';?>" class="tc-menu-inner">Todos los Productos</a>
                                           </li>
                                           <?php 
                                           foreach ($obj_category_catalog as $value) { ?>
-                                              <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                              <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                                   <a href='<?php echo site_url()."catalog/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
                                               </li>
                                           <?php } ?>
