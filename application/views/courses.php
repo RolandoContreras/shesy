@@ -101,11 +101,19 @@
                   <article id="post-486" class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-486 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_tag-business course_tag-theme course_tag-wordpress pmpro-has-access course">
                           <div class="content">
                             <div class="thumbnail">
+                                
                                 <?php 
-                                if($value->type == 1 ){ ?>
+                                if($value->type == 1 ){ 
+                                    $ref = site_url()."courses/$value->category_slug/$value->slug";
+                                    ?>
                                     <span class=sale><span class=text-sale>Libre</span></span>
+                                <?php }else{
+                                    $ref = site_url()."login"; ?>
+                                    <span class="price">
+                                    <span class="course-price">Reservado</span>
+                                </span>
                                 <?php } ?>
-                                <a href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>' class="img_thumbnail">
+                                    <a href='<?php echo $ref;?>' class="img_thumbnail">
                                     <img width="365" height="405" alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
                                   </a>
                                 <div class="review ">

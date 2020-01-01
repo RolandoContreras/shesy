@@ -79,9 +79,10 @@ class C_home extends CI_Controller {
     
     public function category($category)
 	{
+            
+            $kid_id = $_SESSION['customer']['kit_id'];
             //GET NAV CURSOS
             $obj_category_videos = $this->nav_videos();
-            
             //get data catalog
             $params_categogory_id = array(
                         "select" =>"category_id,
