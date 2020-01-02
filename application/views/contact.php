@@ -16,7 +16,7 @@
     <div class=overlay-close-menu></div>
     <?php $this->load->view("header");?>
     <?php $this->load->view("nav");?>
-    <div id=main-content>
+    <div id="main-content">
       <section class=content-area>
         <div class="page-title layout-1">
           <div class="main-top no-parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/background.jpg';?>)"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
@@ -33,25 +33,25 @@
           </div>
           <div class="breadcrumb-content">
             <div class="breadcrumbs-wrapper container">
-              <ul itemprop="breadcrumb" itemscope id="breadcrumbs" class="breadcrumbs">
-                <li itemprop="itemListElement">
-                    <a itemprop="item" href="<?php echo site_url();?>" title="Inicio">
-                        <span itemprop="name">Inicio</span>
+              <ul id="breadcrumbs" class="breadcrumbs">
+                <li>
+                    <a href="<?php echo site_url();?>" title="Inicio">
+                        <span>Inicio</span>
                     </a>
                     <span class="breadcrum-icon">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </span>
                 </li>
-                <li itemprop="itemListElement">
-                    <span itemprop="name" title="Contacto">Contacto</span>
+                <li>
+                    <span title="Contacto">Contacto</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <div class="container site-content no-padding">
-          <div class=row>
-            <main id=main class="site-main col-sm-12 full-width">
+          <div class="row">
+            <div id=main class="site-main col-sm-12 full-width">
               <article id=post-34 class="post-34 page type-page status-publish hentry pmpro-has-access">
                 <div class=entry-content>
                   <div data-vc-full-width=true data-vc-full-width-init=false class="vc_row wpb_row vc_row-fluid vc_custom_1501054848736 vc_row-has-fill">
@@ -111,7 +111,6 @@
                                             <p>
                                                <span>contacto@culturafk.com</span>
                                             </p>
-                                          </p>
                                         </div>
                                       </div>
                                     </div>
@@ -174,9 +173,7 @@
                         </div>
                         <div class="row">
                           <div class="col">
-                              <span class="wpcf7-form-control-wrap your-message">
-                                  <div class="g-recaptcha" data-sitekey="6LeGrccUAAAAAL42J6gQyQqSG3bPNnWHx85yS1UK"></div>
-                              </span>
+                                <div class="g-recaptcha" data-sitekey="6LeGrccUAAAAAL42J6gQyQqSG3bPNnWHx85yS1UK"></div>
                           </div>
                         </div>
                         <div class="heading-button">
@@ -207,7 +204,7 @@
   <div class="vc_row-full-width vc_clearfix"></div>
   </div>
   </article>
-  </main>
+  </div>
   </div>
   </div>
   </section>
