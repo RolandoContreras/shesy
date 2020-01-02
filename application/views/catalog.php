@@ -16,7 +16,7 @@
     <div class=overlay-close-menu></div>
  <?php $this->load->view("header");?>   
  <?php $this->load->view("nav",$obj_category_catalog);?>
-  <div id=main-content>
+  <div id="main-content">
     <section class=content-area>
       <div class="page-title layout-1">
         <div class="main-top no-parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/background.jpg';?>)">
@@ -36,17 +36,17 @@
         </div>
         <div class="breadcrumb-content ">
           <div class="breadcrumbs-wrapper container">
-              <ul itemprop="breadcrumb" itemscope id="breadcrumbs" class="breadcrumbs">
-                <li itemprop="itemListElement">
-                    <a itemprop="item" href="<?php echo site_url();?>" title="Inicio">
-                        <span itemprop="name">Inicio</span>
+              <ul class="breadcrumbs">
+                <li>
+                    <a href="<?php echo site_url();?>" title="Inicio">
+                        <span>Inicio</span>
                     </a>
                     <span class="breadcrum-icon">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </span>
                 </li>
-                <li itemprop="itemListElement">
-                    <span itemprop="name" title="Contacto" class="gold">Catalogo</span>
+                <li>
+                    <span title="Contacto" class="gold">Catalogo</span>
                 </li>
               </ul>
           </div>
@@ -54,9 +54,9 @@
       </div>
       <div class="container site-content ">
         <div class=row>
-          <main id=main class="site-main col-sm-12 full-width">
+          <div  class="site-main col-sm-12 full-width">
             <div id=primary class=content-area>
-              <main id=main class=site-main role=main>
+              <div class="site-main" role="main">
                 <div class=product-filter>
                   <div class=woocommerce-notices-wrapper></div>
                   <div class="display grid-list-switch" data-cookie=product-switch data-layout=grid>
@@ -87,8 +87,8 @@
                           <div class=feature-image>
                             <span class=onsale>Venta!</span>
                             <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>'>
-                                <img width="400" height="400" alt data-srcset='<?php echo site_url()."static/catalog/$value->img";?> 400w, <?php echo site_url()."static/catalog/$value->img";?> 150w, <?php echo site_url()."static/catalog/$value->img";?> 300w, <?php echo site_url()."static/catalog/$value->img";?> 355w, <?php echo site_url()."static/catalog/$value->img";?> 100w, <?php echo site_url()."static/catalog/$value->img";?> 600w' sizes="(max-width: 400px) 100vw, 400px" data-src='<?php echo site_url()."static/catalog/$value->img";?>' class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
-                            <div class=quick-view><span><i class="fa fa-search"></i></span></div>
+                                <img width="400" height="400" alt="<?php echo $value->name;?>" srcset='<?php echo site_url()."static/catalog/$value->img";?> 400w, <?php echo site_url()."static/catalog/$value->img";?> 150w, <?php echo site_url()."static/catalog/$value->img";?> 300w, <?php echo site_url()."static/catalog/$value->img";?> 355w, <?php echo site_url()."static/catalog/$value->img";?> 100w, <?php echo site_url()."static/catalog/$value->img";?> 600w' sizes="(max-width: 400px) 100vw, 400px" src='<?php echo site_url()."static/catalog/$value->img";?>' class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
+                            <div class="quick-view"><span><i class="fa fa-search"></i></span></div>
                             </a>
                         </div>
                         <div class="product-content">
@@ -109,9 +109,9 @@
         <?php echo $obj_pagination; ?>
     </ul>
   </nav>
-  </main>
   </div>
-  </main>
+  </div>
+  </div>
   </div>
   </div>
   </section>
