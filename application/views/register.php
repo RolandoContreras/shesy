@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
         <title>Registro - Corporacion FK</title>
         <base href="<?php echo site_url();?>"/>
         <meta charset="utf-8">
         <meta content="ie=edge" http-equiv="x-ua-compatible">
-        <meta name="description" content="Multiplica tu dinero en el mercado financiero con nosotros BCA CAPITAL, una empresa financiera que te ayudará a aumentar tus finanzas, Clic en el siguiente enlace">
-        <meta name="author" content="Ingresar Oficina Virtual">
-        <meta name="keyword" content="bca capital, bca">
+        <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
+        <meta name="author" content="Corporation FK">
+        <meta name="keyword" content="Cultura Fk, fk, Fk embajadores, Fk social, Fk corporación, mlm, mmn, culturafk.com">
         <meta content="width=device-width, initial-scale=1" name="viewport">
          <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
@@ -65,7 +65,7 @@
         <div class="auth-box-w">
             <div class="logo-w">
                 <a href="<?php echo site_url();?>">
-                    <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" style="max-width: 150px;">
+                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" style="max-width: 150px;">
                 </a>
             </div>
             <h4 class="auth-header">
@@ -85,19 +85,19 @@
                     ?>
                 <div class="form-group">
                     <input class="form-control" type="checkbox" id="cbox2">
-                    <label for="">¿Desea cambiar de patrocinador?</label>
+                    <label>¿Desea cambiar de patrocinador?</label>
                     <input style="display:none;" type="text" onkeyup="this.value=Numtext(this.value)" onblur="validate_username_2(this.value);" value="<?php echo $obj_customer->username;?>" class="form-control" id="show" style="text-transform:lowercase;">
-                    <input type="hidden" class="form-control" id="parent_id_2" name="parent_id_2" value="<?php echo $parent_id;?>">
+                    <input type="hidden" id="parent_id" name="parent_id" value="<?php echo $parent_id;?>">
+                    <input type="hidden" id="parent_id_2" name="parent_id_2" value="<?php echo $parent_id;?>">
                     <span class="alert-1"></span>
                 </div>
                  <?php }else{
                      $parent_id = "1"; ?>
-                    <input type="text" id="parent_id" name="parent_id" value="<?php echo $parent_id;?>" style="display:none;">
+                    <input type="hidden" id="parent_id" name="parent_id" value="<?php echo $parent_id;?>">
+                    <input type="hidden" id="parent_id_2" name="parent_id_2" value="<?php echo $parent_id;?>">
                 <?php } ?>
-                 
-                <input type="text" id="parent_id" name="parent_id" value="<?php echo $parent_id;?>" style="display:none;">
                 <div class="form-group">
-                    <label for="">Usuario</label>
+                    <label>Usuario</label>
                     <input type="text" onkeyup="this.value=Numtext(this.value)" onblur="validate_username(this.value);" class="form-control" id="username" name="username" placeholder="Usuario"  style="text-transform:lowercase;" autofocus="">
                     <span class="alert-0"></span>
                     <div class="pre-icon os-icon "><i class="fa fa-user-secret"></i></div>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Contraseña</label>
+                    <label>Contraseña</label>
                     <input name="pass" id="pass" class="form-control" placeholder="Contraseña" type="password" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-unlock"></i></div>
                 </div>
@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Nombres</label>
+                    <label>Nombres</label>
                     <input name="name" id="name" class="form-control" placeholder="Nombres" type="text" autocomplete="off">
                     <div class="pre-icon os-icon"><i class="fa fa-address-book"></i></div>
                 </div>
@@ -128,7 +128,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Apellidos</label>
+                    <label>Apellidos</label>
                     <input name="last_name" id="last_name" class="form-control" placeholder="Apellidos" type="text" autocomplete="off">
                     <div class="pre-icon os-icon"><i class="fa fa-user"></i></div>
                 </div>
@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Email</label>
+                    <label>Email</label>
                     <input name="email" id="email" class="form-control" placeholder="Email" type="text" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-envelope-open"></i></div>
                 </div>
@@ -148,7 +148,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">DNI / Cedula</label>
+                    <label>DNI / Cedula</label>
                     <input name="dni" id="dni" class="form-control" placeholder="DNI / Cedula" type="text" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-id-card"></i></div>
                 </div>
@@ -158,7 +158,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Teléfono</label>
+                    <label>Teléfono</label>
                     <input name="phone" id="phone" class="form-control" placeholder="Teléfono" type="text" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-phone"></i></div>
                 </div>
@@ -168,7 +168,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Dirección</label>
+                    <label>Dirección</label>
                     <input name="address" id="address" class="form-control" placeholder="Dirección" type="text" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-map-pin"></i></div>
                 </div>
@@ -178,7 +178,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">País</label>
+                    <label>País</label>
                     <select class="form-control" name="country" id="country">
                         <option  selected value="">selección país</option>
                         <?php  foreach ($obj_paises as $key => $value) { ?>
@@ -209,19 +209,10 @@
                     <button onclick="register();" class="btn btn-primary btn-lg btn-block">Registar</button>
                     <a href="<?php echo site_url().'forget';?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
                     <a href="<?php echo site_url();?>" style="width: 100%; display: block; text-align: center;" class="link">Volver Inicio</a>
-                    <div style="margin-top:20px;">
-                        <style>
-                            .langselector img {
-                                width: 30px;
-                                height: 20px;
-                            }
-                        </style>
-                    </div>
                 </div>
             </form>
         </div>
     </div>
-           </body>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src='<?php echo site_url().'static/page_front/js/script/register.js';?>'></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/jquery.min.js';?>"></script>
@@ -243,14 +234,12 @@ $(document).ready(function(){
    });
 });
 </script>
+<script>
+    VANTA.GLOBE({
+        el: ".vanta-bg",
+        color:  0x897431           
 
-
-    <script>
-        VANTA.GLOBE({
-            el: ".vanta-bg",
-            color:  0x897431           
-
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
