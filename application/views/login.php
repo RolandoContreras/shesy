@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
         <title>Corporación FK - Inicio de Sesión</title>
         <base href="<?php echo site_url();?>"/>
@@ -64,7 +64,7 @@
         <div class="auth-box-w">
             <div class="logo-w">
                 <a href="<?php echo site_url();?>">
-                    <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" style="max-width: 150px;">
+                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" style="max-width: 150px;">
                 </a>
             </div>
             <h4 class="auth-header">
@@ -72,13 +72,13 @@
             </h4>
             <form class="form" action="javascript:void(0);">
                 <div class="form-group">
-                    <label for="">Usuario</label>
+                    <label>Usuario</label>
                     <input type="text" class="form-control" id="code" name="code" placeholder="Usuario" autofocus="">
                     <div class="pre-icon os-icon os-icon-user-male-circle"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="">Contraseña</label>
+                    <label>Contraseña</label>
                     <input name="pass" id="pass" class="form-control" placeholder="Contraseña" type="password" autocomplete="off">
                     <div class="pre-icon os-icon os-icon-fingerprint"></div>
                 </div>
@@ -106,21 +106,12 @@
                     <button onclick="login();" class="btn btn-primary btn-lg btn-block">Iniciar Sesión</button><br/>
                     <a href="<?php echo site_url().'forget';?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
                     <a href="<?php echo site_url();?>" style="width: 100%; display: block; text-align: center;" class="link">Volver al Inicio</a>
-                    <div style="margin-top:20px;">
-                        <style>
-                            .langselector img {
-                                width: 30px;
-                                height: 20px;
-                            }
-                        </style>
-                    </div>
                 </div>
             </form>
         </div>
     </div>
-           </body>
-<script src='https://www.google.com/recaptcha/api.js'></script>
 <script src='<?php echo site_url().'static/page_front/js/script/login_2.js';?>'></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/jquery.min.js';?>"></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/popper.min.js';?>"></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/bootstrap.min.js';?>"></script>
@@ -138,5 +129,5 @@
 
         });
     </script>
-</body>
+  </body>
 </html>
