@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <?php $this->load->view("head");?>
 <body class="bp-nouveau archive post-type-archive post-type-archive-lp_course wp-embed-responsive theme-wordpress-lms wordpress-lms learnpress learnpress-page woocommerce-no-js pagetitle-show hfeed bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 buy-through-membership header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
   <div id=thim-preloading>
@@ -12,11 +12,11 @@
       </div>
     </div>
   </div>
-  <div id=wrapper-container class="content-pusher creative-right bg-type-color">
+  <div id="wrapper-container" class="content-pusher creative-right bg-type-color">
     <div class=overlay-close-menu></div>
     <?php $this->load->view("header");?>
     <?php $this->load->view("nav");?>
-    <div id=main-content>
+    <div id="main-content">
       <section class=content-area>
         <div class="page-title layout-1">
           <div class="main-top no-parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/background.jpg';?>)"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
@@ -35,30 +35,30 @@
           </div>
           <div class="breadcrumb-content">
             <div class="breadcrumbs-wrapper container">
-              <ul itemprop="breadcrumb" itemscope id="breadcrumbs" class="breadcrumbs">
-                <li itemprop="itemListElement">
-                    <a itemprop="item" href="<?php echo site_url();?>" title="Inicio">
-                        <span itemprop="name">Inicio</span>
+              <ul id="breadcrumbs" class="breadcrumbs">
+                <li>
+                    <a href="<?php echo site_url();?>" title="Inicio">
+                        <span>Inicio</span>
                     </a>
                     <span class="breadcrum-icon">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </span>
                 </li>
-                <li itemprop="itemListElement">
-                    <span itemprop="name" title="Contacto" class="gold">Todos los Cursos</span>
+                <li>
+                   <span title="Contacto">Cursos</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <div id=top-sidebar-courses>
-          <div class=container>
+        <div id="top-sidebar-courses">
+          <div class="container">
             <div data-vc-full-width=true data-vc-full-width-init=false data-vc-stretch-content=true class="vc_row wpb_row vc_row-fluid overflow top-courses-overflow vc_custom_1501224314823 vc_row-has-fill vc_row-no-padding">
               <div class="wpb_column vc_column_container vc_col-sm-12">
-                <div class=vc_column-inner>
-                  <div class=wpb_wrapper>
+                <div class="vc_column-inner">
+                  <div class="wpb_wrapper">
                     <div class="thim-sc-heading text-center layout-2 ">
-                      <div class=heading-content>
+                      <div class="heading-content">
                         <h3 class="gold primary-heading">Cursos Populares</h3>
                       </div>
                       <p class="secondary-heading text_gress"> Aprende todo lo que necesitas con nosotros, los cursos más cotizados del mercado aquí lo tendrás.</p>
@@ -72,8 +72,8 @@
     </div>
   <div class="container site-content " style="transform: none;">
   <div class="row" style="transform: none;">
-    <main id="main" class="site-main col-sm-12 col-md-9 flex-first">
-      <article id="post-0" class="post-0 post type-post status-publish format-standard hentry pmpro-has-access page type-page">
+    <div id="main" class="site-main col-sm-12 col-md-9 flex-first">
+      <div class="post-0 post type-post status-publish format-standard hentry pmpro-has-access page type-page">
         <div class="entry-content">
           <div id="lp-archive-courses" class="lp-archive-courses">
             <div class="thim-course-top">
@@ -98,7 +98,7 @@
                   
                   <?php 
                   foreach ($obj_videos as $value) { ?>
-                  <article id="post-486" class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-486 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_tag-business course_tag-theme course_tag-wordpress pmpro-has-access course">
+                  <article class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-486 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_tag-business course_tag-theme course_tag-wordpress pmpro-has-access course">
                           <div class="content">
                             <div class="thumbnail">
                                 
@@ -114,7 +114,7 @@
                                 </span>
                                 <?php } ?>
                                     <a href='<?php echo $ref;?>' class="img_thumbnail">
-                                    <img width="365" height="405" alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
+                                    <img width="365" height="405" alt="<?php echo $value->name;?>" src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
                                   </a>
                                 <div class="review ">
                                   <div class=sc-review-stars>
@@ -135,7 +135,7 @@
                                 </div>
                                 <div class="content-list">
                                       <div class="course-description">
-                                          <p><?php echo corta_texto($value->summary, 300);?></p>
+                                          <?php echo corta_texto($value->summary, 300);?>
                                       </div>
                                       <ul class="courses_list_info">
                                         <li><label>Repaso:</label>
@@ -171,8 +171,8 @@
             </div>
             </div>
             </div>
-            </article>
-            </main>
+            </div>
+            </div>
             <aside id="secondary" class="sidebar-courses widget-area col-md-3 sticky-sidebar flex-last" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
               <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static;">
                 <aside id="thim-courses-categories-2" class="widget widget_thim-courses-categories">
@@ -192,8 +192,6 @@
    </section>
   </div>
   <?php $this->load->view("footer_2");?>
-  </div>
-   <!--END FOOTER-->
   </div>
   <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
     <div class="gallery-slider-content"></div>
