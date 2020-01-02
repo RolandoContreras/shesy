@@ -35,15 +35,15 @@
             <div class="breadcrumbs-wrapper container">
               <ul id="breadcrumbs" class="breadcrumbs">
                 <li>
-                    <a itemprop="item" href="<?php echo site_url();?>" title="Inicio">
-                        <span itemprop="name">Inicio</span>
+                    <a href="<?php echo site_url();?>" title="Inicio">
+                        <span>Inicio</span>
                     </a>
                     <span class="breadcrum-icon">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </span>
                 </li>
                 <li>
-                   <span itemprop="name" title="Contacto">Acerca</span>
+                   <span title="Contacto">Acerca</span>
                 </li>
               </ul>
             </div>
@@ -51,9 +51,8 @@
         </div>
         <div class="container site-content no-padding">
           <div class="row">
-            <div id=main class="site-main col-sm-12 full-width">
-              <article id=post-6 class="post-6 page type-page status-publish hentry pmpro-has-access">
-                <div class=entry-content>
+            <div id="main" class="site-main col-sm-12 full-width">
+              <div id="post-6" class="post-6 page type-page status-publish hentry pmpro-has-access">
                   <div class="vc_row wpb_row vc_row-fluid vc_custom_1500885875234">
                     <div class="wpb_column vc_column_container vc_col-sm-12">
                       <div class=vc_column-inner>
@@ -262,10 +261,10 @@
                 </div>
                   </div>
     </div>
-    </article>
-    </div>
-  </div>
-  </div>
+               </div>
+            </div>
+          </div>
+        </div>
   </section>
   </div>
   <?php $this->load->view("footer_2");?>
@@ -289,11 +288,5 @@
       <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='<?php echo site_url().'static/page_front/js/script/contact.js';?>'></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-       <style>.vc_custom_1500885875234{padding-top: 19px !important;}
-           .vc_custom_1502099928023{margin-top: 0px !important;border-top-width: 0px !important;padding-top:0px !important;}
-           .vc_custom_1497509247620{padding: 0px !important;}
-           .vc_custom_1497518620322{border-bottom-width: 200px !important;padding-top: 140px !important;}
-           .vc_custom_1501055739385{padding-top: 38px !important;padding-bottom: 140px !important;}
-      </style>
 </body>
 </html>
