@@ -340,7 +340,7 @@
                     </div>
                     <div class="col-md-6 media-box">
                       <div class=media-wrapper>
-                          <img width="830" height="550" alt="group-4" data-src="<?php echo site_url().'static/page_front/images/group-4.png';?>" class="lazyload">
+                          <img width="830" height="550" alt="group-4" src="<?php echo site_url().'static/page_front/images/group-4.png';?>" class="lazyload">
                       </div>
                     </div>
                     <div class="col-md-6 content-box">
@@ -476,11 +476,11 @@
                         </div>
                         <div class="content-item">
                           <div class="name">
-                              <a href="<?php echo site_url()."catalog/$value->slug";?>"><?php echo $value->name;?></a>
+                              <a href="<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>"><?php echo $value->name;?></a>
                           </div>
-                          <h4 class="title">
-                              <a href="<?php echo site_url()."catalog/$value->slug";?>"><?php echo corta_texto($value->summary,50);?></a>
-                          </h4>
+                          <div class="title white">
+                              <?php echo corta_texto($value->summary,50);?>
+                          </div>
                         </div>
                       </div>
                     <?php }?>

@@ -1,3 +1,9 @@
+.bg_footer{
+    padding-top: 50px !important;padding-bottom: 50px !important;
+    background: url(../images/bg-1.png);
+    background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;
+}
+
 .border-radius-30{
     border-radius:30px !important; 
 }

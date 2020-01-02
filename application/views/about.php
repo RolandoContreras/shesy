@@ -102,7 +102,7 @@
                                                 <div class="col-lg-6 media-box">
                                                   <div class="player-wrapper">
                                                     <div class="player-inner">
-                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" allowfullscreen></iframe>
                                                     </div>
                                                   </div>
                                                   <div class="icon-play"></div>
@@ -116,26 +116,26 @@
                             </section>
                           </div>
                           <div class="thim-sc-image-box right ">
-                            <section id=title2>
+                            <section id="title2">
                                   <div class="wpb_wrapper">
                                       <div class="thim-sc-steps layout-4" >
-                                        <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/fondo-abstracto.jpg';?>); ">
+                                        <div class="sc-steps-wrapper" style="background-image: url(<?php echo site_url().'static/page_front/images/fondo-abstracto.jpg';?>); ">
                                           <div class="inner-steps-wrapper" style="background: rgba(0, 0, 0, 0) !important;">
-                                            <div class=container>
-                                              <div class=row>
+                                            <div class="container">
+                                              <div class="row">
                                                   <div class="col-lg-6 media-box">
                                                   <div class="player-wrapper">
                                                     <div class="player-inner">
-                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                        <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" allowfullscreen></iframe>
                                                     </div>
                                                   </div>
                                                   <div class="icon-play"></div>
                                                 </div>
                                                 <div class="col-lg-6 content-box">
-                                                  <div class=steps-wrapper>
+                                                  <div class="steps-wrapper">
                                                       <h3 class="sc-title black">¿Qué es la embajada FK?</h3>
-                                                    <div class=steps>
-                                                      <div class=tab-content>
+                                                    <div class="steps">
+                                                      <div class="tab-content">
                                                         <div class="tab-pane active">
                                                           <p class="description black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos</p>
                                                           <p class="description black">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video</p>
@@ -166,7 +166,7 @@
                             <div class="heading-content">
                               <h3 class="primary-heading">Características y valores</h3>
                             </div>
-                            <p class=secondary-heading>Tantas metas académicas que esperamos que logre.</p><span class="underline"></span>
+                            <p class="secondary-heading">Tantas metas académicas que esperamos que logre.</p><span class="underline"></span>
                         </div>
                       </div>
                     </div>
@@ -261,115 +261,6 @@
                   </div>
                 </div>
                   </div>
-                      
-                  
-                  <div class="vc_row-full-width vc_clearfix"></div>
-<!--                  <div data-vc-full-width=true data-vc-full-width-init=false data-vc-parallax=1.5 data-vc-parallax-image="<?php echo site_url().'static/page_front/images/layer-background-2.jpg';?>" class="vc_row wpb_row vc_row-fluid vc_custom_1501839996783 thim-background-overlay vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
-                    <div class=overlay style="background-color: rgba(10,10,10,0.55)"></div>
-                    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-has-fill">
-                      <div class="vc_column-inner vc_custom_1497518620322">
-                        <div class=wpb_wrapper>
-                          <div class="thim-sc-testimonials layout-2 ">
-                            <div class="slider testimonial-slider" data-itemsvisible=3>
-                              <div class=item>
-                                <div class=content>
-                                  <div class=image>
-                                      <img width="130" height="130" alt="home-1-bg" src="<?php echo site_url().'static/page_front/images/team/rolando.jpg';?>" class="no-lazy lazyload">
-                                  </div>
-                                  <div
-                                    class=user-info>Rolando Contreras</div>
-                                <div class=thim-sc-social-links>
-                                  <ul class=socials></ul>
-                                </div>
-                                <div class=description>Pellentesque venenatis, libero vel euismod lobortis, mi metus luctus augue, eget dapibus elit nisi eu massa.Phasellus sollicitudin
-                                  nisl posuere nibh ultricies, et fringilla dui gravida. Donec iaculis adipiscing neque,non congue massa euismod quis.
-                                  Lorem ipsum dolor sit amet.</div>
-                              </div>
-                            </div>
-                            <div class=item>
-                              <div class=content>
-                                <div class=image>
-                                    <img width="130" height="130" alt="1" src="<?php echo site_url().'static/page_front/images/team/renzo.jpg';?>" class="no-lazy lazyload">
-                                </div>
-                                <div
-                                  class=user-info>Daniel Contreras</div>
-                              <div class=thim-sc-social-links>
-                                <ul class=socials></ul>
-                              </div>
-                              <div class=description>Pellentesque venenatis, libero vel euismod lobortis, mi metus luctus augue, eget dapibus elit nisi eu massa.Phasellus sollicitudin
-                                nisl posuere nibh ultricies, et fringilla dui gravida. Donec iaculis adipiscing neque,non congue massa euismod quis. Lorem
-                                ipsum dolor sit amet.</div>
-                            </div>
-                          </div>
-                          <div class="item">
-                            <div class="content">
-                              <div class="image">
-                                  <img width="130" height="130" alt="blog" src="<?php echo site_url().'static/page_front/images/team/daniel.jpg';?>" class="no-lazy lazyload">
-                              </div>
-                              <div
-                                class=user-info>Elizabeth Huidobro</div>
-                            <div class=thim-sc-social-links>
-                              <ul class=socials></ul>
-                            </div>
-                            <div class=description>Pellentesque venenatis, libero vel euismod lobortis, mi metus luctus augue, eget dapibus elit nisi eu massa.Phasellus sollicitudin
-                              nisl posuere nibh ultricies, et fringilla dui gravida. Donec iaculis adipiscing neque,non congue massa euismod quis. Lorem
-                              ipsum dolor sit amet.</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="vc_row wpb_row vc_inner vc_row-fluid thim-custom-mini-width">
-                      <div class="wpb_column vc_column_container vc_col-sm-4">
-                        <div class=vc_column-inner>
-                          <div class=wpb_wrapper>
-                            <div class="thim-sc-icon-box layout-4 default">
-                              <div class=icon-box-wrapper style>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="wpb_column vc_column_container vc_col-sm-4">
-                        <div class=vc_column-inner>
-                          <div class=wpb_wrapper>
-                            <div class="thim-sc-icon-box layout-4 default">
-                              <a href target>
-                                <div class=icon-box-wrapper style>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="wpb_column vc_column_container vc_col-sm-4">
-                        <div class=vc_column-inner>
-                          <div class=wpb_wrapper>
-                            <div class="thim-sc-icon-box layout-4 default">
-                              <a href target>
-                                <div class=icon-box-wrapper style>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="wpb_column vc_column_container vc_col-sm-12">
-                        <div class="vc_column-inner vc_custom_1501055739385">
-                          <div class=wpb_wrapper>
-                            <div class="thim-sc-button hide-separator center">
-                                <a href="<?php echo site_url().'contact';?>" target="_self" class="btn btn-primary btn-md">
-                                    <span class=text>Comunícate con nosotros</span>
-                                </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          </div>
-        </div>-->
-        <!--<div class="vc_row-full-width vc_clearfix"></div>-->
     </div>
     </article>
     </main>

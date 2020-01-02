@@ -115,6 +115,3 @@
         </div>
       </div>
     </footer>
-<style>
-    .bg_footer{padding-top: 50px !important;padding-bottom: 50px !important;background: #fafafa url(<?php echo site_url().'static/page_front/images/bg-1.png?id=156';?>) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}
-</style>
