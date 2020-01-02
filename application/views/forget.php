@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
         <title>Registro - Corporacion FK</title>
         <base href="<?php echo site_url();?>"/>
@@ -65,7 +65,7 @@
         <div class="auth-box-w">
             <div class="logo-w">
                 <a href="<?php echo site_url();?>">
-                    <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" style="max-width: 150px;">
+                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" style="max-width: 150px;">
                 </a>
             </div>
             <h4 class="auth-header">
@@ -73,7 +73,7 @@
             </h4>
             <form class="form" action="javascript:void(0);">
                 <div class="form-group">
-                    <label for="">Ingrese Usuario</label>
+                    <label>Ingrese Usuario</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Usuario" autofocus="">
                     <div class="pre-icon os-icon os-icon-user-male-circle"></div>
                 </div>
@@ -99,19 +99,10 @@
                     <button onclick="forget();" class="btn btn-primary btn-lg btn-block">Recuperar Contraseña</button><br/>
                     <a href="<?php echo site_url().'login';?>" style="width: 100%; display: block; text-align: center;" class="link">Iniciar Sesión</a>
                     <a href="<?php echo site_url();?>" style="width: 100%; display: block; text-align: center;" class="link">Volver a Inicio</a>
-                    <div style="margin-top:20px;">
-                        <style>
-                            .langselector img {
-                                width: 30px;
-                                height: 20px;
-                            }
-                        </style>
-                    </div>
                 </div>
             </form>
         </div>
     </div>
-           </body>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src='<?php echo site_url().'static/page_front/js/script/forget.js';?>'></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/jquery.min.js';?>"></script>
