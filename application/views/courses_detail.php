@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <?php $this->load->view("head");?>
 <body class="bp-nouveau lp_course-template-default single single-lp_course postid-486 wp-embed-responsive theme-wordpress-lms wordpress-lms learnpress learnpress-page pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive lp_login_popup box-shadow auto-login ltr learnpress-v3 buy-through-membership course-free header-template-overlay thim-lp-layout-1 lp-landing wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
   <div id=thim-preloading>
@@ -30,17 +30,27 @@
             </div>
           </div>
         </div>
-        <div class="breadcrumb-content ">
-          <div class="breadcrumbs-wrapper container">
-            <div class="learn-press-course-buttons lp-course-buttons">
-                <a href="<?php echo site_url().'register';?>"><button class="lp-button button button-enroll-course">Registrate</button></a>
-                </div>
-          </div>
-        </div>
+        <div class="breadcrumb-content">
+            <div class="breadcrumbs-wrapper container">
+              <ul id="breadcrumbs" class="breadcrumbs">
+                <li>
+                    <a href="<?php echo site_url();?>" title="Inicio">
+                        <span>Inicio</span>
+                    </a>
+                    <span class="breadcrum-icon">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </span>
+                </li>
+                <li>
+                   <span title="Contacto">Cursos</span>
+                </li>
+              </ul>
+            </div>
+          </div>  
       </div>
       <div class="container site-content ">
         <div class=row>
-          <main id=main class="site-main col-sm-12 full-width">
+          <div id=main class="site-main col-sm-12 full-width">
             <article id=post-486 class="sidebar-right post-486 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_tag-business course_tag-theme course_tag-wordpress pmpro-has-access course">
               <div class=entry-content>
                 <div id=lp-single-course class=lp-single-course>
@@ -74,7 +84,9 @@
                         <div class="container wrapper clearfix">
                           <div class="course-purchase-info has-wishlist">
                             <div class="learn-press-course-buttons lp-course-buttons">
-                                <a href="<?php echo site_url().'register';?>"><button class="lp-button button button-enroll-course">Registrate</button></a>
+                                <div class="rounded-view-all-button" style="margin-top:0px !important;">
+                                    <a href="<?php echo site_url().'register';?>">Regístrate</a>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -82,7 +94,7 @@
                       <div class=course-description id=learn-press-course-description>
                         <div id="tab-overview">
                           <h4>Descripción del Curso</h4>
-                          <p><?php echo $obj_videos->description;?></p>
+                          <?php echo $obj_videos->description;?>
                         </div>
                       </div>
                       <div id=tab-curriculum style="height: 68px;"></div>
@@ -145,7 +157,7 @@
                               <div class=wrapper-course-thumbnail>
                                   
                                   <a href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>' class=img_thumbnail>
-                                    <img width=277 height=310 alt="<?php echo $value->name;?>" data-src='<?php echo site_url()."static/course/img/$obj_videos->img2";?>' class="lazyload">
+                                    <img width=277 height=310 alt="<?php echo $value->name;?>" src='<?php echo site_url()."static/course/img/$obj_videos->img2";?>' class="lazyload">
                                 </a>
                               <div class=course-rating>
                                 <div class=review-stars-rated title="5 out of 5 stars">
@@ -176,7 +188,7 @@
         </div>
      </div>
     </article>
-  </main>
+  </div>
   </div>
   </div>
   </section>
