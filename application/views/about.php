@@ -33,8 +33,8 @@
           </div>
           <div class="breadcrumb-content">
             <div class="breadcrumbs-wrapper container">
-              <ul itemprop="breadcrumb" itemscope id="breadcrumbs" class="breadcrumbs">
-                <li itemprop="itemListElement">
+              <ul id="breadcrumbs" class="breadcrumbs">
+                <li>
                     <a itemprop="item" href="<?php echo site_url();?>" title="Inicio">
                         <span itemprop="name">Inicio</span>
                     </a>
@@ -42,16 +42,16 @@
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </span>
                 </li>
-                <li itemprop="itemListElement">
-                    <span itemprop="name" title="Contacto">Acerca</span>
+                <li>
+                   <span itemprop="name" title="Contacto">Acerca</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <div class="container site-content no-padding">
-          <div class=row>
-            <main id=main class="site-main col-sm-12 full-width">
+          <div class="row">
+            <div id=main class="site-main col-sm-12 full-width">
               <article id=post-6 class="post-6 page type-page status-publish hentry pmpro-has-access">
                 <div class=entry-content>
                   <div class="vc_row wpb_row vc_row-fluid vc_custom_1500885875234">
@@ -263,7 +263,7 @@
                   </div>
     </div>
     </article>
-    </main>
+    </div>
   </div>
   </div>
   </section>

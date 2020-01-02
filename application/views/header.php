@@ -67,13 +67,13 @@
                                 <div class="widget widget_nav_menu">
                                   <h2 class="widgettitle">Acerca de Cursos</h2>
                                   <div class="menu-mega-menu-container">
-                                    <ul id="menu-mega-menu" class="menu">
+                                    <ul class="menu">
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                               <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Todos los Cursos</a>
                                         </li>
                                         <?php 
                                               foreach ($obj_category_videos as $value) { ?>
-                                                    <li id="menu-item-4115" class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                                                       <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
                                                     </li>
                                               <?php } ?>
