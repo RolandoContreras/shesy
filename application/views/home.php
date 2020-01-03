@@ -181,17 +181,15 @@
                                           <div class="icon-play"></div>
                                         </div>
                                         <div class="col-lg-6 content-box">
-                                            <center>
-                                            <div class=steps-wrapper style="">
-                                              <h3 class="sc-title respondive_title" style="text-align:center !important;">¿Qué es la cultura FK?</h3>
-                                              <p class="description respondive_d">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
-                                              <p class="description respondive_d div_hide">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
-
+                                            <!--<center>-->
+                                            <div class=steps-wrapper>
+                                                <h3 class="sc-title" style="text-align:center !important;">¿Qué es la cultura FK?</h3>
+                                              <p class="description respondive_d" style="text-align:center !important;">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
+                                              <p class="description respondive_d div_hide" style="text-align:center !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
                                             <div>
-
                                             </div>
                                           </div>
-                                          </center>
+                                          <!--</center>-->
                                         </div>
                                       </div>
                                     </div>
@@ -318,20 +316,20 @@
                         <h3 class="sc-title">Conviértete en parte de nuestra cultura</h3>
                         <div class=steps>
                           <ul class="nav" role="tablist">
-                            <li class="nav-item active" data-toggle="tab" href="#step-0" role="tab">
-                                <a class=nav-link>1<span>paso</span></a>
-                                <p class=tab-title>Crea tu registro gratis</p>
+                            <li class="nav-item active">
+                                <a data-toggle="tab" href="#step-0" class="nav-link">1<span>paso</span></a>
+                                <p class="tab-title">Crea tu registro gratis</p>
                             </li>
-                            <li class="nav-item " data-toggle="tab" href="#step-2" role="tab">
-                                <a class="nav-link">2<span>paso</span></a>
+                            <li class="nav-item" >
+                                <a data-toggle="tab" href="#step-2" class="nav-link">2<span>paso</span></a>
                                 <p class="tab-title">Aprende con nosotros</p>
                             </li>
-                            <li class="nav-item " data-toggle="tab" href="#step-3" role="tab">
-                                <a class=nav-link>3<span>paso</span></a>
+                            <li class="nav-item">
+                                <a data-toggle="tab" href="#step-3" class="nav-link">3<span>paso</span></a>
                               <p class=tab-title>Comparte la información</p>
                             </li>
-                            <li class="nav-item" data-toggle="tab" href="#step-4" role="tab">
-                                <a class="nav-link">4<span>paso</span></a>
+                            <li class="nav-item">
+                                <a data-toggle="tab" href="#step-4" class="nav-link">4<span>paso</span></a>
                                 <p class="tab-title">Recibe una recompensa</p>
                             </li>
                           </ul>

@@ -6,7 +6,7 @@
   <meta name="author" content="Corporation FK">
   <meta name="keyword" content="Cultura Fk, fk, Fk embajadores, Fk social, Fk corporación, mlm, mmn, culturafk.com">
   <meta name="robots" content="Index, Follow">
-  <link type="text/css" media="all" href="<?php echo site_url().'static/page_front/css/autoptimize_67.css';?>" rel="stylesheet">
+  <link type="text/css" media="all" href="<?php echo site_url().'static/page_front/css/autoptimize_68.css';?>" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/autoptimize_5e.css';?>" type="text/css" media="all">
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
