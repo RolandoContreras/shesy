@@ -81,6 +81,14 @@
                                                  </div>
                                                 <div class="row form-group">
                                                     <div class="col-sm-2">
+                                                        <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="talla" id="talla" placeholder="Talla">
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="color" id="color" placeholder="Color">
+                                                    </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                    <div class="col-sm-2">
                                                         <label class="col-form-label" style="color:#888 !important;">Ingrese Cantidad</label>
                                                     </div>
                                                     <div class="col-sm-3">

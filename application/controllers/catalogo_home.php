@@ -268,6 +268,7 @@ class Catalogo_home extends CI_Controller {
         $params = array(
                         "select" =>"invoice_catalog.quantity,
                                     invoice_catalog.price,
+                                    invoice_catalog.option,
                                     invoice_catalog.sub_total,
                                     invoice_catalog.date,
                                     catalog.name",
@@ -322,6 +323,8 @@ class Catalogo_home extends CI_Controller {
                 $price = $this->input->post('price');
                 $catalog_id = $this->input->post('catalog_id');
                 $quantity = $this->input->post('quantity');
+                $talla = $this->input->post('talla');
+                $color = $this->input->post('color');
                 $name = $this->input->post('name');
                 
                 //ADD CART
@@ -330,6 +333,7 @@ class Catalogo_home extends CI_Controller {
                         'qty'     => $quantity,
                         'price'   => $price,
                         'name'    => "$name",
+                        'options' => array('Talla' => "$talla", 'Color' => "$color")
                 );
                 $cart_id = $this->cart->insert($data);
                 
@@ -418,11 +422,21 @@ class Catalogo_home extends CI_Controller {
                    $invoce_id = $this->obj_invoices->insert($data_invoice);
                    
                 //INSERT INVOICE CATALOG
+                   
+                $option = "";
                 foreach ($this->cart->contents() as $items) {
+                   if($this->cart->has_options($items['rowid']) == TRUE){
+                       foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value) {
+                            $option .= "$option_name".":"."$option_value"."&nbsp;";
+                        } 
+                   }
+                   
                     $data_invoice_catalog = array(
                     'invoice_id' => $invoce_id,
                     'catalog_id' => $items['id'],
                     'price' => $items['price'],
+                    'quantity' => $items['qty'],
+                    'option' => $option,
                     'quantity' => $items['qty'],
                     'sub_total' => $items['subtotal'],
                     'date' => date("Y-m-d H:i:s")
@@ -460,3 +474,4 @@ class Catalogo_home extends CI_Controller {
         }
     }
 }
+

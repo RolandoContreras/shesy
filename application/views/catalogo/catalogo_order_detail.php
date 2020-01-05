@@ -85,6 +85,7 @@
                         <tr class="thead-default">
                           <th>Descripción</th>
                           <th>Cantidad</th>
+                          <th>Detalle</th>
                           <th>Importe</th>
                           <th>Total</th>
                         </tr>
@@ -96,6 +97,7 @@
                                     <h6><?php echo $value->name;?></h6>
                                   </td>
                                   <td><?php echo $value->quantity;?></td>
+                                  <td><?php echo $value->option;?></td>
                                   <td>$<?php echo $value->price;?></td>
                                   <td>$<?php echo $value->sub_total;?></td>
                                </tr>

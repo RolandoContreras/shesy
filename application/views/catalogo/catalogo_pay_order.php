@@ -37,6 +37,8 @@
                                     aria-label="Office: activate to sort column ascending">Nombre</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Cantidad</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
+                                    aria-label="Office: activate to sort column ascending">Talla / Color</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Precio</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -52,8 +54,18 @@
                                     <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
                                     <th><?php echo $items['name'];?></th>
                                     <th>
-                                        <input class="form-control" type="text" id="qty" name="qty" value="<?php echo $this->cart->format_number($items['qty']); ?>" class="input-xlarge-fluid" placeholder="Cantidad">
+                                        <input class="form-control" type="text" id="qty" name="qty" value="<?php echo format_number_miles($this->cart->format_number($items['qty'])); ?>" class="input-xlarge-fluid" placeholder="Cantidad">
                                     </th>
+                                    <th>
+                                        <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+                                            <p>
+                                                    <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
+                                                            <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+                                                    <?php endforeach; ?>
+                                            </p>
+                                        <?php endif; ?>
+                                    </th>
+                                    
                                     <th>$<?php echo $this->cart->format_number($items['price']); ?></th>
                                     <th class="text-c-green">
                                         <span class="badge badge-pill badge-success" style="font-size: 100%;">$<?php echo $this->cart->format_number($items['subtotal']); ?></span>
