@@ -139,7 +139,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                           <div class="col-lg-12"> 
-                                                              <img src="<?php echo site_url().'static/backoffice/images/bcp_logo';?>" width="100">
+                                                              <img src="<?php echo site_url().'static/backoffice/images/bcp_logo.png';?>" width="100">
                                                           </div>
                                                         </div>
                                                         <div class="form-group"> 
@@ -183,4 +183,4 @@
           </div>
         </div>
 </section>
-<script src="<?php echo site_url();?>static/catalog/js/pay_order.js"></script>
+<script src="<?php echo site_url();?>static/catalog/js/pay_order_new.js"></script>
