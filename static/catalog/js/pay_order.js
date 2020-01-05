@@ -34,7 +34,6 @@ function delete_order(id){
         });
 }
 function process_pay_invoice(){
-        var new_site = site + "catalogo";
         $.ajax({
             type: "post",
             url: site + "catalogo/pay_order/process_pay_invoice",
@@ -43,7 +42,7 @@ function process_pay_invoice(){
             success:function(data){            
                 if(data.status == "true"){
                     document.getElementById("pay_success_2").style.display = "block";
-                    setTimeout(location.href = new_site,2000);
+                    document.getElementById("exampleModal").showModal();
                 }
             }            
         });

@@ -111,13 +111,61 @@
                                     </div>
                                   </div>
                                 <div class="col-sm-12">
-                                    <!--<div class="card theme-bg2 visitor">-->
                                       <div class="card-block text-center">
-                                            <button type="button" class="btn btn-primary" onclick="process_pay_invoice();"><i data-feather="dollar-sign"></i> Pagar</button>                                            
+                                          <button type="button" onclick="process_pay_invoice();" class="btn btn-primary" data-toggle="modal" data-target="#pay_modal" data-whatever="@getbootstrap">Pagar</button>
                                       </div>
-<!--                                    </div>-->
                                   </div>
                             </div>
+                          <div class="modal fade" id="pay_modal" tabindex="-1" role="dialog" style="display: none;">
+                                <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Detalle de Pago</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            </div>
+                                            <center>
+                                                <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label class="control-label" style="color: black;"><br>Valor total:</label>
+                                                            <b><h3 style="font-weight: 900 !important">$<?php echo $this->cart->format_number($this->cart->total());?></h3></b>
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <div class="col-lg-12"> 
+                                                                <label class="control-label"><br>Ahorro Dólares BCP:</label>
+                                                                <b>125-26514981321</b>
+                                                                <label class="control-label">Número Interbancario (CCI):</label>
+                                                                <b>1351-125-26514981321-89</b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                          <div class="col-lg-12"> 
+                                                              <img src="<?php echo site_url().'static/backoffice/images/bcp_logo';?>" width="100">
+                                                          </div>
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <div class="col-lg-12"> 
+                                                                <label class="control-label"><br>Ahorro Dólares Interbank:</label>
+                                                                <b>125-26514981321</b>
+                                                                <label class="control-label">Número Interbancario (CCI):</label>
+                                                                <b>1351-125-26514981321-89</b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                          <div class="col-lg-12"> 
+                                                              <img src="<?php echo site_url().'static/backoffice/images/interbank_loco.png';?>" width="100">
+                                                          </div>
+                                                        </div>
+                                                </div>
+                                                </center>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <a href="<?php echo site_url().'catalogo/order';?>" type="button" style="color: white;" class="btn btn-primary">Subir Comprobante</a>
+                                        </div>
+                                        </div>
+                                </div>
+                          </div>
+                          
+                          
                             <div class="form-group has-feedback" style="display: none;" id="pay_success_2">
                                 <div class="alert alert-success validation-errors">
                                     <p class="user_login_id" style="text-align: center;">Pedido pagado con éxito en unos minutos estamos procesando su compra.</p>
