@@ -71,6 +71,16 @@ function quitar_coma_number($number){
     return $number;
 }
 
+function quitar_punto_number($number){
+    $number = str_replace('.','',$number);
+    return $number;
+}
+
+function quitar_2_ultimos_numero($number){
+    $number = str_replace('.','',$number);
+    return $number;
+}
+
 function convert_mayuscula($string){
     $string = strtoupper($string);
     return $string;

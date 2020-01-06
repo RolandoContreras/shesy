@@ -8,6 +8,7 @@ class Catalogo_home extends CI_Controller {
         $this->load->model("category_model","obj_category");
         $this->load->model("invoices_model","obj_invoices");
         $this->load->model("invoice_catalog_model","obj_invoice_catalog");
+        $this->load->library('culqi');
     }
 
     public function index()
@@ -431,20 +432,35 @@ class Catalogo_home extends CI_Controller {
     }
     
     public function process_pay_invoice() {
-        
         if($this->input->is_ajax_request()){   
-               //GET SESION ACTUALY
-                $this->get_session();
-                //GET CUSTOMER_ID
-                
-                //INSERT ON INVOICE
+            
+           //GET SESION ACTUALY
+           $this->get_session();
+           //GET CUSTOMER_ID
+           
+           //INSERT ON INVOICE
                $customer_id = $_SESSION['customer']['customer_id'];
-               $price =  $this->cart->format_number($this->cart->total());
-               //NOT USER IGV
-               //IGV = 0;
+               //SELECT DATA CUSTOMER
+               $params_customer = array(
+                        "select" =>"first_name,
+                                    last_name,
+                                    address,
+                                    phone",
+                "where" => "customer_id = $customer_id",
+                );
+            //GET DATA COMMENTS
+             $obj_customer = $this->obj_customer->get_search_row($params_customer);
                
-               $price = explode(".", $price);
-               $price = $price[0];
+               $price_cart =  $this->cart->format_number($this->cart->total());
+               $price =  $this->input->post('price');
+               $token = $this->input->post('token');
+               $email = $this->input->post('email');
+           
+               $charge = $this->culqi->charge($token,$price,$email,$obj_customer->first_name,$obj_customer->last_name,$obj_customer->address,$obj_customer->phone);
+               
+               
+               $price_cart = explode(".", $price_cart);
+               $price = $price_cart[0];
                $price= quitar_coma_number($price) ; 
                 
                //INSERT INVOICE
@@ -454,8 +470,9 @@ class Catalogo_home extends CI_Controller {
                         'igv' => 0,
                         'total' => $price,
                         'type' => 2,
+                        'delivery' => 1,
                         'date' => date("Y-m-d H:i:s"),
-                        'active' => 0,
+                        'active' => 2,
                         'status_value' => 1,
                         'created_at' => date("Y-m-d H:i:s"),
                         'created_by' => $customer_id,
@@ -484,11 +501,11 @@ class Catalogo_home extends CI_Controller {
                         );
                     $this->obj_invoice_catalog->insert($data_invoice_catalog);
                 }   
-               $data['status'] = "true";
-               
                //DESTROY CART
                $this->cart->destroy();
-               echo json_encode($data); 
+               echo $charge;
+               echo json_encode($charge);
+               ; 
         }
     }
     
