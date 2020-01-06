@@ -314,6 +314,47 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->render("catalogo/catalogo_pay_order");
     }
     
+    public function send_invoice()
+    {
+        if($this->input->is_ajax_request()){   
+               //GET SESION ACTUALY
+                $this->get_session();
+                $invoice_id = $this->input->post('invoice_id');
+                $customer_id = $_SESSION['customer']['customer_id'];
+                if(isset($_FILES["image_file"]))
+                {
+                $config['upload_path']          = './static/backoffice/invoice/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['max_size']             = 1000;
+                $this->load->library('upload', $config);
+                    if ( ! $this->upload->do_upload('image_file'))
+                    {
+                         $error = array('error' => $this->upload->display_errors());
+                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
+                          $data['status'] = "false";
+                    }
+                    else
+                    {
+                        $data = array('upload_data' => $this->upload->data());
+
+                            $img = $_FILES["image_file"]["name"];
+                        // INSERT ON TABLE activation_message
+                            //UPDATE DATA EN CUSTOMER TABLE
+                            $data = array(
+                                'img' => $img,
+                                'active' => 1,
+                                'updated_by' => $customer_id,
+                                'updated_at' => date("Y-m-d H:i:s")
+                            ); 
+                            $this->obj_invoices->update($invoice_id,$data);
+                            $data['status'] = "true";
+                        echo '<div class="alert alert-success" style="text-align: center">Enviado Exitosamente</div>';
+                    }
+                }
+               echo json_encode($data); 
+        }
+    }
+    
     public function add_cart() {
         
         if($this->input->is_ajax_request()){   
@@ -414,7 +455,7 @@ class Catalogo_home extends CI_Controller {
                         'total' => $price,
                         'type' => 2,
                         'date' => date("Y-m-d H:i:s"),
-                        'active' => 1,
+                        'active' => 0,
                         'status_value' => 1,
                         'created_at' => date("Y-m-d H:i:s"),
                         'created_by' => $customer_id,

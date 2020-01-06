@@ -75,15 +75,15 @@ $route['catalogo/pay_order/update_cart'] = "catalogo_home/update_cart";
 $route['catalogo/pay_order/delete_cart'] = "catalogo_home/delete_cart";
 $route['catalogo/pay_order/process_pay_invoice'] = "catalogo_home/process_pay_invoice";
 
-
-
-
 $route['catalogo/order/([0-9]+)'] = "catalogo_home/order_detail/$1";
 $route['catalogo/([0-9a-z_-]+)'] = 'catalogo_home/category/$1';
 $route['catalogo/([0-9a-z_-]+)/([0-9]+)'] = 'catalogo_home/category/$1';
 $route['catalogo/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalogo_home/detail/$1';
 
 $route['catalogo/order/add_cart'] = "catalogo_home/add_cart";
+$route['catalogo/order/send_invoice'] = "catalogo_home/send_invoice";
+
+
 
 $route['course'] = "c_home";
 $route['course/([0-9]+)'] = 'c_home/index/$1';
@@ -148,6 +148,10 @@ $route['dashboard/facturas'] = "d_invoices";
 $route['dashboard/facturas/load/([0-9]+)'] = "d_invoices/load/$1";
 $route['dashboard/facturas/validate'] = "d_invoices/validate";
 
+$route['dashboard/facturas_catalogo'] = "d_invoices/catalogo"; 
+$route['dashboard/facturas_catalogo/load/([0-9]+)'] = "d_invoices/catalogo_load/$1";
+$route['dashboard/facturas_catalogo/validate'] = "d_invoices/catalogo_validate";
+
 $route['dashboard/correos'] = "d_messages_masive"; 
 
 $route['dashboard/rangos'] = "d_ranges";
@@ -191,10 +195,12 @@ $route['dashboard/confirmation_activaciones'] = "d_activate/confirmation";
 
 $route['dashboard/activaciones'] = "d_activate";
 $route['dashboard/activaciones/active_customer'] = "d_activate/active_customer";
-$route['dashboard/activaciones/active_financy'] = "d_activate/active_financy";
 $route['dashboard/activaciones/active'] = "d_activate/active";
 $route['dashboard/activaciones/update_confirmation'] = "d_activate/update_confirmation";
 
+$route['dashboard/activaciones_catalogo'] = "d_activate/activaciones_catalogo";
+$route['dashboard/activaciones_catalogo/([0-9]+)'] = "d_activate/order_catalog/$1";
+$route['dashboard/activaciones_catalogo/active_catalogo'] = "d_activate/active_catalogo";
 
 $route['dashboard/activar_pagos'] = "d_active_pays";
 $route['dashboard/activar_pagos/pagado'] = "d_active_pays/pagado";

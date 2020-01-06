@@ -106,7 +106,8 @@
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/clientes";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comentarios";?>"><i class="icon-large icon-th"></i>Comentarios</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas";?>"><i class="icon-large icon-th"></i>Facturas</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas";?>"><i class="icon-large icon-th"></i>Facturas Pack</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas_catalogo";?>"><i class="icon-large icon-th"></i>Facturas Catalogo</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/membresias";?>"><i class="icon-large icon-th"></i>Pack</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/pagos";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
@@ -117,13 +118,17 @@
                 <?php } ?>
             </ul>
         </li>
-        <li class="nav-item">
-            <a href="<?php echo site_url()."dashboard/activaciones";?>" class="nav-link <?php echo $activaciones_syle;?>">
+        <li class="nav-item pcoded-hasmenu">
+            <a href="#!" class="nav-link <?php echo $activaciones_syle;?>">
                 <span class="pcoded-micon">
                     <i data-feather="check-circle"></i>
                 </span>
                 <span class="pcoded-mtext">Activaciones</span>
             </a>
+            <ul class="pcoded-submenu">
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones";?>"><i class="icon-large icon-th"></i>Pack</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones_catalogo";?>"><i class="icon-large icon-th"></i>Catalogo</a></li>
+            </ul>
         </li>
         <li class="nav-item">
             <a href="<?php echo site_url()."dashboard/activar_pagos";?>" class="nav-link <?php echo $pagos_syle;?>">

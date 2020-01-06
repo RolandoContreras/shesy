@@ -7,6 +7,7 @@ class D_activate extends CI_Controller{
         $this->load->model("customer_model","obj_customer");
         $this->load->model("commissions_model","obj_commissions");
         $this->load->model("invoices_model","obj_invoices");
+        $this->load->model("invoice_catalog_model","obj_invoice_catalog");
         $this->load->model("unilevel_model","obj_unilevel");
         $this->load->model("kit_model","obj_kit");
         $this->load->model("bonus_model","obj_bonus");
@@ -49,6 +50,80 @@ class D_activate extends CI_Controller{
             $this->tmp_mastercms->set("obj_invoices",$obj_invoices);
             $this->tmp_mastercms->render("dashboard/activate/activate_list");
     }
+    
+    public function activaciones_catalogo(){  
+        
+           $this->get_session();
+           $params = array(
+                        "select" =>"invoices.invoice_id,
+                                    invoices.date,
+                                    invoices.total,
+                                    invoices.img,
+                                    customer.customer_id,
+                                    customer.username,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    invoices.active",
+                "join" => array('customer, invoices.customer_id = customer.customer_id'),
+                "where" => "invoices.type = 2 and invoices.status_value = 1",
+                "order" => "invoices.invoice_id ASC");
+           //GET DATA FROM CUSTOMER
+        $obj_invoices = $this->obj_invoices->search($params);
+           
+           /// PAGINADO
+            $modulos ='activaciones'; 
+            $seccion = 'Lista';        
+            $link_modulo =  site_url().'dashboard/activaciones'; 
+            
+            /// VISTA
+            $this->tmp_mastercms->set('link_modulo',$link_modulo);
+            $this->tmp_mastercms->set('modulos',$modulos);
+            $this->tmp_mastercms->set('seccion',$seccion);
+            $this->tmp_mastercms->set("obj_invoices",$obj_invoices);
+            $this->tmp_mastercms->render("dashboard/activate/activate_catalogo_list");
+    }
+    
+    public function order_catalog($invoice_id){  
+        
+           $this->get_session();
+           $params = array(
+                        "select" =>"invoices.invoice_id,
+                                    invoices.type,
+                                    invoices.date,
+                                    invoices.total,
+                                    invoices.active,
+                                    invoices.sub_total,
+                                    invoices.igv,
+                                    invoices.total,
+                                    customer.email,
+                                    customer.phone,
+                                    customer.address,
+                                    customer.first_name,
+                                    customer.last_name,",
+                        "where" => "invoices.invoice_id = $invoice_id and invoices.type = 2 and invoices.status_value = 1",
+                        "join" => array('customer, customer.customer_id = invoices.customer_id'),
+                        );
+
+            $obj_invoices = $this->obj_invoices->get_search_row($params);
+            
+            //GET DATA PRICE CRIPTOCURRENCY
+            $params = array(
+                            "select" =>"invoice_catalog.quantity,
+                                        invoice_catalog.price,
+                                        invoice_catalog.option,
+                                        invoice_catalog.sub_total,
+                                        invoice_catalog.date,
+                                        catalog.name",
+                            "where" => "invoice_catalog.invoice_id = $invoice_id",
+                            "join" => array('catalog, invoice_catalog.catalog_id = catalog.catalog_id'),
+                            );
+            $obj_invoice_catalog = $this->obj_invoice_catalog->search($params);
+  
+            $this->tmp_mastercms->set("obj_invoices",$obj_invoices);
+            $this->tmp_mastercms->set("obj_invoice_catalog",$obj_invoice_catalog);
+            $this->tmp_mastercms->render("dashboard/activate/activate_catalogo_detail");
+    }
+    
     
     public function active(){
         //ACTIVE CUSTOMER NORMALY

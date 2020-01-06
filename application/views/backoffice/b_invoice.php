@@ -124,7 +124,7 @@ $(document).ready(function(){
     $("#upload_form").on('submit',function(e){
         e.preventDefault();
         if($('#image_file').val() == ''){
-            $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Seleccionar Imagen</div>  ');
+            $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Seleccionar Imagen</div>');
         }else{
             if($('#message').val() == ''){
                 $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Debe llenar el campo</div>  ');

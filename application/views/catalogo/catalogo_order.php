@@ -67,6 +67,9 @@
                                     }else if($value->active == 2){
                                         $valor = "Procesado";
                                         $stilo = "label label-success";
+                                    }else if($value->active == 0){
+                                        $valor = "Sin Acción";
+                                        $stilo = "label label-info";
                                     }else{
                                         $valor = "Cancelado";
                                         $stilo = "label label-danger";
@@ -75,9 +78,46 @@
                                 </td>
                                 <td>
                                     <div class="operation">
+                                        <?php if($value->active == 0){ ?>
                                             <div class="btn-group">
-                                               <button class="btn btn-secondary" type="button" onclick="ver_order('<?php echo $value->invoice_id;?>');">
-                                                   <span><span class="pcoded-micon"><i data-feather="shopping-cart"></i></span> Ver Compra</span></button>
+                                                <a style="color:rgb(29, 233, 182);" type="button" data-toggle="modal" data-target="#pay_modal" data-whatever="@getbootstrap" onclick="upload_invoice('<?php echo $value->invoice_id;?>');" class="btn btn-icon btn-rounded btn-outline-success"><i data-feather="upload"></i></a>
+                                            </div>
+                                            <div class="modal fade" id="pay_modal" tabindex="-1" role="dialog" style="display: none;">
+                                                <div class="modal-dialog" role="document">
+                                                    <form name="invoice" id="invoice">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Detalle de Pago</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                        <div class="form-group">
+                                                                            <label>Cargar Comprobante</label><br/>
+                                                                            <div class="custom-file">
+                                                                                <input type="file" class="custom-file-input" id="image_file" value="Upload Imagen de Envio" name="image_file">
+                                                                                <label class="custom-file-label" for="validatedCustomFile">Seleccionar la Imagen...</label>
+                                                                                <input type="text" value="<?php echo $value->invoice_id;?>" name="invoice_id" id="invoice_id" style="display:none">
+                                                                            </div>
+                                                                      </div>
+                                                                        <hr>
+                                                                        <div id="uploaded_image">
+                                                                            <div class="alert alert-danger" style="text-align: center;display: none;">Seleccionar Imagen</div>
+                                                                        </div>
+                                                                        <div id="message_success">
+                                                                            <div class="alert alert-success" style="text-align: center;display: none;">Imagen subida con éxito</div>
+                                                                        </div>
+                                                                </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" onclick="send_invoice('<?php echo $value->invoice_id;?>');" class="btn btn-primary"><i data-feather="send"></i> Enviar</button>
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                              </div>
+                                        <?php } ?>
+                                        <div class="btn-group">
+                                                   <button type="button" onclick="ver_order('<?php echo $value->invoice_id;?>');" class="btn btn-icon btn-rounded btn-outline-info"><i data-feather="eye"></i></button>
                                             </div>
                                     </div>
                                 </td>
