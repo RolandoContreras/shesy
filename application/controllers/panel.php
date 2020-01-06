@@ -18,10 +18,12 @@ class Panel extends CI_Controller{
          //GET PENDING ROWS
         $params = array("select" =>"count(*) as pending_comments,
                                     (select count(*) from pay where active = 1) as pending_pay,
-                                    (select count(*) from invoices where active = 1) as pending_invoices",
+                                    (select count(*) from invoices where active = 1 and type = 2) as pending_invoices_catalog,
+                                    (select count(*) from invoices where active = 1 and type = 1) as pending_invoices_pack,
+                                    ",
                         "where" => "active = 1");
         $obj_pending = $this->obj_comments->get_search_row($params);
-
+        
         //GET DATE FOR MONTH
         $first_day_month =  first_month_day_actual();
         $last_day_month =  last_month_day_actual();
@@ -44,14 +46,27 @@ class Panel extends CI_Controller{
         $lunes_semana_actual = first_week_actual();
         $domingo_semana_actual =  last_week_actual(); 
         
-        
                 //GET MES
                 $params = array(
                         "select" =>"sum(price) as total_mes,
-                                    (SELECT count(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.type = 1 and invoices.active = 2) as count_total_mes,
-                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$primer_dia_ano' AND '$ultimo_dia_ano' AND invoices.type = 1 and invoices.active = 2) as total_year,
-                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$pass_year-01-01' AND '$pass_year-12-31' AND invoices.type = 1 and invoices.active = 2) as total_year_last,
-                                    (SELECT sum(price) FROM (invoices) JOIN kit ON invoices.kit_id = kit.kit_id WHERE date BETWEEN '$pass_year_2-01-01' AND '$pass_year_2-12-31' AND invoices.type = 1 and invoices.active = 2) as total_year_last_2,",
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-01-01' AND '$year-01-31' and invoices.active = 2) as sum_ene,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-02-01' AND '$year-02-31' and invoices.active = 2) as sum_feb,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-03-01' AND '$year-03-31' and invoices.active = 2) as sum_mar,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-04-01' AND '$year-04-31' and invoices.active = 2) as sum_abr,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-05-01' AND '$year-05-31' and invoices.active = 2) as sum_may,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-06-01' AND '$year-06-31' and invoices.active = 2) as sum_jun,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-07-01' AND '$year-07-31' and invoices.active = 2) as sum_jul,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-08-01' AND '$year-08-31' and invoices.active = 2) as sum_ago,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-09-01' AND '$year-09-31' and invoices.active = 2) as sum_set,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-10-01' AND '$year-10-31' and invoices.active = 2) as sum_oct,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-11-01' AND '$year-11-31' and invoices.active = 2) as sum_nov,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-12-01' AND '$year-12-31' and invoices.active = 2) as sum_dic,
+                                    (SELECT count(*) FROM (invoices) WHERE date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' AND invoices.type = 2 and invoices.active = 2) as total_invoice_catalog_week_active,
+                                    (SELECT count(*) FROM (invoices) WHERE date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' AND invoices.type = 2) as total_invoice_catalog_week,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' AND invoices.active = 2 ) as sum_total_week_invoice,
+                                    (SELECT count(*) FROM (invoices) WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.active = 2) as count_total_mes,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.active = 2) as sum_total_mes,
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$primer_dia_ano' AND '$ultimo_dia_ano' AND invoices.active = 2) as total_year",
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id'),
                 "where" => "date BETWEEN '$first_day_month' AND '$last_day_month' and invoices.type = 1 and invoices.active = 2");
             //GET DATA FROM CUSTOMER
@@ -70,22 +85,14 @@ class Panel extends CI_Controller{
         //GET TOTAL ROWS
         $params = array("select" =>"count(comment_id) as total_comments,
                                     (select count(*) from customer) as total_customer, 
-                                    (select count(*) from customer) as total_financy,
-                                    (select count(*) from customer where kit_id > 1 and active = 1) as total_activos,
-                                    (select count(*) from customer where kit_id = 1 and active = 1) as total_position,
+                                    (select count(*) from customer where kit_id > 0 and active = 1) as total_activos,
+                                    (select count(*) from customer where kit_id = 0) as total_position,
                                     (select count(*) from category) as total_category,
                                     (select count(*) from kit) as total_kit,
                                     (select count(*) from invoices) as total_invoices,
-                                    (select count(*) from commissions) as total_commissions,
-                                    (select count(*) from users) as total_users,
-                                    (select count(*) from bonus) as total_bonus,
                                     (select count(*) from ranges) as total_ranges,
                                     (select count(*) from pay) as total_pay");
         $obj_total = $this->obj_comments->get_search_row($params);
-        
-        $modulos ='Home'; 
-        $link_modulo =  site_url().$modulos; 
-        $seccion = 'Vista global';        
         
         $this->tmp_mastercms->set('year',$year);
         $this->tmp_mastercms->set('pass_year',$pass_year);
@@ -97,9 +104,6 @@ class Panel extends CI_Controller{
         $this->tmp_mastercms->set('total_semana',$total_semana);
         $this->tmp_mastercms->set('obj_pending',$obj_pending);
         $this->tmp_mastercms->set('obj_total',$obj_total);
-        $this->tmp_mastercms->set('modulos',$modulos);
-        $this->tmp_mastercms->set('link_modulo',$link_modulo);
-        $this->tmp_mastercms->set('seccion',$seccion);
         $this->tmp_mastercms->render('panel');
      }
     
