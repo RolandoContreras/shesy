@@ -28,15 +28,12 @@
                     <div class="card-header">
                     <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/report_customer/load";?>">
                         <div class="form-row">
-                          <div class="form-group col-md-2">
-                              <div class="form-group">
-                                  <label>Fecha Inicio</label>
-                                  <input class="form-control" type="text" id="date_start" name="date_start" value="<?php echo isset($obj_comission->first_name)?$obj_comission->first_name." ".$obj_comission->last_name:"";?>" class="input-xlarge-fluid" placeholder="Fecha Inicio">
-                              </div>
-                          </div>
-                          <div class="form-group col-md-2">
-                              <label>Fecha Final</label>
-                                  <input class="form-control" type="text" id="date_end" name="date_end" value="<?php echo isset($obj_comission->first_name)?$obj_comission->first_name." ".$obj_comission->last_name:"";?>" class="input-xlarge-fluid" placeholder="Fecha Final">
+                          <div class="form-group col-md-4">
+                              <label>Fechas</label>
+                              <div class="input-daterange input-group" id="datepicker_range">
+                                <input type="text" class="form-control text-left" id="date_start" name="date_start" placeholder="Fecha de Inicio"/>
+                                <input type="text" class="form-control text-right" id="date_end" name="date_end" placeholder="Fecha Final"/>
+                             </div>
                           </div>
                          <div class="form-group col-md-2">
                              <label>Pack</label>
@@ -82,7 +79,8 @@
                              <button type="submit" class="btn btn-success form-control">Exportar</button>                    
                          </div>
                         </form>    
-                        
+                        <div class="card-block">
+                            
                   </div>
                   <div class="card-block">
                     <div class="table-responsive">
@@ -163,3 +161,10 @@
           </div>
         </div>
 </section>
+<style>
+    .datepicker>.datepicker-days { display: block;}
+    ol.linenums {margin: 0 0 0 -8px;}
+</style>
+    
+  
+    

@@ -63,18 +63,17 @@ class D_report_customer extends CI_Controller{
             //get ranges
             $obj_ranges = $this->get_ranges();
             //send data
-            
             $date_start = $this->input->post('date_start');
             $date_end = $this->input->post('date_end');
             $pack = $this->input->post('pack');
             $ranges = $this->input->post('ranges');
             $active = $this->input->post('active');
             
-            if($date_start == ""){
-                $where_date = "";
-            }elseif ($date_end == "") {
-                $where_date = "";
+            if($date_start == "" || $date_end == ""){
+                $where_date = "customer.created_at BETWEEN '2019-01-01' AND '2023-12-01'";
             }else{
+                $date_start = formato_fecha_db($date_start);
+                $date_end = formato_fecha_db($date_end);
                 $where_date = "customer.created_at BETWEEN '$date_start' AND '$date_end'";
             }
             
@@ -97,6 +96,7 @@ class D_report_customer extends CI_Controller{
             }
                 
         $where = "$where_date $where_kit $where_range $where_active";
+        
         $param_data = array("select" =>"customer.customer_id,
                                         customer.username,
                                         customer.first_name,
@@ -135,11 +135,11 @@ class D_report_customer extends CI_Controller{
             $ranges = $this->input->post('ranges');
             $active = $this->input->post('active');
             
-            if($date_start == ""){
-                $where_date = "";
-            }elseif ($date_end == "") {
-                $where_date = "";
+            if($date_start == "" || $date_end == ""){
+                $where_date = "customer.created_at BETWEEN '2019-01-01' AND '2023-12-01'";
             }else{
+                $date_start = formato_fecha_db($date_start);
+                $date_end = formato_fecha_db($date_end);
                 $where_date = "customer.created_at BETWEEN '$date_start' AND '$date_end'";
             }
             
@@ -156,13 +156,13 @@ class D_report_customer extends CI_Controller{
             }
             
             if($active == -1){
-                $active = "";    
+                $where_active = "";    
             }else{
-                $active = "and customer.active = $active";
+                $where_active = "and customer.active = $active";
             }
-              
+             
+        $where = "$where_date $where_kit $where_range $where_active";
         
-        $where = "$where_date $where_kit $where_range $active";
         $param_data = array("select" =>"customer.customer_id as código,
                                         customer.username as usuario,
                                         customer.first_name as nombres,
