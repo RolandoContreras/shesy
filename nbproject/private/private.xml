@@ -21,7 +21,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp64/www/shesy/application/views/panel.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/config/routes.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/cms/js/export.js</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/reporte_customer/report_customer_list.php</file>
             <file>file:/C:/wamp64/www/shesy/application/controllers/panel.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/d_report_customer.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/templates/admin_tmp.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/d_activate.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/libraries/export_excel.php</file>
         </group>
     </open-files>
 </project-private>

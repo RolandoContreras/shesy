@@ -116,6 +116,9 @@ $route['backoffice/pay/make_pay'] = "b_pay/make_pay";
 
 $route['dashboard'] = "dashboard";
 $route['dashboard/panel'] = "panel";
+
+$route['dashboard/panel/export'] = "panel/export";
+
 $route['dashboard/panel/guardar_btc'] = "panel/guardar_btc";
 $route['dashboard/panel/cambiar_status'] = "panel/cambiar_status";
 $route['dashboard/panel/masive_messages'] = "panel/masive_messages";
@@ -226,9 +229,17 @@ $route['dashboard/usuarios/load/([0-9]+)'] = "d_users/load/$1";
 $route['dashboard/usuarios/validate'] = "d_users/validate";
 
 
-$route['dashboard/reportes/asociados'] = "d_report_customer";
-$route['dashboard/reportes/cuentas'] = "d_report_membership";
-$route['dashboard/reportes/pagos'] = "d_report_pays";
+$route['dashboard/report_customer'] = "d_report_customer";
+$route['dashboard/report_customer/load'] = "d_report_customer/load";
+$route['dashboard/report_customer/export'] = "d_report_customer/export";
+
+$route['dashboard/report_invoice'] = "d_report_invoice";
+$route['dashboard/report_invoice/load'] = "d_report_invoice/load";
+$route['dashboard/report_invoice/export'] = "d_report_invoice/export";
+
+$route['dashboard/report_pay'] = "d_report_pay";
+$route['dashboard/report_pay/load'] = "d_report_pay/load";
+$route['dashboard/report_pay/export'] = "d_report_pay/export";
 
 
 

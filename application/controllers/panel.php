@@ -9,6 +9,7 @@ class Panel extends CI_Controller{
         $this->load->model("unilevel_model","obj_unilevel");
         $this->load->model("points_model","obj_points");
         $this->load->model("ranges_model","obj_ranges");
+        $this->load->library("export_excel");
     }
     
     public function index(){
@@ -106,9 +107,8 @@ class Panel extends CI_Controller{
         $this->tmp_mastercms->set('obj_total',$obj_total);
         $this->tmp_mastercms->render('panel');
      }
-    
      
-     public function cron_range(){
+    public function cron_range(){
          
          //GET DATA CUSTOMER ACTIVE
          $params = array(
@@ -275,6 +275,23 @@ class Panel extends CI_Controller{
         exit();
         }
     } 
+    
+    public function export(){
+        //GET C
+        $params = array("select" =>"*");
+        
+        $this->db->select('*');
+        $this->db->from('customer');
+        $query = $this->db->get();
+        
+//        $obj_customer = $this->obj_customer->get_search_row($params);
+        
+        
+        
+        $this->export_excel->to_excel($query, "lista de personas");
+        
+        
+    }
      
     public function mensaje(){
                             echo "mensaje enviado";

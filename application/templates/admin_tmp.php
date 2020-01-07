@@ -141,14 +141,15 @@
         <li class="nav-item pcoded-hasmenu">
             <a href="#!" class="">
                 <span class="pcoded-micon">
-                    <i data-feather="book-open"></i>
+                    <i data-feather="printer"></i>
                 </span>
                 <span class="pcoded-mtext">Reportes</span>
             </a>
             <ul class="pcoded-submenu">
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/panel";?>"><i class="icon-large icon-th"></i>Panel</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/bonos";?>"><i class="icon-large icon-th"></i>Bonos</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/panel";?>"><i class="icon-large icon-th"></i>Datos</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_customer";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_invoice";?>"><i class="icon-large icon-th"></i>Ventas</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_pay";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
             </ul>
         </li>
     </ul>

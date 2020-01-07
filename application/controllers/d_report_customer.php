@@ -6,147 +6,199 @@ class D_report_customer extends CI_Controller{
         parent::__construct();
         $this->load->model("comments_model","obj_comments");
         $this->load->model("customer_model","obj_customer");
+        $this->load->model("kit_model","obj_kit");
+        $this->load->model("ranges_model","obj_ranges");
+        $this->load->library("export_excel");
     }   
                 
     public function index(){  
             //GER SESSION
             $this->get_session();
             //GET AND COUNT ALL THE CUSTOMER
-            
-            
-        $params = array("select" =>"count(customer_id) as customer_id,
-                                    (select count(customer_id) from customer where financy = 1) as financiado,
-                                    (select count(customer_id) from customer where active = 1) as activos,
-                                    (select count(customer_id) from customer where active = 0) as inactivos,
-                                    (select count(customer_id) from customer where financy = 0) as pagados,");
-        $obj_customer = $this->obj_customer->get_search_row($params);
-        
-        //TOTAL FINANCIADOS
-        $obj_financiado = $obj_customer->financiado;
-        //TOTAL ACTIVOS
-        $obj_activos = $obj_customer->activos;
-        //TOTAL ACTIVOS
-        $obj_inactivos = $obj_customer->inactivos;
-        //TOTAL CUSTOMER
-        $obj_pagados = $obj_customer->pagados;
-        //TOTAL CUSTOMER
-        $obj_customer = $obj_customer->customer_id;
-        
-        //CRECIMIENTO EN EL PRIMER AÑO
-        $params_grow = array("select" =>"(select count(customer_id) from customer where date_start BETWEEN '2017-01-01' AND '2017-01-31') as enero,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-02-01' AND '2017-02-31') as febrero,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-03-01' AND '2017-03-31') as marzo,
-                                    (select count(customer_id) from customer where and date_start BETWEEN '2017-04-01' AND '2017-04-31') as abril,
-                                    (select count(customer_id) from customer where and date_start BETWEEN '2017-05-01' AND '2017-05-31') as mayo,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-06-01' AND '2017-06-31') as junio,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-07-01' AND '2017-07-31') as julio,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-08-01' AND '2017-08-31') as agosto,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-09-01' AND '2017-09-31') as septiembre,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-10-01' AND '2017-10-31') as octubre,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-11-01' AND '2017-11-31') as noviembre,
-                                    (select count(customer_id) from customer where date_start BETWEEN '2017-12-01' AND '2017-12-31') as diciembre");
-//        $obj_grow_year = $this->obj_customer->get_search_row($params_grow);
-        
         //RATIO DE ACTIVOS
-        $param_ratio = array("select" =>"customer_id",
-                            "where" => "active = 1");
-        $obj_active = $this->obj_customer->search($param_ratio);
+        $param_data = array("select" =>"customer.customer_id,
+                                        customer.username,
+                                        customer.first_name,
+                                        customer.last_name,
+                                        customer.dni,
+                                        paises.nombre as pais,
+                                        customer.date_start,
+                                        customer.phone,
+                                        customer.active,
+                                        kit.name as pack",
+            "join" => array('paises, customer.country = paises.id',
+                            'kit, customer.kit_id = kit.kit_id'),
+            "where" => "paises.id_idioma = 7"
+                );
+                            
+        $obj_customer = $this->obj_customer->search($param_data);
         
-        //for para hallar los activos haciendo la red
-        $ratio = 1;
-//        foreach ($obj_active as $key => $value) {
-//            
-//                     $param_ratio_parents = array("select" =>"count(customer_id) as ratio",
-//                            "where" => "parents_id = $value->customer_id");
-//        $obj_ratio = $this->obj_customer->get_search_row($param_ratio_parents);
-//            //IF RATIO > 0 THEN SUM
-//            if($obj_ratio->ratio > 0 ){
-//                $ratio = $ratio + 1;
-//            }
-//        }
+        $date_start = "";
+        $date_end = "";
+        $pack = -1;
+        $ranges = -1;
+        $active = -1;
         
-        //PROMEDIO RATIO
-        $promedio = number_format($obj_activos / $ratio,3);
-        $porcentaje_retencion = number_format(($ratio /$obj_activos) * 100,2);
-        
-        //PROMEDIO RATIO PAGADOS
-        $promedio_pagado = number_format($ratio/$obj_pagados ,3);
-        $porcentaje_retencion_pagado = number_format(($ratio /$obj_pagados) * 100,2);
-
-        //PROMEDIO RATIO TOTAL
-        $promedio_total = number_format($ratio/$obj_customer ,3);
-        $porcentaje_retencion_total = number_format(($ratio /$obj_customer) * 100,2);
-        
-        //MEDIAS ABSOLUTAS
-        
-        $media_promedio = ( $promedio + $promedio_pagado + $promedio_total) / 3;
-        $media_porcentaje = ( $porcentaje_retencion + $porcentaje_retencion_pagado + $porcentaje_retencion_total) / 3;
-        
-        /// PAGINADO
-            $modulos ='reportes/asociados'; 
-            $seccion = 'Lista';        
-            $link_modulo =  site_url().'dashboard/'.$modulos; 
-            /// DATA
-            
-            /// VISTA
-            $this->tmp_mastercms->set('link_modulo',$link_modulo);
-            $this->tmp_mastercms->set('modulos',$modulos);
-            $this->tmp_mastercms->set('seccion',$seccion);
-            
-            $this->tmp_mastercms->set("media_promedio",$media_promedio);
-            $this->tmp_mastercms->set("media_porcentaje",$media_porcentaje);
-            
-            $this->tmp_mastercms->set("promedio_total",$promedio_total);
-            $this->tmp_mastercms->set("porcentaje_retencion_total",$porcentaje_retencion_total);
-            
-            $this->tmp_mastercms->set("promedio_pagado",$promedio_pagado);
-            $this->tmp_mastercms->set("porcentaje_retencion_pagado",$porcentaje_retencion_pagado);
-            
-//            $this->tmp_mastercms->set("ratio",$ratio);
-            $this->tmp_mastercms->set("promedio",$promedio);
-            $this->tmp_mastercms->set("porcentaje_retencion",$porcentaje_retencion);
-//            $this->tmp_mastercms->set("obj_grow_year",$obj_grow_year);
-            $this->tmp_mastercms->set("obj_activos",$obj_activos);
-            $this->tmp_mastercms->set("obj_inactivos",$obj_inactivos);
-            $this->tmp_mastercms->set("obj_pagados",$obj_pagados);
-            $this->tmp_mastercms->set("obj_customer",$obj_customer);
-            $this->tmp_mastercms->set("obj_financiado",$obj_financiado);
-            $this->tmp_mastercms->render("dashboard/reporte_asociado/asociate");
+        //get kit
+        $obj_kit = $this->get_kit();
+        //get ranges
+        $obj_ranges = $this->get_ranges();
+        //send data
+        $this->tmp_mastercms->set("date_start",$date_start);
+        $this->tmp_mastercms->set("date_end",$date_end);
+        $this->tmp_mastercms->set("pack",$pack);
+        $this->tmp_mastercms->set("ranges",$ranges);
+        $this->tmp_mastercms->set("active",$active);
+        $this->tmp_mastercms->set("obj_customer",$obj_customer);
+        $this->tmp_mastercms->set("obj_kit",$obj_kit);
+        $this->tmp_mastercms->set("obj_ranges",$obj_ranges);
+        $this->tmp_mastercms->render("dashboard/reporte_customer/report_customer_list");
     }
     
-    public function change_status(){
-            //UPDATE DATA ORDERS
-        if($this->input->is_ajax_request()){   
-              $comment_id = $this->input->post("comment_id");
+    public function load(){  
+            //GER SESSION
+            $this->get_session();
+            //get kit
+            $obj_kit = $this->get_kit();
+            //get ranges
+            $obj_ranges = $this->get_ranges();
+            //send data
+            
+            $date_start = $this->input->post('date_start');
+            $date_end = $this->input->post('date_end');
+            $pack = $this->input->post('pack');
+            $ranges = $this->input->post('ranges');
+            $active = $this->input->post('active');
+            
+            if($date_start == ""){
+                $where_date = "";
+            }elseif ($date_end == "") {
+                $where_date = "";
+            }else{
+                $where_date = "customer.created_at BETWEEN '$date_start' AND '$date_end'";
+            }
+            
+            if($pack == -1){
+                $where_kit = "";    
+            }else{
+                $where_kit = "and customer.kit_id = $pack";
+            }
+            
+            if($ranges == -1){
+                $where_range = "";    
+            }else{
+                $where_range = "and customer.range_id = $ranges";    
+            }
+            
+            if($active == -1){
+                $where_active = "";    
+            }else{
+                $where_active = "and customer.active = $active";
+            }
+                
+        $where = "$where_date $where_kit $where_range $where_active";
+        $param_data = array("select" =>"customer.customer_id,
+                                        customer.username,
+                                        customer.first_name,
+                                        customer.last_name,
+                                        customer.dni,
+                                        paises.nombre as pais,
+                                        customer.date_start,
+                                        customer.phone,
+                                        customer.active,
+                                        kit.name as pack",
+            "join" => array('paises, customer.country = paises.id',
+                            'kit, customer.kit_id = kit.kit_id'),
+            "where" => "$where and paises.id_idioma = 7"
+                );
+        $obj_customer = $this->obj_customer->search($param_data);
+        
+        //send data
+        $this->tmp_mastercms->set("date_start",$date_start);
+        $this->tmp_mastercms->set("date_end",$date_end);
+        $this->tmp_mastercms->set("pack",$pack);
+        $this->tmp_mastercms->set("ranges",$ranges);
+        $this->tmp_mastercms->set("active",$active);
+        $this->tmp_mastercms->set("obj_customer",$obj_customer);
+        $this->tmp_mastercms->set("obj_kit",$obj_kit);
+        $this->tmp_mastercms->set("obj_ranges",$obj_ranges);
+        $this->tmp_mastercms->render("dashboard/reporte_customer/report_customer_list");
+    }
+    
+    public function export(){  
+            //GER SESSION
+            $this->get_session();
+            //send data
+            $date_start = $this->input->post('date_start');
+            $date_end = $this->input->post('date_end');
+            $pack = $this->input->post('pack');
+            $ranges = $this->input->post('ranges');
+            $active = $this->input->post('active');
+            
+            if($date_start == ""){
+                $where_date = "";
+            }elseif ($date_end == "") {
+                $where_date = "";
+            }else{
+                $where_date = "customer.created_at BETWEEN '$date_start' AND '$date_end'";
+            }
+            
+            if($pack == -1){
+                $where_kit = "";    
+            }else{
+                $where_kit = "and customer.kit_id = $pack";
+            }
+            
+            if($ranges == -1){
+                $where_range = "";    
+            }else{
+                $where_range = "and customer.range_id = $ranges";    
+            }
+            
+            if($active == -1){
+                $active = "";    
+            }else{
+                $active = "and customer.active = $active";
+            }
               
-                if(count($comment_id) > 0){
-                    $data = array(
-                        'status_value' => 1,
-                        'updated_at' => date("Y-m-d H:i:s"),
-                        'updated_by' => $_SESSION['usercms']['user_id'],
-                    ); 
-                    $this->obj_comments->update($comment_id,$data);
-                }
-                echo json_encode($data);            
-        exit();
-            }
+        
+        $where = "$where_date $where_kit $where_range $active";
+        $param_data = array("select" =>"customer.customer_id as código,
+                                        customer.username as usuario,
+                                        customer.first_name as nombres,
+                                        customer.last_name as apellidos,
+                                        customer.dni as documento,
+                                        paises.nombre as pais,
+                                        customer.date_start as fecha_activacion,
+                                        customer.phone as telefono,
+                                        kit.name as pack,
+                                        customer.active as estado",
+            "join" => array('paises, customer.country = paises.id',
+                            'kit, customer.kit_id = kit.kit_id'),
+            "where" => "$where and paises.id_idioma = 7"
+                );
+        $obj_customer = $this->obj_customer->get_search_export($param_data);
+        //export excel
+        $this->export_excel->to_excel($obj_customer, "REPORTE DE CLIENTES", $date_start,$date_end);
     }
     
-    public function change_status_no(){
-            //UPDATE DATA ORDERS
-        if($this->input->is_ajax_request()){   
-                $comment_id = $this->input->post("comment_id");
-                if(count($comment_id) > 0){
-                    $data = array(
-                        'status_value' => 0,
-                        'updated_at' => date("Y-m-d H:i:s"),
-                        'updated_by' => $_SESSION['usercms']['user_id'],
-                    ); 
-                    $this->obj_comments->update($comment_id,$data);
-                }
-                echo json_encode($data);            
-        exit();
-            }
+    public function get_kit(){  
+        $param_kit = array("select" =>"kit_id,
+                                        name,
+                                        price",
+                            "where" => "active = 1 and status_value = 1"
+                            );
+        $obj_kit = $this->obj_kit->search($param_kit);
+        return $obj_kit;                 
+    }
+    
+    public function get_ranges(){  
+        $param_ranges = array("select" =>"range_id,
+                                        name",
+                            "where" => "active = 1 and status_value = 1"
+                            );
+        $obj_ranges = $this->obj_ranges->search($param_ranges);
+        return $obj_ranges;                 
     }
     
     public function get_session(){          
