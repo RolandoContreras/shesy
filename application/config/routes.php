@@ -241,6 +241,8 @@ $route['dashboard/report_pay'] = "d_report_pay";
 $route['dashboard/report_pay/load'] = "d_report_pay/load";
 $route['dashboard/report_pay/export'] = "d_report_pay/export";
 
+$route['dashboard/report_global'] = "d_report_global";
+
 
 
 $route['salir'] = "login/logout";

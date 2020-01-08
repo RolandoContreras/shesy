@@ -109,8 +109,8 @@
                                 <div class="progress-bar progress-c-theme2" role="progressbar" style="width: <?php echo $pack;?>%; height:10px;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                 <div class="progress-bar progress-c-theme" role="progressbar" style="width: <?php echo $catalogo;?>%; height:10px;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <h6 class="text-muted f-w-300 mt-4">Venta de Pack <span class="float-right">$<?php echo $obj_invoices->sum_total_pack==0?0:$obj_invoices->sum_total_pack;?></span></h6>
-                            <h6 class="text-muted f-w-300 mt-4">Venta de Catalogo <span class="float-right">$<?php echo $obj_invoices->sum_total_catalog==0?0:$obj_invoices->sum_total_catalog;?></span></h6>
+                            <h6 class="text-muted f-w-300 mt-4">Venta de Pack <span class="float-right"><?php echo $obj_invoices->sum_total_pack==0?0:format_number_dolar($obj_invoices->sum_total_pack);?></span></h6>
+                            <h6 class="text-muted f-w-300 mt-4">Venta de Catalogo <span class="float-right">$<?php echo $obj_invoices->sum_total_catalog==0?0:format_number_dolar($obj_invoices->sum_total_catalog);?></span></h6>
                         </div>
                     </div>
                 </div>
