@@ -252,5 +252,9 @@
 </script>
 <script src="<?php echo site_url().'static/cms/js/core/bootstrap-datepicker.min.js';?>"></script>    
 <script src="<?php echo site_url().'static/cms/js/core/ac-datepicker.js';?>"></script>  
+<!--<script src="http://html.codedthemes.com/datta-able/bootstrap/assets/js/pages/chart.js"></script>-->    
+
+
+
 </body>
 </html>
