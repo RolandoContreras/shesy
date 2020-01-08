@@ -28,15 +28,12 @@
                     <div class="card-header">
                     <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/report_invoice/load";?>">
                         <div class="form-row">
-                          <div class="form-group col-md-2">
-                              <div class="form-group">
-                                  <label>Fecha Inicio</label>
-                                  <input class="form-control" type="text" id="date_start" name="date_start" value="<?php echo isset($obj_comission->first_name)?$obj_comission->first_name." ".$obj_comission->last_name:"";?>" class="input-xlarge-fluid" placeholder="Fecha Inicio">
-                              </div>
-                          </div>
-                          <div class="form-group col-md-2">
-                              <label>Fecha Final</label>
-                                  <input class="form-control" type="text" id="date_end" name="date_end" value="<?php echo isset($obj_comission->first_name)?$obj_comission->first_name." ".$obj_comission->last_name:"";?>" class="input-xlarge-fluid" placeholder="Fecha Final">
+                          <div class="form-group col-md-4">
+                              <label>Fechas</label>
+                              <div class="input-daterange input-group" id="datepicker_range">
+                                <input type="text" class="form-control text-left" id="date_start" name="date_start" placeholder="Fecha de Inicio"/>
+                                <input type="text" class="form-control text-right" id="date_end" name="date_end" placeholder="Fecha Final"/>
+                             </div>
                           </div>
                          <div class="form-group col-md-2">
                              <label>Tipo</label>
@@ -109,7 +106,7 @@
                                         $stilo = "label label-success";
                                     }?>
                                 <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
-                                <td><?php echo $value->total;?></td>
+                                <td>$<?php echo $value->total;?></td>
                                 <td><?php echo $value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>

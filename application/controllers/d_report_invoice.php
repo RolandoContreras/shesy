@@ -52,12 +52,12 @@ class D_report_invoice extends CI_Controller{
             $type = $this->input->post('type');
             $active = $this->input->post('active');
             
-            if($date_start == ""){
-                $where_date = "";
-            }elseif ($date_end == "") {
-                $where_date = "";
+            if($date_start == "" || $date_end == ""){
+                $where_date = "invoices.created_at BETWEEN '2019-01-01' AND '2023-12-01'";
             }else{
-                $where_date = "invoices.date BETWEEN '$date_start' AND '$date_end'";
+                $date_start = formato_fecha_db($date_start);
+                $date_end = formato_fecha_db($date_end);
+                $where_date = "invoices.created_at BETWEEN '$date_start' AND '$date_end'";
             }
             
             if($type == -1){
@@ -71,8 +71,6 @@ class D_report_invoice extends CI_Controller{
             }else{
                 $where_active = "and invoices.active = $active";
             }
-            
-            
                 
         $where = "$where_date $where_type $where_active";
         $params = array(

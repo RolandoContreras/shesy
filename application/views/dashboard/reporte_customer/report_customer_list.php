@@ -113,7 +113,7 @@
                               <tbody>
                                   <?php foreach ($obj_customer as $key => $value): ?>
                                 <td><?php echo $value->customer_id;?></td>
-                                <td><?php echo $value->username;?></td>
+                                <td>@<?php echo $value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td><?php echo $value->dni;?></td>
                                 <td><?php echo $value->phone;?></td>
