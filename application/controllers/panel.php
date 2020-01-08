@@ -29,9 +29,6 @@ class Panel extends CI_Controller{
         $first_day_month =  first_month_day_actual();
         $last_day_month =  last_month_day_actual();
         
-        
-        
-        
         //GET MONTH AND YEARS
         $year = date('Y');
         $pass_year = date('Y', strtotime('-1 year')) ;
@@ -50,6 +47,9 @@ class Panel extends CI_Controller{
                 //GET MES
                 $params = array(
                         "select" =>"sum(price) as total_mes,
+                                    (SELECT sum(total) FROM (invoices) WHERE invoices.active = 2) as sum_total_invoice,
+                                    (SELECT sum(total) FROM (invoices) WHERE invoices.type = 1 and invoices.active = 2) as sum_total_pack,
+                                    (SELECT sum(total) FROM (invoices) WHERE invoices.type = 2 and invoices.active = 2) as sum_total_catalog,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-01-01' AND '$year-01-31' and invoices.active = 2) as sum_ene,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-02-01' AND '$year-02-31' and invoices.active = 2) as sum_feb,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-03-01' AND '$year-03-31' and invoices.active = 2) as sum_mar,

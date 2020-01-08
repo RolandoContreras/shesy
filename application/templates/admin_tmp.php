@@ -84,7 +84,7 @@
             $activaciones_syle = "";
             $pagos_syle = "";
             $mantenimiento_syle = "";
-            
+            $report_syle = "";
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active";
@@ -95,8 +95,17 @@
                 case "activar_pagos":
                     $pagos_syle = "active";
                     break;
-                case "document":
-                    $document_syle = "active";
+                case "report_global":
+                    $report_syle = "active";
+                    break;
+                case "report_customer":
+                    $report_syle = "active";
+                    break;
+                case "report_invoice":
+                    $report_syle = "active";
+                    break;
+                case "report_pay":
+                    $report_syle = "active";
                     break;
                 default:
                     $mantenimiento_syle = "active";
@@ -158,14 +167,14 @@
             </a>
         </li>
         <li class="nav-item pcoded-hasmenu">
-            <a href="#!" class="">
+            <a href="#!" class="nav-link <?php echo $report_syle;?>">
                 <span class="pcoded-micon">
                     <i data-feather="printer"></i>
                 </span>
                 <span class="pcoded-mtext">Reportes</span>
             </a>
             <ul class="pcoded-submenu">
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/panel";?>"><i class="icon-large icon-th"></i>Datos</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_global";?>"><i class="icon-large icon-th"></i>Datos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_customer";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_invoice";?>"><i class="icon-large icon-th"></i>Ventas</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_pay";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
