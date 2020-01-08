@@ -45,7 +45,6 @@ class D_report_invoice extends CI_Controller{
     public function load(){  
             //GER SESSION
             $this->get_session();
-
             //send data
             $date_start = $this->input->post('date_start');
             $date_end = $this->input->post('date_end');

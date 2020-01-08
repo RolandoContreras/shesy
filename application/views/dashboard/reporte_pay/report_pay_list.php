@@ -26,21 +26,18 @@
                     <h5>Reporte de Pagos</h5>
                   </div>
                     <div class="card-header">
-                    <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/d_report_pay/load";?>">
+                    <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/report_pay/load";?>">
                         <div class="form-row">
-                          <div class="form-group col-md-2">
-                              <div class="form-group">
-                                  <label>Fecha Inicio</label>
-                                  <input class="form-control" type="text" id="date_start" name="date_start" value="<?php echo isset($obj_comission->first_name)?$obj_comission->first_name." ".$obj_comission->last_name:"";?>" class="input-xlarge-fluid" placeholder="Fecha Inicio">
-                              </div>
-                          </div>
-                          <div class="form-group col-md-2">
-                              <label>Fecha Final</label>
-                                  <input class="form-control" type="text" id="date_end" name="date_end" value="<?php echo isset($obj_comission->first_name)?$obj_comission->first_name." ".$obj_comission->last_name:"";?>" class="input-xlarge-fluid" placeholder="Fecha Final">
+                          <div class="form-group col-md-4">
+                              <label>Fechas</label>
+                              <div class="input-daterange input-group" id="datepicker_range">
+                                <input type="text" class="form-control text-left" id="date_start" name="date_start" placeholder="Fecha de Inicio"/>
+                                <input type="text" class="form-control text-right" id="date_end" name="date_end" placeholder="Fecha Final"/>
+                             </div>
                           </div>
                          <div class="form-group col-md-2">
                              <label>Banco</label>
-                              <select name="type" id="type" class="form-control">
+                              <select name="bank_id" id="bank_id" class="form-control">
                                   <option value="-1">Todos</option>
                                    <option value="1">BCP (crédito)</option>
                                    <option value="2">Interbank</option>
@@ -61,9 +58,10 @@
                          </div>
                         </div>
                     </form>
-                    <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/d_report_pay/export";?>">
+                    <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/report_pay/export";?>">
                             <input type="hidden" id="date_start" name="date_start" value="<?php echo $date_start;?>">
                             <input type="hidden" id="date_end" name="date_end" value="<?php echo $date_end;?>">
+                            <input type="hidden" id="bank_id" name="bank_id" value="<?php echo $bank_id;?>">
                             <input type="hidden" id="active" name="active" value="<?php echo $active;?>">
                             <div class="form-group col-md-2">
                              <button type="submit" class="btn btn-success form-control">Exportar</button>                    
@@ -112,7 +110,7 @@
                                 <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
                                 <td>
                                     <?php if ($value->active == 1) {
-                                        $valor = "En espera";
+                                        $valor = "En proceso";
                                         $stilo = "label label-warning";
                                     }elseif ($value->active == 2) {
                                         $valor = "Procesado";
