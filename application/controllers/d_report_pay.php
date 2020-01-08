@@ -30,11 +30,13 @@ class D_report_pay extends CI_Controller{
             $date_start = "";
             $date_end = "";
             $active = -1;
+            $bank_id = -1;
 
             //send data
             $this->tmp_mastercms->set("date_start",$date_start);
             $this->tmp_mastercms->set("date_end",$date_end);
             $this->tmp_mastercms->set("active",$active);
+            $this->tmp_mastercms->set("bank_id",$bank_id);
             $this->tmp_mastercms->set("obj_pay",$obj_pay);
             $this->tmp_mastercms->render("dashboard/reporte_pay/report_pay_list");
     }
@@ -126,14 +128,14 @@ class D_report_pay extends CI_Controller{
                 
         $where = "$where_date $where_bank $where_active";
         $params = array(
-                        "select" =>"pay.pay_id,
-                                    pay.date,
-                                    pay.amount_total,
-                                    customer.username,
-                                    pay.active,
-                                    customer.first_name,
-                                    customer.bank_id,
-                                    customer.last_name",
+                        "select" =>"pay.pay_id as codigo,
+                                    pay.date as fecha,
+                                    customer.username as usuario,
+                                    customer.first_name as nombre,
+                                    customer.last_name as apellido,
+                                    pay.amount_total as importe,
+                                    customer.bank_id as banco,
+                                    pay.active as estado",
                         "join" => array('customer, pay.customer_id = customer.customer_id'),
                         "where" => "$where",
                         "order" => "pay.pay_id DESC"
