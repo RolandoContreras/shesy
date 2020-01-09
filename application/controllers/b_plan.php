@@ -62,14 +62,15 @@ class B_plan extends CI_Controller {
            
            //MAKE CHARGE
            $charge = $this->culqi->charge($token,$price,$email,$obj_customer->first_name,$obj_customer->last_name,$obj_customer->address,$obj_customer->phone);
+           $price2 = $this->input->post('price2');
            
            //INSERT INVOICE
             $data_invoice = array(
                     'customer_id' => $customer_id,
                     'kit_id' => $kit_id,
-                    'sub_total' => $price,
+                    'sub_total' => $price2,
                     'igv' => 0,
-                    'total' => $price,
+                    'total' => $price2,
                     'type' => 1,
                     'date' => date("Y-m-d H:i:s"),
                     'active' => 2,
@@ -159,7 +160,7 @@ class B_plan extends CI_Controller {
                                 'status_value' => 1,
                                 'date' => date("Y-m-d H:i:s"),
                                 'created_at' => date("Y-m-d H:i:s"),
-                                'created_by' => $_SESSION['usercms']['user_id'],
+                                'created_by' => $_SESSION['customer']['customer_id'],
                             ); 
                             $this->obj_commissions->insert($data);
                         }
@@ -199,7 +200,7 @@ class B_plan extends CI_Controller {
                                         'status_value' => 1,
                                         'date' => date("Y-m-d H:i:s"),
                                         'created_at' => date("Y-m-d H:i:s"),
-                                        'created_by' => $_SESSION['usercms']['user_id'],
+                                        'created_by' => $_SESSION['customer']['customer_id'],
                                     ); 
                                     $this->obj_commissions->insert($data);
                                 }
@@ -255,7 +256,7 @@ class B_plan extends CI_Controller {
                                           'active' => 1,
                                           'status_value' => 1,
                                           'created_at' => date("Y-m-d H:i:s"),
-                                          'created_by' => $_SESSION['usercms']['user_id']
+                                          'created_by' => $_SESSION['customer']['customer_id']
                                        );
                                        $this->obj_points->insert($data);
                             }

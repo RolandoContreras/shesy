@@ -28,7 +28,7 @@
                                     <div class="price-value" style="font-size: 30px;"> <span style="font-size: 10px;"></span> <?php echo format_number_dolar($value->price);?> </div>
                                 </div>
                                   <div class="plan-btn-w"> 
-                                      <button type="button" <?php echo $kit_id >= $value->kit_id?"disabled":"";?> class="buyButton btn btn-primary" data-price="<?php echo quitar_punto_number($value->price);?>" data-kit="<?php echo $value->kit_id;?>">Selecionar Pack</button>
+                                      <button type="button" <?php echo $kit_id >= $value->kit_id?"disabled":"";?> class="buyButton btn btn-primary" data-price="<?php echo quitar_punto_number($value->price);?>"  data-price2="<?php echo $value->price;?>"data-kit="<?php echo $value->kit_id;?>">Selecionar Pack</button>
                                   </div>
                               </div>
                               <div class="plan-description">
@@ -64,9 +64,11 @@
 <script>
   Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
   var  price = "";
+  var  price2 = "";
   var  kit_id = "";
   $('.buyButton').on('click', function(e) {
       price = $(this).attr('data-price');
+      price2 = $(this).attr('data-price2');
       kit_id = $(this).attr('data-kit');
       Culqi.settings({
         title: 'FK Pagos',
@@ -88,6 +90,7 @@
              method : 'post',
              data: {
                  price:price,
+                 price2:price2,
                  kit_id:kit_id,
                  email:email,
                  token:token
