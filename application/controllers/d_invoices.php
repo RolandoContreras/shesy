@@ -15,7 +15,6 @@ class D_invoices extends CI_Controller{
             $params = array(
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
-                                    invoices.img,
                                     invoices.type,
                                     invoices.total ,
                                     customer.customer_id,
@@ -33,15 +32,7 @@ class D_invoices extends CI_Controller{
             //GET DATA FROM CUSTOMER
             $obj_invoices = $this->obj_invoices->search($params);
             
-            /// PAGINADO
-            $modulos ='facturas'; 
-            $seccion = 'Lista';
-            $link_modulo =  site_url().'dashboard/'.$modulos; 
-            
             /// VISTA
-            $this->tmp_mastercms->set('link_modulo',$link_modulo);
-            $this->tmp_mastercms->set('modulos',$modulos);
-            $this->tmp_mastercms->set('seccion',$seccion);
             $this->tmp_mastercms->set("obj_invoices",$obj_invoices);
             $this->tmp_mastercms->render("dashboard/invoices/invoices_list");
     }
@@ -194,30 +185,11 @@ class D_invoices extends CI_Controller{
         //GET CUSTOMER_ID
         $invoice_id = $this->input->post("invoice_id");
         $kit_id = $this->input->post("kit");
-        $img = $this->input->post("img2");
         $date =  $this->input->post('date');
         $active =  $this->input->post('active');
-               
-            if(isset($_FILES["image_file"]["name"])){
-                $config['upload_path']          = './static/backoffice/invoice';
-                $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 1000;
-                $this->load->library('upload', $config);
-                    if ( ! $this->upload->do_upload('image_file')){
-                         $error = array('error' => $this->upload->display_errors());
-                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
-                    }else{
-                        $data = array('upload_data' => $this->upload->data());
-                    }
-                $img = $_FILES["image_file"]["name"];        
-                 if($img == ""){
-                     $img = $this->input->post("img2");
-                 }   
-            }
         //UPDATE DATA
         $data = array(
                 'kit_id' => $kit_id,
-                'img' => $img,
                 'date' => $date,
                 'active' => $active,  
                 'updated_at' => date("Y-m-d H:i:s"),

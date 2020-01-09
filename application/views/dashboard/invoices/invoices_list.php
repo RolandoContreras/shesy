@@ -33,18 +33,16 @@
                             <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 267px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Importe</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Position: activate to sort column ascending">Usuario</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Cliente</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Tipo</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Imagen</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Kit</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -61,37 +59,19 @@
                                 <td><?php echo format_number_dolar($value->total);?></td>
                                 <td><?php echo "@".$value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
-                                <td>
-                                    <?php if ($value->type == 1) {
-                                        $valor = "Activación";
-                                        $stilo = "label label-info";
-                                    }else{
-                                        $valor = "Catalogo";
-                                        $stilo = "label label-waring";
-                                    }?>
-                                    <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
-                                </td>
-                                <td>
-                                    <?php 
-                                    if($value->img != ""){?>
-                                    <img id="<?php echo $key;?>" onclick="modal_img(<?php echo $key;?>);" src='<?php echo site_url()."static/backoffice/invoice/$value->img";?>' width="40" alt="imagen" />
-                                    <?php }else{
-                                        echo "---";
-                                    }
-                                    ?>
-                                </td>
+                                <td><span class="label label-info">Pack</span></td>
                                 <td><?php echo $value->name;?></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td>
                                     <?php if ($value->active == 1) {
                                         $valor = "Esperando Activación";
-                                        $stilo = "label label-info";
+                                        $stilo = "label label-warning";
                                     }elseif($value->active == 2){
                                         $valor = "Procesado";
                                         $stilo = "label label-success";
                                     }elseif($value->active == 0){
                                         $valor = "Sin Acción";
-                                        $stilo = "label";
+                                        $stilo = "label label-info";
                                     }else{
                                         $valor = "Cancelado";
                                         $stilo = "label label-danger";
@@ -105,7 +85,6 @@
                                         </div>
                                     </div>
                                 </td>
-                            </tr>
                             <?php endforeach; ?>
                               </tbody>
                               <tfoot>
