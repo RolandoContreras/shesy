@@ -81,10 +81,10 @@
                                                  </div>
                                                 <div class="row form-group">
                                                     <div class="col-sm-2">
-                                                        <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="talla" id="talla" placeholder="Talla">
+                                                        <input type="text" class="form-control autonumber" name="talla" id="talla" placeholder="Talla" style="text-transform: uppercase;">
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="color" id="color" placeholder="Color">
+                                                        <input type="text" class="form-control autonumber" name="color" id="color" placeholder="Color" style="text-transform: uppercase;">
                                                     </div>
                                                 </div>
                                                 <div class="row form-group">

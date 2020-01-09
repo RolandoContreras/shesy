@@ -8,6 +8,8 @@ class Catalogo_home extends CI_Controller {
         $this->load->model("category_model","obj_category");
         $this->load->model("invoices_model","obj_invoices");
         $this->load->model("invoice_catalog_model","obj_invoice_catalog");
+        $this->load->model("unilevel_model","obj_unilevel");
+        $this->load->model("commissions_model","obj_commissions");
         $this->load->library('culqi');
     }
 
@@ -432,37 +434,43 @@ class Catalogo_home extends CI_Controller {
     }
     
     public function process_pay_invoice() {
-        if($this->input->is_ajax_request()){   
-            
+        try {
            //GET SESION ACTUALY
            $this->get_session();
-           //GET CUSTOMER_ID
-           
-           //INSERT ON INVOICE
-               $customer_id = $_SESSION['customer']['customer_id'];
-               //SELECT DATA CUSTOMER
-               $params_customer = array(
+           $customer_id = $_SESSION['customer']['customer_id'];
+           //SELECT DATA CUSTOMER
+           $params_customer = array(
                         "select" =>"first_name,
                                     last_name,
                                     address,
-                                    phone",
+                                    phone,
+                                    active",
                 "where" => "customer_id = $customer_id",
                 );
             //GET DATA COMMENTS
              $obj_customer = $this->obj_customer->get_search_row($params_customer);
-               
+             $active = $obj_customer->active;
+             
+              //GET DATA CUSTOMER UNILEVEL
+                $params = array(
+                        "select" =>"parend_id,
+                                    ident",
+                        "where" => "customer_id = $customer_id"
+                );
+                //GET DATA FROM BONUS
+                $obj_unilevel = $this->obj_unilevel->get_search_row($params); 
+                $ident = $obj_unilevel->ident;
+             
                $price_cart =  $this->cart->format_number($this->cart->total());
                $price =  $this->input->post('price');
                $token = $this->input->post('token');
                $email = $this->input->post('email');
-           
+               //make charged
                $charge = $this->culqi->charge($token,$price,$email,$obj_customer->first_name,$obj_customer->last_name,$obj_customer->address,$obj_customer->phone);
-               
                
                $price_cart = explode(".", $price_cart);
                $price = $price_cart[0];
                $price= quitar_coma_number($price) ; 
-                
                //INSERT INVOICE
                 $data_invoice = array(
                         'customer_id' => $customer_id,
@@ -478,7 +486,6 @@ class Catalogo_home extends CI_Controller {
                         'created_by' => $customer_id,
                     );
                    $invoce_id = $this->obj_invoices->insert($data_invoice);
-                   
                 //INSERT INVOICE CATALOG
                    
                 $option = "";
@@ -500,14 +507,86 @@ class Catalogo_home extends CI_Controller {
                     'date' => date("Y-m-d H:i:s")
                         );
                     $this->obj_invoice_catalog->insert($data_invoice_catalog);
+                    //insert comission by catalog if customer is active
+                    if($active == 1){
+                        $this->pay_unilevel($ident, $invoce_id, $items['id'],$customer_id,$items['qty']);
+                    }
                 }   
+                
                //DESTROY CART
                $this->cart->destroy();
-               echo $charge;
+               // Respuesta
                echo json_encode($charge);
-               ; 
+        } catch (Exception $e) {
+          echo json_encode($e->getMessage());
         }
     }
+    
+     public function pay_unilevel($ident,$invoice_id,$catalog_id,$customer_id, $quantity){
+                
+                $new_ident = explode(",", $ident);
+                rsort($new_ident);
+                //select data catalog
+                $params = array(
+                        "select" =>"bono_n1,
+                                    bono_n2,
+                                    bono_n3,
+                                    bono_n4,
+                                    bono_n5",
+                        "where" => "catalog_id = $catalog_id"
+                );
+                //GET DATA FROM BONUS
+                $obj_catalog = $this->obj_catalog->get_search_row($params);
+                
+                //BOUCLE ULTI 5 LEVEL
+                for ($x = 0; $x <= 4; $x++) {
+                        if(isset($new_ident[$x])){
+                            if($new_ident[$x] != ""){
+                                //get customer active
+                                $params = array(
+                                        "select" =>"active",
+                                        "where" => "customer_id = $new_ident[$x]"
+                                );
+                                //GET DATA FROM BONUS
+                                $obj_customer = $this->obj_customer->get_search_row($params);
+
+                                if($obj_customer->active == 1){
+                                    //INSERT COMMISSION TABLE
+                                    switch ($x) {
+                                        case 0:
+                                          $amount = $obj_catalog->bono_n1 * $quantity;      
+                                          break;
+                                        case 1:
+                                          $amount = $obj_catalog->bono_n2 * $quantity;      
+                                          break;
+                                        case 2:
+                                          $amount = $obj_catalog->bono_n3 * $quantity;      
+                                          break;
+                                        case 3:
+                                          $amount = $obj_catalog->bono_n4 * $quantity;      
+                                          break;
+                                        case 4:
+                                          $amount = $obj_catalog->bono_n5 * $quantity;      
+                                          break;
+                                    }
+                                    $data = array(
+                                        'invoice_id' => $invoice_id,
+                                        'customer_id' => $new_ident[$x],
+                                        'bonus_id' => 1,
+                                        'amount' => $amount,
+                                        'active' => 1,
+                                        'status_value' => 1,
+                                        'date' => date("Y-m-d H:i:s"),
+                                        'created_at' => date("Y-m-d H:i:s"),
+                                        'created_by' => $customer_id,
+                                    ); 
+                                    $this->obj_commissions->insert($data);
+                                }
+                            }
+                        }
+                }
+        }    
+    
     
      public function nav_catalogo(){
             $params_category_catalogo = array(

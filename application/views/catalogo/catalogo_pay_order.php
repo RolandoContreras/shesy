@@ -116,7 +116,22 @@
                                       </div>
                                   </div>
                             </div>
-                            <div class="form-group has-feedback" id="pay_success_2"></div>
+                          <div class="form-group has-feedback" id="pay_success_2" style="display: none">
+                              <center>
+                                 <div class="alert alert-success">
+                                    <button class="close" data-dismiss="alert" type="button">×</button>
+                                    <p>La venta se realizo éxitosamente</p>
+                                 </div>                 
+                             </center>
+                          </div>
+                          <div class="form-group has-feedback" id="pay_info" style="display: none">
+                                 <center>
+                                     <div class="alert alert-danger">
+                                        <button class="close" data-dismiss="alert" type="button">×</button>
+                                        <p>Hubo un error, verifique los datos de la tarjeta</p>
+                                     </div>                 
+                                 </center>
+                            </div>
                       </div>
                     </div>
                   </div>
@@ -149,24 +164,32 @@
       if (Culqi.token) { // ¡Objeto Token creado exitosamente!
           var token = Culqi.token.id;
           var email = Culqi.token.email;
-          
           var url = site + "catalogo/pay_order/process_pay_invoice"
-          var data = {price:price,email:email,token:token}
-          
-          $.post(url,data,function(res){
-              $("#pay_success_2").html();
-                 var texto = "";
-                 texto = texto+'<div class="alert alert-info">';
-                 texto = texto+'<button class="close" data-dismiss="alert" type="button">×</button>';
-                 texto = texto+'<p>'+res+'</p>';
-                 texto = texto+'</div>';                 
-                 $("#pay_success_2").html(texto);                     
-              
-//                document.getElementById("pay_success_2").style.display = "block";
+          $.ajax({
+             url: url,
+             method : 'post',
+             data: {
+                 price:price,
+                 email:email,
+                 token:token
+             },
+             dataType: 'JSON',  
+             success: function(data){
+                 if(data.object == "charge"){
+                    document.getElementById("pay_success_2").style.display = "block";
+                    location.href = site + "catalogo/order";
+                }else {
+                    document.getElementById("pay_info").style.display = "block";
+                 } 
+             },
+             error : function(data){
+                 alert(data.user_message);
+             }
           });
-      } else { // ¡Hubo algún problema!
+      } else { 
           console.log(Culqi.error);
           alert(Culqi.error.user_message);
       }
     };
+
 </script>
