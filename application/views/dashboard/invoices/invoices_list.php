@@ -54,6 +54,7 @@
                                 </tr>
                               </thead>
                               <tbody>
+                                <tr>
                                   <?php foreach ($obj_invoices as $key => $value): ?>
                                 <td><?php echo $value->invoice_id;?></td>
                                 <td><?php echo format_number_dolar($value->total);?></td>
@@ -85,6 +86,7 @@
                                         </div>
                                     </div>
                                 </td>
+                            </tr>
                             <?php endforeach; ?>
                               </tbody>
                               <tfoot>

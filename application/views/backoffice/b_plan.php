@@ -28,7 +28,7 @@
                                     <div class="price-value" style="font-size: 30px;"> <span style="font-size: 10px;"></span> <?php echo format_number_dolar($value->price);?> </div>
                                 </div>
                                   <div class="plan-btn-w"> 
-                                      <button type="button" <?php echo $kit_id >= $value->kit_id?"disabled":"";?> class="buyButton btn btn-primary" data-price="<?php echo quitar_punto_number($value->price);?>"  data-price2="<?php echo $value->price;?>"data-kit="<?php echo $value->kit_id;?>">Selecionar Pack</button>
+                                      <button type="button" <?php echo $kit_id >= $value->kit_id?"disabled":"";?> class="buyButton btn btn-primary" data-price="<?php echo quitar_punto_number($value->price);?>" data-price2="<?php echo $value->price;?>" data-kit="<?php echo $value->kit_id;?>">Selecionar Pack</button>
                                   </div>
                               </div>
                               <div class="plan-description">
