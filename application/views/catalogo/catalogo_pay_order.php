@@ -146,7 +146,7 @@
 </section>
 <script src="<?php echo site_url();?>static/catalog/js/pay_order_new.js"></script>
 <script>
-  Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
+  Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
   var  price = "";
   $('#buyButton').on('click', function(e) {
       price = $(this).attr('data-price');
