@@ -53,17 +53,6 @@
   <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'a38afe7d888e2f6aee2b1c4df7553d92f790f730';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
 <script src="https://checkout.culqi.com/js/v3"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
@@ -92,7 +81,7 @@ window.smartsupp||(function(d) {
             </li>
             <li>
             <center>
-                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-secondary">
+                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                       <span>Catalogo de productos</span>                
                   </div>
@@ -191,7 +180,7 @@ window.smartsupp||(function(d) {
                  </li>
                  <hr/>
                  <li>
-                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-secondary">
+                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                       <span>Catalogo de productos</span>                
                   </div>

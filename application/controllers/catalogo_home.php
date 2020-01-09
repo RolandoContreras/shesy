@@ -10,6 +10,7 @@ class Catalogo_home extends CI_Controller {
         $this->load->model("invoice_catalog_model","obj_invoice_catalog");
         $this->load->model("unilevel_model","obj_unilevel");
         $this->load->model("commissions_model","obj_commissions");
+        $this->load->model("points_model","obj_points");
         $this->load->library('culqi');
     }
 
@@ -509,10 +510,10 @@ class Catalogo_home extends CI_Controller {
                     $this->obj_invoice_catalog->insert($data_invoice_catalog);
                     //insert comission by catalog if customer is active
                     if($active == 1){
+                        //insert comission and points
                         $this->pay_unilevel($ident, $invoce_id, $items['id'],$customer_id,$items['qty']);
                     }
                 }   
-                
                //DESTROY CART
                $this->cart->destroy();
                // Respuesta
@@ -522,7 +523,7 @@ class Catalogo_home extends CI_Controller {
         }
     }
     
-     public function pay_unilevel($ident,$invoice_id,$catalog_id,$customer_id, $quantity){
+    public function pay_unilevel($ident,$invoice_id,$catalog_id,$customer_id, $quantity){
                 
                 $new_ident = explode(",", $ident);
                 rsort($new_ident);
@@ -581,14 +582,26 @@ class Catalogo_home extends CI_Controller {
                                         'created_by' => $customer_id,
                                     ); 
                                     $this->obj_commissions->insert($data);
+                                    
+                                    //INSERT POINTS TABLE
+                                       $data_point = array(
+                                          'customer_id' => $new_ident[$x] ,
+                                          'point' => $amount ,
+                                          'date' => date("Y-m-d H:i:s"),
+                                          'active' => 1,
+                                          'status_value' => 1,
+                                          'created_at' => date("Y-m-d H:i:s"),
+                                          'created_by' => $customer_id
+                                       );
+                                       $this->obj_points->insert($data_point);
+                                    
                                 }
                             }
                         }
                 }
-        }    
+        }   
     
-    
-     public function nav_catalogo(){
+    public function nav_catalogo(){
             $params_category_catalogo = array(
                         "select" =>"category_id,
                                     slug,
