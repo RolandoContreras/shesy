@@ -64,6 +64,8 @@ window.smartsupp||(function(d) {
   c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
 })(document);
 </script>
+<script src="https://checkout.culqi.com/js/v3"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body class="menu-position-side menu-side-left color-scheme-white full-screen with-content-panel">
   <div class="all-wrapper with-side-panel solid-bg-all">
