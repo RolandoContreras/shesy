@@ -1,6 +1,6 @@
 <div class="content-w">
   <ul class="breadcrumb">
-    <li class="breadcrumb-item"> <a href="https://18kworld.com">Tablero</a> </li>
+      <li class="breadcrumb-item"> <a href="<?php echo site_url().'backoffice';?>">Tablero</a> </li>
   </ul>
   <div class="content-i">
     <div class="content-box">
@@ -56,7 +56,7 @@
                                   switch ($obj_customer->kit_id) {
                                         case 1:$kit = "Pack 1";$img = "pack_1.png";break;
                                         case 2:$kit = "Pack 2";$img = "pack_2.png";break;
-                                        default:$kit = "-";$img = "libre.png";break;
+                                        default:$kit = "-";$img = "libre1.png";break;
                                   }
                                   switch ($obj_customer->range_id) {
                                         case 1:$range = "Embajdor G1";break;
@@ -78,7 +78,7 @@
                                             switch ($value->kit_id) {
                                                     case 1:$kit = "Pack 1";$img = "pack_1.png";break;
                                                     case 2:$kit = "Pack 2";$img = "pack_2.png";break;
-                                                    default:$kit = "-";$img = "libre.png";break;
+                                                    default:$kit = "-";$img = "libre1.png";break;
                                               }
                                             switch ($value->range_id) {
                                                 case 1:$range = "Embajdor G1";break;
@@ -102,7 +102,7 @@
                                                                     switch ($value3->kit_id) {
                                                                        case 1:$kit = "Pack 1";$img = "pack_1.png";break;
                                                                        case 2:$kit = "Pack 2";$img = "pack_2.png";break;
-                                                                       default:$kit = "-";$img = "libre.png";break;
+                                                                       default:$kit = "-";$img = "libre1.png";break;
                                                                       }
                                                                     switch ($value3->range_id) {
                                                                         case 1:$range = "Embajdor G1";break;
@@ -126,7 +126,7 @@
                                                                                         foreach ($obj_customer_n4 as $value4) { switch ($value4->kit_id) {
                                                                                                     case 1:$kit = "Pack 1";$img = "pack_1.png";break;
                                                                                                    case 2:$kit = "Pack 2";$img = "pack_2.png";break;
-                                                                                                   default:$kit = "-";$img = "libre.png";break;
+                                                                                                   default:$kit = "-";$img = "libre1.png";break;
                                                                                                   }
                                                                                                 switch ($value4->range_id) {
                                                                                                     case 1:$range = "Embajdor G1";break;

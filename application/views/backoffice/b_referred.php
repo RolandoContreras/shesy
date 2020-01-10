@@ -17,7 +17,7 @@
                 <div class="col-md-6">
                   <div class="profile-tile">
                     <a class="profile-tile-box">
-                        <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/libre.png';?>"> </div>
+                        <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/libre1.png';?>"> </div>
                       <div class="pt-user-name"> <b><?php echo $obj_total->total_posicion;?> Kits</b> <br> Posición </div>
                     </a>
                   </div>
