@@ -33,7 +33,7 @@
                                     <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=date';?>">Ordenar por Defecto</a>
                                     <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=date'?>">Ordenar por Novedad</a>
                                     <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=price'?>">Precio Menor a Mayor</a>
-                                    <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=price-desc'?>">Precio Mayor a Menos</a>
+                                    <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=price-desc'?>">Precio Mayor a Menor</a>
                                 </div>
                             </div>
                         </div>

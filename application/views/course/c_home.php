@@ -20,6 +20,27 @@
           <div class="main-body">
             <div class="page-wrapper">
               <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            ¿Qué curso estas buscando?
+                        </div>
+                        <div class="card-block">
+                           <div class="row justify-content-center">
+                                <div class="col-sm-6">
+                                    <form method="get" action="<?php echo site_url().$url;?>">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" name="search" id="search" placeholder="Buscar tu Curso">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="submit"><i data-feather="search"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
                 <div class="col-sm-12">
                     <?php 
                     if($kid_id < 1){ ?>

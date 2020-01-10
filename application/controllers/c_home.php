@@ -17,12 +17,20 @@ class C_home extends CI_Controller {
         //GET NAV CURSOS
         $obj_category_videos = $this->nav_videos();
         
-        if($kid_id > 0){
-            $where = "videos.active = 1";
+        if(isset($_GET['search'])){
+                $search = $_GET['search'];
+                if($kid_id > 0){
+                    $where = "videos.name like '%$search%' and category.type = 1 and videos.active = 1";
+                }else{
+                    $where = "videos.name like '%$search%' and category.type = 1 and videos.type = 1 and videos.active = 1";
+                }
         }else{
-            $where = "videos.type = 1 and videos.active = 1";
+            if($kid_id > 0){
+                $where = "category.type = 1 and videos.active = 1";
+            }else{
+                $where = "category.type = 1 and videos.type = 1 and videos.active = 1";
+            }
         }
-        
         $category_name = "Todos los videos";
         
          //get catalog
@@ -66,9 +74,9 @@ class C_home extends CI_Controller {
             /// DATA
             $obj_videos = $this->obj_videos->search_data($params, $config["per_page"],$this->uri->segment(2));
         //GET DATA FROM CUSTOMER
-        
             
-            
+        $url = 'course';
+        $this->tmp_course->set("url",$url);    
         $this->tmp_course->set("kid_id",$kid_id);
         $this->tmp_course->set("category_name",$category_name);
         $this->tmp_course->set("obj_pagination",$obj_pagination);
@@ -135,6 +143,8 @@ class C_home extends CI_Controller {
             //send total row
            
             //SEND DATA
+            $url = 'course';
+            $this->tmp_course->set("url",$url);    
             $this->tmp_course->set("kid_id",$kid_id);
             $this->tmp_course->set("category_name",$category_name);
             $this->tmp_course->set("obj_pagination",$obj_pagination);
