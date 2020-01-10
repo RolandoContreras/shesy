@@ -20,8 +20,26 @@
           <div class="main-body">
             <div class="page-wrapper">
               <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Ver Productos</h5>
+                        </div>
+                        <div class="card-block">
+                            <div class="btn-group mb-2 mr-2">
+                                <button type="button" class="btn btn btn-outline-secondary">Ver Por:</button>
+                                <button type="button" class="btn btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
+                                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(92px, 43px, 0px);">
+                                    <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=date';?>">Ordenar por Defecto</a>
+                                    <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=date'?>">Ordenar por Novedad</a>
+                                    <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=price'?>">Precio Menor a Mayor</a>
+                                    <a class="dropdown-item" href="<?php echo site_url().$url.'?orderby=price-desc'?>">Precio Mayor a Menos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-sm-12">
-                    
                     <div class="card">
                       <div class="card-header">
                         <h5><?php echo $category_name;?></h5>

@@ -34,9 +34,9 @@
             </div>
           </div>
         </div>
-        <div class="breadcrumb-content ">
-          <div class="breadcrumbs-wrapper container">
-              <ul class="breadcrumbs">
+        <div class="breadcrumb-content">
+            <div class="breadcrumbs-wrapper container">
+              <ul id="breadcrumbs" class="breadcrumbs">
                 <li>
                     <a href="<?php echo site_url();?>" title="Inicio">
                         <span>Inicio</span>
@@ -46,11 +46,11 @@
                     </span>
                 </li>
                 <li>
-                    <span title="Contacto" class="gold">Catalogo</span>
+                   <span title="Catalogo">Catalogo</span>
                 </li>
               </ul>
+            </div>
           </div>
-        </div>
       </div>
       <div class="container site-content ">
         <div class=row>

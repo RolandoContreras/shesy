@@ -23,6 +23,27 @@ class Catalogo_home extends CI_Controller {
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_catalogo();
         
+        if(isset($_GET['orderby'])){
+                $type = $_GET['orderby'];
+                    
+                switch ($type) {
+                    case 'date':
+                        $order = "catalog.date DESC";
+                        break;
+                    case 'price':
+                        $order = "catalog.price ASC";
+                        break;
+                    case 'price-desc':
+                        $order = "catalog.price DESC";
+                        break;
+                    default:
+                        $order = "catalog.catalog_id ASC";
+                        break;
+                }
+            }else{
+                $order = "catalog.catalog_id DESC";
+            }
+            
         if($kid_id > 0){
             $where = "catalog.active = 1";
         }else{
@@ -46,7 +67,7 @@ class Catalogo_home extends CI_Controller {
                                     catalog.date",
                 "join" => array( 'category, category.category_id = catalog.category_id'),
                 "where" => $where,
-                "order" => "catalog.catalog_id DESC");
+                "order" => "$order");
             
              /// PAGINADO
             $config=array();
@@ -74,7 +95,8 @@ class Catalogo_home extends CI_Controller {
             /// DATA
             $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"],$this->uri->segment(2));
         //GET DATA FROM CUSTOMER
-        
+        $url = 'catalogo';
+        $this->tmp_catalog->set("url",$url);
         $this->tmp_catalog->set("category_name",$category_name);
         $this->tmp_catalog->set("obj_pagination",$obj_pagination);
         $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
@@ -86,6 +108,27 @@ class Catalogo_home extends CI_Controller {
 	{
             //GET NAV CURSOS
             $obj_category_catalogo = $this->nav_catalogo();
+            
+            if(isset($_GET['orderby'])){
+                $type = $_GET['orderby'];
+                    
+                switch ($type) {
+                    case 'date':
+                        $order = "catalog.date DESC";
+                        break;
+                    case 'price':
+                        $order = "catalog.price ASC";
+                        break;
+                    case 'price-desc':
+                        $order = "catalog.price DESC";
+                        break;
+                    default:
+                        $order = "catalog.catalog_id ASC";
+                        break;
+                }
+            }else{
+                $order = "catalog.catalog_id DESC";
+            }
             
             //get data catalog
             $params_categogory_id = array(
@@ -110,7 +153,7 @@ class Catalogo_home extends CI_Controller {
                                     catalog.date",
                 "join" => array( 'category, category.category_id = catalog.category_id'),
                 "where" => "catalog.category_id = $category_id and catalog.active = 1",
-                "order" => "catalog.catalog_id DESC");
+                "order" => "$order");
             
              /// PAGINADO
             $config=array();
@@ -140,6 +183,8 @@ class Catalogo_home extends CI_Controller {
             //send total row
             
             //SEND DATA
+            $url = "catalogo/$category";
+            $this->tmp_catalog->set("url",$url);
             $this->tmp_catalog->set("category_name",$category_name);
             $this->tmp_catalog->set("obj_pagination",$obj_pagination);
             $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
