@@ -27,7 +27,7 @@ class B_plan extends CI_Controller {
                                     description,
                                     img,
                                     active",
-                        "where" => "status_value = 1",
+                        "where" => "active = 1 and status_value = 1",
                         "order" => "kit_id ASC",
                         );
         $obj_kit = $this->obj_kit->search($params);

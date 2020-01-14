@@ -11,7 +11,7 @@
         <div class="element-box">
           <div class="alert alert-success" role="alert"> <strong>Reglas de Retiro </strong><br> 
                 Las solicitudes de retiro se realizan los fines de mes.<br>
-                El importe mínimo de retiro es de $10.
+                El importe mínimo de retiro es de S/. 10.
                 Los pagos se procesan en las primeras 24 horas hábiles de realizar la solicitud
             </div>
         </div>
@@ -25,13 +25,13 @@
                     <div class="col-md-6">
                       <div class="element-box el-tablo">
                         <div class="label"> GANANCIA TOTAL </div>
-                        <div class="value"> $<?php echo $total_comisiones!=""?$total_comisiones:"0.00";?> </div>
+                        <div class="value"> S/. <?php echo $total_comisiones!=""?$total_comisiones:"0.00";?> </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="element-box el-tablo">
                         <div class="label"> GANANCIA DISPONIBLE </div>
-                        <div class="value"> $<?php echo $total_disponible!=""?$total_disponible:"0.00";?> </div>
+                        <div class="value"> S/. <?php echo $total_disponible!=""?$total_disponible:"0.00";?> </div>
                       </div>
                     </div>
                   </div>

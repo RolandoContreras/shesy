@@ -37,7 +37,7 @@
                                           <span class="lighter"><?php echo $value->invoice_id;?></span>
                                       </td>
                                       <td align="center"> 
-                                          <span><?php echo format_number_dolar($value->price);?></span> <br> 
+                                          <span>S/. <?php echo $value->price;?></span> <br> 
                                       </td>
                                       <td align="center">
                                           <?php 

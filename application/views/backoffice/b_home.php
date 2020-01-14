@@ -27,13 +27,13 @@
                     <div class="col-md-3">
                       <div class="element-box el-tablo">
                         <div class="label"> Ganancia Total </div>
-                        <div class="value"> US$ <?php echo $obj_total_commissions->total_comissions!=""?$obj_total_commissions->total_comissions:"0.00";?> </div>
+                        <div class="value"> S/. <?php echo $obj_total_commissions->total_comissions!=""?$obj_total_commissions->total_comissions:"0.00";?> </div>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="element-box el-tablo">
                         <div class="label"> Ganancia DISPONIBLE </div>
-                        <div class="value"> US$ <?php echo $obj_total_commissions->total_disponible!=""?$obj_total_commissions->total_disponible:"0.00";?> </div>
+                        <div class="value"> S/. <?php echo $obj_total_commissions->total_disponible!=""?$obj_total_commissions->total_disponible:"0.00";?> </div>
                       </div>
                     </div>
                     <div class="col-md-3">

@@ -86,7 +86,7 @@
                                           <span class="smaller lighter "> <?php echo formato_fecha_minutos($value->date);?><i class="far fa-clock "></i></span>
                                       </td>
                                       <td align="center">
-                                          <span class="badge badge-success-inverted "> + <?php echo $value->amount;?></span>
+                                          <span class="badge badge-success-inverted "> + S/. <?php echo $value->amount;?></span>
                                       </td>
                                 </tr>
                          <?php } ?>
