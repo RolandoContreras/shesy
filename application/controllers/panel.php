@@ -21,7 +21,7 @@ class Panel extends CI_Controller{
                                     (select count(*) from pay where active = 1) as pending_pay,
                                     (select count(*) from invoices where active = 1 and type = 2) as pending_invoices_catalog,
                                     (select count(*) from invoices where active = 1 and type = 1) as pending_invoices_pack,
-                                    ",
+                                    (select count(*) from embassy where active = 1 and status_value = 1) as pending_embassy",
                         "where" => "active = 1");
         $obj_pending = $this->obj_comments->get_search_row($params);
         
@@ -49,6 +49,7 @@ class Panel extends CI_Controller{
                         "select" =>"sum(price) as total_mes,
                                     (SELECT sum(total) FROM (invoices) WHERE invoices.active = 2) as sum_total_invoice,
                                     (SELECT sum(total) FROM (invoices) WHERE invoices.type = 1 and invoices.active = 2) as sum_total_pack,
+                                    (SELECT count(*) FROM (embassy) WHERE status_value = 1) as sum_total_embassy,
                                     (SELECT sum(total) FROM (invoices) WHERE invoices.type = 2 and invoices.active = 2) as sum_total_catalog,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-01-01' AND '$year-01-31' and invoices.active = 2) as sum_ene,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-02-01' AND '$year-02-31' and invoices.active = 2) as sum_feb,

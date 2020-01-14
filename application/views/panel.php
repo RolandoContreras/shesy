@@ -36,11 +36,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-xl-4">
-                <div class="card user-card">
-                  <div class="card-block">
-                    <h5 class="f-w-400 m-b-15">Categorías</h5>
-                    <h4 class="f-w-300 mb-3"><?php echo $obj_total->total_category;?></h4><span class="text-muted">Total</span></div>
+              <div class="col-md-12 col-xl-4">
+                <div class="card theme-bg visitor">
+                  <div class="card-block text-center">
+                    <h5 class="text-white m-0">NUEVOS EMBAJADORES</h5>
+                    <h3 class="text-white m-t-20 f-w-300"><?php echo $obj_invoices->sum_total_embassy;?></h3>
+                    <span class="text-white"><?php echo $obj_pending->pending_embassy;?> Pendientes</span></div>
                 </div>
               </div>
              <div class="col-md-6 col-xl-4">

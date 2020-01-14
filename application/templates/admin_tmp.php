@@ -134,6 +134,7 @@
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/clientes";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comentarios";?>"><i class="icon-large icon-th"></i>Comentarios</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/embassy";?>"><i class="icon-large icon-th"></i>Embajadores</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas";?>"><i class="icon-large icon-th"></i>Facturas Pack</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas_catalogo";?>"><i class="icon-large icon-th"></i>Facturas Catalogo</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>

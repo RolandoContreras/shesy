@@ -191,6 +191,10 @@ $route['dashboard/comentarios'] = "d_comments";
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
 $route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
 
+$route['dashboard/embassy'] = "d_embassy";
+$route['dashboard/embassy/cambiar_status'] = "d_embassy/change_status";
+$route['dashboard/embassy/cambiar_status_no'] = "d_embassy/change_status_no";
+
 $route['dashboard/usuarios'] = "d_users";
 $route['dashboard/usuarios'] = "d_users";
 $route['dashboard/usuarios/load'] = "d_users/load";
