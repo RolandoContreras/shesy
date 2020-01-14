@@ -66,9 +66,9 @@
                                         <?php endif; ?>
                                     </th>
                                     
-                                    <th>$<?php echo $this->cart->format_number($items['price']); ?></th>
+                                    <th>S/. <?php echo $this->cart->format_number($items['price']); ?></th>
                                     <th class="text-c-green">
-                                        <span class="badge badge-pill badge-success" style="font-size: 100%;">$<?php echo $this->cart->format_number($items['subtotal']); ?></span>
+                                        <span class="badge badge-pill badge-success" style="font-size: 100%;">S/. <?php echo $this->cart->format_number($items['subtotal']); ?></span>
                                     </th>
                                     <th>
                                         <button type="button" onclick="update_order('<?php echo $items['rowid'];?>');" class="btn btn-icon btn-rounded btn-outline-success"><i data-feather="rotate-cw"></i></button>
@@ -82,7 +82,7 @@
                                 <th class="text-c-purple"><b>TOTAL</b></th>
                                 <th class="text-c-purple">
                                         <span class="badge badge-pill badge-dark" style="font-size: 100%;">
-                                            $<?php echo $this->cart->format_number($this->cart->total()); ?>
+                                            S/. <?php echo $this->cart->format_number($this->cart->total()); ?>
                                         </span>
                                         
                                 </th>

@@ -98,8 +98,8 @@
                                   </td>
                                   <td><?php echo $value->quantity;?></td>
                                   <td><?php echo $value->option;?></td>
-                                  <td>$<?php echo $value->price;?></td>
-                                  <td>$<?php echo $value->sub_total;?></td>
+                                  <td>S/. <?php echo $value->price;?></td>
+                                  <td>S/. <?php echo $value->sub_total;?></td>
                                </tr>
                           <?php } ?>
                       </tbody>
@@ -113,11 +113,11 @@
                     <tbody>
                       <tr>
                         <th>Sub Total :</th>
-                        <td>$<?php echo $obj_invoices->sub_total;?></td>
+                        <td>S/. <?php echo $obj_invoices->sub_total;?></td>
                       </tr>
                       <tr>
                         <th>IGV (0%) :</th>
-                        <td>$<?php echo $obj_invoices->igv;?></td>
+                        <td>S/. <?php echo $obj_invoices->igv;?></td>
                       </tr>
                       <tr class="text-info">
                         <td>
@@ -126,7 +126,7 @@
                         </td>
                         <td>
                           <hr>
-                          <h5 class="text-primary">$<?php echo $obj_invoices->total;?></h5>
+                          <h5 class="text-primary">S/. <?php echo $obj_invoices->total;?></h5>
                         </td>
                       </tr>
                     </tbody>
