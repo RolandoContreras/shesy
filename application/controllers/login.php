@@ -25,6 +25,7 @@ class Login extends CI_Controller {
             $params = array("select" =>"customer.customer_id,
                                         customer.first_name,
                                         customer.username,
+                                        customer.active_month,
                                         customer.last_name,
                                         customer.kit_id,
                                         customer.email,
@@ -43,6 +44,7 @@ class Login extends CI_Controller {
                     $data_customer_session['username'] = $obj_customer->username;
                     $data_customer_session['email'] = $obj_customer->email;
                     $data_customer_session['kit_id'] = $obj_customer->kit_id;
+                    $data_customer_session['active_month'] = $obj_customer->active_month;
                     $data_customer_session['active'] = $obj_customer->active;
                     $data_customer_session['logged_customer'] = "TRUE";
                     $data_customer_session['status'] = $obj_customer->status_value;

@@ -15,7 +15,6 @@ class B_finance extends CI_Controller {
         $this->get_session();
         /// VISTA
         $customer_id = $_SESSION['customer']['customer_id'];
-        
         //GET PLAN INFORMATION
         $params = array("select" =>"sum(amount) as total_maching,
                                     (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 1 and status_value = 1) as total_unilevel,
@@ -52,13 +51,13 @@ class B_finance extends CI_Controller {
         $this->get_session();
         /// VISTA
         $customer_id = $_SESSION['customer']['customer_id'];
-        
         //GET DATA COMISION
         //TYPE 1 -  plan
         //TYPE 2 -  catalog
                 $params = array(
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
+                                    invoices.recompra,
                                     kit.price,
                                     kit.name,
                                     invoices.active",

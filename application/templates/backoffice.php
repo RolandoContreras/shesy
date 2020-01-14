@@ -70,6 +70,18 @@
         </div>
         <div class="menu-and-user">
           <ul class="main-menu" style="background: #4a3116;">
+              <li>
+                <center>
+                   <span>
+                         <?php 
+                    if($_SESSION['customer']['active_month'] == 1){ ?>
+                            <div class="value badge badge-pill badge-success"> Activo </div>
+                    <?php  }else{ ?>
+                          <div class="value badge badge-pill badge-danger"> Inactivo </div>
+                    <?php } ?>
+                    </span> 
+                </center>
+             </li>
             <li>
             <center>
               <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
@@ -79,7 +91,8 @@
               </a>
              </center>
             </li>
-            <li>
+            
+             <li>
             <center>
                 <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
@@ -88,6 +101,12 @@
                 </a>
                 </center>
              </li>
+            <li>
+              <a href="<?php echo site_url().'backoffice';?>" class="active" style="margin-top:30px;">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-menu"></div>
+                </div> <span>Tablero</span> </a>
+            </li>
             <li>
               <a href="<?php echo site_url().'backoffice';?>" class="active" style="margin-top:30px;">
                 <div class="icon-w">
@@ -167,6 +186,12 @@
             <div class="logged-user-info-w">
               <div class="logged-user-name"> <?php echo $_SESSION['customer']['name']; ?></div>
               <div class="logged-user-role"> <?php echo $_SESSION['customer']['username']; ?> </div>
+                    <?php 
+                    if($_SESSION['customer']['active_month'] == 1){ ?>
+                            <div class="value badge badge-pill badge-success"> Activo </div>
+                    <?php  }else{ ?>
+                          <div class="value badge badge-pill badge-danger"> Inactivo </div>
+                    <?php } ?>
             </div>
           </div>
         </div>
@@ -306,6 +331,6 @@
   <script>
     $(document).ready(function () { var lengths = $('.direito').map(function () { return $(this).find('li').length; }).get(); }); $(function () { $('[data-toggle="popover"]').popover({ html: true, trigger: 'manual', container: $(this).attr('id'), placement: "top", content: function () { $return = '<div class="hover-hovercard" data-placement="top"></div>'; } }).on("mouseenter", function () { var _this = this; $(this).popover("show"); $(this).siblings(".popover").on("mouseleave", function () { $(_this).popover('hide'); }); }).on("mouseleave", function () { var _this = this; $(_this).popover("hide"); }); })
   </script>
+  <script src="<?php echo site_url().'static/backoffice/js/script/home.js';?>"></script>
 </body>
-
 </html>

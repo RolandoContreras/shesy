@@ -40,7 +40,12 @@
                                           <span><?php echo format_number_dolar($value->price);?></span> <br> 
                                       </td>
                                       <td align="center">
-                                          <span class="smaller lighter"><?php echo "Pago membresía - ".$value->name;?></span>
+                                          <?php 
+                                          if($value->recompra == 1){ ?>
+                                                <span class="smaller lighter"><?php echo "Pago Recompra - ".$value->name;?></span>
+                                          <?php }else{?>
+                                                <span class="smaller lighter"><?php echo "Pago Membresía - ".$value->name;?></span>
+                                          <?php } ?>
                                       </td>
                                       <td align="center"> 
                                           <span><?php echo formato_fecha_barras($value->date);?></span><br> 

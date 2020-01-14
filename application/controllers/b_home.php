@@ -13,12 +13,15 @@ class B_home extends CI_Controller {
     {
         //GET SESION ACTUALY
         $this->get_session();
+        date_default_timezone_set('America/Lima');
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //GET DATA CUSTOMER
         $params = array(
                         "select" =>"customer.username,
                                     customer.active,
+                                    customer.date_month,
+                                    customer.active_month,
                                     kit.name as kit,
                                     kit.kit_id,
                                     kit.img as kit_img,
@@ -30,7 +33,33 @@ class B_home extends CI_Controller {
                                         'ranges, customer.range_id = ranges.range_id'),
                         );
         $obj_customer = $this->obj_customer->get_search_row($params);
+        $date_month = $obj_customer->date_month;
         
+        $date = date("Y-m-d");
+        if($date_month != null){
+            if($date_month < $date){
+                
+                //UPDATE SESSION
+                $data_month = 0;
+                $this->update_session_active_month($data_month);
+                //update customer table
+                $data = array(
+                    'active_month' => 0,
+                    'date_start' => date("Y-m-d H:i:s"),
+                    'updated_at' => date("Y-m-d H:i:s"),
+                    'updated_by' => $customer_id
+                ); 
+                $this->obj_customer->update($customer_id,$data);
+                $result_date = 0;
+                $this->tmp_backoffice->set("result_date",$result_date);
+            }else{
+                $date1 = new DateTime($date);
+                $date2 = new DateTime($date_month);
+                $diff = $date1->diff($date2);
+                $result_date = $diff->days;
+                $this->tmp_backoffice->set("result_date",$result_date);
+            }
+        }
         //GET NEXT RANGE
         $range_actually =  $obj_customer->range_id;
         if($range_actually != ""){
@@ -90,6 +119,7 @@ class B_home extends CI_Controller {
            //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
         
+        
         $this->tmp_backoffice->set("obj_total_commissions",$obj_total_commissions);
         $this->tmp_backoffice->set("obj_commissions",$obj_commissions);
         $this->tmp_backoffice->set("obj_next_range",$obj_next_range);
@@ -97,6 +127,19 @@ class B_home extends CI_Controller {
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
         $this->tmp_backoffice->render("backoffice/b_home");
     }
+    
+    public function update_session_active_month($data_month){          
+        $data_customer_session['customer_id'] = $_SESSION['customer']['customer_id'];
+        $data_customer_session['name'] = $_SESSION['customer']['name'];
+        $data_customer_session['username'] = $_SESSION['customer']['username'];
+        $data_customer_session['email'] = $_SESSION['customer']['email'];
+        $data_customer_session['kit_id'] = $_SESSION['customer']['kit_id'];
+        $data_customer_session['active_month'] = $data_month;
+        $data_customer_session['active'] = $_SESSION['customer']['active'];
+        $data_customer_session['logged_customer'] = "TRUE";
+        $data_customer_session['status'] = $_SESSION['customer']['status'];
+        $_SESSION['customer'] = $data_customer_session; 
+    }  
     
     public function get_session(){          
         if (isset($_SESSION['customer'])){

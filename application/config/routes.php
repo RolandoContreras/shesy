@@ -85,8 +85,6 @@ $route['catalogo/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalogo_home/detail/$1';
 $route['catalogo/order/add_cart'] = "catalogo_home/add_cart";
 $route['catalogo/order/send_invoice'] = "catalogo_home/send_invoice";
 
-
-
 $route['course'] = "c_home";
 $route['course/([0-9]+)'] = 'c_home/index/$1';
 $route['course/([0-9a-z_-]+)'] = 'c_home/category/$1';
@@ -99,6 +97,8 @@ $route['backoffice/profile/update_bank'] = "b_profile/update_bank";
 
 $route['backoffice/plan'] = "b_plan";
 $route['backoffice/plan/create_invoice'] = "b_plan/create_invoice";
+$route['backoffice/recompra'] = "b_plan/recompra";
+$route['backoffice/plan/create_invoice_recompra'] = "b_plan/create_invoice_recompra";
 
 $route['backoffice/referred'] = "b_network";
 $route['backoffice/unilevel'] = "b_network/unilevel";
