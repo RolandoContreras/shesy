@@ -19,8 +19,7 @@ class Panel extends CI_Controller{
          //GET PENDING ROWS
         $params = array("select" =>"count(*) as pending_comments,
                                     (select count(*) from pay where active = 1) as pending_pay,
-                                    (select count(*) from invoices where active = 1 and type = 2) as pending_invoices_catalog,
-                                    (select count(*) from invoices where active = 1 and type = 1) as pending_invoices_pack,
+                                    (select count(*) from invoices where delivery = 1 and type = 2 and active = 2) as pending_invoices_catalog,
                                     (select count(*) from embassy where active = 1 and status_value = 1) as pending_embassy",
                         "where" => "active = 1");
         $obj_pending = $this->obj_comments->get_search_row($params);

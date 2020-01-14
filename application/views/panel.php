@@ -31,8 +31,7 @@
                   <div class="card-block">
                     <h5 class="f-w-400 m-b-15">Facturas</h5>
                     <h4 class="f-w-300 mb-3"><?php echo $obj_total->total_invoices;?></h4>
-                    <span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_invoices_pack;?></label> Pendientes Pack &nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_invoices_catalog;?></label> Pendientes Catalogo</span>
+                    <span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_invoices_catalog;?></label> Factura Catalogo pendiente de entrega</span>
                   </div>
                 </div>
               </div>

@@ -89,6 +89,7 @@ class D_invoices extends CI_Controller{
                                     invoices.date,
                                     invoices.type,
                                     invoices.total,
+                                    invoices.delivery,
                                     customer.customer_id,
                                     customer.username,
                                     customer.first_name,
@@ -155,7 +156,8 @@ class D_invoices extends CI_Controller{
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
                                     invoices.type,
-                                    invoices.total ,
+                                    invoices.total,
+                                    invoices.delivery,
                                     customer.customer_id,
                                     customer.username,
                                     customer.first_name,
@@ -178,6 +180,21 @@ class D_invoices extends CI_Controller{
             $this->tmp_mastercms->set('seccion',$seccion);
             $this->tmp_mastercms->set("obj_invoices",$obj_invoices);
             $this->tmp_mastercms->render("dashboard/invoices/invoices_list_catalogo");
+    }
+    
+    public function catalogo_entregado(){
+        if($this->input->is_ajax_request()){
+            $invoice_id = $this->input->post("invoice_id");
+        //UPDATE DATA
+        $data = array(
+                'delivery' => 0,  
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $_SESSION['usercms']['user_id']
+                );          
+            //SAVE DATA IN TABLE    
+            $this->obj_invoices->update($invoice_id, $data);
+            echo json_encode($data);       
+       } 
     }
     
     public function validate(){

@@ -14,6 +14,32 @@ function back_list(){
      var url = 'dashboard/facturas_catalogo';
      location.href = site+url;   
 }
+function ver_entregado(invoice_id){    
+     bootbox.confirm({
+        message: "Confirma que desea marcarlo como entregado?",
+        buttons: {
+            confirm: {
+                label: 'Confirmar',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'Cerrar',
+                className: 'btn-danger'
+            }
+        },
+        callback: function () {
+             $.ajax({
+                       type: "post",
+                       url: site+"dashboard/facturas_catalogo/entregado",
+                       dataType: "json",
+                       data: {invoice_id : invoice_id},
+                       success:function(data){                             
+                       location.reload();
+                       }         
+               });
+        }
+    });
+}
 
 
 

@@ -1,3 +1,5 @@
+<script src="<?php echo site_url().'static/cms/js/core/bootbox.locales.min.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/core/bootbox.min.js';?>"></script>
 <section class="pcoded-main-container">
   <div class="pcoded-wrapper">
     <div class="pcoded-content">
@@ -44,6 +46,8 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Tipo</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
+                                    aria-label="Age: activate to sort column ascending">Entrega</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Fecha</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Estado</th>
@@ -57,13 +61,14 @@
                                 <td><?php echo format_number_dolar($value->total);?></td>
                                 <td><?php echo "@".$value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
+                                <td><span class="label label-info">Catalogo</span></td>
                                 <td>
-                                    <?php if ($value->type == 1) {
-                                        $valor = "Activación";
-                                        $stilo = "label label-info";
+                                    <?php if ($value->delivery == 1) {
+                                        $valor = "Pendiente";
+                                        $stilo = "label label-danger";
                                     }else{
-                                        $valor = "Catalogo";
-                                        $stilo = "label label-waring";
+                                        $valor = "Entregado";
+                                        $stilo = "label label-success";
                                     }?>
                                     <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
                                 </td>
@@ -87,6 +92,7 @@
                                 <td>
                                     <div class="operation">
                                         <div class="btn-group">
+                                            <button class="btn btn-secondary" type="button" onclick="ver_entregado('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="check"></i></span> Marcar Entregado</button>
                                                 <button class="btn btn-secondary" type="button" onclick="edit_invoices_catalogo('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</button>
                                                 <button class="btn btn-secondary" type="button" onclick="ver_invoices_catalogo('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="edit"></i></span> Ver</button>
                                         </div>
