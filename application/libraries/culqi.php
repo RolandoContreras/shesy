@@ -13,8 +13,8 @@ class Culqi {
                 array(
                   "amount" => $price,
                   "capture" => true,
-                  "currency_code" => "USD",
-                  "description" => "Venta de Producto FK",
+                  "currency_code" => "PEN",
+                  "description" => "Venta de Producto y/o Servicios",
                   "email" => "$email",
                   "installments" => 0,
                   "antifraud_details" => array(

@@ -71,9 +71,9 @@
       price2 = $(this).attr('data-price2');
       kit_id = $(this).attr('data-kit');
       Culqi.settings({
-        title: 'FK Pagos',
-        currency: 'USD',
-        description: 'Venta de Producto',
+        title: 'Cultura Imparable',
+        currency: 'PEN',
+        description: 'Venta de Producto y/o Servicio',
         amount: price
       });
     Culqi.open();
