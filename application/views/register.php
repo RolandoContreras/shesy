@@ -71,10 +71,10 @@
             <h4 class="auth-header">
                 REGÍSTRATE
             </h4>
-            <form class="form" action="javascript:void(0);">
+            <form class="form" action="javascript:void(0);" enctype="multipart/form-data">
                 <?php if(isset($obj_customer->username)){ ?>
                 <div class="form-group">
-                    <p>Usted serás patrocinado por:
+                    <p>Usted será patrocinado por:
                         <br><b><?php echo str_to_first_capital($obj_customer->first_name)." ".str_to_first_capital($obj_customer->last_name);?> <?php echo "- "."@".$obj_customer->username?></b>
                     </p>
                 </div>

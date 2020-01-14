@@ -6,8 +6,8 @@
   <meta name="author" content="Corporation FK">
   <meta name="keyword" content="Cultura Fk, fk, Fk embajadores, Fk social, Fk corporación, mlm, mmn, culturafk.com">
   <meta name="robots" content="Index, Follow">
-  <link type="text/css" media="all" href="<?php echo site_url().'static/page_front/css/autoptimize_68.css';?>" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/autoptimize_5e.css';?>" type="text/css" media="all">
+  <link type="text/css" media="all" href="<?php echo site_url().'static/page_front/css/autoptimize_69.css';?>" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/autoptimize_6e.css';?>" type="text/css" media="all">
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-60x60.png';?>">
@@ -27,12 +27,8 @@
     <meta name="msapplication-TileImage" content="<?php echo site_url().'static/page_front/images/logo/favico/ms-icon-144x144.png';?>">
     <meta name="theme-color" content="#ffffff">
     <!--//END FAVICON-->
-  <style media="print">
-    @media print{.pmpro_a-print{display:none;position:absolute;left:-9999px}}
-  </style>
   <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/dashicons.min.css';?>" type="text/css" media="all">
   <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/mystyle7.css';?>" type="text/css" media="all">
-  <!--[if lt IE 9]><linkrel=stylesheet id=vc_lte_ie9-css href=http://c2a2v9c8.stackpathcdn.com/demo-coursify/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css type=text/css media=screen><![endif]-->
   <link rel="stylesheet" id="thim-style-options-css" href="<?php echo site_url().'static/page_front/css/automatize_change1.css';?>" type="text/css" media="all">
   <script src="<?php echo site_url().'static/page_front/js/jquery.js';?>"></script>
   <script>

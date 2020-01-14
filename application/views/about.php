@@ -270,22 +270,14 @@
   <?php $this->load->view("footer_2");?>
   </div>
    <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
-    <div class="gallery-slider-content"></div>
       <script>
         var BP_Nouveau = {"ajaxurl":"","object_nav_parent":"#buddypress","objects":{"0":"activity","1":"members","4":"xprofile","7":"settings","8":"notifications"},"nonces":{"activity":"fcd5ecf43e","members":"9af41e8848","xprofile":"10dfc2af2b","settings":"8d89e10911"}};
-      </script>
-      <script>
-        window.lazySizesConfig = window.lazySizesConfig || {};window.lazySizesConfig.lazyClass = 'lazyload';window.lazySizesConfig.loadingClass = 'lazyloading';window.lazySizesConfig.loadedClass = 'lazyloaded';lazySizesConfig.loadMode = 1;
-      </script>
-      <script>
-        lazySizes.init();
       </script>
       <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
       <script>
         WebFont.load({google:{families:['Roboto:400,300']}});
       </script>
       <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
-      <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='<?php echo site_url().'static/page_front/js/script/contact.js';?>'></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </body>

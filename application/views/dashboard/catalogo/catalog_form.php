@@ -13,7 +13,7 @@
                   <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/panel';?>">
                           <span class="pcoded-micon"><i data-feather="home"></i></span>
                           </a></li>
-                  <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/catalogo';?>">Listado de Vídeos</a></li>
+                  <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/catalogo';?>">Listado de Catalogo</a></li>
                   <li class="breadcrumb-item"><a href="#!">Catalogo</a></li>
                 </ul>
               </div>

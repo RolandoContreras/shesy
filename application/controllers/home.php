@@ -7,6 +7,8 @@ class Home extends CI_Controller {
         $this->load->model("catalog_model","obj_catalog");
         $this->load->model("category_model","obj_category");
         $this->load->model("videos_model","obj_videos");
+        $this->load->model("embassy_model","obj_embassy");
+        
     }   
         
 	/**
@@ -68,6 +70,28 @@ class Home extends CI_Controller {
             
             $this->load->view('home', $data);
 	}
+        
+        public function embassy(){
+            if ($this->input->is_ajax_request()) {
+                
+            $name = $this->input->post("name");
+            $last_name = $this->input->post("last_name");
+            $email = $this->input->post("email");
+            $phone = $this->input->post("phone");
+            $data = array(
+                            'name' => $name,
+                            'last_name' => $last_name,
+                            'email' => $email,
+                            'phone' => $phone,
+                            'active' => 1,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s")
+                        );
+                    $this->obj_embassy->insert($data);    
+            $data['result'] = "true";
+            echo json_encode($data);
+            }
+        }
         
         public function nav_videos(){
             $params_category_videos = array(

@@ -287,7 +287,7 @@
                                 <div class="tab-pane active">
                                     <p class="description respondive_a black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
                                   <p class="description respondive_a div_hide black">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
-                                  <a href="#" class="readmore">Postular a ser un emabajador </a>
+                                  <a id="show_embasy" style="cursor:pointer;" class="readmore">Postular a ser un embajador </a>
                                 </div>
                               </div>
                             </div>
@@ -301,6 +301,60 @@
                           </div>
                           <div class="icon-play"></div>
                         </div>
+                          <div class="col-sm-3"></div>
+                          <div id="embassy" class="thim-login col-sm-6" style="background-color:white !important;border-radius: 25px;padding-left: 30px;padding-right: 30px;">
+                              <div  class="wpb_wrapper">
+                                <div class="vc_wp_text wpb_content_element">
+                                  <div class="widget widget_text">
+                                    <div class=textwidget>
+                                        
+                                      <div role="form" class="wpcf7" id="wpcf7-f56-p34-o1">
+                                        <form class="wpcf7-form" action="javascript:void(0);" enctype="multipart/form-data">
+                                          <div class="row">
+                                              <div class="col-xs-12 col-sm-12">
+                                                  <h4 class="subtitle">Ingresa tus datos</h4>
+                                                  <h2 class="title">Postula con nosotros<div></div></h2>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12">
+                                                <span class="wpcf7-form-control-wrap your-name">
+                                                    <input type="text" name="name" id="name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Nombres">
+                                                </span>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12">
+                                                <span class="wpcf7-form-control-wrap your-name">
+                                                    <input type="text" name="last_name" id="last_name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Apellidos">
+                                                </span>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12">
+                                                <span class="wpcf7-form-control-wrap your-email">
+                                                    <input type="email" name="email" id="email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" placeholder="Email">
+                                                </span>
+                                            </div>
+                                              <div class="col-xs-12 col-sm-12">
+                                                  <span class="wpcf7-form-control-wrap your-email">
+                                                      <input type="text" name="phone" id="phone" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Teléfono">
+                                                  </span>
+                                              </div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+                                                    <div class="g-recaptcha" data-sitekey="6LeGrccUAAAAAL42J6gQyQqSG3bPNnWHx85yS1UK"></div>
+                                              </div>
+                                            </div>
+                                            <div class="vc_empty_space" style="height: 10px"><span class=vc_empty_space_inner></span></div>
+                                            <div class="heading-button">
+                                                <input onclick="send_embassy();" type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary btn-md button-large" value="Postular">
+                                            </div>
+                                            <br/>
+                                            <div id="res"></div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                          </div>
+                          <div class="col-sm-3"></div>
                       </div>
                     </div>
                   </div>
@@ -494,16 +548,8 @@
     <?php $this->load->view("footer");?>
     </div>
     <div id=back-to-top><i class="fa fa-angle-up" aria-hidden=true></i></div>
-    <div id="tp_chameleon_list_google_fonts"></div>
-      <div class="gallery-slider-content"></div>
       <script>
         var BP_Nouveau = {"ajaxurl":"","object_nav_parent":"#buddypress","objects":{"0":"activity","1":"members","4":"xprofile","7":"settings","8":"notifications"},"nonces":{"activity":"fcd5ecf43e","members":"9af41e8848","xprofile":"10dfc2af2b","settings":"8d89e10911"}};
-      </script>
-      <script>
-        window.lazySizesConfig = window.lazySizesConfig || {};window.lazySizesConfig.lazyClass = 'lazyload';window.lazySizesConfig.loadingClass = 'lazyloading';window.lazySizesConfig.loadedClass = 'lazyloaded';lazySizesConfig.loadMode = 1;
-      </script>
-      <script>
-        lazySizes.init();
       </script>
       <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
       <script>
@@ -511,5 +557,15 @@
       </script>
       <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          $("#embassy").hide();
+          $("#show_embasy").click(function(){
+            $("#embassy").show(1000);
+          });
+        });
+</script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='<?php echo site_url().'static/page_front/js/script/home.js';?>'></script>
 </body>
 </html>
