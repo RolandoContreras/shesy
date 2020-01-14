@@ -23,7 +23,7 @@
                 <div class="tab-pane active" id="tab_overview">
                   <div class="el-tablo">
                     <div class="label"> Ganacia Total </div>
-                    <div class="value" id="bonustotal">$<?php echo $obj_total->total;?></div>
+                    <div class="value" id="bonustotal">S/. <?php echo $obj_total->total!=""?$obj_total->total:"0.00";?></div>
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                 <div class="tab-pane active" id="tab_overview">
                   <div class="el-tablo">
                     <div class="label"> Ganacia Unilevel </div>
-                    <div class="value" id="bonustotal">$<?php echo $obj_total->total_unilevel;?></div>
+                    <div class="value" id="bonustotal">S/. <?php echo $obj_total->total_unilevel!=""?$obj_total->total_unilevel:"0.00";?></div>
                   </div>
                 </div>
               </div>
