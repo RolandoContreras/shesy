@@ -66,7 +66,7 @@
                     <div class="pre-icon os-icon os-icon-user-male-circle"></div>
                 </div>
                 <div class="form-group">
-                    <div class="g-recaptcha" data-sitekey="6LeGrccUAAAAAL42J6gQyQqSG3bPNnWHx85yS1UK"></div>
+                    <div class="g-recaptcha" data-sitekey="6Lfql9EUAAAAAOijHIuhHoq8ZrcDN8GeTX-95onx"></div>
                 </div>
                 <div class="form-group has-feedback" style="display: none;" id="captcha_messages">
                     <div class="alert alert-danger validation-errors">
