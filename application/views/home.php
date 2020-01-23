@@ -36,9 +36,6 @@
                 <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url();?>" class="tc-menu-inner">Inicio</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="<?php echo site_url().'about';?>" class="tc-menu-inner">Acerca</a>
-                </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
                     <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Cursos</a>
                   <div class='tc-megamenu-wrapper tc-megamenu-holder mega-sub-menu sub-menu'>
