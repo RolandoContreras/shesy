@@ -252,10 +252,12 @@ header#masthead.palette-custom.site-header.affix.custom-sticky #primary-menu>li.
     }
     .responsive header#masthead.affix-top {
         /*background: #fff!important*/
-        background: url(../images/03.jpeg);
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,15,34,1) 54%, rgba(12,20,22,1) 100%);
     }
     .responsive header#masthead.affix {
-        background: url(../images/03.jpeg);
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,15,34,1) 54%, rgba(12,20,22,1) 100%);
     }
 }
 .login-password #show_pass.active {

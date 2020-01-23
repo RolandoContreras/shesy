@@ -137,7 +137,7 @@
     <?php $this->load->view("nav",$obj_category_videos);?>
     <div id="main-content">
       <div id="home-main-content" class="home-content home-page container" role="main">
-          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/03.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/03.jpeg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
           <div class=overlay style="background-color: rgba(0,0,0,0.2)"></div>
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
@@ -333,7 +333,7 @@
                                             </div>
                                             <div class="row">
                                               <div class="col">
-                                                    <div class="g-recaptcha" data-sitekey="6LeGrccUAAAAAL42J6gQyQqSG3bPNnWHx85yS1UK"></div>
+                                                    <div class="g-recaptcha" data-sitekey="6Lfql9EUAAAAAOijHIuhHoq8ZrcDN8GeTX-95onx"></div>
                                               </div>
                                             </div>
                                             <div class="vc_empty_space" style="height: 10px"><span class=vc_empty_space_inner></span></div>

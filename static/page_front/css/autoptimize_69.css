@@ -2271,8 +2271,9 @@ header#masthead.site-header.palette-transparent {
 }
 header#masthead.site-header.palette-transparent .width-navigation li .sub-menu,
 header#masthead.site-header.palette-transparent.affix {
-    /*background-color: #fff*/
-    background: url(../images/03.jpeg);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,15,34,1) 54%, rgba(12,20,22,1) 100%);
+    /*background: url(../images/03.jpeg);*/
 }
 header#masthead.site-header.palette-transparent .width-navigation {
     font-size: 14px
