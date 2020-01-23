@@ -6,13 +6,13 @@
           </div>
           <div class="width-logo">
               <a class="no-sticky-logo" href="<?php echo site_url();?>" title="Logo Imparable" rel="home">
-                  <img alt="Logo Imparable" width="70" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo lazyload">
-                <img  alt="Logo Imparable" width="291" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo lazyload">
-                <img alt="Logo Imparable" width="131" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="mobile-logo lazyload">
+                  <img alt="Logo Imparable" width="70" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="logo lazyload">
+                <img  alt="Logo Imparable" width="291" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="retina-logo lazyload">
+                <img alt="Logo Imparable" width="131" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="mobile-logo lazyload">
               </a>
             <a href="<?php echo site_url();?>" title="Logo FK" rel="home" class="sticky-logo">
-                <img alt="Logo Imparable" width="70" height="30" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="lazyload">
-                <img alt="Logo Imparable" width="695" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo-sticky lazyload">
+                <img alt="Logo Imparable" width="70" height="30" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="lazyload">
+                <img alt="Logo Imparable" width="695" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="retina-logo-sticky lazyload">
             </a>
           </div>
             <?php
