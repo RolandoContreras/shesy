@@ -8695,7 +8695,7 @@ header.template-layout-2 .menu-mobile-effect.navbar-toggle {
     margin-right: 15px
 }
 .menu-mobile-effect.navbar-toggle .icon-wrap span.icon-bar {
-    background: #202121;
+    background: white !important;
     width: 20px;
     height: 2px;
     -webkit-border-radius: 0;
@@ -9522,7 +9522,10 @@ header#masthead.site-header.palette-transparent {
 }
 header#masthead.site-header.palette-transparent .width-navigation li .sub-menu,
 header#masthead.site-header.palette-transparent.affix {
-    background-color: #fff
+    /*background: url(../images/03.jpeg);*/
+    /*border-style: solid !important;*/
+    border-bottom: 1px solid white;
+    /*background-color: #fff*/
 }
 header#masthead.site-header.palette-transparent .width-navigation {
     font-size: 14px
@@ -9534,12 +9537,12 @@ header#masthead.site-header.palette-transparent .width-navigation .main-menu>li>
     color: white;
 }
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li span.icon-toggle {
-    color: #9c9c9c
+    color: white !important;
 }
 header#masthead.site-header.palette-transparent .width-navigation li .sub-menu li a,
 header#masthead.site-header.palette-transparent.affix #primary-menu>li>a,
 header#masthead.site-header.palette-transparent.affix .header-right a {
-    color: #202121
+    color: white !important;
 }
 header#masthead.site-header.palette-transparent.affix-top {
     box-shadow: none

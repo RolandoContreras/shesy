@@ -22,13 +22,10 @@
           </div>
           <div class="width-logo">
               <a class="no-sticky-logo" href="<?php echo site_url();?>" title="Logo Imparable" rel="home">
-                <img alt="Logo Imparable" width="70" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="logo lazyload">
-                <img  alt="Logo Imparable" width="291" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="retina-logo lazyload">
-                <img alt="Logo Imparable" width="131" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="mobile-logo lazyload">
+                <img alt="Logo Imparable" width="60" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="">
               </a>
             <a href="<?php echo site_url();?>" title="Logo FK" rel="home" class="sticky-logo">
-                <img alt="Logo Imparable" width="70" height="30" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="lazyload">
-                <img alt="Logo Imparable" width="695" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="retina-logo-sticky lazyload">
+                <img alt="Logo Imparable" width="70" height="30" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="">
             </a>
           </div>
           <div class="width-navigation">
@@ -46,7 +43,7 @@
                             <div class="wpb_wrapper">
                               <div class="vc_wp_custommenu wpb_content_element">
                                 <div class="widget widget_nav_menu">
-                                  <h2 class="widgettitle">Acerca de Cursos</h2>
+                                    <h2 class="widgettitle" style="color:white !important">Acerca de Cursos</h2>
                                   <div class="menu-mega-menu-container">
                                     <ul class="menu">
                                           <li class="menu-item menu-item-type-post_type menu-item-object-page tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
@@ -140,8 +137,8 @@
     <?php $this->load->view("nav",$obj_category_videos);?>
     <div id="main-content">
       <div id="home-main-content" class="home-content home-page container" role="main">
-          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/03.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
-          <div class=overlay style="background-color: rgba(0,0,0,0.6)"></div>
+          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/03.jpeg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+          <div class=overlay style="background-color: rgba(0,0,0,0.2)"></div>
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
               <div class=wpb_wrapper>
@@ -151,7 +148,7 @@
                     <div class=textwidget>
                         <h3 style="text-align: center;" class="welcome">¡BIENVENIDO!</h3>
                       <p style="text-align: center;">
-                              <img style="padding:15px;" alt="Logo" width="300" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo">
+                              <img style="padding:15px;" alt="Logo" width="300" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>">
                           <br/>
                       </p>
                       <p style="text-align: center; padding-top:5px;">
@@ -422,7 +419,7 @@
                     </div>
                   </div>
                 </div>
-                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/background.jpg';?>);"></div>
+                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/03.jpeg';?>);"></div>
               </div>
             </div>
           </div>

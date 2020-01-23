@@ -116,6 +116,9 @@ footer#colophon.dark {
     font-weight: bolder !important;
     
 }
+.bg_white{
+    background: white !important;
+}
 .center{
     text-align: center !important;
 }

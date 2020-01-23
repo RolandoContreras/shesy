@@ -251,13 +251,11 @@ header#masthead.palette-custom.site-header.affix.custom-sticky #primary-menu>li.
         background: #fff
     }
     .responsive header#masthead.affix-top {
-        background: #fff!important
+        /*background: #fff!important*/
+        background: url(../images/03.jpeg);
     }
     .responsive header#masthead.affix {
-        background: #fff!important
-    }
-    .responsive header#masthead .menu-mobile-effect.navbar-toggle .icon-wrap span.icon-bar {
-        background: #202121!important
+        background: url(../images/03.jpeg);
     }
 }
 .login-password #show_pass.active {
