@@ -70,6 +70,7 @@ class B_network extends CI_Controller {
                         "select" =>"customer_id,
                                     username,
                                     first_name,
+                                    active_month,
                                     last_name,
                                     kit_id,
                                     range_id,
@@ -84,6 +85,7 @@ class B_network extends CI_Controller {
                                     customer.username,
                                     customer.first_name,
                                     customer.last_name,
+                                    customer.active_month,
                                     customer.kit_id,
                                     customer.range_id,
                                     customer.active",
@@ -106,12 +108,13 @@ class B_network extends CI_Controller {
                  }
                  //DELETE LAST CARACTER ON STRING
                  $customer_id_n2 = substr ($customer_id_n2, 0, strlen($customer_id_n2) - 1);
-                 if(count($customer_id_n2) > 0){
+                 if(isset($customer_id_n2) != ""){
                      $params_customer_n3 = array(
                                     "select" =>"customer.customer_id,
                                                 customer.username,
                                                 customer.first_name,
                                                 customer.last_name,
+                                                customer.active_month,
                                                 customer.kit_id,
                                                 customer.range_id,
                                                 unilevel.parend_id,
@@ -140,6 +143,7 @@ class B_network extends CI_Controller {
                                 "select" =>"customer.customer_id,
                                             customer.username,
                                             customer.first_name,
+                                            customer.active_month,
                                             customer.last_name,
                                             customer.kit_id,
                                             customer.range_id,

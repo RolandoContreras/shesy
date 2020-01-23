@@ -272,7 +272,7 @@ class Catalog extends CI_Controller {
                     );
                     $cart_id = $this->cart->insert($data);
 
-                    if(count($cart_id) > 0){
+                    if($cart_id != ""){
                         $data['status'] = "true";
                     }else{
                         $data['status'] = "false";
