@@ -22,8 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://cevolutionweb.com';
-//$config['base_url'] = 'https://mibcacapital.com/';
+//$config['base_url'] = 'https://culturaimparable.com/';
 $config['base_url'] = 'http://localhost/shesy';
 
 
