@@ -28,7 +28,8 @@
                   <div class="widget widget_text">
                     <div class=textwidget>
                       <p style="text-align: center;">
-                              <img style="padding:15px;" alt="Logo" width="200" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>">
+                              <img style="padding:15px;" alt="Logo" width="200" src="<?php echo site_url().'static/page_front/images/logo/logo_embajada.png';?>">
+                              
                           <br/>
                       </p>
                     </div>
@@ -162,7 +163,7 @@
                             <div class=steps>
                               <div class=tab-content>
                                 <div class="tab-pane active">
-                                    <p class="description respondive_a black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
+                                    <p class="description respondive_a black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsarla para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada para que adquieras toda la información, recursos financieros y educativos.</p>
                                   <p class="description respondive_a div_hide black">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
                                   
                                 </div>
@@ -277,12 +278,12 @@
                           <div class=tab-content>
                             <div class="tab-pane active" id="step-0" role="tabpanel">
                               <h4 class="tab-title">Crea tu registro gratis</h4>
-                              <p class=description>Ve la pestaña registro, completa tus datos y el sistema te creará un usuario gratuitamente para que seas un nuevo socio.</p>
+                              <p class=description>Ve a la pestaña registro, completa tus datos y el sistema te creará un usuario gratuitamente para que seas un nuevo socio.</p>
                               <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
                             </div>
                             <div class="tab-pane" id="step-2" role="tabpanel">
                               <h4 class="tab-title">Aprende con nosotros</h4>
-                              <p class=description>Participaran de la plataforma educativa Online que tenemos y podrás especializarte en el área que deseas desde la comodidad de tu hogar.</p>
+                              <p class=description>Participa de la plataforma educativa Online que tenemos y podrás especializarte en el área que deseas desde la comodidad de tu hogar.</p>
                               <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
                             </div>
                             <div class="tab-pane" id="step-3" role="tabpanel">
@@ -292,7 +293,7 @@
                             </div>
                             <div class="tab-pane" id="step-4" role="tabpanel">
                               <h4 class="tab-title">Recibe una recompensa</h4>
-                              <p class=description>La corporación FK ha creado un plan de compensación para todos los socios que quieran compartir el negocio, convirtiéndose en un empresario con nosotros.</p>
+                              <p class=description>El corporativo ha creado un plan de compensación para todos los embajadores que quieran compartir la plataforma, convirtiéndose en un empresario con nosotros.</p>
                               <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
                             </div>
                           </div>
@@ -351,7 +352,7 @@
               <div class="wpb_wrapper">
                 <div class="thim-courses-collection-wrapper">
                   <div class="thim-collection-info rounded-colection-info">
-                    <h3 class="title">¡Nuestros Cursos! Te Ayudamos a hacer crecer tu vida.</h3>
+                    <h3 class="title">¡Nuestros Cursos! - Próximamente</h3>
                   </div>
                   <div class="thim-courses-collection rounded-courses-collection">
                     <div class="collection-frame">
