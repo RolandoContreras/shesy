@@ -5,14 +5,14 @@
             <div class="icon-wrap"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div>
           </div>
           <div class="width-logo">
-              <a class="no-sticky-logo" href="<?php echo site_url();?>" title="Logo FK" rel="home">
-                <img alt="Logo FK" width="70" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo lazyload">
-                <img  alt="Logo FK" width="291" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo lazyload">
-                <img alt="Logo FK" width="131" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="mobile-logo lazyload">
+              <a class="no-sticky-logo" href="<?php echo site_url();?>" title="Logo Imparable" rel="home">
+                  <img alt="Logo Imparable" width="70" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo lazyload">
+                <img  alt="Logo Imparable" width="291" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo lazyload">
+                <img alt="Logo Imparable" width="131" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="mobile-logo lazyload">
               </a>
             <a href="<?php echo site_url();?>" title="Logo FK" rel="home" class="sticky-logo">
-                <img alt="Logo FK" width="70" height="30" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="lazyload">
-                <img alt="Logo FK" width="695" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo-sticky lazyload">
+                <img alt="Logo Imparable" width="70" height="30" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="lazyload">
+                <img alt="Logo Imparable" width="695" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo-sticky lazyload">
             </a>
           </div>
             <?php
@@ -22,17 +22,11 @@
             }else{
                 $nav = "";
             }
-            
             $home_syle = "";
-            $about_syle = "";
             $courses_syle = "";
             $contact_syle = "";
             $catalog_syle = "";
-            
             switch ($nav) {
-                case "about":
-                    $about_syle = "current-menu-parent ";
-                    break;
                 case "courses":
                     $courses_syle = "current-menu-parent ";
                     break;
@@ -51,9 +45,6 @@
             <ul id="primary-menu" class="main-menu">
                 <li class="menu-item menu-item-type-custom menu-item-object-custom <?php echo $home_syle;?> menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url();?>" class="tc-menu-inner">Inicio</a>
-                </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $about_syle;?> menu-item-25 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="<?php echo site_url().'about';?>" class="tc-menu-inner">Acerca</a>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $courses_syle;?> menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
                     <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Cursos</a>

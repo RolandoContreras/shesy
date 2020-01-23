@@ -58,9 +58,6 @@
             <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $home_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                 <a href="<?php echo site_url();?>" class="tc-menu-inner">Inicio</a>
             </li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $about_syle;?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                  <a href="<?php echo site_url().'about';?>" class="tc-menu-inner">Acerca</a>
-            </li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $courses_syle;?> menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
                 <a class="tc-menu-inner">Cursos</a>
               <div class='tc-megamenu-wrapper tc-megamenu-holder mega-sub-menu sub-menu'>
@@ -171,9 +168,9 @@
           </div>
           <div class="thim-sc-social-links ">
               <ul class=socials>
-                <li><a target="_blank" href="https://facebook.com/thimpress">Facebook</a></li>
-                <li><a target="_blank" href="https://youtube.com/thimpress">Youtube</a></li>
-                <li><a target="_blank" href="https://www.instagram.com/">Instagram</a></li>
+                <li><a target="_blank" href="#">Facebook</a></li>
+                <li><a target="_blank" href="#">Youtube</a></li>
+                <li><a target="_blank" href="#">Instagram</a></li>
               </ul>
             </div>
         </div>
