@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <title>Registro - Corporacion FK</title>
+        <title>Cultura Imparable - Nuevo Registro</title>
         <base href="<?php echo site_url();?>"/>
         <meta charset="utf-8">
         <meta content="ie=edge" http-equiv="x-ua-compatible">

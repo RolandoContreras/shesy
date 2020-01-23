@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <title>Corporación FK - Inicio de Sesión</title>
+        <title>Cultura Imparable - Inicio de Sesión</title>
         <base href="<?php echo site_url();?>"/>
         <meta charset="utf-8">
         <meta content="ie=edge" http-equiv="x-ua-compatible">

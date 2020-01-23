@@ -173,7 +173,7 @@
                         </div>
                         <div class="row">
                           <div class="col">
-                                <div class="g-recaptcha" data-sitekey="6LeGrccUAAAAAL42J6gQyQqSG3bPNnWHx85yS1UK"></div>
+                                <div class="g-recaptcha" data-sitekey="6Lfql9EUAAAAAOijHIuhHoq8ZrcDN8GeTX-95onx"></div>
                           </div>
                         </div>
                         <div class="heading-button">
