@@ -53,8 +53,8 @@ class Register extends CI_Controller {
             $param_customer = array(
                 "select" => "customer_id",
                 "where" => "username = '$username'");
-            $customer = count($this->obj_customer->get_search_row($param_customer));
-            if ($customer > 0) {
+            $customer = $this->obj_customer->get_search_row($param_customer);
+            if (isset($customer->customer_id) != "") {
                 $data['message'] = "true";
                 $data['print'] = "No esta disponible! <i class='fa fa-times-circle-o' aria-hidden='true'></i>";
             } else {
@@ -177,6 +177,7 @@ class Register extends CI_Controller {
             $data_customer_session['name'] = $name.' '.$last_name;
             $data_customer_session['username'] = $username;
             $data_customer_session['email'] = $email;
+            $data_customer_session['kit_id'] = 0;
             $data_customer_session['active_month'] = 0;
             $data_customer_session['active'] = 0;
             $data_customer_session['logged_customer'] = "TRUE";
@@ -189,7 +190,6 @@ class Register extends CI_Controller {
 	}
         
         public function message($username, $pass, $name, $email){    
-                $img = site_url().'static/page_front/images/logo_header.png';           
                 $mensaje = wordwrap("<html>
                     
  <div bgcolor='#E9E9E9' style='background:#fff;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
@@ -200,9 +200,6 @@ class Register extends CI_Controller {
         <td valign='top' align='center'>
           <table style='border-collapse:collapse;margin:0;padding:0;max-width:600px' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0' align='center'>
             <tbody>
-              <tr>
-                <td style='padding:39px 30px 31px;display:block;background:#fafafa'> <img src='$img' alt='bca-logo' style='display:inline-block;padding-right:12px' class='CToWUd'> </td>
-              </tr>
               <tr>
                 <td style='padding:0 30px;display:block;background:#fafafa'>
                   <p style='padding:32px 32px 0;color:#333333;background:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;line-height:14px;margin:0;font-size:14px;border-radius:5px 5px 0 0'
