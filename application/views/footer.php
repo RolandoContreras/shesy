@@ -11,7 +11,7 @@
                         Somos una comunidad de influencia con el objetivo de generar cambios positivos en la sociedad.
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" width="100">
+                        <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" width="100">
                     </li>
                   </ul>
                 </div>
