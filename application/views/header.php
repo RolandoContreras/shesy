@@ -2,6 +2,8 @@
       <div class="header-wrapper header-v2 default">
         <div class="main-header container">
           <div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">
+            <a class="login_2" href="<?php echo site_url().'login';?>">Login</a>  
+            &nbsp;&nbsp;&nbsp;
             <div class="icon-wrap"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div>
           </div>
           <div class="width-logo">

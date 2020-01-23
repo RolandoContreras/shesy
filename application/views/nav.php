@@ -147,10 +147,6 @@
               <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                   <a href="<?php echo site_url().'register';?>" class=tc-menu-inner>Registro</a>
               </li>
-              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                  <a href="<?php echo site_url().'login';?>" class=tc-menu-inner>Login</a>
-              </li>
-              
         </ul>
         <div class="header-right">
                   <div class="widget woocommerce widget_shopping_cart">

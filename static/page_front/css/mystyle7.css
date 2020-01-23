@@ -1,3 +1,21 @@
+.login_2{
+    background-color: #b8860b !important;
+    color: #fff;
+    box-shadow: 12.9px 15.3px 18px 0 rgba(0, 0, 0, .08);
+    font-size: 14px;
+    letter-spacing: .3px;
+    text-align: left;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    height: 35px;
+    padding: 0 30px;
+    line-height: 35px;
+    display: inline-block;
+    font-weight: 400;
+}
+
 .welcome{
     font-weight: bolder !important;
     letter-spacing: 3.9px !important;
