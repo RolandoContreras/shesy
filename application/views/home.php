@@ -140,7 +140,7 @@
     <?php $this->load->view("nav",$obj_category_videos);?>
     <div id="main-content">
       <div id="home-main-content" class="home-content home-page container" role="main">
-          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/background.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/03.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
           <div class=overlay style="background-color: rgba(0,0,0,0.6)"></div>
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
