@@ -36,12 +36,11 @@
                         <div class="value"> S/. <?php echo $obj_total_commissions->total_disponible!=""?$obj_total_commissions->total_disponible:"0.00";?> </div>
                       </div>
                     </div>
-                    <div class="col-md-3">
-                      <div class="element-box el-tablo">
-                        <div class="label"> Plan Actual </div>
-                        <div class="value"> 
-                            <img src='<?php echo site_url()."static/backoffice/images/plan/$obj_customer->kit_img";?>' alt="plan" width="80"/>
-                        </div>
+                    <div class="col-md-3 d-none d-sm-block">
+                      <div class="profile-tile">
+                        <a class="profile-tile-box" href="<?php echo site_url().'backoffice/carrera';?>" style="width: 100%;"> <img src='<?php echo site_url()."static/backoffice/images/plan/$obj_customer->kit_img";?>' alt="plan" width="80"/>
+                            <div class="pt-user-name"> PLAN ACTUAL<br> <b><?php echo $obj_customer->kit;?></b> </div>
+                        </a>
                       </div>
                     </div>
                     <div class="col-md-3">

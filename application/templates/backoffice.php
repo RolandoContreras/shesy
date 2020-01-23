@@ -1,32 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Oficina Virtual - FK Corporación</title>
+  <title>Oficina Virtual - Cultura Imparable</title>
   <meta charset="utf-8">
   <meta content="ie=edge" http-equiv="x-ua-compatible">
-  <meta name="description" content="Multiplica tu dinero en el mercado financiero con nosotros. BCA CAPITAL una empresa financiera que te ayudará a aumentar tus finanzas, Clic en el siguiente enlace.">
-  <meta name="author" content="Cevolution Web">
-  <meta name="keyword" content="bca capital, bca club, finanzas, fondo de inversión, bca red, bca networkmarketing">
+  <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
+  <meta name="author" content="Cultura Imparable">
+  <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, Imparable corporación, mlm, mmn, culturaimprable.com">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <!--START FAVICON-->
-  <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-57x57.png';?>">
-  <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-60x60.png';?>">
-  <link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-72x72.png';?>">
-  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-76x76.png';?>">
-  <link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-114x114.png';?>">
-  <link rel="apple-touch-icon" sizes="120x120" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-120x120.png';?>">
-  <link rel="apple-touch-icon" sizes="144x144" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-144x144.png';?>">
-  <link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-152x152.png';?>">
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-icon-180x180.png';?>">
-  <link rel="icon" type="image/png" sizes="192x192" href="<?php echo site_url().'static/page_front/images/logo/favico/android-icon-192x192.png';?>">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-32x32.png';?>">
-  <link rel="icon" type="image/png" sizes="96x96" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-96x96.png';?>">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-16x16.png';?>">
-  <link rel="manifest" href="<?php echo site_url().'static/page_front/images/logo/favico/manifest.json';?>">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="<?php echo site_url().'static/page_front/images/logo/favico/ms-icon-144x144.png';?>">
-  <meta name="theme-color" content="#ffffff">
-  <!--END FAVICON-->
+    <!--//STAR FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-touch-icon.png';?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-32x32.png';?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-16x16.png';?>">
+    <link rel="manifest" href="<?php echo site_url().'static/page_front/images/logo/favico/site.webmanifest';?>">
+    <!--//END FAVICON-->
   <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
   <link href="<?php echo site_url().'static/backoffice/css/select2.min.css';?>" rel="stylesheet">
   <link href="<?php echo site_url().'static/backoffice/css/daterangepicker.css';?>" rel="stylesheet">
@@ -85,7 +72,7 @@
             <li>
             <center>
               <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
-                <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
+                <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
                       <span>Plataforma de Cursos</span>                
                   </div>
               </a>
@@ -95,7 +82,7 @@
              <li>
             <center>
                 <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-success">
-                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
+                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
                       <span>Catalogo de productos</span>                
                   </div>
                 </a>
@@ -198,7 +185,7 @@
         <ul class="main-menu">
                 <li>
                     <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
-                      <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
+                      <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
                           <span>Plataforma de Cursos</span>                
                       </div>
                     </a>
@@ -206,7 +193,7 @@
                  <hr/>
                  <li>
                 <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-success">
-                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
+                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
                       <span>Catalogo de productos</span>                
                   </div>
                 </a>
