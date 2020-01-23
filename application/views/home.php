@@ -137,27 +137,22 @@
     <?php $this->load->view("nav",$obj_category_videos);?>
     <div id="main-content">
       <div id="home-main-content" class="home-content home-page container" role="main">
-          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/03.jpeg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/03.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
           <div class=overlay style="background-color: rgba(0,0,0,0.2)"></div>
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
               <div class=wpb_wrapper>
-                <div class=vc_empty_space style="height: 88px"><span class=vc_empty_space_inner></span></div>
+                <div class=vc_empty_space style="height: 10px"><span class=vc_empty_space_inner></span></div>
                 <div class="vc_wp_text wpb_content_element thim-textbox-header">
                   <div class="widget widget_text">
                     <div class=textwidget>
-                        <h3 style="text-align: center;" class="welcome">¡BIENVENIDO!</h3>
                       <p style="text-align: center;">
-                              <img style="padding:15px;" alt="Logo" width="300" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>">
+                              <img style="padding:15px;" alt="Logo" width="200" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>">
                           <br/>
-                      </p>
-                      <p style="text-align: center; padding-top:5px;">
-                              CULTURA DE EMPRENDEDORES CON PROPÓSITO
                       </p>
                     </div>
                   </div>
                 </div>
-                
                 <div class="thim-sc-image-box left">
                     <section id="title2">
                           <div class="">
@@ -175,15 +170,15 @@
                                           <div class="icon-play"></div>
                                         </div>
                                         <div class="col-lg-6 content-box">
-                                            <!--<center>-->
+                                            <center>
                                             <div class=steps-wrapper>
-                                                <h3 class="sc-title" style="text-align:center !important;">¿Qué es Cultura Imparable?</h3>
+                                                <h3 class="sc-title" style="text-align:center !important;">¿Quiénes Somos?</h3>
                                               <p class="description respondive_d" style="text-align:center !important;">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
                                               <p class="description respondive_d div_hide" style="text-align:center !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
                                             <div>
                                             </div>
                                           </div>
-                                          <!--</center>-->
+                                          </center>
                                         </div>
                                       </div>
                                     </div>
@@ -273,20 +268,6 @@
                           <div class=inner-steps-wrapper style="background: none !important;">
                     <div class=container>
                       <div class=row>
-                          <div class="col-lg-6 content-box">
-                          <div class=steps-wrapper>
-                              <h3 class="sc-title" style="color:black !important;">¿Qué es la Embajada Imparable?</h3>
-                            <div class=steps>
-                              <div class=tab-content>
-                                <div class="tab-pane active">
-                                    <p class="description respondive_a black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
-                                  <p class="description respondive_a div_hide black">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
-                                  <a id="show_embasy" style="cursor:pointer;" class="readmore">Postular a ser un embajador </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                           <div class="col-lg-6 media-box">
                           <div class="player-wrapper">
                             <div class="player-inner">
@@ -295,8 +276,28 @@
                           </div>
                           <div class="icon-play"></div>
                         </div>
+                          <div class="col-lg-6 content-box">
+                              <h3 class="sc-title respondive_a black">¿Qué es la Embajada?</h3>
+                            <div class=steps>
+                              <div class=tab-content>
+                                <div class="tab-pane active">
+                                    <p class="description respondive_a black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsándola para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada Fk para que adquieras toda la información, recursos financieros y educativos.</p>
+                                  <p class="description respondive_a div_hide black">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          <div class=steps-wrapper>
+                              <div class=steps>
+                                  <div class=tab-content >
+                                    <a id="show_embasy" style="cursor:pointer;" class="margin-left-60 readmore">Postular a la embajada</a>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                          
                           <div class="col-sm-3"></div>
-                          <div id="embassy" class="thim-login col-sm-6" style="background-color:white !important;border-radius: 25px;padding-left: 30px;padding-right: 30px;">
+                          <div id="embassy" class="thim-login col-sm-6" style="background-color:white !important;border-radius: 25px;padding-left: 30px;padding-right: 30px;margin-top: 50px;">
                               <div  class="wpb_wrapper">
                                 <div class="vc_wp_text wpb_content_element">
                                   <div class="widget widget_text">

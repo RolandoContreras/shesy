@@ -39091,13 +39091,12 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
 .thim-sc-steps {
     position: relative;
     z-index: 1;
-    padding-top: 20px
 }
 .thim-sc-steps .sc-title {
     font-size: 36px;
     font-weight: 300;
     letter-spacing: .7px;
-    text-align: right;
+    text-align: left;
     line-height: normal;
     margin-bottom: 62px
 }
@@ -39109,7 +39108,7 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
     clear: both
 }
 .thim-sc-steps .steps-wrapper .steps {
-    float: right
+    float: left;
 }
 .thim-sc-steps .steps-wrapper .steps:after {
     clear: both
@@ -39526,13 +39525,13 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
     background-position: center center
 }
 .thim-sc-steps.layout-4 .sc-steps-wrapper .inner-steps-wrapper {
-    padding: 125px 0 65px;
+    padding: 70px 0 65px;
     background: rgba(0, 0, 0, .70);
     background-image: url();
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 785px
+    min-height: 730px
 }
 .thim-sc-steps.layout-4 .sc-steps-wrapper .inner-steps-wrapper .content-box .sc-title,
 .thim-sc-steps.layout-4 .sc-steps-wrapper .inner-steps-wrapper .content-box .tab-title {

@@ -131,6 +131,7 @@ class Register extends CI_Controller {
                         'last_name' => $last_name,
                         'kit_id' => 0,
                         'range_id' => 0,
+                        'active_month' => 0,
                         'username' => $username,
                         'email' => $email,
                         'password' => $pass,
@@ -176,6 +177,7 @@ class Register extends CI_Controller {
             $data_customer_session['name'] = $name.' '.$last_name;
             $data_customer_session['username'] = $username;
             $data_customer_session['email'] = $email;
+            $data_customer_session['active_month'] = 0;
             $data_customer_session['active'] = 0;
             $data_customer_session['logged_customer'] = "TRUE";
             $data_customer_session['status'] = 1;
