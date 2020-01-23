@@ -1,4 +1,4 @@
-<footer id="colophon" class="site-footer light style_old">
+<footer id="colophon" class="site-footer light style_old bg_footer">
       <div class="footer ">
         <div class="container">
           <div class="row footer-columns footer-sidebars">
@@ -11,23 +11,8 @@
                         Somos una comunidad de influencia con el objetivo de generar cambios positivos en la sociedad.
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'about';?>" class=tc-menu-inner>Ver Más</a>
+                        <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" width="100">
                     </li>
-                  </ul>
-                </div>
-              </aside>
-            </div>
-            <div class="footer-col footer-col6 col-xs-12 col-md-3">
-              <aside id=nav_menu-3 class="widget widget_nav_menu">
-                <h3 class="widget-title">Cursos</h3>
-                <div class="menu-programs-container">
-                  <ul id="menu-programs" class="menu">
-                      <?php 
-                      foreach ($obj_category_videos as $value) { ?>
-                          <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                              <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
-                          </li>
-                      <?php } ?>
                   </ul>
                 </div>
               </aside>
@@ -49,17 +34,28 @@
                 </div>
               </aside>
             </div>
-            
-            <div class="footer-col footer-col6 col-xs-12 col-md-3">
+            <div class="footer-col footer-col6 col-xs-12 col-md-2">
+              <aside id=nav_menu-3 class="widget widget_nav_menu">
+                <h3 class="widget-title">Cursos</h3>
+                <div class="menu-programs-container">
+                  <ul id="menu-programs" class="menu">
+                      <?php 
+                      foreach ($obj_category_videos as $value) { ?>
+                          <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                              <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
+                          </li>
+                      <?php } ?>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+            <div class="footer-col footer-col6 col-xs-12 col-md-2">
               <aside id=nav_menu-4 class="widget widget_nav_menu">
                 <h3 class="widget-title">Enlaces</h3>
                 <div class=menu-links-container>
                   <ul id=menu-links class=menu>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4124 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         <a href="<?php echo site_url();?>" class="tc-menu-inner">Inicio</a>
-                    </li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4125 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'about';?>" class="tc-menu-inner">Acerca</a>
                     </li>
                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         <a href="<?php echo site_url().'catalog';?>" class=tc-menu-inner>Catalogo</a>
@@ -68,38 +64,31 @@
                         <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>
                     </li>
                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'contact';?>" class=tc-menu-inner>Contacto</a>
-                    </li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         <a href="<?php echo site_url().'login';?>" class=tc-menu-inner>Login</a>
                     </li>
                   </ul>
                 </div>
               </aside>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-fixed">
-        <div class=container>
-          <div class="widget widget_thim_layout_builder">
-            
-            <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid bg_footer vc_row-has-fill">
-              <div class="wpb_column vc_column_container vc_col-sm-12">
-                <div class="vc_column-inner">
-                  <div class="wpb_wrapper">
-                    <div class="thim-sc-social-links ">
-                      <ul class="socials">
-                        <li><a target="_blank" href="https://facebook.com">Facebook</a></li>
-                        <li><a target="_blank" href="https://youtube.com">Youtube</a></li>
-                        <li><a target="_blank" href="https://www.instagram.com">Instagram</a></li>
-                      </ul>
-                    </div>
-                  </div>
+              <div class="footer-col footer-col6 col-xs-12 col-md-2">
+              <aside id=nav_menu-4 class="widget widget_nav_menu">
+                <h3 class="widget-title">Social</h3>
+                <div class=menu-links-container>
+                  <ul id=menu-links class=menu>
+                      <div class="thim-sc-social-links ">
+                          <ul class="socials">
+                            <li>
+                                <a target="_blank" href="https://facebook.com">Facebook</a>
+                                <a target="_blank" href="https://youtube.com">Youtube</a>
+                                <a target="_blank" href="https://www.instagram.com">Instagram</a>
+                            </li>
+                          </ul>
+                      </div>
+
+                  </ul>
                 </div>
-              </div>
+              </aside>
             </div>
-            <div class="vc_row-full-width vc_clearfix"></div>
           </div>
         </div>
       </div>
@@ -108,7 +97,9 @@
           <div class="copyright-content">
             <div class="row">
               <div class="col-sm-6">
-                <div class="copyright-text">Website construido por <a href="https://cevolutionweb.com">Cevolution Web</a></div>
+                <div class="copyright-text">Construido por <a href="http://evolucionweb.tech/" target="_blank">Evolución</a>
+                    <img src="<?php echo site_url().'static/page_front/images/logo/evolucion_logo.png';?>" alt="evolucion logo" width="80"/>
+                </div>
               </div>
             </div>
           </div>

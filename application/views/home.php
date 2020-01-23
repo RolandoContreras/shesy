@@ -21,7 +21,7 @@
             <div class="icon-wrap"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div>
           </div>
           <div class="width-logo">
-              <a class="no-sticky-logo" href="<?php echo site_url();?>" title="Logo FK" rel="home">
+              <a class="no-sticky-logo" href="<?php echo site_url();?>" title="Logo Imparable" rel="home">
                 <img alt="Logo Imparable" width="70" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo lazyload">
                 <img  alt="Logo Imparable" width="291" height="100" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="retina-logo lazyload">
                 <img alt="Logo Imparable" width="131" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" class="mobile-logo lazyload">
@@ -141,7 +141,7 @@
     <div id="main-content">
       <div id="home-main-content" class="home-content home-page container" role="main">
           <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/background.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
-          <div class=overlay style="background-color: rgba(0,0,0,0.90)"></div>
+          <div class=overlay style="background-color: rgba(0,0,0,0.6)"></div>
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
               <div class=wpb_wrapper>
@@ -149,9 +149,9 @@
                 <div class="vc_wp_text wpb_content_element thim-textbox-header">
                   <div class="widget widget_text">
                     <div class=textwidget>
-                      <h3 style="text-align: center;">¡BIENVENIDO!</h3>
+                        <h3 style="text-align: center;" class="welcome">¡BIENVENIDO!</h3>
                       <p style="text-align: center;">
-                              <img style="padding:15px; opacity: 0.5;" alt="Logo FK" width="200" src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" class="logo">
+                              <img style="padding:15px;" alt="Logo Fuego" width="200" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" class="logo">
                           <br/>
                       </p>
                       <p style="text-align: center; padding-top:5px;">
@@ -165,7 +165,7 @@
                     <section id="title2">
                           <div class="">
                               <div class="thim-sc-steps layout-4">
-                                <div class="sc-steps-wrapper border-radius-30" style="background-image: url(<?php echo site_url().'static/page_front/images/layer_1.jpg';?>);">
+                                <div class="sc-steps-wrapper border-radius-30">
                                     <div class="inner-steps-wrapper border-radius-30">
                                     <div class="container">
                                       <div class="row">
@@ -180,7 +180,7 @@
                                         <div class="col-lg-6 content-box">
                                             <!--<center>-->
                                             <div class=steps-wrapper>
-                                                <h3 class="sc-title" style="text-align:center !important;">¿Qué es la cultura FK?</h3>
+                                                <h3 class="sc-title" style="text-align:center !important;">¿Qué es Cultura Imparable?</h3>
                                               <p class="description respondive_d" style="text-align:center !important;">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
                                               <p class="description respondive_d div_hide" style="text-align:center !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
                                             <div>
@@ -272,13 +272,13 @@
           <div class="">
               <div class="wpb_wrapper">
                   <div class="thim-sc-steps layout-4" style="padding:0px !important;">
-                      <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/fondo-abstracto.jpg';?>); ">
+                      <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/bg-1.png';?>); ">
                           <div class=inner-steps-wrapper style="background: none !important;">
                     <div class=container>
                       <div class=row>
                           <div class="col-lg-6 content-box">
                           <div class=steps-wrapper>
-                              <h3 class="sc-title" style="color:black !important;">¿Qué es la embajada FK?</h3>
+                              <h3 class="sc-title" style="color:black !important;">¿Qué es la Embajada Imparable?</h3>
                             <div class=steps>
                               <div class=tab-content>
                                 <div class="tab-pane active">
@@ -422,14 +422,14 @@
                     </div>
                   </div>
                 </div>
-                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/layer-background-gold.jpg';?>);"></div>
+                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/background.jpg';?>);"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="vc_row-full-width vc_clearfix"></div>
-      <div data-vc-full-width="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding">
+      <div data-vc-full-width="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding bg-teacher">
         <div class="wpb_column vc_column_container vc_col-sm-12">
           <div class=vc_column-inner>
             <div class="thim-sc-steps layout-3" style="padding-bottom: 0px !important; padding-top: 55px">
@@ -437,7 +437,7 @@
                   <div class=row>
                     <div class="col-md-12 heading">
                       <div class=steps-wrapper>
-                        <h3 class="sc-title">¿Te gustaría ser uno de nuestros docentes?</h3>
+                        <h3 class="sc-title text-teacher">¿Te gustaría ser uno de nuestros docentes?</h3>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -448,14 +448,12 @@
                         <div class=steps>
                           <div class=tab-content>
                             <div class="tab-pane active" role="tabpanel">
-                              <p class=description>Si deseas ser parte de nuestro equipo, comunícate a nuestro número de WhatsApp o a través de la sección de contacto.</p>
-                              <p class=description>
-                                  <i class="fab fa-whatsapp"></i>
-                                   +(51) 931 770 526.
+                              <p class="description text-teacher-p">Si deseas ser parte de nuestro equipo, comunícate a nuestro número de WhatsApp o a través de la sección de contacto.</p>
+                              <p class="center">
+                                  <a href="https://api.whatsapp.com/send?phone=51931770526" title="Whatssapp Ubicua Offices" target="_blank" rel="noopener">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80"><defs><circle id="b" cx="30" cy="30" r="30"></circle><filter id="a" width="153.3%" height="153.3%" x="-26.7%" y="-23.3%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"></feGaussianBlur><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(10 8)"><use fill="#000" filter="url(#a)" xlink:href="#b"></use><use fill="#7ED321" xlink:href="#b"></use></g><path fill="#FFF" d="M56.705 37.57c0 8.988-7.343 16.274-16.401 16.274-2.876 0-5.578-.735-7.928-2.025l-9.08 2.886 2.96-8.732a16.103 16.103 0 0 1-2.354-8.403c0-8.988 7.343-16.275 16.402-16.275 9.06 0 16.4 7.287 16.4 16.275zM40.17 24.023c-7.613 0-13.806 6.117-13.806 13.636 0 2.984.977 5.747 2.63 7.995l-1.725 5.064 5.306-1.678a13.844 13.844 0 0 0 7.596 2.255c7.612 0 13.806-6.116 13.806-13.635 0-7.52-6.193-13.637-13.807-13.637zm8.295 17.233c-.102-.165-.37-.264-.772-.462-.403-.198-2.383-1.157-2.751-1.288-.37-.132-.638-.198-.906.198s-1.04 1.288-1.276 1.552c-.234.265-.469.298-.872.1-.402-.198-1.7-.617-3.237-1.966-1.197-1.05-2.005-2.345-2.24-2.742-.234-.396-.024-.61.177-.807.181-.178.403-.463.604-.694.202-.231.269-.396.402-.66.135-.265.068-.496-.033-.695-.1-.197-.907-2.146-1.242-2.94-.335-.792-.67-.66-.906-.66-.234 0-.503-.033-.771-.033-.269 0-.705.1-1.074.495-.37.397-1.409 1.355-1.409 3.304 0 1.948 1.442 3.831 1.644 4.095.201.264 2.784 4.393 6.877 5.979 4.093 1.585 4.093 1.056 4.832.99.737-.066 2.381-.958 2.718-1.882.335-.926.335-1.719.235-1.884z"></path></g></svg>
+                                  </a>
                               </p>
-                              <a href="https://api.whatsapp.com/send?phone=51931770526" title="Whatssapp Ubicua Offices" target="_blank" rel="noopener">
-                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80"><defs><circle id="b" cx="30" cy="30" r="30"></circle><filter id="a" width="153.3%" height="153.3%" x="-26.7%" y="-23.3%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"></feGaussianBlur><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(10 8)"><use fill="#000" filter="url(#a)" xlink:href="#b"></use><use fill="#7ED321" xlink:href="#b"></use></g><path fill="#FFF" d="M56.705 37.57c0 8.988-7.343 16.274-16.401 16.274-2.876 0-5.578-.735-7.928-2.025l-9.08 2.886 2.96-8.732a16.103 16.103 0 0 1-2.354-8.403c0-8.988 7.343-16.275 16.402-16.275 9.06 0 16.4 7.287 16.4 16.275zM40.17 24.023c-7.613 0-13.806 6.117-13.806 13.636 0 2.984.977 5.747 2.63 7.995l-1.725 5.064 5.306-1.678a13.844 13.844 0 0 0 7.596 2.255c7.612 0 13.806-6.116 13.806-13.635 0-7.52-6.193-13.637-13.807-13.637zm8.295 17.233c-.102-.165-.37-.264-.772-.462-.403-.198-2.383-1.157-2.751-1.288-.37-.132-.638-.198-.906.198s-1.04 1.288-1.276 1.552c-.234.265-.469.298-.872.1-.402-.198-1.7-.617-3.237-1.966-1.197-1.05-2.005-2.345-2.24-2.742-.234-.396-.024-.61.177-.807.181-.178.403-.463.604-.694.202-.231.269-.396.402-.66.135-.265.068-.496-.033-.695-.1-.197-.907-2.146-1.242-2.94-.335-.792-.67-.66-.906-.66-.234 0-.503-.033-.771-.033-.269 0-.705.1-1.074.495-.37.397-1.409 1.355-1.409 3.304 0 1.948 1.442 3.831 1.644 4.095.201.264 2.784 4.393 6.877 5.979 4.093 1.585 4.093 1.056 4.832.99.737-.066 2.381-.958 2.718-1.882.335-.926.335-1.719.235-1.884z"></path></g></svg>
-                              </a>
                             </div>
                           </div>
                         </div>

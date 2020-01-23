@@ -1,5 +1,10 @@
+.welcome{
+    font-weight: bolder !important;
+    letter-spacing: 3.9px !important;
+    font-size: 50px !important;
+}
 .bg_footer{
-    padding-top: 50px !important;padding-bottom: 50px !important;
+    padding-bottom: 25px !important;
     background: url(../images/bg-1.png);
     background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;
 }
@@ -69,8 +74,8 @@ body.learnpress-v3 .course-curriculum ul.curriculum-sections .section-content .c
     color:black !important;
 }
 footer#colophon.dark {
-    background-color: #000 !important;
-    color: #acacac;
+    background: url(../images/footer-2.png);
+    background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;
 }
 .vc_custom_1501054848736 {
     background-color: #936b09 !important;
@@ -96,6 +101,23 @@ footer#colophon.dark {
 }
 .green_yellow{
     color:green !important;
+}
+.bg-teacher{
+    background: url(../images/teacher-bg-2.png);
+    background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;
+}
+.text-teacher{
+    color: white !important;
+    font-weight: bolder !important;
+}
+.text-teacher-p{
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: bolder !important;
+    
+}
+.center{
+    text-align: center !important;
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {

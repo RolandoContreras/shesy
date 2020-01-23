@@ -9531,7 +9531,7 @@ header#masthead.site-header.palette-transparent .width-navigation .main-menu>li>
     font-weight: 400;
     font-size: 14px;
     line-height: normal;
-    color: #9c9c9c
+    color: white;
 }
 header#masthead.site-header.palette-transparent .width-navigation .main-menu>li span.icon-toggle {
     color: #9c9c9c
@@ -12632,7 +12632,7 @@ footer#colophon ul.sub-menu li {
     margin: 15px 0 0 15px
 }
 footer#colophon .footer {
-    padding: 84px 0 142px
+    padding: 90px 0 0px
 }
 footer#colophon .footer.no-padding {
     padding: 0
@@ -14428,7 +14428,8 @@ a {
     color: #fff
 }
 .thim-background-overlay .thim-textbox-header p {
-    color: #c8c8c8
+    color: white;
+    font-weight: bolder !important;
 }
 .thim-textbox-2 {
     max-width: 724px;

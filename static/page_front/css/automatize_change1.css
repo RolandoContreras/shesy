@@ -24,20 +24,20 @@ header#masthead .width-navigation {
     width: calc(100% - 200px)
 }
 header#masthead .width-navigation .header-right .menu-right .button_search {
-    background: #18c1f0
+    background: #b8860b;
 }
 header#masthead.palette-transparent .main-header .width-navigation .main-menu>li>a:hover {
-    color: #18c1f0
+    color: #b8860b;
 }
 header#masthead.palette-transparent .main-header .width-navigation .main-menu .current-menu-item>a {
-    color: #18c1f0
+    color: #b8860b;
 }
 header#masthead.palette-custom .widget_thim-login:before {
-    color: #333
+    color: #333;
 }
 header#masthead.palette-custom .elementor-widget-wp-widget-woocommerce_widget_cart .ion,
 header#masthead.palette-custom .widget_shopping_cart .ion {
-    color: #333
+    color: #333;
 }
 header#masthead.palette-custom .width-navigation {
     font-size: 15px

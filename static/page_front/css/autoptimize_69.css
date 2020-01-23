@@ -38572,7 +38572,7 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
 .thim-sc-skills-bar .circle,
 .thim-sc-skills-bar .circle .number,
 .thim-sc-social-links {
-    text-align: center
+    text-align: left;
 }
 .thim-sc-post-block-1 .row .item .inner-item .data-meta {
     font-size: 16px;
@@ -39401,7 +39401,6 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
     top: 0
 }
 .thim-sc-steps.layout-3 {
-    background: url(../images/sc-step-bg-2.png) top center repeat-x #f4f4f4;
     padding-top: 132px;
     padding-bottom: 55px
 }
@@ -39527,7 +39526,7 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
 }
 .thim-sc-steps.layout-4 .sc-steps-wrapper .inner-steps-wrapper {
     padding: 125px 0 65px;
-    background: rgba(0, 0, 0, .60);
+    background: rgba(0, 0, 0, .70);
     background-image: url();
     background-position: top center;
     background-repeat: no-repeat;
