@@ -28,8 +28,8 @@
                             <span>contacto@culturafk.com</span>
                         </a>
                     </li>
-                    <li><i class="fa fa-fax"></i> + 01 224-8210</li>
-                    <li><i class="fa fa-map-marker"></i> Av. Alfredo Benavides 2191 - Lima.</li>
+                    <li><i class="fa fa-fax"></i> 51 931770526</li>
+<!--                    <li><i class="fa fa-map-marker"></i> Av. Alfredo Benavides 2191 - Lima.</li>-->
                   </ul>
                 </div>
               </aside>
