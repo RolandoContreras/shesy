@@ -29,7 +29,7 @@
         <div class="card-body text-center">
             
           <div class="mb-4">
-              <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png'?>" alt="logo" width="80"/>
+              <img src="<?php echo site_url().'static/page_front/images/logo/logo-ico.png'?>" alt="logo" width="150"/>
           </div>
             <form method="get" id="login">
               <h3 class="mb-4">Administración</h3>
