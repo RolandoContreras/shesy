@@ -56,7 +56,7 @@
                                   switch ($obj_customer->kit_id) {
                                         case 1:$kit = "Pack 1";$img = "pack_1.png";break;
                                         case 2:$kit = "Pack 2";$img = "pack_2.png";break;
-                                        default:$kit = "-";$img = "libre1.png";break;
+                                        default:$kit = "Posición";$img = "libre1.png";break;
                                   }
                                   switch ($obj_customer->range_id) {
                                         case 1:$range = "Embajador G1";break;
@@ -64,7 +64,7 @@
                                         case 3:$range = "Embajador G3";break;
                                         case 4:$range = "Embajador G4";break;
                                         case 5:$range = "Embajador G5";break;
-                                        default:$range = "-";break;
+                                        default:$range = "Sin Rango";break;
                                   }
                                   if($obj_customer->active_month == 1){
                                     $text = "<div class='value badge badge-pill badge-success'> Activo </div>";
@@ -74,7 +74,7 @@
                                   ?>
                                   
                                   <div id="level-0" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $obj_customer->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $obj_customer->first_name." ".$obj_customer->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                      <img src='<?php echo site_url()."static/backoffice/images/plan/$img";?>' class="img-responsive" style="width: 110px;"> </div>
+                                      <img src='<?php echo site_url()."static/backoffice/images/plan/$img";?>' class="img-responsive" style="width: 100px;"> </div>
                               </a>
                                     <!------------->
                                     <!--//NIVEL 2-->
@@ -85,7 +85,7 @@
                                             switch ($value->kit_id) {
                                                     case 1:$kit = "Pack 1";$img = "pack_1.png";break;
                                                     case 2:$kit = "Pack 2";$img = "pack_2.png";break;
-                                                    default:$kit = "-";$img = "libre1.png";break;
+                                                    default:$kit = "Posición";$img = "libre1.png";break;
                                               }
                                             switch ($value->range_id) {
                                                 case 1:$range = "Embajdor G1";break;
@@ -93,6 +93,7 @@
                                                 case 3:$range = "Embajdor G3";break;
                                                 case 4:$range = "Embajdor G4";break;
                                                 case 5:$range = "Embajdor G5";break;
+                                                default:$range = "Sin Rango";break;
                                         }
                                         if($value->active_month == 1){
                                             $text_2 = "<div class='value badge badge-pill badge-success'> Activo </div>";
@@ -102,7 +103,7 @@
                                                 <li>
                                                     <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value->customer_id);?>">
                                                         <div id="level-1" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value->first_name." ".$value->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_2;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                                        <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive"> </div>
+                                                        <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive" style="width: 100px;"> </div>
                                                     </a>
                                                     <!------------->
                                                     <!--//NIVEL 3-->
@@ -114,7 +115,7 @@
                                                                     switch ($value3->kit_id) {
                                                                        case 1:$kit = "Pack 1";$img = "pack_1.png";break;
                                                                        case 2:$kit = "Pack 2";$img = "pack_2.png";break;
-                                                                       default:$kit = "-";$img = "libre1.png";break;
+                                                                       default:$kit = "Posición";$img = "libre1.png";break;
                                                                       }
                                                                     switch ($value3->range_id) {
                                                                         case 1:$range = "Embajdor G1";break;
@@ -122,6 +123,7 @@
                                                                         case 3:$range = "Embajdor G3";break;
                                                                         case 4:$range = "Embajdor G4";break;
                                                                         case 5:$range = "Embajdor G5";break;
+                                                                        default:$range = "Sin Rango";break;
                                                                 }
                                                                 if($value3->active_month == 1){
                                                                     $text_3 = "<div class='value badge badge-pill badge-success'> Activo </div>";
@@ -131,8 +133,8 @@
                                                                 <?php if($value->customer_id == $value3->parend_id){ ?>
                                                                     <li>
                                                                           <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value3->customer_id);?>">
-                                                                            <div id="level-2" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value3->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value3->first_name." ".$value3->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_3;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                                                            <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive"> </div>
+                                                                            <div id="level-1" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value3->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value3->first_name." ".$value3->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_3;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
+                                                                            <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive" style="width: 100px;"></div>
                                                                           </a>
                                                                             <!------------->
                                                                             <!--//NIVEL 4-->
@@ -143,7 +145,7 @@
                                                                                         foreach ($obj_customer_n4 as $value4) { switch ($value4->kit_id) {
                                                                                                     case 1:$kit = "Pack 1";$img = "pack_1.png";break;
                                                                                                    case 2:$kit = "Pack 2";$img = "pack_2.png";break;
-                                                                                                   default:$kit = "-";$img = "libre1.png";break;
+                                                                                                   default:$kit = "Posición";$img = "libre1.png";break;
                                                                                                   }
                                                                                                 switch ($value4->range_id) {
                                                                                                     case 1:$range = "Embajdor G1";break;
@@ -151,6 +153,7 @@
                                                                                                     case 3:$range = "Embajdor G3";break;
                                                                                                     case 4:$range = "Embajdor G4";break;
                                                                                                     case 5:$range = "Embajdor G5";break;
+                                                                                                    default:$range = "Sin Rango";break;
                                                                                             }
                                                                                             if($value4->active_month == 1){
                                                                                                 $text_4 = "<div class='value badge badge-pill badge-success'> Activo </div>";
@@ -162,7 +165,7 @@
                                                                                                     <li>
                                                                                                           <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value4->customer_id);?>">
                                                                                                             <div id="level-3" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value4->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value4->first_name." ".$value4->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_4;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                                                                                            <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive"> </div>
+                                                                                                            <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive" style="width: 100px;"></div>
                                                                                                           </a>
                                                                                                     </li>
                                                                                             <?php } ?>
