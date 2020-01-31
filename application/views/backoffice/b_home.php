@@ -23,6 +23,13 @@
                             </div>
                       <?php }
                   } ?>
+                  <?php 
+                  if($obj_customer->active == 0){ ?>
+                          <div class="alert alert-info alert-dismissible fade show" role="alert">
+                              Bienvenido  <?php echo $_SESSION['customer']['name'];?> a <strong>Cultura Imparable, </strong>para que obtengas todos los beneficios adquiere un <strong>Pack</strong> con nosotros. <a href="<?php echo site_url().'backoffice/plan';?>" type="button" class="buyButton btn btn-default">Clic Aquí</a>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            </div>
+                  <?php } ?>
                   <div class="row">
                     <div class="col-md-3">
                       <div class="element-box el-tablo">
