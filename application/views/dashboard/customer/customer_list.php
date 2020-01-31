@@ -33,18 +33,20 @@
                             <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 267px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
-                                    aria-label="Position: activate to sort column ascending">Usuario</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
-                                    aria-label="Office: activate to sort column ascending">Cliente</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
-                                    aria-label="Office: activate to sort column ascending">Banco</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
+                                    aria-label="Position: activate to sort column ascending">Usuario</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
+                                    aria-label="Office: activate to sort column ascending">Cliente</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 200px;"
+                                    aria-label="Office: activate to sort column ascending">Banco</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Age: activate to sort column ascending">E-mail</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Kit</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
+                                    aria-label="Age: activate to sort column ascending">Estado del Mes</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Estado</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -74,6 +76,16 @@
                                 <td><?php echo $value->email;?></td>
                                 <td><?php echo $value->kit;?></td>
                                 <td>
+                                    <?php if ($value->active_month == 0) {
+                                        $valor = "No Activo";
+                                        $stilo = "label label-danger";
+                                    }else{
+                                        $valor = "Activo";
+                                        $stilo = "label label-success";
+                                    } ?>
+                                    <span class="<?php echo $stilo;?>"><?php echo $valor;?></span>
+                                </td>
+                                <td>
                                     <?php if ($value->active == 0) {
                                         $valor = "No Activo";
                                         $stilo = "label label-danger";
@@ -101,6 +113,7 @@
                                   <th rowspan="1" colspan="1">E-mail</th>
                                   <th rowspan="1" colspan="1">Kit</th>
                                   <th rowspan="1" colspan="1">Kit</th>
+                                  <th rowspan="1" colspan="1">Estado del Mes</th>
                                   <th rowspan="1" colspan="1">Estado</th>
                                   <th rowspan="1" colspan="1">Acciones</th>
                                 </tr>

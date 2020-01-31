@@ -98,7 +98,10 @@
                                     <label>Telefono</label>
                                     <input class="form-control" type="text" id="phone" name="phone" class="input-small-fluid" placeholder="Telefono" value="<?php echo isset($obj_customer->phone)?$obj_customer->phone:"";?>">
                               </div>
-                              
+                              <div class="form-group">
+                                    <label>Fecha de Recompra</label>
+                                    <input class="form-control" type="text" id="date_month" name="date_month" class="input-small-fluid" placeholder="YYYY/mm/dd" value="<?php echo isset($obj_customer->date_month)?$obj_customer->date_month:"";?>">
+                              </div>
                               <div class="form-group">
                                     <label>Fecha de Activación</label>
                                     <input class="form-control" type="text" id="date_start" name="date_start" class="input-small-fluid" placeholder="YYYY/mm/dd" value="<?php echo isset($obj_customer->date_start)?$obj_customer->date_start:"";?>">
@@ -163,6 +166,17 @@
                                     </option>
                                         <?php endforeach; ?>
                                     </select>
+                                <br/>
+                                <label for="inputState">Estado del Mes</label>
+                                    <select name="active_month" id="active_month" class="form-control">
+                                     <option value="">[ Seleccionar ]</option>
+                                      <option value="1" <?php if(isset($obj_customer)){
+                                          if($obj_customer->active_month == 1){ echo "selected";}
+                                      }else{echo "";} ?>>Activo</option>
+                                      <option value="0" <?php if(isset($obj_kit)){
+                                          if($obj_customer->active_month == 0){ echo "selected";}
+                                      }else{echo "";} ?>>Inactivo</option>
+                                </select>
                                 <br/>
                                 <label for="inputState">Estado</label>
                                     <select name="active" id="active" class="form-control">
