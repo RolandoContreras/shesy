@@ -22,6 +22,72 @@
                 </div>
               </div>
             </div>
+            <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/fondo1_min.jpg';?>">
+                    <p class="titulo-materiais">Logo Fondo Fuego</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/fondo1.jpg';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Hacer Descarga </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/fondo2_min.jpg';?>">
+                    <p class="titulo-materiais">Logo Dorado</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/fondo2.jpg';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Hacer Descarga </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/fondo3_min.jpg';?>">
+                    <p class="titulo-materiais">Logo WallPaper</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/fondo3.jpg';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Hacer Descarga </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/logo-azul_min.png';?>">
+                    <p class="titulo-materiais">Logo Azul</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/logo-azul.png';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Hacer Descarga </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/logo_dorado_min.png';?>">
+                    <p class="titulo-materiais">Logo Dorado</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/logo-dorado.png';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Hacer Descarga </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/logo_dorado_min2.png';?>">
+                    <p class="titulo-materiais">Logo Dorado 2</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/logo-dorado2.png';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Hacer Descarga </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
