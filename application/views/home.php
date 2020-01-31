@@ -434,9 +434,8 @@
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
       <script>
         $(document).ready(function(){
-          $("#embassy").hide();
           $("#show_embasy").click(function(){
-            $("#embassy").show(1000);
+               $.scrollTo($('#embassy'), 1000);
           });
         });
 </script>

@@ -77,7 +77,7 @@
                         <div class=wpb_wrapper>
                           <div class="thim-sc-video-box layout-1">
                             <div class=video>
-                                <div class=video-box style="background-image: url(<?php echo site_url().'static/page_front/images/layer_1.jpg';?>);">
+                                <div class=video-box style="background-image: url(<?php echo site_url().'static/page_front/images/03.jpeg';?>);">
                                 <div class=play-button>
                                     <a href="https://www.youtube.com/watch?v=GGNekHeuBj0" class=video-thumbnail>
                                         <i class="fa fa-play fa-6x" ></i>

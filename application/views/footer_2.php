@@ -76,17 +76,12 @@
           </div>
         </div>
     </div>
-    <div class="copyright-area no-footer-sticky ">
-      <div class="container">
-        <div class="copyright-content">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="copyright-text">Construido por <a href="http://evolucionweb.tech/" target="_blank">Evolución</a>
-                    <img src="<?php echo site_url().'static/page_front/images/logo/evolucion_logo.png';?>" alt="evolucion logo" width="80"/>
-                </div>
+     <div class="copyright-area ">
+        <div class="container">
+          <div class="copyright-content">
+            <div class="row">
             </div>
           </div>
         </div>
       </div>
-    </div>
   </footer>
