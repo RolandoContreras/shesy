@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
   <meta name="author" content="Cultura Imparable">
-  <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, Imparable corporación, mlm, mmn, culturaimprable.com">
+  <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, red social, mlm, mmn, culturaimprable.com, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
   <meta name="robots" content="Index, Follow">
    <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-touch-icon.png';?>">
@@ -26,10 +26,8 @@
     <div class="navbar-wrapper">
       <div class="navbar-brand header-logo">
           <a href="<?php echo site_url().'course';?>" class="b-brand">
-          <div class="b-bg">
-              <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" alt="Logo" width="35"/>
-          </div>
-              <span class="b-title">Universidad FK</span>
+              <img src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" alt="Logo" width="35"/>
+              <span class="b-title">Cursos</span>
           </a>
           <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
       <div class="navbar-content scroll-div">
@@ -94,10 +92,8 @@
   <header class="navbar pcoded-header navbar-expand-lg navbar-light">
     <div class="m-header"><a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
         <a href="<?php echo site_url().'course';?>" class="b-brand">
-        <div class="b-bg">
-            <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" alt="Logo" width="35"/>
-        </div>
-            <span class="b-title">Universidad FK</span></a>
+            <img src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" alt="Logo" width="35"/>
+            <span class="b-title">Universidad Imparable</span></a>
     </div>
       <a class="mobile-menu" id="mobile-header" href="#!">
           <i class="feather icon-more-horizontal"></i>

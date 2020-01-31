@@ -6,7 +6,7 @@
   <meta content="ie=edge" http-equiv="x-ua-compatible">
   <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
   <meta name="author" content="Cultura Imparable">
-  <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, Imparable corporación, mlm, mmn, culturaimprable.com">
+  <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, red social, mlm, mmn, culturaimprable.com, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
   <meta content="width=device-width, initial-scale=1" name="viewport">
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-touch-icon.png';?>">
@@ -48,7 +48,7 @@
     <div class="layout-w">
       <div class="menu-mobile menu-activated-on-click color-scheme-dark">
         <div class="mm-logo-buttons-w" style="background: #3d2b16"> <a class="mm-logo" href="<?php echo site_url().'backoffice';?>"> 
-                <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" style="max-width: 100%; width: 70px;"> <span></span> </a>
+                <img src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" style="max-width: 100%; width: 70px;"> <span></span> </a>
           <div class="mm-buttons">
             <div class="mobile-menu-trigger">
               <div class="os-icon os-icon-hamburger-menu-1"></div>
@@ -162,7 +162,7 @@
       </div>
             <div class="menu-w selected-menu-color-bright menu-activated-on-hover menu-has-selected-link color-scheme-dark color-style-default sub-menu-color-bright menu-position-side menu-side-left menu-layout-compact sub-menu-style-over">
         <div class="logo-w" style="padding: 4px 1rem 4px 1.7rem !important;"> <a class="logo" style="width: 100%;" align="center"> 
-                <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" style="max-width: 80px;"> 
+                <img src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" style="max-width: 80px;"> 
             </a>          
         </div>
         <div class="logged-user-w avatar-inline">

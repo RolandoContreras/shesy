@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
   <meta name="author" content="Cultura Imparable">
-  <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, Imparable corporación, mlm, mmn, culturaimprable.com">
+  <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, red social, mlm, mmn, culturaimprable.com, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
   <meta name="robots" content="Index, Follow">
   <link type="text/css" media="all" href="<?php echo site_url().'static/page_front/css/autoptimize_69.css';?>" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo site_url().'static/page_front/css/autoptimize_6e.css';?>" type="text/css" media="all">
