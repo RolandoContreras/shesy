@@ -35,8 +35,8 @@
                 </div>
               </div>
               <!-- /.box-header -->
-              <div class="element-box">
-                <div class="tree container" style="padding: 0px !important;">
+              <div class="element-box" style="overflow: auto;">
+                <div class="tree container" style="padding: 0px !important; width: 10000%;">
                   <div class="card widget" align="center">
                     <div class="row">
                       <div class="col-md-6"></div>
@@ -73,8 +73,8 @@
                                   } 
                                   ?>
                                   
-                                  <div id="level-0" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $obj_customer->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $obj_customer->first_name." ".$obj_customer->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                      <img src='<?php echo site_url()."static/backoffice/images/plan/$img";?>' class="img-responsive" style="width: 100px;"> </div>
+                                  <div data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $obj_customer->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $obj_customer->first_name." ".$obj_customer->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
+                                      <img src='<?php echo site_url()."static/backoffice/images/plan/$img";?>' style="width: 100px;"> </div>
                               </a>
                                     <!------------->
                                     <!--//NIVEL 2-->
@@ -100,17 +100,17 @@
                                           }else{
                                             $text_2 = "<div class='value badge badge-pill badge-danger'> Inactivo </div>";  
                                           }?>
-                                                <li>
+                                      <li>
                                                     <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value->customer_id);?>">
-                                                        <div id="level-1" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value->first_name." ".$value->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_2;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                                        <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive" style="width: 90px;"> </div>
+                                                        <div data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value->first_name." ".$value->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_2;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
+                                                        <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" style="width: 90px;"> </div>
                                                     </a>
                                                     <!------------->
                                                     <!--//NIVEL 3-->
                                                     <!------------->
                                                     <?php if(count($obj_customer_n3) > 0){ 
                                                                 ?>
-                                                        <ul class="d-none d-sm-block">
+                                                        <ul class="d-sm-block">
                                                             <?php foreach ($obj_customer_n3 as $value3) { 
                                                                     switch ($value3->kit_id) {
                                                                        case 1:$kit = "Pack 1";$img = "pack_1.png";break;
@@ -134,13 +134,13 @@
                                                                     <li>
                                                                           <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value3->customer_id);?>">
                                                                             <div id="level-1" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value3->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value3->first_name." ".$value3->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_3;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                                                            <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive" style="width: 90px;"></div>
+                                                                            <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" style="width: 90px;"></div>
                                                                           </a>
                                                                             <!------------->
                                                                             <!--//NIVEL 4-->
                                                                             <!------------->
                                                                             <?php if(count($obj_customer_n4) > 0){ ?>
-                                                                                 <ul class="d-none d-sm-block">
+                                                                                 <ul class="d-sm-block">
                                                                                      <?php 
                                                                                         foreach ($obj_customer_n4 as $value4) { switch ($value4->kit_id) {
                                                                                                     case 1:$kit = "Pack 1";$img = "pack_1.png";break;
@@ -165,13 +165,13 @@
                                                                                                     <li>
                                                                                                           <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value4->customer_id);?>">
                                                                                                             <div id="level-3" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value4->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value4->first_name." ".$value4->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_4;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                                                                                            <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive" style="width: 90px;"></div>
+                                                                                                            <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" style="width: 90px;"></div>
                                                                                                           </a>
                                                                                                         <!------------->
                                                                                                         <!--//NIVEL 5-->
                                                                                                         <!------------->
                                                                                                         <?php if(count($obj_customer_n5) > 0){ ?>
-                                                                                                             <ul class="d-none d-sm-block">
+                                                                                                             <ul class="d-sm-block">
                                                                                                                  <?php 
                                                                                                                     foreach ($obj_customer_n5 as $value5) { switch ($value5->kit_id) {
                                                                                                                                 case 1:$kit = "Pack 1";$img = "pack_1.png";break;
@@ -196,13 +196,13 @@
                                                                                                                                 <li>
                                                                                                                                       <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value5->customer_id);?>">
                                                                                                                                         <div data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value5->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value5->first_name." ".$value5->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_5;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                                                                                                                        <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive" style="width: 85px;"></div>
+                                                                                                                                        <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" style="width: 85px;"></div>
                                                                                                                                       </a>
                                                                                                                                         <!------------->
                                                                                                                                         <!--//NIVEL 6-->
                                                                                                                                         <!------------->
                                                                                                                                         <?php if(count($obj_customer_n6) > 0){ ?>
-                                                                                                                                             <ul class="d-none d-sm-block">
+                                                                                                                                             <ul class="d-sm-block">
                                                                                                                                                  <?php 
                                                                                                                                                     foreach ($obj_customer_n6 as $value6) { switch ($value6->kit_id) {
                                                                                                                                                                 case 1:$kit = "Pack 1";$img = "pack_1.png";break;
@@ -227,7 +227,7 @@
                                                                                                                                                                 <li>
                                                                                                                                                                       <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value6->customer_id);?>">
                                                                                                                                                                         <div data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $value6->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $value6->first_name." ".$value6->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Rango:&lt;/b&gt; <?php echo $range;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text_6;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
-                                                                                                                                                                        <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" class="img-responsive" style="width: 80px;"></div>
+                                                                                                                                                                        <img src="<?php echo site_url()."static/backoffice/images/plan/$img";?>" style="width: 80px;"></div>
                                                                                                                                                                       </a>
                                                                                                                                                                 </li>
                                                                                                                                                         <?php } ?>
