@@ -20,6 +20,7 @@ class Forget extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('forget');
+                $data['title'] = "Olvidé mi contraseña";
+		$this->load->view('forget',$data);
 	}
 }

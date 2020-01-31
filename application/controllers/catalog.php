@@ -103,6 +103,7 @@ class Catalog extends CI_Controller {
             $data['total'] = $config["total_rows"];
             
             //SEND DATA
+            $data['title'] = "Catalogo";
 	    $this->load->view('catalog',$data);
 	}
         
@@ -142,7 +143,7 @@ class Catalog extends CI_Controller {
              
             //get data catalog
             $params_categogory_id = array(
-                        "select" =>"category_id",
+                        "select" =>"category_id,name",
                 "where" => "slug like '%$category%'");
             $obj_category = $this->obj_category->get_search_row($params_categogory_id);
             $category_id = $obj_category->category_id;
@@ -189,7 +190,8 @@ class Catalog extends CI_Controller {
             $data['obj_catalog'] = $this->obj_catalog->search_data($params, $config["per_page"],$this->uri->segment(3));
             //send total row
             $data['total'] = $config["total_rows"];
-            
+            //send meta title
+            $data['title'] = "Catalogo | $obj_category->name";
             /// VISTA
            $this->load->view('catalog',$data);
 	}
@@ -200,7 +202,6 @@ class Catalog extends CI_Controller {
             //GET NAV
              $data['obj_category_videos'] = $this->nav_videos();
              $data['obj_category_catalog'] = $this->nav_catalogo();
-             
              
              //get data catalog
             $params_categogory_id = array(
@@ -230,6 +231,7 @@ class Catalog extends CI_Controller {
                 "join" => array( 'category, category.category_id = catalog.category_id'),
                 "where" => "catalog.slug = '$slug_2'");
             $data['obj_catalog'] = $this->obj_catalog->get_search_row($params);
+            $obj_catalog_meta = $data['obj_catalog'];
             
             //get catalog relacionado
             
@@ -250,6 +252,8 @@ class Catalog extends CI_Controller {
                 "limit" => "4",);
             
             $data['obj_catalog_rand'] = $this->obj_catalog->search($params);
+            //send meta title
+            $data['title'] = "Catalogo | $obj_catalog_meta->category_name | $obj_catalog_meta->name";        
             $this->load->view('catalog_detail',$data);
 	}
         

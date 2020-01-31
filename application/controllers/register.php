@@ -42,6 +42,7 @@ class Register extends CI_Controller {
                 "where" => "id_idioma = 7");
             $obj_paises['obj_paises'] = $this->obj_paises->search($params);
             /// VIEW
+            $obj_paises['title'] = "Registro";
             $this->load->view("register", $obj_paises);
 		
 	}

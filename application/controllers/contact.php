@@ -43,6 +43,7 @@ class Contact extends CI_Controller {
             //GET DATA COMMENTS
             $data['obj_category_catalog'] = $this->obj_category->search($params_category_catalog);
             //SEND DATA
+            $data['title'] = "Contacto";
             $this->load->view('contact',$data);
 	}
         public function send_messages(){

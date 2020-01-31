@@ -42,6 +42,7 @@ $route['default_controller'] = "home";
 $route['404_override'] = 'errors/error_404';
 
 $route['home'] = 'home';
+$route['home/sitemap'] = 'home/sitemap';
 
 $route['catalog'] = 'catalog';
 $route['catalog/order/add_cart'] = 'catalog/add_cart';

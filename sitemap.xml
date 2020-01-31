@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+                <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"><url>
+                <loc>http://localhost/shesy/courses/desarrollo-personal/prueba-de-video-24</loc>
+                <lastmod>2019-12-29 20:22:52</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/shesy/courses/desarrollo-personal/video-de-instruccion-</loc>
+                <lastmod>2019-12-29 20:02:16</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/shesy/catalog/ropa/abrigos-finos</loc>
+                <lastmod>2019-12-29 18:39:43</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/shesy/catalog/ropa/venta-de-productores</loc>
+                <lastmod>2019-12-29 18:45:37</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/shesy/courses/desarrollo-personal</loc>
+                <lastmod>2019-12-26 19:24:27</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/shesy/courses/finanzas</loc>
+                <lastmod>2019-12-26 19:24:35</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/shesy/catalog/ropa</loc>
+                <lastmod>2019-12-26 19:24:04</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/shesy/catalog/accesorios</loc>
+                <lastmod>2019-12-26 19:24:15</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url><loc>http://localhost/shesy/</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/shesy/home</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/shesy/courses</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/shesy/catalog</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/shesy/register</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/shesy/contact</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/shesy/login</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/shesy/forget</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url></urlset>
