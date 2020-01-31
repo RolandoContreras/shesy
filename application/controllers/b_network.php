@@ -64,7 +64,6 @@ class B_network extends CI_Controller {
             $customer_id = $_SESSION['customer']['customer_id'];
         }    
         
-        
         //GET CUSTOMER PRINCIPAL
         $params = array(
                         "select" =>"customer_id,
@@ -124,11 +123,7 @@ class B_network extends CI_Controller {
                                 "order" => "unilevel.unilevel_id ASC"
                                                 );
                  $obj_customer_n3 = $this->obj_customer->search($params_customer_n3);
-                 
-                 $direct_3 = count($obj_customer_n3);
-                 $this->tmp_backoffice->set("direct_3",$direct_3);
                  $this->tmp_backoffice->set("obj_customer_n3",$obj_customer_n3);
-                 
                  
                  //GET CUSTOMER BY PARENTS_ID 4 LEVEL
                  if(count($obj_customer_n3) > 0){
@@ -155,13 +150,64 @@ class B_network extends CI_Controller {
                                 "order" => "unilevel.unilevel_id ASC"
                                                 );
                             $obj_customer_n4 = $this->obj_customer->search($params_customer_n3);
-                            
-//                            var_dump($obj_customer_n4);
-//                            die();
-                            
-                            $direct_4 = count($obj_customer_n4);
-                            $this->tmp_backoffice->set("direct_4",$direct_4);
                             $this->tmp_backoffice->set("obj_customer_n4",$obj_customer_n4);   
+                            
+                            //GET CUSTOMER BY PARENTS_ID 5 LEVEL
+                            if(count($obj_customer_n4) > 0){
+                                $customer_id_n4 = "";
+                                foreach ($obj_customer_n4 as $key => $value) {
+                                       $customer_id_n4 .= $value->customer_id.",";
+                                }
+                             //DELETE LAST CARACTER ON STRING
+                             $customer_id_n4 = substr ($customer_id_n4, 0, strlen($customer_id_n4) - 1);
+
+                                     $params_customer_n4 = array(
+                                            "select" =>"customer.customer_id,
+                                                        customer.username,
+                                                        customer.first_name,
+                                                        customer.active_month,
+                                                        customer.last_name,
+                                                        customer.kit_id,
+                                                        customer.range_id,
+                                                        unilevel.parend_id,
+                                                        customer.active
+                                                        ",
+                                            "where" => "unilevel.parend_id in ($customer_id_n4) and customer.status_value = 1",
+                                            "join" => array('unilevel, unilevel.customer_id = customer.customer_id'),
+                                            "order" => "unilevel.unilevel_id ASC"
+                                                            );
+                                        $obj_customer_n5 = $this->obj_customer->search($params_customer_n4);
+                                        $this->tmp_backoffice->set("obj_customer_n5",$obj_customer_n5);   
+                                        
+                                        
+                                        //GET CUSTOMER BY PARENTS_ID 6 LEVEL
+                                        if(count($obj_customer_n5) > 0){
+                                            $customer_id_n5 = "";
+                                            foreach ($obj_customer_n5 as $key => $value) {
+                                                   $customer_id_n5 .= $value->customer_id.",";
+                                            }
+                                         //DELETE LAST CARACTER ON STRING
+                                         $customer_id_n5 = substr ($customer_id_n5, 0, strlen($customer_id_n5) - 1);
+
+                                                 $params_customer_n5 = array(
+                                                        "select" =>"customer.customer_id,
+                                                                    customer.username,
+                                                                    customer.first_name,
+                                                                    customer.active_month,
+                                                                    customer.last_name,
+                                                                    customer.kit_id,
+                                                                    customer.range_id,
+                                                                    unilevel.parend_id,
+                                                                    customer.active
+                                                                    ",
+                                                        "where" => "unilevel.parend_id in ($customer_id_n5) and customer.status_value = 1",
+                                                        "join" => array('unilevel, unilevel.customer_id = customer.customer_id'),
+                                                        "order" => "unilevel.unilevel_id ASC"
+                                                                        );
+                                                    $obj_customer_n6 = $this->obj_customer->search($params_customer_n5);
+                                                    $this->tmp_backoffice->set("obj_customer_n6",$obj_customer_n6);   
+                                            }
+                                }
                     }
                  
                  }

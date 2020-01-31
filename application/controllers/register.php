@@ -152,7 +152,7 @@ class Register extends CI_Controller {
                             "where" => "customer_id = $parent_id");
                $customer = $this->obj_unilevel->get_search_row($param_customer);  
                
-               if(count($customer) > 0){
+               if(isset($customer) != ""){
                    $ident =  $customer->ident;
                    $new_ident = $ident.",$parent_id";
                }else{
@@ -185,7 +185,7 @@ class Register extends CI_Controller {
             $data_customer_session['status'] = 1;
             $_SESSION['customer'] = $data_customer_session; 
             $data['status'] = "success";
-            $this->message($username, $pass, $name, $email);
+//            $this->message($username, $pass, $name, $email);
             echo json_encode($data);
             }
 	}
