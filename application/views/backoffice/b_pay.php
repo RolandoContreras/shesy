@@ -12,7 +12,8 @@
           <div class="alert alert-success" role="alert"> <strong>Reglas de Retiro </strong><br> 
                 Las solicitudes de retiro se realizan los fines de mes.<br>
                 El importe mínimo de retiro es de S/. 10.
-                Los pagos se procesan en las primeras 24 horas hábiles de realizar la solicitud
+                Los pagos se procesan en las primeras 24 horas hábiles de realizar la solicitud<br>
+                <strong>Debe estar activo en el mes para poder solicitar el cobro, de lo contrario no aparecerá importe disponible.</strong>
             </div>
         </div>
       </div>

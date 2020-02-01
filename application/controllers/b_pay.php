@@ -16,6 +16,8 @@ class B_pay extends CI_Controller {
          $this->get_session();
         //GET CUSTOMER_ID $_SESSION   
         $customer_id = $_SESSION['customer']['customer_id'];
+        $active_month = $_SESSION['customer']['active_month'];
+        
         date_default_timezone_set('America/Lima');
         $params = array(
                         "select" =>"pay.date,
@@ -51,7 +53,11 @@ class B_pay extends CI_Controller {
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
         
         $total_comisiones = $obj_total_commissions->total_comissions;
-        $total_disponible = $obj_total_commissions->total_disponible;
+        if($active_month == 0){
+            $total_disponible = 0;
+        }else{
+            $total_disponible = $obj_total_commissions->total_disponible;
+        }
         
         $this->tmp_backoffice->set("bank",$bank);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
