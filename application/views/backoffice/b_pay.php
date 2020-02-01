@@ -9,7 +9,7 @@
       <div class="element-wrapper">
         <h6 class="element-header">¿Dudas sobre el retiro? <small>Consulte las reglas de retiro.</small> </h6>
         <div class="element-box">
-          <div class="alert alert-success" role="alert"> <strong>Reglas de Retiro </strong><br> 
+          <div class="alert alert-info" role="alert"> <strong>Reglas de Retiro </strong><br> 
                 Las solicitudes de retiro se realizan los fines de mes.<br>
                 El importe mínimo de retiro es de S/. 10.
                 Los pagos se procesan en las primeras 24 horas hábiles de realizar la solicitud<br>
