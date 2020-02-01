@@ -24,6 +24,7 @@ class B_profile extends CI_Controller {
                                     customer.bank_number_cci,
                                     customer.created_at,
                                     customer.date_start,
+                                    customer.date_month,
                                     customer.address,
                                     customer.phone,
                                     customer.dni,

@@ -40,38 +40,44 @@
                     </div>
                     <div class="col-sm-6 b-r b-b">
                       <div class="el-tablo centered padded-v">
+                        <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->dni;?> </div>
+                        <div class="label"> DNI / Cedula </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 b-r b-b">
+                      <div class="el-tablo centered padded-v">
+                        <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->address;?> </div>
+                        <div class="label"> Dirección </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4 b-r b-b">
+                      <div class="el-tablo centered padded-v">
                           <div class="value" style="font-size: 18px;"> <?php echo formato_fecha_barras($obj_customer->created_at);?> </div>
                         <div class="label"> Fecha de Registro </div>
                       </div>
                     </div>
-                    <div class="col-sm-6 b-b">
+                    <div class="col-sm-4 b-r b-b">
                       <div class="el-tablo centered padded-v">
                         <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->date_start!=""?formato_fecha_barras($obj_customer->date_start):"-";?> </div>
                         <div class="label"> Fecha de Activación </div>
                       </div>
                     </div>
-                    <div class="col-sm-6 b-b">
+                    <div class="col-sm-4 b-r b-b">
                       <div class="el-tablo centered padded-v">
-                        <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->dni;?> </div>
-                        <div class="label"> DNI / Cedula </div>
+                        <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->date_month!=""?formato_fecha_barras($obj_customer->date_month):"-";?> </div>
+                        <div class="label"> Fecha de Recompra</div>
                       </div>
                     </div>
-                    <div class="col-sm-6 b-b">
+                    <div class="col-sm-6 b-r b-b">
                       <div class="el-tablo centered padded-v">
                         <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->phone;?> </div>
                         <div class="label"> Teléfono </div>
                       </div>
                     </div>
-                    <div class="col-sm-6 b-b">
+                       <div class="col-sm-6 b-r b-b">
                       <div class="el-tablo centered padded-v">
                         <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->nombre;?> </div>
                         <div class="label"> País </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-12 b-b">
-                      <div class="el-tablo centered padded-v">
-                        <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->address;?> </div>
-                        <div class="label"> Dirección </div>
                       </div>
                     </div>
                   </div>
