@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-sm-6 b-b">
                       <div class="el-tablo centered padded-v">
-                        <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->created_at!=""?formato_fecha_barras($obj_customer->created_at):"-";?> </div>
+                        <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->date_start!=""?formato_fecha_barras($obj_customer->date_start):"-";?> </div>
                         <div class="label"> Fecha de Activación </div>
                       </div>
                     </div>

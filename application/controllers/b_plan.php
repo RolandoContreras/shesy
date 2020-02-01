@@ -125,7 +125,7 @@ class B_plan extends CI_Controller {
             );
             //GET DATA FROM BONUS
             $obj_unilevel = $this->obj_unilevel->get_search_row($params);
-            if(count($obj_unilevel) > 0){
+            if(isset($obj_unilevel) != ""){
                 $ident = $obj_unilevel->ident;
                 $new_parend_id = $obj_unilevel->new_parend_id;
 
