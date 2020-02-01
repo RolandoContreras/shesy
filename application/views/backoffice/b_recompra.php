@@ -44,31 +44,37 @@
               <center>
                  <div class="alert alert-success">
                     <button class="close" data-dismiss="alert" type="button">×</button>
-                    <p>La venta se realizo éxitosamente</p>
+                    <p>La Recompra se realizo éxitosamente</p>
                  </div>                 
              </center>
           </div>
-          <div class="form-group has-feedback" id="pay_info" style="display: none">
-                 <center>
-                     <div class="alert alert-danger">
-                        <button class="close" data-dismiss="alert" type="button">×</button>
-                        <p>Hubo un error, verifique los datos de la tarjeta</p>
-                     </div>                 
-                 </center>
-            </div>
+          <div class="form-group has-feedback" id="pay_info"></div>
   </div>
 </div>
 </div>
 <script src="<?php echo site_url().'static/backoffice/js/script/plan.js';?>"></script>
 <script>
-  Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+  Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
   var  price = "";
   var  price2 = "";
   var  kit_id = "";
+  
+  
   $('.buyButton').on('click', function(e) {
       price = $(this).attr('data-price');
       price2 = $(this).attr('data-price2');
       kit_id = $(this).attr('data-kit');
+      Culqi.options({
+        lang: 'auto',
+        modal: true,
+        style: {
+          logo: '<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>',
+          maincolor: '#0ec1c1',
+          buttontext: '#ffffff',
+          maintext: '#4A4A4A',
+          desctext: '#4A4A4A'
+        }
+    });
       Culqi.settings({
         title: 'Cultura Imparable',
         currency: 'PEN',
@@ -100,7 +106,12 @@
                     document.getElementById("pay_success_2").style.display = "block";
                     location.href = site + "backoffice/invoice";
                 }else {
-                    document.getElementById("pay_info").style.display = "block";
+                    $("#pay_info").html();
+                    var texto = "";
+                    texto = texto+'<div class="alert alert-danger">';
+                    texto = texto+'<p style="text-align: center;">Hubo un error, verifique los datos de la tarjeta</p>';
+                    texto = texto+'</div>';                 
+                    $("#pay_info").html(texto);
                  } 
              },
              error : function(data){
@@ -114,4 +125,3 @@
     };
 
 </script>
-

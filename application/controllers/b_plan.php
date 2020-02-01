@@ -224,7 +224,7 @@ class B_plan extends CI_Controller {
             );
             //GET DATA FROM BONUS
             $obj_unilevel = $this->obj_unilevel->get_search_row($params);
-            if(count($obj_unilevel) > 0){
+            if(isset($obj_unilevel) != ""){
                 $ident = $obj_unilevel->ident;
                 //INSERT AMOUNT ON COMMISION TABLE    
                 $this->pay_unilevel_recompra($ident,$invoice_id, $obj_kit->bono_n1,$obj_kit->bono_n2,$obj_kit->bono_n3,$obj_kit->bono_n4,$obj_kit->bono_n5);
