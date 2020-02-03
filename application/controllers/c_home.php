@@ -19,17 +19,9 @@ class C_home extends CI_Controller {
         
         if(isset($_GET['search'])){
                 $search = $_GET['search'];
-                if($kid_id > 0){
                     $where = "videos.name like '%$search%' and category.type = 1 and videos.active = 1";
-                }else{
-                    $where = "videos.name like '%$search%' and category.type = 1 and videos.type = 1 and videos.active = 1";
-                }
         }else{
-            if($kid_id > 0){
                 $where = "category.type = 1 and videos.active = 1";
-            }else{
-                $where = "category.type = 1 and videos.type = 1 and videos.active = 1";
-            }
         }
         $category_name = "Todos los videos";
         

@@ -9,7 +9,6 @@
       </div>
       <div class="row" id="tree-family">
         <div class="col-md-12">
-          <div class="" style="">
             <div class="row">
               <div class="col-md-12" style="margin-top: -20px;">
                 <div class="card widget_2">
@@ -36,7 +35,7 @@
               </div>
               <!-- /.box-header -->
               <div class="element-box" style="overflow: auto;">
-                <div class="tree container" style="padding: 0px !important; width: 10000%;">
+                <div class="tree" style="padding: 0px !important; width: 10000%;">
                   <div class="card widget" align="center">
                     <div class="row">
                       <div class="col-md-6"></div>
@@ -262,7 +261,6 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
