@@ -50,6 +50,34 @@ class D_activate extends CI_Controller{
             $this->tmp_mastercms->set("obj_invoices",$obj_invoices);
             $this->tmp_mastercms->render("dashboard/activate/activate_list");
     }
+
+    public function load(){
+            //OBTENER CLIENTES INACTIVOS
+            $params = array(
+                        "select" =>"username,
+                                    first_name,
+                                    last_name,
+                                    dni,
+                                    customer_id",
+                "where" => "active = 0",
+            );
+            //GET DATA COMMENTS
+            $obj_customer = $this->obj_customer->search($params);
+            //OBTENER KITS ACTIVOS
+            $params = array(
+                        "select" =>"name,
+                                    kit_id,
+                                    price,
+                                    point",
+                "where" => "active = 1",
+            );
+            //GET DATA COMMENTS
+            $obj_kit = $this->obj_kit->search($params);
+            
+            $this->tmp_mastercms->set("obj_customer",$obj_customer);
+            $this->tmp_mastercms->set("obj_kit",$obj_kit);
+            $this->tmp_mastercms->render("dashboard/activate/active_kit_form");    
+    }
     
     public function activaciones_catalogo(){  
         
@@ -124,30 +152,47 @@ class D_activate extends CI_Controller{
             $this->tmp_mastercms->render("dashboard/activate/activate_catalogo_detail");
     }
     
-    
     public function active(){
         //ACTIVE CUSTOMER NORMALY
         if($this->input->is_ajax_request()){  
                 date_default_timezone_set('America/Lima');
                 //SELECT CUSTOMER_ID
-                $invoice_id = $this->input->post("invoice_id");
+//                $invoice_id = $this->input->post("invoice_id");
                 $customer_id = $this->input->post("customer_id");
                 $kit_id = $this->input->post("kit_id");
                 $type = $this->input->post("type");
                 
+                //GET DATA FROM TABLE KIT
+                $params = array(
+                        "select" =>"bono_n1,
+                                    bono_n2,
+                                    bono_n3,
+                                    bono_n4,
+                                    bono_n5,
+                                    price",
+                        "where" => "kit_id = $kit_id"
+                );
+                //GET DATA FROM BONUS
+                $obj_kit = $this->obj_kit->get_search_row($params);
                 
-                    //GET DATA FROM TABLE KIT
-                    $params = array(
-                            "select" =>"bono_n1,
-                                        bono_n2,
-                                        bono_n3,
-                                        bono_n4,
-                                        bono_n5",
-                            "where" => "kit_id = $kit_id"
-                    );
-                    //GET DATA FROM BONUS
-                    $obj_kit = $this->obj_kit->get_search_row($params);
-                    //GET DATA CUSTOMER UNILEVEL
+                //CREATE INVOICE
+                $data_invoice = array(
+                    'customer_id' => $customer_id,
+                    'kit_id' => $kit_id,
+                    'sub_total' => $obj_kit->price,
+                    'igv' => 0,
+                    'total' => $obj_kit->price,
+                    'type' => $type,
+                    'recompra' => 0,
+                    'date' => date("Y-m-d H:i:s"),
+                    'active' => 2,
+                    'status_value' => 1,
+                    'created_at' => date("Y-m-d H:i:s"),
+                    'created_by' => $customer_id,
+                );
+                $invoice_id = $this->obj_invoices->insert($data_invoice);
+                
+                   //GET DATA CUSTOMER UNILEVEL
                     $params = array(
                             "select" =>"parend_id,
                                         ident,
@@ -157,37 +202,30 @@ class D_activate extends CI_Controller{
                     //GET DATA FROM BONUS
                     $obj_unilevel = $this->obj_unilevel->get_search_row($params);
                     
-                    if(count($obj_unilevel) > 0){
+                    if(isset($obj_unilevel) != ""){
                         $ident = $obj_unilevel->ident;
                         $new_parend_id = $obj_unilevel->new_parend_id;
-                        
+
                         //INSERT AMOUNT ON COMMISION TABLE    
                         $this->pay_unilevel($ident,$new_parend_id,$invoice_id, $obj_kit->bono_n1,$obj_kit->bono_n2,$obj_kit->bono_n3,$obj_kit->bono_n4,$obj_kit->bono_n5);
                         //INSERT AMOUNT ON COMMISION TABLE    
                         $this->add_points($ident,$obj_kit->bono_n1,$obj_kit->bono_n2,$obj_kit->bono_n3,$obj_kit->bono_n4,$obj_kit->bono_n5);
                     }
                     
-                    //verify if type = 1 "activayte kit" or type = 2 "buy catalog" 
-                   if($type == 1){
-                       //UPDATE TABLE CUSTOMER ACTIVE = 1    
+                     //add 30 day por next pay
+                     $date_month =date("Y-m-d", strtotime("+30 day"));
+                    //UPDATE TABLE CUSTOMER ACTIVE = 1    
                         $data = array(
                             'active' => 1,
                             'kit_id' => $kit_id,
                             'date_start' => date("Y-m-d H:i:s"),
+                            'date_month' => $date_month,
+                            'active_month' => 1,
                             'updated_at' => date("Y-m-d H:i:s"),
-                            'updated_by' => $_SESSION['usercms']['user_id'],
+                            'updated_by' => $customer_id,
                         ); 
                         $this->obj_customer->update($customer_id,$data);
-                   } 
-                    
-                 //UPDATE TABLE INVOICE ACTIVE = 2 (PROCESADO)    
-                    $data_invoice = array(
-                        'active' => 2,
-                        'updated_at' => date("Y-m-d H:i:s"),
-                        'updated_by' => $_SESSION['usercms']['user_id'],
-                    ); 
-                    $this->obj_invoices->update($invoice_id,$data_invoice);   
-                
+                $data['status'] = "true";
                 echo json_encode($data); 
                 exit();
             }
@@ -325,6 +363,29 @@ class D_activate extends CI_Controller{
                 }
             }
         }    
+        
+    public function validate_user() {
+        if ($this->input->is_ajax_request()) {
+            //SELECT ID FROM CUSTOMER
+        $username = str_to_minuscula(trim($this->input->post('username')));
+        $param_customer = array(
+            "select" => "customer_id,first_name,last_name,dni",
+            "where" => "username = '$username'");
+        $customer = $this->obj_customer->get_search_row($param_customer);
+        if (isset($customer->customer_id) != "") {
+            $data['message'] = "true";
+            $data['name'] = $customer->first_name." ".$customer->last_name;
+            $data['dni'] = $customer->dni;
+            $data['customer_id'] = $customer->customer_id;
+            $data['print'] = "Cliente Encontrado!";
+            
+        } else {
+            $data['message'] = "false";
+            $data['print'] = "Cliente no existe!";
+        }
+        echo json_encode($data);
+        }
+    }
         
     public function get_session(){          
         if (isset($_SESSION['usercms'])){

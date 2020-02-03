@@ -132,7 +132,7 @@
                 <?php } ?>
             </ul>
         </li>
-<!--        <li class="nav-item pcoded-hasmenu">
+        <li class="nav-item pcoded-hasmenu">
             <a href="#!" class="nav-link <?php echo $activaciones_syle;?>">
                 <span class="pcoded-micon">
                     <i data-feather="check-circle"></i>
@@ -141,9 +141,8 @@
             </a>
             <ul class="pcoded-submenu">
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones";?>"><i class="icon-large icon-th"></i>Pack</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones_catalogo";?>"><i class="icon-large icon-th"></i>Catalogo</a></li>
             </ul>
-        </li>-->
+        </li>
         <li class="nav-item">
             <a href="<?php echo site_url()."dashboard/activar_pagos";?>" class="nav-link <?php echo $pagos_syle;?>">
                 <span class="pcoded-micon">
