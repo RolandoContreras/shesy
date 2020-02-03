@@ -15,7 +15,9 @@
     display: inline-block;
     font-weight: 400;
 }
-
+.logo-inicial{
+    margin-top:50px;
+}
 .welcome{
     font-weight: bolder !important;
     letter-spacing: 3.9px !important;
@@ -145,13 +147,20 @@ footer#colophon.dark {
     }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 321px) {
+    
     .welcome{
         font-size: 12px;
+    }
+    .respondive_a{
+        text-align: left !important;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 736px) {
+    .logo-inicial{
+        margin-top:40px !important;
+    }
     .respondive_d{
         color: white !important;
         margin-left: 100px !important;
@@ -160,6 +169,7 @@ footer#colophon.dark {
     .respondive_a{
         color: black !important;
         margin-left: 60px !important;
+        text-align: left !important;
     }
 }
 @media only screen and (min-width: 768px) {
@@ -171,28 +181,48 @@ footer#colophon.dark {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+    .white{
+        color:white !important;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    .white{
+        color:white !important;
+    }
 }
 
 
 @media only screen and (min-width: 1024px) {
     .respondive_a{
-        color: black !important;
         margin-left: 40px !important;
+        text-align: left !important;
+    }
+    .black{
+        color:black !important;
+    }
+    .white{
+        color:white !important;
     }
     .respondive_d{
-        color: white !important;
         margin-left: 0px !important;
+        text-align: left !important;
         font-size: 14px !important;
     }
 }
 @media only screen and (min-width: 1364px) {
+    .logo-inicial{
+        margin-top:70px !important;
+    }
+    #show_embasy{
+        margin-left: 50px;
+    }
+    .white{
+        color:white !important;
+    }
     .respondive_d{
         color: white !important;
-        margin-left: 100px !important;
         font-size: 13px;
     }
     .respondive_title{

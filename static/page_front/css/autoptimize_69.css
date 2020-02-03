@@ -39109,7 +39109,8 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
 }
 .thim-sc-steps .steps-wrapper {
     position: relative;
-    bottom: -17px
+    bottom: -17px,
+    margin-left: -50px;
 }
 .thim-sc-steps .steps-wrapper:after {
     clear: both
@@ -39556,8 +39557,8 @@ body.logged-in .header-right .widget.widget_thim-login.circle-style .user-name {
     max-width: 550px
 }
 .thim-sc-steps.layout-4 .sc-steps-wrapper .inner-steps-wrapper .media-box .player-wrapper {
-    margin-top: 51px;
-    margin-left: 51px;
+    margin-top: 5px;
+    margin-left: 0px;
     background: url(//wordpresslms.thimpress.com/demo-coursify/wp-content/themes/wordpress-lms/assets/images/sc-step-mockup-mac.png) center center no-repeat;
     width: 580px;
     height: 545px

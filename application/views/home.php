@@ -28,7 +28,7 @@
                   <div class="widget widget_text">
                     <div class=textwidget>
                       <p style="text-align: center;">
-                              <img style="padding:15px;" alt="Logo" width="200" src="<?php echo site_url().'static/page_front/images/logo/logo_embajada.png';?>">
+                          <img class="logo-inicial" alt="Logo" width="220" src="<?php echo site_url().'static/page_front/images/logo/logo_embajada.png';?>">
                               
                           <br/>
                       </p>
@@ -52,15 +52,15 @@
                                           <div class="icon-play"></div>
                                         </div>
                                         <div class="col-lg-6 content-box">
-                                            <center>
                                             <div class=steps-wrapper>
-                                                <h3 class="sc-title" style="text-align:center !important;">¿Quiénes Somos?</h3>
-                                              <p class="description respondive_d" style="text-align:center !important;">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
-                                              <p class="description respondive_d div_hide" style="text-align:center !important;">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
+                                                <h3 class="sc-title respondive_a white">¿Quiénes Somos?</h3>
+                                                <div class=tab-content>
+                                                    <p class="description respondive_a white">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
+                                              <p class="description respondive_a white div_hide">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
+                                                </div>
                                             <div>
                                             </div>
                                           </div>
-                                          </center>
                                         </div>
                                       </div>
                                     </div>
@@ -165,17 +165,16 @@
                                 <div class="tab-pane active">
                                     <p class="description respondive_a black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsarla para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada para que adquieras toda la información, recursos financieros y educativos.</p>
                                   <p class="description respondive_a div_hide black">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
-                                  
+                                  <div class=steps-wrapper>
+                                      <div class=steps>
+                                          <div class=tab-content >
+                                            <a id="show_embasy" style="cursor:pointer;" class="readmore">Postular a la embajada</a>
+                                          </div>
+                                      </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          <div class=steps-wrapper>
-                              <div class=steps>
-                                  <div class=tab-content >
-                                    <a id="show_embasy" style="cursor:pointer;" class="margin-left-60 readmore">Postular a la embajada</a>
-                                  </div>
-                              </div>
-                          </div>
                         </div>
                           
                           <div class="col-sm-3"></div>
