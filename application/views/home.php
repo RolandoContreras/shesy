@@ -18,8 +18,8 @@
     <?php $this->load->view("nav",$obj_category_videos);?>
     <div id="main-content">
       <div id="home-main-content" class="home-content home-page container" role="main">
-          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/03.jpeg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
-          <div class=overlay style="background-color: rgba(0,0,0,0.2)"></div>
+          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/background.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+          <div class="overlay" style="background-color: rgba(0,0,0,0.4)"></div>
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
               <div class=wpb_wrapper>
@@ -46,7 +46,7 @@
                                           <div class="col-lg-6 media-box">
                                           <div class="player-wrapper respondive_c">
                                             <div class="player-inner">
-                                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/presentacion.mp4';?>" allowfullscreen></iframe>
+                                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/cultura.mp4';?>" allowfullscreen></iframe>
                                             </div>
                                           </div>
                                           <div class="icon-play"></div>
@@ -301,7 +301,7 @@
                     </div>
                   </div>
                 </div>
-                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/03.jpeg';?>);"></div>
+                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/background.jpg';?>);"></div>
               </div>
             </div>
           </div>
@@ -362,7 +362,6 @@
                                 <img width="338" height="300" alt="<?php echo $value->name;?>" src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
                                 <a class="collection-wrapper" href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>'>
                                   <h4 class="name"><?php echo $value->name;?></h4>
-                                  <div class="number-courses" style="padding:10px;"><?php echo corta_texto($value->summary,60);?></div>
                                 </a>
                             </li>
                         <?php } ?>

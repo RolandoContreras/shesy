@@ -10,7 +10,7 @@
               <a class="no-sticky-logo" href="<?php echo site_url();?>" title="Logo Imparable" rel="home">
                   <img alt="Logo Imparable" width="70" height="45" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
               </a>
-            <a href="<?php echo site_url();?>" title="Logo FK" rel="home" class="sticky-logo">
+            <a href="<?php echo site_url();?>" title="Logo Imparable" rel="Inicio" class="sticky-logo">
                 <img alt="Logo Imparable" width="70" height="30" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
             </a>
           </div>
@@ -59,12 +59,12 @@
                                   <div class="menu-mega-menu-container">
                                     <ul class="menu">
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                              <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner">Todos los Cursos</a>
+                                              <a href="<?php echo site_url().'courses';?>" class="tc-menu-inner black">Todos los Cursos</a>
                                         </li>
                                         <?php 
                                               foreach ($obj_category_videos as $value) { ?>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                      <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner"><?php echo $value->name;?></a>
+                                                      <a href='<?php echo site_url()."courses/$value->slug";?>' class="tc-menu-inner black"><?php echo $value->name;?></a>
                                                     </li>
                                               <?php } ?>
                                     </ul>
@@ -100,12 +100,12 @@
                       <a href="<?php echo site_url().'catalog';?>" class="tc-menu-inner">Catalogo</a>
                       <ul class="sub-menu" style="display: none;">
                           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                <a href='<?php echo site_url()."catalog";?>' class="tc-menu-inner tc-megamenu-title">Todos los Productos</a>
+                                <a href='<?php echo site_url()."catalog";?>' class="black tc-menu-inner tc-megamenu-title">Todos los Productos</a>
                           </li>
                           <?php 
                           foreach ($obj_category_catalog as $value) { ?>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                <a href='<?php echo site_url()."catalog/$value->slug";?>' class="tc-menu-inner tc-megamenu-title"><?php echo  $value->name;?></a>
+                                <a href='<?php echo site_url()."catalog/$value->slug";?>' class="black tc-menu-inner tc-megamenu-title"><?php echo  $value->name;?></a>
                             </li>
                           <?php  } ?> 
                       </ul>

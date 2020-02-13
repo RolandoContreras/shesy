@@ -9519,13 +9519,6 @@ header#masthead.site-header.palette-transparent.affix-top {
 header#masthead.site-header.palette-transparent {
     background-color: transparent
 }
-header#masthead.site-header.palette-transparent .width-navigation li .sub-menu,
-header#masthead.site-header.palette-transparent.affix {
-    /*background: url(../images/03.jpeg);*/
-    /*border-style: solid !important;*/
-    border-bottom: 1px solid white;
-    /*background-color: #fff*/
-}
 header#masthead.site-header.palette-transparent .width-navigation {
     font-size: 14px
 }
@@ -9541,7 +9534,7 @@ header#masthead.site-header.palette-transparent .width-navigation .main-menu>li 
 header#masthead.site-header.palette-transparent .width-navigation li .sub-menu li a,
 header#masthead.site-header.palette-transparent.affix #primary-menu>li>a,
 header#masthead.site-header.palette-transparent.affix .header-right a {
-    color: white !important;
+    color: white;
 }
 header#masthead.site-header.palette-transparent.affix-top {
     box-shadow: none
