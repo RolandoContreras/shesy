@@ -19,7 +19,7 @@
   <div id=main-content>
     <section class=content-area>
       <div class="page-title layout-2">
-        <div class="main-top no-parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/background.jpg';?>)"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
+        <div class="main-top no-parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/background_2.jpg';?>)"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
           <div class="content container">
             <div class=text-title>
               <h1>Desarrollo Personal</h1>

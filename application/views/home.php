@@ -418,7 +418,7 @@
     <div class="vc_row-full-width vc_clearfix"></div>
     </div>
     </div>
-    <?php $this->load->view("footer");?>
+    <?php $this->load->view("footer_2");?>
     </div>
     <div id=back-to-top><i class="fa fa-angle-up" aria-hidden=true></i></div>
       <script>

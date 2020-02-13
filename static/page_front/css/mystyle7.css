@@ -24,9 +24,33 @@
     font-size: 40px !important;
 }
 .bg_footer{
-    padding-bottom: 25px !important;
-    background: url(../images/bg-1.png);
-    background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;
+/*background-color: #FFFFFF;
+background-image: linear-gradient(0deg, #FFFFFF 0%, #6284FF 51%, #000000 100%);*/
+/*background-color: #ffffff;
+background-image: linear-gradient(0deg, #ffffff 0%, #FFFFFF 61%, #6284FF 66%, #000000 100%);*/
+
+background-color: #000000;
+background-image: linear-gradient(0deg, #000000 0%, #FFFFFF 24%, #ffffff 79%, #000000 100%);
+
+
+/*
+background-color: #ffffff;
+background-image: linear-gradient(0deg, #ffffff 0%, #FFFFFF 31%, #9ca4bb 95%, #000000 100%);*/
+
+
+/*background-color: #ffffff;
+background-image: linear-gradient(0deg, #ffffff 0%, #FFFFFF 61%, #6284FF 66%, #000000 100%);*/
+
+
+
+/*background-color: #FFFFFF;
+background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 51%, #000000 100%);*/
+
+
+    
+    /*padding-bottom: 25px !important;*/
+/*    background: url(../images/bg-1.png);*/
+    /*background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;*/
 }
 
 .border-radius-30{

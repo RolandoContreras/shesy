@@ -10,14 +10,14 @@
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         Somos una comunidad de influencia con el objetivo de generar cambios positivos en la sociedad.
                     </li>
-                    <li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'about';?>" class=tc-menu-inner>Ver Más</a>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                        <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" width="100">
                     </li>
                   </ul>
                 </div>
               </aside>
             </div>
-            <div class="footer-col footer-col6 col-xs-12 col-md-3">
+            <div class="footer-col footer-col6 col-xs-12 col-md-2">
               <aside id="nav_menu-3" class="widget widget_nav_menu">
                 <h3 class="widget-title">Cursos</h3>
                 <div class="menu-programs-container">
@@ -49,7 +49,7 @@
                 </div>
               </aside>
             </div>
-            <div class="footer-col footer-col6 col-xs-12 col-md-3">
+            <div class="footer-col footer-col6 col-xs-12 col-md-2">
               <aside id=nav_menu-4 class="widget widget_nav_menu">
                 <h3 class="widget-title">Enlaces</h3>
                 <div class=menu-links-container>
@@ -57,22 +57,42 @@
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4124 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         <a href="<?php echo site_url();?>" class="tc-menu-inner">Inicio</a>
                     </li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4125 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'about';?>" class="tc-menu-inner">Acerca</a>
-                    </li>
                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>
+                    </li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                        <a href="<?php echo site_url().'catalog';?>" class=tc-menu-inner>Catalogo</a>
                     </li>
                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                         <a href="<?php echo site_url().'contact';?>" class=tc-menu-inner>Contacto</a>
                     </li>
                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url().'login';?>" class=tc-menu-inner>Login</a>
+                        <a href="<?php echo site_url().'login';?>" class=tc-menu-inner>Iniciar Sesión</a>
                     </li>
                   </ul>
                 </div>
               </aside>
             </div>
+              <div class="footer-col footer-col6 col-xs-12 col-md-2">
+              <aside id=nav_menu-4 class="widget widget_nav_menu">
+                <h3 class="widget-title">Social</h3>
+                <div class=menu-links-container>
+                  <ul id=menu-links class=menu>
+                      <div class="thim-sc-social-links ">
+                          <ul class="socials">
+                            <li>
+                                <a target="_blank" href="https://facebook.com">Facebook</a>
+                                <a target="_blank" href="https://youtube.com">Youtube</a>
+                                <a target="_blank" href="https://www.instagram.com">Instagram</a>
+                            </li>
+                          </ul>
+                      </div>
+
+                  </ul>
+                </div>
+              </aside>
+            </div>
+              
           </div>
         </div>
     </div>
