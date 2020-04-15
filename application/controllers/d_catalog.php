@@ -101,7 +101,7 @@ class D_catalog extends CI_Controller{
             
           if(isset($_FILES["image_file2"]["name"])){
                 $config['upload_path']          = './static/catalog';
-                $config['allowed_types']        = 'gif|jpg|png';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
                 $config['max_size']             = 3000;
                 $this->load->library('upload', $config);
                     if ( ! $this->upload->do_upload('image_file2')){
@@ -121,7 +121,7 @@ class D_catalog extends CI_Controller{
             
          if(isset($_FILES["image_file3"]["name"])){
                 $config['upload_path']          = './static/catalog';
-                $config['allowed_types']        = 'gif|jpg|png';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
                 $config['max_size']             = 3000;
                 $this->load->library('upload', $config);
                     if ( ! $this->upload->do_upload('image_file3')){
