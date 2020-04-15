@@ -26,6 +26,7 @@
   <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
   <script src="<?php echo site_url().'static/cms/js/core/bootstrap.min.js';?>"></script>
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/core/bootstrap-datepicker3.min.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/mystyle.css';?>">
   <script>
         var page = {
             bootstrap: 3
@@ -235,9 +236,5 @@
 </script>
 <script src="<?php echo site_url().'static/cms/js/core/bootstrap-datepicker.min.js';?>"></script>    
 <script src="<?php echo site_url().'static/cms/js/core/ac-datepicker.js';?>"></script>  
-<!--<script src="http://html.codedthemes.com/datta-able/bootstrap/assets/js/pages/chart.js"></script>-->    
-
-
-
 </body>
 </html>

@@ -35,13 +35,13 @@
                               aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 267px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Position: activate to sort column ascending">Nombre</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Position: activate to sort column ascending">Fecha</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Office: activate to sort column ascending">Precio</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Sumilla</th>
@@ -58,12 +58,11 @@
                                    <?php foreach ($obj_catalog as $value): ?>
                                 <tr>
                                 <th><?php echo $value->catalog_id;?></th>
-                                <td><?php echo strtoupper($value->name);?></td>
-                                <th><?php echo $value->catalog_id;?></th>
+                                <td><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo strtoupper($value->name);?></span></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
-                                <td><?php echo $value->price;?></td>
+                                <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;">S/.<?php echo $value->price;?></span></td>
                                 <td><?php echo corta_texto($value->summary,25);?></td>
-                                <td><img src='<?php echo site_url()."static/catalog/$value->img";?>' width="180"/></td>                                    
+                                <td><img src='<?php echo site_url()."static/catalog/$value->img";?>' width="60"/></td>                                    
                                 <td>
                                     <?php if ($value->active == 0) {
                                         $valor = "No Activo";

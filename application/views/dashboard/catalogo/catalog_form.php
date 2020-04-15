@@ -44,11 +44,11 @@
                           <div class="form-group col-md-6">
                               <div class="form-group">
                                 <label>Nombre</label>
-                                <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_catalog->name)?$obj_catalog->name:"";?>" class="input-xlarge-fluid" placeholder="Titulo">
+                                <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_catalog->name)?$obj_catalog->name:"";?>" class="input-xlarge-fluid" placeholder="Titulo" required>
                               </div>
                               <div class="form-group">
                                   <label>Precio</label>
-                                  <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price)?$obj_catalog->price:"";?>" class="input-xlarge-fluid" placeholder="Precio">
+                                  <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price)?$obj_catalog->price:"";?>" class="input-xlarge-fluid" placeholder="Precio" required>
                               </div>
                               
                               <div class="form-group">
@@ -69,25 +69,25 @@
                               <div class="form-group col-md-3">
                                 <div class="form-group">
                                     <label>Bonificación N°1</label>
-                                    <input class="form-control" type="text" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_catalog->bono_n1)?$obj_catalog->bono_n1:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°1">
+                                    <input class="form-control" type="text" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_catalog->bono_n1)?$obj_catalog->bono_n1:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°1" required>
                                 </div>    
                                   <div class="form-group">
                                       <label>Bonificación N°2</label>
-                                      <input class="form-control" type="text" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_catalog->bono_n2)?$obj_catalog->bono_n2:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°2">
+                                      <input class="form-control" type="text" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_catalog->bono_n2)?$obj_catalog->bono_n2:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°2" required>
                                   </div>
                                   <div class="form-group">
                                       <label>Bonificación N°3</label>
-                                      <input class="form-control" type="text" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_catalog->bono_n3)?$obj_catalog->bono_n3:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°3">
+                                      <input class="form-control" type="text" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_catalog->bono_n3)?$obj_catalog->bono_n3:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°3" required>
                                   </div>
                               </div>
                               <div class="form-group col-md-3">
                                   <div class="form-group">
                                       <label>Bonificación N°4</label>
-                                      <input class="form-control" type="text" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_catalog->bono_n4)?$obj_catalog->bono_n4:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°4">
+                                      <input class="form-control" type="text" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_catalog->bono_n4)?$obj_catalog->bono_n4:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°4" required>
                                   </div>    
                                   <div class="form-group">
                                       <label>Bonificación N°5</label>
-                                      <input class="form-control" type="text" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_catalog->bono_n5)?$obj_catalog->bono_n5:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°5">
+                                      <input class="form-control" type="text" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_catalog->bono_n5)?$obj_catalog->bono_n5:"";?>" class="input-xlarge-fluid" placeholder="Bonificación N°5" required>
                                   </div>
                               </div>
                           </div>
@@ -103,8 +103,9 @@
                               <div class="form-group">
                                     <label>Imagen 1 (Tamaño 400 x 400)</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                        <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();" <?php echo isset($obj_catalog->img)?"":"required";?> >
+                                        <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
+                                        <div id="respose_img"></div>
                                     </div>
                               </div>
                               
@@ -119,8 +120,9 @@
                               <div class="form-group">
                                     <label>Imagen 2 (Tamaño 400 x 400)</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file2" id="image_file2">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                        <input type="file" name="image_file2" id="image_file2" class="custom-file-input" onchange="upload_img2();" <?php echo isset($obj_catalog->img2)?"":"required";?>>
+                                        <label id="label_img2" class="custom-file-label invalid">Elegir archivos...</label>
+                                        <div id="respose_img2"></div>
                                     </div>
                               </div>
                               <?php 
@@ -134,13 +136,14 @@
                               <div class="form-group">
                                     <label>Imagen 3 (Tamaño 400 x 400)</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file3" id="image_file3">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                        <input type="file" name="image_file3" id="image_file3" class="custom-file-input" onchange="upload_img3();" <?php echo isset($obj_catalog->img3)?"":"required";?>>
+                                        <label id="label_img3" class="custom-file-label invalid">Elegir archivos...</label>
+                                        <div id="respose_img3"></div>
                                     </div>
                               </div>
                               
                               <label for="inputState">Categoría</label>
-                                <select name="category_id" id="category_id" class="form-control">
+                                <select name="category_id" id="category_id" class="form-control" required>
                                 <option value="">[ Seleccionar ]</option>
                                     <?php foreach ($obj_category as $value ): ?>
                                 <option value="<?php echo $value->category_id;?>"
@@ -160,7 +163,7 @@
                               <br/>
                               <div class="form-group">
                                 <label for="inputState">Estado</label>
-                                    <select name="active" id="active" class="form-control">
+                                    <select name="active" id="active" class="form-control" required>
                                      <option value="">[ Seleccionar ]</option>
                                       <option value="1" <?php if(isset($obj_catalog)){
                                           if($obj_catalog->active == 1){ echo "selected";}

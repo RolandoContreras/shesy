@@ -53,7 +53,7 @@
                                           <option value="1" <?php if(isset($obj_users)){
                                               if($obj_users->active == 1){ echo "selected";}
                                           }else{echo "";} ?>>Activo</option>
-                                          <option value="0" <?php if(isset($obj_kit)){
+                                          <option value="0" <?php if(isset($obj_users)){
                                               if($obj_users->active == 0){ echo "selected";}
                                           }else{echo "";} ?>>Inactivo</option>
                                     </select>

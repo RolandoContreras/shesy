@@ -80,7 +80,7 @@ class D_catalog extends CI_Controller{
         
         if(isset($_FILES["image_file"]["name"])){
                 $config['upload_path']          = './static/catalog';
-                $config['allowed_types']        = 'gif|jpg|png';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
                 $config['max_size']             = 3000;
                 $this->load->library('upload', $config);
                     if ( ! $this->upload->do_upload('image_file')){
@@ -92,11 +92,15 @@ class D_catalog extends CI_Controller{
                 $img = $_FILES["image_file"]["name"];        
                  if($img == ""){
                      $img = $img_2;
+                 }else{
+                     //eliminar imagenes guardadas
+                     unlink("./static/catalog/$img_2");  
                  }   
             }
             
+            
           if(isset($_FILES["image_file2"]["name"])){
-                $config['upload_path']          = './static/course/img';
+                $config['upload_path']          = './static/catalog';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 3000;
                 $this->load->library('upload', $config);
@@ -109,11 +113,14 @@ class D_catalog extends CI_Controller{
                 $img2 = $_FILES["image_file2"]["name"];        
                  if($img2 == ""){
                      $img2 = $img_3;
-                 }   
+                 }else{
+                     //eliminar imagenes guardadas
+                     unlink("./static/catalog/$img_3");  
+                 } 
             }
             
          if(isset($_FILES["image_file3"]["name"])){
-                $config['upload_path']          = './static/course/img';
+                $config['upload_path']          = './static/catalog';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 3000;
                 $this->load->library('upload', $config);
@@ -126,6 +133,9 @@ class D_catalog extends CI_Controller{
                 $img3 = $_FILES["image_file3"]["name"];        
                  if($img3 == ""){
                      $img3 = $img_4;
+                 }else{
+                     //eliminar imagenes guardadas
+                     unlink("./static/catalog/$img_4");  
                  }   
             }   
             
