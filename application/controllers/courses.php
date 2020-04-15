@@ -188,7 +188,7 @@ class Courses extends CI_Controller {
             $obj_meta_video = $data['obj_videos'];
             //get catalog relacionado
             
-            //get catalog
+            //get cursos
             $params = array(
                         "select" =>"videos.video_id,
                                     videos.summary,
@@ -207,7 +207,7 @@ class Courses extends CI_Controller {
             $data['obj_videos_all'] = $obj_videos_all;
             //SEND DATA
             
-            //get catalog
+            //get courses related
             $params = array(
                         "select" =>"videos.video_id,
                                     videos.summary,

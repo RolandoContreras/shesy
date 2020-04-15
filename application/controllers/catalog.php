@@ -6,8 +6,6 @@ class Catalog extends CI_Controller {
         parent::__construct();
         $this->load->model("catalog_model","obj_catalog");
         $this->load->model("category_model","obj_category");
-        $this->load->library('pagination');
-        $this->perPage = 4;
     }  
 
 	/**

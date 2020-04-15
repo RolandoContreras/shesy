@@ -66,7 +66,6 @@
                                                 <h5 class="mt-3"><?php echo $obj_catalog->name;?></h5>
                                                 <h3>
                                                     <span class="badge badge-pill badge-info" style="font-size: 100%;">S/. <?php echo $obj_catalog->price;?></span>
-                                                    
                                                 </h3>
                                                   <br/>
                                                     <?php echo $obj_catalog->description;?>
