@@ -192,6 +192,21 @@ class D_catalog extends CI_Controller{
         redirect(site_url()."dashboard/catalogo");
     }
         
+    public function delete(){
+         if ($this->input->is_ajax_request()) {
+             //OBETENER CATALOGO ID
+             $catalog_id = $this->input->post("catalog_id");
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($catalog_id != ""){
+                $this->obj_catalog->delete($catalog_id);
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }       
+    }
+    
     public function get_session(){          
         if (isset($_SESSION['usercms'])){
             if($_SESSION['usercms']['logged_usercms']=="TRUE" && $_SESSION['usercms']['status']==1){               

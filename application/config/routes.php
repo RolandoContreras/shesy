@@ -140,6 +140,7 @@ $route['dashboard/catalogo'] = "d_catalog";
 $route['dashboard/catalogo/load'] = "d_catalog/load";
 $route['dashboard/catalogo/load/([0-9]+)'] = "d_catalog/load/$1";
 $route['dashboard/catalogo/validate'] = "d_catalog/validate";
+$route['dashboard/catalogo/delete'] = "d_catalog/delete";
 
 $route['dashboard/videos'] = "d_videos";
 $route['dashboard/videos/load'] = "d_videos/load";

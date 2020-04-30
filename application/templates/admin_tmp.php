@@ -44,7 +44,9 @@
             margin: 0 0 0 -8px;
         }
     </style>
-  
+  <!--//swetaler2-->
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
 </head>
 
 <body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/sc-step-bg-2.png';?>'); background-size: cover;">
