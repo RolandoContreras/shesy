@@ -61,7 +61,7 @@
                                     </script>
                               </div>
                               <label for="inputState">Categória</label>
-                                    <select name="category" id="category" class="form-control">
+                              <select name="category" id="category" class="form-control" required>
                                     <option value="">[ Seleccionar ]</option>
                                         <?php foreach ($obj_category as $value ): ?>
                                     <option value="<?php echo $value->category_id;?>"
@@ -79,7 +79,7 @@
                                 </select>
                               <br/>
                               <label for="inputState">Tipo</label>
-                                    <select name="type" id="type" class="form-control">
+                                    <select name="type" id="type" class="form-control" required>
                                      <option value="">[ Seleccionar ]</option>
                                       <option value="1" <?php if(isset($obj_videos)){
                                           if($obj_videos->type == 1){ echo "selected";}
@@ -93,7 +93,7 @@
                           <div class="form-group col-md-6">
                               <div class="form-group">
                                     <label>Video Link</label>
-                                    <input class="form-control" type="text" id="video" name="video" value="<?php echo isset($obj_videos->video)?$obj_videos->video:"";?>" class="input-xlarge-fluid" placeholder="Video">
+                                    <input class="form-control" type="text" id="video" name="video" value="<?php echo isset($obj_videos->video)?$obj_videos->video:"";?>" class="input-xlarge-fluid" placeholder="Video" required>
                               </div>
                               <?php 
                                   if(isset($obj_videos)){ ?>
@@ -106,12 +106,13 @@
                               <div class="form-group">
                                     <label>Imagen 365 x 405</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file_2" id="image_file_2">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                        <input type="file" class="custom-file-input" onchange="upload_img();" value="Upload Imagen de Envio" name="image_file_2" id="image_file_2" required>
+                                        <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
+                                        <div id="respose_img"></div>
                                     </div>
                               </div>
                                <label for="inputState">Estado</label>
-                                    <select name="active" id="active" class="form-control">
+                                    <select name="active" id="active" class="form-control" required>
                                      <option value="">[ Seleccionar ]</option>
                                       <option value="1" <?php if(isset($obj_videos)){
                                           if($obj_videos->active == 1){ echo "selected";}

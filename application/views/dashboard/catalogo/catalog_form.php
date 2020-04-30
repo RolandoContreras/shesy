@@ -48,7 +48,7 @@
                               </div>
                               <div class="form-group">
                                   <label>Precio</label>
-                                  <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price)?$obj_catalog->price:"";?>" class="input-xlarge-fluid" placeholder="Precio" required>
+                                  <input class="form-control" type="number" id="price" name="price" value="<?php echo isset($obj_catalog->price)?$obj_catalog->price:"";?>" class="input-xlarge-fluid" placeholder="Precio" required>
                               </div>
                               
                               <div class="form-group">

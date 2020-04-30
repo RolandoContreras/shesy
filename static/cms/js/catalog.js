@@ -62,32 +62,34 @@ function delete_catalog(catalog_id){
             className: 'btn-danger'
         }
     },
-    callback: function () {
-         $.ajax({
-                   type: "post",
-                   url: site+"dashboard/catalogo/delete",
-                   dataType: "json",
-                   data: {catalog_id : catalog_id},
-                   success:function(data){                             
-                       if(data.status == true){
-                               Swal.fire({
-                                  position: 'top-end',
-                                  icon: 'success',
-                                  title: 'Producto Eliminado.',
-                                  showConfirmButton: false,
-                                  timer: 1500
-                                })
-                                setTimeout('document.location.reload()',1500);
-                           }else{
-                               Swal.fire({
-                                  icon: 'error',
-                                  title: 'Ups...',
-                                  text: 'Sucedió un error',
-                                  footer: '<a href>Vuelve a intentarlo!</a>'
-                                });
-                           }
-                    } 
-           });
-    }
+        callback: function (result) {
+            if(result == true){
+                $.ajax({
+                       type: "post",
+                       url: site+"dashboard/catalogo/delete",
+                       dataType: "json",
+                       data: {catalog_id : catalog_id},
+                       success:function(data){                             
+                           if(data.status == true){
+                                   Swal.fire({
+                                      position: 'top-end',
+                                      icon: 'success',
+                                      title: 'Producto Eliminado.',
+                                      showConfirmButton: false,
+                                      timer: 1500
+                                    })
+                                    setTimeout('document.location.reload()',1500);
+                               }else{
+                                   Swal.fire({
+                                      icon: 'error',
+                                      title: 'Ups...',
+                                      text: 'Sucedió un error',
+                                      footer: '<a href>Vuelve a intentarlo!</a>'
+                                    });
+                               }
+                        } 
+               });
+            }
+        }
     });
 }
