@@ -1,3 +1,5 @@
+<script src="<?php echo site_url().'static/cms/js/core/bootbox.locales.min.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/core/bootbox.min.js';?>"></script>
 <section class="pcoded-main-container">
   <div class="pcoded-wrapper">
     <div class="pcoded-content">
@@ -60,7 +62,7 @@
                             <td class="sorting_1"><?php echo $value->video_id;?></th>
                             <td><?php echo str_to_first_capital($value->name);?></td>
                             <td><?php echo str_to_first_capital($value->categoria);?></td>
-                            <td><img src='<?php echo site_url()."static/course/img/$value->img";?>' width="180"/></td>
+                            <td><img src='<?php echo site_url()."static/course/img/$value->img";?>' width="10"/></td>
                             <td><?php echo $value->video;?></td>
                             <td class="label-info">
                                 <?php if ($value->type == 1) {
@@ -85,7 +87,8 @@
                             <td>
                                 <div class="operation">
                                         <div class="btn-group">
-                                            <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="key-act-button" type="button" onclick="edit_videos('<?php echo $value->video_id;?>');"><span>Editar</span></button>
+                                            <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="key-act-button" type="button" onclick="edit_videos('<?php echo $value->video_id;?>');"><span> <span class="pcoded-micon"><i data-feather="trash-2"></i></span> Editar</span></button>
+                                            <button class="btn btn-secondary" type="button" onclick="delete_video('<?php echo $value->video_id;?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
                                         </div>
                                 </div>
                             </td>

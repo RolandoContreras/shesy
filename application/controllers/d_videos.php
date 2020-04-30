@@ -140,6 +140,21 @@ class D_videos extends CI_Controller{
         }    
         redirect(site_url()."dashboard/videos");
     }
+    
+    public function delete(){
+         if ($this->input->is_ajax_request()) {
+             //OBETENER CATALOGO ID
+             $video_id = $this->input->post("video_id");
+            //VERIFY IF ISSET VIDEO ID
+            if ($video_id != ""){
+                $this->obj_videos->delete($video_id);
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }       
+    }
         
     public function get_session(){          
         if (isset($_SESSION['usercms'])){
