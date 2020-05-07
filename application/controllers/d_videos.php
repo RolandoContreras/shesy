@@ -85,6 +85,7 @@ class D_videos extends CI_Controller{
         $description =  $this->input->post('description');
         $category =  $this->input->post('category');
         $active =  $this->input->post('active');
+        $img_3 = $this->input->post("img3");
         
         if(isset($_FILES["image_file_2"]["name"])){
                 $config['upload_path']          = './static/course/img';
@@ -99,8 +100,11 @@ class D_videos extends CI_Controller{
                     }
                 $img_2 = $_FILES["image_file_2"]["name"];        
                  if($img_2 == ""){
-                     $img_2 = $this->input->post("img3");
-                 }   
+                     $img_2 = $img_3;
+                 }else{
+                     //eliminar imagenes guardadas
+                     unlink("./static/catalog/$img_3");  
+                 }     
             }
         
         if($video_id != ""){

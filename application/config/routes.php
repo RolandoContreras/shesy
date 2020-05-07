@@ -185,6 +185,7 @@ $route['dashboard/clientes/active_customer'] = "d_customer/active_customer";
 $route['dashboard/clientes/no_active_customer'] = "d_customer/no_active_customer";
 $route['dashboard/clientes/load/([0-9]+)'] = "d_customer/load/$1";
 $route['dashboard/clientes/validate'] = "d_customer/validate";
+$route['dashboard/clientes/delete'] = "d_customer/delete";
 
 $route['dashboard/categorias'] = "d_category";
 $route['dashboard/categorias/load'] = "d_category/load";
