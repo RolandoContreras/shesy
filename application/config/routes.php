@@ -200,7 +200,14 @@ $route['dashboard/embassy'] = "d_embassy";
 $route['dashboard/embassy/cambiar_status'] = "d_embassy/change_status";
 $route['dashboard/embassy/cambiar_status_no'] = "d_embassy/change_status_no";
 
-$route['dashboard/usuarios'] = "d_users";
+
+$route['dashboard/recargas'] = "d_recargas";
+$route['dashboard/recargas/load'] = "d_recargas/load";
+$route['dashboard/recargas/load/([0-9]+)'] = "d_recargas/load/$1";
+$route['dashboard/recargas/validate'] = "d_recargas/validate";
+$route['dashboard/recargas/delete'] = "d_recargas/delete";
+
+
 $route['dashboard/usuarios'] = "d_users";
 $route['dashboard/usuarios/load'] = "d_users/load";
 $route['dashboard/usuarios/load/([0-9]+)'] = "d_users/load/$1";

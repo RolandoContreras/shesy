@@ -73,6 +73,7 @@
             $pagos_syle = "";
             $mantenimiento_syle = "";
             $report_syle = "";
+            $recargas_syle = "";
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active";
@@ -82,6 +83,9 @@
                     break;
                 case "activar_pagos":
                     $pagos_syle = "active";
+                    break;
+                case "recargas":
+                    $recargas_syle = "active";
                     break;
                 case "report_global":
                     $report_syle = "active";
@@ -152,6 +156,14 @@
                     <i data-feather="dollar-sign"></i>
                 </span>
                 <span class="pcoded-mtext">Pagos</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="<?php echo site_url()."dashboard/recargas";?>" class="nav-link <?php echo $recargas_syle;?>">
+                <span class="pcoded-micon">
+                    <i data-feather="credit-card"></i>
+                </span>
+                <span class="pcoded-mtext">Recargas</span>
             </a>
         </li>
         <li class="nav-item pcoded-hasmenu">

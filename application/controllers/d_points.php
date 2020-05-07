@@ -23,8 +23,8 @@ class D_points extends CI_Controller{
                 "join" => array( 'customer, points.customer_id = customer.customer_id'),
                 "where" => "points.status_value = 1",
                 "order" => "points.point_id DESC");
-           //GET DATA FROM CUSTOMER
-        $obj_points = $this->obj_points->search($params);
+            //GET DATA FROM CUSTOMER
+            $obj_points = $this->obj_points->search($params);
         
            /// PAGINADO
             $modulos ='videos'; 
