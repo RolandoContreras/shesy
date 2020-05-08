@@ -72,6 +72,7 @@ class D_recargas_comisiones extends CI_Controller{
                             'customer_id' => $customer_id,
                             'amount' => $amount,
                             'active' => $active,
+                            'status_value' => $active,
                             'updated_at' => date("Y-m-d H:i:s"),
                             'updated_by' => $_SESSION['usercms']['user_id'],
                         );
@@ -85,7 +86,7 @@ class D_recargas_comisiones extends CI_Controller{
                             'recarga' => 1,
                             'date' => date("Y-m-d H:i:s"),
                             'active' => $active,
-                            'status_value' => 1,
+                            'status_value' => $active,
                             'created_at' => date("Y-m-d H:i:s"),
                             'created_by' => $customer_id,
                         );
