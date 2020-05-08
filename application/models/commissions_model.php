@@ -59,7 +59,7 @@ class Commissions_Model extends CI_Model{
   
     public function update($pk, $data){
         $this->db->where($this->table_id, $pk);
-        $this->db->update($this->table, $data);
+        return  $this->db->update($this->table, $data);
     }
 
     public function delete($pk){

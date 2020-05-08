@@ -158,13 +158,17 @@
                 <span class="pcoded-mtext">Pagos</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a href="<?php echo site_url()."dashboard/recargas";?>" class="nav-link <?php echo $recargas_syle;?>">
+        <li class="nav-item pcoded-hasmenu">
+            <a href="#!" class="nav-link <?php echo $recargas_syle;?>">
                 <span class="pcoded-micon">
                     <i data-feather="credit-card"></i>
                 </span>
                 <span class="pcoded-mtext">Recargas</span>
             </a>
+            <ul class="pcoded-submenu">
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas";?>"><i class="icon-large icon-th"></i>Puntos</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas_comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
+            </ul>
         </li>
         <li class="nav-item pcoded-hasmenu">
             <a href="#!" class="nav-link <?php echo $report_syle;?>">
