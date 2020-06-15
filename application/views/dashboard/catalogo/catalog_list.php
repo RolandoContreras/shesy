@@ -37,22 +37,15 @@
                               aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending"
-                                    aria-label="Name: activate to sort column descending">ID</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
-                                    aria-label="Position: activate to sort column ascending">Nombre</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
-                                    aria-label="Position: activate to sort column ascending">Fecha</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
-                                    aria-label="Office: activate to sort column ascending">Precio</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Sumilla</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Imagen</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Estado</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 188px;"
-                                    aria-label="Start date: activate to sort column ascending">Acciones</th>
+                                  <th class="sorting_asc" tabindex="0" >ID</th>
+                                  <th class="sorting">Nombre</th>
+                                  <th class="sorting">Categoría</th>
+                                  <th class="sorting">Fecha</th>
+                                  <th class="sorting">Precio</th>
+                                  <th class="sorting">Sumilla</th>
+                                  <th class="sorting">Imagen</th>
+                                  <th class="sorting">Estado</th>
+                                  <th class="sorting">Acciones</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -61,6 +54,7 @@
                                 <tr>
                                 <th><?php echo $value->catalog_id;?></th>
                                 <td><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo strtoupper($value->name);?></span></td>
+                                <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->category_name;?></span></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;">S/.<?php echo $value->price;?></span></td>
                                 <td><?php echo corta_texto($value->summary,25);?></td>
@@ -90,6 +84,7 @@
                                 <tr>
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">Nombre</th>
+                                  <th rowspan="1" colspan="1">Categoría</th>
                                   <th rowspan="1" colspan="1">Fecha</th>
                                   <th rowspan="1" colspan="1">Precio</th>
                                   <th rowspan="1" colspan="1">Sumilla</th>

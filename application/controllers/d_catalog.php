@@ -24,12 +24,13 @@ class D_catalog extends CI_Controller {
                                     catalog.description,
                                     catalog.img,
                                     catalog.active,
+                                    category.name category_name,
                                     catalog.date",
             "where" => "catalog.status_value = 1",
+            "join" => array('category, catalog.category_id = category.category_id'),
             "order" => "catalog.catalog_id DESC");
         //GET DATA FROM CUSTOMER
         $obj_catalog = $this->obj_catalog->search($params);
-
         /// VISTA
         $this->tmp_mastercms->set("obj_catalog", $obj_catalog);
         $this->tmp_mastercms->render("dashboard/catalogo/catalog_list");
@@ -48,6 +49,7 @@ class D_catalog extends CI_Controller {
             $obj_catalog = $this->obj_catalog->get_search_row($params);
             //RENDER
             $this->tmp_mastercms->set("obj_catalog", $obj_catalog);
+            //get data sub category
         }
         //get category
         $params = array(
@@ -58,14 +60,14 @@ class D_catalog extends CI_Controller {
         //GET DATA COMMENTS
         $obj_category = $this->obj_category->search($params);
         //get data sub category
-        $params = array(
-            "select" => "sub_category_id,
+            $params = array(
+                "select" => "sub_category_id,
                          name",
-            "where" => "category_id = $obj_catalog->category_id and active = 1",
-        );
-        //GET DATA COMMENTS
-        $obj_sub_category = $this->obj_sub_category->search($params);
-        
+                "where" => "active = 1",
+            );
+            //GET DATA COMMENTS
+            $obj_sub_category = $this->obj_sub_category->search($params);
+
         $this->tmp_mastercms->set("obj_category", $obj_category);
         $this->tmp_mastercms->set("obj_sub_category", $obj_sub_category);
         $this->tmp_mastercms->render("dashboard/catalogo/catalog_form");

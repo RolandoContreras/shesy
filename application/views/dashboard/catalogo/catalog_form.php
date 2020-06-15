@@ -151,33 +151,28 @@
                                                                 } else {
                                                                     echo "";
                                                                 }
-                                                                ?> onclick="show_sub_category('<?php echo $value->category_id; ?>')"><?php echo $value->name; ?>
+                                                                ?>><?php echo $value->name; ?>
                                                                 </option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputState">Sub Categoría</label>
-                                                        <select name="sub_category_id" id="sub_category_id" class="form-control" required>
-                                                            <option value="">[ Seleccionar ]</option>
-                                                            <?php if (isset($obj_catalog)) {
-                                                                foreach ($obj_sub_category as $value):
-                                                                    ?>
-                                                                    <option value="<?php echo $value->sub_category_id; ?>"
-                                                                    <?php
-                                                                    if (isset($obj_catalog->sub_category_id)) {
-                                                                        if ($obj_catalog->sub_category_id == $value->sub_category_id) {
-                                                                            echo "selected";
-                                                                        }
-                                                                    } else {
-                                                                        echo "";
+                                                        <select name="sub_category_id" id="sub_category_id" class="form-control">
+                                                            <option value="">[ Seleccionar Sub Categoría ]</option>
+                                                            <?php foreach ($obj_sub_category as $value): ?>
+                                                                <option value="<?php echo $value->sub_category_id; ?>"
+                                                                <?php
+                                                                if (isset($obj_catalog->sub_category_id)) {
+                                                                    if ($obj_catalog->sub_category_id == $value->sub_category_id) {
+                                                                        echo "selected";
                                                                     }
-                                                                    ?>><?php echo $value->name; ?>
-                                                                    </option>
-                                                                <?php endforeach;
-                                                            }
-                                                            ?>
-
+                                                                } else {
+                                                                    echo "";
+                                                                }
+                                                                ?>><?php echo $value->name; ?>
+                                                                </option>
+                                                            <?php endforeach; ?>
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
