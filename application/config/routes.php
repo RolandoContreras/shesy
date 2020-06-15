@@ -48,6 +48,7 @@ $route['catalog'] = 'catalog';
 $route['catalog/order/add_cart'] = 'catalog/add_cart';
 $route['catalog/([0-9]+)'] = 'catalog/index/$1';
 $route['catalog/([0-9a-z_-]+)'] = 'catalog/category/$1';
+$route['catalog/([a-z_-]+)/([a-z_-]+)'] = 'catalog/sub_category/$1';
 $route['catalog/([0-9a-z_-]+)/([0-9]+)'] = 'catalog/category/$1';
 $route['catalog/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalog/detail/$1';
 
@@ -139,6 +140,7 @@ $route['dashboard/noticias/validate'] = "d_news/validate";
 
 $route['dashboard/catalogo'] = "d_catalog";
 $route['dashboard/catalogo/load'] = "d_catalog/load";
+$route['dashboard/catalogo/show_sub_category'] = "d_catalog/show_sub_category";
 $route['dashboard/catalogo/load/([0-9]+)'] = "d_catalog/load/$1";
 $route['dashboard/catalogo/validate'] = "d_catalog/validate";
 $route['dashboard/catalogo/delete'] = "d_catalog/delete";

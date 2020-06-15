@@ -148,10 +148,6 @@ class D_category extends CI_Controller {
         //GET CUSTOMER_ID
         $category_id = $this->input->post("category_id");
         $sub_category_id = $this->input->post("sub_category_id");
-        
-        var_dump($sub_category_id);
-        die();
-        
         if ($sub_category_id != null) {
             //edit table
             //PARAM DATA
