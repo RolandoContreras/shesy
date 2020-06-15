@@ -27,6 +27,8 @@
   <script src="<?php echo site_url().'static/cms/js/core/bootstrap.min.js';?>"></script>
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/core/bootstrap-datepicker3.min.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/mystyle.css';?>">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
   <script>
         var page = {
             bootstrap: 3

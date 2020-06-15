@@ -15,34 +15,36 @@ BITSHARE S.A.C
 * Fecha: 16/11/2016
 ****/
 
-class commissions_model_atributos{	
-    var $commissions_id='';
-    var $customer_id='';
-    var $bonus_id='';
+class sub_category_model_atributos{	
+    var $sub_category_id='';
+    var $category_id='';
     var $name='';
-    var $amount='';
-    var $date='';
+    var $slug='';
+    var $active='';
     var $status_value='';
     var $created_at='';
     var $created_by='';
+    var $updated_at='';
+    var $updated_by='';
 }
 
-class Commissions_Model extends CI_Model{ 
+class Sub_category_Model extends CI_Model{ 
 
     public function __construct() {
         parent::__construct();  
-        $this->table = 'commissions';
-	$this->table_id = 'commissions_id';
-        $this->commissions_id='';
-        $this->customer_id='';
-        $this->bonus_id='';
-        $this->name ='';
-	$this->amount='';
-        $this->date='';
+        $this->table = 'sub_category';
+	$this->table_id = 'sub_category_id';
+        $this->sub_category_id='';
+        $this->category_id='';
+        $this->name='';
+        $this->slug='';
+        $this->active='';
 	$this->status_value='';
         $this->created_at='';
         $this->created_by='';
-	$this->fields = new commissions_model_atributos();
+        $this->updated_at='';
+        $this->updated_by='';
+	$this->fields = new sub_category_model_atributos();
     }   
     
     public function fields(){
@@ -59,7 +61,7 @@ class Commissions_Model extends CI_Model{
   
     public function update($pk, $data){
         $this->db->where($this->table_id, $pk);
-        return  $this->db->update($this->table, $data);
+        return $this->db->update($this->table, $data);
     }
 
     public function delete($pk){
@@ -128,14 +130,5 @@ class Commissions_Model extends CI_Model{
         $dato = $query->row();
         return $dato;       
   }
-  
-   public function verificar_username($username,$password){        
-        $this->db->where('$username',$username);
-        $this->db->where('password', $password);
-        $this->db->from($this->table);
-        $query = $this->db->get();                     
-        return $query->row();        
-   }
-  
 } //FIN DEL MODELO EXTENDIDO
 ?>

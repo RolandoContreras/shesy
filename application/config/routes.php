@@ -98,6 +98,7 @@ $route['backoffice/profile/update_bank'] = "b_profile/update_bank";
 
 $route['backoffice/plan'] = "b_plan";
 $route['backoffice/plan/create_invoice'] = "b_plan/create_invoice";
+
 $route['backoffice/recompra'] = "b_plan/recompra";
 $route['backoffice/plan/create_invoice_recompra'] = "b_plan/create_invoice_recompra";
 
@@ -189,8 +190,14 @@ $route['dashboard/clientes/delete'] = "d_customer/delete";
 
 $route['dashboard/categorias'] = "d_category";
 $route['dashboard/categorias/load'] = "d_category/load";
+$route['dashboard/categorias/([0-9]+)'] = "d_category/sub_category/$1";
+$route['dashboard/categorias/([0-9]+)/make_sub_category'] = "d_category/make_sub_category";
+$route['dashboard/categorias/([0-9]+)/make_sub_category/([0-9]+)'] = "d_category/make_sub_category/$1";
 $route['dashboard/categorias/load/([0-9]+)'] = "d_category/load/$1";
 $route['dashboard/categorias/validate'] = "d_category/validate";
+$route['dashboard/categorias/validate_sub_category'] = "d_category/validate_sub_category";
+$route['dashboard/categorias/delete_sub_category'] = "d_category/delete_sub_category";
+
 
 $route['dashboard/comentarios'] = "d_comments";
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
