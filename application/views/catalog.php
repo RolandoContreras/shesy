@@ -87,7 +87,7 @@
                         <div class=wrapper>
                           <div class=feature-image>
                             <span class=onsale>Venta!</span>
-                            <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>'>
+                            <a href='<?php echo site_url()."catalogo/$value->category_slug/$value->slug";?>'>
                                 <img width="400" height="400" alt="<?php echo $value->name;?>" srcset='<?php echo site_url()."static/catalog/$value->img";?> 400w, <?php echo site_url()."static/catalog/$value->img";?> 150w, <?php echo site_url()."static/catalog/$value->img";?> 300w, <?php echo site_url()."static/catalog/$value->img";?> 355w, <?php echo site_url()."static/catalog/$value->img";?> 100w, <?php echo site_url()."static/catalog/$value->img";?> 600w' sizes="(max-width: 400px) 100vw, 400px" src='<?php echo site_url()."static/catalog/$value->img";?>' class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyload">
                             <div class="quick-view"><span><i class="fa fa-search"></i></span></div>
                             </a>

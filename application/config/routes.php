@@ -45,7 +45,7 @@ $route['home'] = 'home';
 $route['home/sitemap'] = 'home/sitemap';
 
 $route['catalogo'] = 'catalog';
-$route['catalogo/order/add_cart'] = 'catalog/add_cart';
+$route['catalog/order/add_cart'] = 'catalog/add_cart';
 $route['catalogo/([0-9]+)'] = 'catalog/index/$1';
 $route['catalogo/([0-9a-z_-]+)'] = 'catalog/category/$1';
 $route['catalogo/subcategoria/([a-z_-]+)'] = 'catalog/sub_category/$1';
