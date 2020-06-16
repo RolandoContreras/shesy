@@ -53,7 +53,7 @@
                             <figcaption>
                                 <h2><span style="font-size: 32px !important;font-weight: 300 !important;"><?php echo $value->name;?></span></h2>
                               <p><?php echo corta_texto($value->summary, 100);?></p>
-                              <a href="<?php echo site_url()."catalogo/$value->category_slug/$value->slug";?>">Ver Más</a>
+                              <a href="<?php echo site_url()."mi_catalogo/$value->category_slug/$value->slug";?>">Ver Más</a>
                             </figcaption>
                           </figure>
                         <?php } ?>

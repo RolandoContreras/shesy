@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Catalogo - Cultura Imparable</title>
+  <title>Catalogo de Productos - Cultura Imparable</title>
   <!--[if lt IE 10]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -32,7 +32,7 @@
   <nav class="pcoded-navbar menu-light brand-lightblue menupos-static">
     <div class="navbar-wrapper">
       <div class="navbar-brand header-logo">
-          <a href="<?php echo site_url().'course';?>" class="b-brand">
+          <a href="<?php echo site_url().'mi_catalogo';?>" class="b-brand">
               <img src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" alt="Logo" width="35"/>
               <span class="b-title">Catalogo</span>
           </a>
@@ -66,9 +66,16 @@
             }
           ?>
           
-          
           <li class="nav-item">
-              <a href="<?php echo site_url().'catalogo';?>" class="nav-link <?php echo $home_syle;?>">
+              <a href="<?php echo site_url().'backoffice';?>" class="nav-link <?php echo $home_syle;?>">
+                  <span class="pcoded-micon">
+                       <i data-feather="arrow-left"></i>
+                  </span>
+                  <span class="pcoded-mtext">Regresar</span>
+              </a>
+        </li>
+          <li class="nav-item">
+              <a href="<?php echo site_url().'mi_catalogo';?>" class="nav-link <?php echo $home_syle;?>">
                   <span class="pcoded-micon">
                        <i data-feather="home"></i>
                   </span>
@@ -85,12 +92,12 @@
             <ul class="pcoded-submenu">
                 <?php 
                     foreach ($obj_category_catalogo as $value) { ?>
-                        <li><a href='<?php echo site_url()."catalogo/$value->slug";?>' class=""><?php echo $value->name;?></a></li>          
+                        <li><a href='<?php echo site_url()."mi_catalogo/$value->slug";?>' class=""><?php echo $value->name;?></a></li>          
                 <?php } ?>
             </ul>
         </li>
         <li class="nav-item">
-              <a href="<?php echo site_url().'catalogo/order';?>" class="nav-link <?php echo $order_syle;?>">
+              <a href="<?php echo site_url().'mi_catalogo/order';?>" class="nav-link <?php echo $order_syle;?>">
                   <span class="pcoded-micon">
                        <i data-feather="shopping-cart"></i>
                   </span>
@@ -135,7 +142,7 @@
             <ul class="navbar-nav ml-auto">
                 <li>
                   <div class="dropdown drp-user">
-                      <a href="<?php echo site_url().'catalogo/pay_order';?>">
+                      <a href="<?php echo site_url().'mi_catalogo/pay_order';?>">
                           <span class="btn-glow-dark theme-bg" title="Pagar Compra" data-toggle="tooltip" data-placement="bottom" data-original-title="Pagar Compra" style="padding: 10px;border-radius: 10px;">
                               <i data-feather="shopping-cart" style="color: white;"></i>
                               <span class="wrapper-items-number">

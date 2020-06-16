@@ -6,7 +6,7 @@ function validate_login(){
                data: {},
                success:function(data){          
                    if(data.status == "true"){
-                       location.href = site + "catalogo/pay_order";
+                       location.href = site + "mi_catalogo/pay_order";
                    }else{
                        location.href = site + "login";
                    }

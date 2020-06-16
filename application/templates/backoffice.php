@@ -73,17 +73,16 @@
              </li>
             <li>
             <center>
-              <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
+              <a href="<?php echo site_url().'course';?>" class="btn btn-light">
                 <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
                       <span>Plataforma de Cursos</span>                
                   </div>
               </a>
              </center>
             </li>
-            
              <li>
             <center>
-                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-success">
+                <a href="<?php echo site_url().'mi_catalogo';?>" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
                       <span>Catalogo de productos</span>                
                   </div>
@@ -186,7 +185,7 @@
         </div>
         <ul class="main-menu">
                 <li>
-                    <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
+                    <a href="<?php echo site_url().'course';?>" class="btn btn-light">
                       <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
                           <span>Plataforma de Cursos</span>                
                       </div>
@@ -194,7 +193,7 @@
                  </li>
                  <hr/>
                  <li>
-                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-success">
+                <a href="<?php echo site_url().'mi_catalogo';?>" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
                       <span>Catalogo de productos</span>                
                   </div>
