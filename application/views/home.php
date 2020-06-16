@@ -353,7 +353,7 @@
                   <div class="thim-collection-info rounded-colection-info">
                     <h3 class="title">¡Nuestros Cursos! - Próximamente</h3>
                   </div>
-                  <div class="thim-courses-collection rounded-courses-collection">
+<!--                  <div class="thim-courses-collection rounded-courses-collection">
                     <div class="collection-frame">
                       <ul class="slidee">
                         <?php 
@@ -367,12 +367,12 @@
                         <?php } ?>
                       </ul>
                     </div>
-                  </div>
-                  <div class=rounded-view-all-button>
+                  </div>-->
+<!--                  <div class=rounded-view-all-button>
                       <a href="<?php echo site_url().'courses';?>">Ver todos los cursos</a>
-                  </div>
+                  </div>-->
                 </div>
-              <div class="vc_empty_space" style="height: 60px"><span class=vc_empty_space_inner></span></div>
+              <!--<div class="vc_empty_space" style="height: 60px"><span class=vc_empty_space_inner></span></div>-->
             </div>
           </div>
         </div>
@@ -395,13 +395,13 @@
                     foreach ($catalog as $value) { ?>
                         <div class="col-sm-3 course-item free">
                         <div class="featured-img">
-                            <a href='<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>' class="img-link">
+                            <a href='<?php echo site_url()."catalogo/$value->category_slug/$value->slug";?>' class="img-link">
                                 <img width=400 height=400 alt="<?php echo $value->name;?>" src='<?php echo site_url()."static/catalog/$value->img";?>' class="lazyload">
                             </a>
                         </div>
                         <div class="content-item">
                           <div class="name">
-                              <a href="<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>"><?php echo $value->name;?></a>
+                              <a href="<?php echo site_url()."catalogo/$value->category_slug/$value->slug";?>"><?php echo $value->name;?></a>
                           </div>
                           <div class="title white">
                               <?php echo corta_texto($value->summary,50);?>

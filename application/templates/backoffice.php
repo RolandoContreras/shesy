@@ -84,7 +84,7 @@
             <center>
                 <a href="<?php echo site_url().'mi_catalogo';?>" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
-                      <span>Catalogo de productos</span>                
+                      <span>Catalogo de productos</span>
                   </div>
                 </a>
                 </center>
@@ -195,7 +195,8 @@
                  <li>
                 <a href="<?php echo site_url().'mi_catalogo';?>" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
-                      <span>Catalogo de productos</span>                
+                      <span>University<br/>
+                      Catalogo de Empresas</span>
                   </div>
                 </a>
              </li>
