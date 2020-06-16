@@ -108,7 +108,7 @@
                                         <?php foreach ($obj_sub_category as $value_sub) {
                                             if ($value_sub->category_id == $value->category_id) { ?>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                                    <a href='<?php echo site_url() . "catalog/$value->slug/$value_sub->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value_sub->name; ?></a>
+                                                    <a href='<?php echo site_url() . "catalog/subcategoria/$value_sub->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value_sub->name; ?></a>
                                                 </li>
                                             <?php } } ?> 
                                     </ul>

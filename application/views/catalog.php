@@ -63,7 +63,7 @@
                     <a href=javascript:; class="grid switchToGrid"><i class="fa fa-th"></i></a>
                     <a href=javascript:; class="list switchToList"><i class="fa fa-th-list"></i></a></div>
                   <p class=woocommerce-result-count>
-                    Mostrando 12 de <?php echo $total;?> resultados</p>
+                    Mostrando <?php echo $total;?> resultados</p>
                   <form class=woocommerce-ordering method="get" action="<?php echo $url;?>">
                     <span>Order por:</span> 
                     <select name="orderby" class="orderby">
@@ -81,7 +81,8 @@
                   </div>
                 <ul class="category-product product-grid archive_switch row">
                   <?php 
-                  foreach ($obj_catalog  as $value) { ?>
+                  if(!empty($obj_catalog)){
+                      foreach ($obj_catalog  as $value) { ?>
                       <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
                         <div class=wrapper>
                           <div class=feature-image>
@@ -102,7 +103,12 @@
                         </div>
                     <div class=clear></div>
                     </li>
-                  <?php  } ?>
+                  <?php  } }else{ ?>
+                    <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">
+                            <p>Sin resultados</p>
+                    </li>
+                      
+                  <?php } ?>
                 </ul>
   <nav class=woocommerce-pagination>
     <ul class=page-numbers>
