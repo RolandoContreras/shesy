@@ -146,7 +146,7 @@
                         <div class="element-info-text">
                           <h5 class="element-inner-header"> Link de Referido </h5>
                           <div class="element-inner-desc"> Clic abajo para agregar a un nuevo socio.<br>
-                              <a tabindex="0" target="_blank" href="<?php echo site_url().'register/'.$_SESSION['customer']['username'];?>"> 
+                              <a tabindex="0" target="_blank" href="<?php echo site_url().'registro/'.convert_slug($_SESSION['customer']['username']);?>"> 
                                   <i style="cursor: pointer;" title="Copiar" class="fa fa-plus text-success"></i> <?php echo site_url().'register/'.$_SESSION['customer']['username'];?></a>
                           </div>
                         </div>
