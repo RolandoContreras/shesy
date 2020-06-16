@@ -31,7 +31,6 @@ class Catalog extends CI_Controller {
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
-
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
 
@@ -72,11 +71,10 @@ class Catalog extends CI_Controller {
             "order" => "$order");
 
         //send url for search
-        $data['url'] = site_url() . 'catalog';
-
+        $data['url'] = site_url() . 'catalogo';
         /// PAGINADO
         $config = array();
-        $config["base_url"] = site_url("catalog");
+        $config["base_url"] = site_url("catalogo");
         $config["total_rows"] = $this->obj_catalog->total_records($params);
         $config["per_page"] = 12;
         $config["num_links"] = 1;

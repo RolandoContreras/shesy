@@ -44,48 +44,51 @@ $route['404_override'] = 'errors/error_404';
 $route['home'] = 'home';
 $route['home/sitemap'] = 'home/sitemap';
 
-$route['catalog'] = 'catalog';
-$route['catalog/order/add_cart'] = 'catalog/add_cart';
-$route['catalog/([0-9]+)'] = 'catalog/index/$1';
-$route['catalog/([0-9a-z_-]+)'] = 'catalog/category/$1';
-$route['catalog/subcategoria/([a-z_-]+)'] = 'catalog/sub_category/$1';
-$route['catalog/([0-9a-z_-]+)/([0-9]+)'] = 'catalog/category/$1';
-$route['catalog/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalog/detail/$1';
+$route['catalogo'] = 'catalog';
+$route['catalogo/order/add_cart'] = 'catalog/add_cart';
+$route['catalogo/([0-9]+)'] = 'catalog/index/$1';
+$route['catalogo/([0-9a-z_-]+)'] = 'catalog/category/$1';
+$route['catalogo/subcategoria/([a-z_-]+)'] = 'catalog/sub_category/$1';
+$route['catalogo/([0-9a-z_-]+)/([0-9]+)'] = 'catalog/category/$1';
+$route['catalogo/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalog/detail/$1';
 
-$route['login'] = 'login';
+$route['contacto'] = 'contact';
+$route['registro'] = 'register';
+
+$route['iniciar-sesion'] = 'login';
 $route['forget'] = 'forget';
 
-$route['courses'] = 'courses';
-$route['courses/([0-9]+)'] = 'courses/index/$1';
-$route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';
-$route['courses/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
-$route['courses/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
+$route['cursos'] = 'courses';
+$route['cursos/([0-9]+)'] = 'courses/index/$1';
+$route['cursos/([0-9a-z_-]+)'] = 'courses/category/$1';
+$route['cursos/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
+$route['cursos/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
 
-$route['register/([0-9a-z_-]+)'] = "register/index/$1";
-$route['register/validate_username'] = "register/validate_username";
-$route['register/validate_username_2'] = "register/validate_username_2";
-$route['register/validate'] = "register/validate";
+$route['registro/([0-9a-z_-]+)'] = "register/index/$1";
+$route['registro/validate_username'] = "register/validate_username";
+$route['registro/validate_username_2'] = "register/validate_username_2";
+$route['registro/validate'] = "register/validate";
 
 $route['embassy'] = "embassy";
 
 $route['backoffice'] = "b_home";
 
-$route['catalogo'] = "catalogo_home";
-$route['catalogo/([0-9]+)'] = 'catalogo_home/index/$1';
-$route['catalogo/order'] = "catalogo_home/order";
+$route['mi_catalogo'] = "catalogo_home";
+$route['mi_catalogo/([0-9]+)'] = 'catalogo_home/index/$1';
+$route['mi_catalogo/order'] = "catalogo_home/order";
 
-$route['catalogo/pay_order'] = "catalogo_home/pay_order";
-$route['catalogo/pay_order/update_cart'] = "catalogo_home/update_cart";
-$route['catalogo/pay_order/delete_cart'] = "catalogo_home/delete_cart";
-$route['catalogo/pay_order/process_pay_invoice'] = "catalogo_home/process_pay_invoice";
+$route['mi_catalogo/pay_order'] = "catalogo_home/pay_order";
+$route['mi_catalogo/pay_order/update_cart'] = "catalogo_home/update_cart";
+$route['mi_catalogo/pay_order/delete_cart'] = "catalogo_home/delete_cart";
+$route['mi_catalogo/pay_order/process_pay_invoice'] = "catalogo_home/process_pay_invoice";
 
-$route['catalogo/order/([0-9]+)'] = "catalogo_home/order_detail/$1";
-$route['catalogo/([0-9a-z_-]+)'] = 'catalogo_home/category/$1';
-$route['catalogo/([0-9a-z_-]+)/([0-9]+)'] = 'catalogo_home/category/$1';
-$route['catalogo/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalogo_home/detail/$1';
+$route['mi_catalogo/order/([0-9]+)'] = "catalogo_home/order_detail/$1";
+$route['mi_catalogo/([0-9a-z_-]+)'] = 'catalogo_home/category/$1';
+$route['mi_catalogo/([0-9a-z_-]+)/([0-9]+)'] = 'catalogo_home/category/$1';
+$route['mi_catalogo/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'catalogo_home/detail/$1';
 
-$route['catalogo/order/add_cart'] = "catalogo_home/add_cart";
-$route['catalogo/order/send_invoice'] = "catalogo_home/send_invoice";
+$route['mi_catalogo/order/add_cart'] = "catalogo_home/add_cart";
+$route['mi_catalogo/order/send_invoice'] = "catalogo_home/send_invoice";
 
 $route['course'] = "c_home";
 $route['course/([0-9]+)'] = 'c_home/index/$1';

@@ -6,6 +6,7 @@ class Courses extends CI_Controller {
         parent::__construct();
         $this->load->model("category_model","obj_category");
         $this->load->model("videos_model","obj_videos");
+        $this->load->model("sub_category_model", "obj_sub_category");
     } 
 
 	/**
@@ -36,6 +37,7 @@ class Courses extends CI_Controller {
             //GET NAV
              $data['obj_category_videos'] = $this->nav_videos();
              $data['obj_category_catalog'] = $this->nav_catalogo();
+             $data['obj_sub_category'] = $this->nav_sub_category();
             
              //get catalog
             $params = array(
@@ -88,6 +90,7 @@ class Courses extends CI_Controller {
             //GET NAV
             $data['obj_category_videos'] = $this->nav_videos();
             $data['obj_category_catalog'] = $this->nav_catalogo();
+            $data['obj_sub_category'] = $this->nav_sub_category();
             
             //get data catalog
             $params_categogory_id = array(
@@ -155,6 +158,7 @@ class Courses extends CI_Controller {
             
             $data['obj_category_videos'] = $this->nav_videos();
             $data['obj_category_catalog'] = $this->nav_catalogo();
+            $data['obj_sub_category'] = $this->nav_sub_category();
             
              //get data catalog
             $params_categogory_id = array(
@@ -239,6 +243,17 @@ class Courses extends CI_Controller {
             //GET DATA COMMENTS
             return $obj_category_videos = $this->obj_category->search($params_category_videos);
         }
+        
+        public function nav_sub_category() {
+        $params = array(
+            "select" => "name,
+                         category_id,        
+                         slug",
+            "where" => "active = 1",
+        );
+        //GET DATA CATALOGO
+        return $obj_sub_category = $this->obj_sub_category->search($params);
+    }
         
         public function nav_catalogo(){
            $params_category_catalog = array(

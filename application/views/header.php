@@ -46,7 +46,7 @@
                         <a href="<?php echo site_url(); ?>" class="tc-menu-inner">Inicio</a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $courses_syle; ?> menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
-                        <a href="<?php echo site_url() . 'courses'; ?>" class="tc-menu-inner">Cursos</a>
+                        <a href="<?php echo site_url() . 'cursos'; ?>" class="tc-menu-inner">Cursos</a>
                         <div class='tc-megamenu-wrapper tc-megamenu-holder mega-sub-menu sub-menu'>
                             <p>
                             <div class="vc_row wpb_row vc_row-fluid">
@@ -59,11 +59,11 @@
                                                     <div class="menu-mega-menu-container">
                                                         <ul class="menu">
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                                <a href="<?php echo site_url() . 'courses'; ?>" class="tc-menu-inner black">Todos los Cursos</a>
+                                                                <a href="<?php echo site_url() . 'cursos'; ?>" class="tc-menu-inner black">Todos los Cursos</a>
                                                             </li>
                                                             <?php foreach ($obj_category_videos as $value) { ?>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                                    <a href='<?php echo site_url() . "courses/$value->slug"; ?>' class="tc-menu-inner black"><?php echo $value->name; ?></a>
+                                                                    <a href='<?php echo site_url() . "cursos/$value->slug"; ?>' class="tc-menu-inner black"><?php echo $value->name; ?></a>
                                                                 </li>
                                                             <?php } ?>
                                                         </ul>
@@ -83,7 +83,7 @@
                                                     </div>
                                                     <div class=course-detail>
                                                         <h3 class="title">
-                                                            <a href="<?php echo site_url() . 'register'; ?>">Prueba nuestros cursos gratuitos</a>
+                                                            <a href="<?php echo site_url() . 'registro'; ?>">Prueba nuestros cursos gratuitos</a>
                                                         </h3>
                                                         <div class="price"><span class="course-price">¡Regístrate Gratis! </span></div>
                                                     </div>
@@ -96,19 +96,19 @@
                         </div>
                     </li>
                     <li id="menu-item-3813" class="menu-item menu-item-type-custom menu-item-object-custom <?php echo $catalog_syle; ?> menu-item-has-children menu-item-3813 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url() . 'catalog'; ?>" class="tc-menu-inner">Catalogo</a>
+                        <a href="<?php echo site_url() . 'catalogo'; ?>" class="tc-menu-inner">Catalogo</a>
                         <ul class="sub-menu" style="display: none;">
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                <a href='<?php echo site_url() . "catalog"; ?>' class="black tc-menu-inner tc-megamenu-title">Todos los Productos</a>
+                                <a href='<?php echo site_url() . "catalogo"; ?>' class="black tc-menu-inner tc-megamenu-title">Todos los Productos</a>
                             </li>
                             <?php foreach ($obj_category_catalog as $value) { ?>
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                    <a href='<?php echo site_url() . "catalog/$value->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value->name; ?></a>
+                                    <a href='<?php echo site_url() . "catalogo/$value->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value->name; ?></a>
                                     <ul class="sub-menu" style="display: none;">
                                         <?php foreach ($obj_sub_category as $value_sub) {
                                             if ($value_sub->category_id == $value->category_id) { ?>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                                    <a href='<?php echo site_url() . "catalog/subcategoria/$value_sub->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value_sub->name; ?></a>
+                                                    <a href='<?php echo site_url() . "catalogo/subcategoria/$value_sub->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value_sub->name; ?></a>
                                                 </li>
                                             <?php } } ?> 
                                     </ul>
@@ -117,13 +117,13 @@
                         </ul>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $contact_syle; ?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url() . 'contact'; ?>" class="tc-menu-inner">Contacto</a>
+                        <a href="<?php echo site_url() . 'contacto'; ?>" class="tc-menu-inner">Contacto</a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url() . 'register'; ?>" class="login">REGISTRO</a>
+                        <a href="<?php echo site_url() . 'registro'; ?>" class="login">REGISTRO</a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url() . 'login'; ?>" class="login">LOGIN</a>
+                        <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" class="login">LOGIN</a>
                     </li>
                 </ul>
                 <?php
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                     </a>
-<?php } ?>  
+            <?php } ?>  
             </div>
         </div>
     </div>

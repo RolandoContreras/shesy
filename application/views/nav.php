@@ -73,11 +73,11 @@
                                             <div class="menu-mega-menu-container">
                                                 <ul id="menu-mega-menu" class="menu">
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                        <a href="<?php echo site_url() . 'courses'; ?>" class="tc-menu-inner">Todos los Cursos</a>
+                                                        <a href="<?php echo site_url() . 'cursos'; ?>" class="tc-menu-inner">Todos los Cursos</a>
                                                     </li>
                                                     <?php foreach ($obj_category_videos as $value) { ?>
                                                         <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                            <a href='<?php echo site_url() . "courses/$value->slug"; ?>' class="tc-menu-inner"><?php echo $value->name; ?></a>
+                                                            <a href='<?php echo site_url() . "cursos/$value->slug"; ?>' class="tc-menu-inner"><?php echo $value->name; ?></a>
                                                         </li>
                                                     <?php } ?>
                                                 </ul>
@@ -97,7 +97,7 @@
                                             </div>
                                             <div class="course-detail">
                                                 <h3 class="title">
-                                                    <a href="<?php echo site_url() . 'register'; ?>">Prueba nuestros cursos gratuitos</a>
+                                                    <a href="<?php echo site_url() . 'registro'; ?>">Prueba nuestros cursos gratuitos</a>
                                                 </h3>
                                                 <div class="price"><span class="course-price">¡Regístrate Gratis! </span></div>
                                             </div>
@@ -123,17 +123,17 @@
                                             <div class="menu-mega-menu-container">
                                                 <ul class="menu">
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                        <a href="<?php echo site_url() . 'catalog'; ?>" class="tc-menu-inner">Todos los Productos</a>
+                                                        <a href="<?php echo site_url() . 'catalogo'; ?>" class="tc-menu-inner">Todos los Productos</a>
                                                     </li>
                                                     <?php foreach ($obj_category_catalog as $value) { ?>
                                                         <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                            <a href='<?php echo site_url() . "catalog/$value->slug"; ?>' class="tc-menu-inner"><?php echo $value->name; ?></a>
+                                                            <a href='<?php echo site_url() . "catalogo/$value->slug"; ?>' class="tc-menu-inner"><?php echo $value->name; ?></a>
                                                             <ul class="menu">
                                                                 <?php foreach ($obj_sub_category as $value_sub) {
                                                                     if ($value_sub->category_id == $value->category_id) {
                                                                         ?>
                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                                            <a href='<?php echo site_url() . "catalog//$value->slug/$value_sub->slug"; ?>' class="tc-menu-inner"><?php echo $value_sub->name; ?></a>
+                                                                            <a href='<?php echo site_url() . "catalogo/subcategoria/$value_sub->slug"; ?>' class="tc-menu-inner"><?php echo $value_sub->name; ?></a>
                                                                         </li>
                                                                     <?php } } ?> 
                                                                 </ul>
@@ -150,10 +150,10 @@
                     </div>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $contact_syle; ?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                    <a href="<?php echo site_url() . 'contact'; ?>" class=tc-menu-inner>Contacto</a>
+                    <a href="<?php echo site_url() . 'contacto'; ?>" class=tc-menu-inner>Contacto</a>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                    <a href="<?php echo site_url() . 'register'; ?>" class=tc-menu-inner>Registro</a>
+                    <a href="<?php echo site_url() . 'registro'; ?>" class=tc-menu-inner>Registro</a>
             </li>
         </ul>
         <div class="header-right">
