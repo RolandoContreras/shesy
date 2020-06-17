@@ -72,7 +72,7 @@ class Catalogo_home extends CI_Controller {
 
         /// PAGINADO
         $config = array();
-        $config["base_url"] = site_url("catalogo");
+        $config["base_url"] = site_url("mi_catalogo");
         $config["total_rows"] = $this->obj_catalog->total_records($params);
         $config["per_page"] = 12;
         $config["num_links"] = 1;
@@ -96,7 +96,7 @@ class Catalogo_home extends CI_Controller {
         /// DATA
         $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
         //GET DATA FROM CUSTOMER
-        $url = 'catalogo';
+        $url = 'mi_catalogo';
         $this->tmp_catalog->set("url", $url);
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
@@ -157,7 +157,7 @@ class Catalogo_home extends CI_Controller {
 
         /// PAGINADO
         $config = array();
-        $config["base_url"] = site_url("catalogo/$category");
+        $config["base_url"] = site_url("mi_catalogo/$category");
         $config["total_rows"] = $this->obj_catalog->total_records($params);
         $config["per_page"] = 12;
         $config["num_links"] = 1;
@@ -182,7 +182,7 @@ class Catalogo_home extends CI_Controller {
         $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
         //send total row
         //SEND DATA
-        $url = "catalogo/$category";
+        $url = "mi_catalogo/$category";
         $this->tmp_catalog->set("url", $url);
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);

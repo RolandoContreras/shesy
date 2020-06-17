@@ -106,7 +106,7 @@
                                                                         </div>
                                                                         <div class="form-group col-md-12">
                                                                             <div class="form-group">
-                                                                                <button id="save_entrega" type="submit" onclick="procesar_contra_entrega();" class="btn btn-success">Solicitar Pedido &nbsp;&nbsp;<i data-feather="user-check"></i></button>
+                                                                                <button id="save_entrega" type="submit" class="btn btn-success">Solicitar Pedido &nbsp;&nbsp;<i data-feather="user-check"></i></button>
                                                                                 <button class="btn btn-success"  type="button" style="display: none;" id="spinner_entrega">
                                                                                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                                                     Procesando ...
