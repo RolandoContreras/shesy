@@ -29,8 +29,6 @@
                     <div class=textwidget>
                       <p style="text-align: center;">
                           <img class="logo-inicial" alt="Logo" width="220" src="<?php echo site_url().'static/page_front/images/logo/logo_embajada.png';?>">
-                              
-                          <br/>
                       </p>
                     </div>
                   </div>
@@ -176,14 +174,12 @@
                               </div>
                             </div>
                         </div>
-                          
                           <div class="col-sm-3"></div>
                           <div id="embassy" class="thim-login col-sm-6" style="background-color:white !important;border-radius: 25px;padding-left: 30px;padding-right: 30px;margin-top: 50px;">
                               <div  class="wpb_wrapper">
                                 <div class="vc_wp_text wpb_content_element">
                                   <div class="widget widget_text">
                                     <div class=textwidget>
-                                        
                                       <div role="form" class="wpcf7" id="wpcf7-f56-p34-o1">
                                         <form class="wpcf7-form" action="javascript:void(0);" enctype="multipart/form-data">
                                           <div class="row">

@@ -81,9 +81,7 @@
                                                             <span class="badge badge-pill badge-info" style="font-size: 100%;">$<?php echo $obj_catalog->price; ?></span>
                                                         </span>
                                                     </p>
-                                                    <div class="description">
                                                         <?php echo $obj_catalog->summary; ?>
-                                                    </div>
                                                     <form class="cart" method="post" action="javascript:void(0);">
                                                         <div class="quantity">
                                                             <input type="text" name="quantity" id="quantity" value="1" title="Cantidad" class="input-text qty text" size="4">
@@ -110,19 +108,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="woocommerce-tabs wc-tabs-wrapper">
-                                                <ul class="tabs wc-tabs" role="tablist">
-                                                    <li class="description_tab" id="tab-title-description">
-                                                        <a>Descripción</a>
-                                                    </li>
-                                                </ul>
-                                                <div class="woocommerce-Tabs-panel panel entry-content wc-tab" style="padding:0 100px !important;">
-                                                    <h2>Descripción</h2>
+                                            <div class="woocommerce-tabs">
+                                                <div class="entry-content">
                                                     <?php echo $obj_catalog->description; ?>
                                                 </div>
                                             </div>
                                             <section>
-                                                <h2>Productos Relacionados</h2>
+                                                <h3 class="product_title entry-title">Productos Relacionados</h3>
                                                 <ul class="category-product product-grid row">
                                                     <?php foreach ($obj_catalog_rand as $value) { ?>
                                                         <li class="col-xs-6 col-md-3 col-sm-6 first product-card post-846 product type-product status-publish has-post-thumbnail product_cat-accessories product_cat-cookware product_cat-culinary product_cat-postcard pmpro-has-access  instock sale shipping-taxable purchasable product-type-simple">

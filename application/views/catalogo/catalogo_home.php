@@ -51,7 +51,6 @@
                           <figure class="effect-apollo">
                               <img width="400" height="260" src="<?php echo site_url()."static/catalog/$value->img";?>" alt="advance-3">
                             <figcaption>
-                                <h2><span style="font-size: 32px !important;font-weight: 300 !important;"><?php echo $value->name;?></span></h2>
                               <p><?php echo corta_texto($value->summary, 100);?></p>
                               <a href="<?php echo site_url()."mi_catalogo/$value->category_slug/$value->slug";?>">Ver Más</a>
                             </figcaption>
@@ -59,7 +58,6 @@
                         <?php } ?>
                         </div>
                       </div>
-                        
                         <div class="row">
                           <div class="col-sm-12 col-md-5"></div>
                           <div class="col-sm-12 col-md-7">

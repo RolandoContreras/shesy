@@ -75,7 +75,7 @@
             <center>
               <a href="<?php echo site_url().'course';?>" class="btn btn-light">
                 <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
-                      <span>Plataforma de Cursos</span>                
+                      <span>University</span>                
                   </div>
               </a>
              </center>
@@ -84,7 +84,7 @@
             <center>
                 <a href="<?php echo site_url().'mi_catalogo';?>" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
-                      <span>Catalogo de productos</span>
+                      <span>Catalogo de Empresas</span>
                   </div>
                 </a>
                 </center>
@@ -187,7 +187,7 @@
                 <li>
                     <a href="<?php echo site_url().'course';?>" class="btn btn-light">
                       <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
-                          <span>Plataforma de Cursos</span>                
+                          <span>University</span>                
                       </div>
                     </a>
                  </li>
@@ -195,8 +195,7 @@
                  <li>
                 <a href="<?php echo site_url().'mi_catalogo';?>" class="btn btn-success">
                   <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
-                      <span>University<br/>
-                      Catalogo de Empresas</span>
+                      <span>Catalogo de Empresas</span>                
                   </div>
                 </a>
              </li>

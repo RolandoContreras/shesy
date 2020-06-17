@@ -32,7 +32,7 @@ class Home extends CI_Controller {
             "join" => array('category, category.category_id = catalog.category_id'),
             "where" => "catalog.active = 1 and catalog.status_value = 1",
             "order" => "catalog.catalog_id DESC",
-            "limit" => "11");
+            "limit" => "7");
 
         $data['catalog'] = $this->obj_catalog->search($params);
 
