@@ -15,26 +15,26 @@ BITSHARE S.A.C
 * Fecha: 16/11/2016
 ****/
 
-class invoice_catalog_atributos{	
-    var $invoice_catalog_id='';
-    var $invoice_id='';
-    var $catalog_id='';
-}
-
-class Invoice_catalog_Model extends CI_Model{ 
+class Contra_entrega_Model extends CI_Model{ 
 
     public function __construct() {
         parent::__construct();  
-        $this->table = 'invoice_catalog';
-	$this->table_id = 'invoice_catalog';
-        $this->invoice_catalog_id='';
+        $this->table = 'contra_entrega';
+	$this->table_id = 'contra_entrega_id';
+        $this->contra_entrega_id='';
         $this->invoice_id='';
-        $this->catalog_id='';
-	$this->fields = new invoice_catalog_atributos();
+        $this->customer='';
+        $this->phone='';
+        $this->address='';
+	$this->reference='';
+        $this->comments='';
+        $this->active='';
+        $this->status_value='';
+        $this->created_at='';
+        $this->created_by='';
+        $this->updated_at='';
+        $this->updated_by='';
     }   
-    
-    public function fields(){
-    }
     
     public function insert($data){
       $this->db->insert($this->table, $data);
@@ -116,14 +116,5 @@ class Invoice_catalog_Model extends CI_Model{
         $dato = $query->row();
         return $dato;       
   }
-  
-   public function verificar_username($username,$password){        
-        $this->db->where('$username',$username);
-        $this->db->where('password', $password);
-        $this->db->from($this->table);
-        $query = $this->db->get();                     
-        return $query->row();        
-   }
-  
 } //FIN DEL MODELO EXTENDIDO
 ?>

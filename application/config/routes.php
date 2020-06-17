@@ -78,6 +78,8 @@ $route['mi_catalogo/([0-9]+)'] = 'catalogo_home/index/$1';
 $route['mi_catalogo/order'] = "catalogo_home/order";
 
 $route['mi_catalogo/pay_order'] = "catalogo_home/pay_order";
+$route['mi_catalogo/contra_entrega'] = "catalogo_home/contra_entrega";
+$route['mi_catalogo/procesar_contra_entrega'] = "catalogo_home/procesar_contra_entrega";
 $route['mi_catalogo/pay_order/update_cart'] = "catalogo_home/update_cart";
 $route['mi_catalogo/pay_order/delete_cart'] = "catalogo_home/delete_cart";
 $route['mi_catalogo/pay_order/process_pay_invoice'] = "catalogo_home/process_pay_invoice";

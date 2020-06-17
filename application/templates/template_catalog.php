@@ -27,6 +27,10 @@
         <!-- Incluyendo Culqi Checkout -->
         <script src="https://checkout.culqi.com/js/v3"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!--//swetaler2-->
+        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet" media="none" onload="if (media != 'all')
+                    media = 'all'">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     </head>
     <body class="layout-6" style="background-image: url('<?php echo site_url() . 'static/page_front/images/sc-step-bg-2.png'; ?>'); background-size: cover;">
         <nav class="pcoded-navbar menu-light brand-lightblue menupos-static">
@@ -144,8 +148,6 @@
                                 <a href="<?php echo site_url() . 'mi_catalogo/pay_order'; ?>">
                                     <span class="btn-glow-dark theme-bg" title="Pagar Compra" data-toggle="tooltip" data-placement="bottom" data-original-title="Pagar Compra" style="padding: 10px;border-radius: 10px;">
                                         <i data-feather="shopping-cart" style="color: white;"></i>
-                                        <span class="wrapper-items-number">
-                                            <span class="items-number"><?php echo $cart; ?></span></span>
                                     </span>
 
                                 </a>
@@ -184,7 +186,7 @@
         <script defer src="<?php echo site_url() . 'static/page_front/js/autoptimize_282.js'; ?>"></script>
 
         <script>
-                feather.replace()
+            feather.replace()
         </script>
     </body>
 

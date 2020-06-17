@@ -43,8 +43,6 @@
                                     aria-label="Age: activate to sort column ascending">Precio</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Sub Total</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Acciones</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -54,7 +52,7 @@
                                     <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
                                     <th><?php echo $items['name'];?></th>
                                     <th>
-                                        <input class="form-control" type="text" id="qty" name="qty" value="<?php echo format_number_miles($this->cart->format_number($items['qty'])); ?>" class="input-xlarge-fluid" placeholder="Cantidad">
+                                        <?php echo format_number_miles($this->cart->format_number($items['qty'])); ?>
                                     </th>
                                     <th>
                                         <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
@@ -69,10 +67,7 @@
                                     <th>S/. <?php echo $this->cart->format_number($items['price']); ?></th>
                                     <th class="text-c-green">
                                         <span class="badge badge-pill badge-success" style="font-size: 100%;">S/. <?php echo $this->cart->format_number($items['subtotal']); ?></span>
-                                    </th>
-                                    <th>
-                                        <button type="button" onclick="update_order('<?php echo $items['rowid'];?>');" class="btn btn-icon btn-rounded btn-outline-success"><i data-feather="rotate-cw"></i></button>
-                                        <button type="button" onclick="delete_order('<?php echo $items['rowid'];?>');" class="btn btn-icon btn-rounded btn-outline-danger"><i data-feather="trash-2"></i></button>
+                                        <button type="button" onclick="delete_order('<?php echo $items['rowid'];?>');" class="btn btn-icon" style="color:red;"><i data-feather="trash-2"></i></button>
                                     </th>
                                 </tr>
                             <?php endforeach;?>
@@ -112,7 +107,8 @@
                                   </div>
                                 <div class="col-sm-12">
                                       <div class="card-block text-center">
-                                          <button type="button" class="btn btn-primary" id="buyButton" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>">Pagar</button>
+                                          <button type="button" class="btn btn-primary" id="buyButton" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>">Pagar Tarjeta &nbsp;&nbsp;<i data-feather="credit-card"></i></button>
+                                          <button type="button" onclick="contra_entrega();" class="btn btn-primary" id="buyButton">Contra Entrega &nbsp;&nbsp;<i data-feather="user-check"></i></button>
                                       </div>
                                   </div>
                             </div>

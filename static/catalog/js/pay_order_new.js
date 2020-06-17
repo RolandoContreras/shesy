@@ -58,7 +58,7 @@ function add_cart(catalog_id,price,name){
     }else{
         $.ajax({
             type: "post",
-            url: site + "catalogo/order/add_cart",
+            url: site + "mi_catalogo/order/add_cart",
             dataType: "json",
             data: {quantity: quantity,
                    talla: talla,
@@ -68,15 +68,31 @@ function add_cart(catalog_id,price,name){
                    name: name},
 
             success:function(data){            
-                if(data.status == "true"){
-                    document.getElementById("quantity_error").style.display = "none";
-                    document.getElementById("quantity_success").style.display = "block";
-                    setTimeout('document.location.reload()',2000);
-                }else{
-                    document.getElementById("quantity_error").style.display = "none";
+                    if (data.status == "true") {
+                        document.getElementById("quantity_error").style.display = "none";
+                        Swal.fire({
+                            position: 'top-end',
+                            title: 'Producto Agregado a la Cesta',
+                            icon: 'success',
+                            showCloseButton: true,
+                            focusConfirm: false,
+                            confirmButtonText:
+                                    '<i class="fa fa-shopping-cart" aria-hidden="true"></i> <a style="color:white !important;" href="'+data.url+'">Ir al Carrito!</a>'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Ups! Hubo un error',
+                            footer: 'Comuniquese con soporte',
+                        });
+                    }
                 }
-            }            
         });
     }
 }
+function contra_entrega(){    
+     var url = 'mi_catalogo/contra_entrega';
+     location.href = site+url;   
+}
+
 
