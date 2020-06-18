@@ -21,9 +21,6 @@
                     <div class="page-wrapper">
                         <div class="row">
                             <div class="col-sm-12">
-
-                            </div>
-                            <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>Mi producto: <?php echo $obj_catalog->name; ?></h5>
@@ -71,7 +68,7 @@
                                                         <?php echo $obj_catalog->description; ?>
                                                         <h6 class="mt-3">Categoría</h6>
                                                         <p class="text-primary mb-1">
-                                                            <a href="<?php echo site_url() . "catalogo/$obj_catalog->category_slug"; ?>"><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $obj_catalog->category_name; ?></span></a>
+                                                            <a href="<?php echo site_url() . "mi_catalogo/$obj_catalog->category_slug"; ?>"><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $obj_catalog->category_name; ?></span></a>
                                                         </p>
                                                         <hr>
                                                         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -125,7 +122,7 @@
                                                     <div class="row text-center">
                                                         <?php foreach ($obj_catalog_all as $value) { ?>
                                                             <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12">
-                                                                <a href="<?php echo site_url() . "catalogo/$value->category_slug/$value->slug"; ?>">
+                                                                <a href="<?php echo site_url() . "mi_catalogo/$value->category_slug/$value->slug"; ?>">
                                                                     <img src="<?php echo site_url() . "static/catalog/$value->img"; ?>" class="img-fluid m-b-10" alt="<?php echo $value->name; ?>"></a>
                                                             </div>
                                                         <?php } ?>

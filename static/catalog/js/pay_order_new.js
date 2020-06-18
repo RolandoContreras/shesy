@@ -3,7 +3,7 @@ function update_order(id){
     if(qty > 0){
         $.ajax({
             type: "post",
-            url: site + "catalogo/pay_order/update_cart",
+            url: site + "mi_catalogo/pay_order/update_cart",
             dataType: "json",
             data: {id: id,
                    qty: qty},
@@ -23,7 +23,7 @@ function update_order(id){
 function delete_order(id){
         $.ajax({
             type: "post",
-            url: site + "catalogo/pay_order/delete_cart",
+            url: site + "mi_catalogo/pay_order/delete_cart",
             dataType: "json",
             data: {id: id},
             success:function(data){            
@@ -36,7 +36,7 @@ function delete_order(id){
 function process_pay_invoice(){
         $.ajax({
             type: "post",
-            url: site + "catalogo/pay_order/process_pay_invoice",
+            url: site + "mi_catalogo/pay_order/process_pay_invoice",
             dataType: "json",
             data: {},
             success:function(data){            
@@ -77,7 +77,7 @@ function add_cart(catalog_id,price,name){
                             showCloseButton: true,
                             focusConfirm: false,
                             confirmButtonText:
-                                    '<i class="fa fa-shopping-cart" aria-hidden="true"></i> <a style="color:white !important;" href="'+data.url+'">Ir al Carrito!</a>'
+                                    '<i class="fa fa-shopping-cart" aria-hidden="true"></i> <a style="color:white !important;" href="'+site+"mi_catalogo/pay_order"+'">Ir al Carrito!</a>'
                         });
                     } else {
                         Swal.fire({
