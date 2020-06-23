@@ -1,4 +1,7 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Catalogo_home extends CI_Controller {
 
@@ -13,6 +16,7 @@ class Catalogo_home extends CI_Controller {
         $this->load->model("commissions_model", "obj_commissions");
         $this->load->model("points_model", "obj_points");
         $this->load->model("contra_entrega_model", "obj_contra_entrega");
+        $this->load->model("sub_category_model", "obj_sub_category");
         $this->load->library('culqi');
     }
 
@@ -23,6 +27,7 @@ class Catalogo_home extends CI_Controller {
         $kid_id = $_SESSION['customer']['kit_id'];
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
 
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
@@ -101,6 +106,8 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
+
         $this->tmp_catalog->set("obj_catalog", $obj_catalog);
         $this->tmp_catalog->render("catalogo/catalogo_home");
     }
@@ -108,6 +115,7 @@ class Catalogo_home extends CI_Controller {
     public function category($category) {
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
 
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
@@ -191,10 +199,97 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->render("catalogo/catalogo_home");
     }
 
+    public function sub_category($sub_category) {
+        //GET NAV CURSOS
+        $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
+        if (isset($_GET['orderby'])) {
+            $type = $_GET['orderby'];
+
+            switch ($type) {
+                case 'date':
+                    $order = "catalog.date DESC";
+                    break;
+                case 'price':
+                    $order = "catalog.price ASC";
+                    break;
+                case 'price-desc':
+                    $order = "catalog.price DESC";
+                    break;
+                default:
+                    $order = "catalog.catalog_id ASC";
+                    break;
+            }
+        } else {
+            $order = "catalog.catalog_id DESC";
+        }
+
+        //get data catalog
+        $params_sub_categogory = array(
+            "select" => "sub_category_id,
+                         name",
+            "where" => "slug like '%$sub_category%'");
+        $obj_sub_category_meta = $this->obj_sub_category->get_search_row($params_sub_categogory);
+        $sub_category_id = $obj_sub_category_meta->sub_category_id;
+        $category_name = "Productos - " . $obj_sub_category_meta->name;
+
+        $params = array(
+            "select" => "catalog.catalog_id,
+                        catalog.summary,
+                        catalog.name,
+                        catalog.slug,
+                        catalog.price,
+                        catalog.img,
+                        catalog.active,
+                        category.slug as category_slug,
+                        catalog.date",
+            "join" => array('category, category.category_id = catalog.category_id',
+                            'sub_category, sub_category.sub_category_id = catalog.sub_category_id'),
+            "where" => "catalog.sub_category_id = $sub_category_id and catalog.active = 1",
+            "order" => $order);
+
+        /// PAGINADO
+        $config = array();
+        $config["base_url"] = site_url("mi_catalogo/subcategoria/$sub_category");
+        $config["total_rows"] = $this->obj_catalog->total_records($params);
+        $config["per_page"] = 12;
+        $config["num_links"] = 1;
+        $config["uri_segment"] = 3;
+
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><span aria-current="page" class="page-numbers current">';
+        $config['cur_tag_close'] = '</span></li>';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+
+        $this->pagination->initialize($config);
+        $obj_pagination = $this->pagination->create_links();
+        /// DATA
+        $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
+        //send total row
+        //SEND DATA
+        $url = "mi_catalogo/subcategoria/$sub_category";
+        $this->tmp_catalog->set("url", $url);
+        $this->tmp_catalog->set("category_name", $category_name);
+        $this->tmp_catalog->set("obj_pagination", $obj_pagination);
+        $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
+        $this->tmp_catalog->set("obj_catalog", $obj_catalog);
+        $this->tmp_catalog->render("catalogo/catalogo_home");
+    }
+
     public function detail($slug) {
 
         //get nav cursos
         $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
 
         //get data catalog
         $params_categogory_id = array(
@@ -246,6 +341,7 @@ class Catalogo_home extends CI_Controller {
         //SEND DATA
 
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_catalog_all", $obj_catalog_all);
         $this->tmp_catalog->set("obj_catalog", $obj_catalog);
         $this->tmp_catalog->render("catalogo/catalogo_detail");
@@ -259,6 +355,7 @@ class Catalogo_home extends CI_Controller {
 
         //get nav ctalogo
         $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
 
         //GET DATA PRICE CRIPTOCURRENCY
         $params = array(
@@ -276,6 +373,7 @@ class Catalogo_home extends CI_Controller {
         $obj_invoices = $this->obj_invoices->search($params);
 
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_invoices", $obj_invoices);
         $this->tmp_catalog->render("catalogo/catalogo_order");
     }
@@ -286,6 +384,7 @@ class Catalogo_home extends CI_Controller {
         //GET CUSTOMER_ID
         //get nav ctalogo
         $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
 
         //GET DATA PRICE CRIPTOCURRENCY
         $params = array(
@@ -324,6 +423,7 @@ class Catalogo_home extends CI_Controller {
 
         $this->tmp_catalog->set("obj_invoices", $obj_invoices);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_invoice_catalog", $obj_invoice_catalog);
         $this->tmp_catalog->render("catalogo/catalogo_order_detail");
     }
@@ -333,10 +433,9 @@ class Catalogo_home extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
-
         //get nav ctalogo
         $obj_category_catalogo = $this->nav_catalogo();
-
+        $obj_sub_category = $this->nav_sub_category();
         //GET DATA PRICE CRIPTOCURRENCY
         $params = array(
             "select" => "invoices.invoice_id,
@@ -353,6 +452,7 @@ class Catalogo_home extends CI_Controller {
         $obj_invoices = $this->obj_invoices->search($params);
 
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_invoices", $obj_invoices);
         $this->tmp_catalog->render("catalogo/catalogo_pay_order");
     }
@@ -364,7 +464,9 @@ class Catalogo_home extends CI_Controller {
         $customer_id = $_SESSION['customer']['customer_id'];
         //get nav ctalogo
         $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->render("catalogo/catalogo_contra_entrega");
     }
 
@@ -623,16 +725,16 @@ class Catalogo_home extends CI_Controller {
                     'status_value' => 1,
                 );
                 $contra_entrega_id = $this->obj_contra_entrega->insert($param);
-                if($contra_entrega_id != null){
+                if ($contra_entrega_id != null) {
                     $data['status'] = true;
                     $data['message'] = "Pedido creado correctamente el número de factura es #$invoce_id";
                     //DESTROY CART
                     $this->cart->destroy();
-                }else{
-                    $data['status'] = false;    
+                } else {
+                    $data['status'] = false;
                 }
-            }else{
-                $data['status'] = false;    
+            } else {
+                $data['status'] = false;
             }
         } else {
             $data['status'] = false;
@@ -728,6 +830,17 @@ class Catalogo_home extends CI_Controller {
         );
         //GET DATA COMMENTS
         return $obj_category_catalogo = $this->obj_category->search($params_category_catalogo);
+    }
+
+    public function nav_sub_category() {
+        $params = array(
+            "select" => "name,
+                         category_id,        
+                         slug",
+            "where" => "active = 1",
+        );
+        //GET DATA CATALOGO
+        return $obj_sub_category = $this->obj_sub_category->search($params);
     }
 
     public function get_session() {

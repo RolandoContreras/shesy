@@ -42,6 +42,7 @@
                     </a>
                     <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
                 <div class="navbar-content scroll-div">
+
                     <ul class="nav pcoded-inner-navbar">
                         <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
                         <?php
@@ -77,6 +78,7 @@
                                 <span class="pcoded-mtext">Mi Oficina</span>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="nav-link <?php echo $home_syle; ?>">
                                 <span class="pcoded-micon">
@@ -85,16 +87,26 @@
                                 <span class="pcoded-mtext">Inicio</span>
                             </a>
                         </li>
-                        <li class="nav-item pcoded-hasmenu">
+                        <li class="nav-item pcoded-hasmenu pcoded-trigger">
                             <a href="#!" class="<?php echo $catalog_syle; ?>">
                                 <span class="pcoded-micon">
                                     <i data-feather="airplay"></i>
                                 </span>
-                                <span class="pcoded-mtext">Mis Categorías</span>
-                            </a>
-                            <ul class="pcoded-submenu">
+                                <span class="pcoded-mtext">Mis Categorías</span></a>
+                            <ul class="pcoded-submenu" style="display: block;">
                                 <?php foreach ($obj_category_catalogo as $value) { ?>
-                                    <li><a href='<?php echo site_url() . "mi_catalogo/$value->slug"; ?>' class=""><?php echo $value->name; ?></a></li>          
+                                    <li class="pcoded-hasmenu pcoded-trigger">
+                                        <a href="#!" class=""><?php echo $value->name; ?></a>
+                                        <ul class="pcoded-submenu" style="display: block;">
+                                            <?php foreach ($obj_sub_category as $value_sub) {
+                                                if ($value_sub->category_id == $value->category_id) {?>
+                                                    <li>
+                                                        <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
+                                                    </li>
+                                                <?php }
+                                            } ?> 
+                                        </ul>
+                                    </li>
                                 <?php } ?>
                             </ul>
                         </li>
@@ -154,10 +166,10 @@
                             </div>
                         </li>
                     </ul>
-                <?php } ?>   
+        <?php } ?>   
             </div>
         </header>
-        <?php echo $body; ?>
+<?php echo $body; ?>
         <!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
         <script src="<?php echo site_url() . 'static/course/js/vendor-all.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/course/js/bootstrap.min.js'; ?>"></script>

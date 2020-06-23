@@ -17,32 +17,7 @@
         <link rel="manifest" href="<?php echo site_url().'static/page_front/images/logo/favico/site.webmanifest';?>">
         <!--//END FAVICON-->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
-        <link href="<?php echo site_url().'static/page_front/css/login/main.css?version=4.4.0';?>" rel="stylesheet">
-               <style>
-            .goog-te-banner-frame.skiptranslate {
-                display: none !important;
-            }
-            .goog-tooltip {
-                display: none !important;
-            }
-            .goog-tooltip:hover {
-                display: none !important;
-            }
-            .goog-text-highlight {
-                background-color: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-            }
-            .goog-te-banner-frame.skiptranslate {
-                display: none !important;
-            }
-            body {
-                top: 0px !important; 
-            }
-            *::first-letter {
-                    text-transform: uppercase;
-            }
-        </style>
+        <link href="<?php echo site_url().'static/page_front/css/login/main.css?version=4.4.0';?>" rel="stylesheet" >
         <script>
             var site = '<?php echo site_url();?>';
         </script>
@@ -52,7 +27,7 @@
         <div class="auth-box-w">
             <div class="logo-w">
                 <a href="<?php echo site_url();?>">
-                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/sombreado.png';?>" style="max-width: 280px;">
+                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/sombreado.png';?>" style="max-width: 230px;">
                 </a>
             </div>
             <h4 class="auth-header">
