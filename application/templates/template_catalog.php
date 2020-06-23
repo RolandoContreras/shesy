@@ -38,7 +38,7 @@
                 <div class="navbar-brand header-logo">
                     <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="b-brand">
                         <img src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" alt="Logo" width="35"/>
-                        <span class="b-title">Catalogo</span>
+                        <span class="b-title">Catalogo Empresas</span>
                     </a>
                     <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
                 <div class="navbar-content scroll-div">
@@ -74,7 +74,7 @@
                                 <span class="pcoded-micon">
                                     <i data-feather="arrow-left"></i>
                                 </span>
-                                <span class="pcoded-mtext">Regresar</span>
+                                <span class="pcoded-mtext">Mi Oficina</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -122,7 +122,7 @@
             <div class="m-header"><a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
                 <a href="<?php echo site_url() . 'login/logout'; ?>" class="b-brand">
                     <img src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" alt="Logo" width="35"/>
-                    <span class="b-title">Catalogo Imparable</span></a>
+                    <span class="b-title">Catalogo de Empresas</span></a>
             </div>
             <a class="mobile-menu" id="mobile-header" href="#!">
                 <i class="feather icon-more-horizontal"></i>

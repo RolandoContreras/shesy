@@ -18,31 +18,6 @@
         <!--//END FAVICON-->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
         <link href="<?php echo site_url().'static/page_front/css/login/main.css?version=4.4.0';?>" rel="stylesheet">
-               <style>
-            .goog-te-banner-frame.skiptranslate {
-                display: none !important;
-            }
-            .goog-tooltip {
-                display: none !important;
-            }
-            .goog-tooltip:hover {
-                display: none !important;
-            }
-            .goog-text-highlight {
-                background-color: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-            }
-            .goog-te-banner-frame.skiptranslate {
-                display: none !important;
-            }
-            body {
-                top: 0px !important; 
-            }
-            *::first-letter {
-                    text-transform: uppercase;
-            }
-        </style>
         <script>
             var site = '<?php echo site_url();?>';
         </script>
@@ -53,12 +28,10 @@
         <div class="auth-box-w">
             <div class="logo-w">
                 <a href="<?php echo site_url();?>">
-                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" style="max-width: 150px;">
+                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/sombreado.png';?>" style="max-width: 230px;">
                 </a>
             </div>
-            <h4 class="auth-header">
-                REGÍSTRATE
-            </h4>
+            <h4 class="auth-header"> REGÍSTRATE </h4>
             <form class="form" action="javascript:void(0);" enctype="multipart/form-data">
                 <?php if(isset($obj_customer->username)){ ?>
                 <div class="form-group">

@@ -24,11 +24,11 @@
           <div class="content container">
             <div class=row>
               <div class="text-title col-md-6">
-                <h1>Catalogo</h1>
+                <h1>CATÁLOGO</h1>
               </div>
               <div class="text-description col-md-6">
                 <div class=banner-description>
-                  <div class=banner-description><strong class="br">El mejor precio del mercado</strong>Únete a Fk y compra con nosotros.</div>
+                  <div class=banner-description>Estas empresas son de los embajadores que impulsan a la cultura imparable</div>
                 </div>
               </div>
             </div>

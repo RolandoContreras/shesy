@@ -52,7 +52,7 @@
         <div class="auth-box-w">
             <div class="logo-w">
                 <a href="<?php echo site_url();?>">
-                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>" style="max-width: 150px;">
+                    <img alt="logo" src="<?php echo site_url().'static/page_front/images/logo/sombreado.png';?>" style="max-width: 280px;">
                 </a>
             </div>
             <h4 class="auth-header">

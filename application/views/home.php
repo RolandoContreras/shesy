@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <?php $this->load->view("head");?>
 <body class="home-page bp-nouveau home page-template page-template-templates page-template-home-page page-template-templateshome-page-php page page-id-565 wp-embed-responsive theme-wordpress-lms pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 buy-through-membership header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
   <div id="thim-preloading">

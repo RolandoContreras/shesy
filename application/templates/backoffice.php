@@ -73,8 +73,8 @@
              </li>
             <li>
             <center>
-              <a href="<?php echo site_url().'course';?>" class="btn btn-light">
-                <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
+              <a href="<?php echo site_url().'course';?>" class="btn btn-light" style="width: 100%">
+                <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
                       <span>University</span>                
                   </div>
               </a>
@@ -82,19 +82,13 @@
             </li>
              <li>
             <center>
-                <a href="<?php echo site_url().'mi_catalogo';?>" class="btn btn-success">
-                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%""> 
+                <a href="<?php echo site_url().'mi_catalogo';?>" class="btn btn-success" style="width: 100%">
+                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
                       <span>Catalogo de Empresas</span>
                   </div>
                 </a>
                 </center>
              </li>
-            <li>
-              <a href="<?php echo site_url().'backoffice';?>" class="active" style="margin-top:30px;">
-                <div class="icon-w">
-                  <div class="os-icon os-icon-menu"></div>
-                </div> <span>Tablero</span> </a>
-            </li>
             <li>
               <a href="<?php echo site_url().'backoffice';?>" class="active" style="margin-top:30px;">
                 <div class="icon-w">

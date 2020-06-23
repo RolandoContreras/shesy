@@ -1,98 +1,90 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en-US"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en-US"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en-US"> 
-<!--<![endif]-->
-<!--STAR HEAD-->
-<?php $this->load->view("head");?>
-<!--END HEAD-->
-<body class="error404 wpb-js-composer js-comp-ver-5.4.2 vc_responsive">
-    <div class="mobile-menu-wrapper mobile-menu-fullscreen">
-        <!--GET NAV MOBILE-->
-    	<?php $this->load->view("nav_mobile");?>
-        <!--END GET NAV MOBILE-->
-    </div>
-    <div class="mobile-menu-overlay"></div>
-	<div class="wrapper" id="main-wrapper">
-            <div class="wrapper" id="main-wrapper">
-		<style>header.site-header {padding-top: 35px;}</style>
-                <style>header.site-header {padding-bottom: 35px;}</style>
-                <!--START HEADER 2-->
-                <?php $this->load->view("header_2");?>
-                <!--END HEADER 2-->
-
-<script type="text/javascript">
-	var headerOptions = headerOptions || {};
-	Object.assign( headerOptions, {"stickyHeader":false} );
-</script>
-<div class="container">
-	<div class="page-container">
-		<div class="error-holder">
-<!--			<div class="box">-->
-				<p class="error-type">
-                                    <img src="<?php echo site_url().'static/page_front/images/about/3tx558.jpg'?>" alt='3t company'/>
-<!--					<span class="flashing-num-1">4</span>
-					<span class="flashing-num-1 del-1">0</span>
-					<span class="flashing-num-1 del-2">4</span>-->
-				</p>
-			<!--</div>-->
-                    <p class="error-text"><?php echo replace_vocales_voculeshtml("PÁGINA NO ENCONTRADA")?></p>
-                    <p><?php echo replace_vocales_voculeshtml("Es posible que el enlace que has seguido esté roto o que se haya eliminado la página.");?><br /> <?php echo replace_vocales_voculeshtml("Tal vez le gustaría ir a nuestra ");?><a href="<?php echo site_url();?>"><?php echo replace_vocales_voculeshtml("página de inicio");?></a></p>
-		</div>
-	</div>
-
-</div>
-
-	</div>	
-	<!--START FOOTER-->
-            <?php $this->load->view("footer");?>
-        <!--END FOOTER-->
-        
-<link rel='stylesheet' id='nivo-lightbox-css'  href='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/themes/kalium/assets/js/nivo-lightbox/nivo-lightbox.min.css' type='text/css' media='all' />
-<link rel='stylesheet' id='nivo-lightbox-default-css'  href='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/themes/kalium/assets/js/nivo-lightbox/themes/default/default.css' type='text/css' media='all' />
-<link rel='stylesheet' id='slick-css'  href='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/themes/kalium/assets/js/slick/slick.css' type='text/css' media='all' />
-<script type='text/javascript' src='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/themes/kalium/assets/js/fluidbox/jquery.fluidbox.min.js'></script>
-<script type='text/javascript' src='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-includes/js/comment-reply.min.js?ver=4.8.2'></script>
-<script type='text/javascript' src='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/plugins/bookingcom-official-searchbox/js/bos_main.js?ver=1.2'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var objectL10n = {"destinationErrorMsg":"Sorry, we need at least part of the name to start searching.","tooManyDays":"Your check-out date is more than 30 nights after your check-in date. Bookings can only be made for a maximum period of 30 nights. Please enter alternative dates and try again.","dateInThePast":"Your check-in date is in the past. Please check your dates and try again.","cObeforeCI":"Please check your dates, the check-out date appears to be earlier than the check-in date.","calendar_nextMonth":"Next month","calendar_prevMonth":"Prev month","calendar_closeCalendar":"Close calendar","january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December","mo":"Mo","tu":"Tu","we":"We","th":"Th","fr":"Fr","sa":"Sa","su":"Su","updating":"Updating...","close":"Close","placeholder":"e.g. city, region, district or specific hotel","aid":"382821","dest_type":"select","calendar":"0","month_format":"short","flexible_dates":"0","logodim":"blue_150x25","logopos":"left","buttonpos":"right","bgcolor":"#FEBA02","textcolor":"#003580","submit_bgcolor":"#0896FF","submit_bordercolor":"#0896FF","submit_textcolor":"#FFFFFF","aid_starts_with_four":"affiliate ID is different from partner ID: should start with a 1, 3, 8 or 9. Please change it.","images_js_path":"https:\/\/demo.kaliumtheme.com\/travel\/wp-content\/plugins\/bookingcom-official-searchbox\/images"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/plugins/bookingcom-official-searchbox/js/bos_date.js?ver=1.0'></script>
-<script type='text/javascript' src='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-includes/js/wp-embed.min.js?ver=4.8.2'></script>
-<script type='text/javascript' src='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/themes/kalium/assets/js/nivo-lightbox/nivo-lightbox.min.js'></script>
-<script type='text/javascript' src='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/themes/kalium/assets/js/slick/slick.min.js'></script>
-<script type='text/javascript' src='https://demokaliumsites-laborator.netdna-ssl.com/travel/wp-content/themes/kalium/assets/js/main.min.js?ver=2.1.4'></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-28991003-11', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-<!-- Google Code for Click Conversion Page -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 991533214;
-var google_custom_params = window.google_tag_params;
-var google_remarketing_only = true;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
-<style>iframe[name="google_conversion_frame"] { position: absolute; left: -99999px; }</style>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/991533214/?value=0&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-		
-	<!-- ET: 0.084417104721069s 2.1.4ch -->
-</body>
+<html lang="es-PE">
+    <?php $this->load->view("head"); ?>
+    <body class="bp-nouveau error404 wp-embed-responsive theme-wordpress-lms woocommerce-no-js pagetitle-show hfeed bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 buy-through-membership header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
+        <div id="thim-preloading">
+            <div class="thim-loading-icon">
+                <div class="sk-folding-cube">
+                    <div class="sk-cube1 sk-cube"></div>
+                    <div class="sk-cube2 sk-cube"></div>
+                    <div class="sk-cube4 sk-cube"></div>
+                    <div class="sk-cube3 sk-cube"></div>
+                </div>
+            </div>
+        </div>
+        <div id="wrapper-container" class="content-pusher creative-right bg-type-color">
+            <div class="overlay-close-menu"></div>
+            <?php $this->load->view("header"); ?>
+            <?php $this->load->view("nav"); ?>
+            <div id="main-content">
+                <section class="content-area">
+                    <div class="page-title layout-1">
+                        <div class="main-top no-parallax" style="background-image:url(<?php echo site_url() . 'static/page_front/images/background_2.jpg'; ?>)"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
+                            <div class="content container">
+                                <div class="row">
+                                    <div class="text-title col-md-6">
+                                        <h1>404 Página</h1>
+                                    </div>
+                                    <div class="text-description col-md-6">
+                                        <div class="banner-description">
+                                            <p><strong class="br">Te encuentras en cultura imparable </strong> Si aún no eres socio, entonces regístrate.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="breadcrumb-content ">
+                            <div class="breadcrumbs-wrapper container">
+                                <ul itemscope id="breadcrumbs" class="breadcrumbs">
+                                    <li itemprop="itemListElement" itemscope>
+                                        <a itemprop="item" href="<?php echo site_url();?>" title="Home"><span itemprop="Inicio">Inicio</span></a>
+                                        <meta itemprop="position" content="1"><span class="breadcrum-icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                                    <li itemprop="itemListElement" itemscope>
+                                        <span itemprop="name" title="404 Page">404 Página</span>
+                                        <meta itemprop="position" content="2">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container site-content ">
+                        <div class="row">
+                            <main id="main" class="site-main col-sm-12 full-width">
+                                <section class="error-404 not-found">
+                                    <div class="page-content">
+                                        <h3 class="intro">Página no encontrada!</h3>
+                                        <p class="404-message">Lo sentimos, no podemos encontrar la página que estás buscando. Por favor ve a <a href='<?php echo site_url();?>'>Inicio.</a></p>
+                                    </div>
+                                </section>
+                            </main>
+                        </div>
+                    </div>
+                </section>
+            </div>
+           <?php $this->load->view("footer_2"); ?>
+        </div>
+        <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
+        <div class="gallery-slider-content"></div>
+        <script>
+            var BP_Nouveau = {"ajaxurl": "", "object_nav_parent": "#buddypress", "objects": {"0": "activity", "1": "members", "4": "xprofile", "7": "settings", "8": "notifications"}, "nonces": {"activity": "fcd5ecf43e", "members": "9af41e8848", "xprofile": "10dfc2af2b", "settings": "8d89e10911"}};
+        </script>
+        <script>
+            window.lazySizesConfig = window.lazySizesConfig || {};
+            window.lazySizesConfig.lazyClass = 'lazyload';
+            window.lazySizesConfig.loadingClass = 'lazyloading';
+            window.lazySizesConfig.loadedClass = 'lazyloaded';
+            lazySizesConfig.loadMode = 1;
+        </script>
+        <script>
+            lazySizes.init();
+        </script>
+        <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
+        <script>
+            WebFont.load({google: {families: ['Roboto:400,300']}});
+        </script>
+        <script defer src="<?php echo site_url() . 'static/page_front/js/autoptimize_282.js'; ?>"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src='<?php echo site_url() . 'static/page_front/js/script/contact.js'; ?>'></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    </body>
 </html>

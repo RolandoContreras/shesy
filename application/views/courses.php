@@ -23,7 +23,7 @@
                             <div class="content container">
                                 <div class=row>
                                     <div class="text-title col-md-6">
-                                        <h1>Cursos</h1>
+                                        <h1>CURSOS</h1>
                                     </div>
                                     <div class="text-description col-md-6">
                                         <div class=banner-description>
