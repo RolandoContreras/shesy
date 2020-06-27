@@ -28,7 +28,7 @@ function active(invoice_id,customer_id,kit_id,type){
     });
 }
 function view_order(invoice_id){
-    var url = 'dashboard/activaciones_catalogo/'+invoice_id;
+    var url = 'dashboard/contra-entrega/'+invoice_id;
      location.href = site+url;   
 }
 

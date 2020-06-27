@@ -215,7 +215,6 @@ $route['dashboard/embassy'] = "d_embassy";
 $route['dashboard/embassy/cambiar_status'] = "d_embassy/change_status";
 $route['dashboard/embassy/cambiar_status_no'] = "d_embassy/change_status_no";
 
-
 $route['dashboard/recargas'] = "d_recargas";
 $route['dashboard/recargas/load'] = "d_recargas/load";
 $route['dashboard/recargas/load/([0-9]+)'] = "d_recargas/load/$1";
@@ -242,6 +241,12 @@ $route['dashboard/activaciones/validate_user'] = "d_activate/validate_user";
 $route['dashboard/activaciones/active_customer'] = "d_activate/active_customer";
 $route['dashboard/activaciones/active'] = "d_activate/active";
 $route['dashboard/activaciones/update_confirmation'] = "d_activate/update_confirmation";
+
+$route['dashboard/contra-entrega'] = "d_contra_entrega";
+$route['dashboard/contra-entrega/([0-9]+)'] = "d_contra_entrega/order/$1";
+$route['dashboard/contra-entrega/validate_user'] = "d_activate/validate_user";
+$route['dashboard/contra-entrega/active'] = "d_contra_entrega/active";
+$route['dashboard/contra-entrega/delete'] = "d_contra_entrega/delete";
 
 $route['dashboard/activaciones_catalogo'] = "d_activate/activaciones_catalogo";
 $route['dashboard/activaciones_catalogo/([0-9]+)'] = "d_activate/order_catalog/$1";

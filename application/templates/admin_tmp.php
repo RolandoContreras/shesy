@@ -76,12 +76,16 @@
             $mantenimiento_syle = "";
             $report_syle = "";
             $recargas_syle = "";
+            $contra_entrega_syle = null;
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active";
                     break;
                 case "activaciones":
                     $activaciones_syle = "active";
+                    break;
+                case "contra-entrega":
+                    $contra_entrega_syle = "active";
                     break;
                 case "activar_pagos":
                     $pagos_syle = "active";
@@ -114,6 +118,7 @@
                   <span class="pcoded-mtext">Panel</span>
               </a>
         </li>
+        <li class="nav-item pcoded-menu-caption"><label>Mantenimientos</label></li>
         <li class="nav-item pcoded-hasmenu">
             <a href="#!" class="<?php echo $mantenimiento_syle;?>">
                 <span class="pcoded-micon">
@@ -141,6 +146,7 @@
                 <?php } ?>
             </ul>
         </li>
+        <li class="nav-item pcoded-menu-caption"><label>Activar</label></li>
         <li class="nav-item pcoded-hasmenu">
             <a href="#!" class="nav-link <?php echo $activaciones_syle;?>">
                 <span class="pcoded-micon">
@@ -152,6 +158,15 @@
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones";?>"><i class="icon-large icon-th"></i>Pack</a></li>
             </ul>
         </li>
+        <li class="nav-item pcoded-hasmenu">
+            <a href="<?php echo site_url()."dashboard/contra-entrega";?>" class="nav-link <?php echo $contra_entrega_syle;?>">
+                <span class="pcoded-micon">
+                    <i data-feather="user-check"></i>
+                </span>
+                <span class="pcoded-mtext">Contra Entrega</span>
+            </a>
+        </li>
+        <li class="nav-item pcoded-menu-caption"><label>Pagos</label></li>
         <li class="nav-item">
             <a href="<?php echo site_url()."dashboard/activar_pagos";?>" class="nav-link <?php echo $pagos_syle;?>">
                 <span class="pcoded-micon">
@@ -160,6 +175,7 @@
                 <span class="pcoded-mtext">Pagos</span>
             </a>
         </li>
+        <li class="nav-item pcoded-menu-caption"><label>Recargas</label></li>
         <li class="nav-item pcoded-hasmenu">
             <a href="#!" class="nav-link <?php echo $recargas_syle;?>">
                 <span class="pcoded-micon">
@@ -172,6 +188,7 @@
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas_comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
             </ul>
         </li>
+        <li class="nav-item pcoded-menu-caption"><label>Reportes</label></li>
         <li class="nav-item pcoded-hasmenu">
             <a href="#!" class="nav-link <?php echo $report_syle;?>">
                 <span class="pcoded-micon">

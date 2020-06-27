@@ -66,6 +66,12 @@ function format_number_dolar($number){
     return "$".$number;
 }
 
+function format_number($number){
+    $decimals ="2";
+    $number = number_format($number, $decimals);
+    return $number;
+}
+
 function quitar_coma_number($number){
     $number = str_replace(',','',$number);
     return $number;

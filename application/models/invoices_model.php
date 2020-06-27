@@ -69,12 +69,12 @@ class Invoices_Model extends CI_Model{
   
     public function update($pk, $data){
         $this->db->where($this->table_id, $pk);
-        $this->db->update($this->table, $data);
+        return $this->db->update($this->table, $data);
     }
 
     public function delete($pk){
         $this->db->where($this->table_id, $pk);
-        $this->db->delete($this->table);
+        return $this->db->delete($this->table);
     }
   
     public function get_search_export($data){

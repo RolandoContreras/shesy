@@ -717,7 +717,7 @@ class Catalogo_home extends CI_Controller {
                     'phone' => $phone,
                     'address' => $address,
                     'reference' => $reference,
-                    'active' => 0,
+                    'active' => 1,
                     'status_value' => 1,
                 );
                 $contra_entrega_id = $this->obj_contra_entrega->insert($param);
