@@ -43,6 +43,7 @@
                                   <th class="sorting">Fecha</th>
                                   <th class="sorting">Precio</th>
                                   <th class="sorting">Sumilla</th>
+                                  <th class="sorting">Granel</th>
                                   <th class="sorting">Imagen</th>
                                   <th class="sorting">Estado</th>
                                   <th class="sorting">Acciones</th>
@@ -58,6 +59,15 @@
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;">S/.<?php echo $value->price;?></span></td>
                                 <td><?php echo corta_texto($value->summary,25);?></td>
+                                <td>
+                                     <?php if ($value->granel == 1) {
+                                        $valor = "Si";
+                                    }else{
+                                        $valor = "No";
+                                        
+                                    } ?>
+                                    <span class="badge badge-pill badge-warning" style="font-size: 100%;"><?php echo $valor;?></span>
+                                </td>
                                 <td><img src='<?php echo site_url()."static/catalog/$value->img";?>' width="60"/></td>                                    
                                 <td>
                                     <?php if ($value->active == 0) {
@@ -88,6 +98,7 @@
                                   <th rowspan="1" colspan="1">Fecha</th>
                                   <th rowspan="1" colspan="1">Precio</th>
                                   <th rowspan="1" colspan="1">Sumilla</th>
+                                  <th rowspan="1" colspan="1">Granel</th>
                                   <th rowspan="1" colspan="1">Imagen</th>
                                   <th rowspan="1" colspan="1">Estado</th>
                                   <th rowspan="1" colspan="1">Acciones</th>

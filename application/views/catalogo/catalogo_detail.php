@@ -75,7 +75,9 @@
                                                             Guarde su producto en el carrito y siga comprando.
                                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                                                         </div>
-                                                        <div class="row form-group">
+                                                        <?php 
+                                                        if($obj_catalog->granel == 0){ ?>
+                                                            <div class="row form-group">
                                                             <div class="col-sm-2">
                                                                 <input type="text" class="form-control autonumber" name="talla" id="talla" placeholder="Talla" style="text-transform: uppercase;">
                                                             </div>
@@ -83,15 +85,20 @@
                                                                 <input type="text" class="form-control autonumber" name="color" id="color" placeholder="Color" style="text-transform: uppercase;">
                                                             </div>
                                                         </div>
+                                                        <?php } ?>
                                                         <div class="row form-group">
                                                             <div class="col-sm-2">
-                                                                <label class="col-form-label" style="color:#888 !important;">Ingrese Cantidad</label>
+                                                                <label class="col-form-label" style="color:#888 !important;">Ingrese Cantidad <?php echo $obj_catalog->granel==1?"(Kg)":"";?></label>
                                                             </div>
                                                             <div class="col-sm-3">
                                                                 <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="quantity" id="quantity">
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" data-toggle="tooltip" data-original-title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
+                                                                <?php if($obj_catalog->granel == 0){ ?>
+                                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" data-toggle="tooltip" data-original-title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
+                                                                <?php }else{ ?>
+                                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" data-toggle="tooltip" data-original-title="Agregar al Carrito" onclick="add_cart_granel('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
+                                                                <?php } ?>
                                                             </div>
                                                         </div>
                                                         <div class="form-group has-feedback" style="display: none;" id="quantity_error">

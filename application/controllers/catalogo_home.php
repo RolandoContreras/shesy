@@ -1,7 +1,4 @@
-<?php
-
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+<?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Catalogo_home extends CI_Controller {
 
@@ -308,6 +305,7 @@ class Catalogo_home extends CI_Controller {
                                     catalog.slug,
                                     catalog.summary,
                                     catalog.description,
+                                    catalog.granel,
                                     catalog.price,
                                     catalog.img,
                                     catalog.img2,
@@ -507,7 +505,6 @@ class Catalogo_home extends CI_Controller {
     }
 
     public function add_cart() {
-
         if ($this->input->is_ajax_request()) {
             //GET SESION ACTUALY
             $this->get_session();
@@ -518,7 +515,6 @@ class Catalogo_home extends CI_Controller {
             $talla = $this->input->post('talla');
             $color = $this->input->post('color');
             $name = $this->input->post('name');
-
             //ADD CART
             $data_param = array(
                 'id' => $catalog_id,

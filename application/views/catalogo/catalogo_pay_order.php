@@ -41,8 +41,6 @@
                                     aria-label="Office: activate to sort column ascending">Talla / Color</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Precio</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Sub Total</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -57,16 +55,17 @@
                                     <th>
                                         <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
                                             <p>
-                                                    <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
-                                                            <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+                                                    <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value):
+                                                            if($option_value != null){ ?>
+                                                                <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+                                                            <?php } ?>
                                                     <?php endforeach; ?>
                                             </p>
                                         <?php endif; ?>
                                     </th>
                                     
-                                    <th>S/. <?php echo $this->cart->format_number($items['price']); ?></th>
                                     <th class="text-c-green">
-                                        <span class="badge badge-pill badge-success" style="font-size: 100%;">S/. <?php echo $this->cart->format_number($items['subtotal']); ?></span>
+                                        <span class="badge badge-pill badge-success" style="font-size: 100%;">s/. <?php echo $this->cart->format_number($items['subtotal']); ?></span>
                                         <button type="button" onclick="delete_order('<?php echo $items['rowid'];?>');" class="btn btn-icon" style="color:red;"><i data-feather="trash-2"></i></button>
                                     </th>
                                 </tr>
@@ -74,14 +73,13 @@
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th class="text-c-purple"><b>TOTAL</b></th>
+                                <th class=""><b>TOTAL</b></th>
                                 <th class="text-c-purple">
                                         <span class="badge badge-pill badge-dark" style="font-size: 100%;">
-                                            S/. <?php echo $this->cart->format_number($this->cart->total()); ?>
+                                            s/. <?php echo $this->cart->format_number($this->cart->total()); ?>
                                         </span>
                                         
                                 </th>
-                                <th></th>
                               </tbody>
                             </table>
                               <br/>

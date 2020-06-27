@@ -21,6 +21,7 @@ class D_catalog extends CI_Controller {
                                     catalog.summary,
                                     catalog.name,
                                     catalog.price,
+                                    catalog.granel,
                                     catalog.description,
                                     catalog.img,
                                     catalog.active,
@@ -173,6 +174,7 @@ class D_catalog extends CI_Controller {
                 'img3' => $img3,
                 'summary' => $summary,
                 'date' => date("Y-m-d H:i:s"),
+                'granel' => $this->input->post('granel'),
                 'active' => $active,
                 'updated_at' => date("Y-m-d H:i:s"),
                 'updated_by' => $_SESSION['usercms']['user_id']
@@ -197,6 +199,7 @@ class D_catalog extends CI_Controller {
                 'img3' => $img3,
                 'summary' => $summary,
                 'date' => date("Y-m-d H:i:s"),
+                'granel' => $this->input->post('granel'),
                 'active' => $active,
                 'status_value' => 1,
                 'created_at' => date("Y-m-d H:i:s"),

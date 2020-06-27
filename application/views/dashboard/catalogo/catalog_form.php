@@ -176,6 +176,30 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label for="inputState">Granel (Kg)</label>
+                                                        <select name="granel" id="granel" class="form-control" required>
+                                                            <option value="">[ Seleccionar ]</option>
+                                                            <option value="1" <?php
+                                                            if (isset($obj_catalog)) {
+                                                                if ($obj_catalog->granel == 1) {
+                                                                    echo "selected";
+                                                                }
+                                                            } else {
+                                                                echo "";
+                                                            }
+                                                            ?>>Si</option>
+                                                            <option value="0" <?php
+                                                            if (isset($obj_catalog)) {
+                                                                if ($obj_catalog->granel == 0) {
+                                                                    echo "selected";
+                                                                }
+                                                            } else {
+                                                                echo "";
+                                                            }
+                                                            ?>>No</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label for="inputState">Estado</label>
                                                         <select name="active" id="active" class="form-control" required>
                                                             <option value="">[ Seleccionar ]</option>
