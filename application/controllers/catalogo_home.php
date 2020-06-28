@@ -190,6 +190,7 @@ class Catalogo_home extends CI_Controller {
         $url = "mi_catalogo/$category";
         $this->tmp_catalog->set("url", $url);
         $this->tmp_catalog->set("category_name", $category_name);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_catalog", $obj_catalog);
