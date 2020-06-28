@@ -88,10 +88,10 @@
                                                         <?php } ?>
                                                         <div class="row form-group">
                                                             <div class="col-sm-2">
-                                                                <label class="col-form-label" style="color:#888 !important;">Ingrese Cantidad <?php echo $obj_catalog->granel==1?"(Kg)":"";?></label>
+                                                                <label class="col-form-label" style="color:#888 !important;">Cantidad <?php echo $obj_catalog->granel==1?"(Kg) / (Und)":"";?></label>
                                                             </div>
                                                             <div class="col-sm-3">
-                                                                <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="quantity" id="quantity">
+                                                                <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="quantity" id="quantity" placeholder="Ingrese Cantidad">
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <?php if($obj_catalog->granel == 0){ ?>

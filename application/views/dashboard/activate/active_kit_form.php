@@ -33,7 +33,7 @@
                           <div class="form-group col-md-6">
                               <div class="form-group">
                                 <label>Usuario</label>
-                                <input class="form-control" onblur="validate_user(this.value);" type="text" id="username" name="username" class="input-xlarge-fluid" placeholder="Ingrese Usuario">
+                                <input class="form-control" onblur="validate_user(this.value);" type="text" id="username" name="username" class="input-xlarge-fluid" placeholder="Ingrese Usuario" required="">
                                 <input type="hidden" id="customer_id" name="customer_id">
                                 <input type="hidden" id="type" name="types" value="1">
                                 <span class="alert-0"></span>
@@ -51,7 +51,7 @@
                           <div class="form-group col-md-6">
                               <div class="form-group">
                               <label for="inputState">Kit</label>
-                                <select name="kit_id" id="kit_id" class="form-control">
+                              <select name="kit_id" id="kit_id" class="form-control" required="">
                                 <option value="">[ Seleccionar ]</option>
                                     <?php foreach ($obj_kit as $value ): ?>
                                 <option value="<?php echo $value->kit_id;?>">
