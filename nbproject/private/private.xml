@@ -20,15 +20,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/shesy/application/config/routes.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/helpers/basico_helper.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/models/customer_model.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/catalogo_home.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/contra_entrega/contra_entrega_list.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/templates/admin_tmp.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_detail.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/activate/active_kit_form.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/d_activate.php</file>
             <file>file:/C:/wamp64/www/shesy/application/controllers/d_contra_entrega.php</file>
-            <file>file:/C:/wamp64/www/shesy/static/cms/js/contra_entrega.js</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/contra_entrega/contra_entrega_detail.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/activate/activate_list.php</file>
         </group>
     </open-files>
 </project-private>

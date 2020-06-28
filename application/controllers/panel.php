@@ -19,11 +19,11 @@ class Panel extends CI_Controller{
          //GET PENDING ROWS
         $params = array("select" =>"count(*) as pending_comments,
                                     (select count(*) from pay where active = 1) as pending_pay,
+                                    (SELECT count(*) FROM (invoices) JOIN contra_entrega ON invoices.invoice_id = contra_entrega.invoice_id WHERE invoices.active = 1) as pending_contra_entrega,
                                     (select count(*) from invoices where delivery = 1 and type = 2 and active = 2) as pending_invoices_catalog,
                                     (select count(*) from embassy where active = 1 and status_value = 1) as pending_embassy",
                         "where" => "active = 1");
         $obj_pending = $this->obj_comments->get_search_row($params);
-        
         //GET DATE FOR MONTH
         $first_day_month =  first_month_day_actual();
         $last_day_month =  last_month_day_actual();
@@ -91,6 +91,7 @@ class Panel extends CI_Controller{
                                     (select count(*) from category) as total_category,
                                     (select count(*) from kit) as total_kit,
                                     (select count(*) from invoices) as total_invoices,
+                                    (select count(*) from invoices where type =2) as total_invoices_catalog,
                                     (select count(*) from ranges) as total_ranges,
                                     (select count(*) from pay) as total_pay");
         $obj_total = $this->obj_comments->get_search_row($params);
