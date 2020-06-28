@@ -17,6 +17,7 @@
         <link rel="manifest" href="<?php echo site_url() . 'static/page_front/images/logo/favico/site.webmanifest'; ?>">
         <!--//END FAVICON-->
         <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/style.css'; ?>">
+        
         <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/gallery.css'; ?>">
         <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/ekko-lightbox.min.css'; ?>">
         <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/lightbox.min.css'; ?>">
