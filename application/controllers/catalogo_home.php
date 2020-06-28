@@ -76,7 +76,7 @@ class Catalogo_home extends CI_Controller {
         $config = array();
         $config["base_url"] = site_url("mi_catalogo");
         $config["total_rows"] = $this->obj_catalog->total_records($params);
-        $config["per_page"] = 12;
+        $config["per_page"] = 1;
         $config["num_links"] = 1;
         $config["uri_segment"] = 2;
 
@@ -86,7 +86,7 @@ class Catalogo_home extends CI_Controller {
         $config['prev_tag_close'] = '</li>';
         $config['num_tag_open'] = '<li class="paginate_button page-item">';
         $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class=" paginate_button page-item active"><a class="page-link">';
+        $config['cur_tag_open'] = '<li class=" paginate_button page-item"><a class="page-link">';
         $config['cur_tag_close'] = '</a></li>';
         $config['next_tag_open'] = '<li class="paginate_button page-item">';
         $config['next_tag_close'] = '</a></li>';
