@@ -66,9 +66,8 @@ class Crone extends CI_Controller {
                     ); 
                     $this->obj_customer->update($value->customer_id,$data);
                 }
-                
             }
         }
-        echo exito;
+        echo "exito";
     }
 }
