@@ -97,7 +97,7 @@
                             <ul class="pcoded-submenu" style="display: block;">
                                 <?php foreach ($obj_category_catalogo as $value) { ?>
                                     <li class="pcoded-hasmenu pcoded-trigger">
-                                        <a href="<?php echo site_url() . "mi_catalogo/$value->slug"; ?>" class=""><?php echo $value->name; ?></a>
+                                        <a href="<?php echo site_url() . "mi_catalogo/$value->slug"; ?>"><b><?php echo $value->name; ?></b></a>
                                         <ul class="pcoded-submenu" style="display: block;">
                                             <?php foreach ($obj_sub_category as $value_sub) {
                                                 if ($value_sub->category_id == $value->category_id) {?>
