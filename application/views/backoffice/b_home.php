@@ -165,22 +165,30 @@
 
                                                     <div class="d-block d-sm-none"> 
                                                         <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$var_next_range"; ?>' style="max-width: 70px;"> 
-                                                        <img class="img-responsive" src="https://cdn.onlinewebfonts.com/svg/img_317292.png" style="max-width: 30px; margin: 0 20px; opacity: 0.2;"> 
+                                                        <img class="img-responsive" src="<?php echo site_url().'static/backoffice/images/arrow-rigth.png'?>" style="max-width: 30px; margin: 0 20px; opacity: 0.2;"> 
                                                         <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_next_range->img"; ?>' style="max-width: 70px;">                          
                                                     </div>
                                                     <div class="d-none d-sm-block"> 
                                                         <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$var_next_range"; ?>' style="max-width: 90px;"> 
-                                                        <img class="img-responsive" src="https://cdn.onlinewebfonts.com/svg/img_317292.png" style="max-width: 60px; margin: 0 20px; opacity: 0.2;"> 
+                                                        <img class="img-responsive" src="<?php echo site_url().'static/backoffice/images/arrow-rigth.png'?>" style="max-width: 60px; margin: 0 20px; opacity: 0.2;"> 
                                                         <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_next_range->img"; ?>' style="max-width: 90px;">                          
                                                     </div>
                                                 </div>
+                                                <?php 
+                                                if($obj_points->puntos == 0){
+                                                    $percent = 0;
+                                                }else{
+                                                    $percent = ($obj_points->puntos / $obj_next_range->point_grupal) * 100;
+                                                    $percent = ceil($percent);
+                                                }
+                                                ?>
                                                 <div class="os-progress-bar warning">
                                                     <div class="bar-labels">
-                                                        <div class="bar-label-left"> 0% </div>
-                                                        <div class="bar-label-right"> <span class="info">0 / <?php echo format_number_miles($obj_next_range->point_grupal); ?></span> </div>
+                                                        <div class="bar-label-left"> <?php echo $percent;?>% </div>
+                                                        <div class="bar-label-right"> <span class="info"><?php echo $obj_points->puntos;?> / <?php echo format_number_miles($obj_next_range->point_grupal); ?></span> </div>
                                                     </div>
                                                     <div class="bar-level-1" style="width: 100%">
-                                                        <div class="bar-level-3" style="width: 0%"></div>
+                                                        <div class="bar-level-3" style="width: <?php echo $percent;?>%"></div>
                                                     </div>
                                                 </div>
                                             </div>
