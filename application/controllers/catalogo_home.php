@@ -76,7 +76,7 @@ class Catalogo_home extends CI_Controller {
         $config = array();
         $config["base_url"] = site_url("mi_catalogo");
         $config["total_rows"] = $this->obj_catalog->total_records($params);
-        $config["per_page"] = 1;
+        $config["per_page"] = 12;
         $config["num_links"] = 1;
         $config["uri_segment"] = 2;
 
