@@ -76,7 +76,7 @@ class Catalog extends CI_Controller {
         $config = array();
         $config["base_url"] = site_url("catalogo");
         $config["total_rows"] = $this->obj_catalog->total_records($params);
-        $config["per_page"] = 12;
+        $config["per_page"] = 1;
         $config["num_links"] = 1;
         $config["uri_segment"] = 2;
 
@@ -96,7 +96,7 @@ class Catalog extends CI_Controller {
         $this->pagination->initialize($config);
         $data['obj_pagination'] = $this->pagination->create_links();
         /// DATA
-        $data['obj_catalog'] = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(3));
+        $data['obj_catalog'] = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
         //send total row
         $data['total'] = $config["total_rows"];
 
