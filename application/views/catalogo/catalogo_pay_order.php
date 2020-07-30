@@ -65,7 +65,7 @@
                                     </th>
                                     
                                     <th class="text-c-green">
-                                        <span class="badge badge-pill badge-success" style="font-size: 100%;">s/. <?php echo $this->cart->format_number($items['subtotal']); ?></span>
+                                        <span class="badge badge-pill badge-success" style="font-size: 100%;">&dollar; <?php echo $this->cart->format_number($items['subtotal']); ?></span>
                                         <button type="button" onclick="delete_order('<?php echo $items['rowid'];?>');" class="btn btn-icon" style="color:red;"><i data-feather="trash-2"></i></button>
                                     </th>
                                 </tr>
@@ -76,7 +76,7 @@
                                 <th class=""><b>TOTAL</b></th>
                                 <th class="text-c-purple">
                                         <span class="badge badge-pill badge-dark" style="font-size: 100%;">
-                                            s/. <?php echo $this->cart->format_number($this->cart->total()); ?>
+                                            &dollar; <?php echo $this->cart->format_number($this->cart->total()); ?>
                                         </span>
                                         
                                 </th>

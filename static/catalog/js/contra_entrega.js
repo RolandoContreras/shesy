@@ -35,3 +35,8 @@ function procesar_contra_entrega() {
         }
     });
 }
+
+function regresar() {
+    var url = 'mi_catalogo/pay_order';
+     location.href = site + url;   
+}

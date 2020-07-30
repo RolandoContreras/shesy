@@ -52,9 +52,9 @@
                                                                         <td>
                                                                             <?php echo format_number_miles($this->cart->format_number($items['qty'])); ?>
                                                                         </td>
-                                                                        <td>S/. <?php echo $this->cart->format_number($items['price']); ?></td>
+                                                                        <td>&dollar; <?php echo $this->cart->format_number($items['price']); ?></td>
                                                                         <th>
-                                                                            s/.<?php echo $this->cart->format_number($items['subtotal']); ?>
+                                                                            &dollar; <?php echo $this->cart->format_number($items['subtotal']); ?>
                                                                         </th>
                                                                     </tr>
                                                                 <?php endforeach; ?>
@@ -63,7 +63,7 @@
                                                                     <th><b>TOTAL</b></th>
                                                                     <th class="text-c-purple">
                                                                         <span class="badge badge-pill badge-success" style="font-size: 100%;">
-                                                                            S/. <?php echo $this->cart->format_number($this->cart->total()); ?>
+                                                                            &dollar; <?php echo $this->cart->format_number($this->cart->total()); ?>
                                                                         </span>
 
                                                                     </th>
@@ -106,6 +106,7 @@
                                                                         </div>
                                                                         <div class="form-group col-md-12">
                                                                             <div class="form-group">
+                                                                                <button type="button" onclick="regresar();" class="btn btn-info"><i data-feather="arrow-left"></i> Regresar</button>
                                                                                 <button id="save_entrega" type="submit" class="btn btn-success">Solicitar Pedido &nbsp;&nbsp;<i data-feather="user-check"></i></button>
                                                                                 <button class="btn btn-success"  type="button" style="display: none;" id="spinner_entrega">
                                                                                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
