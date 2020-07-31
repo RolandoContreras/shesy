@@ -40,7 +40,7 @@
                 <div class="element-box" id="show_information" style="display:none;">
                     <div id="res">
                         <p>Sin Información</p>
-                        <p>De producto</p>
+                        <p>Código no valido</p>
                     </div>
               </div>
             </div>

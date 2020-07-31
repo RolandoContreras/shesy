@@ -44,20 +44,20 @@ function show_information() {
                 texto = texto+'<div class="row">';
                 texto = texto+'<div class="col-sm-4">';
                 texto = texto+'<div class="form-group"> ';
-                texto = texto+'<label class="control-label">Puntos 1°</label> ';
+                texto = texto+'<label class="control-label">Puntos 3°</label> ';
                 texto = texto+'<input type="text" class="form-control" value="'+ data.obj_catalog.bono_n3 +'" disabled="">';
                 texto = texto+'</div>';   
                 texto = texto+'</div>';   
                 texto = texto+'<div class="col-sm-4">';
                 texto = texto+'<div class="form-group"> ';
-                texto = texto+'<label class="control-label">Puntos 2°</label> ';
+                texto = texto+'<label class="control-label">Puntos 4°</label> ';
                 texto = texto+'<input type="text" class="form-control" value="'+ data.obj_catalog.bono_n4 +'" disabled="">';
                 texto = texto+'</div>';   
                 texto = texto+'</div>';  
                 
                 texto = texto+'<div class="col-sm-4">';
                 texto = texto+'<div class="form-group"> ';
-                texto = texto+'<label class="control-label">Puntos 2°</label> ';
+                texto = texto+'<label class="control-label">Puntos 25°</label> ';
                 texto = texto+'<input type="text" class="form-control" value="'+ data.obj_catalog.bono_n5 +'" disabled="">';
                 texto = texto+'</div>';   
                 
@@ -65,9 +65,6 @@ function show_information() {
                 $("#res").html(texto);
             }else{
                 document.getElementById("show_information").style.display = "block";
-                texto = texto+'<p>';
-                texto = texto+'El código no es válido';
-                texto = texto+'</p>';   
                 $("#res").html(texto);
             }
         }
