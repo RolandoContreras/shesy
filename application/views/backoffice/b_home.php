@@ -44,6 +44,12 @@
                                     <div class="value"> &dollar; <?php echo $obj_total_commissions->total_disponible != "" ? $obj_total_commissions->total_disponible : "0.00"; ?> </div>
                                 </div>
                             </div>
+                            <div class="col-md-3">
+                                <div class="element-box el-tablo">
+                                    <div class="label"> Ganancia para compra </div>
+                                    <div class="value"> &dollar; <?php echo $obj_total_commissions->total_disponible != "" ? $obj_total_commissions->total_disponible : "0.00"; ?> </div>
+                                </div>
+                            </div>
                             <div class="col-md-3 d-none d-sm-block">
                                 <div class="profile-tile">
                                     <a class="profile-tile-box" href="<?php echo site_url() . 'backoffice/carrera'; ?>" style="width: 100%;"> <img src='<?php echo site_url() . "static/backoffice/images/plan/$obj_customer->kit_img"; ?>' alt="plan" width="80"/>
@@ -51,12 +57,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="element-box el-tablo">
-                                    <div class="label"> Rango Actual </div>
-                                    <div class="value"> <img src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_customer->img"; ?>' alt="rango" width="70"/></div>
-                                </div>
-                            </div>
+                            
                             <div class="col-md-3 d-none d-sm-block">
                                 <div class="profile-tile">
                                     <a class="profile-tile-box" href="<?php echo site_url() . 'backoffice/referred'; ?>" style="width: 100%;"> <i class="os-icon os-icon-users" style="font-size: 35px; color: #4a3116;"></i>
@@ -78,11 +79,10 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-sm-block">
-                                <div class="profile-tile">
-                                    <a class="profile-tile-box" href="<?php echo site_url() . 'backoffice/carrera'; ?>" style="width: 100%;"> <i class="os-icon os-icon-map" style="font-size: 35px; color: #4a3116;"></i>
-                                        <div class="pt-user-name"> PRÓXIMO RANGO<br> <b><?php echo $obj_next_range->name; ?></b> </div>
-                                    </a>
+                            <div class="col-md-3">
+                                <div class="element-box el-tablo">
+                                    <div class="label"> Rango Actual </div>
+                                    <div class="value"> <img src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_customer->img"; ?>' alt="rango" width="70"/></div>
                                 </div>
                             </div>
                         </div>
