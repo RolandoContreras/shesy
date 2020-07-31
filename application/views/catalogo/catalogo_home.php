@@ -54,7 +54,7 @@
                                                         <img width="400" height="260" src="<?php echo site_url() . "static/catalog/$value->img"; ?>" alt="advance-3">
                                                         <figcaption>
                                                             <p><?php echo corta_texto($value->summary, 100); ?></p>
-                                                            <a href="<?php echo site_url() . "mi_catalogo/$value->category_slug/$value->slug"; ?>">Ver Más</a>
+                                                            <a href="<?php echo site_url() . "mi_catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>">Ver Más</a>
                                                         </figcaption>
                                                     </figure>
                                                 <?php

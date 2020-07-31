@@ -288,17 +288,9 @@ class Catalogo_home extends CI_Controller {
         //get nav cursos
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
-
-        //get data catalog
-        $params_categogory_id = array(
-            "select" => "category_id",
-            "where" => "slug like '%$slug%'");
-        $obj_category = $this->obj_category->get_search_row($params_categogory_id);
-        $category_id = $obj_category->category_id;
-
+        //get data nav
         $url = explode("/", uri_string());
-        $slug_2 = $url[2];
-
+        $catalog_id = $url[2];
         //get catalog
         $params = array(
             "select" => "catalog.catalog_id,
@@ -316,9 +308,8 @@ class Catalogo_home extends CI_Controller {
                                     category.slug as category_slug,
                                     category.name as category_name",
             "join" => array('category, category.category_id = catalog.category_id'),
-            "where" => "catalog.slug = '$slug_2' and catalog.category_id = $category_id and catalog.active = 1");
+            "where" => "catalog.catalog_id = '$catalog_id' and catalog.active = 1");
         $obj_catalog = $this->obj_catalog->get_search_row($params);
-
 
         $params = array(
             "select" => "catalog.catalog_id,
@@ -333,7 +324,7 @@ class Catalogo_home extends CI_Controller {
                                     category.slug as category_slug,
                                     catalog.date",
             "join" => array('category, category.category_id = catalog.category_id'),
-            "where" => "catalog.category_id = $category_id and catalog.active = 1",
+            "where" => "category.slug = '$slug' and catalog.active = 1",
             "order" => "rand()",
             "limit" => "6");
         $obj_catalog_all = $this->obj_catalog->search($params);
