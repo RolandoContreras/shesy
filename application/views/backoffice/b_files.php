@@ -11,6 +11,44 @@
         <h6 class="element-header">Material de Apoyo</h6>
         <div class="col-md-12">
           <div class="row">
+            <div class="col-md-6">
+              <div class="element-info-with-icon">
+                    <div class="element-info-icon">
+                      <div class="os-icon os-icon-edit-1"></div>
+                    </div>
+                    <div class="element-info-text">
+                      <h5 class="element-inner-header"> Información de Producto </h5>
+                    </div>
+                  </div>
+                  <div class="body" style="margin-top: 30px;">
+                    <div id="show_wallet_div">
+                        <form class="form-horizontal" onsubmit="show_information();" enctype="multipart/form-data" action="javascript:void(0);"> 
+                            <div class="form-group"> 
+                                <label class="control-label"> Ingrese código de producto </label> 
+                                <input type="text" name="catalog_id" id="catalog_id" class="form-control" placeholder="Ingrese Código">
+                            </div>
+                            <div class="form-group">
+                              <div class="col-lg-12" align="right"> 
+                                  <button class="btn btn-success" type="submit" style="margin-top: 30px;">Buscar <i class="fa fa-search"></i></button>        
+                              </div>
+                            </div>
+                          </form>
+                    </div> 
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="element-box" id="show_information" style="display:none;">
+                    <div id="res">
+                        <p>Sin Información</p>
+                        <p>De producto</p>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="col-md-12">
+          <div class="row">
             <div class="col-md-3">
               <div class="element-box p-2">
                 <div class="card">
@@ -94,3 +132,5 @@
     </div>
   </div>
 </div>
+<script src="<?php echo site_url(); ?>static/catalog/js/materiales.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

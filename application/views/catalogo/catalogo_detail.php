@@ -64,8 +64,13 @@
                                                         <h3>
                                                             <span class="badge badge-pill badge-info" style="font-size: 100%;">&dollar; <?php echo $obj_catalog->price; ?></span>
                                                         </h3>
+                                                        
                                                         <br/>
                                                         <?php echo $obj_catalog->description; ?>
+                                                        <h6 class="mt-3">Código de Producto</h6>
+                                                        <p class="mb-1">
+                                                            #<?php echo $obj_catalog->catalog_id; ?>
+                                                        </p>
                                                         <h6 class="mt-3">Categoría</h6>
                                                         <p class="text-primary mb-1">
                                                             <a href="<?php echo site_url() . "mi_catalogo/$obj_catalog->category_slug"; ?>"><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $obj_catalog->category_name; ?></span></a>

@@ -118,6 +118,7 @@ $route['backoffice/invoice'] = "b_finance/invoice";
 $route['backoffice/invoice/upload'] = "b_finance/upload";
 
 $route['backoffice/files'] = "b_files";
+$route['backoffice/files/show_information'] = "b_files/show_information";
 
 $route['backoffice/carrera'] = "b_carrera";
 

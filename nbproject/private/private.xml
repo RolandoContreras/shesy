@@ -19,6 +19,13 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_detail.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_pay_order.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/catalog/js/order.js</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/catalog.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_contra_entrega.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/catalog/js/contra_entrega.js</file>
+        </group>
     </open-files>
 </project-private>
