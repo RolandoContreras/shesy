@@ -23,16 +23,22 @@
                 <div class="element-wrapper">
                   <h6 class="element-header"> Resumen </h6>
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="element-box el-tablo">
                         <div class="label"> GANANCIA TOTAL </div>
                         <div class="value"> &dollar;<?php echo $total_comisiones!=""?$total_comisiones:"0.00";?> </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="element-box el-tablo">
                         <div class="label"> GANANCIA DISPONIBLE </div>
                         <div class="value"> &dollar;<?php echo $total_disponible!=""?$total_disponible:"0.00";?> </div>
+                      </div>
+                    </div>
+                      <div class="col-md-4">
+                      <div class="element-box el-tablo">
+                        <div class="label"> GANANCIA DE COMPRA </div>
+                        <div class="value"> &dollar;<?php echo "0.00";?> </div>
                       </div>
                     </div>
                   </div>
