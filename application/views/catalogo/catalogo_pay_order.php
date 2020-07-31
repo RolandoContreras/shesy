@@ -152,7 +152,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="alert alert-primary mb-0" role="alert">
-                                                            <p><a class="alert-link">Información</a><br/><br/>Luego de hacer el envió a nuestros números de cuenta, comunícate con nosotros a través de nuestros canales oficiales, enviar el comprobante de pago, el usuario y el producto a comprar. En los próximos minutos estaremos procesando su pedido.</p>
+                                                            <p><a class="alert-link">Información</a><br/><br/>Luego de hacer el envió a nuestros números de cuenta, comunícate con nosotros a través de nuestro whatsapp +51 923870996, enviar el comprobante de pago, el usuario y el producto a comprar. En los próximos minutos estaremos procesando su pedido.</p>
                                                         </div>
                                                     </div>
                                                     <div class="form-group has-feedback" id="pay_success_2" style="display: none">
