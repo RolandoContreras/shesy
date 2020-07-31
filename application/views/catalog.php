@@ -94,7 +94,7 @@
                         </div>
                         <div class="product-content">
                             <div class="title-product">
-                                <a href="<?php echo site_url()."catalog/$value->category_slug/$value->slug";?>" class="product_name"><?php echo $value->name;?></a></div>
+                                <a href="<?php echo site_url()."catalogo/$value->category_slug/$value->slug";?>" class="product_name"><?php echo $value->name;?></a></div>
                                     <span class="price">
                                          <span class="woocommerce-Price-amount amount">$<?php echo $value->price;?></span>
                                     </span>
