@@ -213,7 +213,6 @@
   <?php $this->load->view("footer_2");?>  
   <!--END FOOTER-->
   </div>
-  <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
   <div class="gallery-slider-content"></div>
         <script>
             var BP_Nouveau = {"ajaxurl": "", "object_nav_parent": "#buddypress", "objects": {"0": "activity", "1": "members", "4": "xprofile", "7": "settings", "8": "notifications"}, "nonces": {"activity": "fcd5ecf43e", "members": "9af41e8848", "xprofile": "10dfc2af2b", "settings": "8d89e10911"}};
