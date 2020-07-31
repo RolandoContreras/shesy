@@ -26,13 +26,13 @@
                     <div class="col-md-6">
                       <div class="element-box el-tablo">
                         <div class="label"> GANANCIA TOTAL </div>
-                        <div class="value"> S/. <?php echo $total_comisiones!=""?$total_comisiones:"0.00";?> </div>
+                        <div class="value"> &dollar;<?php echo $total_comisiones!=""?$total_comisiones:"0.00";?> </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="element-box el-tablo">
                         <div class="label"> GANANCIA DISPONIBLE </div>
-                        <div class="value"> S/. <?php echo $total_disponible!=""?$total_disponible:"0.00";?> </div>
+                        <div class="value"> &dollar;<?php echo $total_disponible!=""?$total_disponible:"0.00";?> </div>
                       </div>
                     </div>
                   </div>

@@ -37,7 +37,7 @@
                                           <span class="lighter"><?php echo $value->invoice_id;?></span>
                                       </td>
                                       <td align="center"> 
-                                          <span>S/. <?php echo $value->price;?></span> <br> 
+                                          <span>&dollar; <?php echo $value->price;?></span> <br> 
                                       </td>
                                       <td align="center">
                                           <?php 
@@ -99,10 +99,6 @@
                           </div>
                         </div>
             <?php } ?>
-            
-            
-                 
-                
               </div> 
             </div> 
           </div> 

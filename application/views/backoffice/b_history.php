@@ -23,7 +23,7 @@
                 <div class="tab-pane active" id="tab_overview">
                   <div class="el-tablo">
                     <div class="label"> Ganacia Total </div>
-                    <div class="value" id="bonustotal">S/. <?php echo $obj_total->total!=""?$obj_total->total:"0.00";?></div>
+                    <div class="value" id="bonustotal">&dollar;<?php echo $obj_total->total!=""?$obj_total->total:"0.00";?></div>
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                 <div class="tab-pane active" id="tab_overview">
                   <div class="el-tablo">
                     <div class="label"> Ganacia Unilevel </div>
-                    <div class="value" id="bonustotal">S/. <?php echo $obj_total->total_unilevel!=""?$obj_total->total_unilevel:"0.00";?></div>
+                    <div class="value" id="bonustotal">&dollar;<?php echo $obj_total->total_unilevel!=""?$obj_total->total_unilevel:"0.00";?></div>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@
                                           <span class="smaller lighter "> <?php echo formato_fecha_minutos($value->date);?><i class="far fa-clock "></i></span>
                                       </td>
                                       <td align="center">
-                                          <span class="badge badge-success-inverted "> + S/. <?php echo $value->amount;?></span>
+                                          <span class="badge badge-success-inverted "> + &dollar;<?php echo $value->amount;?></span>
                                       </td>
                                 </tr>
                          <?php } ?>

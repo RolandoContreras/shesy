@@ -35,13 +35,13 @@
                             <div class="col-md-3">
                                 <div class="element-box el-tablo">
                                     <div class="label"> Ganancia Total </div>
-                                    <div class="value"> S/. <?php echo $obj_total_commissions->total_comissions != "" ? $obj_total_commissions->total_comissions : "0.00"; ?> </div>
+                                    <div class="value"> &dollar; <?php echo $obj_total_commissions->total_comissions != "" ? $obj_total_commissions->total_comissions : "0.00"; ?> </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="element-box el-tablo">
                                     <div class="label"> Ganancia DISPONIBLE </div>
-                                    <div class="value"> S/. <?php echo $obj_total_commissions->total_disponible != "" ? $obj_total_commissions->total_disponible : "0.00"; ?> </div>
+                                    <div class="value"> &dollar; <?php echo $obj_total_commissions->total_disponible != "" ? $obj_total_commissions->total_disponible : "0.00"; ?> </div>
                                 </div>
                             </div>
                             <div class="col-md-3 d-none d-sm-block">
@@ -119,7 +119,7 @@
                                                             <span class="smaller lighter "> <?php echo formato_fecha_minutos($value->date); ?><i class="far fa-clock "></i></span>
                                                         </td>
                                                         <td align="center">
-                                                            <span class="badge badge-success-inverted "> + <?php echo $value->amount; ?></span>
+                                                            <span class="badge badge-success-inverted "> + &dollar;<?php echo $value->amount; ?></span>
                                                         </td>
                                                     </tr>
 <?php } ?>
