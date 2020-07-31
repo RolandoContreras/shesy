@@ -73,9 +73,8 @@
               
                               <label for="inputState">Bono</label>
                                 <select name="bonus_id" id="bonus_id" class="form-control">
-                                    <option value="1" <?php if($obj_comission->bonus_id == 1){ echo "selected";}?>>Referido</option>
-                                    <option value="2" <?php if($obj_comission->bonus_id == 2){ echo "selected";}?>>Unilevel</option>
-                                    <option value="3" <?php if($obj_comission->bonus_id == 3){ echo "selected";}?>>Maching</option>
+                                    <option value="1" <?php if($obj_comission->bonus_id == 1){ echo "selected";}?>>Unilevel</option>
+                                    <option value="2" <?php if($obj_comission->bonus_id == 2){ echo "selected";}?>>Recarga</option>
                                 </select>
                           </div>
                         </div>
