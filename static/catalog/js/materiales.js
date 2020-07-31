@@ -65,6 +65,10 @@ function show_information() {
                 $("#res").html(texto);
             }else{
                 document.getElementById("show_information").style.display = "block";
+                $("#res").html();
+                var texto = "";
+                texto = texto+'<p>Sin Información</p>';
+                texto = texto+'<p>Código no valido</p>';
                 $("#res").html(texto);
             }
         }
