@@ -127,7 +127,10 @@ class B_home extends CI_Controller {
             "where" => "customer_id = $customer_id and active = 1");
         //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
-
+        //get data img
+        $obj_profile = $this->get_profile($customer_id);
+        //send data
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_total_commissions", $obj_total_commissions);
         $this->tmp_backoffice->set("obj_points", $obj_points);
         $this->tmp_backoffice->set("obj_commissions", $obj_commissions);
@@ -135,6 +138,19 @@ class B_home extends CI_Controller {
         $this->tmp_backoffice->set("obj_total_referidos", $obj_total_referidos);
         $this->tmp_backoffice->set("obj_customer", $obj_customer);
         $this->tmp_backoffice->render("backoffice/b_home");
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
 
     public function update_session_active_month($data_month) {

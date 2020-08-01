@@ -37,10 +37,25 @@ class B_profile extends CI_Controller {
                         );
 
         $obj_customer = $this->obj_customer->get_search_row($params);
-        
+        //get data img
+        $obj_profile = $this->get_profile($customer_id);
         //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
         $this->tmp_backoffice->render("backoffice/b_profile");
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
     
     public function get_messages_informative(){
