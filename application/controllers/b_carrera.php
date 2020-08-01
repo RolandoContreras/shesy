@@ -15,8 +15,9 @@ class B_carrera extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
         //GET RANGE ACTUALLY
-        //GET DATA CUSTOMER
         $params = array(
                         "select" =>"ranges.range_id,
                                     ranges.img,
@@ -44,10 +45,24 @@ class B_carrera extends CI_Controller {
                     $point_personal = $this->obj_points->get_search_row($params);
                     $point = $point_personal->total_point;
         
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("point",$point);
         $this->tmp_backoffice->set("obj_range",$obj_range);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
         $this->tmp_backoffice->render("backoffice/b_carrera");
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
     
     public function get_session(){          

@@ -18,6 +18,10 @@ class B_plan extends CI_Controller {
         //GET SESION ACTUALY
         $this->get_session();
         //GET PLAN INFORMATION
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
+        //kt_id
         $kit_id = $_SESSION['customer']['kit_id'];
         $params = array(
                         "select" =>"kit_id,
@@ -33,6 +37,7 @@ class B_plan extends CI_Controller {
         $obj_kit = $this->obj_kit->search($params);
         
         //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("kit_id",$kit_id);
         $this->tmp_backoffice->set("obj_kit",$obj_kit);
         $this->tmp_backoffice->render("backoffice/b_plan");
@@ -42,6 +47,10 @@ class B_plan extends CI_Controller {
     {
         //GET SESION ACTUALY
         $this->get_session();
+        //GET PLAN INFORMATION
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
         //GET PLAN INFORMATION
         $kit_id = $_SESSION['customer']['kit_id'];
         $params = array(
@@ -56,9 +65,23 @@ class B_plan extends CI_Controller {
                         );
         $obj_kit = $this->obj_kit->search($params);
         //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("kit_id",$kit_id);
         $this->tmp_backoffice->set("obj_kit",$obj_kit);
         $this->tmp_backoffice->render("backoffice/b_recompra");
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
     
     public function create_invoice(){

@@ -13,7 +13,6 @@ class B_network extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER ACTUALLY
         $customer_id = $_SESSION['customer']['customer_id'];
-        
         //GET REFERIDOS INFORMATION
         $params = array(
                         "select" =>"customer.customer_id,
@@ -54,7 +53,8 @@ class B_network extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER ACTUALLY
         $customer_id = $_SESSION['customer']['customer_id'];
-        
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
         //GET DATA URL
         $url = explode("/",uri_string());
         
@@ -220,9 +220,23 @@ class B_network extends CI_Controller {
         $obj_total_referidos = $this->obj_unilevel->total_records($params);    
         
         //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_total_referidos",$obj_total_referidos);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
         $this->tmp_backoffice->render("backoffice/b_unilevel");
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
     
     public function get_session(){          

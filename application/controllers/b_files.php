@@ -1,12 +1,11 @@
-<?php
-
-if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class B_files extends CI_Controller {
 
     function __construct() {
         parent::__construct();
         $this->load->model("catalog_model", "obj_catalog");
+        $this->load->model("customer_model", "obj_customer");
     }
 
     public function index() {
@@ -14,6 +13,9 @@ class B_files extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->render("backoffice/b_files");
     }
 
@@ -46,6 +48,19 @@ class B_files extends CI_Controller {
             echo json_encode($data);
             exit();
         }
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
 
     public function get_session() {

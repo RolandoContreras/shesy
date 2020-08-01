@@ -52,8 +52,10 @@ class B_finance extends CI_Controller {
     public function invoice(){
         //GET SESION ACTUALY
         $this->get_session();
-        /// VISTA
+        //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
         //GET DATA COMISION
         //TYPE 1 -  plan
         //TYPE 2 -  catalog
@@ -71,6 +73,7 @@ class B_finance extends CI_Controller {
         $obj_invoices = $this->obj_invoices->search($params);
 
         //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_invoices",$obj_invoices);
         $this->tmp_backoffice->render("backoffice/b_invoice");
     }
@@ -125,8 +128,6 @@ class B_finance extends CI_Controller {
                 }
             }
         }
-        
-        
 
     public function get_session(){          
         if (isset($_SESSION['customer'])){

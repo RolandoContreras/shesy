@@ -16,8 +16,9 @@ class B_pay extends CI_Controller {
          $this->get_session();
         //GET CUSTOMER_ID $_SESSION   
         $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
         $active_month = $_SESSION['customer']['active_month'];
-        
         date_default_timezone_set('America/Lima');
         $params = array(
                         "select" =>"pay.date,
@@ -58,7 +59,8 @@ class B_pay extends CI_Controller {
         }else{
             $total_disponible = $obj_total_commissions->total_disponible;
         }
-        
+
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);        
         $this->tmp_backoffice->set("bank",$bank);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
         $this->tmp_backoffice->set("total_comisiones",$total_comisiones);
@@ -139,6 +141,19 @@ class B_pay extends CI_Controller {
                 $data['result'] = format_number_miles($result);
             echo json_encode($data);
             }
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
     
     public function get_session(){          
