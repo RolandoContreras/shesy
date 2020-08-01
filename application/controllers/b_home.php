@@ -120,8 +120,8 @@ class B_home extends CI_Controller {
         $params = array(
             "select" => "sum(amount) as total_comissions,
                             (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND active = 1 AND date BETWEEN '$first_day' AND '$last_day') as commission_by_date,
-                            (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND status_value = 1) as total_disponible,
-                            (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras = 1 and active = 1) as total_compra",
+                            (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras != 1 and active = 1 and status_value = 1) as total_disponible,
+                            (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras = 1 and active = 1 and status_value = 1) as total_compra",
             "where" => "customer_id = $customer_id and active = 1");
         //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
