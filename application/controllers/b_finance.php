@@ -13,8 +13,10 @@ class B_finance extends CI_Controller {
     {
         //GET SESION ACTUALY
         $this->get_session();
-        /// VISTA
+        //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
         //GET PLAN INFORMATION
         $params = array("select" =>"sum(amount) as total_maching,
                                     (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 1 and status_value = 1) as total_unilevel,
@@ -42,6 +44,7 @@ class B_finance extends CI_Controller {
 
         //GET PRICE CURRENCY
         $this->tmp_backoffice->set("obj_commissions",$obj_commissions);
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_total",$obj_total);
         $this->tmp_backoffice->render("backoffice/b_history");
     }
@@ -70,6 +73,19 @@ class B_finance extends CI_Controller {
         //GET PRICE CURRENCY
         $this->tmp_backoffice->set("obj_invoices",$obj_invoices);
         $this->tmp_backoffice->render("backoffice/b_invoice");
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
     
     public function upload(){
@@ -109,6 +125,8 @@ class B_finance extends CI_Controller {
                 }
             }
         }
+        
+        
 
     public function get_session(){          
         if (isset($_SESSION['customer'])){

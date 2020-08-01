@@ -1,0 +1,7 @@
+.space-50{
+    height: 50px;
+}
+.radius-50{
+    border-radius: 50%;
+    border: 1px #ffffff solid;
+}

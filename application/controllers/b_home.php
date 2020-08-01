@@ -34,6 +34,9 @@ class B_home extends CI_Controller {
                 'ranges, customer.range_id = ranges.range_id'),
         );
         $obj_customer = $this->obj_customer->get_search_row($params);
+        
+        
+        
         $date_month = $obj_customer->date_month;
 
         $date = date("Y-m-d");
