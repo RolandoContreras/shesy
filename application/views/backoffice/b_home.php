@@ -33,6 +33,13 @@
 <?php } ?>
                         <div class="row">
                             <div class="col-md-3">
+                                <div class="profile-tile">
+                                    <a class="profile-tile-box" href="<?php echo site_url() . 'backoffice/carrera'; ?>" style="width: 100%;"> <img src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_customer->img"; ?>' alt="rango" width="70"/>
+                                        <div class="pt-user-name"> RANGO ACTUAL<br> <b><?php echo $obj_customer->range_name; ?></b> </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
                                 <div class="element-box el-tablo">
                                     <div class="label"> Ganancia Total </div>
                                     <div class="value"> &dollar; <?php echo $obj_total_commissions->total_comissions != "" ? $obj_total_commissions->total_comissions : "0.00"; ?> </div>
@@ -79,12 +86,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="element-box el-tablo">
-                                    <div class="label"> Rango Actual </div>
-                                    <div class="value"> <img src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_customer->img"; ?>' alt="rango" width="70"/></div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

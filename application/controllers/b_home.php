@@ -28,7 +28,7 @@ class B_home extends CI_Controller {
                                     kit.img as kit_img,
                                     ranges.range_id,
                                     ranges.img,
-                                    ranges.name",
+                                    ranges.name as range_name",
             "where" => "customer.customer_id = $customer_id and customer.status_value = 1",
             "join" => array('kit, customer.kit_id = kit.kit_id',
                 'ranges, customer.range_id = ranges.range_id'),
