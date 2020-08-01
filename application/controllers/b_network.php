@@ -13,6 +13,8 @@ class B_network extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER ACTUALLY
         $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
         //GET REFERIDOS INFORMATION
         $params = array(
                         "select" =>"customer.customer_id,
@@ -42,6 +44,7 @@ class B_network extends CI_Controller {
                         );
         $obj_total = $this->obj_unilevel->get_search_row($params);
         //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_referidos",$obj_referidos);
         $this->tmp_backoffice->set("obj_total",$obj_total);
         $this->tmp_backoffice->render("backoffice/b_referred");
