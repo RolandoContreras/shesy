@@ -184,8 +184,9 @@
                 <span class="pcoded-mtext">Recargas</span>
             </a>
             <ul class="pcoded-submenu">
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas";?>"><i class="icon-large icon-th"></i>Puntos</a></li>
+                <!--<li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas";?>"><i class="icon-large icon-th"></i>Puntos</a></li>-->
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas_comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas_compras";?>"><i class="icon-large icon-th"></i>Compras</a></li>
             </ul>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Reportes</label></li>

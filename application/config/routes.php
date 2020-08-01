@@ -232,6 +232,11 @@ $route['dashboard/recargas_comisiones/load/([0-9]+)'] = "d_recargas_comisiones/l
 $route['dashboard/recargas_comisiones/validate'] = "d_recargas_comisiones/validate";
 $route['dashboard/recargas_comisiones/delete'] = "d_recargas_comisiones/delete";
 
+$route['dashboard/recargas_compras'] = "d_recargas_compras";
+$route['dashboard/recargas_compras/load'] = "d_recargas_compras/load";
+$route['dashboard/recargas_compras/load/([0-9]+)'] = "d_recargas_compras/load/$1";
+$route['dashboard/recargas_compras/validate'] = "d_recargas_compras/validate";
+$route['dashboard/recargas_compras/delete'] = "d_recargas_compras/delete";
 
 $route['dashboard/usuarios'] = "d_users";
 $route['dashboard/usuarios/load'] = "d_users/load";
