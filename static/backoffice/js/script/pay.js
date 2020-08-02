@@ -3,9 +3,6 @@ function make_pay(){
       var tax =  document.getElementById("tax").value;
       var result = document.getElementById("result").value;
       var total_disponible = document.getElementById("total_disponible").value;
-      
-      
-      
       if(amount == ""){
           document.getElementById("pay_alert").style.display = "block";
           $("#amount").focus();

@@ -165,7 +165,7 @@
                             <a href="<?php echo site_url() . 'backoffice/profile';?>">
                                 <?php 
                                 if(!empty($obj_profile->img)){ ?>
-                                    <img alt="avatar" class="radius-50" src="<?php echo site_url() . "static/backoffice/images/profile/$obj_profile->customer_id/$obj_profile->img"; ?>" width="80" style="border">
+                                <img alt="avatar" class="radius-50" src="<?php echo site_url() . "static/backoffice/images/profile/$obj_profile->customer_id/$obj_profile->img"; ?>" width="80" height="80" style="border">
                                 <?php }else{ ?>
                                     <img alt="avatar" class="radius-50" src="<?php echo site_url() . 'static/backoffice/images/avatar.png'; ?>" width="80" style="border">
                                 <?php } ?>

@@ -50,7 +50,7 @@ class B_pay extends CI_Controller {
                         "select" =>"sum(amount) as total_comissions,
                                     (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras != 1 and active = 1 and status_value = 1) as total_disponible,
                                     (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras = 1 and active = 1 and status_value = 1) as total_compra",
-                        "where" => "customer_id = $customer_id and active = 1");
+                        "where" => "customer_id = $customer_id and pago != 1");
            //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
         
@@ -61,7 +61,7 @@ class B_pay extends CI_Controller {
         }else{
             $total_disponible = $obj_total_commissions->total_disponible;
         }
-
+        
         $this->tmp_backoffice->set("obj_profile",$obj_profile);        
         $this->tmp_backoffice->set("bank",$bank);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
@@ -82,7 +82,7 @@ class B_pay extends CI_Controller {
             $total_disponible = trim($this->input->post('total_disponible'));
             
             if($total_disponible >= $result){
-                    if($amount >= 10){
+                    if($amount >= 3){
                         //INSERT PAY TABLE
                             $data = array(
                                 'customer_id' => $customer_id,
@@ -96,12 +96,12 @@ class B_pay extends CI_Controller {
                                 'created_by' => $customer_id,
                             ); 
                             $pay_id = $this->obj_pay->insert($data);
-
                             //INSERT COMMISSION TABLE
                             $data = array(
                                 'customer_id' => $customer_id,
                                 'amount' => -$amount,
-                                'active' => 2,
+                                'active' => 1,
+                                'pago' => 1,
                                 'status_value' => 1,
                                 'date' => date("Y-m-d H:i:s"),
                                 'created_at' => date("Y-m-d H:i:s"),
