@@ -44,18 +44,20 @@ class Crone extends CI_Controller {
             if($obj_points->total_point != ""){
                 $point = $obj_points->total_point;
                 
-                if($point >= 400 and $point < 1650){
+                if($point >= 125 and $point < 515){
                     $range_id = 1;
-                }elseif($point >= 1650 and $point < 5400){
+                }elseif($point >= 515 and $point < 1690){
                     $range_id = 2;
-                }elseif($point >= 5400 and $point < 17900){
+                }elseif($point >= 1690 and $point < 5590){
                     $range_id = 3;
-                }elseif($point >= 17900 and $point < 49150){
+                }elseif($point >= 5590 and $point < 15350){
                     $range_id = 4;
-                }elseif($point >= 49150){
+                }elseif($point >= 15350 and $point < 18430){
                     $range_id = 5;
+                }elseif($point >= 18430 and $point < 21500){
+                    $range_id = 6;
                 }else{
-                    $range_id = 0;
+                    $range_id = 8;
                 }
                 
                 //verify range
