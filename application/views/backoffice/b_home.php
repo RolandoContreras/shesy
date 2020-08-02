@@ -47,13 +47,13 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="element-box el-tablo">
-                                    <div class="label"> Ganancia DISPONIBLE </div>
+                                    <div class="label"> EFECTIVO DISPONIBLE </div>
                                     <div class="value"> &dollar; <?php echo $obj_total_commissions->total_disponible != "" ? $obj_total_commissions->total_disponible : "0.00"; ?> </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="element-box el-tablo">
-                                    <div class="label"> Ganancia para compra </div>
+                                    <div class="label"> PUNTOS DE COMPRA </div>
                                     <div class="value"> &dollar; <?php echo $obj_total_commissions->total_compra != "" ? $obj_total_commissions->total_compra : "0.00"; ?> </div>
                                 </div>
                             </div>

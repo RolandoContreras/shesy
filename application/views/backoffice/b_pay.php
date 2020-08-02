@@ -31,14 +31,14 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="element-box el-tablo">
-                                    <div class="label"> GANANCIA DISPONIBLE </div>
+                                    <div class="label"> EFECTIVO DISPONIBLE </div>
                                     <div class="value"> &dollar;<?php echo $total_disponible != "" ? $total_disponible : "0.00"; ?> </div>
 
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="element-box el-tablo">
-                                    <div class="label"> GANANCIA DE COMPRA </div>
+                                    <div class="label"> PUNTOS DE COMPRA </div>
                                     <div class="value"> &dollar;<?php echo $total_compra != "" ? $total_compra : "0.00"; ?> </div>
                                 </div>
                             </div>
