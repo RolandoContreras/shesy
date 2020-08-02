@@ -40,9 +40,8 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Usuario</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Nombres</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Banco</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">N° Cuenta</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Importe</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Tax</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Total</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Estado</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Acciones</th>
                                 </tr>
@@ -65,8 +64,7 @@
                                     } ?>
                                     <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
                                 </td>
-                                <td><?php echo format_number_dolar($value->amount);?></td>
-                                <td><?php echo format_number_dolar($value->descount);?></td>
+                                <td><?php echo $value->bank_number;?></td>
                                 <td>
                                     <span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo format_number_dolar($value->amount_total);?></span>
                                         </td>
@@ -104,9 +102,8 @@
                                   <th rowspan="1" colspan="1">Usuario</th>
                                   <th rowspan="1" colspan="1">Nombres</th>
                                   <th rowspan="1" colspan="1">Banco</th>
+                                  <th rowspan="1" colspan="1">N° Cuenta</th>
                                   <th rowspan="1" colspan="1">Importe</th>
-                                  <th rowspan="1" colspan="1">Tax</th>
-                                  <th rowspan="1" colspan="1">Total</th>
                                   <th rowspan="1" colspan="1">Estado</th>
                                   <th rowspan="1" colspan="1">Acciones</th>
                                 </tr>

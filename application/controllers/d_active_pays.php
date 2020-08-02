@@ -24,6 +24,7 @@ class D_active_pays extends CI_Controller{
                                     customer.first_name,
                                     customer.username,
                                     customer.bank_id,
+                                    customer.bank_number,
                                     customer.last_name",
                         "join" => array('customer, pay.customer_id = customer.customer_id'),
                         "order" => "pay.pay_id DESC"
@@ -65,7 +66,6 @@ class D_active_pays extends CI_Controller{
         if($this->input->is_ajax_request()){  
             ///GET PAY_ID
             $pay_id = $this->input->post("pay_id");
-            
             //UPDATE FILES PAY
             $data_pay = array(
                         'active' => 3,
@@ -73,7 +73,6 @@ class D_active_pays extends CI_Controller{
                         'updated_at' => date("Y-m-d H:i:s")
                     ); 
             $this->obj_pay->update($pay_id,$data_pay);
-            
             //SELECT COMISSION
             $params = array(
                         "select" =>"commissions_id",
