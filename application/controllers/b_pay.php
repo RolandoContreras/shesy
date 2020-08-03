@@ -50,7 +50,7 @@ class B_pay extends CI_Controller {
                         "select" =>"sum(amount) as total_comissions,
                                     (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras != 1 and active = 1 and status_value = 1) as total_disponible,
                                     (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras = 1 and active = 1 and status_value = 1) as total_compra",
-                        "where" => "customer_id = $customer_id");
+                        "where" => "customer_id = $customer_id and pago != 1");
            //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
         
@@ -77,6 +77,7 @@ class B_pay extends CI_Controller {
                 //SELECT ID FROM CUSTOMER
             $customer_id = $_SESSION['customer']['customer_id'];    
             $amount = trim($this->input->post('amount'));
+            
             $tax = trim($this->input->post('tax'));
             $result = trim($this->input->post('result'));
             $total_disponible = trim($this->input->post('total_disponible'));
@@ -140,8 +141,8 @@ class B_pay extends CI_Controller {
             $result = $amount - $tax;
             
             //SEDN DATA
-                $data['tax'] = format_number_miles($tax);
-                $data['result'] = format_number_miles($result);
+                $data['tax'] = $tax;
+                $data['result'] = $result;
             echo json_encode($data);
             }
     }

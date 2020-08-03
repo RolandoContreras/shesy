@@ -109,7 +109,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-<?php foreach ($obj_commissions as $value) { ?>
+                                            <?php foreach ($obj_commissions as $value) { ?>
                                                     <tr role="row " class="odd ">
                                                         <td align="center"> 
                                                             <span class="smaller lighter ">Sistema</span> <br> 
@@ -124,8 +124,7 @@
                                                             <span class="badge badge-success-inverted "> + &dollar;<?php echo $value->amount; ?></span>
                                                         </td>
                                                     </tr>
-<?php } ?>
-
+                                            <?php } ?>
                                             </tbody>
                                         </table>
                                         <div align="center">
@@ -134,7 +133,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-md-6">
                                 <div class="element-wrapper">
                                     <div class="element-box">

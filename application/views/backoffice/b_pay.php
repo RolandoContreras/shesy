@@ -50,7 +50,7 @@
             <div class="col-lg-12" style="margin-bottom: 30px;" align="center">
                 <?php
                 $date = date("Y-m-d");
-                if (date('l', strtotime($date)) == 'Sunday' || date('l', strtotime($date)) == 'Saturday') {?>
+                if (date('l', strtotime($date)) == 'Sunday' || date('l', strtotime($date)) == 'Saturday' || date('l', strtotime($date)) == 'Monday') {?>
                     <a id="btnCreate"> 
                         <button id="show_pay" class="btn btn-primary btn-round animated infinite pulse" style="font-size:11px; font-weight: 900; text-transform: uppercase;">Clic aquí para realizar su retiro!</button>          
                     </a>
