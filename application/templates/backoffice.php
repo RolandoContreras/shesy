@@ -50,7 +50,7 @@
         <div class="all-wrapper with-side-panel solid-bg-all">
             <div class="layout-w">
                 <div class="menu-mobile menu-activated-on-click color-scheme-dark">
-                    <div class="mm-logo-buttons-w" style="background: #3d2b16"> <a class="mm-logo" href="<?php echo site_url() . 'backoffice'; ?>"> 
+                    <div class="mm-logo-buttons-w" style="background: #293145"> <a class="mm-logo" href="<?php echo site_url() . 'backoffice'; ?>"> 
                             <img src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" style="max-width: 100%; width: 70px;"> <span></span> </a>
                         <div class="mm-buttons">
                             <div class="mobile-menu-trigger">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="menu-and-user">
-                        <ul class="main-menu" style="background: #4a3116;">
+                        <ul class="main-menu" style="background: #293145;">
                             <li>
                             <center>
                                 <span>
@@ -73,18 +73,27 @@
                             </li>
                             <li>
                             <center>
-                                <a href="<?php echo site_url() . 'course'; ?>" class="btn btn-light" style="width: 100%">
-                                    <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
-                                        <span>University</span>                
+                                <a href="#" class="btn" style="width: 100%">
+                                    <div class="access-dam" align="center" style="background: #efb810; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
+                                        <span>Academy</span>                
                                     </div>
                                 </a>
                             </center>
                             </li>
                             <li>
                             <center>
-                                <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="btn btn-success" style="width: 100%">
-                                    <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
+                                <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="btn" style="width: 100%">
+                                    <div class="access-dam" align="center" style="background: #2e8b57; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
                                         <span>Catalogo de Empresas</span>
+                                    </div>
+                                </a>
+                            </center>
+                            </li>
+                            <li>
+                            <center>
+                                <a href="#" class="btn" style="width: 100%">
+                                    <div class="access-dam" align="center" style="background: #3b36a1; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
+                                        <span>University</span>                
                                     </div>
                                 </a>
                             </center>
@@ -184,20 +193,28 @@
                     </div>
                     <ul class="main-menu">
                         <li>
-                            <a href="<?php echo site_url() . 'course'; ?>" class="btn btn-light">
-                                <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
-                                    <span>University</span>                
+                            <a href="#" class="btn">
+                                <div class="access-dam" align="center" style="background: #efb810;border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
+                                    <span>Academy</span>                
                                 </div>
                             </a>
                         </li>
-                        <hr/>
                         <li>
-                            <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="btn btn-success">
-                                <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
+                            <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="btn">
+                                <div class="access-dam" align="center" style="background: #2e8b57; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
                                     <span>Catalogo de Empresas</span>                
                                 </div>
                             </a>
                         </li>
+                        <li>
+                            <!--<a href="<?php //echo site_url() . 'course'; ?>" class="btn">-->
+                            <a href="#" class="btn">
+                                <div class="access-dam" align="center" style="background: #3b36a1; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;width: 100%"> 
+                                    <span>University</span>                
+                                </div>
+                            </a>
+                        </li>
+                        
                         <li class="sub-header"> <span>Menú</span> </li>
                         <li>
                             <a href="<?php echo site_url() . 'backoffice'; ?>" class="active">

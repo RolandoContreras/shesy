@@ -115,7 +115,6 @@ class B_home extends CI_Controller {
         $year = date('Y');
         $first_day = first_month_day($month, $year);
         $last_day = last_month_day($month, $year);
-
         //GET TOTAL COMMISION
         $params = array(
             "select" => "sum(amount) as total_comissions,

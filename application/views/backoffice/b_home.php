@@ -170,16 +170,23 @@
                                                     </div>
                                                     <div class="d-none d-sm-block"> 
                                                         <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$var_next_range"; ?>' style="max-width: 90px;"> 
-                                                        <img class="img-responsive" src="<?php echo site_url().'static/backoffice/images/arrow-rigth.png'?>" style="max-width: 60px; margin: 0 20px; opacity: 0.2;"> 
+                                                        <?php 
+                                                        if(!empty($obj_next_range)){ ?>
+                                                            <img class="img-responsive" src="<?php echo site_url().'static/backoffice/images/arrow-rigth.png'?>" style="max-width: 60px; margin: 0 20px; opacity: 0.2;"> 
                                                         <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_next_range->img"; ?>' style="max-width: 90px;">                          
+                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                                 <?php 
                                                 if($obj_points->puntos == 0){
                                                     $percent = 0;
                                                 }else{
-                                                    $percent = ($obj_points->puntos / $obj_next_range->point_grupal) * 100;
-                                                    $percent = ceil($percent);
+                                                    if(empty($obj_next_range)){
+                                                        $percent = 100;
+                                                    }else{
+                                                        $percent = ($obj_points->puntos / $obj_next_range->point_grupal) * 100;
+                                                        $percent = ceil($percent);
+                                                    }
                                                 }
                                                 ?>
                                                 <div class="os-progress-bar warning">
