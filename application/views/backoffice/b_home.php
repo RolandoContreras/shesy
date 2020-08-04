@@ -38,7 +38,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="profile-tile">
-                                    <a class="profile-tile-box" href="<?php echo site_url() . 'backoffice/carrera'; ?>" style="width: 100%;"> <img src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_customer->img"; ?>' alt="rango" width="70"/>
+                                    <a class="profile-tile-box" href="<?php echo site_url() . 'backoffice/carrera'; ?>" style="width: 100%;"> <img src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_customer->ranges_img"; ?>' alt="rango" width="70"/>
                                         <div class="pt-user-name"> RANGO ACTUAL<br> <b><?php echo $obj_customer->range_name; ?></b> </div>
                                     </a>
                                 </div>
