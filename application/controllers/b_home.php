@@ -27,14 +27,13 @@ class B_home extends CI_Controller {
                                     kit.kit_id,
                                     kit.img as kit_img,
                                     ranges.range_id,
-                                    ranges.img,
+                                    ranges.img as ranges_img,
                                     ranges.name as range_name",
             "where" => "customer.customer_id = $customer_id and customer.status_value = 1",
             "join" => array('kit, customer.kit_id = kit.kit_id',
                 'ranges, customer.range_id = ranges.range_id'),
         );
         $obj_customer = $this->obj_customer->get_search_row($params);
-        
         $date_month = $obj_customer->date_month;
         $date = date("Y-m-d");
         if ($date_month != null) {
@@ -103,13 +102,6 @@ class B_home extends CI_Controller {
             "limit" => "10");
         //GET DATA FROM CUSTOMER
         $obj_commissions = $this->obj_commissions->search($params);
-
-        //GET DATA POINTS
-        $params_points = array(
-            "select" => "sum(point) as puntos",
-            "where" => "customer_id = $customer_id and active = 1");
-        //GET DATA FROM CUSTOMER
-        $obj_points = $this->obj_points->get_search_row($params_points);
         //GET MONTH AND YEAR
         $month = date('m');
         $year = date('Y');
@@ -129,7 +121,6 @@ class B_home extends CI_Controller {
         //send data
         $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_total_commissions", $obj_total_commissions);
-        $this->tmp_backoffice->set("obj_points", $obj_points);
         $this->tmp_backoffice->set("obj_commissions", $obj_commissions);
         $this->tmp_backoffice->set("obj_next_range", $obj_next_range);
         $this->tmp_backoffice->set("obj_total_referidos", $obj_total_referidos);

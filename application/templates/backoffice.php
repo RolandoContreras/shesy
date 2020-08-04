@@ -44,7 +44,9 @@
             var site = '<?php echo site_url(); ?>';
         </script>
         <script src="https://checkout.culqi.com/js/v3"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <link href="<?php echo site_url() . "static/backoffice/dist/plugin.js" ?>" rel="stylesheet" />
     </head>
     <body class="menu-position-side menu-side-left color-scheme-white full-screen with-content-panel">
         <div class="all-wrapper with-side-panel solid-bg-all">
@@ -294,41 +296,22 @@
             <!-- Start of 18kronaldinho Zendesk Widget script -->
             <script src="<?php echo site_url() . 'static/backoffice/js/jquery.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/popper.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/moment.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/Chart.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/select2.full.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/jquery.barrating.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/ckeditor.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/validator.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/daterangepicker.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/ion.rangeSlider.min.js'; ?>"></script>
+            <script src="<?php echo site_url() . 'static/backoffice/js/bootstrap.bundle.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/dropzone.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/mindmup-editabletable.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/jquery.dataTables.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/dataTables.bootstrap.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/fullcalendar.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/perfect-scrollbar.jquery.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/tether.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/slick.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/util.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/alert.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/button.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/carousel.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/collapse.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/dropdown.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/modal.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/tab.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/tooltip.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/popover.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/demo_customizer.js?version=4.4.0'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/dataTables.bootstrap4.min.js'; ?>"></script>
             <script src="<?php echo site_url() . 'static/backoffice/js/main.js?version=4.4.0'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/jquery-confirm.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/jquery.blockUI.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/jquery.maskedinput.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/jquery.maskMoney.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/sweetalert.min.js'; ?>"></script>
-            <script src="<?php echo site_url() . 'static/backoffice/js/functions.js?id=569'; ?>"></script>
             <script>
                 $(document).ready(function () {
                     $('#crypto-toogle').click(function () {

@@ -5,7 +5,8 @@ class Crone extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model("customer_model","obj_customer");
-        $this->load->model("points_model","obj_points");
+        $this->load->model("commissions_model","obj_commissions");
+        
     }   
 
 	/**
@@ -32,18 +33,16 @@ class Crone extends CI_Controller {
                         "where" => "active = 1 and status_value = 1",
             );
         $obj_customer = $this->obj_customer->search($params);
-        
         foreach ($obj_customer as $value) {
-            //GET DATA CUSTOMER REFERREL UNILEVEL
+            //GET DATA CUSTOMER COMISSION 
             $params = array(
-                            "select" =>"sum(point) as total_point",
-                            "where" => "customer_id = $value->customer_id and active = 1"
-                        );
-            $obj_points = $this->obj_points->get_search_row($params);
-            
-            if($obj_points->total_point != ""){
-                $point = $obj_points->total_point;
-                
+            "select" => "sum(amount) as total_comissions",
+            "where" => "customer_id = $value->customer_id and pago != 1");
+            //GET DATA FROM CUSTOMER
+            $obj_total = $this->obj_commissions->get_search_row($params);
+            $point = $obj_total->total_comissions;
+            //verify
+            if(!empty($point)){
                 if($point >= 125 and $point < 515){
                     $range_id = 1;
                 }elseif($point >= 515 and $point < 1690){
@@ -56,8 +55,10 @@ class Crone extends CI_Controller {
                     $range_id = 5;
                 }elseif($point >= 18430 and $point < 21500){
                     $range_id = 6;
-                }else{
+                }elseif($point >= 21500){
                     $range_id = 8;
+                }else{
+                    $range_id = 0;
                 }
                 
                 //verify range
