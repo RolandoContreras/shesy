@@ -1,25 +1,50 @@
 <head>
     <title>Cultura Imparable | <?php echo $title; ?> </title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
     <meta name="author" content="Cultura Imparable">
     <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, red social, mlm, mmn, culturaimprable.com, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
     <meta name="robots" content="Index, Follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.i11online.com/instagram-challenge">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="Instagram Challenge">
+    <meta name="twitter:title" content="Instagram Challenge">
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-16x16.png'; ?>">
     <link rel="manifest" href="<?php echo site_url() . 'static/page_front/images/logo/favico/site.webmanifest'; ?>">
     <!--//END FAVICON-->
-    <link type="text/css" href="<?php echo site_url() . 'static/page_front/css/autoptimize_69.css'; ?>" rel="stylesheet" media="none" onload="if (media != 'all')media = 'all'">
-    <link rel="stylesheet" href="<?php echo site_url() . 'static/page_front/css/mystyle7.css'; ?>" type="text/css" media="none" onload="if (media != 'all')
-              media = 'all'">
-    <link rel="stylesheet" id="thim-style-options-css" href="<?php echo site_url() . 'static/page_front/css/automatize_change1.css'; ?>" type="text/css" media="none" onload="if (media != 'all') media = 'all'">
-    <script src="<?php echo site_url() . 'static/page_front/js/jquery.js'; ?>"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" media="none" onload="if (media != 'all') media = 'all'">
-    <script src='<?php echo site_url() . 'static/page_front/js/script/login_cart.js'; ?>'></script>
+    <link rel="canonical" href="<?php echo site_url(); ?>" />
+    <!-- Google Fonts ====================================================== -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Fira+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Kajabi CSS ======================================================== -->
+    <link rel="stylesheet" media="screen" href="https://kajabi-app-assets.global.ssl.fastly.net/assets/core-36d711acd6b6b6ebec34a694a9eef8bf1660c6ae66a0df925956db2bc4a92888.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/styles.css?15964308185009978" />
+    <!-- Customer CSS ====================================================== -->
+    <link rel="stylesheet" media="screen" href="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/overrides.css?15964308185009978"/>
+    <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/my_style.css";?>"/>
+    <!-- Kajabi Editor Only CSS ============================================ -->
     <script>
-        var site = '<?php echo site_url(); ?>';
+        var Kajabi = Kajabi || {};
+    </script>
+    <script>
+        Kajabi.currentSiteUser = {"id": "-1", "type": "Guest"};
+    </script>
+    <script>
+        Kajabi.theme = {activeThemeName: "Encore", previewThemeId: null, editor: false};
+    </script>
+    <script type="text/javascript">
+        window._mfq = window._mfq || [];
+        (function () {
+            var mf = document.createElement("script");
+            mf.type = "text/javascript";
+            mf.defer = true;
+            mf.src = "//cdn.mouseflow.com/projects/fe0b1a4c-2060-4b7e-84e4-a56ec95cf945.js"; document.getElementsByTagName("head")[0].appendChild(mf);
+        })();
     </script>
 </head>

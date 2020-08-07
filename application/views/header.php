@@ -1,20 +1,20 @@
-<header id="masthead" class="site-header affix-top template-layout-2 sticky-header has-retina-logo has-retina-logo-sticky palette-transparent header-overlay">
-    <div class="header-wrapper header-v2 default">
-        <div class="main-header container">
-            <div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">
-                <a class="login_2" href="<?php echo site_url() . 'login'; ?>">Ingresar</a>  
-                &nbsp;&nbsp;&nbsp;
-                <div class="icon-wrap"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div>
+<header class="header header--static">
+      <div class="announcements">
+        <div id="block-1593108639155" class="header__block header__block--announcement header__block--show">
+          <a class="announcement text-center background-dark">
+            <div class="container"> BIENVENIDO A CULTURA IMPARABLE </div>
+          </a>
+        </div>
+      </div>
+      <div class="header__wrap">
+        <div class="header__content header__content--desktop background-dark">
+          <div class="container header__container media">
+            <div id="block-1555988494486" class="header__block header__block--logo header__block--show">
+              <a class="logo" href="<?php echo site_url();?>"> 
+                  <img class="logo__image" src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" kjb-settings-id="sections_header_blocks_1555988494486_settings_logo" alt="Logo" width="50"/> 
+              </a>
             </div>
-            <div class="width-logo">
-                <a class="no-sticky-logo" href="<?php echo site_url(); ?>" title="Logo Imparable" rel="home">
-                    <img alt="Logo Imparable" width="70" height="45" src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>">
-                </a>
-                <a href="<?php echo site_url(); ?>" title="Logo Imparable" rel="Inicio" class="sticky-logo">
-                    <img alt="Logo Imparable" width="70" height="30" src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>">
-                </a>
-            </div>
-            <?php
+               <?php
             $url = explode("/", uri_string());
             if (isset($url[0])) {
                 $nav = $url[0];
@@ -40,98 +40,13 @@
                     break;
             }
             ?>
-            <div class="width-navigation">
-                <ul id="primary-menu" class="main-menu">
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom <?php echo $home_syle; ?> menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url(); ?>" class="tc-menu-inner">Inicio</a>
-                    </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $courses_syle; ?> menu-item-48 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-builder">
-                        <a href="<?php echo site_url() . 'cursos'; ?>" class="tc-menu-inner">Cursos</a>
-                        <div class='tc-megamenu-wrapper tc-megamenu-holder mega-sub-menu sub-menu'>
-                            <p>
-                            <div class="vc_row wpb_row vc_row-fluid">
-                                <div class="wpb_column vc_column_container vc_col-sm-4">
-                                    <div class="vc_column-inner">
-                                        <div class="wpb_wrapper">
-                                            <div class="vc_wp_custommenu wpb_content_element">
-                                                <div class="widget widget_nav_menu">
-                                                    <h2 class="widgettitle">Acerca de Cursos</h2>
-                                                    <div class="menu-mega-menu-container">
-                                                        <ul class="menu">
-                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4117 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                                <a href="<?php echo site_url() . 'cursos'; ?>" class="tc-menu-inner black">Todos los Cursos</a>
-                                                            </li>
-                                                            <?php foreach ($obj_category_videos as $value) { ?>
-                                                                <li class="menu-item menu-item-type-post_type menu-item-object-lp_course menu-item-4115 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                                                                    <a href='<?php echo site_url() . "cursos/$value->slug"; ?>' class="tc-menu-inner black"><?php echo $value->name; ?></a>
-                                                                </li>
-                                                            <?php } ?>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wpb_column vc_column_container vc_col-sm-8">
-                                    <div class="vc_column-inner">
-                                        <div class="wpb_wrapper">
-                                            <div class="thim-courses-megamenu row">
-                                                <div class="course-item col-sm-12">
-                                                    <div class="feature-img">
-                                                        <img width="300" height="300" alt="Cursos Gratuitos" src="<?php echo site_url() . 'static/page_front/images/cursos_gratuitos.jpg'; ?>" class="lazyload">
-                                                    </div>
-                                                    <div class=course-detail>
-                                                        <h3 class="title">
-                                                            <a href="<?php echo site_url() . 'registro'; ?>">Prueba nuestros cursos gratuitos</a>
-                                                        </h3>
-                                                        <div class="price"><span class="course-price">¡Regístrate Gratis! </span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li id="menu-item-3813" class="menu-item menu-item-type-custom menu-item-object-custom <?php echo $catalog_syle; ?> menu-item-has-children menu-item-3813 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url() . 'catalogo'; ?>" class="tc-menu-inner">Catalogo</a>
-                        <ul class="sub-menu" style="display: none;">
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                <a href='<?php echo site_url() . "catalogo"; ?>' class="black tc-menu-inner tc-megamenu-title">Todos los Productos</a>
-                            </li>
-                            <?php foreach ($obj_category_catalog as $value) { ?>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                    <a href='<?php echo site_url() . "catalogo/$value->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value->name; ?></a>
-                                    <ul class="sub-menu" style="display: none;">
-                                        <?php foreach ($obj_sub_category as $value_sub) {
-                                            if ($value_sub->category_id == $value->category_id) { ?>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
-                                                    <a href='<?php echo site_url() . "catalogo/subcategoria/$value_sub->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value_sub->name; ?></a>
-                                                </li>
-                                            <?php } } ?> 
-                                    </ul>
-                                </li>
-                            <?php } ?> 
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page <?php echo $contact_syle; ?> menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url() . 'contacto'; ?>" class="tc-menu-inner">Contacto</a>
-                    </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url() . 'registro'; ?>" class="login">REGISTRO</a>
-                    </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                        <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" class="login">LOGIN</a>
-                    </li>
-                </ul>
-                <?php
+              
+              <?php
                 //count data cart
                 $cart = count($this->cart->contents());
                 if ($cart > 0) {
                     ?>
-                    <a href="javascript:void(0);" onclick="validate_login();">
+<!--                    <a href="javascript:void(0);" onclick="validate_login();">
                         <div class="header-right">
                             <div class="widget woocommerce widget_shopping_cart">
                                 <div class="minicart_hover green_yellow" id="header-mini-cart">
@@ -145,9 +60,45 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
-            <?php } ?>  
+                    </a>-->
+            <?php } ?> 
+              
+              
+            <div id="block-1555988491313" class="header__block header__switch-content header__block--menu media__body">
+              <div class="link-list justify-content-right" kjb-settings-id="sections_header_blocks_1555988491313_settings_menu"> 
+                  <a class="link-list__link" href="<?php echo site_url(); ?>" rel="noopener">Inicio</a> 
+                  <a class="link-list__link" href="<?php echo site_url() . 'cursos'; ?>" rel="noopener">Cursos</a> 
+                  <a class="link-list__link" href="<?php echo site_url() . "catalogo"; ?>" rel="noopener">Catalogo</a>
+                  <?php// foreach ($obj_category_catalog as $value) { ?>
+<!--                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
+                                    <a href='<?php echo site_url() . "catalogo/$value->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value->name; ?></a>
+                                    <ul class="sub-menu" style="display: none;">
+                                        <?php foreach ($obj_sub_category as $value_sub) {
+                                            if ($value_sub->category_id == $value->category_id) { ?>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 tc-menu-item tc-menu-depth-1 tc-menu-align-left">
+                                                    <a href='<?php echo site_url() . "catalogo/subcategoria/$value_sub->slug"; ?>' class="black tc-menu-inner tc-megamenu-title"><?php echo $value_sub->name; ?></a>
+                                                </li>
+                                            <?php } } ?> 
+                                    </ul>
+                                </li>-->
+                            <?php //} ?> 
+                  <a class="link-list__link" href="<?php echo site_url() . 'contacto'; ?>" rel="noopener">Contacto</a> 
+                  <a class="link-list__link" href="<?php echo site_url() . 'registro'; ?>" rel="noopener">Registro</a> 
+              </div>
             </div>
+            <div id="block-1593710564240" class="header__block header__switch-content header__block--cta">
+              <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Iniciar Sesión</a>
+            </div>
+            <div class="hamburger hidden--desktop">
+              <div class="hamburger__slices">
+                <div class="hamburger__slice hamburger--slice-1"></div>
+                <div class="hamburger__slice hamburger--slice-2"></div>
+                <div class="hamburger__slice hamburger--slice-3"></div>
+                <div class="hamburger__slice hamburger--slice-4"></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</header>
+        <div class="header__content header__content--mobile background-light"></div>
+      </div>
+    </header>

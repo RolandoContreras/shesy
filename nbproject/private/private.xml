@@ -20,10 +20,13 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/b_home.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/backoffice/b_pay.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/backoffice/b_home.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/b_pay.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/backoffice/b_carrera.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/b_carrera.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/header.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/head.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/page_front/css/my_style.css</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/home.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/footer.php</file>
         </group>
     </open-files>
 </project-private>

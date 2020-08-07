@@ -1,438 +1,800 @@
-<!DOCTYPE html>
-<html lang="es-PE">
+<!doctype html>
+<html lang="en">
 <?php $this->load->view("head");?>
-<body class="home-page bp-nouveau home page-template page-template-templates page-template-home-page page-template-templateshome-page-php page page-id-565 wp-embed-responsive theme-wordpress-lms pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 buy-through-membership header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
-  <div id="thim-preloading">
-    <div class="thim-loading-icon">
-      <div class="sk-folding-cube">
-        <div class="sk-cube1 sk-cube"></div>
-        <div class="sk-cube2 sk-cube"></div>
-        <div class="sk-cube4 sk-cube"></div>
-        <div class="sk-cube3 sk-cube"></div>
-      </div>
-    </div>
+<body>
+  <div id="section-header" data-section-id="header">
+    <?php $this->load->view("header");?>
   </div>
-  <div id="wrapper-container" class="content-pusher creative-right bg-type-color">
-    <div class="overlay-close-menu"></div>
-   <?php $this->load->view("header");?>
-    <?php $this->load->view("nav",$obj_category_videos);?>
-    <div id="main-content">
-      <div id="home-main-content" class="home-content home-page container" role="main">
-          <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="<?php echo site_url().'static/page_front/images/background.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-block vc_custom_1528698277459 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
-          <div class="overlay" style="background-color: rgba(0,0,0,0.4)"></div>
-          <div class="wpb_column vc_column_container vc_col-sm-12">
-            <div class=vc_column-inner>
-              <div class=wpb_wrapper>
-                <div class=vc_empty_space style="height: 10px"><span class=vc_empty_space_inner></span></div>
-                <div class="vc_wp_text wpb_content_element thim-textbox-header">
-                  <div class="widget widget_text">
-                    <div class=textwidget>
-                      <p style="text-align: center;">
-                          <img class="logo-inicial" alt="Logo" width="220" src="<?php echo site_url().'static/page_front/images/logo/logo_embajada.png';?>">
-                      </p>
+  <main>
+    <div data-content-for-index data-dynamic-sections="index">
+      <div id="section-1593984863833" data-section-id="1593984863833">
+        <div kjb-settings-id="sections_1593984863833_settings_background_color" class="section background-dark " data-reveal-event="" data-reveal-offset=""
+          data-reveal-units="seconds">
+          <div class="sizer ">
+            <style>
+              #section-1593984863833 .backgroundVideo { z-index: -1; }
+            </style>
+            <div id="wistia_45mifn8e73" class="backgroundVideo" data-src="45mifn8e73" data-img="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/UxqPbKOhRBSGHRQJDGJX_Captura_de_Pantalla_2020-07-06_a_las_9.47.42.png"
+              data-blank="background.jpg"></div>
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593984880072 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593984880072.block-type--blog .block { padding: 0; } #block-1593984880072.block-type--offer .block { padding: 0; } #block-1593984880072 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593984880072 { margin-top: 50px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593984880072.block-type--blog .block { padding: 0; } #block-1593984880072.block-type--offer .block { padding: 0; } #block-1593984880072 .block { }} @media (max-width: 767px) { #block-1593984880072 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593984863833_blocks_1593984880072_settings_width" id="block-1593984880072" class=" block-type--image text- col-6 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593984880072 .block { display: flex; justify-content: flex-start; } #block-1593984880072 .image { width: 100%; } #block-1593984880072 .image__image { width: 100%; border-radius: 4px; } #block-1593984880072 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593984880072 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593984880072 .block { display: flex; justify-content: flex-start; } #block-1593984880072 .image__overlay { opacity: 0; } #block-1593984880072 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> 
+                        <img class="image__image" src="<?php echo site_url()."static/page_front/images/cultura.png"?>" kjb-settings-id="sections_1593984863833_blocks_1593984880072_settings_image" alt="" /> 
                     </div>
                   </div>
-                </div>
-                <div class="thim-sc-image-box left">
-                    <section id="title2">
-                          <div class="">
-                              <div class="thim-sc-steps layout-4">
-                                <div class="sc-steps-wrapper border-radius-30">
-                                    <div class="inner-steps-wrapper border-radius-30">
-                                    <div class="container">
-                                      <div class="row">
-                                          <div class="col-lg-6 media-box">
-                                          <div class="player-wrapper respondive_c">
-                                            <div class="player-inner">
-                                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/cultura.mp4';?>" allowfullscreen></iframe>
-                                            </div>
-                                          </div>
-                                          <div class="icon-play"></div>
-                                        </div>
-                                        <div class="col-lg-6 content-box">
-                                            <div class=steps-wrapper>
-                                                <h3 class="sc-title respondive_a white">¿Quiénes Somos?</h3>
-                                                <div class=tab-content>
-                                                    <p class="description respondive_a white">Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos, la visión es ser una comunidad de fuerte INFLUENCIA capas de respaldar CAMBIOS POSITIVOS EN LA SOCIEDAD para generar un mundo más próspero y trascendente.</p>
-                                              <p class="description respondive_a white div_hide">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video.</p>
-                                                </div>
-                                            <div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                    </section>
-                    <div class="vc_empty_space" style="height: 48px"><span class="vc_empty_space_inner"></span></div>
-                          </div>
-                <div class="thim-sc-course-search ">
-                    <div class=thim-loading-icon>
-                      <div class=sk-three-bounce>
-                        <div class="sk-child sk-bounce1"></div>
-                        <div class="sk-child sk-bounce2"></div>
-                        <div class="sk-child sk-bounce3"></div>
-                      </div>
-                    </div><span class=widget-search-close></span>
-                    <ul class="courses-list-search list-unstyled"></ul>
-                </div>
-                <div class="vc_row wpb_row vc_inner vc_row-fluid list-iconbox">
-                  <div class="wpb_column vc_column_container vc_col-sm-12">
-                    <div class=vc_column-inner>
-                      <div class=wpb_wrapper>
-                        <div class="thim-sc-icon-box layout-2 default">
-                          <div class=icon-box-wrapper style>
-                            <div class=box-icon style="">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                            </div>
-                            <div class=box-content>
-                              <h3 class="title">Talleres educativos</h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="thim-sc-icon-box layout-2 default">
-                          <div class=icon-box-wrapper style=" border-color: #df6c4f; color: #df6c4f;">
-                            <div class=box-icon style="">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class=box-content>
-                              <h3 class="title">Talleres de interacción</h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="thim-sc-icon-box layout-2 default">
-                          <div class=icon-box-wrapper style=" border-color: #49a942; color: #49a942;">
-                            <div class=box-icon>
-                                <i class="fa fa-hands-helping"></i>
-                            </div>
-                            <div class="box-content">
-                              <h3 class="title">Ayudas sociales</h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="thim-sc-icon-box layout-2 default">
-                          <div class=icon-box-wrapper style=" border-color: #00a78e; color: #00a78e;">
-                            <div class="box-icon">
-                                <i class="fa fa-trophy" aria-hidden="true"></i>
-                            </div>
-                            <div class="box-content">
-                              <h3 class="title">Emprendimiento</h3>
-                            </div>
-                          </div>
-                        </div>
-                          <div class="vc_empty_space" style="height: 48px"><span class="vc_empty_space_inner"></span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="thim-sc-scroll-heading next-screen">
-                  <div class=title data-scroll-to=#next-screen data-scroll-speed=700 data-scroll-offset>
-                    <div class=text>Next</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    <div class="vc_row-full-width vc_clearfix"></div>
-     <div id="next-screen" class="vc_row-full-width vc_clearfix"></div>
-      <div data-vc-full-width="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding">
-        <div class="wpb_column vc_column_container vc_col-sm-12">
-          <div class="">
-              <div class="wpb_wrapper">
-                  <div class="thim-sc-steps layout-4" style="padding:0px !important;">
-                      <div class=sc-steps-wrapper style="background-image: url(<?php echo site_url().'static/page_front/images/bg-1.png';?>); ">
-                          <div class=inner-steps-wrapper style="background: none !important;">
-                    <div class=container>
-                      <div class=row>
-                          <div class="col-lg-6 media-box">
-                          <div class="player-wrapper">
-                            <div class="player-inner">
-                                <iframe width="640" height="275" src="<?php echo site_url().'static/page_front/video/embajada.mp4';?>" allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <div class="icon-play"></div>
-                        </div>
-                          <div class="col-lg-6 content-box">
-                              <h3 class="sc-title respondive_a black">¿Qué es la Embajada?</h3>
-                            <div class=steps>
-                              <div class=tab-content>
-                                <div class="tab-pane active">
-                                    <p class="description respondive_a black">Si eres el tipo de persona que más allá de participar, busca ser PROTAGONISTA de esta cultura, crear más espacios de valor e impulsarla para que más personas puedan conocerla. Te invito a observar el siguiente video y postular a la embajada para que adquieras toda la información, recursos financieros y educativos.</p>
-                                  <p class="description respondive_a div_hide black">Tu misión es convertirte en esa persona que quieres ser para que tu éxito sume en nuestra influencia colectiva. Si deseas más información observa el siguiente video:</p>
-                                  <div class=steps-wrapper>
-                                      <div class=steps>
-                                          <div class=tab-content >
-                                            <a id="show_embasy" style="cursor:pointer;" class="readmore">Postular a la embajada</a>
-                                          </div>
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                          <div class="col-sm-3"></div>
-                          <div id="embassy" class="thim-login col-sm-6" style="background-color:white !important;border-radius: 25px;padding-left: 30px;padding-right: 30px;margin-top: 50px;">
-                              <div  class="wpb_wrapper">
-                                <div class="vc_wp_text wpb_content_element">
-                                  <div class="widget widget_text">
-                                    <div class=textwidget>
-                                      <div role="form" class="wpcf7" id="wpcf7-f56-p34-o1">
-                                        <form class="wpcf7-form" action="javascript:void(0);" enctype="multipart/form-data">
-                                          <div class="row">
-                                              <div class="col-xs-12 col-sm-12">
-                                                  <h4 class="subtitle">Ingresa tus datos</h4>
-                                                  <h2 class="title">Postula con nosotros<div></div></h2>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12">
-                                                <span class="wpcf7-form-control-wrap your-name">
-                                                    <input type="text" name="name" id="name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Nombres">
-                                                </span>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12">
-                                                <span class="wpcf7-form-control-wrap your-name">
-                                                    <input type="text" name="last_name" id="last_name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Apellidos">
-                                                </span>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12">
-                                                <span class="wpcf7-form-control-wrap your-email">
-                                                    <input type="email" name="email" id="email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" placeholder="Email">
-                                                </span>
-                                            </div>
-                                              <div class="col-xs-12 col-sm-12">
-                                                  <span class="wpcf7-form-control-wrap your-email">
-                                                      <input type="text" name="phone" id="phone" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Teléfono">
-                                                  </span>
-                                              </div>
-                                            </div>
-                                            <div class="row">
-                                              <div class="col">
-                                                    <div class="g-recaptcha" data-sitekey="6Lfql9EUAAAAAOijHIuhHoq8ZrcDN8GeTX-95onx"></div>
-                                              </div>
-                                            </div>
-                                            <div class="vc_empty_space" style="height: 10px"><span class=vc_empty_space_inner></span></div>
-                                            <div class="heading-button">
-                                                <input onclick="send_embassy();" type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary btn-md button-large" value="Postular">
-                                            </div>
-                                            <br/>
-                                            <div id="res"></div>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                          </div>
-                          <div class="col-sm-3"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class=wpb_wrapper>
-              <div class="thim-sc-steps layout-3">
-                <div class=container>
-                  <div class=row>
-                    <div class="col-md-12 heading">
-                      <div class=steps-wrapper>
-                        <h3 class="sc-title">Conviértete en parte de nuestra cultura</h3>
-                        <div class=steps>
-                          <ul class="nav" role="tablist">
-                            <li class="nav-item active">
-                                <a data-toggle="tab" href="#step-0" class="nav-link">1<span>paso</span></a>
-                                <p class="tab-title">Crea tu registro gratis</p>
-                            </li>
-                            <li class="nav-item" >
-                                <a data-toggle="tab" href="#step-2" class="nav-link">2<span>paso</span></a>
-                                <p class="tab-title">Aprende con nosotros</p>
-                            </li>
-                            <li class="nav-item">
-                                <a data-toggle="tab" href="#step-3" class="nav-link">3<span>paso</span></a>
-                              <p class=tab-title>Comparte la información</p>
-                            </li>
-                            <li class="nav-item">
-                                <a data-toggle="tab" href="#step-4" class="nav-link">4<span>paso</span></a>
-                                <p class="tab-title">Recibe una recompensa</p>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 media-box">
-                      <div class=media-wrapper>
-                          <img width="830" height="550" alt="group-4" src="<?php echo site_url().'static/page_front/images/group-4.png';?>" class="lazyload">
-                      </div>
-                    </div>
-                    <div class="col-md-6 content-box">
-                      <div class=steps-wrapper>
-                        <div class=steps>
-                          <div class=tab-content>
-                            <div class="tab-pane active" id="step-0" role="tabpanel">
-                              <h4 class="tab-title">Crea tu registro gratis</h4>
-                              <p class=description>Ve a la pestaña registro, completa tus datos y el sistema te creará un usuario gratuitamente para que seas un nuevo socio.</p>
-                              <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
-                            </div>
-                            <div class="tab-pane" id="step-2" role="tabpanel">
-                              <h4 class="tab-title">Aprende con nosotros</h4>
-                              <p class=description>Participa de la plataforma educativa Online que tenemos y podrás especializarte en el área que deseas desde la comodidad de tu hogar.</p>
-                              <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
-                            </div>
-                            <div class="tab-pane" id="step-3" role="tabpanel">
-                              <h4 class="tab-title">Comparte la información</h4>
-                              <p class=description>Al compartir la información con tus amigos ganarás puntos que luego lo vas a poder canjear por dinero en efectivo.</p>
-                              <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
-                            </div>
-                            <div class="tab-pane" id="step-4" role="tabpanel">
-                              <h4 class="tab-title">Recibe una recompensa</h4>
-                              <p class=description>El corporativo ha creado un plan de compensación para todos los embajadores que quieran compartir la plataforma, convirtiéndose en un empresario con nosotros.</p>
-                              <a href="<?php echo site_url().'register';?>" style="margin-top: 10px;" class="readmore">Crear Cuenta</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                  <div class=background-overlay style="background-image: url(<?php echo site_url().'static/page_front/images/background_2.jpg';?>);"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="vc_row-full-width vc_clearfix"></div>
-      <div data-vc-full-width="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1501121593742 vc_row-has-fill vc_row-no-padding bg-teacher">
-        <div class="wpb_column vc_column_container vc_col-sm-12">
-          <div class=vc_column-inner>
-            <div class="thim-sc-steps layout-3" style="padding-bottom: 0px !important; padding-top: 55px">
-                <div class=container>
-                  <div class=row>
-                    <div class="col-md-12 heading">
-                      <div class=steps-wrapper>
-                        <h3 class="sc-title text-teacher">¿Te gustaría ser uno de nuestros docentes?</h3>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <img alt="group-4" src="<?php echo site_url().'static/page_front/images/layer_person.png';?>" class="lazyload" style="margin-top: -14%;">
-                    </div>
-                    <div class="col-md-6">
-                      <div class=steps-wrapper>
-                        <div class=steps>
-                          <div class=tab-content>
-                            <div class="tab-pane active" role="tabpanel">
-                              <p class="description text-teacher-p">Si deseas ser parte de nuestro equipo, comunícate a nuestro número de WhatsApp o a través de la sección de contacto.</p>
-                              <p class="center">
-                                  <a href="https://api.whatsapp.com/send?phone=51931770526" title="Whatssapp Ubicua Offices" target="_blank" rel="noopener">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80"><defs><circle id="b" cx="30" cy="30" r="30"></circle><filter id="a" width="153.3%" height="153.3%" x="-26.7%" y="-23.3%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"></feGaussianBlur><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(10 8)"><use fill="#000" filter="url(#a)" xlink:href="#b"></use><use fill="#7ED321" xlink:href="#b"></use></g><path fill="#FFF" d="M56.705 37.57c0 8.988-7.343 16.274-16.401 16.274-2.876 0-5.578-.735-7.928-2.025l-9.08 2.886 2.96-8.732a16.103 16.103 0 0 1-2.354-8.403c0-8.988 7.343-16.275 16.402-16.275 9.06 0 16.4 7.287 16.4 16.275zM40.17 24.023c-7.613 0-13.806 6.117-13.806 13.636 0 2.984.977 5.747 2.63 7.995l-1.725 5.064 5.306-1.678a13.844 13.844 0 0 0 7.596 2.255c7.612 0 13.806-6.116 13.806-13.635 0-7.52-6.193-13.637-13.807-13.637zm8.295 17.233c-.102-.165-.37-.264-.772-.462-.403-.198-2.383-1.157-2.751-1.288-.37-.132-.638-.198-.906.198s-1.04 1.288-1.276 1.552c-.234.265-.469.298-.872.1-.402-.198-1.7-.617-3.237-1.966-1.197-1.05-2.005-2.345-2.24-2.742-.234-.396-.024-.61.177-.807.181-.178.403-.463.604-.694.202-.231.269-.396.402-.66.135-.265.068-.496-.033-.695-.1-.197-.907-2.146-1.242-2.94-.335-.792-.67-.66-.906-.66-.234 0-.503-.033-.771-.033-.269 0-.705.1-1.074.495-.37.397-1.409 1.355-1.409 3.304 0 1.948 1.442 3.831 1.644 4.095.201.264 2.784 4.393 6.877 5.979 4.093 1.585 4.093 1.056 4.832.99.737-.066 2.381-.958 2.718-1.882.335-.926.335-1.719.235-1.884z"></path></g></svg>
-                                  </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div class="vc_row-full-width vc_clearfix"></div>
-       <div class="vc_row wpb_row vc_row-fluid thim-bg-top-center vc_custom_1502099498895 vc_row-has-fill vc_column-gap-10">
-          <div class="wpb_column vc_column_container vc_col-sm-12">
-            <div class="vc_column-inner">
-              <div class="wpb_wrapper">
-                <div class="thim-courses-collection-wrapper">
-                  <div class="thim-collection-info rounded-colection-info">
-                    <h3 class="title">¡Nuestros Cursos! - Próximamente</h3>
-                  </div>
-<!--                  <div class="thim-courses-collection rounded-courses-collection">
-                    <div class="collection-frame">
-                      <ul class="slidee">
-                        <?php 
-                        foreach ($courses as $value) { ?>
-                            <li class="collection-item">
-                                <img width="338" height="300" alt="<?php echo $value->name;?>" src='<?php echo site_url()."static/course/img/$value->img2";?>' class="lazyload">
-                                <a class="collection-wrapper" href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>'>
-                                  <h4 class="name"><?php echo $value->name;?></h4>
-                                </a>
-                            </li>
-                        <?php } ?>
-                      </ul>
-                    </div>
-                  </div>-->
-<!--                  <div class=rounded-view-all-button>
-                      <a href="<?php echo site_url().'courses';?>">Ver todos los cursos</a>
-                  </div>-->
-                </div>
-              <!--<div class="vc_empty_space" style="height: 60px"><span class=vc_empty_space_inner></span></div>-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="vc_row wpb_row vc_row-fluid">
-        <div class="wpb_column vc_column_container vc_col-sm-12">
-          <div class="vc_column-inner">
-            <div class="wpb_wrapper">
-              <div class="vc_empty_space" style="height: 66px"><span class="vc_empty_space_inner"></span></div>
-              <div class="thim-courses-block-2">
-                <div class="row no-gutter">
-                  <div class="col-sm-3 intro-item">
-                    <div class="wrapper">
-                      <h3 class="title">Catalogo</h3>
-                      <p class="description">Encuentra productos exclusivos a un precio increíble por ser parte de nuestra empresa.</p>
-                      <a href="<?php echo site_url().'catalog';?>" class="view-courses-button">Ver todo el Catalogo</a>
-                    </div>
-                  </div>
-                    <?php 
-                    foreach ($catalog as $value) { ?>
-                        <div class="col-sm-3 course-item free">
-                        <div class="featured-img">
-                            <a href='<?php echo site_url()."catalogo/$value->category_slug/$value->slug";?>' class="img-link">
-                                <img width=400 height=400 alt="<?php echo $value->name;?>" src='<?php echo site_url()."static/catalog/$value->img";?>' class="lazyload">
-                            </a>
-                        </div>
-                        <div class="content-item">
-                          <div class="name">
-                              <a href="<?php echo site_url()."catalogo/$value->category_slug/$value->slug";?>"><?php echo $value->name;?></a>
-                          </div>
-                          <div class="title white">
-                              <?php echo corta_texto($value->summary,50);?>
-                          </div>
-                        </div>
-                      </div>
-                    <?php }?>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <div class="vc_row-full-width vc_clearfix"></div>
+      <div id="section-1593803745638" data-section-id="1593803745638">
+        <style>
+          #section-1593803745638 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/background.jpg?15964308185009978); background-position: center; } #section-1593803745638 .section { background-color: #000000; } #section-1593803745638 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593803745638 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593803745638 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593803745638 { } #section-1593803745638 .sizer { padding-top: -90px; padding-bottom: -90px; } #section-1593803745638 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593803745638 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593803745638_settings_background_color" class="section hidden--mobile background-dark " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1594321342938 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594321342938.block-type--blog .block { padding: 0; } #block-1594321342938.block-type--offer .block { padding: 0; } #block-1594321342938 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594321342938 { margin-top: -20px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594321342938.block-type--blog .block { padding: 0; } #block-1594321342938.block-type--offer .block { padding: 0; } #block-1594321342938 .block { }} @media (max-width: 767px) { #block-1594321342938 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593803745638_blocks_1594321342938_settings_width" id="block-1594321342938" class=" block-type--video text- col-8 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594321342938 .video { overflow: hidden; border-radius: 4px; }
+                    </style>
+                    <div class="video">
+                      <script>
+                        window._wq = window._wq || []; _wq.push({"y2zh7oddag": JSON.parse('{"playerColor":"#ffffff","stillUrl":"https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/0cQpjRKlTdOeID4CsYBU_landing_VIDEO.png","autoPlay":false,"controlsVisibleOnLoad":false,"playbar":false,"fullscreenButton":false,"playbackRateControl":false,"qualityControl":false,"settingsControl":false,"smallPlayButton":true,"endVideoBehavior":null,"playButton":true}')});
+                      </script>
+                      <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+                      <div class="kjb-video-responsive">
+                        <div id="wistia_y2zh7oddag" class="wistia_embed wistia_async_y2zh7oddag " data-track-progress="" data-tracked-percent="">&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-1594336324605" data-section-id="1594336324605">
+        <style>
+          #section-1594336324605 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/background.jpg?15964308185009978); background-position: center; } #section-1594336324605 .section { background-color: #000000; } #section-1594336324605 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1594336324605 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1594336324605 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1594336324605 { } #section-1594336324605 .sizer { padding-top: -90px; padding-bottom: -90px; } #section-1594336324605 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1594336324605 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1594336324605_settings_background_color" class="section hidden--desktop background-dark " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1594336324604_0 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594336324604_0.block-type--blog .block { padding: 0; } #block-1594336324604_0.block-type--offer .block { padding: 0; } #block-1594336324604_0 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594336324604_0 { margin-top: -20px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594336324604_0.block-type--blog .block { padding: 0; } #block-1594336324604_0.block-type--offer .block { padding: 0; } #block-1594336324604_0 .block { }} @media (max-width: 767px) { #block-1594336324604_0 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1594336324605_blocks_1594336324604_0_settings_width" id="block-1594336324604_0" class=" block-type--video text- col-8 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594336324604_0 .video { overflow: hidden; border-radius: 4px; }
+                    </style>
+                    <div class="video">
+                      <script>
+                        window._wq = window._wq || []; _wq.push({"vlz93t4gdx": JSON.parse('{"playerColor":"#ffffff","stillUrl":"https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/0cQpjRKlTdOeID4CsYBU_landing_VIDEO.png","autoPlay":false,"controlsVisibleOnLoad":false,"playbar":false,"fullscreenButton":false,"playbackRateControl":false,"qualityControl":false,"settingsControl":false,"smallPlayButton":true,"endVideoBehavior":null,"playButton":true}')});
+                      </script>
+                      <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+                      <div class="kjb-video-responsive">
+                        <div id="wistia_vlz93t4gdx" class="wistia_embed wistia_async_vlz93t4gdx " data-track-progress="" data-tracked-percent="">&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-1593549979454" data-section-id="1593549979454">
+        <style>
+          #section-1593549979454 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/background.jpg?15964308185009978); background-position: center; } #section-1593549979454 .section { background-color: #ffffff; } #section-1593549979454 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593549979454 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593549979454 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593549979454 { } #section-1593549979454 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593549979454 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593549979454 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593549979454_settings_background_color" class="section background-light " data-reveal-event="" data-reveal-offset=""
+          data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593550015687 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593550015687.block-type--blog .block { padding: 0; } #block-1593550015687.block-type--offer .block { padding: 0; } #block-1593550015687 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593550015687 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593550015687.block-type--blog .block { padding: 0; } #block-1593550015687.block-type--offer .block { padding: 0; } #block-1593550015687 .block { }} @media (max-width: 767px) { #block-1593550015687 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593549979454_blocks_1593550015687_settings_width" id="block-1593550015687" class=" block-type--image text- col-10 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593550015687 .block { display: flex; justify-content: flex-start; } #block-1593550015687 .image { width: 100%; } #block-1593550015687 .image__image { width: 100%; border-radius: 4px; } #block-1593550015687 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593550015687 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593550015687 .block { display: flex; justify-content: flex-start; } #block-1593550015687 .image__overlay { opacity: 0; } #block-1593550015687 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/sCnMxOseTjmBd4Krxf6P_landing-04.png"
+                        kjb-settings-id="sections_1593549979454_blocks_1593550015687_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593550115340 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593550115340.block-type--blog .block { padding: 0; } #block-1593550115340.block-type--offer .block { padding: 0; } #block-1593550115340 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593550115340 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593550115340.block-type--blog .block { padding: 0; } #block-1593550115340.block-type--offer .block { padding: 0; } #block-1593550115340 .block { }} @media (max-width: 767px) { #block-1593550115340 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593549979454_blocks_1593550115340_settings_width" id="block-1593550115340" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-down" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593550115340 .block { display: flex; justify-content: flex-start; } #block-1593550115340 .image { width: 100%; } #block-1593550115340 .image__image { width: 100%; border-radius: 4px; } #block-1593550115340 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593550115340 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593550115340 .block { display: flex; justify-content: flex-start; } #block-1593550115340 .image__overlay { opacity: 0; } #block-1593550115340 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/yUGA43yYT6GJS4rt26Ps_Que_es_instagram_challenge-10.png"
+                        kjb-settings-id="sections_1593549979454_blocks_1593550115340_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+      <div id="section-1593556456795" data-section-id="1593556456795">
+        <style>
+          #section-1593556456795 .section { background-color: rgba(50, 5, 71, 0.35); } #section-1593556456795 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593556456795 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593556456795 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593556456795 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593556456795 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593556456795 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593556456795_settings_background_color" class="section hidden--mobile background-dark " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <style>
+              #section-1593556456795 .backgroundVideo { z-index: -1; }
+            </style>
+            <div id="wistia_o5y3ma06o4" class="backgroundVideo" data-src="o5y3ma06o4" data-img="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/7G0h9dxQrOqIOrxgiLfO_fondo.png"
+              data-blank="background.jpg"></div>
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593556505447 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593556505447.block-type--blog .block { padding: 0; } #block-1593556505447.block-type--offer .block { padding: 0; } #block-1593556505447 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593556505447 { margin-top: -50px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593556505447.block-type--blog .block { padding: 0; } #block-1593556505447.block-type--offer .block { padding: 0; } #block-1593556505447 .block { }} @media (max-width: 767px) { #block-1593556505447 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593556456795_blocks_1593556505447_settings_width" id="block-1593556505447" class=" block-type--image text- col-12 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-up" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593556505447 .block { display: flex; justify-content: flex-start; } #block-1593556505447 .image { width: 100%; } #block-1593556505447 .image__image { width: 100%; border-radius: 4px; } #block-1593556505447 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593556505447 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593556505447 .block { display: flex; justify-content: flex-start; } #block-1593556505447 .image__overlay { opacity: 0; } #block-1593556505447 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/taNE8z1SDavcPxmkXMNh_landing_objetivosTitulo.png"
+                        kjb-settings-id="sections_1593556456795_blocks_1593556505447_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593556614963 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593556614963.block-type--blog .block { padding: 0; } #block-1593556614963.block-type--offer .block { padding: 0; } #block-1593556614963 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593556614963 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593556614963.block-type--blog .block { padding: 0; } #block-1593556614963.block-type--offer .block { padding: 0; } #block-1593556614963 .block { }} @media (max-width: 767px) { #block-1593556614963 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593556456795_blocks_1593556614963_settings_width" id="block-1593556614963" class=" block-type--image text- col-3 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593556614963 .block { display: flex; justify-content: flex-start; } #block-1593556614963 .image { width: 100%; } #block-1593556614963 .image__image { width: 100%; border-radius: 4px; } #block-1593556614963 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593556614963 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593556614963 .block { display: flex; justify-content: flex-start; } #block-1593556614963 .image__overlay { opacity: 0; } #block-1593556614963 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/Ws96RfbxR3myKkK9anv9_landing_objetivo1.png"
+                        kjb-settings-id="sections_1593556456795_blocks_1593556614963_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593556708798 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593556708798.block-type--blog .block { padding: 0; } #block-1593556708798.block-type--offer .block { padding: 0; } #block-1593556708798 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593556708798 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593556708798.block-type--blog .block { padding: 0; } #block-1593556708798.block-type--offer .block { padding: 0; } #block-1593556708798 .block { }} @media (max-width: 767px) { #block-1593556708798 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593556456795_blocks_1593556708798_settings_width" id="block-1593556708798" class=" block-type--image text- col-4 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-down" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593556708798 .block { display: flex; justify-content: flex-start; } #block-1593556708798 .image { width: 100%; } #block-1593556708798 .image__image { width: 100%; border-radius: 4px; } #block-1593556708798 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593556708798 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593556708798 .block { display: flex; justify-content: flex-start; } #block-1593556708798 .image__overlay { opacity: 0; } #block-1593556708798 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/3IocWvOSTSctFbwG0Eow_landing_objetivo2.png"
+                        kjb-settings-id="sections_1593556456795_blocks_1593556708798_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593556771955 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593556771955.block-type--blog .block { padding: 0; } #block-1593556771955.block-type--offer .block { padding: 0; } #block-1593556771955 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593556771955 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593556771955.block-type--blog .block { padding: 0; } #block-1593556771955.block-type--offer .block { padding: 0; } #block-1593556771955 .block { }} @media (max-width: 767px) { #block-1593556771955 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593556456795_blocks_1593556771955_settings_width" id="block-1593556771955" class=" block-type--image text- col-3 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593556771955 .block { display: flex; justify-content: flex-start; } #block-1593556771955 .image { width: 100%; } #block-1593556771955 .image__image { width: 100%; border-radius: 4px; } #block-1593556771955 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593556771955 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593556771955 .block { display: flex; justify-content: flex-start; } #block-1593556771955 .image__overlay { opacity: 0; } #block-1593556771955 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/641ZAl0vSC6YvSoVScxp_landing_objetivo3.png"
+                        kjb-settings-id="sections_1593556456795_blocks_1593556771955_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-1593796031951" data-section-id="1593796031951">
+        <style>
+          #section-1593796031951 .section { background-color: rgba(50, 5, 71, 0.34); } #section-1593796031951 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593796031951 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593796031951 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593796031951 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593796031951 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593796031951 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593796031951_settings_background_color" class="section hidden--desktop background-dark " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <style>
+              #section-1593796031951 .backgroundVideo { z-index: -1; }
+            </style>
+            <div id="wistia_6088j9q7uy" class="backgroundVideo" data-src="6088j9q7uy" data-img="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/5c2pH9BIRausXBP6y5bJ_fondo.png"
+              data-blank="background.jpg"></div>
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593796031950_0 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593796031950_0.block-type--blog .block { padding: 0; } #block-1593796031950_0.block-type--offer .block { padding: 0; } #block-1593796031950_0 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593796031950_0 { margin-top: -50px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593796031950_0.block-type--blog .block { padding: 0; } #block-1593796031950_0.block-type--offer .block { padding: 0; } #block-1593796031950_0 .block { }} @media (max-width: 767px) { #block-1593796031950_0 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593796031951_blocks_1593796031950_0_settings_width" id="block-1593796031950_0" class=" block-type--image text- col-12 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-up" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593796031950_0 .block { display: flex; justify-content: flex-start; } #block-1593796031950_0 .image { width: 100%; } #block-1593796031950_0 .image__image { width: 100%; border-radius: 4px; } #block-1593796031950_0 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593796031950_0 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593796031950_0 .block { display: flex; justify-content: flex-start; } #block-1593796031950_0 .image__overlay { opacity: 0; } #block-1593796031950_0 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/yZykEg3JTKaOwSrHwKzj_landing_objetivoTitulo2.png"
+                        kjb-settings-id="sections_1593796031951_blocks_1593796031950_0_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593796031950_1 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593796031950_1.block-type--blog .block { padding: 0; } #block-1593796031950_1.block-type--offer .block { padding: 0; } #block-1593796031950_1 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593796031950_1 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593796031950_1.block-type--blog .block { padding: 0; } #block-1593796031950_1.block-type--offer .block { padding: 0; } #block-1593796031950_1 .block { }} @media (max-width: 767px) { #block-1593796031950_1 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593796031951_blocks_1593796031950_1_settings_width" id="block-1593796031950_1" class=" block-type--image text- col-3 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593796031950_1 .block { display: flex; justify-content: flex-start; } #block-1593796031950_1 .image { width: 100%; } #block-1593796031950_1 .image__image { width: 100%; border-radius: 4px; } #block-1593796031950_1 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593796031950_1 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593796031950_1 .block { display: flex; justify-content: flex-start; } #block-1593796031950_1 .image__overlay { opacity: 0; } #block-1593796031950_1 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/OPMMO97RFSd4LzhmcnVt_landing_objetivo1.png"
+                        kjb-settings-id="sections_1593796031951_blocks_1593796031950_1_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593796031950_2 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593796031950_2.block-type--blog .block { padding: 0; } #block-1593796031950_2.block-type--offer .block { padding: 0; } #block-1593796031950_2 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593796031950_2 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593796031950_2.block-type--blog .block { padding: 0; } #block-1593796031950_2.block-type--offer .block { padding: 0; } #block-1593796031950_2 .block { }} @media (max-width: 767px) { #block-1593796031950_2 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593796031951_blocks_1593796031950_2_settings_width" id="block-1593796031950_2" class=" block-type--image text- col-4 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-down" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593796031950_2 .block { display: flex; justify-content: flex-start; } #block-1593796031950_2 .image { width: 100%; } #block-1593796031950_2 .image__image { width: 100%; border-radius: 4px; } #block-1593796031950_2 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593796031950_2 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593796031950_2 .block { display: flex; justify-content: flex-start; } #block-1593796031950_2 .image__overlay { opacity: 0; } #block-1593796031950_2 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/67N4u3yS3eTEC463X1YB_landing_objetivo2.png"
+                        kjb-settings-id="sections_1593796031951_blocks_1593796031950_2_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593796031950_3 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593796031950_3.block-type--blog .block { padding: 0; } #block-1593796031950_3.block-type--offer .block { padding: 0; } #block-1593796031950_3 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593796031950_3 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593796031950_3.block-type--blog .block { padding: 0; } #block-1593796031950_3.block-type--offer .block { padding: 0; } #block-1593796031950_3 .block { }} @media (max-width: 767px) { #block-1593796031950_3 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593796031951_blocks_1593796031950_3_settings_width" id="block-1593796031950_3" class=" block-type--image text- col-3 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593796031950_3 .block { display: flex; justify-content: flex-start; } #block-1593796031950_3 .image { width: 100%; } #block-1593796031950_3 .image__image { width: 100%; border-radius: 4px; } #block-1593796031950_3 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593796031950_3 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593796031950_3 .block { display: flex; justify-content: flex-start; } #block-1593796031950_3 .image__overlay { opacity: 0; } #block-1593796031950_3 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/IKYavbR3ms9FHeAswWGQ_landing_objetivo3.png"
+                        kjb-settings-id="sections_1593796031951_blocks_1593796031950_3_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+        
+      <div id="section-1593557264926" data-section-id="1593557264926">
+        <style>
+          #section-1593557264926 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/GnrlYaznTiK2dYQWJiDk_3602762.jpg); background-position: center; } #section-1593557264926 .section { background-color: rgba(38, 4, 77, 0.62); } #section-1593557264926 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593557264926 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593557264926 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593557264926 { } #section-1593557264926 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593557264926 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593557264926 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593557264926_settings_background_color" class="section hidden--mobile background-dark " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593557306316 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593557306316.block-type--blog .block { padding: 0; } #block-1593557306316.block-type--offer .block { padding: 0; } #block-1593557306316 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593557306316 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593557306316.block-type--blog .block { padding: 0; } #block-1593557306316.block-type--offer .block { padding: 0; } #block-1593557306316 .block { }} @media (max-width: 767px) { #block-1593557306316 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593557264926_blocks_1593557306316_settings_width" id="block-1593557306316" class=" block-type--image text- col-3 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593557306316 .block { display: flex; justify-content: flex-start; } #block-1593557306316 .image { width: 100%; } #block-1593557306316 .image__image { width: 100%; border-radius: 4px; } #block-1593557306316 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593557306316 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593557306316 .block { display: flex; justify-content: flex-start; } #block-1593557306316 .image__overlay { opacity: 0; } #block-1593557306316 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/WlfktumCSYuUUZQMdf0u_landing_comentIZQ.png"
+                        kjb-settings-id="sections_1593557264926_blocks_1593557306316_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593557403205 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593557403205.block-type--blog .block { padding: 0; } #block-1593557403205.block-type--offer .block { padding: 0; } #block-1593557403205 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593557403205 { margin-top: 0px; margin-right: -30px; margin-bottom: 0px; margin-left: -30px; } #block-1593557403205.block-type--blog .block { padding: 0; } #block-1593557403205.block-type--offer .block { padding: 0; } #block-1593557403205 .block { }} @media (max-width: 767px) { #block-1593557403205 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593557264926_blocks_1593557403205_settings_width" id="block-1593557403205" class=" block-type--image text- col-6 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593557403205 .block { display: flex; justify-content: flex-start; } #block-1593557403205 .image { width: 100%; } #block-1593557403205 .image__image { width: 100%; border-radius: 4px; } #block-1593557403205 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593557403205 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593557403205 .block { display: flex; justify-content: flex-start; } #block-1593557403205 .image__overlay { opacity: 0; } #block-1593557403205 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/hIreUqdhRuuldIHhkrTm__ig_-11.png"
+                        kjb-settings-id="sections_1593557264926_blocks_1593557403205_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593557781963 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593557781963.block-type--blog .block { padding: 0; } #block-1593557781963.block-type--offer .block { padding: 0; } #block-1593557781963 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593557781963 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593557781963.block-type--blog .block { padding: 0; } #block-1593557781963.block-type--offer .block { padding: 0; } #block-1593557781963 .block { }} @media (max-width: 767px) { #block-1593557781963 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593557264926_blocks_1593557781963_settings_width" id="block-1593557781963" class=" block-type--image text- col-3 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593557781963 .block { display: flex; justify-content: flex-start; } #block-1593557781963 .image { width: 100%; } #block-1593557781963 .image__image { width: 100%; border-radius: 4px; } #block-1593557781963 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593557781963 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593557781963 .block { display: flex; justify-content: flex-start; } #block-1593557781963 .image__overlay { opacity: 0; } #block-1593557781963 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/KuDWnRRTy84nzkYzgDpA_landing_comentDER.png"
+                        kjb-settings-id="sections_1593557264926_blocks_1593557781963_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+        
+      <div id="section-1593612291407" data-section-id="1593612291407">
+        <style>
+          #section-1593612291407 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/background.jpg?15964308185009978); background-position: center; } #section-1593612291407 .section { background-color: #ffffff; } #section-1593612291407 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593612291407 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593612291407 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593612291407 { } #section-1593612291407 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593612291407 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593612291407 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593612291407_settings_background_color" class="section hidden--desktop background-light " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593612291406_1 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593612291406_1.block-type--blog .block { padding: 0; } #block-1593612291406_1.block-type--offer .block { padding: 0; } #block-1593612291406_1 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593612291406_1 { margin-top: 0px; margin-right: -30px; margin-bottom: 0px; margin-left: -30px; } #block-1593612291406_1.block-type--blog .block { padding: 0; } #block-1593612291406_1.block-type--offer .block { padding: 0; } #block-1593612291406_1 .block { }} @media (max-width: 767px) { #block-1593612291406_1 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593612291407_blocks_1593612291406_1_settings_width" id="block-1593612291406_1" class=" block-type--image text- col-6 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593612291406_1 .block { display: flex; justify-content: flex-start; } #block-1593612291406_1 .image { width: 100%; } #block-1593612291406_1 .image__image { width: 100%; border-radius: 4px; } #block-1593612291406_1 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593612291406_1 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593612291406_1 .block { display: flex; justify-content: flex-start; } #block-1593612291406_1 .image__overlay { opacity: 0; } #block-1593612291406_1 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/jZG4jJJ9RAFcsOdWfQta__ig_-11.png"
+                        kjb-settings-id="sections_1593612291407_blocks_1593612291406_1_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593612291406_0 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593612291406_0.block-type--blog .block { padding: 0; } #block-1593612291406_0.block-type--offer .block { padding: 0; } #block-1593612291406_0 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593612291406_0 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593612291406_0.block-type--blog .block { padding: 0; } #block-1593612291406_0.block-type--offer .block { padding: 0; } #block-1593612291406_0 .block { }} @media (max-width: 767px) { #block-1593612291406_0 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593612291407_blocks_1593612291406_0_settings_width" id="block-1593612291406_0" class=" block-type--image text- col-3 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593612291406_0 .block { display: flex; justify-content: flex-start; } #block-1593612291406_0 .image { width: 100%; } #block-1593612291406_0 .image__image { width: 100%; border-radius: 4px; } #block-1593612291406_0 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593612291406_0 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593612291406_0 .block { display: flex; justify-content: flex-start; } #block-1593612291406_0 .image__overlay { opacity: 0; } #block-1593612291406_0 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/WlfktumCSYuUUZQMdf0u_landing_comentIZQ.png"
+                        kjb-settings-id="sections_1593612291407_blocks_1593612291406_0_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593612291406_2 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593612291406_2.block-type--blog .block { padding: 0; } #block-1593612291406_2.block-type--offer .block { padding: 0; } #block-1593612291406_2 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593612291406_2 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593612291406_2.block-type--blog .block { padding: 0; } #block-1593612291406_2.block-type--offer .block { padding: 0; } #block-1593612291406_2 .block { }} @media (max-width: 767px) { #block-1593612291406_2 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593612291407_blocks_1593612291406_2_settings_width" id="block-1593612291406_2" class=" block-type--image text- col-3 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593612291406_2 .block { display: flex; justify-content: flex-start; } #block-1593612291406_2 .image { width: 100%; } #block-1593612291406_2 .image__image { width: 100%; border-radius: 4px; } #block-1593612291406_2 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593612291406_2 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593612291406_2 .block { display: flex; justify-content: flex-start; } #block-1593612291406_2 .image__overlay { opacity: 0; } #block-1593612291406_2 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/KuDWnRRTy84nzkYzgDpA_landing_comentDER.png"
+                        kjb-settings-id="sections_1593612291407_blocks_1593612291406_2_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-1593628923844" data-section-id="1593628923844">
+        <style>
+          #section-1593628923844 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/ndHjQUErSBaDrXZ6Cwap_3630443.jpg); background-position: center; } #section-1593628923844 .section { background-color: rgba(22, 30, 42, 0.52); } #section-1593628923844 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593628923844 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593628923844 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593628923844 { background-attachment: fixed; } #section-1593628923844 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593628923844 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593628923844 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593628923844_settings_background_color" class="section background-dark " data-reveal-event="" data-reveal-offset=""
+          data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593629016943 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593629016943.block-type--blog .block { padding: 0; } #block-1593629016943.block-type--offer .block { padding: 0; } #block-1593629016943 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593629016943 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593629016943.block-type--blog .block { padding: 0; } #block-1593629016943.block-type--offer .block { padding: 0; } #block-1593629016943 .block { }} @media (max-width: 767px) { #block-1593629016943 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593628923844_blocks_1593629016943_settings_width" id="block-1593629016943" class=" block-type--image text- col-5 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593629016943 .block { display: flex; justify-content: flex-start; } #block-1593629016943 .image { width: 100%; } #block-1593629016943 .image__image { width: 100%; border-radius: 4px; } #block-1593629016943 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593629016943 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593629016943 .block { display: flex; justify-content: flex-start; } #block-1593629016943 .image__overlay { opacity: 0; } #block-1593629016943 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/nnCSOtd8QpqGOMNzCkam_landing_paraquienes.png"
+                        kjb-settings-id="sections_1593628923844_blocks_1593629016943_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593628935011 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593628935011.block-type--blog .block { padding: 0; } #block-1593628935011.block-type--offer .block { padding: 0; } #block-1593628935011 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593628935011 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593628935011.block-type--blog .block { padding: 0; } #block-1593628935011.block-type--offer .block { padding: 0; } #block-1593628935011 .block { }} @media (max-width: 767px) { #block-1593628935011 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593628923844_blocks_1593628935011_settings_width" id="block-1593628935011" class=" block-type--image text- col-7 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593628935011 .block { display: flex; justify-content: flex-start; } #block-1593628935011 .image { width: 100%; } #block-1593628935011 .image__image { width: 100%; border-radius: 4px; } #block-1593628935011 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593628935011 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593628935011 .block { display: flex; justify-content: flex-start; } #block-1593628935011 .image__overlay { opacity: 0; } #block-1593628935011 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/Lv5HMJdbTq2xZIZYLOmp_landing_PQESizq.png"
+                        kjb-settings-id="sections_1593628923844_blocks_1593628935011_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593629093265 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593629093265.block-type--blog .block { padding: 0; } #block-1593629093265.block-type--offer .block { padding: 0; } #block-1593629093265 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593629093265 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: -80px; } #block-1593629093265.block-type--blog .block { padding: 0; } #block-1593629093265.block-type--offer .block { padding: 0; } #block-1593629093265 .block { }} @media (max-width: 767px) { #block-1593629093265 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593628923844_blocks_1593629093265_settings_width" id="block-1593629093265" class=" block-type--image text- col-7 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593629093265 .block { display: flex; justify-content: flex-start; } #block-1593629093265 .image { width: 100%; } #block-1593629093265 .image__image { width: 100%; border-radius: 4px; } #block-1593629093265 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593629093265 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593629093265 .block { display: flex; justify-content: flex-start; } #block-1593629093265 .image__overlay { opacity: 0; } #block-1593629093265 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/ILveAcSJQp6unffsON4C_landing_PQESder.png"
+                        kjb-settings-id="sections_1593628923844_blocks_1593629093265_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593653255799 { padding: 0; } #block-1593653255799 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593653255799.block-type--blog .block { padding: 0; } #block-1593653255799.block-type--offer .block { padding: 0; } #block-1593653255799 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593653255799 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 30px; } #block-1593653255799.block-type--blog .block { padding: 0; } #block-1593653255799.block-type--offer .block { padding: 0; } #block-1593653255799 .block { }} @media (max-width: 767px) { #block-1593653255799 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593628923844_blocks_1593653255799_settings_width" id="block-1593653255799" class=" block-type--image text- col-2 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593653255799 .block { display: flex; justify-content: flex-start; } #block-1593653255799 .image { width: 100%; } #block-1593653255799 .image__image { width: 100%; border-radius: 4px; } #block-1593653255799 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593653255799 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593653255799 .block { display: flex; justify-content: flex-start; } #block-1593653255799 .image__overlay { opacity: 0; } #block-1593653255799 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/jpPKnpcRTOrGeARybJCw_sticker.png"
+                        kjb-settings-id="sections_1593628923844_blocks_1593653255799_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-1593636655232" data-section-id="1593636655232">
+        <style>
+          #section-1593636655232 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/xBUvGUmGRIqZmZEYFmKm_3410045.jpg); background-position: center; } #section-1593636655232 .section { background-color: rgba(22, 30, 42, 0.19); } #section-1593636655232 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593636655232 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593636655232 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593636655232 { } #section-1593636655232 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593636655232 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593636655232 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593636655232_settings_background_color" class="section background-dark " data-reveal-event="" data-reveal-offset=""
+          data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593636665078 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593636665078.block-type--blog .block { padding: 0; } #block-1593636665078.block-type--offer .block { padding: 0; } #block-1593636665078 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593636665078 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593636665078.block-type--blog .block { padding: 0; } #block-1593636665078.block-type--offer .block { padding: 0; } #block-1593636665078 .block { }} @media (max-width: 767px) { #block-1593636665078 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593636655232_blocks_1593636665078_settings_width" id="block-1593636665078" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593636665078 .block { display: flex; justify-content: flex-start; } #block-1593636665078 .image { width: 100%; } #block-1593636665078 .image__image { width: 100%; border-radius: 4px; } #block-1593636665078 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593636665078 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593636665078 .block { display: flex; justify-content: flex-start; } #block-1593636665078 .image__overlay { opacity: 0; } #block-1593636665078 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/AZBotbZVRCyKkqSHx3WK__ig_-10.png"
+                        kjb-settings-id="sections_1593636655232_blocks_1593636665078_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-1593638023639" data-section-id="1593638023639">
+        <style>
+          #section-1593638023639 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/background.jpg?15964308185009978); background-position: center; } #section-1593638023639 .section { background-color: #000000; } #section-1593638023639 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593638023639 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593638023639 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593638023639 { } #section-1593638023639 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593638023639 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593638023639 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593638023639_settings_background_color" class="section background-dark " data-reveal-event="" data-reveal-offset=""
+          data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593638729266 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593638729266.block-type--blog .block { padding: 0; } #block-1593638729266.block-type--offer .block { padding: 0; } #block-1593638729266 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593638729266 { margin-top: -200px; margin-right: 0px; margin-bottom: -200px; margin-left: 0px; } #block-1593638729266.block-type--blog .block { padding: 0; } #block-1593638729266.block-type--offer .block { padding: 0; } #block-1593638729266 .block { }} @media (max-width: 767px) { #block-1593638729266 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593638023639_blocks_1593638729266_settings_width" id="block-1593638729266" class=" block-type--image text- col-12 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593638729266 .block { display: flex; justify-content: flex-start; } #block-1593638729266 .image { width: 100%; } #block-1593638729266 .image__image { width: 100%; border-radius: 4px; } #block-1593638729266 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593638729266 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593638729266 .block { display: flex; justify-content: flex-start; } #block-1593638729266 .image__overlay { opacity: 0; } #block-1593638729266 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image">
+                      <a class="image__link" href="https://www.i11online.com/instagram-challenge_seguidores"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/umscxxq2TN66wuobtwnn_landing_boton_descubre.png"
+                          kjb-settings-id="sections_1593638023639_blocks_1593638729266_settings_image" alt="" /> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-1593797276582" data-section-id="1593797276582">
+        <style>
+          #section-1593797276582 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/d557NxvQ9G5AuUEwmPcQ_3410033.jpg); background-position: center; } #section-1593797276582 .section { background-color: rgba(41, 10, 68, 0.3); } #section-1593797276582 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1593797276582 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1593797276582 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1593797276582 { } #section-1593797276582 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1593797276582 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1593797276582 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1593797276582_settings_background_color" class="section hidden--desktop background-dark " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1593797276581_0 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593797276581_0.block-type--blog .block { padding: 0; } #block-1593797276581_0.block-type--offer .block { padding: 0; } #block-1593797276581_0 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593797276581_0 { margin-top: -80px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593797276581_0.block-type--blog .block { padding: 0; } #block-1593797276581_0.block-type--offer .block { padding: 0; } #block-1593797276581_0 .block { }} @media (max-width: 767px) { #block-1593797276581_0 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1593797276581_0_settings_width" id="block-1593797276581_0" class=" block-type--image text- col-12 hidden--desktop animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-down" data-aos-delay="500" data-aos-duration="0">
+                    <style>
+                      #block-1593797276581_0 .block { display: flex; justify-content: flex-start; } #block-1593797276581_0 .image { width: 100%; } #block-1593797276581_0 .image__image { width: 100%; border-radius: 4px; } #block-1593797276581_0 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593797276581_0 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593797276581_0 .block { display: flex; justify-content: flex-start; } #block-1593797276581_0 .image__overlay { opacity: 0; } #block-1593797276581_0 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/3EM5COkMQLDJEBgtndhZ_landing_mentoresMOBILE.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1593797276581_0_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1593797276581_1 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593797276581_1.block-type--blog .block { padding: 0; } #block-1593797276581_1.block-type--offer .block { padding: 0; } #block-1593797276581_1 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593797276581_1 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593797276581_1.block-type--blog .block { padding: 0; } #block-1593797276581_1.block-type--offer .block { padding: 0; } #block-1593797276581_1 .block { }} @media (max-width: 767px) { #block-1593797276581_1 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1593797276581_1_settings_width" id="block-1593797276581_1" class=" block-type--image text- col-6 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1593797276581_1 .block { display: flex; justify-content: flex-start; } #block-1593797276581_1 .image { width: 100%; } #block-1593797276581_1 .image__image { width: 100%; border-radius: 4px; } #block-1593797276581_1 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1593797276581_1 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1593797276581_1 .block { display: flex; justify-content: flex-start; } #block-1593797276581_1 .image__overlay { opacity: 0; } #block-1593797276581_1 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/iaBKYUcSiSNIqmafj0WQ_landing_mentor1.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1593797276581_1_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1594508184312 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594508184312.block-type--blog .block { padding: 0; } #block-1594508184312.block-type--offer .block { padding: 0; } #block-1594508184312 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594508184312 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594508184312.block-type--blog .block { padding: 0; } #block-1594508184312.block-type--offer .block { padding: 0; } #block-1594508184312 .block { }} @media (max-width: 767px) { #block-1594508184312 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1594508184312_settings_width" id="block-1594508184312" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594508184312 .block { display: flex; justify-content: flex-start; } #block-1594508184312 .image { width: 100%; } #block-1594508184312 .image__image { width: 100%; border-radius: 4px; } #block-1594508184312 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1594508184312 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1594508184312 .block { display: flex; justify-content: flex-start; } #block-1594508184312 .image__overlay { opacity: 0; } #block-1594508184312 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/0ByNdMCfSDGbYgEs5yg4_landing_mentor_2.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1594508184312_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1595021380102 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595021380102.block-type--blog .block { padding: 0; } #block-1595021380102.block-type--offer .block { padding: 0; } #block-1595021380102 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1595021380102 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595021380102.block-type--blog .block { padding: 0; } #block-1595021380102.block-type--offer .block { padding: 0; } #block-1595021380102 .block { }} @media (max-width: 767px) { #block-1595021380102 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1595021380102_settings_width" id="block-1595021380102" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1595021380102 .block { display: flex; justify-content: flex-start; } #block-1595021380102 .image { width: 100%; } #block-1595021380102 .image__image { width: 100%; border-radius: 4px; } #block-1595021380102 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1595021380102 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1595021380102 .block { display: flex; justify-content: flex-start; } #block-1595021380102 .image__overlay { opacity: 0; } #block-1595021380102 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/1r9tU2YIT3miwsFJuGWy_landing_mentor_3_.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1595021380102_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1595021430387 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595021430387.block-type--blog .block { padding: 0; } #block-1595021430387.block-type--offer .block { padding: 0; } #block-1595021430387 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1595021430387 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595021430387.block-type--blog .block { padding: 0; } #block-1595021430387.block-type--offer .block { padding: 0; } #block-1595021430387 .block { }} @media (max-width: 767px) { #block-1595021430387 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1595021430387_settings_width" id="block-1595021430387" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1595021430387 .block { display: flex; justify-content: flex-start; } #block-1595021430387 .image { width: 100%; } #block-1595021430387 .image__image { width: 100%; border-radius: 4px; } #block-1595021430387 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1595021430387 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1595021430387 .block { display: flex; justify-content: flex-start; } #block-1595021430387 .image__overlay { opacity: 0; } #block-1595021430387 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/oq04trrRTO8b4CJQYpqf_mentores_mentor4.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1595021430387_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1595288218635 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595288218635.block-type--blog .block { padding: 0; } #block-1595288218635.block-type--offer .block { padding: 0; } #block-1595288218635 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1595288218635 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595288218635.block-type--blog .block { padding: 0; } #block-1595288218635.block-type--offer .block { padding: 0; } #block-1595288218635 .block { }} @media (max-width: 767px) { #block-1595288218635 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1595288218635_settings_width" id="block-1595288218635" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1595288218635 .block { display: flex; justify-content: flex-start; } #block-1595288218635 .image { width: 100%; } #block-1595288218635 .image__image { width: 100%; border-radius: 4px; } #block-1595288218635 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1595288218635 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1595288218635 .block { display: flex; justify-content: flex-start; } #block-1595288218635 .image__overlay { opacity: 0; } #block-1595288218635 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/SWQW5fZ0RBqfRgFTxMP3_mentores_mentor5.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1595288218635_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1595435871965 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595435871965.block-type--blog .block { padding: 0; } #block-1595435871965.block-type--offer .block { padding: 0; } #block-1595435871965 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1595435871965 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595435871965.block-type--blog .block { padding: 0; } #block-1595435871965.block-type--offer .block { padding: 0; } #block-1595435871965 .block { }} @media (max-width: 767px) { #block-1595435871965 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1595435871965_settings_width" id="block-1595435871965" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1595435871965 .block { display: flex; justify-content: flex-start; } #block-1595435871965 .image { width: 100%; } #block-1595435871965 .image__image { width: 100%; border-radius: 4px; } #block-1595435871965 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1595435871965 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1595435871965 .block { display: flex; justify-content: flex-start; } #block-1595435871965 .image__overlay { opacity: 0; } #block-1595435871965 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/QkmktTYhTxCbKKQUjMrc_mentores_mentor6.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1595435871965_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1595875065732 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595875065732.block-type--blog .block { padding: 0; } #block-1595875065732.block-type--offer .block { padding: 0; } #block-1595875065732 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1595875065732 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595875065732.block-type--blog .block { padding: 0; } #block-1595875065732.block-type--offer .block { padding: 0; } #block-1595875065732 .block { }} @media (max-width: 767px) { #block-1595875065732 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1595875065732_settings_width" id="block-1595875065732" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1595875065732 .block { display: flex; justify-content: flex-start; } #block-1595875065732 .image { width: 100%; } #block-1595875065732 .image__image { width: 100%; border-radius: 4px; } #block-1595875065732 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1595875065732 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1595875065732 .block { display: flex; justify-content: flex-start; } #block-1595875065732 .image__overlay { opacity: 0; } #block-1595875065732 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/TD2Wg4RCQ1igqdhNjIMd_mentores_mentor7.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1595875065732_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1595875115158 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595875115158.block-type--blog .block { padding: 0; } #block-1595875115158.block-type--offer .block { padding: 0; } #block-1595875115158 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1595875115158 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1595875115158.block-type--blog .block { padding: 0; } #block-1595875115158.block-type--offer .block { padding: 0; } #block-1595875115158 .block { }} @media (max-width: 767px) { #block-1595875115158 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1593797276582_blocks_1595875115158_settings_width" id="block-1595875115158" class=" block-type--image text- col-10 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1595875115158 .block { display: flex; justify-content: flex-start; } #block-1595875115158 .image { width: 100%; } #block-1595875115158 .image__image { width: 100%; border-radius: 4px; } #block-1595875115158 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1595875115158 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1595875115158 .block { display: flex; justify-content: flex-start; } #block-1595875115158 .image__overlay { opacity: 0; } #block-1595875115158 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/ZpoWZRxvTrazAlI0x7n1_mentores_mentor8.png"
+                        kjb-settings-id="sections_1593797276582_blocks_1595875115158_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div id="section-1594660875707" data-section-id="1594660875707">
+        <style>
+          #section-1594660875707 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/cZVBPMjRnm3ANYjtvu1g_3364994.jpg); background-position: center; } #section-1594660875707 .section { background-color: rgba(110, 14, 182, 0.45); } #section-1594660875707 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1594660875707 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1594660875707 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1594660875707 { } #section-1594660875707 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1594660875707 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1594660875707 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1594660875707_settings_background_color" class="section hidden--mobile background-dark " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1594661185857 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594661185857.block-type--blog .block { padding: 0; } #block-1594661185857.block-type--offer .block { padding: 0; } #block-1594661185857 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594661185857 { margin-top: -50px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594661185857.block-type--blog .block { padding: 0; } #block-1594661185857.block-type--offer .block { padding: 0; } #block-1594661185857 .block { }} @media (max-width: 767px) { #block-1594661185857 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1594660875707_blocks_1594661185857_settings_width" id="block-1594661185857" class=" block-type--image text- col-12 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-up" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594661185857 .block { display: flex; justify-content: flex-start; } #block-1594661185857 .image { width: 100%; } #block-1594661185857 .image__image { width: 100%; border-radius: 4px; } #block-1594661185857 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1594661185857 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1594661185857 .block { display: flex; justify-content: flex-start; } #block-1594661185857 .image__overlay { opacity: 0; } #block-1594661185857 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/VePab22SrDKgcdqoYAMx_testimonios_testimonios.png"
+                        kjb-settings-id="sections_1594660875707_blocks_1594661185857_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1594661245899 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594661245899.block-type--blog .block { padding: 0; } #block-1594661245899.block-type--offer .block { padding: 0; } #block-1594661245899 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594661245899 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594661245899.block-type--blog .block { padding: 0; } #block-1594661245899.block-type--offer .block { padding: 0; } #block-1594661245899 .block { }} @media (max-width: 767px) { #block-1594661245899 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1594660875707_blocks_1594661245899_settings_width" id="block-1594661245899" class=" block-type--image text- col-9 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594661245899 .block { display: flex; justify-content: flex-start; } #block-1594661245899 .image { width: 100%; } #block-1594661245899 .image__image { width: 100%; border-radius: 4px; } #block-1594661245899 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1594661245899 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1594661245899 .block { display: flex; justify-content: flex-start; } #block-1594661245899 .image__overlay { opacity: 0; } #block-1594661245899 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/46ed14lSISERM7cdax5D_testimonios_comenttestimonios.png"
+                        kjb-settings-id="sections_1594660875707_blocks_1594661245899_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1594664116206 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594664116206.block-type--blog .block { padding: 0; } #block-1594664116206.block-type--offer .block { padding: 0; } #block-1594664116206 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594664116206 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594664116206.block-type--blog .block { padding: 0; } #block-1594664116206.block-type--offer .block { padding: 0; } #block-1594664116206 .block { }} @media (max-width: 767px) { #block-1594664116206 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1594660875707_blocks_1594664116206_settings_width" id="block-1594664116206" class=" block-type--video text- col-10 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594664116206 .video { overflow: hidden; border-radius: 4px; }
+                    </style>
+                    <div class="video">
+                      <script>
+                        window._wq = window._wq || []; _wq.push({"w31oye4wob": JSON.parse('{"playerColor":"#ffffff","stillUrl":"https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/ngOuGsDCRKOOh04advXb_file.jpg","autoPlay":false,"controlsVisibleOnLoad":false,"playbar":false,"fullscreenButton":false,"playbackRateControl":false,"qualityControl":false,"settingsControl":false,"smallPlayButton":true,"endVideoBehavior":null,"playButton":true}')});
+                      </script>
+                      <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+                      <div class="kjb-video-responsive">
+                        <div id="wistia_w31oye4wob" class="wistia_embed wistia_async_w31oye4wob " data-track-progress="" data-tracked-percent="">&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-1594663196918" data-section-id="1594663196918">
+        <style>
+          #section-1594663196918 { background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/cZVBPMjRnm3ANYjtvu1g_3364994.jpg); background-position: center; } #section-1594663196918 .section { background-color: rgba(110, 14, 182, 0.45); } #section-1594663196918 .sizer { padding-top: 40px; padding-bottom: 40px; } #section-1594663196918 .container { max-width: calc(1260px + 10px + 10px); padding-right: 10px; padding-left: 10px; } #section-1594663196918 .container--full { max-width: calc(100% + 10px + 10px); } @media (min-width: 768px) { #section-1594663196918 { } #section-1594663196918 .sizer { padding-top: 100px; padding-bottom: 100px; } #section-1594663196918 .container { max-width: calc(1260px + 40px + 40px); padding-right: 40px; padding-left: 40px; } #section-1594663196918 .container--full { max-width: calc(100% + 40px + 40px); } }
+        </style>
+        <div kjb-settings-id="sections_1594663196918_settings_background_color" class="section hidden--desktop background-dark " data-reveal-event=""
+          data-reveal-offset="" data-reveal-units="seconds">
+          <div class="sizer ">
+            <div class="container ">
+              <div class="row align-items-center justify-content-center">
+                <style>
+                  #block-1594663196917_0 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594663196917_0.block-type--blog .block { padding: 0; } #block-1594663196917_0.block-type--offer .block { padding: 0; } #block-1594663196917_0 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594663196917_0 { margin-top: -50px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594663196917_0.block-type--blog .block { padding: 0; } #block-1594663196917_0.block-type--offer .block { padding: 0; } #block-1594663196917_0 .block { }} @media (max-width: 767px) { #block-1594663196917_0 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1594663196918_blocks_1594663196917_0_settings_width" id="block-1594663196917_0" class=" block-type--image text- col-11 hidden--desktop animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-up" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594663196917_0 .block { display: flex; justify-content: flex-start; } #block-1594663196917_0 .image { width: 100%; } #block-1594663196917_0 .image__image { width: 100%; border-radius: 4px; } #block-1594663196917_0 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1594663196917_0 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1594663196917_0 .block { display: flex; justify-content: flex-start; } #block-1594663196917_0 .image__overlay { opacity: 0; } #block-1594663196917_0 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/GjtEWPXXRB6hwJAyxACP_testimonios_testimonios.png"
+                        kjb-settings-id="sections_1594663196918_blocks_1594663196917_0_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1594663196917_1 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594663196917_1.block-type--blog .block { padding: 0; } #block-1594663196917_1.block-type--offer .block { padding: 0; } #block-1594663196917_1 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594663196917_1 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594663196917_1.block-type--blog .block { padding: 0; } #block-1594663196917_1.block-type--offer .block { padding: 0; } #block-1594663196917_1 .block { }} @media (max-width: 767px) { #block-1594663196917_1 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1594663196918_blocks_1594663196917_1_settings_width" id="block-1594663196917_1" class=" block-type--image text- col-9 animated "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594663196917_1 .block { display: flex; justify-content: flex-start; } #block-1594663196917_1 .image { width: 100%; } #block-1594663196917_1 .image__image { width: 100%; border-radius: 4px; } #block-1594663196917_1 .image__overlay { opacity: 0; background-color: #fff; border-radius: 4px; } #block-1594663196917_1 .image__overlay-text { color: !important; } @media (min-width: 768px) { #block-1594663196917_1 .block { display: flex; justify-content: flex-start; } #block-1594663196917_1 .image__overlay { opacity: 0; } #block-1594663196917_1 .image__overlay:hover { opacity: 1; } }
+                    </style>
+                    <div class="image"> <img class="image__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/gFd7XLz0QtK7tsRnpEMx_testimonios_comenttestimonios.png"
+                        kjb-settings-id="sections_1594663196918_blocks_1594663196917_1_settings_image" alt="" /> </div>
+                  </div>
+                </div>
+                <style>
+                  #block-1594665567415 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594665567415.block-type--blog .block { padding: 0; } #block-1594665567415.block-type--offer .block { padding: 0; } #block-1594665567415 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1594665567415 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1594665567415.block-type--blog .block { padding: 0; } #block-1594665567415.block-type--offer .block { padding: 0; } #block-1594665567415 .block { }} @media (max-width: 767px) { #block-1594665567415 { text-align: ; } }
+                </style>
+                <div kjb-settings-id="sections_1594663196918_blocks_1594665567415_settings_width" id="block-1594665567415" class=" block-type--video text- col-10 "
+                  data-reveal-event="" data-reveal-offset="" data-reveal-units="seconds">
+                  <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                    <style>
+                      #block-1594665567415 .video { overflow: hidden; border-radius: 4px; }
+                    </style>
+                    <div class="video">
+                      <script>
+                        window._wq = window._wq || []; _wq.push({"xndkatw8sb": JSON.parse('{"playerColor":"#ffffff","stillUrl":"https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/0MexdAqGRp6XFJaR6auq_testimonios_videotestimonio.png","autoPlay":false,"controlsVisibleOnLoad":false,"playbar":false,"fullscreenButton":false,"playbackRateControl":false,"qualityControl":false,"settingsControl":false,"smallPlayButton":true,"endVideoBehavior":null,"playButton":true}')});
+                      </script>
+                      <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+                      <div class="kjb-video-responsive">
+                        <div id="wistia_xndkatw8sb" class="wistia_embed wistia_async_xndkatw8sb " data-track-progress="" data-tracked-percent="">&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    <?php $this->load->view("footer_2");?>
-    </div>
-      <script>
-        var BP_Nouveau = {"ajaxurl":"","object_nav_parent":"#buddypress","objects":{"0":"activity","1":"members","4":"xprofile","7":"settings","8":"notifications"},"nonces":{"activity":"fcd5ecf43e","members":"9af41e8848","xprofile":"10dfc2af2b","settings":"8d89e10911"}};
-      </script>
-      <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
-      <script>
-        WebFont.load({google:{families:['Roboto:400,300']}});
-      </script>
-      <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
-      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-      <script>
-        $(document).ready(function(){
-          $("#show_embasy").click(function(){
-               $.scrollTo($('#embassy'), 1000);
-          });
-        });
-</script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<script src='<?php echo site_url().'static/page_front/js/script/home.js';?>'></script>
+  </main>
+  <div id="section-footer" data-section-id="footer">
+    <style>
+      #section-footer { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; display: -webkit-box; display: -ms-flexbox; display: flex; } .footer { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
+    </style>
+    <style>
+      .footer, .footer__block { font-size: 16px; color: ; background-color: #000000; } .footer .logo__text { color: ; } .footer a.link-list__link { color: ; } .footer .link-list__link:hover { color: ; } @media (min-width: 768px) { .footer, .footer__block { font-size: 18px; } } .powered-by { background-color: #000000; } .powered-by a { color: #fff; }
+    </style>
+    <?php $this->load->view("footer");?>
+  </div>
+  <script src='https://widget.privy.com/assets/widget.js'></script>
+  <!-- END PRIVY WIDGET CODE -->
+  <!-- Javascripts ======================================================= -->
+  <script src="https://kajabi-app-assets.global.ssl.fastly.net/assets/encore_core-391b174ddfaf72e8ec9615d1579235b5c2c755e7cd65e22cf10938c815f7f394.js"></script>
+  <script src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/scripts.js?15964308185009978"></script>
+  <!-- Customer JS ======================================================= -->
+  <script>
+    /* Custom JS Added Via Theme Settings */ /* Javascript code goes here */
+  </script>
 </body>
+
 </html>
