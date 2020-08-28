@@ -69,18 +69,22 @@ class B_network extends CI_Controller {
         
         //GET CUSTOMER PRINCIPAL
         $params = array(
-                        "select" =>"customer_id,
-                                    username,
-                                    first_name,
-                                    active_month,
-                                    last_name,
-                                    kit_id,
-                                    range_id,
-                                    active",
-                        "where" => "customer_id = $customer_id and status_value = 1",
+                        "select" =>"customer.customer_id,
+                                    customer.username,
+                                    customer.first_name,
+                                    customer.active_month,
+                                    customer.last_name,
+                                    kit.kit_id,
+                                    kit.name as kit, 
+                                    kit.img, 
+                                    ranges.name as rango, 
+                                    customer.range_id,
+                                    customer.active",
+                        "join" => array('kit, customer.kit_id = kit.kit_id',
+                                        'ranges, customer.range_id = ranges.range_id'),
+                        "where" => "customer.customer_id = $customer_id and customer.status_value = 1",
                         );
         $obj_customer = $this->obj_customer->get_search_row($params);
-        
         //GET CUSTOMER N2
         $params_customer_n2 = array(
                         "select" =>"customer.customer_id,
@@ -88,11 +92,14 @@ class B_network extends CI_Controller {
                                     customer.first_name,
                                     customer.last_name,
                                     customer.active_month,
-                                    customer.kit_id,
+                                    kit.kit_id,
+                                    kit.name as kit, 
+                                    kit.img, 
                                     customer.range_id,
                                     customer.active",
                         "where" => "unilevel.parend_id = $obj_customer->customer_id and customer.status_value = 1",
-                        "join" => array('unilevel, unilevel.customer_id = customer.customer_id'),
+                        "join" => array('unilevel, unilevel.customer_id = customer.customer_id',
+                                        'kit, customer.kit_id = kit.kit_id'),
                         "order" => "unilevel.unilevel_id ASC"
                         );
          $obj_customer_n2 = $this->obj_customer->search($params_customer_n2);
@@ -117,12 +124,15 @@ class B_network extends CI_Controller {
                                                 customer.first_name,
                                                 customer.last_name,
                                                 customer.active_month,
-                                                customer.kit_id,
+                                                kit.kit_id,
+                                                kit.name as kit, 
+                                                kit.img, 
                                                 customer.range_id,
                                                 unilevel.parend_id,
                                                 customer.active",
                                 "where" => "unilevel.parend_id in ($customer_id_n2) and customer.status_value = 1",
-                                "join" => array('unilevel, unilevel.customer_id = customer.customer_id'),
+                                "join" => array('unilevel, unilevel.customer_id = customer.customer_id',
+                                                'kit, customer.kit_id = kit.kit_id'),
                                 "order" => "unilevel.unilevel_id ASC"
                                                 );
                  $obj_customer_n3 = $this->obj_customer->search($params_customer_n3);
@@ -143,13 +153,16 @@ class B_network extends CI_Controller {
                                             customer.first_name,
                                             customer.active_month,
                                             customer.last_name,
-                                            customer.kit_id,
+                                            kit.kit_id,
+                                            kit.name as kit, 
+                                            kit.img, 
                                             customer.range_id,
                                             unilevel.parend_id,
                                             customer.active
                                             ",
                                 "where" => "unilevel.parend_id in ($customer_id_n3) and customer.status_value = 1",
-                                "join" => array('unilevel, unilevel.customer_id = customer.customer_id'),
+                                "join" => array('unilevel, unilevel.customer_id = customer.customer_id',
+                                                'kit, customer.kit_id = kit.kit_id'),
                                 "order" => "unilevel.unilevel_id ASC"
                                                 );
                             $obj_customer_n4 = $this->obj_customer->search($params_customer_n3);
@@ -170,13 +183,15 @@ class B_network extends CI_Controller {
                                                         customer.first_name,
                                                         customer.active_month,
                                                         customer.last_name,
-                                                        customer.kit_id,
+                                                        kit.kit_id,
+                                                        kit.name as kit, 
+                                                        kit.img, 
                                                         customer.range_id,
                                                         unilevel.parend_id,
-                                                        customer.active
-                                                        ",
+                                                        customer.active",
                                             "where" => "unilevel.parend_id in ($customer_id_n4) and customer.status_value = 1",
-                                            "join" => array('unilevel, unilevel.customer_id = customer.customer_id'),
+                                            "join" => array('unilevel, unilevel.customer_id = customer.customer_id',
+                                                            'kit, customer.kit_id = kit.kit_id'),
                                             "order" => "unilevel.unilevel_id ASC"
                                                             );
                                         $obj_customer_n5 = $this->obj_customer->search($params_customer_n4);
@@ -198,13 +213,16 @@ class B_network extends CI_Controller {
                                                                     customer.first_name,
                                                                     customer.active_month,
                                                                     customer.last_name,
-                                                                    customer.kit_id,
+                                                                    kit.kit_id,
+                                                                    kit.name as kit, 
+                                                                    kit.img, 
                                                                     customer.range_id,
                                                                     unilevel.parend_id,
                                                                     customer.active
                                                                     ",
                                                         "where" => "unilevel.parend_id in ($customer_id_n5) and customer.status_value = 1",
-                                                        "join" => array('unilevel, unilevel.customer_id = customer.customer_id'),
+                                                        "join" => array('unilevel, unilevel.customer_id = customer.customer_id',
+                                                                        'kit, customer.kit_id = kit.kit_id'),
                                                         "order" => "unilevel.unilevel_id ASC"
                                                                         );
                                                     $obj_customer_n6 = $this->obj_customer->search($params_customer_n5);

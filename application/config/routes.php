@@ -103,6 +103,7 @@ $route['course/([0-9a-z_-]+)/([0-9]+)'] = 'c_home/category/$1';
 $route['course/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'c_home/detail/$1';
 
 $route['backoffice/profile'] = "b_profile";
+$route['backoffice/profile/update_data'] = "b_profile/update_data";
 $route['backoffice/profile/update_password'] = "b_profile/update_password";
 $route['backoffice/profile/update_bank'] = "b_profile/update_bank";
 $route['backoffice/profile/upload_img'] = "b_profile/upload_img";

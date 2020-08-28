@@ -39,6 +39,7 @@ class B_pay extends CI_Controller {
         $params = array(
                 "select" =>"bank_id,
                             bank_number, 
+                            bank_account, 
                             bank_number_cci",
         "where" => "customer_id = $customer_id");
            //GET DATA FROM CUSTOMER
@@ -61,7 +62,6 @@ class B_pay extends CI_Controller {
         }else{
             $total_disponible = $obj_total_commissions->total_disponible;
         }
-        
         $this->tmp_backoffice->set("obj_profile",$obj_profile);        
         $this->tmp_backoffice->set("bank",$bank);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
@@ -77,58 +77,45 @@ class B_pay extends CI_Controller {
                 //SELECT ID FROM CUSTOMER
             $customer_id = $_SESSION['customer']['customer_id'];    
             $amount = trim($this->input->post('amount'));
-            
-            $tax = trim($this->input->post('tax'));
-            $result = trim($this->input->post('result'));
-            $total_disponible = trim($this->input->post('total_disponible'));
-            
-            if($total_disponible >= $result){
-                    if($amount >= 3){
-                        //INSERT PAY TABLE
-                            $data = array(
-                                'customer_id' => $customer_id,
-                                'amount' => $amount,
-                                'descount' => $tax,
-                                'amount_total' => $result,
-                                'active' => 1,
-                                'status_value' => 1,
-                                'date' => date("Y-m-d H:i:s"),
-                                'created_at' => date("Y-m-d H:i:s"),
-                                'created_by' => $customer_id,
-                            ); 
-                            $pay_id = $this->obj_pay->insert($data);
-                            //INSERT COMMISSION TABLE
-                            $data = array(
-                                'customer_id' => $customer_id,
-                                'amount' => -$amount,
-                                'active' => 1,
-                                'pago' => 1,
-                                'status_value' => 1,
-                                'date' => date("Y-m-d H:i:s"),
-                                'created_at' => date("Y-m-d H:i:s"),
-                                'created_by' => $customer_id,
-                            ); 
-                            $commissions_id = $this->obj_commissions->insert($data);
+                if($amount >= 3){
+                    //INSERT PAY TABLE
+                        $data = array(
+                            'customer_id' => $customer_id,
+                            'amount' => $amount,
+                            'amount_total' => $amount,
+                            'active' => 1,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        ); 
+                        $pay_id = $this->obj_pay->insert($data);
+                        //INSERT COMMISSION TABLE
+                        $data = array(
+                            'customer_id' => $customer_id,
+                            'amount' => -$amount,
+                            'active' => 1,
+                            'pago' => 1,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        ); 
+                        $commissions_id = $this->obj_commissions->insert($data);
 
-                        //INSERT PAY COMISSIONS TABLE
-                            $data = array(
-                                'pay_id' => $pay_id,
-                                'commissions_id' => $commissions_id,
-                                'status_value' => 1,
-                                'created_at' => date("Y-m-d H:i:s"),
-                                'created_by' => $customer_id,
-                            ); 
-                            $this->obj_pay_commission->insert($data);    
-                      $message = 2;   
-                    }else{
-                      $message = 1;   
-                    }
-            }else{
-                $message = 1;   
-            }
-            
-            //SEDN DATA
-                $data['status'] = $message;
+                    //INSERT PAY COMISSIONS TABLE
+                        $data = array(
+                            'pay_id' => $pay_id,
+                            'commissions_id' => $commissions_id,
+                            'status_value' => 1,
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        ); 
+                        $this->obj_pay_commission->insert($data);    
+                  $data['status'] = true;
+                }else{
+                  $data['status'] = false;
+                }
             echo json_encode($data);
             }
     }

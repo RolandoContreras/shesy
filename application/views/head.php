@@ -8,10 +8,7 @@
     <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, red social, mlm, mmn, culturaimprable.com, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
     <meta name="robots" content="Index, Follow">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.i11online.com/instagram-challenge">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:title" content="Instagram Challenge">
-    <meta name="twitter:title" content="Instagram Challenge">
+    <meta property="og:url" content="<?php echo site_url();?>">
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
@@ -22,11 +19,10 @@
     <!-- Google Fonts ====================================================== -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Fira+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- Kajabi CSS ======================================================== -->
-    <link rel="stylesheet" media="screen" href="https://kajabi-app-assets.global.ssl.fastly.net/assets/core-36d711acd6b6b6ebec34a694a9eef8bf1660c6ae66a0df925956db2bc4a92888.css"/>
+    <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/core-36d711acd6b6b6ebec34a694a9eef8bf1660c6ae66a0df925956db2bc4a92888.css"?>"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" media="screen" href="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/styles.css?15964308185009978" />
+    <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/styles.css?15964308185009978"?>"/>
     <!-- Customer CSS ====================================================== -->
-    <link rel="stylesheet" media="screen" href="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/assets/overrides.css?15964308185009978"/>
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/my_style.css";?>"/>
     <!-- Kajabi Editor Only CSS ============================================ -->
     <script>
@@ -37,14 +33,5 @@
     </script>
     <script>
         Kajabi.theme = {activeThemeName: "Encore", previewThemeId: null, editor: false};
-    </script>
-    <script type="text/javascript">
-        window._mfq = window._mfq || [];
-        (function () {
-            var mf = document.createElement("script");
-            mf.type = "text/javascript";
-            mf.defer = true;
-            mf.src = "//cdn.mouseflow.com/projects/fe0b1a4c-2060-4b7e-84e4-a56ec95cf945.js"; document.getElementsByTagName("head")[0].appendChild(mf);
-        })();
     </script>
 </head>

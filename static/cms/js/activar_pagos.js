@@ -11,8 +11,9 @@ function pagado(pay_id){
             className: 'btn-danger'
         }
     },
-    callback: function () {
-         $.ajax({
+    callback: function (e) {
+        if(e == true){
+            $.ajax({
                    type: "post",
                    url: site+"dashboard/pagos/pagado",
                    dataType: "json",
@@ -21,6 +22,7 @@ function pagado(pay_id){
                    location.reload();
                    }         
            });
+        }
     }
 });
 }
@@ -38,8 +40,9 @@ function devolver(pay_id){
             className: 'btn-danger'
         }
     },
-    callback: function () {
-         $.ajax({
+    callback: function (e) {
+        if(e == true){
+            $.ajax({
                    type: "post",
                    url: site+"dashboard/pagos/devolver",
                    dataType: "json",
@@ -48,6 +51,7 @@ function devolver(pay_id){
                    location.reload();
                    }         
            });
+        }
     }
 });
 }

@@ -91,6 +91,7 @@ class B_home extends CI_Controller {
         $params = array(
             "select" => "commissions.amount,
                                     commissions.date,
+                                    commissions.commissions_id,
                                     customer.username,
                                     commissions.status_value,
                                     bonus.name as bonus",
@@ -132,6 +133,7 @@ class B_home extends CI_Controller {
         $params_profile = array(
             "select" => "customer.customer_id,
                                     customer.first_name,
+                                    customer.username,
                                     customer.last_name,
                                     customer.img,
                                     ",
