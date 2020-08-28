@@ -108,7 +108,7 @@
                         <li data-username="Tablero" class="nav-item">
                             <a href="#" class="btn" style="width: 100%">
                                 <div class="access-dam-black" align="center"> 
-                                    <span>Banners</span>
+                                    <span>Fondos de Inversión</span>
                                 </div>
                             </a>
                         </li>
