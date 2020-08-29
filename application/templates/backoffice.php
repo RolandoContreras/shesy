@@ -101,14 +101,14 @@
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="btn" style="width: 100%">
                                 <div class="access-dam-green" align="center"> 
-                                    <span>Catalogo de Empresas</span>
+                                    <span>Business</span>
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="#" class="btn" style="width: 100%">
                                 <div class="access-dam-black" align="center"> 
-                                    <span>Fondos de Inversión</span>
+                                    <span>Portafolio de Inversión</span>
                                 </div>
                             </a>
                         </li>

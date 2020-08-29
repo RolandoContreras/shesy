@@ -104,29 +104,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 col-xl-4">
-                                <div class="card card-social">
-                                    <div class="card-block border-bottom">
-                                        <div class="row align-items-center justify-content-center">
-                                            <div class="col-auto"><img src='<?php echo site_url() . "static/backoffice/images/plan/$obj_customer->kit_img"; ?>' alt="plan" width="80"/></div>
-                                            <div class="col text-right">
-                                                <h3><?php echo $obj_customer->kit; ?></h3>
-                                                <h5 class="text-c-green mb-0">
-                                                    <i class="feather icon-arrow-up text-c-green m-r-10"></i><span class="text-muted">Plan Actual</span>
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center justify-content-center card-active">
-                                            <div class="col-12">
-                                                <h6 class="text-center m-b-10"></h6>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:60%;height:6px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="col-md-12 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -165,6 +143,29 @@
                                                 <h6 class="text-center m-b-10"></h6>
                                                 <div class="progress">
                                                     <div class="progress-bar progress-c-purple" role="progressbar" style="width:40%;height:6px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xl-4">
+                                <div class="card card-social">
+                                    <div class="card-block border-bottom">
+                                        <div class="row align-items-center justify-content-center">
+                                            <div class="col-auto"><img src='<?php echo site_url() . "static/backoffice/images/plan/$obj_customer->kit_img"; ?>' alt="plan" width="80"/></div>
+                                            <div class="col text-right">
+                                                <h3><?php echo $obj_customer->kit; ?></h3>
+                                                <h5 class="text-c-green mb-0">
+                                                    <i class="feather icon-arrow-up text-c-green m-r-10"></i><span class="text-muted">Plan Actual</span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center justify-content-center card-active">
+                                            <div class="col-12">
+                                                <h6 class="text-center m-b-10"></h6>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:60%;height:6px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
