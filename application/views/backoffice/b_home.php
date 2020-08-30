@@ -6,27 +6,27 @@
                     <div class="page-wrapper">
                         <div class="row">
                             <?php
-                        if (isset($result_date)) {
-                            if ($result_date < 11) {
-                                ?>
-                            <div class="col-md-12">
-                                <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                                    Hola <?php echo $_SESSION['customer']['name']; ?> quedan solo <strong><?php echo $result_date; ?> días para </strong>su recompra mensual. Procure estar activo para que sigan ganando en el plan. <button onclick="go_recompras();"type="button" class="buyButton btn theme-bg shadow-2"><i class="fa fa-shopping-bag text-c-white fa-2x" style="margin-right:0px;"></i></button>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                </div>
-                            </div>
-                                <?php
+                            if (isset($result_date)) {
+                                if ($result_date < 11) {
+                                    ?>
+                                    <div class="col-md-12">
+                                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                            Hola <?php echo $_SESSION['customer']['name']; ?> quedan solo <strong><?php echo $result_date; ?> días para </strong>su recompra mensual. Procure estar activo para que sigan ganando en el plan. <button onclick="go_recompras();"type="button" class="buyButton btn theme-bg shadow-2"><i class="fa fa-shopping-bag text-c-white fa-2x" style="margin-right:0px;"></i></button>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
                             }
-                        }
-                        ?>
-                        <?php if ($obj_customer->active == 0) { ?>
-                            <div class="col-md-12">
-                                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                Bienvenido  <?php echo $_SESSION['customer']['name']; ?> a <strong>Cultura Imparable, </strong>para que obtengas todos los beneficios adquiere un <strong>Pack</strong> con nosotros. <a href="<?php echo site_url() . 'backoffice/plan'; ?>" type="button" class="buyButton btn btn-default">Clic Aquí</a>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            </div>
-                        <?php } ?>
+                            ?>
+                            <?php if ($obj_customer->active == 0) { ?>
+                                <div class="col-md-12">
+                                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                        Bienvenido  <?php echo $_SESSION['customer']['name']; ?> a <strong>Cultura Imparable, </strong>para que obtengas todos los beneficios adquiere un <strong>Pack</strong> con nosotros. <a href="<?php echo site_url() . 'backoffice/plan'; ?>" type="button" class="buyButton btn btn-default">Clic Aquí</a>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    </div>
+                                </div>
+                            <?php } ?>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-md-12 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -193,9 +193,9 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
+
+
+
                             <div class="col-md-6 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -264,7 +264,7 @@
                                                                     <span class="badge-success-inverted"> + &dollar;<?php echo $value->amount; ?></span>
                                                                 </td>
                                                             </tr>
-                                                        <?php
+                                                            <?php
                                                         }
                                                     } else {
                                                         ?>
@@ -278,105 +278,41 @@
                                     </div>
                                 </div>
                             </div>
-<!--                            <div class="col-md-4 col-xl-4">
+                            <div class="col-md-6 col-xl-4">
                                 <div class="card card-social">
-                                    <div class="card-block border-bottom">
-                                        <div class="row align-items-center justify-content-center">
-                                            <div class="col-auto"><i class="fa fa-user-plus text-c-red fa-2x"></i></div>
-                                            <div class="col text-right">
-                                                <h3>Nuevo Socio</h3>
-                                                <h5 class="text-c-blue mb-0"><span class="text-muted">Enlace de Referencia</span></h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <div class="row align-items-center justify-content-center card-active">
-                                            <div class="col-12">
-                                                <h6 class="text-center m-b-10">
-                                                    <span class="text-muted m-r-5">
-                                                        Click Aquí: <a target="_blank" href="<?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?></a>
-                                                    </span>
-                                                </h6>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-c-red" role="progressbar" style="width:100%;height:6px;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <?php
+                                        if (!empty($obj_next_range)) {
+                                            if ($obj_total_commissions->total_comissions == 0) {
+                                                $percent = 0;
+                                            } else {
+                                                $percent = ($obj_total_commissions->total_comissions / $obj_next_range->point_grupal) * 100;
+                                                $percent_js = $obj_total_commissions->total_comissions / $obj_next_range->point_grupal;
+                                                $percent = ceil($percent);
+                                            }
+                                        ?>
+                                        <div class="circle">
+                                            <strong class="number-cicle"><?php echo $percent;?>%</strong>
+                                            <div class="os-progress-bar warning">
+                                                <div class="bar-labels">
+                                                    <div class="bar-label-left"> <?php echo format_number_miles($obj_total_commissions->total_comissions);?> PTS </div>
+                                                    <div class="bar-label-right"> <span class="info"><?php echo format_number_miles($obj_next_range->point_grupal);?> PTS</span> </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>-->
-                            
-                            <!--<h6 class="element-header" style="margin-top: 35px;"> Puntos de Rango </h6>-->
-<!--                                        <div class="container py-5">
-                                            <div class="row">
-                                                <?php
-                                                if (!empty($obj_next_range)) {
-                                                    if ($obj_total_commissions->total_comissions == 0) {
-                                                        $percent = 0;
-                                                    } else {
-                                                        $percent = ($obj_total_commissions->total_comissions / $obj_next_range->point_grupal) * 100;
-                                                        $percent = ceil($percent);
-                                                    }
-                                                    ?>
-                                                    <div class="col-xl-12 col-lg-12 mb-12">
-
-
-                                                        <div class="bg-white rounded-lg p-5 shadow">
-                                                            <h2 class="h6 font-weight-bold text-center mb-4">Próximo Rango</h2>
-
-                                                             Progress bar 1 
-                                                            <div class="progress mx-auto" data-value='<?php echo $percent; ?>'>
-                                                                <span class="progress-left">
-                                                                    <span class="progress-bar border-primary"></span>
-                                                                </span>
-                                                                <span class="progress-right">
-                                                                    <span class="progress-bar border-primary"></span>
-                                                                </span>
-                                                                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                                                                    <div class="h2 font-weight-bold"><?php echo $percent; ?><sup class="small">%</sup></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row text-center mt-4">
-                                                                <div class="col-6 border-right">
-                                                                    <div class="h6 font-weight-bold mb-0"><?php echo $obj_total_commissions->total_comissions;?></div> 
-                                                                    <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_customer->ranges_img"; ?>' style="max-width: 70px;">
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div class="h6 font-weight-bold mb-0"><?php echo $obj_next_range->point_grupal;?></div> 
-                                                                    <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_next_range->img"; ?>' style="max-width: 70px;">
-                                                                </div>
-                                                            </div>
-                                                         </div>
-                                                    </div>
-                                                <?php } else { ?>
-                                                    <div class="col-xl-12 col-lg-12 mb-12">
-                                                        <div class="bg-white rounded-lg p-5 shadow">
-                                                            <h2 class="h6 font-weight-bold text-center mb-4">Rangos Completos</h2>
-                                                            <div class="progress mx-auto" data-value='100'>
-                                                                <span class="progress-left">
-                                                                    <span class="progress-bar border-success"></span>
-                                                                </span>
-                                                                <span class="progress-right">
-                                                                    <span class="progress-bar border-success"></span>
-                                                                </span>
-                                                                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                                                                    <div class="h2 font-weight-bold">100<sup class="small">%</sup></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row text-center mt-4">
-                                                                <div class="col-12 border-right">
-                                                                    <div class="h4 font-weight-bold mb-0">
-                                                                        <img class="img-responsive" src='<?php echo site_url() . "static/backoffice/images/rangos/$obj_customer->ranges_img"; ?>' style="max-width: 70px;"> 
-                                                                    </div>
-                                                                    <span class="small text-gray"><?php echo $obj_customer->range_name; ?></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?php } ?>
+                                    <?php } else {
+                                        $percent_js = 1;?>
+                                    <div class="circle">
+                                            <strong class="number-cicle">100%</strong>
+                                            <div class="os-progress-bar warning">
+                                                <div class="bar-labels">
+                                                    <div class="bar-label-left"></div>
+                                                    <div class="bar-label-right"> <span class="info">Completado</span> </div>
+                                                </div>
                                             </div>
-                                        </div>-->
-                            
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -384,32 +320,22 @@
         </div>
     </div>
 </div>
-<!--<script>
-    $(function () {
-
-        $(".progress").each(function () {
-
-            var value = $(this).attr('data-value');
-            var left = $(this).find('.progress-left .progress-bar');
-            var right = $(this).find('.progress-right .progress-bar');
-
-            if (value > 0) {
-                if (value <= 50) {
-                    right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-                } else {
-                    right.css('transform', 'rotate(180deg)')
-                    left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-                }
-            }
-
-        })
-
-        function percentageToDegrees(percentage) {
-
-            return percentage / 100 * 360
-
-        }
-
+<script>
+    $('.circle').circleProgress({
+        value: <?php echo $percent_js;?>,
+        size: 280.0,
+        startAngle: -Math.PI,
+        thickness: '20',
+        fill: {
+            gradient: ['#3aeabb', '#fdd250']
+        },
+        emptyFill: 'rgba(0, 0, 0, .1)',
+        animation: {
+            duration: 1200,
+            easing: 'circleProgressEasing'
+        },
+        animationStartValue: 0.0,
+        reverse: false,
+        lineCap: 'butt'
     });
-</script>-->
-<!--<script src="<?php echo site_url() . "static/backoffice/dist/circliful.js" ?>"></script>-->
+</script>
