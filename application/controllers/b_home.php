@@ -137,7 +137,7 @@ class B_home extends CI_Controller {
                                     customer.last_name,
                                     customer.img,
                                     ",
-            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+            "where" => "customer.customer_id = $customer_id"
         );
         //GET DATA COMMENTS
         return $obj_customer = $this->obj_customer->get_search_row($params_profile);
