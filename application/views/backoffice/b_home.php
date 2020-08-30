@@ -280,6 +280,7 @@
                             </div>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card card-social">
+                                    <div class="space-15"></div>
                                     <?php
                                         if (!empty($obj_next_range)) {
                                             if ($obj_total_commissions->total_comissions == 0) {
@@ -291,7 +292,11 @@
                                             }
                                         ?>
                                         <div class="circle">
-                                            <strong class="number-cicle"><?php echo $percent;?>%</strong>
+                                            <strong class="number-cicle"><?php echo $percent;?>% <br/> 
+                                                <strong class="number-range">
+                                                    <?php echo $obj_next_range->name;?>
+                                                </strong>
+                                            </strong>
                                             <div class="os-progress-bar warning">
                                                 <div class="bar-labels">
                                                     <div class="bar-label-left"> <?php echo format_number_miles($obj_total_commissions->total_comissions);?> PTS </div>
