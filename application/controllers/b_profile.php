@@ -68,6 +68,29 @@ class B_profile extends CI_Controller {
             return $messages_informative;
     }
     
+    public function update_data() {
+        if ($this->input->is_ajax_request()) {
+            //SELECT ID FROM CUSTOMER
+            $customer_id = $_SESSION['customer']['customer_id'];
+            $address = trim($this->input->post('address'));
+            $phone = trim($this->input->post('phone'));
+            //UPDATE DATA EN CUSTOMER TABLE
+            $data = array(
+                'address' => $address,
+                'phone' => $phone,
+                'updated_by' => $customer_id,
+                'updated_at' => date("Y-m-d H:i:s")
+            );
+            $result = $this->obj_customer->update($customer_id, $data);
+            if ($result != null) {
+                $data['status'] = true;
+            } else {
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+    }
+    
     public function update_password(){
              if($this->input->is_ajax_request()){   
                 //SELECT ID FROM CUSTOMER
@@ -78,8 +101,8 @@ class B_profile extends CI_Controller {
                $param_customer = array(
                                 "select" => "password",
                                 "where" => "customer_id = '$customer_id' and password = '$pass'");
-                $customer = count($this->obj_customer->get_search_row($param_customer));
-                if($customer > 0){
+                $customer = $this->obj_customer->total_records($param_customer);
+                if($customer == 1){
                     //UPDATE DATA EN CUSTOMER TABLE
                     $data = array(
                         'password' => $new_pass,
@@ -87,9 +110,9 @@ class B_profile extends CI_Controller {
                         'updated_at' => date("Y-m-d H:i:s")
                     ); 
                     $this->obj_customer->update($customer_id,$data);
-                    $data['status'] = "true";
+                    $data['status'] = true;
                 }else{
-                    $data['status'] = "false";
+                    $data['status'] = false;
                 }
                echo json_encode($data); 
             }
@@ -113,8 +136,12 @@ class B_profile extends CI_Controller {
                         'updated_by' => $customer_id,
                         'updated_at' => date("Y-m-d H:i:s")
                     ); 
-                    $this->obj_customer->update($customer_id,$data);
-                    $data['status'] = "true";
+                    $result = $this->obj_customer->update($customer_id,$data);
+                    if(!empty($result)){
+                        $data['status'] = true;
+                    }else{
+                        $data['status'] = false;
+                    }
                echo json_encode($data); 
             }
     }

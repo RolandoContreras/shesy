@@ -5,15 +5,23 @@
             <style>
               #block-1555988519593 { line-height: 1; } #block-1555988519593 .logo__image { display: block; width: 120px; }
             </style>
-            <a class="logo" href="/"> 
-                <img class="logo__image" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/2231025/settings_images/LjR2zNdOTpKwP06d0uuJ_file.jpg" kjb-settings-id="sections_footer_blocks_1555988519593_settings_logo" alt="Footer Logo" /> </a>
+            <a class="logo" href="<?php echo site_url();?>"> 
+                <img class="logo__image" src="<?php echo site_url()."static/page_front/images/logo/logo.png";?>" kjb-settings-id="sections_footer_blocks_1555988519593_settings_logo" alt="Logo Cultura Imparable"/> 
+            </a>
           </div>
           <div id="block-1555988509126" class="footer__block media__body">
-            <div class="link-list justify-content-right" kjb-settings-id="sections_footer_blocks_1555988509126_settings_menu"> <a class="link-list__link" href="https://www.i11online.com/m3e-curso-intensivo" rel="noopener">M3E</a> <a class="link-list__link" href="https://www.i11online.com/store"
-                rel="noopener">Tienda</a> <a class="link-list__link" href="https://www.i11online.com/recursos-gratuitos" rel="noopener">Recursos gratuitos </a>              <a class="link-list__link" href="https://www.i11online.com/pages/quienes-somos" rel="noopener">Sobre Nosotros</a> <a class="link-list__link"
-                href="https://www.i11online.com/blog" rel="noopener">Blog</a> </div>
+            <div class="link-list justify-content-right" kjb-settings-id="sections_footer_blocks_1555988509126_settings_menu"> 
+                <a class="link-list__link" href="<?php echo site_url();?>" rel="noopener">Inicio</a> 
+                <a class="link-list__link" href="<?php echo site_url()."cursos";?>" rel="noopener">Cursos</a> 
+                <a class="link-list__link" href="<?php echo site_url()."catalogo";?>" rel="noopener">Catalogo</a>             
+                <a class="link-list__link" href="<?php echo site_url()."contacto";?>" rel="noopener">Contacto</a> 
+                <a class="link-list__link" href="<?php echo site_url()."registro";?>" rel="noopener">Registro</a> 
+                <a class="link-list__link" href="<?php echo site_url()."iniciar-sesion";?>" rel="noopener">Iniciar Sesion</a> 
+            </div>
           </div>
-          <div id="block-1555988525205" class="footer__block "> <span kjb-settings-id="sections_footer_blocks_1555988525205_settings_copyright"> &copy; 2020 Kajabi</span></div>
+          <div class="footer__block "> 
+              <span kjb-settings-id="sections_footer_blocks_1555988525205_settings_copyright"> &copy; 2020 Evolucion Web</span>
+          </div>
         </div>
       </div>
     </footer>

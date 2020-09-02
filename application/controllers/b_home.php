@@ -91,6 +91,7 @@ class B_home extends CI_Controller {
         $params = array(
             "select" => "commissions.amount,
                                     commissions.date,
+                                    commissions.commissions_id,
                                     customer.username,
                                     commissions.status_value,
                                     bonus.name as bonus",
@@ -132,10 +133,11 @@ class B_home extends CI_Controller {
         $params_profile = array(
             "select" => "customer.customer_id,
                                     customer.first_name,
+                                    customer.username,
                                     customer.last_name,
                                     customer.img,
                                     ",
-            "where" => "customer.customer_id = $customer_id and customer.active = 1"
+            "where" => "customer.customer_id = $customer_id"
         );
         //GET DATA COMMENTS
         return $obj_customer = $this->obj_customer->get_search_row($params_profile);
