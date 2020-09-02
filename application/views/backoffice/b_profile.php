@@ -115,20 +115,22 @@
                                                         <div id="show_wallet_div">
                                                             <form class="form-horizontal" onsubmit="change_bank();" enctype="multipart/form-data" action="javascript:void(0);"> 
                                                                 <div class="form-group"> 
-                                                                    <label class="control-label"> Nombre del Banco </label> 
-                                                                    <select class="form-control" name="bank_id" id="bank_id">
+                                                                    <label class="control-label"> Nombre del Banco *</label> 
+                                                                    <select class="form-control" name="bank_id" id="bank_id" required="">
                                                                         <option value="">Seleccionar</option>
                                                                         <option value="1" <?php echo $obj_customer->bank_id == 1 ? "selected" : ""; ?>>BCP (Banco de Crédito)</option>
                                                                         <option value="2" <?php echo $obj_customer->bank_id == 2 ? "selected" : ""; ?>>Interbank</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group"> 
-                                                                    <label class="control-label"> Titular de la cuenta </label> 
-                                                                    <input type="text" name="bank_account" value="<?php echo $obj_customer->bank_account; ?>" id="bank_account" class="form-control">
+                                                                    <label class="control-label"> Titular de la cuenta * </label> 
+                                                                    <input type="text" name="bank_account" value="<?php echo $obj_customer->bank_account; ?>" id="bank_account" class="form-control" required="">
+                                                                    <label class="error jquery-validation-error small form-text invalid-feedback">Titular es requerido.</label>
                                                                 </div>
                                                                 <div class="form-group"> 
-                                                                    <label class="control-label"> N° de cuenta Bancaria </label> 
-                                                                    <input type="text" name="bank_number" value="<?php echo $obj_customer->bank_number; ?>" id="bank_number" class="form-control">
+                                                                    <label class="control-label"> N° de cuenta Bancaria *</label> 
+                                                                    <input type="text" name="bank_number" value="<?php echo $obj_customer->bank_number; ?>" id="bank_number" class="form-control" required="">
+                                                                    <label class="error jquery-validation-error small form-text invalid-feedback">N° de cuenta es requerido.</label>
                                                                 </div>
                                                                 <div class="form-group"> 
                                                                     <label class="control-label"> N° de cuenta CCI (Interbancario)  </label> 
@@ -141,7 +143,6 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="col-lg-12" align="right"> 
-                                                                        <!--<button class="mr-2 mb-2 btn btn-success" type="submit" style="margin-top: 30px;">Guardar Datos Bancarios <i class="os-icon os-icon-grid-18"></i></button>-->        
                                                                         <button id="save_bank" type="submit" class="btn btn-success mb-2"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos Bancarios</button>
                                                                         <button class="btn btn-success mb-2" type="button" style="display: none;" id="spinner_bank">
                                                                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -149,7 +150,6 @@
                                                                         </button>
                                                                     </div>
                                                                 </div>
-
                                                             </form>
                                                         </div> 
                                                         <div id="show_pass_div" style="display:none;">
@@ -157,31 +157,24 @@
                                                                 <div class="form-group">
                                                                     <div class="col-lg-12"> 
                                                                         <label class="control-label">Contraseña Actual</label> 
-                                                                        <input type="password" name="pass" id="pass" class="form-control">        
+                                                                        <input type="password" name="pass" id="pass" class="form-control">    
+                                                                        <label class="error jquery-validation-error small form-text invalid-feedback">La contraseña es requerida.</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="col-lg-12"> 
                                                                         <label class="control-label">Nueva Contraseña</label> 
                                                                         <input type="password" name="new_pass" id="new_pass" class="form-control"> 
+                                                                        <label class="error jquery-validation-error small form-text invalid-feedback">La nueva ontraseña es requerida.</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="col-lg-12"> 
                                                                         <label class="control-label">Confirme Nueva Contraseña</label> 
                                                                         <input type="password" name="new_pass_confirm" id="new_pass_confirm" class="form-control"> 
+                                                                        <label class="error jquery-validation-error small form-text invalid-feedback">La confirmación de la nueva ontraseña es requerida.</label>
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group has-feedback" style="display: none;" id="pass_error">
-                                                                    <div class="alert alert-danger validation-errors">
-                                                                        <p class="user_login_id" style="text-align: center;">Ingrese una contraseña valida</p>
-                                                                    </div>
-                                                                </div>  
-                                                                <div class="form-group has-feedback" style="display: none;" id="error_no_equal">
-                                                                    <div class="alert alert-danger validation-errors">
-                                                                        <p class="user_login_id" style="text-align: center;">Las contraseña no son iguales</p>
-                                                                    </div>
-                                                                </div>  
                                                                 <div class="form-group">
                                                                     <div class="col-lg-12" align="right"> 
                                                                         <button id="save_pass" type="button" onclick="change_pass();" class="btn btn-success mb-2"><i class="fa fa-floppy-o" aria-hidden="true"></i> Cambiar Contraseña</button>
