@@ -79,7 +79,7 @@ class B_home extends CI_Controller {
                         "point_grupal" => "3000",
                         "name" => "STAR1",);
         }
-
+        
         //GET TOTAL REFERRED
         $params = array(
             "select" => "count(*) as total_referred,

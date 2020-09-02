@@ -1,43 +1,64 @@
-function make_pay(){
-      var amount = document.getElementById("amount").value;
-      var tax =  document.getElementById("tax").value;
-      var result = document.getElementById("result").value;
-      var total_disponible = document.getElementById("total_disponible").value;
-      if(amount == ""){
-          document.getElementById("pay_alert").style.display = "block";
-          $("#amount").focus();
-      }else if(tax == ""){
-          document.getElementById("pay_alert").style.display = "block";
-      }else if(result == ""){
-          document.getElementById("pay_alert").style.display = "block";
-      }else{
-          if(result > total_disponible){
-              document.getElementById("pay_alert").style.display = "block";
-          }else{
-              $.ajax({
+function make_pay() {
+    var amount = document.getElementById("amount").value;
+    var total_disponible = document.getElementById("total_disponible").value;
+    if (amount == "") {
+        $("#amount").addClass("is-invalid");
+        $("#amount").focus();
+    } else {
+        if (total_disponible < 3) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'El importe mínimo de cobro es $3',
+                footer: 'No cuenta con el importe mínimo para solicitar el cobro'
+            });
+            $("#amount").focus();
+        } else if (amount < 3) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'El importe mínimo de cobro es $3',
+                footer: 'Ingrese nuevamente el importe de cobro'
+            });
+            $("#amount").focus();
+        } else {
+            document.getElementById("pay").style.display = "none";
+            document.getElementById("spinner_pay").style.display = "block";
+            $.ajax({
                 type: "post",
                 url: site + "backoffice/pay/make_pay",
                 dataType: "json",
                 data: {amount: amount,
-                       tax:tax,
-                       result:result,
-                       total_disponible:total_disponible},
-                success:function(data){
-                    if(data.status == '1'){
-                        document.getElementById("pay_alert").style.display = "block";
-                    }else{
-                        document.getElementById("pay_alert").style.display = "none";
-                        document.getElementById("pay_success").style.display = "block";
-                        location.reload();
+                    total_disponible: total_disponible},
+                success: function (data) {
+                    if (data.status == true) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Solicitud de cobro exitosa',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        window.setTimeout(function () {
+                            window.location = site + "backoffice/pay";
+                        }, 1500);
+                    } else {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Sucedio un error',
+                            footer: 'Intente Nuevamente'
+                        });
                     }
-                }            
-        });
-          }
-          
-      }
-        
-        
+                }
+            });
+        }
+
+    }
+
+
 }
+
 
 function validate_amount(amount){
         $.ajax({

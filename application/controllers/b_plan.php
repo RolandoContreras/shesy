@@ -22,7 +22,7 @@ class B_plan extends CI_Controller {
         //get profile
         $obj_profile = $this->get_profile($customer_id);
         //kt_id
-        $kit_id = $_SESSION['customer']['kit_id'];
+        $kit_id = $obj_profile->kit_id;
         $params = array(
                         "select" =>"kit_id,
                                     name,
@@ -35,7 +35,6 @@ class B_plan extends CI_Controller {
                         "order" => "kit_id ASC",
                         );
         $obj_kit = $this->obj_kit->search($params);
-        
         //GET PRICE CURRENCY
         $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("kit_id",$kit_id);
@@ -76,8 +75,9 @@ class B_plan extends CI_Controller {
             "select" => "customer.customer_id,
                                     customer.first_name,
                                     customer.last_name,
-                                    customer.img,
-                                    ",
+                                    kit.kit_id,
+                                    customer.img",
+            "join" => array('kit, customer.kit_id = kit.kit_id'),
             "where" => "customer.customer_id = $customer_id and customer.active = 1"
         );
         //GET DATA COMMENTS

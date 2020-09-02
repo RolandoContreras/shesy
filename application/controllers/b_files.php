@@ -24,7 +24,6 @@ class B_files extends CI_Controller {
             //GET SESION ACTUALY
             $this->get_session();
             $catalog_id = $this->input->post('catalog_id');
-                
             //get data
             $params = array(
                         "select" =>"catalog_id,
