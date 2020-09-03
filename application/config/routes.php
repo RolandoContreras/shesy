@@ -273,6 +273,7 @@ $route['dashboard/inversiones'] = "d_investment";
 $route['dashboard/inversiones/load'] = "d_investment/load";
 $route['dashboard/inversiones/load/([0-9]+)'] = "d_investment/load/$1";
 $route['dashboard/inversiones/validate'] = "d_investment/validate";
+$route['dashboard/inversiones/delete'] = "d_investment/delete";
 
 $route['dashboard/pagos'] = "d_pays";
 $route['dashboard/pagos/pagado'] = "d_pays/pagado";

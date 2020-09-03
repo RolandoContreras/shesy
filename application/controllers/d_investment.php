@@ -78,6 +78,21 @@ class D_investment extends CI_Controller {
         }
         redirect(site_url() . "dashboard/inversiones");
     }
+    
+    public function delete(){
+         if ($this->input->is_ajax_request()) {
+             //OBETENER MARCA_ID
+             $investment_id = $this->input->post("investment_id");
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($investment_id != ""){
+                $this->obj_investment->delete($investment_id);
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }       
+    }
 
     public function get_session() {
         if (isset($_SESSION['usercms'])) {
