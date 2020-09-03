@@ -32,4 +32,5 @@
         <link href="<?php echo site_url() . "static/backoffice/dist/plugin.js" ?>" rel="stylesheet" />
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="<?php echo site_url()."static/backoffice/js/circle-progress.js";?>"></script>
+        <link rel="stylesheet" href="<?php echo site_url().'static/backoffice/css/lightbox.min.css';?>">
     </head>

@@ -23,20 +23,22 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h5>Muy Pronto - Inversiones</h5>
-                                    </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="element-box p-2">
-                                                    <div class="card">
-                                                        <div class="body pad-materiais" align="center"> 
-                                                            <img class="img-fluid img-thumbnail" src="<?php echo site_url() . 'static/backoffice/images/imagen_presentacion.jpg'; ?>">
-                                                            <p class="titulo-materiais">[ES] Presentación de negocios</p> 
+                                            <?php foreach ($obj_investment as $value) { ?>
+                                                <div class="col-md-6">
+                                                    <div class="element-box p-2">
+                                                        <div class="card">
+                                                            <div class="body pad-materiais" align="center"> 
+                                                                <a href="<?php echo site_url() . "static/cms/images/investment/$value->img";?>" data-lightbox="roadtrip">
+                                                                    <img class="img-fluid img-thumbnail" src="<?php echo site_url() . "static/cms/images/investment/$value->img";?>">
+                                                                </a>
+                                                                <p class="titulo-materiais"><?php echo $value->name;?></p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
@@ -47,8 +49,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-</section>
-<script src="<?php echo site_url(); ?>static/catalog/js/materiales.js"></script>
+    </section>
+    <script src="<?php echo site_url(); ?>static/catalog/js/materiales.js"></script>
+    <script src="<?php echo site_url() . 'static/backoffice/js/lightbox.js'; ?>"></script>

@@ -6,6 +6,7 @@ class B_files extends CI_Controller {
         parent::__construct();
         $this->load->model("catalog_model", "obj_catalog");
         $this->load->model("customer_model", "obj_customer");
+        $this->load->model("investment_model", "obj_investment");
     }
 
     public function index() {
@@ -22,10 +23,13 @@ class B_files extends CI_Controller {
     public function inversiones(){
         //GET SESION ACTUALY
         $this->get_session();
-        //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        //GET CUSTOMER_ID
         $obj_profile = $this->get_profile($customer_id);
+        //get imagens invesment
+        $obj_investment = $this->get_investment();
         //get profile
+        $this->tmp_backoffice->set("obj_investment",$obj_investment);
         $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->render("backoffice/b_invesment");
         
@@ -59,6 +63,18 @@ class B_files extends CI_Controller {
             echo json_encode($data);
             exit();
         }
+    }
+    
+    public function get_investment() {
+            $params = array(
+                        "select" =>"investment_id,
+                                    name,
+                                    img",
+                        "where" => "active = 1",
+                        );
+            $obj_investment = $this->obj_investment->search($params);
+            return $obj_investment;
+        
     }
     
     public function get_profile($customer_id) {
