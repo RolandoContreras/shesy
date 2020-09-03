@@ -68,8 +68,9 @@
                               <div class="form-group">
                                     <label>Imagen</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                        <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();" <?php echo isset($obj_investment->img) ? "" : "required"; ?> >
+                                        <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
+                                        <div id="respose_img"></div>
                                     </div>
                               </div>
                               

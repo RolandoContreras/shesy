@@ -1,21 +1,3 @@
-function send(){    
-var url = 'dashboard/membresias/validate';
-if($('#image_file').val() == ''){
-            $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Debe seleccionar la imagen</div>  ');
-        }else{
-                $.ajax({
-                url : site+url,
-                method: "POST",
-                data:new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
-                success:function(data){
-                    $("#uploaded_image").html(data);
-                }
-            });
-        }
-}
 function new_investment(){    
      var url= 'dashboard/inversiones/load';
      location.href = site+url;
@@ -27,6 +9,19 @@ function edit_investment(investment_id){
 function cancel_investment(){
 	var url= 'dashboard/inversiones';
 	location.href = site+url;
+}
+function upload_img() {
+    var input = document.getElementById('image_file').value;
+    if (input != null) {
+        $("#respose_img").html();
+        var texto = "";
+        texto = texto + 'Seleccionado: ';
+        texto = texto + input;
+        $("#respose_img").html(texto);
+        $("#label_img").removeClass("invalid").addClass("valid");
+    } else {
+        $("#label_img").removeClass("valid").addClass("invalid");
+    }
 }
 function delete_investment(investment_id){
     bootbox.confirm({
