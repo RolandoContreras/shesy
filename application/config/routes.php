@@ -124,6 +124,8 @@ $route['backoffice/invoice/upload'] = "b_finance/upload";
 
 $route['backoffice/files'] = "b_files";
 $route['backoffice/files/show_information'] = "b_files/show_information";
+$route['backoffice/inversiones'] = "b_files/inversiones";
+
 
 $route['backoffice/carrera'] = "b_carrera";
 
@@ -267,6 +269,10 @@ $route['dashboard/activar_pagos'] = "d_active_pays";
 $route['dashboard/activar_pagos/pagado'] = "d_active_pays/pagado";
 $route['dashboard/activar_pagos/devolver'] = "d_active_pays/devolver";
 
+$route['dashboard/inversiones'] = "d_investment";
+$route['dashboard/inversiones/load'] = "d_investment/load";
+$route['dashboard/inversiones/load/([0-9]+)'] = "d_investment/load/$1";
+$route['dashboard/inversiones/validate'] = "d_investment/validate";
 
 $route['dashboard/pagos'] = "d_pays";
 $route['dashboard/pagos/pagado'] = "d_pays/pagado";

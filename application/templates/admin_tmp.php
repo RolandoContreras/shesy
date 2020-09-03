@@ -175,6 +175,15 @@
                 <span class="pcoded-mtext">Pagos</span>
             </a>
         </li>
+        <li class="nav-item pcoded-menu-caption"><label>Portafolio de Inversión</label></li>
+        <li class="nav-item">
+            <a href="<?php echo site_url()."dashboard/inversiones";?>" class="nav-link <?php echo $pagos_syle;?>">
+                <span class="pcoded-micon">
+                    <i data-feather="dollar-sign"></i>
+                </span>
+                <span class="pcoded-mtext">Inversiones</span>
+            </a>
+        </li>
         <li class="nav-item pcoded-menu-caption"><label>Recargas</label></li>
         <li class="nav-item pcoded-hasmenu">
             <a href="#!" class="nav-link <?php echo $recargas_syle;?>">

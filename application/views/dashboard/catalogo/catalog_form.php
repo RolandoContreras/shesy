@@ -47,7 +47,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Precio</label>
-                                                        <input class="form-control" type="number" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
+                                                        <input class="form-control" type="number" step="any" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
                                                     </div>
 
                                                     <div class="form-group">
@@ -68,25 +68,25 @@
                                                     <div class="form-group col-md-3">
                                                         <div class="form-group">
                                                             <label>Bonificación N°1</label>
-                                                            <input class="form-control" type="text" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_catalog->bono_n1) ? $obj_catalog->bono_n1 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°1" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_catalog->bono_n1) ? $obj_catalog->bono_n1 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°1" required>
                                                         </div>    
                                                         <div class="form-group">
                                                             <label>Bonificación N°2</label>
-                                                            <input class="form-control" type="text" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_catalog->bono_n2) ? $obj_catalog->bono_n2 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°2" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_catalog->bono_n2) ? $obj_catalog->bono_n2 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°2" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Bonificación N°3</label>
-                                                            <input class="form-control" type="text" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_catalog->bono_n3) ? $obj_catalog->bono_n3 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°3" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_catalog->bono_n3) ? $obj_catalog->bono_n3 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°3" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <div class="form-group">
                                                             <label>Bonificación N°4</label>
-                                                            <input class="form-control" type="text" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_catalog->bono_n4) ? $obj_catalog->bono_n4 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°4" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_catalog->bono_n4) ? $obj_catalog->bono_n4 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°4" required>
                                                         </div>    
                                                         <div class="form-group">
                                                             <label>Bonificación N°5</label>
-                                                            <input class="form-control" type="text" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_catalog->bono_n5) ? $obj_catalog->bono_n5 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°5" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_catalog->bono_n5) ? $obj_catalog->bono_n5 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°5" required>
                                                         </div>
                                                     </div>
                                                 </div>

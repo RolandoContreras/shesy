@@ -18,6 +18,18 @@ class B_files extends CI_Controller {
         $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->render("backoffice/b_files");
     }
+    
+    public function inversiones(){
+        //GET SESION ACTUALY
+        $this->get_session();
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        $obj_profile = $this->get_profile($customer_id);
+        //get profile
+        $this->tmp_backoffice->set("obj_profile",$obj_profile);
+        $this->tmp_backoffice->render("backoffice/b_invesment");
+        
+    }
 
     public function show_information() {
         if ($this->input->is_ajax_request()) {

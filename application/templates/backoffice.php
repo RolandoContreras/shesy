@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
-                            <a href="#" class="btn" style="width: 100%">
+                            <a href="<?php echo site_url() . 'backoffice/inversiones' ?>" class="btn" style="width: 100%">
                                 <div class="access-dam-black" align="center"> 
                                     <span>Portafolio de Inversión</span>
                                 </div>
