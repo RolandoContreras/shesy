@@ -2,7 +2,7 @@
       <div class="announcements">
         <div id="block-1593108639155" class="header__block header__block--announcement header__block--show">
           <a class="announcement text-center background-dark">
-            <div class="container"> BIENVENIDO A CULTURA IMPARABLE </div>
+            <div class="container"> BIENVENIDOS A CULTURA IMPARABLE </div>
           </a>
         </div>
       </div>

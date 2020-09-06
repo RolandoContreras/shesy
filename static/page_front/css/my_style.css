@@ -53,3 +53,17 @@
 
 #block-1555988519593 { line-height: 1; } #block-1555988519593 .logo__image { display: block; width: 120px; } #block-1555988519593 .logo__text { }
 #block-1594321342938 .video { overflow: hidden; border-radius: 4px; }
+.bg_video{
+    background-image: url("../images/background_video.png");
+    background-position: center;
+}
+
+#block-1597949133133 .btn {
+    border-color: #61ed55;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #61ed55;
+}
+.space-20{
+    height: 20px;
+}

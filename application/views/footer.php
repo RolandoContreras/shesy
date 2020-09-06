@@ -1,3 +1,7 @@
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+
 <footer class="footer background-dark " kjb-settings-id="sections_footer_settings_background_color">
       <div class="footer__content">
         <div class="container footer__container media">
@@ -11,12 +15,12 @@
           </div>
           <div id="block-1555988509126" class="footer__block media__body">
             <div class="link-list justify-content-right" kjb-settings-id="sections_footer_blocks_1555988509126_settings_menu"> 
-                <a class="link-list__link" href="<?php echo site_url();?>" rel="noopener">Inicio</a> 
-                <a class="link-list__link" href="<?php echo site_url()."cursos";?>" rel="noopener">Cursos</a> 
-                <a class="link-list__link" href="<?php echo site_url()."catalogo";?>" rel="noopener">Catalogo</a>             
-                <a class="link-list__link" href="<?php echo site_url()."contacto";?>" rel="noopener">Contacto</a> 
-                <a class="link-list__link" href="<?php echo site_url()."registro";?>" rel="noopener">Registro</a> 
-                <a class="link-list__link" href="<?php echo site_url()."iniciar-sesion";?>" rel="noopener">Iniciar Sesion</a> 
+                <a class="link-list__link" href="<?php echo site_url();?>" >Inicio</a> 
+                <a class="link-list__link" href="<?php echo site_url()."cursos";?>">Cursos</a> 
+                <a class="link-list__link" href="<?php echo site_url()."catalogo";?>">Catalogo</a>             
+                <a class="link-list__link" href="<?php echo site_url()."contacto";?>">Contacto</a> 
+                <a class="link-list__link" href="<?php echo site_url()."registro";?>">Registro</a> 
+                <a class="link-list__link" href="<?php echo site_url()."iniciar-sesion";?>">Iniciar Sesion</a> 
             </div>
           </div>
           <div class="footer__block "> 

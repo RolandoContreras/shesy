@@ -134,7 +134,7 @@
                                                     <div class="row text-center">
                                                         <?php foreach ($obj_catalog_all as $value) { ?>
                                                             <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12">
-                                                                <a href="<?php echo site_url() . "mi_catalogo/$value->category_slug/$value->slug"; ?>">
+                                                                <a href="<?php echo site_url() . "mi_catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>">
                                                                     <img src="<?php echo site_url() . "static/catalog/$value->img"; ?>" class="img-fluid m-b-10" alt="<?php echo $value->name; ?>"></a>
                                                             </div>
                                                         <?php } ?>
