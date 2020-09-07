@@ -60,7 +60,7 @@
                                     <h4 id="title-description" style="text-align: center;">Productos Relacionados</h4>
                                     <div class="row">
                                         <?php foreach ($obj_catalog_rand as $value) { ?>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <a href="<?php echo site_url() . "catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>" class="card section--dark" style="text-align: left;background: #16a085;">
                                                 <img class="card--img" src="<?php echo site_url() . "static/catalog/$value->img"; ?>" alt="<?php echo $value->name; ?>"/>
                                                 <div class="card--body">
