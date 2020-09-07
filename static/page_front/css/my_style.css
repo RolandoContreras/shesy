@@ -315,10 +315,7 @@ li .nav_catalog{
     #block-1597347523879.block-type--offer .block {
         padding: 0;
     }
-
-    #block-1597347523879 .block {}
 }
-
 @media (max-width: 767px) {
     #block-1597347523879 {
         text-align: left;
@@ -327,3 +324,9 @@ li .nav_catalog{
 .margin-top-30{
     margin-top:30px;
 }
+@media only screen and (max-width: 500px) {
+    .responsive-movil{
+    margin-top: -50px;
+}
+}
+    

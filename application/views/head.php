@@ -42,6 +42,7 @@
               break;
           case "catalogo":
               $catalog_syle = "current-menu-parent ";
+              $style = "responsive-movil";
               break;
           case "contact":
               $contact_syle = "current-menu-parent ";

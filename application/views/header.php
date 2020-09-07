@@ -1,11 +1,14 @@
-<header class="header header--static">
-    <div class="announcements">
-        <div id="block-1593108639155" class="header__block header__block--announcement header__block--show">
-            <a class="announcement text-center background-dark">
-                <div class="container"> BIENVENIDOS A CULTURA IMPARABLE </div>
-            </a>
-        </div>
-    </div>
+<?php 
+      $url = explode("/", uri_string());
+      if (isset($url[0])) {
+          $nav = $url[0];
+      }
+    if($nav == "catalogo"){ 
+        $style = "responsive-movil";
+     }else{
+        $style = "";
+     } ?>
+<header class="header header--static <?php echo $style;?>">
     <div class="header__wrap">
         <div class="header__content header__content--desktop background-dark">
             <div class="container header__container media">
@@ -17,33 +20,6 @@
                             width="50" />
                     </a>
                 </div>
-                <?php
-            $url = explode("/", uri_string());
-            if (isset($url[0])) {
-                $nav = $url[0];
-            } else {
-                $nav = "";
-            }
-            $home_syle = "";
-            $courses_syle = "";
-            $contact_syle = "";
-            $catalog_syle = "";
-            switch ($nav) {
-                case "courses":
-                    $courses_syle = "current-menu-parent ";
-                    break;
-                case "catalog":
-                    $catalog_syle = "current-menu-parent ";
-                    break;
-                case "contact":
-                    $contact_syle = "current-menu-parent ";
-                    break;
-                default:
-                    $home_syle = "current-menu-parent ";
-                    break;
-            }
-            ?>
-
                 <?php
                 //count data cart
                 $cart = count($this->cart->contents());
