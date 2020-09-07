@@ -288,8 +288,6 @@ class Catalog extends CI_Controller {
                                     category.name as category_name,
                                     category.slug as category_slug,
                                     catalog.img,
-                                    catalog.img2,
-                                    catalog.img3,
                                     catalog.active,
                                     catalog.date",
             "join" => array('category, category.category_id = catalog.category_id'),
