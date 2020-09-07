@@ -42,6 +42,7 @@ $route['default_controller'] = "home";
 $route['404_override'] = 'errors/error_404';
 
 $route['home'] = 'home';
+$route['postula'] = 'home/postula';
 $route['home/sitemap'] = 'home/sitemap';
 
 $route['catalogo'] = 'catalog';
@@ -89,9 +90,6 @@ $route['mi_catalogo/([0-9a-z_-]+)'] = 'catalogo_home/category/$1';
 $route['mi_catalogo/([0-9a-z_-]+)/([0-9]+)'] = 'catalogo_home/category/$1';
 $route['mi_catalogo/subcategoria/([a-z_-]+)'] = 'catalogo_home/sub_category/$1';
 $route['mi_catalogo/([0-9a-z_-]+)/([0-9]+)/([0-9a-z_-]+)'] = 'catalogo_home/detail/$1';
-
-
-
 
 $route['mi_catalogo/order/add_cart'] = "catalogo_home/add_cart";
 $route['mi_catalogo/order/send_invoice'] = "catalogo_home/send_invoice";

@@ -57,14 +57,23 @@ class Home extends CI_Controller {
         $this->load->view('home', $data);
     }
 
+    public function postula() {
+        //GET 
+        $data['obj_category_videos'] = $this->nav_videos();
+        $data['obj_category_catalog'] = $this->nav_catalogo();
+            //SEND META TITLE 
+            $data['title'] = "Postula a la embajada";
+            $this->load->view('postula', $data);
+    }
+
+
     public function embassy() {
         if ($this->input->is_ajax_request()) {
-
             $name = $this->input->post("name");
             $last_name = $this->input->post("last_name");
             $email = $this->input->post("email");
             $phone = $this->input->post("phone");
-            $data = array(
+            $param = array(
                 'name' => $name,
                 'last_name' => $last_name,
                 'email' => $email,
@@ -73,8 +82,12 @@ class Home extends CI_Controller {
                 'status_value' => 1,
                 'date' => date("Y-m-d H:i:s")
             );
-            $this->obj_embassy->insert($data);
-            $data['result'] = "true";
+            $result = $this->obj_embassy->insert($param);
+            if(!empty($result)){
+                $data['message'] = true;
+            }else{
+                $data['message'] = false;
+            }
             echo json_encode($data);
         }
     }
@@ -155,95 +168,105 @@ class Home extends CI_Controller {
         $obj_catalog = $this->obj_catalog->search($params);
 
         $codigo = '<?xml version="1.0" encoding="UTF-8"?>
-                <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
-        foreach ($obj_videos as $value) {
-            $codigo .='<url>
-                <loc>' . site_url() . "courses/" . $value->category_slug . "/" . $value->slug;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    ';
+    foreach ($obj_videos as $value) {
+    $codigo .='<url>
+        <loc>' . site_url() . "courses/" . $value->category_slug . "/" . $value->slug;
             $codigo .='</loc>
-                <lastmod>' . $value->date . '</lastmod>
-                <changefreq>weekly</changefreq>
-                <priority>0.80</priority>
-                </url>';
-        }
-        foreach ($obj_catalog as $value) {
-            $codigo .='<url>
-                <loc>' . site_url() . "catalog/" . $value->category_slug . "/" . $value->slug;
+        <lastmod>' . $value->date . '</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>';
+    }
+    foreach ($obj_catalog as $value) {
+    $codigo .='<url>
+        <loc>' . site_url() . "catalog/" . $value->category_slug . "/" . $value->slug;
             $codigo .='</loc>
-                <lastmod>' . $value->date . '</lastmod>
-                <changefreq>weekly</changefreq>
-                <priority>0.80</priority>
-                </url>';
-        }
-        foreach ($obj_category_videos as $value) {
-            $codigo .='<url>
-                <loc>' . site_url() . "courses/" . $value->slug;
+        <lastmod>' . $value->date . '</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>';
+    }
+    foreach ($obj_category_videos as $value) {
+    $codigo .='<url>
+        <loc>' . site_url() . "courses/" . $value->slug;
             $codigo .='</loc>
-                <lastmod>' . $value->created_at . '</lastmod>
-                <changefreq>weekly</changefreq>
-                <priority>0.80</priority>
-                </url>';
-        }
+        <lastmod>' . $value->created_at . '</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>';
+    }
 
-        foreach ($obj_category_catalog as $value) {
-            $codigo .='<url>
-                <loc>' . site_url() . "catalog/" . $value->slug;
+    foreach ($obj_category_catalog as $value) {
+    $codigo .='<url>
+        <loc>' . site_url() . "catalog/" . $value->slug;
             $codigo .='</loc>
-                <lastmod>' . $value->created_at . '</lastmod>
-                <changefreq>weekly</changefreq>
-                <priority>0.80</priority>
-                </url>';
-        }
+        <lastmod>' . $value->created_at . '</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>';
+    }
 
-        $codigo .='<url>';
+    $codigo .='<url>';
         $codigo .='<loc>' . site_url() . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
-                       <priority>0.80</priority>';
-        $codigo .='</url>';
-        $codigo .='<url>';
+        <priority>0.80</priority>';
+        $codigo .='
+    </url>';
+    $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'home' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
-                       <priority>0.80</priority>';
-        $codigo .='</url>';
-        $codigo .='<url>';
+        <priority>0.80</priority>';
+        $codigo .='
+    </url>';
+    $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'courses' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
-                       <priority>0.80</priority>';
-        $codigo .='</url>';
-        $codigo .='<url>';
+        <priority>0.80</priority>';
+        $codigo .='
+    </url>';
+    $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'catalog' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
-                       <priority>0.80</priority>';
-        $codigo .='</url>';
-        $codigo .='<url>';
+        <priority>0.80</priority>';
+        $codigo .='
+    </url>';
+    $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'register' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
-                       <priority>0.80</priority>';
-        $codigo .='</url>';
-        $codigo .='<url>';
+        <priority>0.80</priority>';
+        $codigo .='
+    </url>';
+    $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'contact' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
-                       <priority>0.80</priority>';
-        $codigo .='</url>';
-        $codigo .='<url>';
+        <priority>0.80</priority>';
+        $codigo .='
+    </url>';
+    $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'login' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
-                       <priority>0.80</priority>';
-        $codigo .='</url>';
-        $codigo .='<url>';
+        <priority>0.80</priority>';
+        $codigo .='
+    </url>';
+    $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'forget' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
-                       <priority>0.80</priority>';
-        $codigo .='</url>';
-        $codigo .='</urlset>';
-        $path = "sitemap.xml";
-        $modo = "w+";
+        <priority>0.80</priority>';
+        $codigo .='
+    </url>';
+    $codigo .='</urlset>';
+$path = "sitemap.xml";
+$modo = "w+";
 
-        if ($fp = fopen($path, $modo)) {
-            fwrite($fp, $codigo);
-            echo "Se realizo con Exito";
-        } else {
-            echo "Error";
-        }
-    }
+if ($fp = fopen($path, $modo)) {
+fwrite($fp, $codigo);
+echo "Se realizo con Exito";
+} else {
+echo "Error";
+}
+}
 
 }
