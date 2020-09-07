@@ -237,15 +237,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="space-50"></div>
-                                <div kjb-settings-id="sections_1598395562751_blocks_1598410803034_settings_width" id="block-1598410803034" class="block-type--cta text-center col-6 animated" data-reveal-units="seconds">
-                                    <div class="block box-shadow-none background-unrecognized aos-init aos-animate" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
+                                <div id="block-1598410803034" class="block-type--cta text-center col-6 animated" data-reveal-units="seconds">
+                                    <div class="block box-shadow-none background-unrecognized aos-init aos-animate"
+                                        data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
                                         <div id="block-1593710564240" class="header__block header__switch-content header__block--cta">
-                                            <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url()."postula";?>">POSTULA A LA EMBAJADA</a>
+                                            <div class="block box-shadow-none background-unrecognized aos-init aos-animate margin-top-30" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                                                <a class="btn btn-large btn-solid btn-full background-light" href="<?php echo site_url()."postula";?>">
+                                                    POSTULA A LA EMBAJADA</i>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -277,6 +280,50 @@
                 </div>
             </div>
             <!--Fin Pasos de registro-->
+            <!--Sé parte de los profesores-->
+            <div class="section background-dark color-teacher" data-reveal-units="seconds">
+                <div id="block-1597943616686" class="block-type--image text-col-5" data-reveal-units="seconds">
+                    <div class="block box-shadow-none background-unrecognized aos-init aos-animate" data-aos="none"
+                        data-aos-delay="0" data-aos-duration="0">
+                        <div class="center">
+                            <img class="image__image"
+                                src="<?php echo site_url()."static/page_front/images/arrow.gif";?>" alt="arrow-fown"
+                                width="50">
+                        </div>
+                    </div>
+                </div>
+                <div class="sizer">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="block-break"></div>
+                            <div id="block-1597347523879" class=" block-type--text text-center col-11"
+                                data-reveal-units="seconds">
+                                <div class="block box-shadow-none background-unrecognized aos-init aos-animate"
+                                    data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                                    <h1><span class="JsGRdQ" style="color: #fffd55;">¿Te gustaría ser parte de nuestros
+                                            docentes?</span></h1>
+                                    <p>
+                                        <span class="JsGRdQ">Si deseas ser parte de nuestros docentes comunícate a
+                                            nuestro número de WhatsApp a través del siguiente botón</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="block-break"></div>
+                            <div id="block-1598224544471" class=" block-type--cta text-center col-6"
+                                data-reveal-units="seconds">
+                                <div class="block box-shadow-none background-unrecognized aos-init aos-animate"
+                                    data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                                    <a title="Whatssapp Cultura Imparable"
+                                        class="btn btn-large btn-solid btn-full background-light"
+                                        href="https://api.whatsapp.com/send?phone=51926344838" target="_blank">
+                                        ¡INSCRIBIRME AHORA! <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <div id="section-footer">
