@@ -1,0 +1,190 @@
+.valid{
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(26,153,34,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(26,153,34,1);
+    box-shadow: 0px 0px 5px 1px rgba(26,153,34,1);
+}
+.invalid{
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(204,0,0,1);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(204,0,0,1);
+    box-shadow: 0px 0px 3px 1px rgba(204,0,0,1);
+}
+.b-brand .b-title {
+    margin-left: 10px;
+    font-weight: 100;
+    color: #fff;
+    font-size: 18px;
+}
+.aut-bg-img {
+    background-image: url(../img/bg_login.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 4px !important;
+    
+}
+.badge-success-inverted {
+    background-color: #c5f0c0 !important;
+    border: 1px solid #1b850f;
+    color: #166e0c !important;
+    font-weight: 300;
+    border-radius: 4px !important;
+    padding: 3px;
+}
+.table .lighter {
+    color: rgba(90, 99, 126, 0.49);
+    font-size: 0.72rem;
+}
+.badge-primary-inverted {
+    background-color: #cce4ff;
+    border: 1px solid #0362c6;
+    color: #0362c6 !important;
+    font-weight: 300;
+}
+.badge-danger {
+    background-color: #df4a64;
+    border: 1px solid red;
+    font-weight: 300;
+    color: white !important;
+}
+.active{
+    color: #1dc4e9 !important;
+    background: rgba(51, 63, 84, .4);
+    border-left: 3px solid rgb(29, 196, 233);
+}
+.border-color-white{
+    border-color: #fff;
+}
+.font-size-10{
+    font-size: 10px !important;
+}
+.font-size-11{
+    font-size: 11px !important;
+}
+.text-gris{
+    color: #1de9b6 !important;
+}
+.radius-50{
+    border-radius: 50%;
+    border: 1px #ffffff solid;
+}
+.padding-top-10{
+    padding-top: 10px;
+}
+.access-dam-yellow{
+    background: #efb810;
+    border-radius: 3px; 
+    color: #fff; 
+    font-weight: 600; 
+    padding: 15px;
+    width: 100%;     
+    -moz-box-shadow: 0px 0px 10px #D1F509;
+    -webkit-box-shadow: 0px 0px 10px #D1F509;
+    box-shadow: 0px 0px 10px #D1F509;
+}
+.access-dam-purple{
+    background: #3b36a1; 
+    border-radius: 3px; 
+    color: #fff; 
+    font-weight: 600; 
+    padding: 15px;
+    width: 100%;   
+    -moz-box-shadow: 0px 0px 10px #5E28F0;
+    -webkit-box-shadow: 0px 0px 10px #5E28F0;
+    box-shadow: 0px 0px 10px #5E28F0;
+}
+.access-dam-green{
+    background: #2e8b57;
+    border-radius: 3px; 
+    color: #fff; 
+    font-weight: 600; 
+    padding: 15px;
+    width: 100%;
+    -moz-box-shadow: 0px 0px 10px #0EDC3E;
+    -webkit-box-shadow: 0px 0px 10px #0EDC3E;
+    box-shadow: 0px 0px 10px #0EDC3E;
+}
+.access-dam-black{
+    background: black;
+    border-radius: 3px; 
+    color: #fff; 
+    font-weight: 600; 
+    padding: 15px;
+    width: 100%;     
+    -moz-box-shadow: 0px 0px 10px #fff;
+    -webkit-box-shadow: 0px 0px 10px #fff;
+    box-shadow: 0px 0px 10px #fff;
+}
+.os-progress-bar {
+    margin-bottom: 1rem;
+}
+.os-progress-bar .bar-labels {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.os-progress-bar.warning .bar-level-1 {
+    background-color: #F2F2F2;
+    border-radius: 12px;
+    height: 6px;
+}
+
+.element-box {
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+
+.circle{
+    margin: auto;
+    
+}
+.number-cicle {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 38px;
+    font-size: 30px;
+    color:green;
+}
+.circle {
+  width: auto;
+  margin: 0px 13px 0px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.circle canvas {
+  vertical-align: top;
+}
+.circle strong {
+  top:35%;
+  text-align: center;
+  line-height: 29px;
+  font-size: 38px;
+  font-weight: 600;
+}
+.circle strong .number-range{
+    font-size: 23px !important;
+}
+.space-15{
+    height: 15px;
+}

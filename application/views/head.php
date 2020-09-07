@@ -24,7 +24,40 @@
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/styles.css?15964308185009978"?>"/>
     <!-- Customer CSS ====================================================== -->
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/my_style.css";?>"/>
+    <!-- Shopping ====================================================== -->
+    <?php 
+      $url = explode("/", uri_string());
+      if (isset($url[0])) {
+          $nav = $url[0];
+      } else {
+          $nav = "";
+      }
+      $home_syle = "";
+      $courses_syle = "";
+      $contact_syle = "";
+      $catalog_syle = "";
+      switch ($nav) {
+          case "courses":
+              $courses_syle = "current-menu-parent ";
+              break;
+          case "catalogo":
+              $catalog_syle = "current-menu-parent ";
+              break;
+          case "contact":
+              $contact_syle = "current-menu-parent ";
+              break;
+          default:
+              $home_syle = "current-menu-parent ";
+              break;
+      }
+    if($nav == "catalogo"){ ?>
+      <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/theme.css";?>"/>
+    <?php } ?>
     <!-- Boostrap ====================================================== -->
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <!-- Kajabi Editor Only CSS ============================================ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+    var site = '<?php echo site_url();?>';
+  </script>
 </head>

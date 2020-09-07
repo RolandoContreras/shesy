@@ -836,10 +836,10 @@ class Catalogo_home extends CI_Controller {
             if ($_SESSION['customer']['logged_customer'] == "TRUE" && $_SESSION['customer']['status'] == '1') {
                 return true;
             } else {
-                redirect(site_url() . 'home');
+                redirect(site_url() . 'iniciar-sesion');
             }
         } else {
-            redirect(site_url() . 'home');
+            redirect(site_url() . 'iniciar-sesion');
         }
     }
 
