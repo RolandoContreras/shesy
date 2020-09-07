@@ -310,7 +310,7 @@ class Catalog extends CI_Controller {
             "join" => array('category, category.category_id = catalog.category_id'),
             "where" => "category.slug = '$slug' and catalog.active = 1",
             "order" => "rand()",
-            "limit" => "4",);
+            "limit" => "3",);
 
         $data['obj_catalog_rand'] = $this->obj_catalog->search($params);
         //send meta title
