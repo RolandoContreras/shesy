@@ -14,7 +14,7 @@
                         <div class="backgroundVideo"></div>
                         <div class="container">
                             <div class="row align-items-center justify-content-center">
-                                <div id="block-1593556708798" class="block-type--image text- col-4 animated" data-reveal-units="seconds">
+                                <div id="block-1593556708798" class="block-type--image text- col-6 animated" data-reveal-units="seconds">
                                     <div class="block box-shadow-none background-unrecognized" data-aos="fade-down" data-aos-delay="500" data-aos-duration="0">
                                         <div class="image">
                                             <img class="image__image" src="<?php echo site_url() . "static/page_front/images/logo_embajada.png" ?>" alt="Cultura Imparable" />
@@ -38,9 +38,7 @@
                         <div class="container">
                             <div class="space-20"></div>
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item"
-                                    src="https://culturaimparable.com/static/page_front/video/cultura.mp4"
-                                    frameborder="0" allowfullscreen></iframe>
+                                <!--<iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/cultura.mp4" frameborder="0" allowfullscreen></iframe>-->
                             </div>
                         </div>
                     </div>
@@ -57,10 +55,7 @@
                                 <div class=" block-type--image text- col-6" data-reveal-units="seconds">
                                     <div class="block box-shadow-none background-unrecognized" data-aos="none" data-aos-delay="0" data-aos-duration="0">
                                         <div class="image">
-                                            <img class="image__image"
-                                                src="<?php echo site_url() . "static/page_front/images/quienes-somos.jpg" ?>"
-                                                kjb-settings-id="sections_1593557264926_blocks_1593557403205_settings_image"
-                                                alt="¿Quiénes Somos?" />
+                                            <img class="image__image" src="<?php echo site_url() . "static/page_front/images/quienes-somos.jpg" ?>" alt="¿Quiénes Somos?" />
                                         </div>
                                     </div>
                                 </div>
@@ -69,9 +64,7 @@
                                         data-aos-delay="500" data-aos-duration="0">
                                         <div class="image">
                                             <img class="image__image"
-                                                src="<?php echo site_url() . "static/page_front/images/texto_quienes_somos.png"; ?>"
-                                                kjb-settings-id="sections_1593557264926_blocks_1593557781963_settings_image"
-                                                alt="Texto quienes somos" />
+                                                src="<?php echo site_url() . "static/page_front/images/texto_quienes_somos.png"; ?>" alt="Texto quienes somos" />
                                         </div>
                                     </div>
                                 </div>
@@ -146,8 +139,7 @@
                                     </div>
                                 </div>
                                 <div id="block-1593629093265" class=" block-type--image text- col-7 animated" data-reveal-units="seconds">
-                                    <div class="block box-shadow-none background-unrecognized" data-aos="fade-left"
-                                        data-aos-delay="500" data-aos-duration="0">
+                                    <div class="block box-shadow-none background-unrecognized" data-aos="fade-left" data-aos-delay="500" data-aos-duration="0">
                                         <div class="image">
                                             <img class="image__image" src="<?php echo site_url() . "static/page_front/images/emabajda_texto_2.png"; ?>" alt="embajada"/>
                                         </div>
@@ -172,18 +164,17 @@
                                                 src="<?php echo site_url() . "static/page_front/images/video_embajada.png"; ?>" alt="Mira el siguiente Vídeo" />
                                             <div class="space-20"></div>
                                             <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/embajada.mp4" frameborder="0" allowfullscreen></iframe>
+                                                <!--<iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/embajada.mp4" frameborder="0" allowfullscreen></iframe>-->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="block-1598410803034" class="block-type--cta text-center col-6 animated" data-reveal-units="seconds">
-                                    <div class="block box-shadow-none background-unrecognized aos-init aos-animate"
-                                        data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
+                                    <div class="block box-shadow-none background-unrecognized aos-init aos-animate" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
                                         <div id="block-1593710564240" class="header__block header__switch-content header__block--cta">
                                             <div class="block box-shadow-none background-unrecognized aos-init aos-animate margin-top-30" data-aos="none" data-aos-delay="0" data-aos-duration="0">
                                                 <a class="btn btn-large btn-solid btn-full background-light" href="<?php echo site_url()."postula";?>">
-                                                    POSTULA A LA EMBAJADA</i>
+                                                    POSTULA A LA EMBAJADA
                                                 </a>
                                             </div>
                                         </div>
@@ -202,8 +193,7 @@
                         <div class="container">
                             <div class="row align-items-center justify-content-center">
                                 <div id="block-1593636665078" class=" block-type--image text- col-10 animated" data-reveal-offset="" data-reveal-units="seconds">
-                                    <div class="block box-shadow-none background-unrecognized" data-aos="fade-right"
-                                        data-aos-delay="500" data-aos-duration="0">
+                                    <div class="block box-shadow-none background-unrecognized" data-aos="fade-right" data-aos-delay="500" data-aos-duration="0">
                                         <div class="image">
                                             <img class="image__image" src="<?php echo site_url() . "static/page_front/images/registro_img.png"; ?>" alt="Pasos para registro" />
                                         </div>
@@ -218,12 +208,9 @@
             <!--Sé parte de los profesores-->
             <div class="section background-dark color-teacher" data-reveal-units="seconds">
                 <div id="block-1597943616686" class="block-type--image text-col-5" data-reveal-units="seconds">
-                    <div class="block box-shadow-none background-unrecognized aos-init aos-animate" data-aos="none"
-                        data-aos-delay="0" data-aos-duration="0">
+                    <div class="block box-shadow-none background-unrecognized aos-init aos-animate" data-aos="none" data-aos-delay="0" data-aos-duration="0">
                         <div class="center">
-                            <img class="image__image"
-                                src="<?php echo site_url()."static/page_front/images/arrow.gif";?>" alt="arrow-fown"
-                                width="50">
+                            <img class="image__image" src="<?php echo site_url()."static/page_front/images/arrow.gif";?>" alt="arrow-fown" width="50">
                         </div>
                     </div>
                 </div>

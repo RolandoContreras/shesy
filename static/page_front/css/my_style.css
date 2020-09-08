@@ -90,9 +90,9 @@ header{
     min-width: 100%;
     min-height: 100%;
     -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-	    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 #section-footer { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; display: -webkit-box; display: -ms-flexbox; display: flex; } .footer { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
 .footer, .footer__block { font-size: 16px; background-color: #000000; }
@@ -108,9 +108,9 @@ header{
 
 .background-image--1590554804411 {
     background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/1463978/settings_images/s7x1v8UJQxGOwWEcNVk0_su-san-lee-VFT8W5VfHw8-unsplash.png);
-  }
+}
 .section--1590554804411 {
-  background: rgba(0,0,0,.6);
+    background: rgba(0,0,0,.6);
 }
 .btn--sections_1590554804411_settings_btn_text.btn--solid {
     background: #1abc9c;
@@ -120,7 +120,7 @@ header{
 .section--1590554804411 .optin__heading,
 .section--1590554804411 .optin__subheading,
 .section--1590554804411 label {
-color: #373F46;}
+    color: #373F46;}
 .section--1590554804411 .optin__panel {
     padding: 40px;
     background: #ffffff;
@@ -152,7 +152,7 @@ color: #373F46;}
     font-size: 40px;
     font-weight: bold;
     vertical-align:middle !important;
-    
+
 }
 .position-contact{
     text-align: center;
@@ -316,23 +316,96 @@ li .nav_catalog{
         padding: 0;
     }
 }
+.margin-top-30{
+    margin-top:30px;
+}
 .boton-login{
     text-align: right;
     margin-left: 92px;
     margin-top: -5px;
+
+}
+#login-boton{
+    border-color: #808000;
+    border-radius: 6px;
+    background-color: #808000;
+}
+.hamburger__slices {
+    margin-left: 3px !important;
+}
+.responsive-movil {
+    margin-top: -50px;
 }
 @media (max-width: 767px) {
     #block-1597347523879 {
         text-align: left;
     }
 }
-.margin-top-30{
-    margin-top:30px;
-}
+
 @media only screen and (max-width: 500px) {
-    .responsive-movil{
-        margin-top: -50px;
+
+}
+
+@media only screen and (min-width:320px) and (max-width:480px){
+
+}
+
+@media ( max-width: 320px ) {
+    .boton-login{
+        margin-left: 90px;
+    }
+    /* Aquí van los estilos para iPhone vertical */
+
+}
+@media ( max-width: 375px ) {
+    .boton-login{
+        margin-left: 120px;
+    }
+    /* Aquí van los estilos para iPhone vertical */
+
+}
+@media ( max-width: 480px ) {
+    .boton-login{
+        margin-left: 140px;
     }
 }
 
-    
+@media (max-width: 515px) {
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+.header_banner {
+    background-position: 62% 26% !important;
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .header_banner{
+        background-position: 67% 20% !important;
+    }
+    /*    .capacitacion-title{
+            font-size: 33px;
+        }*/
+    .header-plataforma {
+        text-align: center;
+        font-size: 17px;
+    }
+    .font-size-18 {
+        font-size: 14px;
+        font-weight: bolder;
+    }
+}
+

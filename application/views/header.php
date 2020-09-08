@@ -28,12 +28,12 @@
                         <a class="link-list__link" href="<?php echo site_url() . 'registro'; ?>">Registro</a>
                     </div>
                 </div>
-                <div id="block-1593710564240" class="header__block header__switch-content header__block--cta">
-                    <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Iniciar Sesión</a>
+                <div id="login-boton" class="header__block header__switch-content header__block--cta">
+                    <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Ingresar</a>
                 </div>
                 <!--boton login-->
-                <div id="block-1593710564240" class="boton-login hidden--desktop">
-                    <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Iniciar Sesión</a>
+                <div id="login-boton" class="boton-login hidden--desktop">
+                    <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Ingresar</a>
                 </div>
                 <!--end boton login-->
                 <div class="hamburger hidden--desktop" onclick="show_nav_mobile();">
