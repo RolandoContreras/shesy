@@ -29,11 +29,11 @@
                     </div>
                 </div>
                 <div id="login-boton" class="header__block header__switch-content header__block--cta">
-                    <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Ingresar</a>
+                    <a class="color-black btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Ingresar</a>
                 </div>
                 <!--boton login-->
                 <div id="login-boton" class="boton-login hidden--desktop">
-                    <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Ingresar</a>
+                    <a class="color-black btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Ingresar</a>
                 </div>
                 <!--end boton login-->
                 <div class="hamburger hidden--desktop" onclick="show_nav_mobile();">

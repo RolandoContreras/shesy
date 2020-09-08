@@ -38,7 +38,7 @@
                         <div class="container">
                             <div class="space-20"></div>
                             <div class="embed-responsive embed-responsive-16by9">
-                                <!--<iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/cultura.mp4" frameborder="0" allowfullscreen></iframe>-->
+                                <iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/cultura.mp4" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -63,8 +63,7 @@
                                     <div class="block box-shadow-none background-unrecognized" data-aos="fade-right"
                                         data-aos-delay="500" data-aos-duration="0">
                                         <div class="image">
-                                            <img class="image__image"
-                                                src="<?php echo site_url() . "static/page_front/images/texto_quienes_somos.png"; ?>" alt="Texto quienes somos" />
+                                            <img class="image__image" src="<?php echo site_url() . "static/page_front/images/texto_quienes_somos.png"; ?>" alt="Texto quienes somos" />
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +163,7 @@
                                                 src="<?php echo site_url() . "static/page_front/images/video_embajada.png"; ?>" alt="Mira el siguiente Vídeo" />
                                             <div class="space-20"></div>
                                             <div class="embed-responsive embed-responsive-16by9">
-                                                <!--<iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/embajada.mp4" frameborder="0" allowfullscreen></iframe>-->
+                                                <iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/embajada.mp4" frameborder="0" allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>

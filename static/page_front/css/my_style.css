@@ -322,16 +322,20 @@ li .nav_catalog{
 .boton-login{
     text-align: right;
     margin-left: 92px;
-    margin-top: -5px;
 
 }
 #login-boton{
-    border-color: #808000;
-    border-radius: 6px;
-    background-color: #808000;
+    border-color: #fffd55;
+    border-radius: 10px;
+    color: black !important;
+    background-color: #fffd55;
+}
+.color-black{
+    color: black !important;
 }
 .hamburger__slices {
     margin-left: 3px !important;
+    margin-top: 7px !important;
 }
 .responsive-movil {
     margin-top: -50px;
