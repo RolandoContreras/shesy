@@ -19,16 +19,17 @@ function add_cart(catalog_id, price, name) {
     });
 }
 
-function add_cart_refencia(catalog_id, price, name) {
+function add_cart_refencia(catalog_id, price, name, img) {
     document.getElementById("buy").innerHTML = "Procesando";
     $.ajax({
         type: "post",
-        url: site + "catalogo/order/add_cart",
+        url: site + "catalogo/order/add_cart_referencia",
         dataType: "json",
         data: {
             catalog_id: catalog_id,
             price: price,
-            name: name
+            name: name,
+            img: img,
         },
         success: function (data) {
             if (data.status == true) {

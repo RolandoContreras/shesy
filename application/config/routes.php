@@ -48,6 +48,9 @@ $route['pagos_referencia'] = 'home/pagos_referencia';
 
 $route['catalogo'] = 'catalog';
 $route['catalogo/order/add_cart'] = 'catalog/add_cart';
+$route['catalogo/order/add_cart_referencia'] = 'catalog/add_cart_referencia';
+
+
 $route['catalogo/([a-z_-]+)'] = 'catalog/catalog/$1';
 $route['catalogo/([0-9]+)'] = 'catalog/index/$1';
 $route['catalogo/([0-9a-z_-]+)'] = 'catalog/category/$1';

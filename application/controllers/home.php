@@ -5,6 +5,7 @@ class Home extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model("catalog_model", "obj_catalog");
+        $this->load->model("customer_model", "obj_customer");
         $this->load->model("category_model", "obj_category");
         $this->load->model("sub_category_model", "obj_sub_category");
         $this->load->model("videos_model", "obj_videos");
@@ -67,83 +68,19 @@ class Home extends CI_Controller {
     }
     
     public function pagos_referencia(){
-        //GET 
-         if(isset($customer)){
-            $data_customer_compras['customer_id'] = $customer;
-            $_SESSION['compras_customer'] = $data_customer_compras;
-        }
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
-        if (isset($_GET['orderby'])) {
-            $type = $_GET['orderby'];
-
-            switch ($type) {
-                case 'menu_order':
-                    $order = "catalog.catalog_id ASC";
-                    break;
-                case 'date':
-                    $order = "catalog.date DESC";
-                    break;
-                case 'price':
-                    $order = "catalog.price ASC";
-                    break;
-                case 'price-desc':
-                    $order = "catalog.price DESC";
-                    break;
-                default:
-                    $order = "catalog.catalog_id ASC";
-                    break;
-            }
-        } else {
-            $order = "catalog.catalog_id DESC";
+        //GET 
+         if(isset($_SESSION['compras_customer'])){
+             $username = $_SESSION['compras_customer']['customer_id'];
+             $params = array(
+                "select" => "first_name,
+                            customer_id,
+                            last_name",
+                "where" => "username = '$username'");
+         $data['obj_customer'] = $this->obj_customer->get_search_row($params);
         }
-
-        //get catalog
-        $params = array(
-            "select" => "catalog.catalog_id,
-                                    catalog.summary,
-                                    catalog.name,
-                                    catalog.slug,
-                                    catalog.price,
-                                    catalog.img,
-                                    catalog.active,
-                                    category.slug as category_slug,
-                                    catalog.date",
-            "join" => array('category, category.category_id = catalog.category_id'),
-            "where" => "catalog.active = 1",
-            "order" => "$order");
-
-        //send url for search
-        $data['url'] = site_url() . 'catalogo';
-        /// PAGINADO
-        $config = array();
-        $config["base_url"] = site_url("catalogo");
-        $config["total_rows"] = $this->obj_catalog->total_records($params);
-        $config["per_page"] = 12;
-        $config["num_links"] = 1;
-        $config["uri_segment"] = 2;
-
-        $config['first_tag_open'] = '<li>';
-        $config['first_tag_close'] = '</li>';
-        $config['prev_tag_open'] = '<li>';
-        $config['prev_tag_close'] = '</li>';
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="active"><span aria-current="page" class="page-numbers current">';
-        $config['cur_tag_close'] = '</span></li>';
-        $config['next_tag_open'] = '<li>';
-        $config['next_tag_close'] = '</li>';
-        $config['last_tag_open'] = '<li>';
-        $config['last_tag_close'] = '</li>';
-
-        $this->pagination->initialize($config);
-        $data['obj_pagination'] = $this->pagination->create_links();
-        /// DATA
-        $data['obj_catalog'] = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
-        //send total row
-        $data['total'] = $config["total_rows"];
-
         //SEND DATA
         $data['title'] = "Compras por referencia";
         $this->load->view('pagos_referencia', $data);

@@ -19,20 +19,22 @@
                                         <div class="section--middle optin__panel optin__panel--boxed">
                                             <div class="row optin optin--stacked">
                                                 <div class="col-md-12">
+                                                    <?php foreach ($this->cart->contents() as $items): ?>
                                                     <div class="checkout-content">
-                                                        <img class="img-responsive checkout-content-img" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production//site/61624/images/sNHSAYtJRBePnKHdYyHI_Correos_1.png" alt="Snhsaytjrbepnkhdyyhi correos 1">
-                                                        <div class="checkout-content-body" kjb-settings-id="checkout-copy-section">
+                                                        
+                                                        <img class="img-responsive checkout-content-img" src="<?php echo site_url()."static/catalog/".$items['img'];?>" alt="Snhsaytjrbepnkhdyyhi correos 1">
+                                                        <div class="checkout-content-body">
                                                             <div class="space-20"></div>
                                                             <h2 style="text-align: center;"><span style="color: #57de1d;"><strong>Estas apunto de comprar.<br>&nbsp;</strong></span></h2>
-                                                            <?php foreach ($this->cart->contents() as $items): ?>
+                                                            
                                                                 <h3>
                                                                     <span style="color: #000000;">
                                                                         <i class="fa fa-check"></i>&nbsp;&nbsp;<?php echo $items['name']; ?><br><br>
                                                                     </span>
                                                                 </h3>
-                                                            <?php endforeach; ?>
                                                         </div>
                                                     </div>
+                                                    <?php endforeach; ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -50,6 +52,9 @@
                                                     <div class="col-md-12">
                                                         <p class="optin__subheading">Déjanos tus datos para hacerte el envió</p>
                                                     </div>
+                                                    <div class="col-md-12">
+                                                        <p class="optin__subheading"><b>Recomendado por:</b> <?php echo $obj_customer->first_name. " ".$obj_customer->last_name;?></p>
+                                                    </div>
                                                     <div class="col-md-12" style="text-align: left">
                                                         <div class="space-20"></div>
                                                         <div class="text-field form-group">
@@ -61,19 +66,19 @@
                                                         <div class="space-20"></div>
                                                         <div class="text-field form-group">
                                                             <p class="optin__subheading">Apellidos</p>
-                                                            <input type="text" name="name" id="name" required="required" class="form-control" placeholder="Apellidos">
+                                                            <input type="text" name="last_name" id="last_name" required="required" class="form-control" placeholder="Apellidos">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12" style="text-align: left">
                                                         <div class="email-field form-group">
                                                             <p class="optin__subheading">Teléfono</p>
-                                                            <input required="required" class="form-control" placeholder="Teléfono:" type="email" name="email" id="email">
+                                                            <input required="required" class="form-control" placeholder="Teléfono:" type="text" name="phone" id="phone">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12" style="text-align: left">
                                                         <div class="email-field form-group">
                                                             <p class="optin__subheading">Dirección / Referencia</p>
-                                                            <textarea name="message" id="message" cols="20" rows="5" class="form-control" placeholder="Ingrese su dirección / referencia"  required="required"></textarea>
+                                                            <textarea name="address" id="address" cols="20" rows="5" class="form-control" placeholder="Ingrese su dirección / referencia"  required="required"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
