@@ -104,6 +104,7 @@ header{
 #block-1593636665078 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593636665078.block-type--blog .block { padding: 0; } #block-1593636665078.block-type--offer .block { padding: 0; } #block-1593636665078 .block { border: 4px none black; border-radius: 4px; } @media (min-width: 768px) { #block-1593636665078 { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } #block-1593636665078.block-type--blog .block { padding: 0; } #block-1593636665078.block-type--offer .block { padding: 0; } #block-1593636665078 .block { }} @media (max-width: 767px) { #block-1593636665078 {} }
 .center{
     margin: auto;
+    text-align: center !important;
 }
 
 .background-image--1590554804411 {

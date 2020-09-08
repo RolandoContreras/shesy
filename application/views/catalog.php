@@ -31,7 +31,7 @@
                             <div class="section-header--right">
                                 <div class="form-horizontal">
                                     <label for="sortBy" class="small--hide">Ordenar por</label>
-                                    <form class="woocommerce-ordering" method="get" action="https://culturaimparable.com/catalogo">
+                                    <form class="woocommerce-ordering" method="get" action="<?php echo site_url()."catalogo";?>">
                                       <select name="orderby" class="orderby" id="sortBy" onchange="changeFunc();">
                                           <option value="menu_order">Ordenar por Defecto</option>
                                           <option value="date">Ordenar por novedad</option>
@@ -52,7 +52,7 @@
                         </header>
                         <div class="grid-uniform">
                         <?php  foreach ($obj_catalog  as $value) { ?>
-                              <div class="grid-item small--one-half medium--one-quarter large--one-quarter on-sale">
+                              <div class="grid-item medium--one-quarter large--one-quarter on-sale">
                                 <a href="<?php echo site_url()."catalogo/$value->category_slug/$value->catalog_id/$value->slug";?>" class="product-grid-item">
                                     <div class="product-grid-image" style="height: 225px;">
                                         <div class="product-grid-image--centered">
@@ -63,7 +63,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p><?php echo $value->name;?></p>
+                                    <div class="center">
+                                        <p><?php echo $value->name;?></p>
                                     <div class="product-item--price">
                                         <span class="h1 medium--left">
                                             <span class="visually-hidden">Precio de venta</span>
@@ -71,6 +72,7 @@
                                     </div>
                                     <div class="sale-tag medium--right">
                                         Precio <span class="money conversion-bear-money">$<?php echo $value->price;?></span>
+                                    </div>
                                     </div>
                                 </a>
                             </div>
