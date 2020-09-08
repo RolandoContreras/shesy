@@ -14,8 +14,8 @@
                         <div class="backgroundVideo"></div>
                         <div class="container">
                             <div class="row align-items-center justify-content-center">
-                                <div id="block-1593556708798" class="block-type--image text- col-6 animated" data-reveal-units="seconds">
-                                    <div class="block box-shadow-none background-unrecognized" data-aos="fade-down" data-aos-delay="500" data-aos-duration="0">
+                                <div id="background-black" class="block-type--image text- col-6 animated" data-reveal-units="seconds">
+                                    <div class="block box-shadow-medium background-unrecognized" data-aos="fade-down" data-aos-delay="500" data-aos-duration="0">
                                         <div class="image">
                                             <img class="image__image" src="<?php echo site_url() . "static/page_front/images/logo_embajada.png" ?>" alt="Cultura Imparable" />
                                         </div>

@@ -326,13 +326,14 @@ li .nav_catalog{
 
 }
 #login-boton{
-    border-color: #fffd55;
-    border-radius: 10px;
-    color: black !important;
-    background-color: #fffd55;
+    border-color: #b78417;
+    border-radius: 20px;
+    color: white !important;
+    background-color: #b78417;
 }
-.color-black{
-    color: black !important;
+.color-white{
+    color: white !important;
+    font-size: 10px !important;
 }
 .hamburger__slices {
     margin-left: 3px !important;
@@ -341,6 +342,15 @@ li .nav_catalog{
 .responsive-movil {
         margin-top: 0px;
     }
+#background-black{
+    background-color: black;
+    opacity: 0.6;
+    padding: 5px;
+    border-radius: 10px;
+}
+#font-15{
+    font-size: 15px !important;
+}    
 
 @media (max-width: 767px) {
     #block-1597347523879 {
