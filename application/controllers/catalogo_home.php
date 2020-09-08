@@ -890,7 +890,7 @@ class Catalogo_home extends CI_Controller {
                 'status_value' => 1,
                 'date' => date("Y-m-d H:i:s"),
                 'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $_SESSION['usercms']['user_id'],
+                'created_by' => $customer_id,
             );
             $this->obj_commissions->insert($data);
             //insert commission 10%
@@ -905,7 +905,7 @@ class Catalogo_home extends CI_Controller {
                 'status_value' => 1,
                 'date' => date("Y-m-d H:i:s"),
                 'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $_SESSION['usercms']['user_id'],
+                'created_by' => $customer_id,
             );
             $this->obj_commissions->insert($data);
         }
@@ -949,7 +949,7 @@ class Catalogo_home extends CI_Controller {
                             'status_value' => 1,
                             'date' => date("Y-m-d H:i:s"),
                             'created_at' => date("Y-m-d H:i:s"),
-                            'created_by' => $_SESSION['usercms']['user_id'],
+                            'created_by' => $customer_id,
                         );
                         $this->obj_commissions->insert($data);
                         //insert commission 10%
@@ -964,7 +964,7 @@ class Catalogo_home extends CI_Controller {
                             'status_value' => 1,
                             'date' => date("Y-m-d H:i:s"),
                             'created_at' => date("Y-m-d H:i:s"),
-                            'created_by' => $_SESSION['usercms']['user_id'],
+                            'created_by' => $customer_id,
                         );
                         $this->obj_commissions->insert($data);
                     }
