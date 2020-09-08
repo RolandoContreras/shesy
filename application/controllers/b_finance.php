@@ -62,6 +62,8 @@ class B_finance extends CI_Controller {
                 $params = array(
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
+                                    invoices.total,
+                                    invoices.active,
                                     invoices.recompra,
                                     kit.price,
                                     kit.name,

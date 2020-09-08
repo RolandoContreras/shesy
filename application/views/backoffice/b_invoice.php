@@ -58,9 +58,9 @@
 
 
                                                                         <td align="center">
-                                                                            <?php if ($value->status_value == "1") { ?>
+                                                                            <?php if ($value->active == "1") { ?>
                                                                                 <a class="badge badge-primary-inverted">Esperando Activación</a>
-                                                                            <?php } elseif ($value->status_value == "2") { ?>
+                                                                            <?php } elseif ($value->active == "2") { ?>
                                                                                 <a class="badge badge-success-inverted">Pagado</a>
                                                                             <?php } else { ?>
                                                                                 <a onclick="send_upload('<?php echo $value->invoice_id; ?>');">

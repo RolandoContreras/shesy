@@ -166,14 +166,15 @@
 </div>
 <script src="<?php echo site_url() . 'static/backoffice/js/script/plan.js'; ?>"></script>
 <script>
-    Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
+//    pk_test_igI3EctoA17FeNUD
+    Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
     var price = "";
     var price2 = "";
     var kit_id = "";
 
-
     $('.buyButton').on('click', function (e) {
         price = $(this).attr('data-price');
+        price = price * 3.5;
         price2 = $(this).attr('data-price2');
         kit_id = $(this).attr('data-kit');
         Culqi.options({
@@ -189,7 +190,7 @@
         });
         Culqi.settings({
             title: 'Cultura Imparable',
-            currency: 'USD',
+            currency: 'PEN',
             description: 'Venta de Producto y/o Servicio',
             amount: price
         });
@@ -215,15 +216,22 @@
                 dataType: 'JSON',
                 success: function (data) {
                     if (data.object == "charge") {
-                        document.getElementById("pay_success_2").style.display = "block";
-                        location.href = site + "backoffice/invoice";
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Pago Procesado',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        url = site + "backoffice/invoice";
+                        setTimeout(function(){location.href=url} , 1500);  
                     } else {
-                        $("#pay_info").html();
-                        var texto = "";
-                        texto = texto + '<div class="alert alert-danger">';
-                        texto = texto + '<p style="text-align: center;">Hubo un error, verifique los datos de la tarjeta</p>';
-                        texto = texto + '</div>';
-                        $("#pay_info").html(texto);
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Ups! Sucedio un error ',
+                            footer: "Verifique los datos de la tarjeta"
+                        });
                     }
                 },
                 error: function (data) {
