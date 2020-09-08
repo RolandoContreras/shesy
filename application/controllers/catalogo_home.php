@@ -22,6 +22,8 @@ class Catalogo_home extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER_ID
         $kid_id = $_SESSION['customer']['kit_id'];
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
@@ -54,7 +56,6 @@ class Catalogo_home extends CI_Controller {
         }
 
         $category_name = "Todos los Productos";
-
         //get catalog
         $params = array(
             "select" => "catalog.catalog_id,
@@ -98,13 +99,17 @@ class Catalogo_home extends CI_Controller {
         /// DATA
         $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
         //GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total compra
+        $total_compra = $this->total_compra($customer_id);
         $url = 'mi_catalogo';
         $this->tmp_catalog->set("url", $url);
+        $this->tmp_catalog->set("total_compra", $total_compra);
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
-
+        $this->tmp_catalog->set("obj_profile",$obj_profile);
         $this->tmp_catalog->set("obj_catalog", $obj_catalog);
         $this->tmp_catalog->render("catalogo/catalogo_home");
     }
@@ -113,7 +118,8 @@ class Catalogo_home extends CI_Controller {
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
-
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
 
@@ -185,10 +191,15 @@ class Catalogo_home extends CI_Controller {
         $obj_pagination = $this->pagination->create_links();
         /// DATA
         $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
-        //send total row
+        //GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total compra
+        $total_compra = $this->total_compra($customer_id);
         //SEND DATA
         $url = "mi_catalogo/$category";
         $this->tmp_catalog->set("url", $url);
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile",$obj_profile);
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
@@ -198,9 +209,12 @@ class Catalogo_home extends CI_Controller {
     }
 
     public function sub_category($sub_category) {
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
+        
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
 
@@ -271,10 +285,15 @@ class Catalogo_home extends CI_Controller {
         $obj_pagination = $this->pagination->create_links();
         /// DATA
         $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
-        //send total row
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total compra
+        $total_compra = $this->total_compra($customer_id);
         //SEND DATA
         $url = "mi_catalogo/subcategoria/$sub_category";
         $this->tmp_catalog->set("url", $url);
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile",$obj_profile);
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
@@ -284,7 +303,8 @@ class Catalogo_home extends CI_Controller {
     }
 
     public function detail($slug) {
-
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
         //get nav cursos
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
@@ -301,8 +321,6 @@ class Catalogo_home extends CI_Controller {
                                     catalog.granel,
                                     catalog.price,
                                     catalog.img,
-                                    catalog.img2,
-                                    catalog.img3,
                                     catalog.date,
                                     catalog.active,
                                     category.slug as category_slug,
@@ -328,8 +346,13 @@ class Catalogo_home extends CI_Controller {
             "order" => "rand()",
             "limit" => "6");
         $obj_catalog_all = $this->obj_catalog->search($params);
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total compra
+        $total_compra = $this->total_compra($customer_id);
         //SEND DATA
-
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile",$obj_profile);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_catalog_all", $obj_catalog_all);
@@ -829,6 +852,29 @@ class Catalogo_home extends CI_Controller {
         );
         //GET DATA CATALOGO
         return $obj_sub_category = $this->obj_sub_category->search($params);
+    }
+    
+    public function total_compra($customer_id){
+        $params = array(
+            "select" => "sum(amount) as total",
+            "where" => "customer_id = $customer_id and compras = 1 and active = 1");
+        //GET DATA FROM CUSTOMER
+         $obj_total_compra = $this->obj_commissions->get_search_row($params);
+         return $obj_total_compra = $obj_total_compra->total;
+    }
+    
+    public function get_profile($customer_id) {
+        $params_profile = array(
+            "select" => "customer.customer_id,
+                                    customer.first_name,
+                                    customer.username,
+                                    customer.last_name,
+                                    customer.img,
+                                    ",
+            "where" => "customer.customer_id = $customer_id"
+        );
+        //GET DATA COMMENTS
+        return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
 
     public function get_session() {

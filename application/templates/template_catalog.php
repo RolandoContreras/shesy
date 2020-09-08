@@ -17,7 +17,8 @@
         <link rel="manifest" href="<?php echo site_url() . 'static/page_front/images/logo/favico/site.webmanifest'; ?>">
         <!--//END FAVICON-->
         <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/style.css'; ?>">
-        
+        <!--//CUSTOMER CSS-->
+        <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/my_style.css'; ?>">
         <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/gallery.css'; ?>">
         <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/ekko-lightbox.min.css'; ?>">
         <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/lightbox.min.css'; ?>">
@@ -29,8 +30,7 @@
         <script src="https://checkout.culqi.com/js/v3"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!--//swetaler2-->
-        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet" media="none" onload="if (media != 'all')
-                    media = 'all'">
+        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet" media="none" onload="if (media != 'all') media = 'all'">
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     </head>
     <body class="layout-6" style="background-image: url('<?php echo site_url() . 'static/page_front/images/sc-step-bg-2.png'; ?>'); background-size: cover;">
@@ -45,6 +45,21 @@
                 <div class="navbar-content scroll-div">
 
                     <ul class="nav pcoded-inner-navbar">
+                        <center>
+                            <li class="nav-item" style="padding:5px;">
+                                <?php if (!empty($obj_profile->img)) { ?>
+                                    <img alt="avatar" class="radius-50" src="<?php echo site_url() . "static/backoffice/images/profile/$obj_profile->customer_id/$obj_profile->img"; ?>" width="80" style="border">
+                                <?php } else { ?>
+                                    <img alt="avatar" class="radius-50" src="<?php echo site_url() . 'static/backoffice/images/avatar.png'; ?>" width="80" style="border">
+                                <?php } ?>    
+                            </li>
+                            <li class="nav-item">
+                                <div class="sale-tag medium--right">
+                                    Compras <span class="money conversion-bear-money">&dollar;<?php echo $total_compra;?></span>
+                                </div>
+                            </li>
+                        </center>
+
                         <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
                         <?php
                         $url = explode("/", uri_string());
@@ -71,6 +86,8 @@
                                 break;
                         }
                         ?>
+
+
                         <li class="nav-item">
                             <a href="<?php echo site_url() . 'backoffice'; ?>" class="nav-link <?php echo $home_syle; ?>">
                                 <span class="pcoded-micon">
@@ -79,7 +96,6 @@
                                 <span class="pcoded-mtext">Mi Oficina</span>
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="nav-link <?php echo $home_syle; ?>">
                                 <span class="pcoded-micon">
@@ -99,13 +115,17 @@
                                     <li class="pcoded-hasmenu pcoded-trigger">
                                         <a href="<?php echo site_url() . "mi_catalogo/$value->slug"; ?>"><b><?php echo $value->name; ?></b></a>
                                         <ul class="pcoded-submenu" style="display: block;">
-                                            <?php foreach ($obj_sub_category as $value_sub) {
-                                                if ($value_sub->category_id == $value->category_id) {?>
+                                            <?php
+                                            foreach ($obj_sub_category as $value_sub) {
+                                                if ($value_sub->category_id == $value->category_id) {
+                                                    ?>
                                                     <li>
                                                         <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
                                                     </li>
-                                                <?php }
-                                            } ?> 
+                                                    <?php
+                                                }
+                                            }
+                                            ?> 
                                         </ul>
                                     </li>
                                 <?php } ?>
@@ -167,10 +187,10 @@
                             </div>
                         </li>
                     </ul>
-        <?php } ?>   
+                <?php } ?>   
             </div>
         </header>
-<?php echo $body; ?>
+        <?php echo $body; ?>
         <!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
         <script src="<?php echo site_url() . 'static/course/js/vendor-all.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/course/js/bootstrap.min.js'; ?>"></script>

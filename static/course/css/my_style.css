@@ -1,0 +1,15 @@
+.radius-50{
+    border-radius: 50%;
+    border: 1px #ffffff solid;
+}
+.sale-tag {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 8px;
+    border-radius: 3px;
+    vertical-align: text-bottom;
+    color: #174272;
+    border: 2px solid #174272;
+}
