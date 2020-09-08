@@ -4,11 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp64/www/shesy/application/config/routes.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_detail.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/catalogo_home.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/templates/template_catalog.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_pay_order.php</file>
-            <file>file:/C:/wamp64/www/shesy/static/catalog/js/pay_order_new.js</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/d_bonus.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/bonus/bonus_form.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/bonus/bonus_list.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/cms/js/bonus.js</file>
+            <file>file:/C:/wamp64/www/shesy/static/cms/js/catalog.js</file>
         </group>
     </open-files>
 </project-private>

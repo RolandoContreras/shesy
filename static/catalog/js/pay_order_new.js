@@ -72,11 +72,10 @@ function add_cart(catalog_id, price, name) {
                         position: 'top-end',
                         title: 'Producto Agregado a la Cesta',
                         icon: 'success',
-                        showCloseButton: true,
-                        focusConfirm: false,
-                        confirmButtonText:
-                                '<i class="fa fa-shopping-cart" aria-hidden="true"></i> <a style="color:white !important;" href="' + site + "mi_catalogo/pay_order" + '">Ir al Carrito!</a>'
+                        showConfirmButton: false
                     });
+                    url = site + "mi_catalogo/pay_order";
+                    setTimeout(function(){location.href=url} , 1500);  
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -110,11 +109,10 @@ function add_cart_granel(catalog_id, price, name) {
                         position: 'top-end',
                         title: 'Producto Agregado a la Cesta',
                         icon: 'success',
-                        showCloseButton: true,
-                        focusConfirm: false,
-                        confirmButtonText:
-                                '<i class="fa fa-shopping-cart" aria-hidden="true"></i> <a style="color:white !important;" href="' + site + "mi_catalogo/pay_order" + '">Ir al Carrito!</a>'
+                        showConfirmButton: false
                     });
+                    url = site + "mi_catalogo/pay_order";
+                    setTimeout(function(){location.href=url} , 1500);  
                 } else {
                     Swal.fire({
                         icon: 'error',

@@ -1,7 +1,4 @@
-<?php
-
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Catalogo_home extends CI_Controller {
 
@@ -119,6 +116,7 @@ class Catalogo_home extends CI_Controller {
 
     public function category($category) {
         //GET NAV CURSOS
+        $this->get_session();
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
         //GET CUSTOMER_ID
@@ -306,6 +304,7 @@ class Catalogo_home extends CI_Controller {
     }
 
     public function detail($slug) {
+        $this->get_session();
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //get nav cursos
@@ -387,7 +386,13 @@ class Catalogo_home extends CI_Controller {
         );
 
         $obj_invoices = $this->obj_invoices->search($params);
-
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total compra
+        $total_compra = $this->total_compra($customer_id);
+        
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_invoices", $obj_invoices);
@@ -398,9 +403,14 @@ class Catalogo_home extends CI_Controller {
         //GET SESION ACTUALY
         $this->get_session();
         //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
         //get nav ctalogo
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total compra
+        $total_compra = $this->total_compra($customer_id);
 
         //GET DATA PRICE CRIPTOCURRENCY
         $params = array(
@@ -436,7 +446,9 @@ class Catalogo_home extends CI_Controller {
         );
 
         $obj_invoice_catalog = $this->obj_invoice_catalog->search($params);
-
+        
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_invoices", $obj_invoices);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
