@@ -1,4 +1,7 @@
-<?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Catalogo_home extends CI_Controller {
 
@@ -109,7 +112,7 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
-        $this->tmp_catalog->set("obj_profile",$obj_profile);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_catalog", $obj_catalog);
         $this->tmp_catalog->render("catalogo/catalogo_home");
     }
@@ -199,7 +202,7 @@ class Catalogo_home extends CI_Controller {
         $url = "mi_catalogo/$category";
         $this->tmp_catalog->set("url", $url);
         $this->tmp_catalog->set("total_compra", $total_compra);
-        $this->tmp_catalog->set("obj_profile",$obj_profile);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
@@ -214,7 +217,7 @@ class Catalogo_home extends CI_Controller {
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
-        
+
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
 
@@ -256,7 +259,7 @@ class Catalogo_home extends CI_Controller {
                         category.slug as category_slug,
                         catalog.date",
             "join" => array('category, category.category_id = catalog.category_id',
-                            'sub_category, sub_category.sub_category_id = catalog.sub_category_id'),
+                'sub_category, sub_category.sub_category_id = catalog.sub_category_id'),
             "where" => "catalog.sub_category_id = $sub_category_id and catalog.active = 1",
             "order" => $order);
 
@@ -293,7 +296,7 @@ class Catalogo_home extends CI_Controller {
         $url = "mi_catalogo/subcategoria/$sub_category";
         $this->tmp_catalog->set("url", $url);
         $this->tmp_catalog->set("total_compra", $total_compra);
-        $this->tmp_catalog->set("obj_profile",$obj_profile);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
@@ -352,7 +355,7 @@ class Catalogo_home extends CI_Controller {
         $total_compra = $this->total_compra($customer_id);
         //SEND DATA
         $this->tmp_catalog->set("total_compra", $total_compra);
-        $this->tmp_catalog->set("obj_profile",$obj_profile);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_catalog_all", $obj_catalog_all);
@@ -461,9 +464,14 @@ class Catalogo_home extends CI_Controller {
             "where" => "invoices.customer_id = $customer_id and invoices.type = 2 and invoices.status_value = 1",
             "join" => array('customer, customer.customer_id = invoices.customer_id'),
         );
-
         $obj_invoices = $this->obj_invoices->search($params);
 
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total compra
+        $total_compra = $this->total_compra($customer_id);
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_invoices", $obj_invoices);
@@ -475,9 +483,15 @@ class Catalogo_home extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total compra
+        $total_compra = $this->total_compra($customer_id);
         //get nav ctalogo
         $obj_category_catalogo = $this->nav_catalogo();
         $obj_sub_category = $this->nav_sub_category();
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->render("catalogo/catalogo_contra_entrega");
@@ -591,6 +605,84 @@ class Catalogo_home extends CI_Controller {
             $data['status'] = "true";
             echo json_encode($data);
         }
+    }
+
+    public function puntos_compra() {
+        //GET SESION ACTUALY
+        $this->get_session();
+        $customer_id = $_SESSION['customer']['customer_id'];
+        $total = $this->input->post("total");
+        //active customer
+        $active_month = $this->input->post("active_month");
+        //GET DATA CUSTOMER UNILEVEL
+        $params = array(
+            "select" => "parend_id,
+                                    ident",
+            "where" => "customer_id = $customer_id"
+        );
+        //GET DATA FROM BONUS
+        $obj_unilevel = $this->obj_unilevel->get_search_row($params);
+        $ident = $obj_unilevel->ident;
+        //INSERT INVOICE
+        $data_invoice = array(
+            'customer_id' => $customer_id,
+            'sub_total' => $total,
+            'igv' => 0,
+            'total' => $total,
+            'type' => 2,
+            'delivery' => 1,
+            'date' => date("Y-m-d H:i:s"),
+            'active' => 2,
+            'status_value' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $customer_id,
+        );
+        $invoice_id = $this->obj_invoices->insert($data_invoice);
+        //insert table comission negative
+        $data_comission_compra = array(
+            'invoice_id' => $invoice_id,
+            'customer_id' => $customer_id,
+            'bonus_id' => 3,
+            'amount' => -$total,
+            'compras' => 1,
+            'active' => 1,
+            'status_value' => 1,
+            'date' => date("Y-m-d H:i:s"),
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $customer_id,
+        );
+        $this->obj_commissions->insert($data_comission_compra);  
+        //INSERT INVOICE CATALOG
+        $option = "";
+        foreach ($this->cart->contents() as $items) {
+            if ($this->cart->has_options($items['rowid']) == TRUE) {
+                foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value) {
+                    $option .= "$option_name" . ":" . "$option_value" . "&nbsp;";
+                }
+            }
+            $data_invoice_catalog = array(
+                'invoice_id' => $invoice_id,
+                'catalog_id' => $items['id'],
+                'price' => $items['price'],
+                'quantity' => $items['qty'],
+                'option' => $option,
+                'quantity' => $items['qty'],
+                'sub_total' => $items['subtotal'],
+                'date' => date("Y-m-d H:i:s")
+            );
+          $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+          if (!empty($ident)) {
+            $this->pay_unilevel_compras($ident, $invoice_id, $items['id'], $customer_id, $items['qty'], $active_month);
+          }
+        }
+        //DESTROY CART
+        if(!empty($result)){
+            $this->cart->destroy();
+            $data['status'] = true;
+        }else{
+            $data['status'] = false;
+        }
+        echo json_encode($data);
     }
 
     public function process_pay_invoice() {
@@ -755,6 +847,120 @@ class Catalogo_home extends CI_Controller {
         echo json_encode($data);
     }
 
+    public function pay_unilevel_compras($ident, $invoice_id, $catalog_id, $customer_id, $quantity, $active_month) {
+
+        $new_ident = explode(",", $ident);
+        rsort($new_ident);
+        //select data catalog
+        $params = array(
+            "select" => "bono_n1,
+                        bono_n2,
+                        bono_n3,
+                        bono_n4,
+                        bono_n5",
+            "where" => "catalog_id = $catalog_id"
+        );
+        //GET DATA FROM BONUS
+        $obj_catalog = $this->obj_catalog->get_search_row($params);
+        //insert on customer actually
+        $amount = $obj_catalog->bono_n1 * $quantity;
+        $noventa_percent = $amount * 0.9;
+        $diez_percent = $amount * 0.1;
+        //insert commission 90%
+        if ($active_month == 1) {
+            $data = array(
+                'invoice_id' => $invoice_id,
+                'customer_id' => $customer_id,
+                'bonus_id' => 3,
+                'amount' => $noventa_percent,
+                'active' => 1,
+                'pago' => 0,
+                'status_value' => 1,
+                'date' => date("Y-m-d H:i:s"),
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $_SESSION['usercms']['user_id'],
+            );
+            $this->obj_commissions->insert($data);
+            //insert commission 10%
+            $data = array(
+                'invoice_id' => $invoice_id,
+                'customer_id' => $customer_id,
+                'bonus_id' => 3,
+                'amount' => $diez_percent,
+                'active' => 1,
+                'pago' => 0,
+                'compras' => 1,
+                'status_value' => 1,
+                'date' => date("Y-m-d H:i:s"),
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $_SESSION['usercms']['user_id'],
+            );
+            $this->obj_commissions->insert($data);
+        }
+        //BOUCLE ULTI 5 LEVEL
+        for ($x = 0; $x <= 3; $x++) {
+            if (isset($new_ident[$x])) {
+                if ($new_ident[$x] != "") {
+                    //get customer active
+                    $params = array(
+                        "select" => "active_month",
+                        "where" => "customer_id = $new_ident[$x]"
+                    );
+                    //GET DATA FROM BONUS
+                    $obj_customer = $this->obj_customer->get_search_row($params);
+                    if ($obj_customer->active_month == 1) {
+                        //INSERT COMMISSION TABLE
+                        switch ($x) {
+                            case 0:
+                                $amount = $obj_catalog->bono_n2 * $quantity;
+                                break;
+                            case 1:
+                                $amount = $obj_catalog->bono_n3 * $quantity;
+                                break;
+                            case 2:
+                                $amount = $obj_catalog->bono_n4 * $quantity;
+                                break;
+                            case 3:
+                                $amount = $obj_catalog->bono_n5 * $quantity;
+                                break;
+                        }
+                        $noventa_percent = $amount * 0.9;
+                        $diez_percent = $amount * 0.1;
+                        //insert on table commision
+                        $data = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $new_ident[$x],
+                            'bonus_id' => 3,
+                            'amount' => $noventa_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $_SESSION['usercms']['user_id'],
+                        );
+                        $this->obj_commissions->insert($data);
+                        //insert commission 10%
+                        $data = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $new_ident[$x],
+                            'bonus_id' => 3,
+                            'amount' => $diez_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'compras' => 1,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $_SESSION['usercms']['user_id'],
+                        );
+                        $this->obj_commissions->insert($data);
+                    }
+                }
+            }
+        }
+    }
+
     public function pay_unilevel($ident, $invoice_id, $catalog_id, $customer_id, $quantity) {
 
         $new_ident = explode(",", $ident);
@@ -853,16 +1059,16 @@ class Catalogo_home extends CI_Controller {
         //GET DATA CATALOGO
         return $obj_sub_category = $this->obj_sub_category->search($params);
     }
-    
-    public function total_compra($customer_id){
+
+    public function total_compra($customer_id) {
         $params = array(
             "select" => "sum(amount) as total",
             "where" => "customer_id = $customer_id and compras = 1 and active = 1");
         //GET DATA FROM CUSTOMER
-         $obj_total_compra = $this->obj_commissions->get_search_row($params);
-         return $obj_total_compra = $obj_total_compra->total;
+        $obj_total_compra = $this->obj_commissions->get_search_row($params);
+        return $obj_total_compra = $obj_total_compra->total;
     }
-    
+
     public function get_profile($customer_id) {
         $params_profile = array(
             "select" => "customer.customer_id,
@@ -870,6 +1076,8 @@ class Catalogo_home extends CI_Controller {
                                     customer.username,
                                     customer.last_name,
                                     customer.img,
+                                    customer.active_month,
+                                    customer.active,
                                     ",
             "where" => "customer.customer_id = $customer_id"
         );
