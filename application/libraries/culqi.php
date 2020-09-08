@@ -6,7 +6,7 @@ class Culqi {
         require 'culqi-php/lib/culqi.php';
         
         
-        $SECRET_KEY = "sk_test_CPp73DuovXPdX0Dh";
+        $SECRET_KEY = "sk_live_gtpjfAyyoTK2Uf4v";
         $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
         
         $charge = $culqi->Charges->create(
