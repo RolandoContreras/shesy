@@ -316,6 +316,11 @@ li .nav_catalog{
         padding: 0;
     }
 }
+.boton-login{
+    text-align: right;
+    margin-left: 60px;
+    margin-top: -5px;
+}
 @media (max-width: 767px) {
     #block-1597347523879 {
         text-align: left;
@@ -326,7 +331,8 @@ li .nav_catalog{
 }
 @media only screen and (max-width: 500px) {
     .responsive-movil{
-    margin-top: -50px;
+        margin-top: -50px;
+    }
 }
-}
+
     

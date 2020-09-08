@@ -14,35 +14,9 @@
             <div class="container header__container media">
                 <div id="block-1555988494486" class="header__block header__block--logo header__block--show">
                     <a class="logo" href="<?php echo site_url();?>">
-                        <img class="logo__image"
-                            src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>"
-                            kjb-settings-id="sections_header_blocks_1555988494486_settings_logo" alt="Logo"
-                            width="50" />
+                        <img class="logo__image" src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" alt="Logo" width="50"/>
                     </a>
                 </div>
-                <?php
-                //count data cart
-                $cart = count($this->cart->contents());
-                if ($cart > 0) {
-                    ?>
-                <!--                    <a href="javascript:void(0);" onclick="validate_login();">
-                        <div class="header-right">
-                            <div class="widget woocommerce widget_shopping_cart">
-                                <div class="minicart_hover green_yellow" id="header-mini-cart">
-                                    <span class="cart-items-number">
-                                        <span class="text">Carrito</span> 
-                                        <i class="fas fa-shopping-cart"></i>
-                                        <span class="wrapper-items-number">
-                                            <span class="items-number"><?php echo $cart; ?></span></span>
-                                    </span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>-->
-                <?php } ?>
-
-
                 <div id="block-1555988491313"
                     class="header__block header__switch-content header__block--menu media__body">
                     <div class="link-list justify-content-right"
@@ -55,9 +29,13 @@
                     </div>
                 </div>
                 <div id="block-1593710564240" class="header__block header__switch-content header__block--cta">
-                    <a class="btn btn-medium btn-solid btn- background-dark"
-                        href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Iniciar Sesión</a>
+                    <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Iniciar Sesión</a>
                 </div>
+                <!--boton login-->
+                <div id="block-1593710564240" class="boton-login hidden--desktop">
+                    <a class="btn btn-medium btn-solid btn- background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>"> Iniciar Sesión</a>
+                </div>
+                <!--end boton login-->
                 <div class="hamburger hidden--desktop" onclick="show_nav_mobile();">
                     <div class="hamburger__slices">
                         <div class="hamburger__slice hamburger--slice-1"></div>
@@ -81,11 +59,6 @@
             <a class="link-list__link" href="<?php echo site_url() . 'contacto'; ?>">Contacto</a>
             <a class="link-list__link" href="<?php echo site_url() . 'registro'; ?>">Registro</a>
         </div>
-    </div>
-    <div id="block-1593710564240" class="header__block header__switch-content header__block--cta">
-        <a class="btn btn-medium btn-solid btn-background-dark" href="<?php echo site_url() . 'iniciar-sesion'; ?>">
-            Iniciar Sesión
-        </a>
     </div>
 </div>
 <script>

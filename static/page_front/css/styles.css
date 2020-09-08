@@ -2431,8 +2431,8 @@ strong {
   flex: 0 0 100%; }
 
 .btn {
-  font-family: Open Sans;
-  font-size: 18px;
+  font-family: Open Sans !important;
+  font-size: 18px !important;
   font-weight: 700;
   line-height: 1.5;
   display: inline-block;
