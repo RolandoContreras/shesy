@@ -338,8 +338,9 @@ li .nav_catalog{
     margin-top: 7px !important;
 }
 .responsive-movil {
-    margin-top: -50px;
-}
+        margin-top: 0px;
+    }
+
 @media (max-width: 767px) {
     #block-1597347523879 {
         text-align: left;
@@ -351,27 +352,37 @@ li .nav_catalog{
 }
 
 @media only screen and (min-width:320px) and (max-width:480px){
-
+    .responsive-movil {
+        margin-top: -50px;
+    }
 }
 
 @media ( max-width: 320px ) {
     .boton-login{
         margin-left: 90px;
     }
+    .responsive-movil {
+        margin-top: -50px;
+    }
     /* Aquí van los estilos para iPhone vertical */
-
 }
 @media ( max-width: 375px ) {
     .boton-login{
         margin-left: 120px;
     }
-    /* Aquí van los estilos para iPhone vertical */
+    .responsive-movil {
+        margin-top: -50px;
+    }
 
 }
 @media ( max-width: 480px ) {
     .boton-login{
         margin-left: 140px;
     }
+    .responsive-movil {
+        margin-top: -50px;
+    }
+
 }
 
 @media (max-width: 515px) {
