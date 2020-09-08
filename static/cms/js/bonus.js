@@ -1,3 +1,8 @@
+function new_bono() {
+    var url = 'dashboard/bonos/load';
+    location.href = site + url;
+}
+
 function edit_bonus(bonus_id){    
      var url = 'dashboard/bonos/load/'+bonus_id;
      location.href = site+url;   

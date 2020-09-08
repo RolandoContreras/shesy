@@ -151,7 +151,6 @@ function puntos_compra() {
                         position: 'top-end',
                         title: 'Pago con éxito',
                         icon: 'success',
-                        showCloseButton: true,
                         focusConfirm: false
                     });
                     var url = site + "mi_catalogo";

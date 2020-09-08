@@ -166,6 +166,7 @@ $route['dashboard/videos/validate'] = "d_videos/validate";
 $route['dashboard/videos/delete'] = "d_videos/delete";
 
 $route['dashboard/bonos'] = "d_bonus"; 
+$route['dashboard/bonos/load'] = "d_bonus/load";
 $route['dashboard/bonos/load/([0-9]+)'] = "d_bonus/load/$1";
 $route['dashboard/bonos/validate'] = "d_bonus/validate";
 

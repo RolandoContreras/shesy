@@ -24,6 +24,7 @@
                 <div class="card">
                   <div class="card-header">
                     <h5>Listado de Bonos</h5>
+                    <button class="btn btn-secondary" type="button" onclick="new_bono();"><span><span class="pcoded-micon"><i data-feather="plus"></i></span> Nuevo</span></button>
                   </div>
                   <div class="card-block">
                     <div class="table-responsive">
