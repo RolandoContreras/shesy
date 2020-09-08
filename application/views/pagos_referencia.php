@@ -1,107 +1,97 @@
 <!doctype html>
 <html lang="es-PE">
-<?php $this->load->view("head"); ?>
-<body>
-    <div id="section-header" data-section-id="header">
-        <?php $this->load->view("header"); ?>
-    </div>
-    <main class="wrapper main-content" role="main">
-        <div id="shopify-section-collection-template" class="shopify-section collection-template-section">
-            <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-                <a href="<?php echo site_url();?>" title="Volver a la portada">Inicio</a>
-                <span class="divider" aria-hidden="true">›</span>
-                <span>Catalogo</span>
-            </nav>
-            <div id="CollectionSection">
-                <div class="grid grid-border">
-                    <aside class="sidebar grid-item large--one-fifth collection-filters" id="collectionFilters">
-                        <div id="h3-title">Comprar por:</div>
-                        <div class="space-20"></div>
-                        <ul>
-                        <?php foreach ($obj_category_catalog as $value) { ?>
-                            <li>  
-                              <a class="nav_catalog" href="<?php echo site_url() . "catalogo/$value->slug"; ?>" title="<?php echo $value->name; ?>"><?php echo $value->name; ?></a>
-                            </li>
-                        <?php } ?>
-                        </ul>
-                    </aside>
-                    <div class="grid-item large--four-fifths grid-border--left">
-                        <header class="section-header">
-                            <div id="catalog-title" class="section-header--title section-header--left h1">Catalogo</div>
-                            <div class="section-header--right">
-                                <div class="form-horizontal">
-                                    <label for="sortBy" class="small--hide">Ordenar por</label>
-                                    <form class="woocommerce-ordering" method="get" action="<?php echo site_url()."catalogo";?>">
-                                      <select name="orderby" class="orderby" id="sortBy" onchange="changeFunc();">
-                                          <option value="menu_order">Ordenar por Defecto</option>
-                                          <option value="date">Ordenar por novedad</option>
-                                          <option value="price">Ordenar por precio menor a mayor</option>
-                                          <option value="price-desc">Ordenar por precio mayor a menor</option>
-                                      </select>
-                                    </form>
-                                </div>
-                            </div>
-                            <script type="text/javascript">
-                              function changeFunc() {
-                                var selectBox = document.getElementById("sortBy");
-                                var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-                                var url = 'catalogo?orderby='+ selectedValue;
-                                location.href = site+url;  
-                              } 
-                              </script>
-                        </header>
-                        <div class="grid-uniform">
-                        <?php  foreach ($obj_catalog  as $value) { ?>
-                              <div class="grid-item medium--one-quarter large--one-quarter on-sale">
-                                <a href="<?php echo site_url()."catalogo/$value->category_slug/$value->catalog_id/$value->slug";?>" class="product-grid-item">
-                                    <div class="product-grid-image" style="height: 225px;">
-                                        <div class="product-grid-image--centered">
-                                            <div class="lazyload__image-wrapper" style="max-width: 250px">
-                                                <div style="padding-top:100.0%;">
-                                                    <img width="400" height="400" alt="<?php echo $value->name;?>" srcset='<?php echo site_url()."static/catalog/$value->img";?> 400w, <?php echo site_url()."static/catalog/$value->img";?> 150w, <?php echo site_url()."static/catalog/$value->img";?> 300w, <?php echo site_url()."static/catalog/$value->img";?> 355w, <?php echo site_url()."static/catalog/$value->img";?> 100w, <?php echo site_url()."static/catalog/$value->img";?> 600w' sizes="(max-width: 400px) 100vw, 400px" src='<?php echo site_url()."static/catalog/$value->img";?>'>
+    <?php $this->load->view("head"); ?>
+    <body>
+        <div id="section-header" data-section-id="header">
+            <?php $this->load->view("header"); ?>
+        </div>
+        <main>
+            <div data-content-for-index data-dynamic-sections="index">
+                <div id="section-1590554804411" data-section-id="1590554804411">
+                    <!-- Section Virables -->
+                    <div class="background-image background-image--1590554804411">
+                        <div id=""
+                             class="section section--opt_in section--middle section--xs-small section--dark section--1590554804411"
+                             kjb-settings-id="sections_1590554804411_settings_background_color">
+                            <div class="container">
+                                <div class="row text-xs-center">
+                                    <div class="col-md-6">
+                                        <div class="section--middle optin__panel optin__panel--boxed">
+                                            <div class="row optin optin--stacked">
+                                                <div class="col-md-12">
+                                                    <div class="checkout-content">
+                                                        <img class="img-responsive checkout-content-img" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production//site/61624/images/sNHSAYtJRBePnKHdYyHI_Correos_1.png" alt="Snhsaytjrbepnkhdyyhi correos 1">
+                                                        <div class="checkout-content-body" kjb-settings-id="checkout-copy-section">
+                                                            <div class="space-20"></div>
+                                                            <h2 style="text-align: center;"><span style="color: #57de1d;"><strong>Estas apunto de comprar.<br>&nbsp;</strong></span></h2>
+                                                            <?php foreach ($this->cart->contents() as $items): ?>
+                                                                <h3>
+                                                                    <span style="color: #000000;">
+                                                                        <i class="fa fa-check"></i>&nbsp;&nbsp;<?php echo $items['name']; ?><br><br>
+                                                                    </span>
+                                                                </h3>
+                                                            <?php endforeach; ?>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="center">
-                                        <p><?php echo $value->name;?></p>
-                                    <div class="product-item--price">
-                                        <span class="h1 medium--left">
-                                            <span class="visually-hidden">Precio de venta</span>
-                                        </span>
+                                    <div class="col-md-5 offset-md-1">
+                                        <form action="javascript:void(0);" method="post" onsubmit="send_message();">
+                                            <div class="section--middle optin__panel optin__panel--boxed">
+                                                <div class="row optin optin--stacked">
+                                                    <div class="col-md-12">
+                                                        <h2 class="checkout-panel-title js-checkout-panel-price-discountable" style="color: #000000;">
+                                                            &dollar;<?php echo $this->cart->format_number($this->cart->total()); ?>
+                                                        </h2>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <p class="optin__subheading">Déjanos tus datos para hacerte el envió</p>
+                                                    </div>
+                                                    <div class="col-md-12" style="text-align: left">
+                                                        <div class="space-20"></div>
+                                                        <div class="text-field form-group">
+                                                            <p class="optin__subheading">Ingrese su nombre</p>
+                                                            <input type="text" name="name" id="name" required="required" class="form-control" placeholder="Nombre">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12" style="text-align: left">
+                                                        <div class="space-20"></div>
+                                                        <div class="text-field form-group">
+                                                            <p class="optin__subheading">Apellidos</p>
+                                                            <input type="text" name="name" id="name" required="required" class="form-control" placeholder="Apellidos">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12" style="text-align: left">
+                                                        <div class="email-field form-group">
+                                                            <p class="optin__subheading">Teléfono</p>
+                                                            <input required="required" class="form-control" placeholder="Teléfono:" type="email" name="email" id="email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12" style="text-align: left">
+                                                        <div class="email-field form-group">
+                                                            <p class="optin__subheading">Dirección / Referencia</p>
+                                                            <textarea name="message" id="message" cols="20" rows="5" class="form-control" placeholder="Ingrese su dirección / referencia"  required="required"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <button class="btn btn--sections_1590554804411_settings_btn_text btn--block btn--solid btn-form form-control" type="submit">Pagar</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="sale-tag medium--right">
-                                        Precio <span class="money conversion-bear-money">$<?php echo $value->price;?></span>
-                                    </div>
-                                    </div>
-                                </a>
-                            </div>
-                  <?php  } ?>
-                        </div>
-                    </div>
-                    <!--Pagination-->
-                    <div class="grid-item pagination-border-top">
-                        <div class="grid">
-                            <div class="grid-item large--four-fifths push--large--one-fifth">
-                                <div class="text-center">
-                                    <ul class="pagination-custom">
-                                      <?php echo $obj_pagination; ?>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div style="clear:both"></div>
-        </div>
-    </main>
-    <div id="section-footer">
-        <?php $this->load->view("footer"); ?>
-    </div>
-    <script
-        src="<?php echo site_url() . "static/page_front/js/encore_core-391b174ddfaf72e8ec9615d1579235b5c2c755e7cd65e22cf10938c815f7f394.js"; ?>">
-    </script>
-    <script src="<?php echo site_url() . "static/page_front/js/scripts.js?15964308185009978"; ?>"></script>
-</body>
-</html>
+                    </main>
+                    <div id="section-footer">
+                        <?php $this->load->view("footer"); ?>
+                    </div>
+                    <script src='https://www.google.com/recaptcha/api.js'></script>
+                    <script src='<?php echo site_url() . 'static/page_front/js/script/contact.js'; ?>'></script>
+                    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
