@@ -657,7 +657,7 @@ class Catalogo_home extends CI_Controller {
             'bonus_id' => 3,
             'amount' => -$total,
             'compras' => 1,
-            'active' => 1,
+            'active' => 0,
             'status_value' => 1,
             'date' => date("Y-m-d H:i:s"),
             'created_at' => date("Y-m-d H:i:s"),
@@ -1075,7 +1075,7 @@ class Catalogo_home extends CI_Controller {
     public function total_compra($customer_id) {
         $params = array(
             "select" => "sum(amount) as total",
-            "where" => "customer_id = $customer_id and compras = 1 and active = 1");
+            "where" => "customer_id = $customer_id and compras = 1");
         //GET DATA FROM CUSTOMER
         $obj_total_compra = $this->obj_commissions->get_search_row($params);
         return $obj_total_compra = $obj_total_compra->total;
