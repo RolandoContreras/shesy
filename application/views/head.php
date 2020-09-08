@@ -51,7 +51,7 @@
               $home_syle = "current-menu-parent ";
               break;
       }
-    if($nav == "catalogo"){ ?>
+    if($nav == "catalogo" || "pagos_referencia"){ ?>
       <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/theme.css";?>"/>
     <?php } ?>
     <!-- Boostrap ====================================================== -->

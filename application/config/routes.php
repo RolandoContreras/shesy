@@ -44,9 +44,11 @@ $route['404_override'] = 'errors/error_404';
 $route['home'] = 'home';
 $route['postula'] = 'home/postula';
 $route['home/sitemap'] = 'home/sitemap';
+$route['pagos_referencia'] = 'home/pagos_referencia';
 
 $route['catalogo'] = 'catalog';
 $route['catalogo/order/add_cart'] = 'catalog/add_cart';
+$route['catalogo/([a-z_-]+)'] = 'catalog/catalog/$1';
 $route['catalogo/([0-9]+)'] = 'catalog/index/$1';
 $route['catalogo/([0-9a-z_-]+)'] = 'catalog/category/$1';
 $route['catalogo/subcategoria/([a-z_-]+)'] = 'catalog/sub_category/$1';

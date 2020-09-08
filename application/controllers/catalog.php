@@ -26,8 +26,12 @@ class Catalog extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function index() {
-
+    public function index($customer = null) {
+        
+        if(isset($customer)){
+            $data_customer_compras['customer_id'] = $customer;
+            $_SESSION['compras_customer'] = $data_customer_compras;
+        }
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
