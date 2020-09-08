@@ -10,6 +10,7 @@ class Home extends CI_Controller {
         $this->load->model("sub_category_model", "obj_sub_category");
         $this->load->model("videos_model", "obj_videos");
         $this->load->model("embassy_model", "obj_embassy");
+        $this->load->library('culqi');
     }
 
     public function index() {
@@ -85,6 +86,105 @@ class Home extends CI_Controller {
         $data['title'] = "Compras por referencia";
         $this->load->view('pagos_referencia', $data);
         
+    }
+    
+    public function create_invoice_referencia() {
+        try {
+            date_default_timezone_set('America/Lima');
+            
+            echo "Hola";
+            die();
+            
+            //SELECT ID FROM CUSTOMER
+            $token = $this->input->post('token');
+            $kit_id = trim($this->input->post('kit_id'));
+            $email = $this->input->post('email');
+            $price = $this->input->post('price');
+            $price2 = $this->input->post('price2');
+            $customer_id = $_SESSION['customer']['customer_id'];
+            //get data customer
+            $params_customer = array(
+                "select" => "first_name,
+                                    last_name,
+                                    address,
+                                    phone,
+                                    active",
+                "where" => "customer_id = $customer_id",
+            );
+            //GET DATA COMMENTS
+            $obj_customer = $this->obj_customer->get_search_row($params_customer);
+            //MAKE CHARGE
+            $charge = $this->culqi->charge($token, $price, $email, $obj_customer->first_name, $obj_customer->last_name, $obj_customer->address, $obj_customer->phone);
+            //INSERT INVOICE
+            $data_invoice = array(
+                'customer_id' => $customer_id,
+                'kit_id' => $kit_id,
+                'sub_total' => $price2,
+                'igv' => 0,
+                'total' => $price2,
+                'type' => 1,
+                'recompra' => 0,
+                'date' => date("Y-m-d H:i:s"),
+                'active' => 2,
+                'status_value' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $customer_id,
+            );
+            $invoice_id = $this->obj_invoices->insert($data_invoice);
+            //get data bonus kit
+            $params = array(
+                "select" => "bono_n1,
+                                        bono_n2,
+                                        bono_n3,
+                                        bono_n4,
+                                        bono_n5",
+                "where" => "kit_id = $kit_id"
+            );
+            //GET DATA FROM BONUS
+            $obj_kit = $this->obj_kit->get_search_row($params);
+            //GET DATA CUSTOMER UNILEVEL
+            $params = array(
+                "select" => "parend_id,
+                                ident,
+                                new_parend_id",
+                "where" => "customer_id = $customer_id"
+            );
+            //GET DATA FROM BONUS
+            $obj_unilevel = $this->obj_unilevel->get_search_row($params);
+            if (isset($obj_unilevel) != "") {
+                $ident = $obj_unilevel->ident;
+                $new_parend_id = $obj_unilevel->new_parend_id;
+                if(!empty($new_parend_id)){
+                    //INSERT AMOUNT ON COMMISION TABLE    
+                $this->pay_unilevel($ident, $new_parend_id, $invoice_id, $obj_kit->bono_n1, $obj_kit->bono_n2, $obj_kit->bono_n3, $obj_kit->bono_n4, $obj_kit->bono_n5);
+                }
+            }
+            //add 30 day por next pay
+            $date_month = date("Y-m-d", strtotime("+30 day"));
+            //UPDATE TABLE CUSTOMER ACTIVE = 1    
+            $data = array(
+                'active' => 1,
+                'kit_id' => $kit_id,
+                'date_start' => date("Y-m-d H:i:s"),
+                'date_month' => $date_month,
+                'active_month' => 1,
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $customer_id,
+            );
+            $result = $this->obj_customer->update($customer_id, $data);
+            //UPDATE SESSION
+            if(!empty($result)){
+                $data_month = 1;
+                $this->update_session_active_month($data_month);
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($charge);
+        } catch (Exception $e) {
+            $data['status'] = false;
+            echo json_encode($e->getMessage());
+        }
     }
     
     public function embassy() {
