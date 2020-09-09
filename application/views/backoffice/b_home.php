@@ -233,7 +233,25 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                             <div class="col-md-6 col-xl-4">
+                                <div class="card card-social">
+                                    <div class="card-block border-bottom">
+                                        <div class="row align-items-center justify-content-center">
+                                            <div class="col-auto"><i class="fa fa-user-plus text-c-red fa-2x"></i></div>
+                                            <div class="col text-right">
+                                                <h3>Enlace de Referencia & Compra</h3>
+                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Nuevo Socio: <a target="_blank" href="<?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?></a></span></h6>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="row align-items-center justify-content-center card-active text-right">
+                                            <div class="col-12">
+                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Compra: <a target="_blank" href="<?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?></a></span></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-xl-8 col-md-6">
                                 <div class="card Recent-Users">
                                     <div class="card-header">
@@ -295,25 +313,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xl-4">
-                                <div class="card card-social">
-                                    <div class="card-block border-bottom">
-                                        <div class="row align-items-center justify-content-center">
-                                            <div class="col-auto"><i class="fa fa-user-plus text-c-red fa-2x"></i></div>
-                                            <div class="col text-right">
-                                                <h3>Enlace de Referencia & Compra</h3>
-                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Nuevo Socio: <a target="_blank" href="<?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?></a></span></h6>
-                                            </div>
-                                        </div>
-                                        <hr/>
-                                        <div class="row align-items-center justify-content-center card-active text-right">
-                                            <div class="col-12">
-                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Compra: <a target="_blank" href="<?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?></a></span></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                             
                         </div>
                     </div>
