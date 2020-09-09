@@ -48,7 +48,7 @@
 #block-1555988519593 { line-height: 1; } #block-1555988519593 .logo__image { display: block; width: 80px; margin-top: 10px;}
 #block-1594321342938 .video { overflow: hidden; border-radius: 4px; }
 .bg_video{
-    background-image: url("../images/background_video.png");
+    background-image: url("");
     background-position: center;
 }
 
@@ -344,8 +344,6 @@ li .nav_catalog{
     }
 #background-black{
     background-color: black;
-    opacity: 0.6;
-    padding: 5px;
     border-radius: 10px;
 }
 #font-15{

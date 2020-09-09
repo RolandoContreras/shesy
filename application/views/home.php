@@ -14,7 +14,7 @@
                         <div class="backgroundVideo"></div>
                         <div class="container">
                             <div class="row align-items-center justify-content-center">
-                                <div id="background-black" class="block-type--image text- col-6 animated" data-reveal-units="seconds">
+                                <div class="block-type--image text- col-6 animated" data-reveal-units="seconds">
                                     <div class="block box-shadow-medium background-unrecognized" data-aos="fade-down" data-aos-delay="500" data-aos-duration="0">
                                         <div class="image">
                                             <img class="image__image" src="<?php echo site_url() . "static/page_front/images/logo_embajada.png" ?>" alt="Cultura Imparable" />
@@ -32,12 +32,12 @@
                 </video>
             </div>
             <!--cambia tu vida video-->
-            <div id="section-1593803745638" class="bg_video">
+            <div class="bg_video" id="background-black">
                 <div kjb-settings-id="sections_1593803745638_settings_background_color" class="section background-dark">
                     <div class="sizer">
                         <div class="container">
                             <div class="space-20"></div>
-                            <div class="embed-responsive embed-responsive-16by9">
+                            <div  class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/cultura.mp4" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
