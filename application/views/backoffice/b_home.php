@@ -28,6 +28,46 @@
                                 </div>
                             <?php } ?>
                             <div class="col-md-6 col-xl-4">
+                                <div class="card card-social">
+                                    <div class="space-15"></div>
+                                    <?php
+                                        if (!empty($obj_next_range)) {
+                                            if ($obj_total_commissions->total_comissions == 0) {
+                                                $percent = 0;
+                                            } else {
+                                                $percent = ($obj_total_commissions->total_comissions / $obj_next_range->point_grupal) * 100;
+                                                $percent_js = $obj_total_commissions->total_comissions / $obj_next_range->point_grupal;
+                                                $percent = ceil($percent);
+                                            }
+                                        ?>
+                                        <div class="circle">
+                                            <strong class="number-cicle"><?php echo $percent;?>% <br/> 
+                                                <strong class="number-range">
+                                                    <?php echo $obj_next_range->name;?>
+                                                </strong>
+                                            </strong>
+                                            <div class="os-progress-bar warning">
+                                                <div class="bar-labels">
+                                                    <div class="bar-label-left"> <?php echo format_number_miles($obj_total_commissions->total_comissions);?> PTS </div>
+                                                    <div class="bar-label-right"> <span class="info"><?php echo format_number_miles($obj_next_range->point_grupal);?> PTS</span> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } else {
+                                        $percent_js = 1;?>
+                                    <div class="circle">
+                                            <strong class="number-cicle">100%</strong>
+                                            <div class="os-progress-bar warning">
+                                                <div class="bar-labels">
+                                                    <div class="bar-label-left"></div>
+                                                    <div class="bar-label-right"> <span class="info">Completado</span> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
                                         <h6 class="mb-4">Ganancia Total</h6>
@@ -193,25 +233,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xl-4">
-                                <div class="card card-social">
-                                    <div class="card-block border-bottom">
-                                        <div class="row align-items-center justify-content-center">
-                                            <div class="col-auto"><i class="fa fa-user-plus text-c-red fa-2x"></i></div>
-                                            <div class="col text-right">
-                                                <h3>Enlace de Referencia & Compra</h3>
-                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-up text-c-green m-r-10"></i> <span class="text-muted">Nuevo Socio: <a target="_blank" href="<?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?></a></span></h6>
-                                            </div>
-                                        </div>
-                                        <hr/>
-                                        <div class="row align-items-center justify-content-center card-active text-right">
-                                            <div class="col-12">
-                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-up text-c-green m-r-10"></i> <span class="text-muted">Compra: <a target="_blank" href="<?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?></a></span></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="col-xl-8 col-md-6">
                                 <div class="card Recent-Users">
                                     <div class="card-header">
@@ -275,44 +297,24 @@
                             </div>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card card-social">
-                                    <div class="space-15"></div>
-                                    <?php
-                                        if (!empty($obj_next_range)) {
-                                            if ($obj_total_commissions->total_comissions == 0) {
-                                                $percent = 0;
-                                            } else {
-                                                $percent = ($obj_total_commissions->total_comissions / $obj_next_range->point_grupal) * 100;
-                                                $percent_js = $obj_total_commissions->total_comissions / $obj_next_range->point_grupal;
-                                                $percent = ceil($percent);
-                                            }
-                                        ?>
-                                        <div class="circle">
-                                            <strong class="number-cicle"><?php echo $percent;?>% <br/> 
-                                                <strong class="number-range">
-                                                    <?php echo $obj_next_range->name;?>
-                                                </strong>
-                                            </strong>
-                                            <div class="os-progress-bar warning">
-                                                <div class="bar-labels">
-                                                    <div class="bar-label-left"> <?php echo format_number_miles($obj_total_commissions->total_comissions);?> PTS </div>
-                                                    <div class="bar-label-right"> <span class="info"><?php echo format_number_miles($obj_next_range->point_grupal);?> PTS</span> </div>
-                                                </div>
+                                    <div class="card-block border-bottom">
+                                        <div class="row align-items-center justify-content-center">
+                                            <div class="col-auto"><i class="fa fa-user-plus text-c-red fa-2x"></i></div>
+                                            <div class="col text-right">
+                                                <h3>Enlace de Referencia & Compra</h3>
+                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Nuevo Socio: <a target="_blank" href="<?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?></a></span></h6>
                                             </div>
                                         </div>
-                                    <?php } else {
-                                        $percent_js = 1;?>
-                                    <div class="circle">
-                                            <strong class="number-cicle">100%</strong>
-                                            <div class="os-progress-bar warning">
-                                                <div class="bar-labels">
-                                                    <div class="bar-label-left"></div>
-                                                    <div class="bar-label-right"> <span class="info">Completado</span> </div>
-                                                </div>
+                                        <hr/>
+                                        <div class="row align-items-center justify-content-center card-active text-right">
+                                            <div class="col-12">
+                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Compra: <a target="_blank" href="<?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?></a></span></h6>
                                             </div>
                                         </div>
-                                    <?php } ?>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
