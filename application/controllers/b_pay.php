@@ -51,7 +51,7 @@ class B_pay extends CI_Controller {
                         "select" =>"sum(amount) as total_comissions,
                                     (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras != 1 and active = 1 and status_value = 1) as total_disponible,
                                     (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras = 1 and active = 1 and status_value = 1) as total_compra",
-                        "where" => "customer_id = $customer_id and pago != 1");
+                        "where" => "customer_id = $customer_id and status_value = 1 and pago != 1");
            //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
         
