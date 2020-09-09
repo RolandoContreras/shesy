@@ -3,12 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/shesy/application/config/routes.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/d_bonus.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/bonus/bonus_form.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/dashboard/bonus/bonus_list.php</file>
-            <file>file:/C:/wamp64/www/shesy/static/cms/js/bonus.js</file>
-            <file>file:/C:/wamp64/www/shesy/static/cms/js/catalog.js</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/backoffice/b_home.php</file>
         </group>
     </open-files>
 </project-private>

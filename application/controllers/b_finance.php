@@ -24,7 +24,6 @@ class B_finance extends CI_Controller {
                         "where" => "customer_id = $customer_id and bonus_id = 3 and status_value = 1",
                                     );
         $obj_total = $this->obj_commissions->get_search_row($params);
-        
         //GET DATA COMISION
                 $params = array(
                         "select" =>"commissions.commissions_id,
