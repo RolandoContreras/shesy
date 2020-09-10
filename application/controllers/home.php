@@ -73,6 +73,7 @@ class Home extends CI_Controller {
         $this->load->view('postula', $data);
     }
 
+    //vista pagos por referencia
     public function pagos_referencia() {
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
@@ -91,7 +92,8 @@ class Home extends CI_Controller {
         $data['title'] = "Compras por referencia";
         $this->load->view('pagos_referencia', $data);
     }
-
+    
+    //activacion pagos con tarjeta
     public function create_invoice_referencia() {
         try {
             date_default_timezone_set('America/Lima');
@@ -177,7 +179,8 @@ class Home extends CI_Controller {
             echo json_encode($e->getMessage());
         }
     }
-
+    
+    //proceso de enviar voucer pago por referencia
     public function send_voucher() {
         date_default_timezone_set('America/Lima');
         $name = $this->input->post('name');

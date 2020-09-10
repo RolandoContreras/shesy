@@ -1,4 +1,7 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Catalogo_home extends CI_Controller {
 
@@ -322,6 +325,7 @@ class Catalogo_home extends CI_Controller {
                                     catalog.description,
                                     catalog.granel,
                                     catalog.price,
+                                    catalog.stock,
                                     catalog.img,
                                     catalog.date,
                                     catalog.active,
@@ -390,7 +394,7 @@ class Catalogo_home extends CI_Controller {
         $obj_profile = $this->get_profile($customer_id);
         //total compra
         $total_compra = $this->total_compra($customer_id);
-        
+
         $this->tmp_catalog->set("total_compra", $total_compra);
         $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
@@ -446,7 +450,7 @@ class Catalogo_home extends CI_Controller {
         );
 
         $obj_invoice_catalog = $this->obj_invoice_catalog->search($params);
-        
+
         $this->tmp_catalog->set("total_compra", $total_compra);
         $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_invoices", $obj_invoices);
@@ -490,6 +494,7 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->render("catalogo/catalogo_pay_order");
     }
 
+    //contra entrega vista
     public function contra_entrega() {
         //GET SESION ACTUALY
         $this->get_session();
@@ -507,6 +512,109 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->render("catalogo/catalogo_contra_entrega");
+    }
+
+    //procesando contra entrega
+    public function procesar_contra_entrega() {
+        //GET SESION ACTUALY
+        $this->get_session();
+        //get customer
+        $customer_id = $_SESSION['customer']['customer_id'];
+        $name = $this->input->post('name');
+        $phone = $this->input->post('phone');
+        $address = $this->input->post('address');
+        $reference = $this->input->post('reference');
+        //conver_price_database
+        $price_cart = $this->cart->format_number($this->cart->total());
+        $price_cart = explode(".", $price_cart);
+        $price = $price_cart[0];
+        $price = quitar_coma_number($price);
+
+        //INSERT INVOICE CATALOG
+        foreach ($this->cart->contents() as $items) {
+            $option = "";
+            if ($this->cart->has_options($items['rowid']) == TRUE) {
+                foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value) {
+                    $option .= "$option_name" . ":" . "$option_value" . "&nbsp;";
+                }
+            }
+
+            $catalog_id = $items['id'];
+            //GET stock from catalog
+            $params = array(
+                "select" => "stock",
+                "where" => "catalog_id = $catalog_id",
+            );
+            $obj_catalog = $this->obj_catalog->get_search_row($params);
+            $stock = $obj_catalog->stock;
+            //verify stock
+            if ($stock > 0) {
+                $newStock = $stock - $items['qty'];
+                if ($newStock < 0) {
+                    $data['status'] = "false2";
+                } else {
+                    //updated stock
+                    $data_catalog = array(
+                        'stock' => $newStock,
+                    );
+                    $this->obj_catalog->update($catalog_id, $data_catalog);
+
+                    //INSERT INVOICE
+                    $data_invoice = array(
+                        'customer_id' => $customer_id,
+                        'sub_total' => $price,
+                        'igv' => 0,
+                        'total' => $price,
+                        'type' => 2,
+                        'delivery' => 0,
+                        'date' => date("Y-m-d H:i:s"),
+                        'active' => 1,
+                        'status_value' => 1,
+                        'created_at' => date("Y-m-d H:i:s"),
+                        'created_by' => $customer_id,
+                    );
+                    $invoce_id = $this->obj_invoices->insert($data_invoice);
+                    //insert data catalog invoice
+                    $data_invoice_catalog = array(
+                        'invoice_id' => $invoce_id,
+                        'catalog_id' => $items['id'],
+                        'price' => $items['price'],
+                        'quantity' => $items['qty'],
+                        'option' => $option,
+                        'sub_total' => $items['subtotal'],
+                        'date' => date("Y-m-d H:i:s")
+                    );
+                    $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+                    if ($result != null) {
+                        //insert data
+                        $param = array(
+                            'invoice_id' => $invoce_id,
+                            'customer' => $name,
+                            'phone' => $phone,
+                            'address' => $address,
+                            'reference' => $reference,
+                            'active' => 1,
+                            'status_value' => 1,
+                        );
+                        $contra_entrega_id = $this->obj_contra_entrega->insert($param);
+                        if ($contra_entrega_id != null) {
+                            $data['status'] = true;
+                            $data['message'] = "Pedido creado correctamente el número de factura es #$invoce_id";
+                            //DESTROY CART
+                            $this->cart->destroy();
+                        } else {
+                            $data['status'] = false;
+                        }
+                    } else {
+                        $data['status'] = false;
+                    }
+                }
+            } else {
+                $data['status'] = "false2";
+            }
+        }
+        // Respuesta
+        echo json_encode($data);
     }
 
     public function send_invoice() {
@@ -663,7 +771,7 @@ class Catalogo_home extends CI_Controller {
             'created_at' => date("Y-m-d H:i:s"),
             'created_by' => $customer_id,
         );
-        $this->obj_commissions->insert($data_comission_compra);  
+        $this->obj_commissions->insert($data_comission_compra);
         //INSERT INVOICE CATALOG
         $option = "";
         foreach ($this->cart->contents() as $items) {
@@ -682,16 +790,16 @@ class Catalogo_home extends CI_Controller {
                 'sub_total' => $items['subtotal'],
                 'date' => date("Y-m-d H:i:s")
             );
-          $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
-          if (!empty($ident)) {
-            $this->pay_unilevel_compras($ident, $invoice_id, $items['id'], $customer_id, $items['qty'], $active_month);
-          }
+            $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+            if (!empty($ident)) {
+                $this->pay_unilevel_compras($ident, $invoice_id, $items['id'], $customer_id, $items['qty'], $active_month);
+            }
         }
         //DESTROY CART
-        if(!empty($result)){
+        if (!empty($result)) {
             $this->cart->destroy();
             $data['status'] = true;
-        }else{
+        } else {
             $data['status'] = false;
         }
         echo json_encode($data);
@@ -784,79 +892,6 @@ class Catalogo_home extends CI_Controller {
         } catch (Exception $e) {
             echo json_encode($e->getMessage());
         }
-    }
-
-    public function procesar_contra_entrega() {
-        //GET SESION ACTUALY
-        $this->get_session();
-        //get customer
-        $customer_id = $_SESSION['customer']['customer_id'];
-        $name = $this->input->post('name');
-        $phone = $this->input->post('phone');
-        $address = $this->input->post('address');
-        $reference = $this->input->post('reference');
-        //conver_price_database
-        $price_cart = $this->cart->format_number($this->cart->total());
-        $price_cart = explode(".", $price_cart);
-        $price = $price_cart[0];
-        $price = quitar_coma_number($price);
-        //INSERT INVOICE
-        $data_invoice = array(
-            'customer_id' => $customer_id,
-            'sub_total' => $price,
-            'igv' => 0,
-            'total' => $price,
-            'type' => 2,
-            'delivery' => 0,
-            'date' => date("Y-m-d H:i:s"),
-            'active' => 1,
-            'status_value' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'created_by' => $customer_id,
-        );
-        $invoce_id = $this->obj_invoices->insert($data_invoice);
-        //INSERT INVOICE CATALOG
-        if ($invoce_id != null) {
-            foreach ($this->cart->contents() as $items) {
-                $data_invoice_catalog = array(
-                    'invoice_id' => $invoce_id,
-                    'catalog_id' => $items['id'],
-                    'price' => $items['price'],
-                    'quantity' => $items['qty'],
-                    'sub_total' => $items['subtotal'],
-                    'date' => date("Y-m-d H:i:s")
-                );
-                $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
-            }
-            if ($result != null) {
-                //insert data
-                $param = array(
-                    'invoice_id' => $invoce_id,
-                    'customer' => $name,
-                    'phone' => $phone,
-                    'address' => $address,
-                    'reference' => $reference,
-                    'active' => 1,
-                    'status_value' => 1,
-                );
-                $contra_entrega_id = $this->obj_contra_entrega->insert($param);
-                if ($contra_entrega_id != null) {
-                    $data['status'] = true;
-                    $data['message'] = "Pedido creado correctamente el número de factura es #$invoce_id";
-                    //DESTROY CART
-                    $this->cart->destroy();
-                } else {
-                    $data['status'] = false;
-                }
-            } else {
-                $data['status'] = false;
-            }
-        } else {
-            $data['status'] = false;
-        }
-
-        // Respuesta
-        echo json_encode($data);
     }
 
     public function pay_unilevel_compras($ident, $invoice_id, $catalog_id, $customer_id, $quantity, $active_month) {

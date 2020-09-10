@@ -57,7 +57,7 @@
                                 <td><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo strtoupper($value->name);?></span></td>
                                 <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->category_name;?></span></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
-                                <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;">S/.<?php echo $value->price;?></span></td>
+                                <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;">&dollar;<?php echo $value->price;?></span></td>
                                 <td>
                                     <?php 
                                         if($value->stock == 0){

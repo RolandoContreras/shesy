@@ -1,6 +1,5 @@
 function procesar_contra_entrega() {
-    document.getElementById("spinner_entrega").style.display = "block";
-    document.getElementById("save_entrega").style.display = "none";
+    document.getElementById("save_entrega").innerHTML = "Procesando...";
     oData = new FormData(document.forms.namedItem("entrega"));
     $.ajax({
         url: site + "mi_catalogo/procesar_contra_entrega",
@@ -20,8 +19,14 @@ function procesar_contra_entrega() {
                     showConfirmButton: false,
                     timer: 4000
                 });
-                document.getElementById("save_entrega").style.display = "block";
-                document.getElementById("spinner_entrega").style.display = "none";
+            } else if (data.status == "false2") {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'info',
+                    title: 'Ups! Se acaba de terminar el stock del producto ',
+                    footer: "Seleccione otro producto"
+                });
+                document.getElementById("save_entrega").innerHTML = "Solicitar Pedido";
             } else {
                 Swal.fire({
                     position: 'top-end',
@@ -29,8 +34,7 @@ function procesar_contra_entrega() {
                     title: 'Ups! Sucedio un error ',
                     footer: "Intentelo nuevamente o comunique a soporte"
                 });
-                document.getElementById("save_entrega").style.display = "block";
-                document.getElementById("spinner_entrega").style.display = "none";
+                document.getElementById("save_entrega").innerHTML = "Solicitar Pedido";
             }
         }
     });
@@ -38,5 +42,5 @@ function procesar_contra_entrega() {
 
 function regresar() {
     var url = 'mi_catalogo/pay_order';
-     location.href = site + url;   
+    location.href = site + url;
 }

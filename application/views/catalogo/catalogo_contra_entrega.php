@@ -108,10 +108,6 @@
                                                                             <div class="form-group">
                                                                                 <button type="button" onclick="regresar();" class="btn btn-info"><i data-feather="arrow-left"></i> Regresar</button>
                                                                                 <button id="save_entrega" type="submit" class="btn btn-success">Solicitar Pedido &nbsp;&nbsp;<i data-feather="user-check"></i></button>
-                                                                                <button class="btn btn-success"  type="button" style="display: none;" id="spinner_entrega">
-                                                                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                                                                    Procesando ...
-                                                                                </button>
                                                                             </div>
                                                                         </div>
                                                                     </div>
