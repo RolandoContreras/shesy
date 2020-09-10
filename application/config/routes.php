@@ -272,6 +272,15 @@ $route['dashboard/contra-entrega/validate_user'] = "d_activate/validate_user";
 $route['dashboard/contra-entrega/active'] = "d_contra_entrega/active";
 $route['dashboard/contra-entrega/delete'] = "d_contra_entrega/delete";
 
+$route['dashboard/enlace-compra'] = "d_referencia_compra";
+$route['dashboard/enlace-compra/([0-9]+)'] = "d_referencia_compra/order/$1";
+$route['dashboard/enlace-compra/validate_user'] = "d_referencia_compra/validate_user";
+$route['dashboard/enlace-compra/active'] = "d_referencia_compra/active";
+$route['dashboard/enlace-compra/delete'] = "d_referencia_compra/delete";
+
+
+
+
 $route['dashboard/activaciones_catalogo'] = "d_activate/activaciones_catalogo";
 $route['dashboard/activaciones_catalogo/([0-9]+)'] = "d_activate/order_catalog/$1";
 $route['dashboard/activaciones_catalogo/active_catalogo'] = "d_activate/active_catalogo";

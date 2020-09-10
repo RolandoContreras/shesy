@@ -167,6 +167,14 @@
                 <span class="pcoded-mtext">Contra Entrega</span>
             </a>
         </li>
+        <li class="nav-item pcoded-hasmenu">
+            <a href="<?php echo site_url()."dashboard/enlace-compra";?>" class="nav-link <?php echo $contra_entrega_syle;?>">
+                <span class="pcoded-micon">
+                    <i data-feather="shopping-cart"></i>
+                </span>
+                <span class="pcoded-mtext">Enlace de Compra</span>
+            </a>
+        </li>
         <li class="nav-item pcoded-menu-caption"><label>Pagos</label></li>
         <li class="nav-item">
             <a href="<?php echo site_url()."dashboard/activar_pagos";?>" class="nav-link <?php echo $pagos_syle;?>">
