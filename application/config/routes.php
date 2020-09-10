@@ -45,7 +45,11 @@ $route['home'] = 'home';
 $route['postula'] = 'home/postula';
 $route['home/sitemap'] = 'home/sitemap';
 $route['pagos_referencia'] = 'home/pagos_referencia';
+$route['send_voucher'] = 'home/send_voucher';
 $route['create_invoice_referencia'] = 'home/create_invoice_referencia';
+
+
+
 
 $route['catalogo'] = 'catalog';
 $route['catalogo/order/add_cart'] = 'catalog/add_cart';

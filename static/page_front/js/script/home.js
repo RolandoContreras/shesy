@@ -34,3 +34,37 @@ function send_embassy() {
     });
 
 }
+function send_voucher() {
+    oData = new FormData(document.forms.namedItem("form-voucher"));
+                $.ajax({
+                    url: site + "send_voucher",
+                    method: "POST",
+                    data: oData,
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function (data) {
+                        var res = JSON.parse(data);
+                        if (res.status == true) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Pregunta Enviada',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            window.setTimeout(function () {
+                                location.reload()
+                            }, 2500);
+                        } else {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: 'Ups! Sucedio un error ',
+                                footer: "Comunicar a soporte"
+                            });
+                        }
+                    }
+                });
+
+}

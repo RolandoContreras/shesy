@@ -28,6 +28,8 @@ class Referencia_compra_Model extends CI_Model{
 	$this->phone='';
         $this->address='';
         $this->date='';
+        $this->voucher='';
+        $this->img='';
         $this->status='';
     }   
     

@@ -25,6 +25,7 @@
     <!-- Customer CSS ====================================================== -->
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/my_style.css";?>"/>
     <!-- Shopping ====================================================== -->
+    
     <?php 
       $url = explode("/", uri_string());
       if (isset($url[0])) {

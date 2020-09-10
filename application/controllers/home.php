@@ -177,6 +177,90 @@ class Home extends CI_Controller {
             echo json_encode($e->getMessage());
         }
     }
+    
+    public function send_voucher() {
+            date_default_timezone_set('America/Lima');
+        $course_id = $this->input->post('course_id');
+        $module_id = $this->input->post('module_id');
+        $video_id = $this->input->post('video_id');
+        $video = $this->input->post('video');
+        $name = trim($this->input->post('name'));
+        $slug = convert_slug($name);
+        $type = $this->input->post('type');
+        //validate check
+        if ($type == true) {
+            $type = 1;
+        } else {
+            $type = 0;
+        }
+        //create curso
+        if ($video_id != null) {
+            $param_video = array(
+                'name' => $name,
+                'slug' => $slug,
+                'video' => $video,
+                'type' => $type,
+                'description' => $this->input->post('description'),
+                'time' => $this->input->post('duration'),
+                'date' => date("Y-m-d H:i:s"),
+                'active' => 1,
+            );
+            //SAVE DATA IN TABLE    
+            $result = $this->obj_videos->update($video_id, $param_video);
+        } else {
+            $param_video = array(
+                'module_id' => $module_id,
+                'name' => $name,
+                'slug' => $slug,
+                'video' => $video,
+                'type' => $type,
+                'description' => $this->input->post('description'),
+                'time' => $this->input->post('duration'),
+                'date' => date("Y-m-d H:i:s"),
+                'active' => 1,
+            );
+            //SAVE DATA IN TABLE    
+            $video_id = $this->obj_videos->insert($param_video);
+            $result = $video_id;
+        }
+        //insert archive
+        $archive = $_FILES['file_archive'];
+        $templocation = $archive["tmp_name"];
+        $name_archive = $archive["name"];
+        if ($name_archive != null) {
+            if (!is_dir("./assets/cms/img/cursos/$course_id/$video_id")) {
+                mkdir("./assets/cms/img/cursos/$course_id/$video_id", 0777);
+            }
+            if (!$templocation) {
+                die("No se ha seleccionado ningun archivos");
+            }
+            if (move_uploaded_file($templocation, "./assets/cms/img/cursos/$course_id/$video_id/$name_archive")) {
+
+                $name = convert_query($name_archive);
+                //crear database archive
+                $param_archives = array(
+                    'video_id' => $video_id,
+                    'name' => $name,
+                    'link' => $name_archive,
+                    'date' => date("Y-m-d H:i:s"),
+                );
+                //SAVE DATA IN TABLE    
+                $this->obj_archives->insert($param_archives);
+            }
+        }
+
+        if (!empty($result)) {
+            $data['status'] = true;
+            $data['id'] = $course_id;
+        } else {
+            $data['status'] = false;
+            $data['message'] = "Sucedio un error, intentelo nuevamente";
+        }
+        echo json_encode($data);
+    }
+    
+    
+    
 
     public function pay_referido_compra($sponsor_id, $invoice_id, $bono, $qty) {
         //INSERT COMMISSION TABLE

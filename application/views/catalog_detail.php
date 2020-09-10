@@ -40,7 +40,9 @@
                                     </ul>
                                     <hr class="hr--clear hr--small">
                                     <div class="payment-buttons payment-buttons--small">
-                                        <?php if (isset($_SESSION['compras_customer'])) { ?>
+                                        <?php 
+                                        if($obj_catalog->stock != 0){
+                                            if (isset($_SESSION['compras_customer'])) { ?>
                                             <button id="buy" onclick="add_cart_refencia('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>','<?php echo $obj_catalog->img; ?>');"class="btn btn--add-to-cart btn--secondary-accent">
                                             <span class="icon icon-cart"></span>
                                                 <span>Pagar</span>
@@ -50,7 +52,13 @@
                                                 <span class="icon icon-cart"></span>
                                                 <span>Agregar al carrito</span>
                                             </button>
-                                            <?php } ?>
+                                            <?php } 
+                                        }else{ ?>
+                                            <button id="buy" class="btn btn--add-to-cart btn--secondary-danger">
+                                            <span class="icon icon-cart"></span>
+                                                <span>No stock</span>
+                                            </button>
+                                        <?php } ?>
                                         </div>
                                         <hr class="product-template-hr">
                                         <div class="product-description rte">

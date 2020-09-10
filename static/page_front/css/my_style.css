@@ -348,7 +348,17 @@ li .nav_catalog{
 }
 #font-15{
     font-size: 15px !important;
-}    
+} 
+.btn.btn--secondary-danger{
+    background-color: #f3f3f3;
+    border-color: red !important;
+    color: red !important;
+}
+.btn.btn--secondary-danger:hover{
+    background-color: #f3f3f3;
+    border-color: red !important;
+    color: red !important;
+}
 
 @media (max-width: 767px) {
     #block-1597347523879 {

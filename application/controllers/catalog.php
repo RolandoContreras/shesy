@@ -286,6 +286,7 @@ class Catalog extends CI_Controller {
             "select" => "catalog.catalog_id,
                                     catalog.summary,
                                     catalog.name,
+                                    catalog.stock,
                                     catalog.slug,
                                     catalog.price,
                                     catalog.description,
