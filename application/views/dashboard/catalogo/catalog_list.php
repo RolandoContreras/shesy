@@ -42,7 +42,7 @@
                                   <th class="sorting">Categoría</th>
                                   <th class="sorting">Fecha</th>
                                   <th class="sorting">Precio</th>
-                                  <th class="sorting">Sumilla</th>
+                                  <th class="sorting">Stock</th>
                                   <th class="sorting">Granel</th>
                                   <th class="sorting">Imagen</th>
                                   <th class="sorting">Estado</th>
@@ -58,7 +58,16 @@
                                 <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->category_name;?></span></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;">S/.<?php echo $value->price;?></span></td>
-                                <td><?php echo corta_texto($value->summary,25);?></td>
+                                <td>
+                                    <?php 
+                                        if($value->stock == 0){
+                                            $style = "badge-danger";
+                                        }else{
+                                            $style = "badge-warning";
+                                        }
+                                    ?>
+                                    <span class="badge badge-pill <?php echo $style;?>" style="font-size: 100%;"><?php echo $value->stock;?></span>
+                                </td>
                                 <td>
                                      <?php if ($value->granel == 1) {
                                         $valor = "Si";

@@ -18,7 +18,7 @@ class D_catalog extends CI_Controller {
         $this->get_session();
         $params = array(
             "select" => "catalog.catalog_id,
-                                    catalog.summary,
+                                    catalog.stock,
                                     catalog.name,
                                     catalog.price,
                                     catalog.granel,
@@ -93,6 +93,7 @@ class D_catalog extends CI_Controller {
         $img_2 = $this->input->post("img_2");
         $img_3 = $this->input->post("img_3");
         $img_4 = $this->input->post("img_4");
+        $stock = $this->input->post("stock");
         $active = $this->input->post('active');
 
         if (isset($_FILES["image_file"]["name"])) {
@@ -166,6 +167,7 @@ class D_catalog extends CI_Controller {
                 'bono_n3' => $bono_n3,
                 'bono_n4' => $bono_n4,
                 'bono_n5' => $bono_n5,
+                'stock' => $stock,
                 'category_id' => $category_id,
                 'sub_category_id' => $sub_category_id,
                 'description' => $description,
@@ -191,6 +193,7 @@ class D_catalog extends CI_Controller {
                 'bono_n3' => $bono_n3,
                 'bono_n4' => $bono_n4,
                 'bono_n5' => $bono_n5,
+                'stock' => $stock,
                 'category_id' => $category_id,
                 'sub_category_id' => $sub_category_id,
                 'description' => $description,

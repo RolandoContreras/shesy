@@ -25,6 +25,7 @@ class catalog_model_atributos{
     var $bono_n3='';
     var $bono_n4='';
     var $bono_n5='';
+    var $stock='';
     var $description='';
     var $date='';
     var $img='';
@@ -53,6 +54,7 @@ class Catalog_Model extends CI_Model{
         $this->bono_n3='';
         $this->bono_n4='';
         $this->bono_n5='';
+        $this->stock='';
 	$this->description='';
         $this->date='';
         $this->img='';

@@ -200,6 +200,10 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label>Stock</label>
+                                                        <input class="form-control" type="number" id="stock" name="stock" value="<?php echo isset($obj_catalog->stock) ? $obj_catalog->stock : ""; ?>" class="input-xlarge-fluid" placeholder="Stock del Producto" required>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label for="inputState">Estado</label>
                                                         <select name="active" id="active" class="form-control" required>
                                                             <option value="">[ Seleccionar ]</option>
