@@ -121,18 +121,18 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><img src="http://localhost/shesy/static/page_front/images/interbank_logo.png" width="80">4953001956935 </td>
-                                                    <td>Interbank</td>
+                                                    <td>4953001956935 </td>
+                                                    <td>Interbank<img src="<?php echo site_url()."static/page_front/images/interbank_logo.png"?>" width="80"></td>
                                                     <td>Coorporativo Fk</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="http://localhost/shesy/static/page_front/images/yape.png" width="60"> 923 870  996</td>
-                                                    <td>Yape</td>
+                                                    <td>923 870  996</td>
+                                                    <td>Yape <img src="<?php echo site_url()."static/page_front/images/yape.png"?>" width="60"> </td>
                                                     <td>Merilu Rojas / Administradora</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="http://localhost/shesy/static/page_front/images/bcp_logo.png" width="80"> 19399069591091</td>
-                                                    <td>Crédito (BCP)</td>
+                                                    <td>19399069591091</td>
+                                                    <td>Crédito (BCP) <img src="<?php echo site_url()."static/page_front/images/bcp_logo.png"?>" width="80"></td>
                                                     <td>Merilu Rojas / Administradora</td>
                                                 </tr>
                                             </tbody>
@@ -141,7 +141,7 @@
                                     <div class="col-md-12">
                                         <p class="optin__subheading">Si realizaste el envió a nuestras cuentas, por favor adjunta el comprobando y envíalo y nos comunicaremos en la brevedad.</p>
                                     </div>
-                                        
+                                    <form action="javascript:void(0);" method="post" onsubmit="send_voucher();" name="form-voucher">
                                         <div class="col-md-12" style="text-align: left">
                                             <div class="space-20"></div>
                                             <div class="text-field form-group">
@@ -169,12 +169,11 @@
                                                 <textarea name="address" id="address" cols="20" rows="5" class="form-control" placeholder="Ingrese su dirección / referencia"  required="required"></textarea>
                                             </div>
                                         </div>
-                                    <form action="javascript:void(0);" method="post" onsubmit="send_voucher();" name="form-voucher">
                                         <div class="col-md-12" style="text-align: left">
                                             <div class="space-20"></div>
                                             <div class="text-field form-group">
                                                 <p class="optin__subheading">Adjunte el comprobate del envio</p>
-                                                <input type="file" name="voucher" id="voucher" required="required" class="form-control" placeholder="Comprabante">
+                                                <input type="file" name="file" id="file" required="required" class="form-control" placeholder="Comprabante">
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="text-align: left">

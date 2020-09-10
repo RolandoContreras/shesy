@@ -49,13 +49,17 @@ function send_voucher() {
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Pregunta Enviada',
+                                title: 'Pedido Enviado',
                                 showConfirmButton: false,
                                 timer: 1500
                             });
-                            window.setTimeout(function () {
-                                location.reload()
-                            }, 2500);
+                        }else if (res.status == "false2"){
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'info',
+                                title: 'Ups! Se acaba de terminar el stock del producto ',
+                                footer: "Seleccione otro producto"
+                            });
                         } else {
                             Swal.fire({
                                 position: 'top-end',

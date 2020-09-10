@@ -157,19 +157,19 @@ class Home extends CI_Controller {
             }
             //insert table Referencia
             $data_referencia = array(
-                    'invoice_id' => $invoice_id,
-                    'name' => $name,
-                    'last_name' => $last_name,
-                    'phone' => $phone,
-                    'address' => $address,
-                    'date' => date("Y-m-d H:i:s"),
-                    'status' => 1
+                'invoice_id' => $invoice_id,
+                'name' => $name,
+                'last_name' => $last_name,
+                'phone' => $phone,
+                'address' => $address,
+                'date' => date("Y-m-d H:i:s"),
+                'status' => 1
             );
             //GET DATA FROM BONUS
             $result = $this->obj_referencia_compra->insert($data_referencia);
-            if(!empty($result)){
+            if (!empty($result)) {
                 $data['status'] = true;
-            }else{
+            } else {
                 $data['status'] = false;
             }
             echo json_encode($data);
@@ -177,90 +177,108 @@ class Home extends CI_Controller {
             echo json_encode($e->getMessage());
         }
     }
-    
+
     public function send_voucher() {
-            date_default_timezone_set('America/Lima');
-        $course_id = $this->input->post('course_id');
-        $module_id = $this->input->post('module_id');
-        $video_id = $this->input->post('video_id');
-        $video = $this->input->post('video');
-        $name = trim($this->input->post('name'));
-        $slug = convert_slug($name);
-        $type = $this->input->post('type');
-        //validate check
-        if ($type == true) {
-            $type = 1;
-        } else {
-            $type = 0;
-        }
-        //create curso
-        if ($video_id != null) {
-            $param_video = array(
-                'name' => $name,
-                'slug' => $slug,
-                'video' => $video,
-                'type' => $type,
-                'description' => $this->input->post('description'),
-                'time' => $this->input->post('duration'),
-                'date' => date("Y-m-d H:i:s"),
-                'active' => 1,
+        date_default_timezone_set('America/Lima');
+        $name = $this->input->post('name');
+        $last_name = $this->input->post('last_name');
+        $phone = $this->input->post('phone');
+        $address = $this->input->post('address');
+        $sponsor_id = $this->input->post('sponsor_id');
+        foreach ($this->cart->contents() as $items) {
+            $option = "";
+            if ($this->cart->has_options($items['rowid']) == TRUE) {
+                foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value) {
+                    $option .= "$option_name" . ":" . "$option_value" . "&nbsp;";
+                }
+            }
+            $catalog_id = $items['id'];
+            //GET stock from catalog
+            $params = array(
+                "select" => "stock",
+                "where" => "catalog_id = $catalog_id",
             );
-            //SAVE DATA IN TABLE    
-            $result = $this->obj_videos->update($video_id, $param_video);
-        } else {
-            $param_video = array(
-                'module_id' => $module_id,
-                'name' => $name,
-                'slug' => $slug,
-                'video' => $video,
-                'type' => $type,
-                'description' => $this->input->post('description'),
-                'time' => $this->input->post('duration'),
-                'date' => date("Y-m-d H:i:s"),
-                'active' => 1,
-            );
-            //SAVE DATA IN TABLE    
-            $video_id = $this->obj_videos->insert($param_video);
-            $result = $video_id;
+            $obj_catalog = $this->obj_catalog->get_search_row($params);
+            $stock = $obj_catalog->stock;
+            if ($stock > 0) {
+                $newStock = $stock - $items['qty'];
+                if ($newStock < 0) {
+                    $data['status'] = "false2";
+                } else {
+                    //updated stock
+                    $data_catalog = array(
+                        'stock' => $newStock,
+                    );
+                    $this->obj_catalog->update($catalog_id, $data_catalog);
+                    //INSERT INVOICE
+                    $data_invoice = array(
+                        'customer_id' => $sponsor_id,
+                        'kit_id' => 1,
+                        'sub_total' => $items['price'],
+                        'igv' => 0,
+                        'total' => $items['price'],
+                        'type' => 3,
+                        'recompra' => 0,
+                        'date' => date("Y-m-d H:i:s"),
+                        'active' => 1,
+                        'status_value' => 1,
+                        'created_at' => date("Y-m-d H:i:s"),
+                        'created_by' => $sponsor_id,
+                    );
+                    $invoice_id = $this->obj_invoices->insert($data_invoice);
+                    //INSERT INVOICE CATALOG
+                    $data_invoice_catalog = array(
+                        'invoice_id' => $invoice_id,
+                        'catalog_id' => $catalog_id,
+                        'price' => $items['price'],
+                        'quantity' => $items['qty'],
+                        'option' => $option,
+                        'sub_total' => $items['subtotal'],
+                        'date' => date("Y-m-d H:i:s")
+                    );
+                    $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+                    //insert archive
+                    $archive = $_FILES['file'];
+                    $templocation = $archive["tmp_name"];
+                    $name_archive = $archive["name"];
+                    if ($name_archive != null) {
+                        if (!is_dir("./static/cms/images/comprobantes/$invoice_id")) {
+                            mkdir("./static/cms/images/comprobantes/$invoice_id", 0777);
+                        }
+                        if (!$templocation) {
+                            die("No se ha seleccionado ningun archivos");
+                        }
+                        if (move_uploaded_file($templocation, "./static/cms/images/comprobantes/$invoice_id/$name_archive")) {
+                            $img = convert_query($name_archive);
+                            //insert table Referencia
+                            $data_referencia = array(
+                                'invoice_id' => $invoice_id,
+                                'name' => $name,
+                                'last_name' => $last_name,
+                                'phone' => $phone,
+                                'address' => $address,
+                                'date' => date("Y-m-d H:i:s"),
+                                'voucher' => 1,
+                                'img' => $img,
+                                'status' => 1
+                            );
+                            //SAVE DATA IN TABLE    
+                            $result = $this->obj_referencia_compra->insert($data_referencia);
+                        }
+                    }
+                    if (!empty($result)) {
+                        $data['status'] = true;
+                    } else {
+                        $data['status'] = false;
+                    }
+                }
+            } else {
+                $data['status'] = "false2";
+            }
         }
-        //insert archive
-        $archive = $_FILES['file_archive'];
-        $templocation = $archive["tmp_name"];
-        $name_archive = $archive["name"];
-        if ($name_archive != null) {
-            if (!is_dir("./assets/cms/img/cursos/$course_id/$video_id")) {
-                mkdir("./assets/cms/img/cursos/$course_id/$video_id", 0777);
-            }
-            if (!$templocation) {
-                die("No se ha seleccionado ningun archivos");
-            }
-            if (move_uploaded_file($templocation, "./assets/cms/img/cursos/$course_id/$video_id/$name_archive")) {
 
-                $name = convert_query($name_archive);
-                //crear database archive
-                $param_archives = array(
-                    'video_id' => $video_id,
-                    'name' => $name,
-                    'link' => $name_archive,
-                    'date' => date("Y-m-d H:i:s"),
-                );
-                //SAVE DATA IN TABLE    
-                $this->obj_archives->insert($param_archives);
-            }
-        }
-
-        if (!empty($result)) {
-            $data['status'] = true;
-            $data['id'] = $course_id;
-        } else {
-            $data['status'] = false;
-            $data['message'] = "Sucedio un error, intentelo nuevamente";
-        }
         echo json_encode($data);
     }
-    
-    
-    
 
     public function pay_referido_compra($sponsor_id, $invoice_id, $bono, $qty) {
         //INSERT COMMISSION TABLE
