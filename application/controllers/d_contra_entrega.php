@@ -96,7 +96,6 @@ class D_contra_entrega extends CI_Controller {
             //SELECT CUSTOMER_ID
             $customer_id = $this->input->post("customer_id");
             $invoice_id = $this->input->post("invoice_id");
-
             //GET DATA CUSTOMER UNILEVEL
             $params = array(
                 "select" => "parend_id,
@@ -106,11 +105,15 @@ class D_contra_entrega extends CI_Controller {
             );
             //GET DATA FROM BONUS
             $obj_unilevel = $this->obj_unilevel->get_search_row($params);
-            $ident = $obj_unilevel->ident;
+            //set customer_id 1 empresa
+            if($customer_id == 1){
+                $ident = null;
+            }else{
+                $ident = $obj_unilevel->ident;
+            }
             //get productos by invoice_id
             $params = array(
-                "select" => "
-                            invoice_catalog.quantity,
+                "select" => "invoice_catalog.quantity,
                             catalog.bono_n1,
                             catalog.bono_n2,
                             catalog.bono_n3,
@@ -120,13 +123,10 @@ class D_contra_entrega extends CI_Controller {
                 "join" => array('catalog, invoice_catalog.catalog_id = catalog.catalog_id'),
             );
             $obj_invoice_catalog = $this->obj_invoice_catalog->search($params);
-
             if (isset($obj_unilevel) != "") {
                 foreach ($obj_invoice_catalog as $value) {
                     //INSERT AMOUNT ON COMMISION TABLE    
-                $this->pay_unilevel($ident, $invoice_id, $value->bono_n1, $value->bono_n2, $value->bono_n3, $value->bono_n4, $value->bono_n5);
-                //INSERT AMOUNT ON COMMISION TABLE    
-                $this->add_points($ident, $value->bono_n1, $value->bono_n2, $value->bono_n3, $value->bono_n4, $value->bono_n5);
+                    $this->pay_unilevel($ident, $invoice_id, $value->bono_n1, $value->bono_n2, $value->bono_n3, $value->bono_n4, $value->bono_n5, $customer_id, $value->quantity);
                 }
             }
 
@@ -140,9 +140,9 @@ class D_contra_entrega extends CI_Controller {
                 'updated_at' => date("Y-m-d H:i:s"),
                 'updated_by' => $customer_id,
             );
-             $this->obj_customer->update($customer_id, $data_customer);
-             //update invoce
-             $data_invoice = array(
+            $this->obj_customer->update($customer_id, $data_customer);
+            //update invoce
+            $data_invoice = array(
                 'active' => 0,
                 'updated_at' => date("Y-m-d H:i:s"),
                 'updated_by' => $customer_id,
@@ -154,13 +154,57 @@ class D_contra_entrega extends CI_Controller {
         }
     }
 
-    public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5) {
+    public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5, $customer_id, $qty) {
 
+        //get active moth from customer
+        $params = array(
+            "select" => "active_month",
+            "where" => "customer_id = $customer_id"
+        );
+        //GET DATA FROM BONUS
+        $obj_customer = $this->obj_customer->get_search_row($params);
+        $active_month = $obj_customer->active_month;
+        //verify
+        if ($active_month == 1) {
+            $amount = $bono_n1 * $qty;
+            $noventa_percent = $amount * 0.9;
+            $diez_percent = $amount * 0.1;
+            //set patam
+            $data = array(
+                'invoice_id' => $invoice_id,
+                'customer_id' => $customer_id,
+                'bonus_id' => 3,
+                'amount' => $noventa_percent,
+                'active' => 1,
+                'pago' => 0,
+                'status_value' => 1,
+                'date' => date("Y-m-d H:i:s"),
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $customer_id,
+            );
+            $this->obj_commissions->insert($data);
+            //insert commission 10%
+            $data = array(
+                'invoice_id' => $invoice_id,
+                'customer_id' => $customer_id,
+                'bonus_id' => 3,
+                'amount' => $diez_percent,
+                'active' => 1,
+                'pago' => 0,
+                'compras' => 1,
+                'status_value' => 1,
+                'date' => date("Y-m-d H:i:s"),
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $customer_id,
+            );
+            $this->obj_commissions->insert($data);
+        }
+        //make upline
         $new_ident = explode(",", $ident);
         rsort($new_ident);
-
         //BOUCLE ULTI 5 LEVEL
-        for ($x = 0; $x <= 4; $x++) {
+        if (!empty($new_ident)) {
+            for ($x = 0; $x <= 3; $x++) {
                 if (isset($new_ident[$x])) {
                     if ($new_ident[$x] != "") {
                         //get customer active
@@ -170,41 +214,57 @@ class D_contra_entrega extends CI_Controller {
                         );
                         //GET DATA FROM BONUS
                         $obj_customer = $this->obj_customer->get_search_row($params);
-                        if (isset($obj_customer->active_month) &&  $obj_customer->active_month == 1 ) {
+                        if (isset($obj_customer->active_month) && $obj_customer->active_month == 1) {
                             //INSERT COMMISSION TABLE
                             switch ($x) {
                                 case 0:
-                                    $amount = $bono_n1;
+                                    $amount = $bono_n2 * $qty;
                                     break;
                                 case 1:
-                                    $amount = $bono_n2;
+                                    $amount = $bono_n3 * $qty;
                                     break;
                                 case 2:
-                                    $amount = $bono_n3;
+                                    $amount = $bono_n4 * $qty;
                                     break;
                                 case 3:
-                                    $amount = $bono_n4;
-                                    break;
-                                case 4:
-                                    $amount = $bono_n5;
+                                    $amount = $bono_n5 * $qty;
                                     break;
                             }
+                            $noventa_percent = $amount * 0.9;
+                            $diez_percent = $amount * 0.1;
+                            //insert on table commision
                             $data = array(
                                 'invoice_id' => $invoice_id,
                                 'customer_id' => $new_ident[$x],
-                                'bonus_id' => 1,
-                                'amount' => $amount,
+                                'bonus_id' => 3,
+                                'amount' => $noventa_percent,
                                 'active' => 1,
+                                'pago' => 0,
                                 'status_value' => 1,
                                 'date' => date("Y-m-d H:i:s"),
                                 'created_at' => date("Y-m-d H:i:s"),
-                                'created_by' => $_SESSION['usercms']['user_id'],
+                                'created_by' => $customer_id,
+                            );
+                            $this->obj_commissions->insert($data);
+                            //insert commission 10%
+                            $data = array(
+                                'invoice_id' => $invoice_id,
+                                'customer_id' => $new_ident[$x],
+                                'bonus_id' => 3,
+                                'amount' => $diez_percent,
+                                'active' => 1,
+                                'pago' => 0,
+                                'compras' => 1,
+                                'status_value' => 1,
+                                'date' => date("Y-m-d H:i:s"),
+                                'created_at' => date("Y-m-d H:i:s"),
+                                'created_by' => $customer_id,
                             );
                             $this->obj_commissions->insert($data);
                         }
                     }
                 }
-            
+            }
         }
     }
 
@@ -226,7 +286,7 @@ class D_contra_entrega extends CI_Controller {
                     //GET DATA FROM BONUS
                     $obj_customer = $this->obj_customer->get_search_row($params);
 
-                    if (isset($obj_customer->active_month) &&  $obj_customer->active_month == 1 ) {
+                    if (isset($obj_customer->active_month) && $obj_customer->active_month == 1) {
                         switch ($x) {
                             case 0:
                                 $point = $bono_n1;
@@ -283,7 +343,7 @@ class D_contra_entrega extends CI_Controller {
             echo json_encode($data);
         }
     }
-    
+
     public function delete() {
         if ($this->input->is_ajax_request()) {
             //OBETENER customer_id
@@ -291,12 +351,12 @@ class D_contra_entrega extends CI_Controller {
             //VERIFY IF ISSET CUSTOMER_ID
             if ($invoice_id != "") {
                 $result = $this->obj_invoices->delete($invoice_id);
-                if($result != null){
+                if ($result != null) {
                     $data['status'] = true;
-                }else{
+                } else {
                     $data['status'] = false;
                 }
-            }else{
+            } else {
                 $data['status'] = false;
             }
             echo json_encode($data);

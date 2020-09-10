@@ -78,6 +78,7 @@
             $report_syle = "";
             $recargas_syle = "";
             $contra_entrega_syle = null;
+            $enlace_compra = null;
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active";
@@ -87,6 +88,9 @@
                     break;
                 case "contra-entrega":
                     $contra_entrega_syle = "active";
+                    break;
+                case "enlace-compra":
+                    $enlace_compra = "active";
                     break;
                 case "activar_pagos":
                     $pagos_syle = "active";
@@ -168,7 +172,7 @@
             </a>
         </li>
         <li class="nav-item pcoded-hasmenu">
-            <a href="<?php echo site_url()."dashboard/enlace-compra";?>" class="nav-link <?php echo $contra_entrega_syle;?>">
+            <a href="<?php echo site_url()."dashboard/enlace-compra";?>" class="nav-link <?php echo $enlace_compra;?>">
                 <span class="pcoded-micon">
                     <i data-feather="shopping-cart"></i>
                 </span>

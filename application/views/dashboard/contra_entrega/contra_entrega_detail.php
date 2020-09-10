@@ -122,9 +122,9 @@
                                   </td>
                                   <td><?php echo $value->quantity;?><?php echo $value->granel==1?" (Kg)":"";?> </td>
                                   <td><?php echo $value->option;?></td>
-                                  <td>s/.<?php echo $value->price;?></td>
+                                  <td>&dollar;<?php echo $value->price;?></td>
                                   <td>
-                                      <span class="badge badge-pill badge-warning" style="font-size: 100%;">s/.<?php echo $value->sub_total;?></span>
+                                      <span class="badge badge-pill badge-warning" style="font-size: 100%;">&dollar;<?php echo $value->sub_total;?></span>
                                   </td>
                                </tr>
                           <?php } ?>
@@ -139,11 +139,11 @@
                     <tbody>
                       <tr>
                         <th>Sub Total :</th>
-                        <td>s/.<?php echo $obj_invoices->sub_total;?></td>
+                        <td>&dollar;<?php echo $obj_invoices->sub_total;?></td>
                       </tr>
                       <tr>
                         <th>IGV (0%) :</th>
-                        <td>s/.<?php echo $obj_invoices->igv;?></td>
+                        <td>&dollar;<?php echo $obj_invoices->igv;?></td>
                       </tr>
                       <tr class="text-info">
                         <td>
@@ -153,7 +153,7 @@
                         <td>
                           <hr>
                           <h5 class="text-primary">
-                              <span class="badge badge-pill badge-success" style="font-size: 100%;">s/.<?php echo $obj_invoices->total;?></span></h5>
+                              <span class="badge badge-pill badge-success" style="font-size: 100%;">&dollar;<?php echo $obj_invoices->total;?></span></h5>
                         </td>
                       </tr>
                     </tbody>

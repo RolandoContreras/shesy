@@ -53,7 +53,7 @@
                                 <td><b><?php echo "@".$value->username;?></b></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>
-                                    <span class="badge badge-pill badge-success" style="font-size: 100%;">s/.<?php echo format_number($value->total);?></span></td>
+                                    <span class="badge badge-pill badge-success" style="font-size: 100%;">&dollar;<?php echo format_number($value->total);?></span></td>
                                 <td>
                                     <?php if ($value->active == 1) {
                                         $valor = "En Espera";
