@@ -21,7 +21,6 @@
                                                 <div class="checkout-content-body">
                                                     <div class="space-20"></div>
                                                     <h2 style="text-align: center;"><span style="color: #57de1d;"><strong>Estas apunto de comprar.<br>&nbsp;</strong></span></h2>
-
                                                     <h3>
                                                         <span style="color: #000000;">
                                                             <i class="fa fa-check"></i>&nbsp;&nbsp;<?php echo $items['name']; ?><br><br>
@@ -55,6 +54,7 @@
                                             <div class="text-field form-group">
                                                 <p class="optin__subheading">Ingrese su nombre</p>
                                                 <input type="text" name="name" id="name" required="required" class="form-control" placeholder="Nombre">
+                                                <input type="hidden" name="sponsor_id" id="sponsor_id" value="<?php echo $obj_customer->customer_id ?>">
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="text-align: left">
@@ -77,7 +77,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <button type="button" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>" data-price2="<?php echo $this->cart->format_number($this->cart->total()); ?>" class="buyButton btn btn--sections_1590554804411_settings_btn_text btn--block btn--solid btn-form form-control">Pagar</button>
+                                            <button id="pagar" type="button" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>" data-price2="<?php echo $this->cart->format_number($this->cart->total()); ?>" class="buyButton btn btn--sections_1590554804411_settings_btn_text btn--block btn--solid btn-form form-control">Pagar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -95,83 +95,106 @@
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script>
 //    pk_test_igI3EctoA17FeNUD
-                                Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
-                                var price = "";
-                                var price2 = "";
-                                var kit_id = "";
-                                $('.buyButton').on('click', function (e) {
-                                    price = $(this).attr('data-price');
-                                    price = price * 3.5;
-                                    price2 = $(this).attr('data-price2');
-                                    kit_id = $(this).attr('data-kit');
-                                    
-                                    Culqi.options({
-                                        lang: 'auto',
-                                        modal: true,
-                                        style: {
-                                            logo: '<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>',
-                                            maincolor: '#0ec1c1',
-                                            buttontext: '#ffffff',
-                                            maintext: '#4A4A4A',
-                                            desctext: '#4A4A4A'
-                                        }
-                                    });
-                                    Culqi.settings({
-                                        title: 'Cultura Imparable',
-                                        currency: 'PEN',
-                                        description: 'Venta de Producto y/o Servicio',
-                                        amount: price
-                                    });
-                                    Culqi.open();
-                                    e.preventDefault();
+            Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+            var price = "";
+            var price2 = "";
+            var kit_id = "";
+            var name = "";
+            var last_name = "";
+            var phone = "";
+            var address = "";
+            var sponsor_id = "";
+            $('.buyButton').on('click', function (e) {
+                price = $(this).attr('data-price');
+                price = price * 3.5;
+                price2 = $(this).attr('data-price2');
+                kit_id = $(this).attr('data-kit');
+                name = document.getElementById("name").value;
+                last_name = document.getElementById("last_name").value;
+                phone = document.getElementById("phone").value;
+                address = document.getElementById("address").value;
+                sponsor_id = document.getElementById("sponsor_id").value;
+
+                Culqi.options({
+                    lang: 'auto',
+                    modal: true,
+                    style: {
+                        logo: '<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>',
+                        maincolor: '#0ec1c1',
+                        buttontext: '#ffffff',
+                        maintext: '#4A4A4A',
+                        desctext: '#4A4A4A'
+                    }
+                });
+                Culqi.settings({
+                    title: 'Cultura Imparable',
+                    currency: 'PEN',
+                    description: 'Venta de Producto y/o Servicio',
+                    amount: price
+                });
+
+                if (name != "" && last_name != "" && phone != "" && address != "") {
+                    document.getElementById("pagar").innerHTML = "Procesando...";
+                    Culqi.open();
+                    e.preventDefault();
+                } else {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'info',
+                        title: 'Ingrese todos sus datos personales',
+                    });
+                }
+            });
+
+            function culqi() {
+                if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+                    var token = Culqi.token.id;
+                    var email = Culqi.token.email;
+                    var url = site + "create_invoice_referencia";
+                    $.ajax({
+                        url: url,
+                        method: 'post',
+                        data: {
+                            price: price,
+                            price2: price2,
+                            name: name,
+                            sponsor_id: sponsor_id,
+                            last_name: last_name,
+                            phone: phone,
+                            address: address,
+                            email: email,
+                            token: token
+                        },
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.status == true) {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Pago Procesado',
+                                    footer: "En breve nos estaremos comunicando para coordinar la entrega",
+                                    showConfirmButton: false,
+                                    timer: 1500
                                 });
-
-                                function culqi() {
-                                    if (Culqi.token) { // ¡Objeto Token creado exitosamente!
-                                        var token = Culqi.token.id;
-                                        var email = Culqi.token.email;
-                                        var url = site + "create_invoice_referencia";
-                                        $.ajax({
-                                            url: url,
-                                            method: 'post',
-                                            data: {
-                                                price: price,
-                                                price2: price2,
-                                                email: email,
-                                                token: token,
-                                            },
-                                            dataType: 'JSON',
-                                            success: function (data) {
-                                                if (data.object == "charge") {
-                                                    Swal.fire({
-                                                        position: 'top-end',
-                                                        icon: 'success',
-                                                        title: 'Pago Procesado',
-                                                        showConfirmButton: false,
-                                                        timer: 1500
-                                                    });
-                                                    url = site + "backoffice/invoice";
-                                                    setTimeout(function () {
-                                                        location.href = url
-                                                    }, 1500);
-                                                } else {
-                                                    Swal.fire({
-                                                        position: 'top-end',
-                                                        icon: 'error',
-                                                        title: 'Ups! Sucedio un error ',
-                                                        footer: "Verifique los datos de la tarjeta"
-                                                    });
-                                                }
-                                            },
-                                            error: function (data) {
-                                                alert(data.user_message);
-                                            }
-                                        });
-                                    } else {
-                                        console.log(Culqi.error);
-                                        alert(Culqi.error.user_message);
-                                    }
-                                }
-                                ;
-
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: 'Ups! Sucedio un error ',
+                                    footer: "Verifique los datos de la tarjeta"
+                                });
+                                document.getElementById("pagar").innerHTML = "Pagar";
+                            }
+                        },
+                        error: function (data) {
+                            alert(data.user_message);
+                            document.getElementById("pagar").innerHTML = "Pagar";
+                        }
+                    });
+                } else {
+                    console.log(Culqi.error);
+                    alert(Culqi.error.user_message);
+                    document.getElementById("pagar").innerHTML = "Pagar";
+                }
+            }
         </script>

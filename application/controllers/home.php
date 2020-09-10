@@ -1,4 +1,6 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
@@ -9,7 +11,10 @@ class Home extends CI_Controller {
         $this->load->model("category_model", "obj_category");
         $this->load->model("sub_category_model", "obj_sub_category");
         $this->load->model("videos_model", "obj_videos");
-        $this->load->model("embassy_model", "obj_embassy");
+        $this->load->model("invoices_model", "obj_invoices");
+        $this->load->model("commissions_model", "obj_commissions");
+        $this->load->model("invoice_catalog_model", "obj_invoice_catalog");
+        $this->load->model("referencia_compra_Model", "obj_referencia_compra");
         $this->load->library('culqi');
     }
 
@@ -63,130 +68,152 @@ class Home extends CI_Controller {
         //GET 
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
-            //SEND META TITLE 
-            $data['title'] = "Postula a la embajada";
-            $this->load->view('postula', $data);
+        //SEND META TITLE 
+        $data['title'] = "Postula a la embajada";
+        $this->load->view('postula', $data);
     }
-    
-    public function pagos_referencia(){
+
+    public function pagos_referencia() {
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
         //GET 
-         if(isset($_SESSION['compras_customer'])){
-             $username = $_SESSION['compras_customer']['customer_id'];
-             $params = array(
+        if (isset($_SESSION['compras_customer'])) {
+            $username = $_SESSION['compras_customer']['customer_id'];
+            $params = array(
                 "select" => "first_name,
                             customer_id,
                             last_name",
                 "where" => "username = '$username'");
-         $data['obj_customer'] = $this->obj_customer->get_search_row($params);
+            $data['obj_customer'] = $this->obj_customer->get_search_row($params);
         }
         //SEND DATA
         $data['title'] = "Compras por referencia";
         $this->load->view('pagos_referencia', $data);
-        
     }
-    
+
     public function create_invoice_referencia() {
         try {
             date_default_timezone_set('America/Lima');
-            
-            echo "Hola";
-            die();
-            
             //SELECT ID FROM CUSTOMER
             $token = $this->input->post('token');
-            $kit_id = trim($this->input->post('kit_id'));
             $email = $this->input->post('email');
             $price = $this->input->post('price');
             $price2 = $this->input->post('price2');
-            $customer_id = $_SESSION['customer']['customer_id'];
-            //get data customer
-            $params_customer = array(
-                "select" => "first_name,
-                                    last_name,
-                                    address,
-                                    phone,
-                                    active",
-                "where" => "customer_id = $customer_id",
-            );
-            //GET DATA COMMENTS
-            $obj_customer = $this->obj_customer->get_search_row($params_customer);
+
+            $name = $this->input->post('name');
+            $last_name = $this->input->post('last_name');
+            $phone = $this->input->post('phone');
+            $address = $this->input->post('address');
+            $sponsor_id = $this->input->post('sponsor_id');
             //MAKE CHARGE
-            $charge = $this->culqi->charge($token, $price, $email, $obj_customer->first_name, $obj_customer->last_name, $obj_customer->address, $obj_customer->phone);
-            //INSERT INVOICE
-            $data_invoice = array(
-                'customer_id' => $customer_id,
-                'kit_id' => $kit_id,
-                'sub_total' => $price2,
-                'igv' => 0,
-                'total' => $price2,
-                'type' => 1,
-                'recompra' => 0,
-                'date' => date("Y-m-d H:i:s"),
-                'active' => 2,
-                'status_value' => 1,
-                'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $customer_id,
-            );
-            $invoice_id = $this->obj_invoices->insert($data_invoice);
-            //get data bonus kit
-            $params = array(
-                "select" => "bono_n1,
-                                        bono_n2,
-                                        bono_n3,
-                                        bono_n4,
-                                        bono_n5",
-                "where" => "kit_id = $kit_id"
-            );
-            //GET DATA FROM BONUS
-            $obj_kit = $this->obj_kit->get_search_row($params);
-            //GET DATA CUSTOMER UNILEVEL
-            $params = array(
-                "select" => "parend_id,
-                                ident,
-                                new_parend_id",
-                "where" => "customer_id = $customer_id"
-            );
-            //GET DATA FROM BONUS
-            $obj_unilevel = $this->obj_unilevel->get_search_row($params);
-            if (isset($obj_unilevel) != "") {
-                $ident = $obj_unilevel->ident;
-                $new_parend_id = $obj_unilevel->new_parend_id;
-                if(!empty($new_parend_id)){
-                    //INSERT AMOUNT ON COMMISION TABLE    
-                $this->pay_unilevel($ident, $new_parend_id, $invoice_id, $obj_kit->bono_n1, $obj_kit->bono_n2, $obj_kit->bono_n3, $obj_kit->bono_n4, $obj_kit->bono_n5);
+            $charge = $this->culqi->charge($token, $price, $email, $name, $last_name, $address, $phone);
+
+            foreach ($this->cart->contents() as $items) {
+                $option = "";
+                if ($this->cart->has_options($items['rowid']) == TRUE) {
+                    foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value) {
+                        $option .= "$option_name" . ":" . "$option_value" . "&nbsp;";
+                    }
                 }
+                //INSERT INVOICE
+                $data_invoice = array(
+                    'customer_id' => $sponsor_id,
+                    'kit_id' => 1,
+                    'sub_total' => $items['price'],
+                    'igv' => 0,
+                    'total' => $items['price'],
+                    'type' => 3,
+                    'recompra' => 0,
+                    'date' => date("Y-m-d H:i:s"),
+                    'active' => 2,
+                    'status_value' => 1,
+                    'created_at' => date("Y-m-d H:i:s"),
+                    'created_by' => $sponsor_id,
+                );
+                $invoice_id = $this->obj_invoices->insert($data_invoice);
+                //INSERT INVOICE CATALOG    {
+                $catalog_id = $items['id'];
+                $data_invoice_catalog = array(
+                    'invoice_id' => $invoice_id,
+                    'catalog_id' => $catalog_id,
+                    'price' => $items['price'],
+                    'quantity' => $items['qty'],
+                    'option' => $option,
+                    'sub_total' => $items['subtotal'],
+                    'date' => date("Y-m-d H:i:s")
+                );
+                $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+                //search bono
+                $params = array(
+                    "select" => "bono_n1",
+                    "where" => "catalog_id = $catalog_id"
+                );
+                //GET DATA FROM BONUS
+                $obj_catalog = $this->obj_catalog->get_search_row($params);
+                $bono = $obj_catalog->bono_n1;
+                //insert commissión link de compra
+                $this->pay_referido_compra($sponsor_id, $invoice_id, $bono, $items['qty']);
             }
-            //add 30 day por next pay
-            $date_month = date("Y-m-d", strtotime("+30 day"));
-            //UPDATE TABLE CUSTOMER ACTIVE = 1    
-            $data = array(
-                'active' => 1,
-                'kit_id' => $kit_id,
-                'date_start' => date("Y-m-d H:i:s"),
-                'date_month' => $date_month,
-                'active_month' => 1,
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $customer_id,
+            //insert table Referencia
+            $data_referencia = array(
+                    'invoice_id' => $invoice_id,
+                    'name' => $name,
+                    'last_name' => $last_name,
+                    'phone' => $phone,
+                    'address' => $address,
+                    'date' => date("Y-m-d H:i:s"),
+                    'status' => 1
             );
-            $result = $this->obj_customer->update($customer_id, $data);
-            //UPDATE SESSION
+            //GET DATA FROM BONUS
+            $result = $this->obj_referencia_compra->insert($data_referencia);
             if(!empty($result)){
-                $data_month = 1;
-                $this->update_session_active_month($data_month);
                 $data['status'] = true;
             }else{
                 $data['status'] = false;
             }
-            echo json_encode($charge);
+            echo json_encode($data);
         } catch (Exception $e) {
-            $data['status'] = false;
             echo json_encode($e->getMessage());
         }
     }
-    
+
+    public function pay_referido_compra($sponsor_id, $invoice_id, $bono, $qty) {
+        //INSERT COMMISSION TABLE
+        $amount = $bono * $qty;
+        $noventa_percent = $amount * 0.9;
+        $diez_percent = $amount * 0.1;
+        //insert on table comissión 90%
+        $data = array(
+            'invoice_id' => $invoice_id,
+            'customer_id' => $sponsor_id,
+            'bonus_id' => 4,
+            'amount' => $noventa_percent,
+            'active' => 1,
+            'pago' => 0,
+            'status_value' => 1,
+            'date' => date("Y-m-d H:i:s"),
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $sponsor_id,
+        );
+        $this->obj_commissions->insert($data);
+        //insert commission 10%
+        $data = array(
+            'invoice_id' => $invoice_id,
+            'customer_id' => $sponsor_id,
+            'bonus_id' => 4,
+            'amount' => $diez_percent,
+            'active' => 1,
+            'pago' => 0,
+            'compras' => 1,
+            'status_value' => 1,
+            'date' => date("Y-m-d H:i:s"),
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $sponsor_id,
+        );
+        $this->obj_commissions->insert($data);
+    }
+
     public function embassy() {
         if ($this->input->is_ajax_request()) {
             $name = $this->input->post("name");
@@ -203,9 +230,9 @@ class Home extends CI_Controller {
                 'date' => date("Y-m-d H:i:s")
             );
             $result = $this->obj_embassy->insert($param);
-            if(!empty($result)){
+            if (!empty($result)) {
                 $data['message'] = true;
-            }else{
+            } else {
                 $data['message'] = false;
             }
             echo json_encode($data);
@@ -233,7 +260,7 @@ class Home extends CI_Controller {
         //GET DATA CATALOGO
         return $obj_category_catalog = $this->obj_category->search($params_category_catalog);
     }
-    
+
     public function nav_sub_category() {
         $params = array(
             "select" => "name,
@@ -291,102 +318,102 @@ class Home extends CI_Controller {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     ';
-    foreach ($obj_videos as $value) {
-    $codigo .='<url>
+        foreach ($obj_videos as $value) {
+            $codigo .='<url>
         <loc>' . site_url() . "courses/" . $value->category_slug . "/" . $value->slug;
             $codigo .='</loc>
         <lastmod>' . $value->date . '</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>';
-    }
-    foreach ($obj_catalog as $value) {
-    $codigo .='<url>
+        }
+        foreach ($obj_catalog as $value) {
+            $codigo .='<url>
         <loc>' . site_url() . "catalog/" . $value->category_slug . "/" . $value->slug;
             $codigo .='</loc>
         <lastmod>' . $value->date . '</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>';
-    }
-    foreach ($obj_category_videos as $value) {
-    $codigo .='<url>
+        }
+        foreach ($obj_category_videos as $value) {
+            $codigo .='<url>
         <loc>' . site_url() . "courses/" . $value->slug;
             $codigo .='</loc>
         <lastmod>' . $value->created_at . '</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>';
-    }
+        }
 
-    foreach ($obj_category_catalog as $value) {
-    $codigo .='<url>
+        foreach ($obj_category_catalog as $value) {
+            $codigo .='<url>
         <loc>' . site_url() . "catalog/" . $value->slug;
             $codigo .='</loc>
         <lastmod>' . $value->created_at . '</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>';
-    }
+        }
 
-    $codigo .='<url>';
+        $codigo .='<url>';
         $codigo .='<loc>' . site_url() . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
-    $codigo .='<url>';
+        $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'home' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
-    $codigo .='<url>';
+        $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'courses' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
-    $codigo .='<url>';
+        $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'catalog' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
-    $codigo .='<url>';
+        $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'register' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
-    $codigo .='<url>';
+        $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'contact' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
-    $codigo .='<url>';
+        $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'login' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
-    $codigo .='<url>';
+        $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'forget' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
-    $codigo .='</urlset>';
-$path = "sitemap.xml";
-$modo = "w+";
+        $codigo .='</urlset>';
+        $path = "sitemap.xml";
+        $modo = "w+";
 
-if ($fp = fopen($path, $modo)) {
-fwrite($fp, $codigo);
-echo "Se realizo con Exito";
-} else {
-echo "Error";
-}
-}
+        if ($fp = fopen($path, $modo)) {
+            fwrite($fp, $codigo);
+            echo "Se realizo con Exito";
+        } else {
+            echo "Error";
+        }
+    }
 
 }
