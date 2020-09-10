@@ -94,7 +94,7 @@
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script>
 //    pk_test_igI3EctoA17FeNUD
-            Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+            Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
             var price = "";
             var price2 = "";
             var kit_id = "";
