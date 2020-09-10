@@ -113,6 +113,7 @@
                                                                 <button type="button" class="btn btn-primary" id="buyButton" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>">Pagar Tarjeta &nbsp;&nbsp;<i data-feather="credit-card"></i></button>
                                                                 <button type="button" onclick="contra_entrega();" class="btn btn-primary" id="buyButton">Contra Entrega &nbsp;&nbsp;<i data-feather="user-check"></i></button>
                                                                 <button type="button" onclick="puntos_compra();" id="puntos_button" class="btn btn-primary" id="buyButton">Puntos de Compra &nbsp;&nbsp;<i data-feather="shopping-bag"></i></button>
+                                                                <button type="button" id="puntos_button" class="btn btn-primary" id="buyButton">Efectivo Disponible &nbsp;&nbsp;<i data-feather="dollar-sign"></i></button>
                                                             </div>
                                                         </div>
                                                     <div class="col-sm-8">

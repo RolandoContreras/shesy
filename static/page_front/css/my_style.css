@@ -359,7 +359,12 @@ li .nav_catalog{
     border-color: red !important;
     color: red !important;
 }
-
+.color-gris-2{
+    color: #858585 !important;
+}
+.padding-bot-20p{
+    padding-bottom: 20px !important;
+}
 @media (max-width: 767px) {
     #block-1597347523879 {
         text-align: left;
