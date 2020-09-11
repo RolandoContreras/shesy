@@ -57,7 +57,7 @@
                                     <?php if ($value->active == 1) {
                                         $valor = "En Espera";
                                         $stilo = "label label-warning";
-                                    }elseif($value->active == 0){
+                                    }elseif($value->active == 2){
                                         $valor = "Pagado";
                                         $stilo = "label label-success";
                                     }else{
@@ -94,10 +94,10 @@
                                 <tr>
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">Fecha</th>
-                                  <th rowspan="1" colspan="1">Usuario</th>
                                   <th rowspan="1" colspan="1">Cliente</th>
                                   <th rowspan="1" colspan="1">Total</th>                                  
                                   <th rowspan="1" colspan="1">Estado</th>
+                                  <th rowspan="1" colspan="1">Entregado</th>
                                   <th rowspan="1" colspan="1">Acciones</th>
                                 </tr>
                               </tfoot>
