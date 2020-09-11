@@ -75,7 +75,9 @@ function add_cart(catalog_id, price, name) {
                         showConfirmButton: false
                     });
                     url = site + "mi_catalogo/pay_order";
-                    setTimeout(function(){location.href=url} , 1500);  
+                    setTimeout(function () {
+                        location.href = url
+                    }, 1500);
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -112,7 +114,9 @@ function add_cart_granel(catalog_id, price, name) {
                         showConfirmButton: false
                     });
                     url = site + "mi_catalogo/pay_order";
-                    setTimeout(function(){location.href=url} , 1500);  
+                    setTimeout(function () {
+                        location.href = url
+                    }, 1500);
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -130,45 +134,51 @@ function contra_entrega() {
     location.href = site + url;
 }
 
-function puntos_compra() {
+function ganancia_disponible() {
     document.getElementById("puntos_button").innerHTML = "Procesando";
-    var punto_compra = document.getElementById("punto_compra").value;
+    var ganancia_disponible = document.getElementById("ganancia_disponible").value;
+    var total_disponible = document.getElementById("total_disponible").value;
+    var total_compra = document.getElementById("total_compra").value;
     var total = document.getElementById("total").value;
     var active_month = document.getElementById("active_month").value;
-    if (punto_compra >= total) {
-        $.ajax({
-            type: "post",
-            url: site + "mi_catalogo/puntos_compra",
-            dataType: "json",
-            data: {punto_compra: punto_compra,
-                   total: total,
-                   active_month: active_month},
-            success: function (data) {
-                if (data.status == true) {
-                    Swal.fire({
-                        position: 'top-end',
-                        title: 'Pago con éxito',
-                        icon: 'success',
-                        focusConfirm: false
-                    });
-                    var url = site + "mi_catalogo";
-                    setTimeout(function(){location.href=url} , 1500);  
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Ups! Hubo un error',
-                        footer: 'Comuniquese con soporte',
-                    });
-                }
-            }
-        });
-    } else {
-        Swal.fire({
-            icon: 'info',
-            title: 'Fondos insuficientes'
-        });
-    }
 
+    $.ajax({
+        type: "post",
+        url: site + "mi_catalogo/puntos_compra",
+        dataType: "json",
+        data: {ganancia_disponible: ganancia_disponible,
+            total_compra: total_compra,
+            total_disponible: total_disponible,
+            total: total,
+            active_month: active_month},
+        success: function (data) {
+            if (data.status == true) {
+                Swal.fire({
+                    position: 'top-end',
+                    title: 'Pago con éxito',
+                    icon: 'success',
+                    focusConfirm: false
+                });
+                var url = site + "mi_catalogo";
+                setTimeout(function () {
+                    location.href = url
+                }, 1500);
+            } else if (data.status == "no_money") {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Fondos insuficientes'
+                });
+                document.getElementById("puntos_button").innerHTML = "Ganancia Disponible";
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Hubo un error',
+                    footer: 'Comuniquese con soporte',
+                });
+                document.getElementById("puntos_button").innerHTML = "Ganancia Disponible";
+            }
+        }
+    });
 }
 
 

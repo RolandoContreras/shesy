@@ -87,6 +87,7 @@ class B_home extends CI_Controller {
             "where" => "unilevel.parend_id = $customer_id and unilevel.status_value = 1"
         );
         $obj_total_referidos = $this->obj_unilevel->get_search_row($params);
+        
         //GET DATA COMISION
         $params = array(
             "select" => "commissions.amount,

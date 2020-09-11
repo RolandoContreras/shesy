@@ -72,7 +72,9 @@
                                                                         </th>
                                                                     </tr>
                                                                 <?php endforeach; ?>
-                                                                <input type="hidden" id="punto_compra" value="<?php echo $total_compra;?>"/>
+                                                                <input type="hidden" id="ganancia_disponible" value="<?php echo $total_compra;?>"/>
+                                                                <input type="hidden" id="total_disponible" value="<?php echo $obj_total_compra->total_disponible!=0?$obj_total_compra->total_disponible:0;?>"/>
+                                                                <input type="hidden" id="total_compra" value="<?php echo $obj_total_compra->total_compra!=0?$obj_total_compra->total_compra:0;?>"/>
                                                                 <input type="hidden" id="total" value="<?php echo $this->cart->format_number($this->cart->total()); ?>"/>
                                                                 <input type="hidden" id="active_month" value="<?php echo $obj_profile->active_month;?>"/>
                                                                 <tr>
@@ -112,8 +114,7 @@
                                                             <div class="card-block text-center">
                                                                 <button type="button" class="btn btn-primary" id="buyButton" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>">Pagar Tarjeta &nbsp;&nbsp;<i data-feather="credit-card"></i></button>
                                                                 <button type="button" onclick="contra_entrega();" class="btn btn-primary" id="buyButton">Contra Entrega &nbsp;&nbsp;<i data-feather="user-check"></i></button>
-                                                                <button type="button" onclick="puntos_compra();" id="puntos_button" class="btn btn-primary" id="buyButton">Puntos de Compra &nbsp;&nbsp;<i data-feather="shopping-bag"></i></button>
-                                                                <button type="button" id="puntos_button" class="btn btn-primary" id="buyButton">Efectivo Disponible &nbsp;&nbsp;<i data-feather="dollar-sign"></i></button>
+                                                                <button type="button" onclick="ganancia_disponible();" id="puntos_button" class="btn btn-primary" id="buyButton">Ganancia Disponible &nbsp;&nbsp;<i data-feather="dollar-sign"></i></button>
                                                             </div>
                                                         </div>
                                                     <div class="col-sm-8">

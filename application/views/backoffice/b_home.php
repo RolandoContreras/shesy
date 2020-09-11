@@ -253,7 +253,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-6 col-xl-4">
+                             <div class="col-md-6 col-xl-6 offset-2">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
                                         <div class="row align-items-center justify-content-center">
@@ -272,7 +272,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-8 col-md-6">
+                            <div class="col-xl-12 col-md-12">
                                 <div class="card Recent-Users">
                                     <div class="card-header">
                                         <h5>Historial Financiero</h5>
