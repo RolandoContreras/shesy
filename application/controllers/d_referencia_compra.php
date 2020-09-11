@@ -112,6 +112,30 @@ class D_referencia_compra extends CI_Controller {
         }
     }
 
+    public function marcar_enviado() {
+        if ($this->input->is_ajax_request()) {
+            //OBETENER customer_id
+            $referencia_compra_id = $this->input->post("referencia_compra_id");
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($referencia_compra_id != "") {
+                //update invoice
+                $param_referencia_compra = array(
+                    'status' => 0
+                );
+                $result = $this->obj_referencia_compra->update($referencia_compra_id, $param_referencia_compra);
+                //send result
+                if ($result != null) {
+                    $data['status'] = true;
+                } else {
+                    $data['status'] = false;
+                }
+            } else {
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+    }
+
     public function active() {
         //ACTIVE CUSTOMER NORMALY
         if ($this->input->is_ajax_request()) {
@@ -138,28 +162,28 @@ class D_referencia_compra extends CI_Controller {
                 $obj_bono = $this->obj_catalog->get_search_row($params);
                 $bono_1 = $obj_bono->bono_n1;
                 //pay comission by enlace de compra
-               $this->pay_referido_compra($sponsor_id, $invoice_id, $bono_1, $value->quantity);
+                $this->pay_referido_compra($sponsor_id, $invoice_id, $bono_1, $value->quantity);
             }
             //update invoice
             $param_invoice = array(
-                    'active' => 2
-                );
+                'active' => 2
+            );
             $this->obj_invoices->update($invoice_id, $param_invoice);
             //update enlace referencia status
             $param_referencia = array(
-                    'status' => 0
-                );
+                'status' => 0
+            );
             $result = $this->obj_referencia_compra->update($referencia_compra_id, $param_referencia);
-            if($result === true){
-                    $data['status'] = true;
-               }else{
-                   $data['status'] = false;
-               }
+            if ($result === true) {
+                $data['status'] = true;
+            } else {
+                $data['status'] = false;
+            }
             echo json_encode($data);
             exit();
         }
     }
-    
+
     public function pay_referido_compra($sponsor_id, $invoice_id, $bono, $qty) {
         //INSERT COMMISSION TABLE
         $amount = $bono * $qty;
@@ -195,7 +219,7 @@ class D_referencia_compra extends CI_Controller {
         );
         $this->obj_commissions->insert($data);
     }
-        
+
     public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5) {
 
         $new_ident = explode(",", $ident);

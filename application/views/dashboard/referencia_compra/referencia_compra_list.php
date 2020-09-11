@@ -105,8 +105,8 @@
                                                     <?php } ?>
                                                     <button class="btn btn-secondary" type="button" onclick="view_order_enlace_compra('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="shopping-cart"></i></span> Ver Pedido</button>
                                                     <button class="btn btn-secondary" type="button" onclick="delete_enlace_compra('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</button>
-                                                    <?php if ($value->voucher != 1) { ?>
-                                                        <button class="btn btn-secondary" type="button" onclick="view_order_enlace_compra('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="send"></i></span> Marcar como enviado</button>
+                                                    <?php if ($value->voucher != 1 && $value->status == 1) { ?>
+                                                        <button class="btn btn-secondary" type="button" onclick="marcar_enviado('<?php echo $value->referencia_compra_id;?>');"><span class="pcoded-micon"><i data-feather="send"></i></span> Marcar como enviado</button>
                                                     <?php }?>
                                         </div>
                                     </div>

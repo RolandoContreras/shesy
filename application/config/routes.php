@@ -273,6 +273,7 @@ $route['dashboard/enlace-compra'] = "d_referencia_compra";
 $route['dashboard/enlace-compra/([0-9]+)'] = "d_referencia_compra/order/$1";
 $route['dashboard/enlace-compra/validate_user'] = "d_referencia_compra/validate_user";
 $route['dashboard/enlace-compra/active'] = "d_referencia_compra/active";
+$route['dashboard/enlace-compra/marcar_enviado'] = "d_referencia_compra/marcar_enviado";
 $route['dashboard/enlace-compra/delete'] = "d_referencia_compra/delete";
 
 

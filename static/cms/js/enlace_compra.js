@@ -101,3 +101,49 @@ function delete_enlace_compra(invoice_id) {
         }
     });
 }
+function marcar_enviado(referencia_compra_id) {
+    bootbox.confirm({
+        message: "¿Confirma que desea marcarlo como enviado?",
+        buttons: {
+            confirm: {
+                label: 'Confirmar',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'Cerrar',
+                className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+            if (result == true) {
+                $.ajax({
+                    type: "post",
+                    url: site + "dashboard/enlace-compra/marcar_enviado",
+                    dataType: "json",
+                    data: {referencia_compra_id: referencia_compra_id},
+                    success: function (data) {
+                        if (data.status == true) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Cambiado con éxito',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            window.setTimeout(function () {
+                                window.location = site + "dashboard/enlace-compra";
+                            }, 1500);
+                        } else {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: 'Sucedio un error',
+                                footer: 'Comunique a soporte'
+                            });
+                        }
+                    }
+                });
+            }
+        }
+    });
+}
