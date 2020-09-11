@@ -49,14 +49,12 @@ class B_pay extends CI_Controller {
         //GET TOTAL COMMISION
         $params = array(
                         "select" =>"sum(amount) as total_comissions,
-                                    (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras != 1 and active = 1 and status_value = 1) as total_disponible,
-                                    (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras = 1 and active = 1 and status_value = 1) as total_compra",
+                                    (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras != 1 and active = 1 and status_value = 1) as total_disponible",
                         "where" => "customer_id = $customer_id and status_value = 1 and pago != 1");
            //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
         
         $total_comisiones = $obj_total_commissions->total_comissions;
-        $total_compra = $obj_total_commissions->total_compra;
         if($active_month == 0){
             $total_disponible = 0;
         }else{
@@ -65,7 +63,6 @@ class B_pay extends CI_Controller {
         $this->tmp_backoffice->set("obj_profile",$obj_profile);        
         $this->tmp_backoffice->set("bank",$bank);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
-        $this->tmp_backoffice->set("total_compra",$total_compra);
         $this->tmp_backoffice->set("total_comisiones",$total_comisiones);
         $this->tmp_backoffice->set("total_disponible",$total_disponible);
         $this->tmp_backoffice->set("obj_pay",$obj_pay);

@@ -117,9 +117,12 @@ class B_home extends CI_Controller {
             "where" => "customer_id = $customer_id and status_value = 1 and pago != 1");
         //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
+        //set ganancia disponible
+        $gananciaDisponible = $obj_total_commissions->total_disponible + $obj_total_commissions->total_compra;
         //get data img
         $obj_profile = $this->get_profile($customer_id);
         //send data
+        $this->tmp_backoffice->set("gananciaDisponible",$gananciaDisponible);
         $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_total_commissions", $obj_total_commissions);
         $this->tmp_backoffice->set("obj_commissions", $obj_commissions);

@@ -90,6 +90,26 @@
                             <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
+                                        <h6 class="mb-4">Ganancia Disponible</h6>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-9">
+                                                <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                    <i class="feather icon-credit-card text-c-blue f-30 m-r-10"></i>&dollar;<?php echo $gananciaDisponible != "" ? $gananciaDisponible : "0.00"; ?>
+                                                </h3>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <p class="m-b-0">100%</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress m-t-30" style="height: 7px;">
+                                            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-block">
                                         <h6 class="mb-4">Efectivo Disponible</h6>
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">

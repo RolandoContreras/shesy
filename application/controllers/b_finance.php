@@ -18,12 +18,15 @@ class B_finance extends CI_Controller {
         //get profile
         $obj_profile = $this->get_profile($customer_id);
         //GET PLAN INFORMATION
-        $params = array("select" =>"sum(amount) as total_maching,
-                                    (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 1 and status_value = 1) as total_unilevel,
-                                    (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and status_value = 1) as total",
-                        "where" => "customer_id = $customer_id and bonus_id = 3 and status_value = 1",
+        $params = array("select" =>"sum(amount) as total,
+                                    (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras != 1 and active = 1 and status_value = 1) as total_disponible,
+                                    (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras = 1 and status_value = 1) as total_compra",
+                        "where" => "customer_id = $customer_id and status_value = 1 and pago != 1",
                                     );
         $obj_total = $this->obj_commissions->get_search_row($params);
+        //set ganancia disponible
+        $gananciaDisponible = $obj_total->total_disponible + $obj_total->total_compra;
+        
         //GET DATA COMISION
                 $params = array(
                         "select" =>"commissions.commissions_id,
@@ -42,6 +45,7 @@ class B_finance extends CI_Controller {
         $obj_commissions = $this->obj_commissions->search($params);
 
         //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("gananciaDisponible",$gananciaDisponible);
         $this->tmp_backoffice->set("obj_commissions",$obj_commissions);
         $this->tmp_backoffice->set("obj_profile",$obj_profile);
         $this->tmp_backoffice->set("obj_total",$obj_total);

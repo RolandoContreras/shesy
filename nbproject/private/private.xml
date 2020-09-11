@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/shesy/application/controllers/dashboard.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/views/pagos_referencia.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/config/routes.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/catalog_detail.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/catalogo_home.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/page_front/js/script/cart_1.js</file>
             <file>file:/C:/wamp64/www/shesy/application/views/catalogo/catalogo_pay_order.php</file>
-            <file>file:/C:/wamp64/www/shesy/application/libraries/culqi.php</file>
+            <file>file:/C:/wamp64/www/shesy/application/views/catalog.php</file>
+            <file>file:/C:/wamp64/www/shesy/static/page_front/css/my_style.css</file>
+            <file>file:/C:/wamp64/www/shesy/application/controllers/catalog.php</file>
         </group>
     </open-files>
 </project-private>
