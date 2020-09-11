@@ -38,6 +38,8 @@
                                   <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Fecha</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Cliente</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Pagado Por</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Imagen</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Total</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Estado</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Entregado</th>
@@ -51,6 +53,25 @@
                                     <span class="badge badge-pill badge-warning" style="font-size: 100%;"><?php echo formato_fecha_barras($value->date);?></span>
                                 </td>
                                 <td><?php echo $value->name." ".$value->last_name;?></td>
+                                <td>
+                                    <?php if ($value->voucher == 1) {
+                                        $valor = "Deposito Bancario";
+                                        $stilo = "label label-info";
+                                    }else{
+                                        $valor = "Tarjeta";
+                                        $stilo = "label label-success";
+                                    }?>
+                                    <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
+                                </td>
+                                <td>
+                                    <?php if (!empty($value->img)) { ?>
+                                        <a href="<?php echo site_url() . "static/cms/images/comprobantes/$value->invoice_id/$value->img"; ?>" data-lightbox="roadtrip">
+                                            <i class="fas fa-eye f-30 text-c-green"></i>
+                                        </a>
+                                    <?php }else{ 
+                                            echo "---";
+                                     }?>
+                                </td>
                                 <td>
                                     <span class="badge badge-pill badge-success" style="font-size: 100%;">&dollar;<?php echo format_number($value->total);?></span></td>
                                 <td>
@@ -95,6 +116,8 @@
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">Fecha</th>
                                   <th rowspan="1" colspan="1">Cliente</th>
+                                  <th rowspan="1" colspan="1">Pagado Por</th>
+                                  <th rowspan="1" colspan="1">Imagen</th>
                                   <th rowspan="1" colspan="1">Total</th>                                  
                                   <th rowspan="1" colspan="1">Estado</th>
                                   <th rowspan="1" colspan="1">Entregado</th>
@@ -117,3 +140,4 @@
         </div>
 </section>
 <script src="<?php echo site_url();?>static/cms/js/enlace_compra.js"></script>
+<script src="<?php echo site_url() . 'static/backoffice/js/lightbox.js'; ?>"></script>
