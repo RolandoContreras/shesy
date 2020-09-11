@@ -266,7 +266,7 @@
                                         <hr/>
                                         <div class="row align-items-center justify-content-center card-active text-right">
                                             <div class="col-12">
-                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Compra: <a target="_blank" href="<?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?></a></span></h6>
+                                                <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Compra: <a target="_blank" href="<?php echo site_url() . 'catalogo/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'catalogo/referencia/' . convert_slug($obj_profile->username); ?></a></span></h6>
                                             </div>
                                         </div>
                                     </div>

@@ -51,37 +51,46 @@
                                 </script>
                             </header>
                             <div class="grid-uniform">
-                                <?php foreach ($obj_catalog as $value) { ?>
-                                    <div class="grid-item medium--one-quarter large--one-quarter on-sale">
-                                        <a href="<?php echo site_url() . "catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>" class="color-gris-2">
-                                            <div class="product-grid-image" style="height: 225px;">
-                                                <div class="product-grid-image--centered">
-                                                    <div class="lazyload__image-wrapper" style="max-width: 250px">
-                                                        <div style="padding-top:100.0%;" >
-                                                            <img width="400" height="400" alt="<?php echo $value->name; ?>" srcset='<?php echo site_url() . "static/catalog/$value->img"; ?> 400w, <?php echo site_url() . "static/catalog/$value->img"; ?> 150w, <?php echo site_url() . "static/catalog/$value->img"; ?> 300w, <?php echo site_url() . "static/catalog/$value->img"; ?> 355w, <?php echo site_url() . "static/catalog/$value->img"; ?> 100w, <?php echo site_url() . "static/catalog/$value->img"; ?> 600w' sizes="(max-width: 400px) 100vw, 400px" src='<?php echo site_url() . "static/catalog/$value->img"; ?>'>
+                                <?php
+                                if (!empty($obj_catalog)) {
+                                    foreach ($obj_catalog as $value) {
+                                        ?>
+                                        <div class="grid-item medium--one-quarter large--one-quarter on-sale">
+                                            <a href="<?php echo site_url() . "catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>" class="color-gris-2">
+                                                <div class="product-grid-image" style="height: 225px;">
+                                                    <div class="product-grid-image--centered">
+                                                        <div class="lazyload__image-wrapper" style="max-width: 250px">
+                                                            <div style="padding-top:100.0%;" >
+                                                                <img width="400" height="400" alt="<?php echo $value->name; ?>" srcset='<?php echo site_url() . "static/catalog/$value->img"; ?> 400w, <?php echo site_url() . "static/catalog/$value->img"; ?> 150w, <?php echo site_url() . "static/catalog/$value->img"; ?> 300w, <?php echo site_url() . "static/catalog/$value->img"; ?> 355w, <?php echo site_url() . "static/catalog/$value->img"; ?> 100w, <?php echo site_url() . "static/catalog/$value->img"; ?> 600w' sizes="(max-width: 400px) 100vw, 400px" src='<?php echo site_url() . "static/catalog/$value->img"; ?>'>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                        <div class="center padding-bot-20p">
-                                            <a href="<?php echo site_url() . "catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>" class="color-gris-2">
-                                                <?php echo $value->name; ?>
                                             </a>
-                                            <div class="product-item--price">
-                                                <span class="h1 medium--left">
-                                                    <span class="visually-hidden">Precio de venta</span>
-                                                </span>
-                                            </div>
-                                            <div class="sale-tag medium--left">
-                                                Precio <span class="money conversion-bear-money">&dollar;<?php echo $value->price; ?></span>
-                                            </div>
-                                            <div class="sale-tag medium--right">
-                                                <span style="cursor:pointer" onclick="add_cart('<?php echo $value->catalog_id; ?>', '<?php echo $value->price; ?>', '<?php echo $value->name; ?>');" class="money conversion-bear-money"><i class="fa fa-shopping-cart"></i></span>
+                                            <div class="center padding-bot-20p">
+                                                <a href="<?php echo site_url() . "catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>" class="color-gris-2">
+        <?php echo $value->name; ?>
+                                                </a>
+                                                <div class="product-item--price">
+                                                    <span class="h1 medium--left">
+                                                        <span class="visually-hidden">Precio de venta</span>
+                                                    </span>
+                                                </div>
+                                                <div class="sale-tag medium--left">
+                                                    Precio <span class="money conversion-bear-money">&dollar;<?php echo $value->price; ?></span>
+                                                </div>
+                                                <div class="sale-tag medium--right">
+                                                    <span style="cursor:pointer" onclick="add_cart('<?php echo $value->catalog_id; ?>', '<?php echo $value->price; ?>', '<?php echo $value->name; ?>');" class="money conversion-bear-money"><i class="fa fa-shopping-cart"></i></span>
+                                                </div>
                                             </div>
                                         </div>
+                                    <?php }
+                                } else {
+                                    ?>
+                                    <div class="grid-item  on-sale">
+                                        <p>No hay resultados</p>
                                     </div>
-                                <?php } ?>
+                            <?php } ?>
                             </div>
                         </div>
                         <!--Pagination-->
@@ -102,7 +111,7 @@
             </div>
         </main>
         <div id="section-footer">
-            <?php $this->load->view("footer"); ?>
+<?php $this->load->view("footer"); ?>
         </div>
         <script src="<?php echo site_url() . "static/page_front/js/encore_core-391b174ddfaf72e8ec9615d1579235b5c2c755e7cd65e22cf10938c815f7f394.js"; ?>"></script>
         <script src="<?php echo site_url() . "static/page_front/js/scripts.js?15964308185009978"; ?>"></script>

@@ -133,7 +133,7 @@ class Catalog extends CI_Controller {
         } else {
             $order = "catalog.catalog_id DESC";
         }
-
+        
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
@@ -198,7 +198,6 @@ class Catalog extends CI_Controller {
     }
 
     public function sub_category($category) {
-
         $url = explode("/", uri_string());
         $sub_category = $url[2];
         //GET NAV
