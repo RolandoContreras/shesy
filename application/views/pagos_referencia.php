@@ -14,26 +14,27 @@
                             <div class="section--middle optin__panel optin__panel--boxed">
                                 <div class="row optin optin--stacked">
                                     <div class="col-md-12">
+                                        <h2 style="text-align: center;"><span style="color: #57de1d;"><strong>Estas apunto de comprar.<br>&nbsp;</strong></span></h2>
                                         <?php foreach ($this->cart->contents() as $items): ?>
                                             <div class="checkout-content">
                                                 <img class="img-responsive checkout-content-img" src="<?php echo site_url() . "static/catalog/" . $items['img']; ?>" alt="Snhsaytjrbepnkhdyyhi correos 1">
                                                 <div class="checkout-content-body">
                                                     <div class="space-20"></div>
-                                                    <h2 style="text-align: center;"><span style="color: #57de1d;"><strong>Estas apunto de comprar.<br>&nbsp;</strong></span></h2>
+                                                    
                                                     <h3>
                                                         <span style="color: #000000;">
                                                             <i class="fa fa-check"></i>&nbsp;&nbsp;<?php echo $items['name']; ?><br><br>
                                                         </span>
                                                     </h3>
                                                 </div>
-                                                <div>
-                                                    <input onclick="show();" type="radio" name="pay" id="tarjeta_radio" value="tarjeta" checked>
-                                                    <label>Pago con tarjeta</label><br/>
-                                                    <input onclick="show();" type="radio" name="pay" id="banco_radio" value="banco">
-                                                    <label>Pago con trasferencia bancaria</label>
-                                                </div>
                                             </div>
                                         <?php endforeach; ?>
+                                        <div>
+                                            <input onclick="show_tarjeta();" type="radio" name="pay" id="tarjeta_radio" value="tarjeta" checked>
+                                            <label>Pago con tarjeta</label><br/>
+                                            <input onclick="show_banco();" type="radio" name="pay" id="banco_radio" value="banco">
+                                            <label>Pago con trasferencia bancaria</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -108,8 +109,8 @@
                                         </h2>
                                     </div>
                                     <div class="col-md-12">
-                                            <p class="optin__subheading"><b>Recomendado por:</b> <?php echo $obj_customer->first_name . " " . $obj_customer->last_name; ?></p>
-                                        </div>
+                                        <p class="optin__subheading"><b>Recomendado por:</b> <?php echo $obj_customer->first_name . " " . $obj_customer->last_name; ?></p>
+                                    </div>
                                     <div class="col-md-12" style="overflow: auto;">
                                         <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" cellspacing="0" cellpadding="0" border="0" >
                                             <thead>
@@ -122,17 +123,17 @@
                                             <tbody>
                                                 <tr>
                                                     <td>4953001956935 </td>
-                                                    <td>Interbank<img src="<?php echo site_url()."static/page_front/images/interbank_logo.png"?>" width="80"></td>
+                                                    <td>Interbank<img src="<?php echo site_url() . "static/page_front/images/interbank_logo.png" ?>" width="80"></td>
                                                     <td>Coorporativo Fk</td>
                                                 </tr>
                                                 <tr>
                                                     <td>923 870  996</td>
-                                                    <td>Yape <img src="<?php echo site_url()."static/page_front/images/yape.png"?>" width="60"> </td>
+                                                    <td>Yape <img src="<?php echo site_url() . "static/page_front/images/yape.png" ?>" width="60"> </td>
                                                     <td>Merilu Rojas / Administradora</td>
                                                 </tr>
                                                 <tr>
                                                     <td>19399069591091</td>
-                                                    <td>Crédito (BCP) <img src="<?php echo site_url()."static/page_front/images/bcp_logo.png"?>" width="80"></td>
+                                                    <td>Crédito (BCP) <img src="<?php echo site_url() . "static/page_front/images/bcp_logo.png" ?>" width="80"></td>
                                                     <td>Merilu Rojas / Administradora</td>
                                                 </tr>
                                             </tbody>
@@ -197,23 +198,21 @@
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="<?php echo site_url() . "static/page_front/js/script/home.js"; ?>"></script>
         <script>
-                                        function show() {
-                                            var radio_tarjeta = document.getElementById("tarjeta_radio").checked;
-                                            if(radio_tarjeta === true){
-                                                 document.getElementById("tarjeta").style.display = "block";
-                                                 document.getElementById("banco").style.display = "none";
-                                            }else{
-                                                document.getElementById("tarjeta").style.display = "none";
-                                                document.getElementById("banco").style.display = "block";
-                                                 
-                                            }
+                                        function show_banco() {
+                                            document.getElementById("banco").style.display = "block";
+                                            document.getElementById("tarjeta").style.display = "none";
+                                        }
+                                        function show_tarjeta() {
+                                            document.getElementById("tarjeta").style.display = "block";
+                                            document.getElementById("banco").style.display = "none";
                                         }
 
         </script>
 
         <script>
 //    pk_test_igI3EctoA17FeNUD
-            Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
+//pk_live_d4ZedlvJFWdrXoiI
+            Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
             var price = "";
             var price2 = "";
             var kit_id = "";

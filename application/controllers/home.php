@@ -92,7 +92,7 @@ class Home extends CI_Controller {
         $data['title'] = "Compras por referencia";
         $this->load->view('pagos_referencia', $data);
     }
-    
+
     //activacion pagos con tarjeta
     public function create_invoice_referencia() {
         try {
@@ -118,6 +118,10 @@ class Home extends CI_Controller {
                         $option .= "$option_name" . ":" . "$option_value" . "&nbsp;";
                     }
                 }
+                //set catalog_id
+                $catalog_id = $items['id'];
+                //update stock
+                $this->update_stock($catalog_id, $items['qty']);
                 //INSERT INVOICE
                 $data_invoice = array(
                     'customer_id' => $sponsor_id,
@@ -135,7 +139,6 @@ class Home extends CI_Controller {
                 );
                 $invoice_id = $this->obj_invoices->insert($data_invoice);
                 //INSERT INVOICE CATALOG    {
-                $catalog_id = $items['id'];
                 $data_invoice_catalog = array(
                     'invoice_id' => $invoice_id,
                     'catalog_id' => $catalog_id,
@@ -156,19 +159,19 @@ class Home extends CI_Controller {
                 $bono = $obj_catalog->bono_n1;
                 //insert commissión link de compra
                 $this->pay_referido_compra($sponsor_id, $invoice_id, $bono, $items['qty']);
+                //insert table Referencia
+                $data_referencia = array(
+                    'invoice_id' => $invoice_id,
+                    'name' => $name,
+                    'last_name' => $last_name,
+                    'phone' => $phone,
+                    'address' => $address,
+                    'date' => date("Y-m-d H:i:s"),
+                    'status' => 1
+                );
+                //GET DATA FROM BONUS
+                $result = $this->obj_referencia_compra->insert($data_referencia);
             }
-            //insert table Referencia
-            $data_referencia = array(
-                'invoice_id' => $invoice_id,
-                'name' => $name,
-                'last_name' => $last_name,
-                'phone' => $phone,
-                'address' => $address,
-                'date' => date("Y-m-d H:i:s"),
-                'status' => 1
-            );
-            //GET DATA FROM BONUS
-            $result = $this->obj_referencia_compra->insert($data_referencia);
             if (!empty($result)) {
                 $data['status'] = true;
             } else {
@@ -179,7 +182,25 @@ class Home extends CI_Controller {
             echo json_encode($e->getMessage());
         }
     }
-    
+
+    //funcion para verificar stock
+    public function update_stock($catalog_id, $qty) {
+        $params = array(
+            "select" => "stock",
+            "where" => "catalog_id = $catalog_id",
+        );
+        $obj_catalog = $this->obj_catalog->get_search_row($params);
+        $stock = $obj_catalog->stock;
+        //verify
+        $newStock = $stock - $qty;
+        //updated stock
+        $data_catalog = array(
+            'stock' => $newStock,
+        );
+        $this->obj_catalog->update($catalog_id, $data_catalog);
+        return true;
+    }
+
     //proceso de enviar voucer pago por referencia
     public function send_voucher() {
         date_default_timezone_set('America/Lima');

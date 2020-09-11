@@ -100,11 +100,14 @@
                                 <td>
                                     <div class="operation">
                                         <div class="btn-group">
-                                            <?php if ($value->active == 1) { ?>
-                                                    <button class="btn btn-secondary" type="button" onclick="active_enlace_compra('<?php echo $value->invoice_id;?>','<?php echo $value->referencia_compra_id;?>','<?php echo $value->sponsor;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
-                                            <?php } ?>
+                                                    <?php if ($value->active == 1) { ?>
+                                                            <button class="btn btn-secondary" type="button" onclick="active_enlace_compra('<?php echo $value->invoice_id;?>','<?php echo $value->referencia_compra_id;?>','<?php echo $value->sponsor;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
+                                                    <?php } ?>
                                                     <button class="btn btn-secondary" type="button" onclick="view_order_enlace_compra('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="shopping-cart"></i></span> Ver Pedido</button>
                                                     <button class="btn btn-secondary" type="button" onclick="delete_enlace_compra('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</button>
+                                                    <?php if ($value->voucher != 1) { ?>
+                                                        <button class="btn btn-secondary" type="button" onclick="view_order_enlace_compra('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="send"></i></span> Marcar como enviado</button>
+                                                    <?php }?>
                                         </div>
                                     </div>
                                 </td>
