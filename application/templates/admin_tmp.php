@@ -77,6 +77,7 @@
             $panel_syle = "";
             $activaciones_syle = "";
             $pagos_syle = "";
+            $inversiones_syle = "";
             $mantenimiento_syle = "";
             $report_syle = "";
             $recargas_syle = "";
@@ -94,6 +95,9 @@
                     break;
                 case "enlace-compra":
                     $enlace_compra = "active";
+                    break;
+                case "inversiones":
+                    $inversiones_syle = "active";
                     break;
                 case "activar_pagos":
                     $pagos_syle = "active";
@@ -193,7 +197,7 @@
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Portafolio de Inversión</label></li>
         <li class="nav-item">
-            <a href="<?php echo site_url()."dashboard/inversiones";?>" class="nav-link <?php echo $pagos_syle;?>">
+            <a href="<?php echo site_url()."dashboard/inversiones";?>" class="nav-link <?php echo $inversiones_syle;?>">
                 <span class="pcoded-micon">
                     <i data-feather="dollar-sign"></i>
                 </span>
