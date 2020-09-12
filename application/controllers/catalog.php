@@ -27,8 +27,8 @@ class Catalog extends CI_Controller {
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
     public function index($customer = null) {
-        
-        if(isset($customer)){
+
+        if (isset($customer)) {
             $data_customer_compras['customer_id'] = $customer;
             $_SESSION['compras_customer'] = $data_customer_compras;
         }
@@ -133,7 +133,7 @@ class Catalog extends CI_Controller {
         } else {
             $order = "catalog.catalog_id DESC";
         }
-        
+
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
@@ -226,7 +226,7 @@ class Catalog extends CI_Controller {
                         category.slug as category_slug,
                         catalog.date",
             "join" => array('category, category.category_id = catalog.category_id',
-                            'sub_category, sub_category.sub_category_id = catalog.sub_category_id'),
+                'sub_category, sub_category.sub_category_id = catalog.sub_category_id'),
             "where" => "catalog.sub_category_id = $sub_category_id and catalog.active = 1",
             "order" => "catalog.catalog_id DESC");
         /// PAGINADO
@@ -277,7 +277,7 @@ class Catalog extends CI_Controller {
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
-        
+
         $url = explode("/", uri_string());
         $catalog_id = $url[2];
         //get catalog
@@ -330,23 +330,28 @@ class Catalog extends CI_Controller {
             $price = $this->input->post('price');
             $catalog_id = $this->input->post('catalog_id');
             $name = $this->input->post('name');
+            $quantity = $this->input->post('quantity');
+            $talla = $this->input->post('talla');
+            $color = $this->input->post('color');
+
             //ADD CART
-                $data = array(
-                    'id' => $catalog_id,
-                    'qty' => 1,
-                    'price' => $price,
-                    'name' => "$name",
-                );
-                $cart_id = $this->cart->insert($data);
-                if ($cart_id != "") {
-                    $data['status'] = true;
-                } else {
-                    $data['status'] = false;
-                }
+            $data_param = array(
+                'id' => $catalog_id,
+                'qty' => $quantity,
+                'price' => $price,
+                'name' => "$name",
+                'options' => array('Talla' => "$talla", 'Color' => "$color")
+            );
+            $cart_id = $this->cart->insert($data_param);
+            if ($cart_id != "") {
+                $data['status'] = true;
+            } else {
+                $data['status'] = false;
+            }
             echo json_encode($data);
         }
     }
-    
+
     public function add_cart_referencia() {
         if ($this->input->is_ajax_request()) {
             //GET CUSTOMER_ID
@@ -358,20 +363,20 @@ class Catalog extends CI_Controller {
             $talla = $this->input->post('talla');
             $color = $this->input->post('color');
             //ADD CART
-                $data = array(
-                    'id' => $catalog_id,
-                    'qty' => $quantity,
-                    'price' => $price,
-                    'img' => $img,
-                    'name' => "$name",
-                    'options' => array('Talla' => "$talla", 'Color' => "$color")
-                );
-                $cart_id = $this->cart->insert($data);
-                if ($cart_id != "") {
-                    $data['status'] = true;
-                } else {
-                    $data['status'] = false;
-                }
+            $data = array(
+                'id' => $catalog_id,
+                'qty' => $quantity,
+                'price' => $price,
+                'img' => $img,
+                'name' => "$name",
+                'options' => array('Talla' => "$talla", 'Color' => "$color")
+            );
+            $cart_id = $this->cart->insert($data);
+            if ($cart_id != "") {
+                $data['status'] = true;
+            } else {
+                $data['status'] = false;
+            }
             echo json_encode($data);
         }
     }

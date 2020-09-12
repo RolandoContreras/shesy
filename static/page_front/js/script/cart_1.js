@@ -14,7 +14,7 @@ function add_cart(catalog_id, price, name) {
         document.getElementById("buy").innerHTML = "Procesando";
         $.ajax({
             type: "post",
-            url: site + "mi_catalogo/order/add_cart",
+            url: site + "catalogo/order/add_cart",
             dataType: "json",
             data: {
                 quantity: quantity,
@@ -25,7 +25,7 @@ function add_cart(catalog_id, price, name) {
                 color: color
             },
             success: function (data) {
-                if (data.status == "true") {
+                if (data.status == true) {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -110,7 +110,7 @@ function add_cart_granel(catalog_id, price, name) {
     } else {
         $.ajax({
             type: "post",
-            url: site + "mi_catalogo/order/add_cart",
+            url: site + "catalogo/order/add_cart",
             dataType: "json",
             data: {quantity: quantity,
                 catalog_id: catalog_id,
