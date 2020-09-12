@@ -43,7 +43,6 @@ class B_finance extends CI_Controller {
                 "limit" => "100");
            //GET DATA FROM CUSTOMER
         $obj_commissions = $this->obj_commissions->search($params);
-
         //GET PRICE CURRENCY
         $this->tmp_backoffice->set("gananciaDisponible",$gananciaDisponible);
         $this->tmp_backoffice->set("obj_commissions",$obj_commissions);

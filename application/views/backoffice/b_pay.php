@@ -67,16 +67,21 @@
                                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                                             <strong>Reglas de Retiro </strong>
                                             <hr/>
-                                            Las solicitudes de retiro se realizan solos los fines de mes.<br>
+                                            Las solicitudes de retiro se realizan todos los fines de semana.<br>
                                             El importe mínimo de retiro es de $3.
                                             Los pagos se procesan en las primeras 24 horas hábiles de realizar la solicitud<br>
                                             <strong>Debe estar activo en el mes para poder solicitar el cobro, de lo contrario no aparecerá importe disponible.</strong>
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                                         </div>
                                         <div class="col-lg-12" style="margin-bottom: 30px;" align="center">
-                                            <a id="btnCreate"> 
-                                                <button id="show_pay" class="btn btn-success animated infinite pulse" style="font-size:11px; font-weight: 900; text-transform: uppercase;">Clic aquí para realizar su retiro!</button>          
-                                            </a>
+                                            <?php
+                                            $date = date("Y-m-d");
+                                            if (date('l', strtotime($date)) == 'Saturday' || date('l', strtotime($date)) == 'Sunday') {
+                                                ?>
+                                                <a id="btnCreate"> 
+                                                    <button id="show_pay" class="btn btn-success animated infinite pulse" style="font-size:11px; font-weight: 900; text-transform: uppercase;">Clic aquí para realizar su retiro!</button>          
+                                                </a>
+                                            <?php } ?>
                                             <div id="show_pay_div" class="col-xl-6 col-lg-6 col-md-6" style="padding-top: 30px;border: 1px solid #ccc;border-radius: 15px; display: none; ">
                                                 <div class="element-wrapper">
                                                     <div class="element-box">
@@ -95,8 +100,7 @@
                                                                         <div class="col-lg-12" align="left">
                                                                             <label class="control-label text-left"> Importe: </label> 
                                                                         </div> 
-                                                                        <input type="text" name="amount" id="amount" onkeyup="this.value = Numtext(this.value)" class="form-control">
-                                                                        <label class="error jquery-validation-error small form-text invalid-feedback">El importe es requerido.</label>
+                                                                        <input type="text" name="amount" onkeyup="this.value = Numtext(this.value)" id="amount" class="form-control">
                                                                         <input type="hidden" name="total_disponible" id="total_disponible" value="<?php echo $total_disponible; ?>">
                                                                     </div>
                                                                     <?php
@@ -135,24 +139,8 @@
                                                                     <div class="form-group">
                                                                         <div class="col-lg-12" align="right">
                                                                             <button id="pay" type="submit" class="btn btn-success" <?php echo $disable; ?>><i class="fa fa-dollar"></i> Solicitar Retiro</button>
-                                                                            <button class="btn btn-success mb-2" type="button" style="display: none;" id="spinner_pay">
-                                                                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                                                                Procesando ...
-                                                                            </button>
                                                                         </div>
                                                                     </div>
-
-                                                                    <div class="form-group has-feedback" style="display: none;" id="pay_alert">
-                                                                        <div class="alert alert-danger validation-errors">
-                                                                            <p class="user_login_id" style="text-align: center;">El importe es invalido.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group has-feedback" style="display: none;" id="pay_success">
-                                                                        <div class="alert alert-success validation-errors">
-                                                                            <p class="user_login_id" style="text-align: center;">Solicitud de retiro con éxito.</p>
-                                                                        </div>
-                                                                    </div>
-
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -176,7 +164,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php foreach ($obj_pay as $value) { ?>
+<?php foreach ($obj_pay as $value) { ?>
                                                             <tr role="row" class="odd">
                                                                 <td align="center">
                                                                     <span class="lighter"><?php echo $value->pay_id; ?></span>
@@ -186,7 +174,7 @@
                                                                     <span class="smaller lighter "><i class="fa fa-clock-o"></i> <?php echo formato_fecha_minutos($value->date); ?></span>
                                                                 </td>
                                                                 <td align="center">
-                                                                    <?php echo $value->bank_id == 1 ? "BCP (crédito)" : "Interbank"; ?>
+    <?php echo $value->bank_id == 1 ? "BCP (crédito)" : "Interbank"; ?>
                                                                 </td>
                                                                 <td align="center">
                                                                     <span class="badge badge-success-inverted">&dollar;<?php echo $value->amount; ?></span>
@@ -198,10 +186,10 @@
                                                                         <a class="badge badge-success-inverted text_status">Pagado</a>
                                                                     <?php } else { ?>
                                                                         <a class="badge badge-danger text_status">Cancelado</a>
-                                                                    <?php } ?>
+    <?php } ?>
                                                                 </td>
                                                             </tr>
-                                                        <?php } ?>
+<?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -218,11 +206,11 @@
 </div>
 <script src='<?php echo site_url() . 'static/backoffice/js/script/pay.js'; ?>'></script>
 <script>
-                                                                                $(document).ready(function () {
-                                                                                    $("#show_pay").click(function () {
-                                                                                        $("#show_pay_div").show(1000);
-                                                                                    });
+                                                                            $(document).ready(function () {
+                                                                                $("#show_pay").click(function () {
+                                                                                    $("#show_pay_div").show(1000);
                                                                                 });
+                                                                            });
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -251,7 +239,7 @@
                     <a id="btnCreate"> 
                         <button id="show_pay" class="btn btn-primary btn-round animated infinite pulse" style="font-size:11px; font-weight: 900; text-transform: uppercase;">Clic aquí para realizar su retiro!</button>          
                     </a>
-                <?php } ?>
+<?php } ?>
                 <div id="show_pay_div" class="col-xl-6 col-lg-6 col-md-6" style="padding-top: 30px; display: none; ">
                     <div class="element-wrapper">
                         <div class="element-box">
@@ -279,19 +267,8 @@
                                             <input type="hidden" name="total_disponible" id="total_disponible" value="<?php echo $total_disponible; ?>">
 
                                         </div>
-                                        <div class="form-group has-feedback"  id="wallet_error">
-                                            <div class="col-lg-12" align="left"> 
-                                                <label class="control-label"> Tax:   </label> 
-                                            </div>
-                                            <input type="text" name="tax" id="tax" result disabled="" class="form-control">
-                                        </div>
-                                        <div class="form-group has-feedback"  id="wallet_error">
-                                            <div class="col-lg-12" align="left"> 
-                                                <label class="control-label"> Total a Recibir:   </label> 
-                                            </div>
-                                            <input type="text" name="result" id="result" disabled="" class="form-control">
-                                        </div>
-                                        <?php if ($bank != "") { ?>
+
+<?php if ($bank != "") { ?>
                                             <div class="form-group has-feedback"  id="wallet_error">
                                                 <div class="col-lg-12" align="left"> 
                                                     <label class="control-label"> Nombre del Banco:</label> 
