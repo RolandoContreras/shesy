@@ -287,6 +287,7 @@ class Catalog extends CI_Controller {
                                     catalog.name,
                                     catalog.stock,
                                     catalog.slug,
+                                    catalog.granel,
                                     catalog.price,
                                     catalog.description,
                                     category.name as category_name,
@@ -353,13 +354,17 @@ class Catalog extends CI_Controller {
             $catalog_id = $this->input->post('catalog_id');
             $name = $this->input->post('name');
             $img = $this->input->post('img');
+            $quantity = $this->input->post('quantity');
+            $talla = $this->input->post('talla');
+            $color = $this->input->post('color');
             //ADD CART
                 $data = array(
                     'id' => $catalog_id,
-                    'qty' => 1,
+                    'qty' => $quantity,
                     'price' => $price,
                     'img' => $img,
                     'name' => "$name",
+                    'options' => array('Talla' => "$talla", 'Color' => "$color")
                 );
                 $cart_id = $this->cart->insert($data);
                 if ($cart_id != "") {

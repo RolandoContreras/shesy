@@ -20,15 +20,26 @@
                                                 <img class="img-responsive checkout-content-img" src="<?php echo site_url() . "static/catalog/" . $items['img']; ?>" alt="Snhsaytjrbepnkhdyyhi correos 1">
                                                 <div class="checkout-content-body">
                                                     <div class="space-20"></div>
-                                                    
                                                     <h3>
                                                         <span style="color: #000000;">
                                                             <i class="fa fa-check"></i>&nbsp;&nbsp;<?php echo $items['name']; ?><br><br>
                                                         </span>
                                                     </h3>
+                                                    
+                                                        <?php
+                                                        foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value):
+                                                            if ($option_value != null) { ?>
+                                                                <h5>
+                                                                    <span style="color: #000000;">
+                                                                        <strong><?php echo $option_name; ?>:</strong> <span style="text-transform: uppercase"><?php echo $option_value; ?></span><br />
+                                                                    </span>
+                                                                </h5>
+                                                            <?php } ?>
+                                                        <?php endforeach; ?>
                                                 </div>
                                             </div>
                                         <?php endforeach; ?>
+                                        <div class="space-20"></div>
                                         <div>
                                             <input onclick="show_tarjeta();" type="radio" name="pay" id="tarjeta_radio" value="tarjeta" checked>
                                             <label>Pago con tarjeta</label><br/>

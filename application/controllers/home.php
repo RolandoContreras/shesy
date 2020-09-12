@@ -126,9 +126,9 @@ class Home extends CI_Controller {
                 $data_invoice = array(
                     'customer_id' => $sponsor_id,
                     'kit_id' => 1,
-                    'sub_total' => $items['price'],
+                    'sub_total' => $items['subtotal'],
                     'igv' => 0,
-                    'total' => $items['price'],
+                    'total' => $items['subtotal'],
                     'type' => 3,
                     'recompra' => 0,
                     'date' => date("Y-m-d H:i:s"),
@@ -238,9 +238,9 @@ class Home extends CI_Controller {
                     $data_invoice = array(
                         'customer_id' => $sponsor_id,
                         'kit_id' => 1,
-                        'sub_total' => $items['price'],
+                        'sub_total' => $items['subtotal'],
                         'igv' => 0,
-                        'total' => $items['price'],
+                        'total' => $items['subtotal'],
                         'type' => 3,
                         'recompra' => 0,
                         'date' => date("Y-m-d H:i:s"),

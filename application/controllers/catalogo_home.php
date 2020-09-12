@@ -577,9 +577,9 @@ class Catalogo_home extends CI_Controller {
                     //INSERT INVOICE
                     $data_invoice = array(
                         'customer_id' => $customer_id,
-                        'sub_total' => $price,
+                        'sub_total' => $items['subtotal'],
                         'igv' => 0,
-                        'total' => $price,
+                        'total' => $items['subtotal'],
                         'type' => 2,
                         'delivery' => 0,
                         'date' => date("Y-m-d H:i:s"),
@@ -771,9 +771,9 @@ class Catalogo_home extends CI_Controller {
                     //INSERT INVOICE
                     $data_invoice = array(
                         'customer_id' => $customer_id,
-                        'sub_total' => $total_precio,
+                        'sub_total' => $items['subtotal'],
                         'igv' => 0,
-                        'total' => $total_precio,
+                        'total' => $items['subtotal'],
                         'type' => 2,
                         'delivery' => 1,
                         'date' => date("Y-m-d H:i:s"),
