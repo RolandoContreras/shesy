@@ -795,39 +795,53 @@ class Catalogo_home extends CI_Controller {
                         'date' => date("Y-m-d H:i:s")
                     );
                     $this->obj_invoice_catalog->insert($data_invoice_catalog);
-                    //insert table comission negative verify type of descount
-
                     //descount compra
-                    $data_param = array(
-                        'invoice_id' => $invoice_id,
-                        'customer_id' => $customer_id,
-                        'bonus_id' => 3,
-                        'amount' => -$total_compra,
-                        'compras' => 1,
-                        'active' => 0,
-                        'status_value' => 1,
-                        'date' => date("Y-m-d H:i:s"),
-                        'created_at' => date("Y-m-d H:i:s"),
-                        'created_by' => $customer_id,
-                    );
-                    $result = $this->obj_commissions->insert($data_param);
-                    //verify comisión fron compras
-                    $result_compras = $total_compra - $total_precio;
-                    if ($result_compras < 0) {
-                        //insert table comisión descount fron comission efectivo disponible // el numero ya es negativo
-                        $data_comission_compra = array(
+                    if ($total_precio < $total_compra) {
+                        $data_param = array(
                             'invoice_id' => $invoice_id,
                             'customer_id' => $customer_id,
                             'bonus_id' => 3,
-                            'amount' => $result_compras,
-                            'compras' => 0,
-                            'active' =>1,
+                            'amount' => -$total_precio,
+                            'compras' => 1,
+                            'active' => 0,
                             'status_value' => 1,
                             'date' => date("Y-m-d H:i:s"),
                             'created_at' => date("Y-m-d H:i:s"),
                             'created_by' => $customer_id,
                         );
-                        $this->obj_commissions->insert($data_comission_compra);
+                        $result = $this->obj_commissions->insert($data_param);
+                    } else {
+                        $data_param = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $customer_id,
+                            'bonus_id' => 3,
+                            'amount' => -$total_compra,
+                            'compras' => 1,
+                            'active' => 0,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $result = $this->obj_commissions->insert($data_param);
+                        $result_compras = $total_compra - $total_precio;
+                        //insert diferent 
+                        if ($result_compras < 0) {
+                            //insert table comisión descount fron comission efectivo disponible // el numero ya es negativo
+                            $data_comission_compra = array(
+                                'invoice_id' => $invoice_id,
+                                'customer_id' => $customer_id,
+                                'bonus_id' => 3,
+                                'amount' => $result_compras,
+                                'compras' => 0,
+                                'active' => 1,
+                                'status_value' => 1,
+                                'date' => date("Y-m-d H:i:s"),
+                                'created_at' => date("Y-m-d H:i:s"),
+                                'created_by' => $customer_id,
+                            );
+                            $this->obj_commissions->insert($data_comission_compra);
+                        }
                     }
                     //GET DATA CUSTOMER UNILEVEL
                     $params = array(
@@ -843,10 +857,56 @@ class Catalogo_home extends CI_Controller {
                     } else {
                         $ident = $obj_unilevel->ident;
                     }
-                    if (!empty($ident)) {
-                        $this->pay_unilevel_compras($ident, $invoice_id, $catalog_id, $customer_id, $qty, $active_month);
+                    //insert primer registro
+                    //select data catalog
+                    $params = array(
+                        "select" => "bono_n1,
+                                    bono_n2,
+                                    bono_n3,
+                                    bono_n4,
+                                    bono_n5",
+                        "where" => "catalog_id = $catalog_id"
+                    );
+                    //GET DATA FROM BONUS
+                    $obj_catalog = $this->obj_catalog->get_search_row($params);
+                    //insert on customer actually
+                    $amount = $obj_catalog->bono_n1 * $qty;
+                    $noventa_percent = $amount * 0.9;
+                    $diez_percent = $amount * 0.1;
+                    //insert commission 90%
+                    if ($active_month == 1) {
+                        $data_param = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $customer_id,
+                            'bonus_id' => 3,
+                            'amount' => $noventa_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $this->obj_commissions->insert($data_param);
+                        //insert commission 10%
+                        $data_param = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $customer_id,
+                            'bonus_id' => 3,
+                            'amount' => $diez_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'compras' => 1,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $this->obj_commissions->insert($data_param);
                     }
-
+                    if (!empty($ident)) {
+                        $this->pay_unilevel_compras($ident, $invoice_id, $obj_catalog, $customer_id, $qty, $active_month);
+                    }
                     //DESTROY CART
                     if (!empty($result)) {
                         $this->cart->destroy();
@@ -882,8 +942,8 @@ class Catalogo_home extends CI_Controller {
             } else {
                 //updated stock
                 $data_catalog = array(
-                        'stock' => $newStock,
-                    );
+                    'stock' => $newStock,
+                );
                 $this->obj_catalog->update($catalog_id, $data_catalog);
                 return true;
             }
@@ -946,7 +1006,6 @@ class Catalogo_home extends CI_Controller {
             );
             $invoce_id = $this->obj_invoices->insert($data_invoice);
             //INSERT INVOICE CATALOG
-
             $option = "";
             foreach ($this->cart->contents() as $items) {
                 if ($this->cart->has_options($items['rowid']) == TRUE) {
@@ -954,7 +1013,6 @@ class Catalogo_home extends CI_Controller {
                         $option .= "$option_name" . ":" . "$option_value" . "&nbsp;";
                     }
                 }
-
                 $data_invoice_catalog = array(
                     'invoice_id' => $invoce_id,
                     'catalog_id' => $items['id'],
@@ -981,56 +1039,10 @@ class Catalogo_home extends CI_Controller {
         }
     }
 
-    public function pay_unilevel_compras($ident, $invoice_id, $catalog_id, $customer_id, $quantity, $active_month) {
+    public function pay_unilevel_compras($ident, $invoice_id, $obj_catalog, $customer_id, $quantity) {
 
         $new_ident = explode(",", $ident);
         rsort($new_ident);
-        //select data catalog
-        $params = array(
-            "select" => "bono_n1,
-                        bono_n2,
-                        bono_n3,
-                        bono_n4,
-                        bono_n5",
-            "where" => "catalog_id = $catalog_id"
-        );
-        //GET DATA FROM BONUS
-        $obj_catalog = $this->obj_catalog->get_search_row($params);
-        //insert on customer actually
-        $amount = $obj_catalog->bono_n1 * $quantity;
-        $noventa_percent = $amount * 0.9;
-        $diez_percent = $amount * 0.1;
-        //insert commission 90%
-        if ($active_month == 1) {
-            $data = array(
-                'invoice_id' => $invoice_id,
-                'customer_id' => $customer_id,
-                'bonus_id' => 3,
-                'amount' => $noventa_percent,
-                'active' => 1,
-                'pago' => 0,
-                'status_value' => 1,
-                'date' => date("Y-m-d H:i:s"),
-                'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $customer_id,
-            );
-            $this->obj_commissions->insert($data);
-            //insert commission 10%
-            $data = array(
-                'invoice_id' => $invoice_id,
-                'customer_id' => $customer_id,
-                'bonus_id' => 3,
-                'amount' => $diez_percent,
-                'active' => 1,
-                'pago' => 0,
-                'compras' => 1,
-                'status_value' => 1,
-                'date' => date("Y-m-d H:i:s"),
-                'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $customer_id,
-            );
-            $this->obj_commissions->insert($data);
-        }
         //BOUCLE ULTI 5 LEVEL
         for ($x = 0; $x <= 3; $x++) {
             if (isset($new_ident[$x])) {
