@@ -952,50 +952,43 @@ class Catalogo_home extends CI_Controller {
         }
     }
 
+    public function delete_invoice($invoice_id) {
+        //VERIFY IF ISSET CUSTOMER_ID
+        if ($invoice_id != "") {
+            $this->obj_invoices->delete($invoice_id);
+            return true;
+        }
+    }
+
+    //pagar con tarjeta culqi
     public function process_pay_invoice() {
         try {
             //GET SESION ACTUALY
-            $this->get_session();
+            date_default_timezone_set('America/Lima');
             $customer_id = $_SESSION['customer']['customer_id'];
+            $token = $this->input->post('token');
+            $price = $this->input->post('price');
+            $price2 = $this->input->post('price2');
+            $email = $this->input->post('email');
             //SELECT DATA CUSTOMER
             $params_customer = array(
                 "select" => "first_name,
                                     last_name,
                                     address,
                                     phone,
-                                    active",
+                                    active_month",
                 "where" => "customer_id = $customer_id",
             );
             //GET DATA COMMENTS
             $obj_customer = $this->obj_customer->get_search_row($params_customer);
-            $active = $obj_customer->active;
-
-            //GET DATA CUSTOMER UNILEVEL
-            $params = array(
-                "select" => "parend_id,
-                                    ident",
-                "where" => "customer_id = $customer_id"
-            );
-            //GET DATA FROM BONUS
-            $obj_unilevel = $this->obj_unilevel->get_search_row($params);
-            $ident = $obj_unilevel->ident;
-
-            $price_cart = $this->cart->format_number($this->cart->total());
-            $price = $this->input->post('price');
-            $token = $this->input->post('token');
-            $email = $this->input->post('email');
-            //make charged
             $charge = $this->culqi->charge($token, $price, $email, $obj_customer->first_name, $obj_customer->last_name, $obj_customer->address, $obj_customer->phone);
-
-            $price_cart = explode(".", $price_cart);
-            $price = $price_cart[0];
-            $price = quitar_coma_number($price);
+            //GET DATA CUSTOMER UNILEVEL
             //INSERT INVOICE
             $data_invoice = array(
                 'customer_id' => $customer_id,
-                'sub_total' => $price,
+                'sub_total' => $price2,
                 'igv' => 0,
-                'total' => $price,
+                'total' => $price2,
                 'type' => 2,
                 'delivery' => 1,
                 'date' => date("Y-m-d H:i:s"),
@@ -1004,7 +997,7 @@ class Catalogo_home extends CI_Controller {
                 'created_at' => date("Y-m-d H:i:s"),
                 'created_by' => $customer_id,
             );
-            $invoce_id = $this->obj_invoices->insert($data_invoice);
+            $invoice_id = $this->obj_invoices->insert($data_invoice);
             //INSERT INVOICE CATALOG
             $option = "";
             foreach ($this->cart->contents() as $items) {
@@ -1013,27 +1006,96 @@ class Catalogo_home extends CI_Controller {
                         $option .= "$option_name" . ":" . "$option_value" . "&nbsp;";
                     }
                 }
-                $data_invoice_catalog = array(
-                    'invoice_id' => $invoce_id,
-                    'catalog_id' => $items['id'],
-                    'price' => $items['price'],
-                    'quantity' => $items['qty'],
-                    'option' => $option,
-                    'quantity' => $items['qty'],
-                    'sub_total' => $items['subtotal'],
-                    'date' => date("Y-m-d H:i:s")
-                );
-                $this->obj_invoice_catalog->insert($data_invoice_catalog);
-                //insert comission by catalog if customer is active
-                if ($active == 1) {
-                    //insert comission and points
-                    $this->pay_unilevel($ident, $invoce_id, $items['id'], $customer_id, $items['qty']);
+                //verify sotck
+                $catalog_id = $items['id'];
+                $qty = $items['qty'];
+                $result = $this->verify_stock($catalog_id, $qty);
+                if ($result === true) {
+                    $data_invoice_catalog = array(
+                        'invoice_id' => $invoice_id,
+                        'catalog_id' => $items['id'],
+                        'price' => $items['price'],
+                        'quantity' => $items['qty'],
+                        'option' => $option,
+                        'quantity' => $items['qty'],
+                        'sub_total' => $items['subtotal'],
+                        'date' => date("Y-m-d H:i:s")
+                    );
+                    $this->obj_invoice_catalog->insert($data_invoice_catalog);
+                    //get comission by catalog
+                    $params = array(
+                        "select" => "bono_n1,bono_n2,bono_n3,bono_n4,bono_n5",
+                        "where" => "catalog_id = $catalog_id"
+                    );
+                    //GET DATA FROM BONUS
+                    $obj_catalog = $this->obj_catalog->get_search_row($params);
+                    //verify si active month
+                    if ($obj_customer->active_month == 1) {
+                        $bono = $obj_catalog->bono_n1;
+                        //insert comission to own customer
+                        //insert on table comissión 90%
+                        $amount = $bono * $items['qty'];
+                        $noventa_percent = $amount * 0.9;
+                        $diez_percent = $amount * 0.1;
+                        //set param
+                        $data_param_comission = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $customer_id,
+                            'bonus_id' => 3,
+                            'amount' => $noventa_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $this->obj_commissions->insert($data_param_comission);
+                        //insert commission 10%
+                        $data = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $customer_id,
+                            'bonus_id' => 3,
+                            'amount' => $diez_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'compras' => 1,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $this->obj_commissions->insert($data);
+                    }
+                    //get data to unilevel
+                    if ($customer_id == 1) {
+                        $data['status'] = true;
+                    } else {
+                        $params = array(
+                            "select" => "parend_id,
+                                    ident",
+                            "where" => "customer_id = $customer_id"
+                        );
+                        //GET DATA FROM BONUS
+                        $obj_unilevel = $this->obj_unilevel->get_search_row($params);
+                        $ident = $obj_unilevel->ident;
+                        //verify
+                        if (!empty($ident)) {
+                            $this->pay_unilevel($ident, $invoice_id, $obj_catalog, $customer_id, $items['qty']);
+                        }
+                        $data['status'] = true;
+                    }
+                } else {
+                    //delete invoices made
+                    $this->delete_invoice($invoice_id);
+                    //no stock
+                    $data['status'] = "no_stock";
                 }
             }
             //DESTROY CART
             $this->cart->destroy();
             // Respuesta
-            echo json_encode($charge);
+            echo json_encode($data);
         } catch (Exception $e) {
             echo json_encode($e->getMessage());
         }
@@ -1107,77 +1169,68 @@ class Catalogo_home extends CI_Controller {
         }
     }
 
-    public function pay_unilevel($ident, $invoice_id, $catalog_id, $customer_id, $quantity) {
+    public function pay_unilevel($ident, $invoice_id, $obj_catalog, $customer_id, $quantity) {
 
         $new_ident = explode(",", $ident);
         rsort($new_ident);
-        //select data catalog
-        $params = array(
-            "select" => "bono_n1,
-                                    bono_n2,
-                                    bono_n3,
-                                    bono_n4,
-                                    bono_n5",
-            "where" => "catalog_id = $catalog_id"
-        );
-        //GET DATA FROM BONUS
-        $obj_catalog = $this->obj_catalog->get_search_row($params);
-
         //BOUCLE ULTI 5 LEVEL
-        for ($x = 0; $x <= 4; $x++) {
+        for ($x = 0; $x <= 3; $x++) {
             if (isset($new_ident[$x])) {
                 if ($new_ident[$x] != "") {
                     //get customer active
                     $params = array(
-                        "select" => "active",
+                        "select" => "active_month",
                         "where" => "customer_id = $new_ident[$x]"
                     );
                     //GET DATA FROM BONUS
                     $obj_customer = $this->obj_customer->get_search_row($params);
-
-                    if ($obj_customer->active == 1) {
+                    if ($obj_customer->active_month == 1) {
                         //INSERT COMMISSION TABLE
                         switch ($x) {
                             case 0:
-                                $amount = $obj_catalog->bono_n1 * $quantity;
-                                break;
-                            case 1:
                                 $amount = $obj_catalog->bono_n2 * $quantity;
                                 break;
-                            case 2:
+                            case 1:
                                 $amount = $obj_catalog->bono_n3 * $quantity;
                                 break;
-                            case 3:
+                            case 2:
                                 $amount = $obj_catalog->bono_n4 * $quantity;
                                 break;
-                            case 4:
+                            case 3:
                                 $amount = $obj_catalog->bono_n5 * $quantity;
                                 break;
                         }
+                        $noventa_percent = $amount * 0.9;
+                        $diez_percent = $amount * 0.1;
+                        //insert on table commision
                         $data = array(
                             'invoice_id' => $invoice_id,
                             'customer_id' => $new_ident[$x],
-                            'bonus_id' => 1,
-                            'amount' => $amount,
+                            'bonus_id' => 3,
+                            'amount' => $noventa_percent,
                             'active' => 1,
+                            'pago' => 0,
                             'status_value' => 1,
                             'date' => date("Y-m-d H:i:s"),
                             'created_at' => date("Y-m-d H:i:s"),
                             'created_by' => $customer_id,
                         );
                         $this->obj_commissions->insert($data);
-
-                        //INSERT POINTS TABLE
-                        $data_point = array(
+                        //insert commission 10%
+                        $data = array(
+                            'invoice_id' => $invoice_id,
                             'customer_id' => $new_ident[$x],
-                            'point' => $amount,
-                            'date' => date("Y-m-d H:i:s"),
+                            'bonus_id' => 3,
+                            'amount' => $diez_percent,
                             'active' => 1,
+                            'pago' => 0,
+                            'compras' => 1,
                             'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
                             'created_at' => date("Y-m-d H:i:s"),
-                            'created_by' => $customer_id
+                            'created_by' => $customer_id,
                         );
-                        $this->obj_points->insert($data_point);
+                        $this->obj_commissions->insert($data);
                     }
                 }
             }

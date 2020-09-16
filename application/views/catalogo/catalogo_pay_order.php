@@ -72,22 +72,22 @@
                                                                         </th>
                                                                     </tr>
                                                                 <?php endforeach; ?>
-                                                                <input type="hidden" id="ganancia_disponible" value="<?php echo $total_compra;?>"/>
-                                                                <input type="hidden" id="total_disponible" value="<?php echo $obj_total_compra->total_disponible!=0?$obj_total_compra->total_disponible:0;?>"/>
-                                                                <input type="hidden" id="total_compra" value="<?php echo $obj_total_compra->total_compra!=0?$obj_total_compra->total_compra:0;?>"/>
-                                                                <input type="hidden" id="total" value="<?php echo $this->cart->format_number($this->cart->total()); ?>"/>
-                                                                <input type="hidden" id="active_month" value="<?php echo $obj_profile->active_month;?>"/>
-                                                                <tr>
-                                                                    <th></th>
-                                                                    <th></th>
-                                                                    <th class=""><b>TOTAL</b></th>
-                                                                    <th class="text-c-purple">
-                                                                        <span class="badge badge-pill badge-dark" style="font-size: 100%;">
-                                                                            &dollar; <?php echo $this->cart->format_number($this->cart->total()); ?>
-                                                                        </span>
+                                                            <input type="hidden" id="ganancia_disponible" value="<?php echo $total_compra; ?>"/>
+                                                            <input type="hidden" id="total_disponible" value="<?php echo $obj_total_compra->total_disponible != 0 ? $obj_total_compra->total_disponible : 0; ?>"/>
+                                                            <input type="hidden" id="total_compra" value="<?php echo $obj_total_compra->total_compra != 0 ? $obj_total_compra->total_compra : 0; ?>"/>
+                                                            <input type="hidden" id="total" value="<?php echo $this->cart->format_number($this->cart->total()); ?>"/>
+                                                            <input type="hidden" id="active_month" value="<?php echo $obj_profile->active_month; ?>"/>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th class=""><b>TOTAL</b></th>
+                                                                <th class="text-c-purple">
+                                                                    <span class="badge badge-pill badge-dark" style="font-size: 100%;">
+                                                                        &dollar; <?php echo $this->cart->format_number($this->cart->total()); ?>
+                                                                    </span>
 
-                                                                    </th>
-                                                            </tbody>
+                                                                </th>
+                                                                </tbody>
                                                         </table>
                                                         <br/>
                                                         <div class="form-group has-feedback" style="display: none;" id="quantity_error">
@@ -103,20 +103,20 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                        <div class="col-sm-12">
-                                                            <div class="card">
-                                                                <div class="card-header">
-                                                                    <h5>Pago</h5>
-                                                                </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h5>Pago</h5>
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-12">
-                                                            <div class="card-block text-center">
-                                                                <button type="button" class="btn btn-primary" id="buyButton" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>">Pagar Tarjeta &nbsp;&nbsp;<i data-feather="credit-card"></i></button>
-                                                                <button type="button" onclick="contra_entrega();" class="btn btn-primary" id="buyButton">Contra Entrega &nbsp;&nbsp;<i data-feather="user-check"></i></button>
-                                                                <button type="button" onclick="ganancia_disponible();" id="puntos_button" class="btn btn-primary" id="buyButton">Ganancia Disponible &nbsp;&nbsp;<i data-feather="dollar-sign"></i></button>
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="card-block text-center">
+                                                            <button type="button" class="btn btn-primary" id="buyButton" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>" data-price2="<?php echo $this->cart->format_number($this->cart->total()); ?>">Pagar con Tarjeta &nbsp;&nbsp;<i data-feather="credit-card"></i></button>
+                                                            <button type="button" onclick="contra_entrega();" class="btn btn-primary" id="buyButton">Contra Entrega &nbsp;&nbsp;<i data-feather="user-check"></i></button>
+                                                            <button type="button" onclick="ganancia_disponible();" id="puntos_button" class="btn btn-primary" id="buyButton">Ganancia Disponible &nbsp;&nbsp;<i data-feather="dollar-sign"></i></button>
                                                         </div>
+                                                    </div>
                                                     <div class="col-sm-8">
                                                         <div class="card">
                                                             <h5>Transferencias y depósitos</h5>
@@ -133,21 +133,21 @@
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td><img src="<?php echo site_url()."static/page_front/images/interbank_logo.png"?>" width="80"/></td>
+                                                                    <td><img src="<?php echo site_url() . "static/page_front/images/interbank_logo.png" ?>" width="80"/></td>
                                                                     <td>4953001956935 </td>
                                                                     <td>Banco Interbank</td>
                                                                     <td>Coorporativo Fk</td>
                                                                     <td>Pago vía transferencia bancaria </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><img src="<?php echo site_url()."static/page_front/images/yape.png"?>" width="60"/></td>
+                                                                    <td><img src="<?php echo site_url() . "static/page_front/images/yape.png" ?>" width="60"/></td>
                                                                     <td>923 870  996</td>
                                                                     <td>Yape</td>
                                                                     <td>Merilu Rojas / Administradora</td>
                                                                     <td>Pago vía Yape (celular) </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><img src="<?php echo site_url()."static/page_front/images/bcp_logo.png"?>" width="80"/></td>
+                                                                    <td><img src="<?php echo site_url() . "static/page_front/images/bcp_logo.png" ?>" width="80"/></td>
                                                                     <td>19399069591091</td>
                                                                     <td>Banco de Crédito</td>
                                                                     <td>Merilu Rojas / Administradora</td>
@@ -191,62 +191,94 @@
 </section>
 <script src="<?php echo site_url(); ?>static/catalog/js/pay_order_new.js"></script>
 <script>
-                                                                    Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
-                                                                    var price = "";
-                                                                    $('#buyButton').on('click', function (e) {
-                                                                        price = $(this).attr('data-price');
-                                                                        Culqi.options({
-                                                                            lang: 'auto',
-                                                                            modal: true,
-                                                                            style: {
-                                                                                logo: '<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>',
-                                                                                maincolor: '#0ec1c1',
-                                                                                buttontext: '#ffffff',
-                                                                                maintext: '#4A4A4A',
-                                                                                desctext: '#4A4A4A'
+                                                                //    pk_test_igI3EctoA17FeNUD
+
+                                                                Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+                                                                var price = "";
+                                                                var price2 = "";
+                                                                $('#buyButton').on('click', function (e) {
+                                                                    price = $(this).attr('data-price');
+                                                                    price = price * 3.5;
+                                                                    price2 = $(this).attr('data-price2');
+                                                                    Culqi.options({
+                                                                        lang: 'auto',
+                                                                        modal: true,
+                                                                        style: {
+                                                                            logo: '<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>',
+                                                                            maincolor: '#0ec1c1',
+                                                                            buttontext: '#ffffff',
+                                                                            maintext: '#4A4A4A',
+                                                                            desctext: '#4A4A4A'
+                                                                        }
+                                                                    });
+                                                                    Culqi.settings({
+                                                                        title: 'Cultura Imparable',
+                                                                        currency: 'PEN',
+                                                                        description: 'Venta de Producto y/o Servicio',
+                                                                        amount: price
+                                                                    });
+                                                                    Culqi.open();
+                                                                    e.preventDefault();
+                                                                });
+
+                                                                function culqi() {
+                                                                    if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+                                                                        document.getElementById("buyButton").innerHTML = "Procesando...";
+                                                                        var token = Culqi.token.id;
+                                                                        var email = Culqi.token.email;
+                                                                        var url = site + "mi_catalogo/pay_order/process_pay_invoice"
+                                                                        $.ajax({
+                                                                            url: url,
+                                                                            method: 'post',
+                                                                            data: {
+                                                                                price: price,
+                                                                                email: email,
+                                                                                token: token,
+                                                                                price2: price2
+                                                                            },
+                                                                            dataType: 'JSON',
+                                                                            success: function (data) {
+                                                                                if (data.status == true) {
+                                                                                    Swal.fire({
+                                                                                        position: 'top-end',
+                                                                                        icon: 'success',
+                                                                                        title: 'Pago Procesado',
+                                                                                        footer: "En breve nos estaremos comunicando para coordinar la entrega",
+                                                                                        showConfirmButton: false,
+                                                                                        timer: 1500
+                                                                                    });
+                                                                                    setTimeout(function () {
+                                                                                        location.href = site + "mi_catalogo/order";
+                                                                                    }, 1500);
+                                                                                } else if(data.status == "no_stock"){
+                                                                                    Swal.fire({
+                                                                                        position: 'top-end',
+                                                                                        icon: 'info',
+                                                                                        title: 'No tenemos stock suficiente',
+                                                                                        footer: "Comuníquese con soporte para gestionar la compra"
+                                                                                    });
+                                                                                    document.getElementById("buyButton").innerHTML = "Pagar con Tarjeta";
+                                                                                    
+                                                                                }else {
+                                                                                    Swal.fire({
+                                                                                        position: 'top-end',
+                                                                                        icon: 'error',
+                                                                                        title: 'Ups! Sucedio un error ',
+                                                                                        footer: "Verifique los datos de la tarjeta"
+                                                                                    });
+                                                                                    document.getElementById("buyButton").innerHTML = "Pagar con Tarjeta";
+                                                                                }
+                                                                            },
+                                                                            error: function (data) {
+                                                                                alert(data.user_message);
+                                                                                document.getElementById("buyButton").innerHTML = "Pagar con Tarjeta";
                                                                             }
                                                                         });
-                                                                        Culqi.settings({
-                                                                            title: 'Cultura Imparable',
-                                                                            currency: 'PEN',
-                                                                            description: 'Venta de Producto y/o Servicio',
-                                                                            amount: price
-                                                                        });
-                                                                        Culqi.open();
-                                                                        e.preventDefault();
-                                                                    });
-
-                                                                    function culqi() {
-                                                                        if (Culqi.token) { // ¡Objeto Token creado exitosamente!
-                                                                            var token = Culqi.token.id;
-                                                                            var email = Culqi.token.email;
-                                                                            var url = site + "catalogo/pay_order/process_pay_invoice"
-                                                                            $.ajax({
-                                                                                url: url,
-                                                                                method: 'post',
-                                                                                data: {
-                                                                                    price: price,
-                                                                                    email: email,
-                                                                                    token: token
-                                                                                },
-                                                                                dataType: 'JSON',
-                                                                                success: function (data) {
-                                                                                    if (data.object == "charge") {
-                                                                                        document.getElementById("pay_success_2").style.display = "block";
-                                                                                        location.href = site + "catalogo/order";
-                                                                                    } else {
-                                                                                        document.getElementById("pay_info").style.display = "block";
-                                                                                    }
-                                                                                },
-                                                                                error: function (data) {
-                                                                                    alert(data.user_message);
-                                                                                }
-                                                                            });
-                                                                        } else {
-                                                                            console.log(Culqi.error);
-                                                                            alert(Culqi.error.user_message);
-                                                                        }
+                                                                    } else {
+                                                                        console.log(Culqi.error);
+                                                                        alert(Culqi.error.user_message);
+                                                                        document.getElementById("buyButton").innerHTML = "Pagar con Tarjeta";
                                                                     }
-                                                                    ;
+                                                                }
 
 </script>
