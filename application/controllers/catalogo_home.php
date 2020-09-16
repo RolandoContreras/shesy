@@ -540,11 +540,22 @@ class Catalogo_home extends CI_Controller {
         $address = $this->input->post('address');
         $reference = $this->input->post('reference');
         //conver_price_database
-        $price_cart = $this->cart->format_number($this->cart->total());
-        $price_cart = explode(".", $price_cart);
-        $price = $price_cart[0];
-        $price = quitar_coma_number($price);
-
+        $price = $this->cart->format_number($this->cart->total());
+        //INSERT INVOICE
+        $data_invoice = array(
+            'customer_id' => $customer_id,
+            'sub_total' => $price,
+            'igv' => 0,
+            'total' => $price,
+            'type' => 2,
+            'delivery' => 0,
+            'date' => date("Y-m-d H:i:s"),
+            'active' => 1,
+            'status_value' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $customer_id,
+        );
+        $invoice_id = $this->obj_invoices->insert($data_invoice);
         //INSERT INVOICE CATALOG
         foreach ($this->cart->contents() as $items) {
             $option = "";
@@ -553,7 +564,6 @@ class Catalogo_home extends CI_Controller {
                     $option .= "$option_name" . ":" . "$option_value" . "&nbsp;";
                 }
             }
-
             $catalog_id = $items['id'];
             //GET stock from catalog
             $params = array(
@@ -566,6 +576,9 @@ class Catalogo_home extends CI_Controller {
             if ($stock > 0) {
                 $newStock = $stock - $items['qty'];
                 if ($newStock < 0) {
+                    //detele invoice
+                    $this->delete_invoice($invoice_id);
+                    //send response no stock
                     $data['status'] = "false2";
                 } else {
                     //updated stock
@@ -573,25 +586,9 @@ class Catalogo_home extends CI_Controller {
                         'stock' => $newStock,
                     );
                     $this->obj_catalog->update($catalog_id, $data_catalog);
-
-                    //INSERT INVOICE
-                    $data_invoice = array(
-                        'customer_id' => $customer_id,
-                        'sub_total' => $items['subtotal'],
-                        'igv' => 0,
-                        'total' => $items['subtotal'],
-                        'type' => 2,
-                        'delivery' => 0,
-                        'date' => date("Y-m-d H:i:s"),
-                        'active' => 1,
-                        'status_value' => 1,
-                        'created_at' => date("Y-m-d H:i:s"),
-                        'created_by' => $customer_id,
-                    );
-                    $invoce_id = $this->obj_invoices->insert($data_invoice);
                     //insert data catalog invoice
                     $data_invoice_catalog = array(
-                        'invoice_id' => $invoce_id,
+                        'invoice_id' => $invoice_id,
                         'catalog_id' => $items['id'],
                         'price' => $items['price'],
                         'quantity' => $items['qty'],
@@ -603,7 +600,7 @@ class Catalogo_home extends CI_Controller {
                     if ($result != null) {
                         //insert data
                         $param = array(
-                            'invoice_id' => $invoce_id,
+                            'invoice_id' => $invoice_id,
                             'customer' => $name,
                             'phone' => $phone,
                             'address' => $address,
@@ -614,7 +611,7 @@ class Catalogo_home extends CI_Controller {
                         $contra_entrega_id = $this->obj_contra_entrega->insert($param);
                         if ($contra_entrega_id != null) {
                             $data['status'] = true;
-                            $data['message'] = "Pedido creado correctamente el número de factura es #$invoce_id";
+                            $data['message'] = "Pedido creado correctamente el número de factura es #$invoice_id";
                             //DESTROY CART
                             $this->cart->destroy();
                         } else {

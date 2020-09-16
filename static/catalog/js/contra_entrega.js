@@ -17,13 +17,17 @@ function procesar_contra_entrega() {
                     title: 'Pedido Procesado',
                     footer: data.message,
                     showConfirmButton: false,
-                    timer: 4000
+                    timer: 1500
                 });
+                document.getElementById("save_entrega").innerHTML = "Solicitar Pedido";
+                setTimeout(function () {
+                    location.href = site + "mi_catalogo";
+                }, 1500);
             } else if (data.status == "false2") {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'info',
-                    title: 'Ups! Se acaba de terminar el stock del producto ',
+                    title: 'Ups! Se acaba de terminar el stock del producto',
                     footer: "Seleccione otro producto"
                 });
                 document.getElementById("save_entrega").innerHTML = "Solicitar Pedido";
