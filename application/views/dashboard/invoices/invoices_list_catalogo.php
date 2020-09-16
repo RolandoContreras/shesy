@@ -95,6 +95,7 @@
                                             <button class="btn btn-secondary" type="button" onclick="ver_entregado('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="check"></i></span> Marcar Entregado</button>
                                                 <button class="btn btn-secondary" type="button" onclick="edit_invoices_catalogo('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</button>
                                                 <button class="btn btn-secondary" type="button" onclick="ver_invoices_catalogo('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="edit"></i></span> Ver</button>
+                                                <button class="btn btn-secondary" type="button" onclick="invoices_delete('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</button>
                                         </div>
                                     </div>
                                 </td>

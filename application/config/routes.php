@@ -186,6 +186,7 @@ $route['dashboard/facturas_catalogo/load/([0-9]+)'] = "d_invoices/catalogo_load/
 $route['dashboard/facturas_catalogo/validate'] = "d_invoices/catalogo_validate";
 $route['dashboard/facturas/ver/([0-9]+)'] = "d_invoices/ver_invoice/$1"; 
 $route['dashboard/facturas_catalogo/entregado'] = "d_invoices/catalogo_entregado"; 
+$route['dashboard/facturas_catalogo/delete'] = "d_invoices/delete"; 
 
 $route['dashboard/correos'] = "d_messages_masive"; 
 

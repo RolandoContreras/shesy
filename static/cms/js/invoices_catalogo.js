@@ -40,6 +40,52 @@ function ver_entregado(invoice_id){
         }
     });
 }
+function invoices_delete(invoice_id){
+    bootbox.confirm({
+    message: "¿Confirma que desea eliminar la factura?",
+    buttons: {
+        confirm: {
+            label: 'Confirmar',
+            className: 'btn-success'
+        },
+        cancel: {
+            label: 'Cerrar',
+            className: 'btn-danger'
+        }
+    },
+    callback: function (result) {
+        if(result == true){
+            $.ajax({
+                   type: "post",
+                   url: site+"dashboard/facturas_catalogo/delete",
+                   dataType: "json",
+                   data: {invoice_id : invoice_id},
+                   success:function(data){ 
+                       if(data.status == true){
+                           Swal.fire({
+                              position: 'top-end',
+                              icon: 'success',
+                              title: 'Factura Eliminada',
+                              showConfirmButton: false,
+                              timer: 1500
+                            });
+                            setTimeout('document.location.reload()',1500);
+                       }else{
+                           Swal.fire({
+                              icon: 'error',
+                              title: 'Ups...',
+                              text: 'No se pudo eliminar'
+                            });
+                       }
+                   }         
+           });
+        }
+      }
+    });
+}
+
+
+
 
 
 
