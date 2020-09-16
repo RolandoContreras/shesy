@@ -129,19 +129,11 @@ class D_contra_entrega extends CI_Controller {
                     $this->pay_unilevel($ident, $invoice_id, $value->bono_n1, $value->bono_n2, $value->bono_n3, $value->bono_n4, $value->bono_n5, $customer_id, $value->quantity);
                 }
             }
-
-            //add 30 day por next pay
-            $date_month = date("Y-m-d", strtotime("+30 day"));
-            //UPDATE TABLE CUSTOMER ACTIVE = 1    
-            $data_customer = array(
-                'active' => 1,
-                'date_month' => $date_month,
-                'active_month' => 1,
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $customer_id,
-            );
-            $this->obj_customer->update($customer_id, $data_customer);
-            //update invoce
+            //update 30 day more to customer
+            if($customer_id != 1){
+                $this->add_30_day_customer($customer_id);
+            }
+            //update invoce active
             $data_invoice = array(
                 'active' => 0,
                 'updated_at' => date("Y-m-d H:i:s"),
@@ -153,7 +145,22 @@ class D_contra_entrega extends CI_Controller {
             exit();
         }
     }
-
+    
+    public function add_30_day_customer($customer_id) {
+        //add 30 day por next pay
+            $date_month = date("Y-m-d", strtotime("+30 day"));
+            //UPDATE TABLE CUSTOMER ACTIVE = 1    
+            $data_customer = array(
+                'active' => 1,
+                'date_month' => $date_month,
+                'active_month' => 1,
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $customer_id,
+            );
+            $this->obj_customer->update($customer_id, $data_customer);
+        
+    }
+    
     public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5, $customer_id, $qty) {
 
         //get active moth from customer
@@ -170,7 +177,7 @@ class D_contra_entrega extends CI_Controller {
             $noventa_percent = $amount * 0.9;
             $diez_percent = $amount * 0.1;
             //set patam
-            $data = array(
+            $data_param = array(
                 'invoice_id' => $invoice_id,
                 'customer_id' => $customer_id,
                 'bonus_id' => 3,
@@ -182,9 +189,9 @@ class D_contra_entrega extends CI_Controller {
                 'created_at' => date("Y-m-d H:i:s"),
                 'created_by' => $customer_id,
             );
-            $this->obj_commissions->insert($data);
+            $this->obj_commissions->insert($data_param);
             //insert commission 10%
-            $data = array(
+            $data_param_2 = array(
                 'invoice_id' => $invoice_id,
                 'customer_id' => $customer_id,
                 'bonus_id' => 3,
@@ -197,7 +204,7 @@ class D_contra_entrega extends CI_Controller {
                 'created_at' => date("Y-m-d H:i:s"),
                 'created_by' => $customer_id,
             );
-            $this->obj_commissions->insert($data);
+            $this->obj_commissions->insert($data_param_2);
         }
         //make upline
         $new_ident = explode(",", $ident);
@@ -233,7 +240,7 @@ class D_contra_entrega extends CI_Controller {
                             $noventa_percent = $amount * 0.9;
                             $diez_percent = $amount * 0.1;
                             //insert on table commision
-                            $data = array(
+                            $data_unilevel = array(
                                 'invoice_id' => $invoice_id,
                                 'customer_id' => $new_ident[$x],
                                 'bonus_id' => 3,
@@ -245,9 +252,9 @@ class D_contra_entrega extends CI_Controller {
                                 'created_at' => date("Y-m-d H:i:s"),
                                 'created_by' => $customer_id,
                             );
-                            $this->obj_commissions->insert($data);
+                            $this->obj_commissions->insert($data_unilevel);
                             //insert commission 10%
-                            $data = array(
+                            $data_unilevel_2 = array(
                                 'invoice_id' => $invoice_id,
                                 'customer_id' => $new_ident[$x],
                                 'bonus_id' => 3,
@@ -260,7 +267,7 @@ class D_contra_entrega extends CI_Controller {
                                 'created_at' => date("Y-m-d H:i:s"),
                                 'created_by' => $customer_id,
                             );
-                            $this->obj_commissions->insert($data);
+                            $this->obj_commissions->insert($data_unilevel_2);
                         }
                     }
                 }
