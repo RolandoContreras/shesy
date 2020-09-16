@@ -102,11 +102,17 @@ function add_cart_refencia(catalog_id, price, name, img) {
     }
 }
 
-function add_cart_granel(catalog_id, price, name) {
+function add_cart_refencia_granel(catalog_id, price, name, img) {
     var quantity = document.getElementById("quantity").value;
     if (quantity == "") {
         document.getElementById("quantity_error").style.display = "block";
-        $("#quantity").focus();
+        Swal.fire({
+            position: 'top-end',
+            icon: 'info',
+            title: 'Ingrese cantidad',
+            showConfirmButton: true
+        });
+        document.getElementById("quantity").focus();
     } else {
         $.ajax({
             type: "post",
@@ -115,26 +121,28 @@ function add_cart_granel(catalog_id, price, name) {
             data: {quantity: quantity,
                 catalog_id: catalog_id,
                 price: price,
-                name: name},
+                name: name,
+                img: img},
             success: function (data) {
-                if (data.status == "true") {
-                    document.getElementById("quantity_error").style.display = "none";
+                if (data.status == true) {
                     Swal.fire({
                         position: 'top-end',
-                        title: 'Producto Agregado a la Cesta',
                         icon: 'success',
+                        title: 'Producto Agregado',
                         showConfirmButton: false
-                    });
-                    url = site + "mi_catalogo/pay_order";
+                    })
+                    var url = site + "pagos_referencia";
                     setTimeout(function () {
                         location.href = url
                     }, 1500);
                 } else {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Ups! Hubo un error',
-                        footer: 'Comuniquese con soporte',
+                        title: 'Ups...',
+                        text: 'Sucedió un error',
+                        footer: '<a href>Vuelve a intentarlo!</a>'
                     });
+                    document.getElementById("buy").innerHTML("AGREGAR AL CARRITO");
                 }
             }
         });

@@ -49,10 +49,12 @@
                                         if ($obj_catalog->stock != 0) {
                                             if (isset($_SESSION['compras_customer'])) {
                                                 ?>
-                                                <button id="buy" onclick="add_cart_refencia('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>', '<?php echo $obj_catalog->img; ?>');"class="btn btn--add-to-cart btn--secondary-accent">
-                                                    <span class="icon icon-cart"></span>
-                                                    <span>Pagar</span>
-                                                </button>
+                                                <?php if ($obj_catalog->granel == 0) { ?>
+                                                    <button id="buy" onclick="add_cart_refencia_granel('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>', '<?php echo $obj_catalog->img; ?>');"class="btn btn--add-to-cart btn--secondary-accent"><span class="icon icon-cart"></span><span>Pagar</span></button>
+                                                <?php } else { ?>
+                                                    <button id="buy" onclick="add_cart_refencia('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>', '<?php echo $obj_catalog->img; ?>');"class="btn btn--add-to-cart btn--secondary-accent"><span class="icon icon-cart"></span><span>Pagar</span></button>
+                                                <?php } ?>
+                                                
                                             <?php } else { ?>
                                                 <?php if ($obj_catalog->granel == 0) { ?>
                                                     <button id="buy" type="button" class="btn btn--add-to-cart btn--secondary-accent" title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><span class="icon icon-cart"></span> Agregar al carrito</button>

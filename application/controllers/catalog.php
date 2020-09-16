@@ -323,7 +323,7 @@ class Catalog extends CI_Controller {
         $this->load->view('catalog_detail', $data);
     }
 
-    public function add_cart() {
+    public function add_cart_referencia_granel() {
 
         if ($this->input->is_ajax_request()) {
             //GET CUSTOMER_ID
@@ -331,16 +331,13 @@ class Catalog extends CI_Controller {
             $catalog_id = $this->input->post('catalog_id');
             $name = $this->input->post('name');
             $quantity = $this->input->post('quantity');
-            $talla = $this->input->post('talla');
-            $color = $this->input->post('color');
-
             //ADD CART
             $data_param = array(
                 'id' => $catalog_id,
                 'qty' => $quantity,
                 'price' => $price,
-                'name' => "$name",
-                'options' => array('Talla' => "$talla", 'Color' => "$color")
+                'img' => $img,
+                'name' => "$name"
             );
             $cart_id = $this->cart->insert($data_param);
             if ($cart_id != "") {
