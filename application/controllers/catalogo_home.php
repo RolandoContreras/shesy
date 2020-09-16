@@ -1082,6 +1082,10 @@ class Catalogo_home extends CI_Controller {
                         }
                         $data['status'] = true;
                     }
+                    //update 30 day more to customer
+                    if($customer_id != 1){
+                        $this->add_30_day_customer($customer_id);
+                    }
                 } else {
                     //delete invoices made
                     $this->delete_invoice($invoice_id);
@@ -1254,6 +1258,21 @@ class Catalogo_home extends CI_Controller {
         );
         //GET DATA CATALOGO
         return $obj_sub_category = $this->obj_sub_category->search($params);
+    }
+    
+    public function add_30_day_customer($customer_id) {
+        //add 30 day por next pay
+            $date_month = date("Y-m-d", strtotime("+30 day"));
+            //UPDATE TABLE CUSTOMER ACTIVE = 1    
+            $data_customer = array(
+                'active' => 1,
+                'date_month' => $date_month,
+                'active_month' => 1,
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $customer_id,
+            );
+            $this->obj_customer->update($customer_id, $data_customer);
+        
     }
 
     public function total_comissions($customer_id) {
