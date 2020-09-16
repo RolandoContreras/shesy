@@ -209,6 +209,23 @@ class Home extends CI_Controller {
         $phone = $this->input->post('phone');
         $address = $this->input->post('address');
         $sponsor_id = $this->input->post('sponsor_id');
+        $price = $this->cart->format_number($this->cart->total());
+        //INSERT INVOICE
+        $data_invoice = array(
+            'customer_id' => $sponsor_id,
+            'kit_id' => 1,
+            'sub_total' => $price,
+            'igv' => 0,
+            'total' => $price,
+            'type' => 3,
+            'recompra' => 0,
+            'date' => date("Y-m-d H:i:s"),
+            'active' => 1,
+            'status_value' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $sponsor_id,
+        );
+        $invoice_id = $this->obj_invoices->insert($data_invoice);
         foreach ($this->cart->contents() as $items) {
             $option = "";
             if ($this->cart->has_options($items['rowid']) == TRUE) {
@@ -227,6 +244,9 @@ class Home extends CI_Controller {
             if ($stock > 0) {
                 $newStock = $stock - $items['qty'];
                 if ($newStock < 0) {
+                    //delete invoice
+                    $this->delete_invoice($invoice_id);
+                    //sen data
                     $data['status'] = "false2";
                 } else {
                     //updated stock
@@ -234,22 +254,6 @@ class Home extends CI_Controller {
                         'stock' => $newStock,
                     );
                     $this->obj_catalog->update($catalog_id, $data_catalog);
-                    //INSERT INVOICE
-                    $data_invoice = array(
-                        'customer_id' => $sponsor_id,
-                        'kit_id' => 1,
-                        'sub_total' => $items['subtotal'],
-                        'igv' => 0,
-                        'total' => $items['subtotal'],
-                        'type' => 3,
-                        'recompra' => 0,
-                        'date' => date("Y-m-d H:i:s"),
-                        'active' => 1,
-                        'status_value' => 1,
-                        'created_at' => date("Y-m-d H:i:s"),
-                        'created_by' => $sponsor_id,
-                    );
-                    $invoice_id = $this->obj_invoices->insert($data_invoice);
                     //INSERT INVOICE CATALOG
                     $data_invoice_catalog = array(
                         'invoice_id' => $invoice_id,
@@ -362,6 +366,14 @@ class Home extends CI_Controller {
                 $data['message'] = false;
             }
             echo json_encode($data);
+        }
+    }
+
+    public function delete_invoice($invoice_id) {
+        //VERIFY IF ISSET CUSTOMER_ID
+        if ($invoice_id != "") {
+            $this->obj_invoices->delete($invoice_id);
+            return true;
         }
     }
 

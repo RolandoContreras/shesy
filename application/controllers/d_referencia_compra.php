@@ -164,6 +164,10 @@ class D_referencia_compra extends CI_Controller {
                 //pay comission by enlace de compra
                 $this->pay_referido_compra($sponsor_id, $invoice_id, $bono_1, $value->quantity);
             }
+            //update 30 day more to customer
+            if($sponsor_id != 1){
+                $this->add_30_day_customer($sponsor_id);
+            }
             //update invoice
             $param_invoice = array(
                 'active' => 2
@@ -272,61 +276,22 @@ class D_referencia_compra extends CI_Controller {
             }
         }
     }
-
-    public function add_points($ident, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5) {
-
-        //GET PERCENT FROM BONUS
-        $new_ident = explode(",", $ident);
-        rsort($new_ident);
-
-        //BOUCLE ULTI 5 LEVEL
-        for ($x = 0; $x <= 4; $x++) {
-            if (isset($new_ident[$x])) {
-                if ($new_ident[$x] != "") {
-                    //get customer active
-                    $params = array(
-                        "select" => "active_month",
-                        "where" => "customer_id = $new_ident[$x]"
-                    );
-                    //GET DATA FROM BONUS
-                    $obj_customer = $this->obj_customer->get_search_row($params);
-
-                    if (isset($obj_customer->active_month) && $obj_customer->active_month == 1) {
-                        switch ($x) {
-                            case 0:
-                                $point = $bono_n1;
-                                break;
-                            case 1:
-                                $point = $bono_n2;
-                                break;
-                            case 2:
-                                $point = $bono_n3;
-                                break;
-                            case 3:
-                                $point = $bono_n4;
-                                break;
-                            case 4:
-                                $point = $bono_n5;
-                                break;
-                        }
-
-                        //INSERT POINTS TABLE
-                        $data = array(
-                            'customer_id' => $new_ident[$x],
-                            'point' => $point,
-                            'date' => date("Y-m-d H:i:s"),
-                            'active' => 1,
-                            'status_value' => 1,
-                            'created_at' => date("Y-m-d H:i:s"),
-                            'created_by' => $_SESSION['usercms']['user_id']
-                        );
-                        $this->obj_points->insert($data);
-                    }
-                }
-            }
-        }
+    
+    public function add_30_day_customer($customer_id) {
+        //add 30 day por next pay
+            $date_month = date("Y-m-d", strtotime("+30 day"));
+            //UPDATE TABLE CUSTOMER ACTIVE = 1    
+            $data_customer = array(
+                'active' => 1,
+                'date_month' => $date_month,
+                'active_month' => 1,
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $customer_id,
+            );
+            $this->obj_customer->update($customer_id, $data_customer);
+        
     }
-
+    
     public function validate_user() {
         if ($this->input->is_ajax_request()) {
             //SELECT ID FROM CUSTOMER
