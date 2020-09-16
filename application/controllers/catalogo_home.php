@@ -1217,7 +1217,7 @@ class Catalogo_home extends CI_Controller {
                         );
                         $this->obj_commissions->insert($data);
                         //insert commission 10%
-                        $data = array(
+                        $data_param = array(
                             'invoice_id' => $invoice_id,
                             'customer_id' => $new_ident[$x],
                             'bonus_id' => 3,
@@ -1230,7 +1230,7 @@ class Catalogo_home extends CI_Controller {
                             'created_at' => date("Y-m-d H:i:s"),
                             'created_by' => $customer_id,
                         );
-                        $this->obj_commissions->insert($data);
+                        $this->obj_commissions->insert($data_param);
                     }
                 }
             }
