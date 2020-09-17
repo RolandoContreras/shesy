@@ -106,80 +106,97 @@ class Register extends CI_Controller {
         if ($this->input->is_ajax_request()) {
             //SET TIMEZONE AMERICA
             date_default_timezone_set('America/Lima');
-            //get data
-            $username = str_to_minuscula($this->input->post("username"));
-            //VALIDATE USERNAME
-            $result = $this->validate_username_register($username);
-            if ($result == 1) {
-                $data['status'] = "username";
-            } else {
-                $parent_id = $this->input->post("parent_id");
-                $parent_id_2 = $this->input->post("parent_id_2");
-                $name = $this->input->post("name");
-                $last_name = $this->input->post("last_name");
-                $email = $this->input->post("email");
-                $dni = $this->input->post("dni");
-                $phone = $this->input->post("phone");
-                $pass = $this->input->post("pass");
-                $address = $this->input->post("address");
-                $country = $this->input->post("country");
-
-                //INSERT TABLE CUSTOMER
-                $data = array(
-                    'first_name' => $name,
-                    'last_name' => $last_name,
-                    'kit_id' => 0,
-                    'range_id' => 0,
-                    'active_month' => 0,
-                    'username' => $username,
-                    'email' => $email,
-                    'password' => $pass,
-                    'address' => $address,
-                    'phone' => $phone,
-                    'dni' => $dni,
-                    'country' => $country,
-                    'active' => 0,
-                    'status_value' => 1,
-                    'created_at' => date("Y-m-d H:i:s"),
-                );
-                $customer_id = $this->obj_customer->insert($data);
-
-                //GET IDENT    
-                $param_customer = array(
-                    "select" => "ident",
-                    "where" => "customer_id = $parent_id");
-                $customer = $this->obj_unilevel->get_search_row($param_customer);
-                if (isset($customer) != "") {
-                    $ident = $customer->ident;
-                    $new_ident = $ident . ",$parent_id";
+            //verify recaptcha
+            if ($_POST['google-response-token']) {
+                $googleToken = $_POST['google-response-token'];
+                $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Lcff80ZAAAAABeR5cpAa2whczBB7f2s0_VYBCIo&response={$googleToken}");
+                $response = json_decode($response);
+                $response = (array) $response;
+                if ($response['success'] && ($response['score'] && $response['score'] > 0.5)) {
+                    //get data
+                    $username = str_to_minuscula($this->input->post("username"));
+                    //VALIDATE USERNAME
+                    $result = $this->validate_username_register($username);
+                    if ($result == 1) {
+                        $data['status'] = "username";
+                    } else {
+                        $parent_id = $this->input->post("parent_id");
+                        $parent_id_2 = $this->input->post("parent_id_2");
+                        $name = $this->input->post("name");
+                        $last_name = $this->input->post("last_name");
+                        $email = $this->input->post("email");
+                        $dni = $this->input->post("dni");
+                        $phone = $this->input->post("phone");
+                        $pass = $this->input->post("pass");
+                        $address = $this->input->post("address");
+                        $country = $this->input->post("country");
+                        //INSERT TABLE CUSTOMER
+                        $data = array(
+                            'first_name' => $name,
+                            'last_name' => $last_name,
+                            'kit_id' => 0,
+                            'range_id' => 0,
+                            'active_month' => 0,
+                            'username' => $username,
+                            'email' => $email,
+                            'password' => $pass,
+                            'address' => $address,
+                            'phone' => $phone,
+                            'dni' => $dni,
+                            'country' => $country,
+                            'active' => 0,
+                            'status_value' => 1,
+                            'created_at' => date("Y-m-d H:i:s"),
+                        );
+                        $customer_id = $this->obj_customer->insert($data);
+                        //GET IDENT    
+                        if ($parent_id == 1) {
+                            $new_ident = 1;
+                        } else {
+                            $param_customer = array(
+                                "select" => "ident",
+                                "where" => "customer_id = $parent_id");
+                            $customer = $this->obj_unilevel->get_search_row($param_customer);
+                            $ident = $customer->ident;
+                            $new_ident = $ident . ",$parent_id";
+                        }
+                        //CREATE UNILEVEL
+                        $data_invoice = array(
+                            'customer_id' => $customer_id,
+                            'parend_id' => $parent_id,
+                            'new_parend_id' => $parent_id_2,
+                            'ident' => $new_ident,
+                            'status_value' => 1,
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $this->obj_unilevel->insert($data_invoice);
+                        //iniciar sesion
+                        $data_customer_session['customer_id'] = $customer_id;
+                        $data_customer_session['name'] = $name . ' ' . $last_name;
+                        $data_customer_session['username'] = $username;
+                        $data_customer_session['email'] = $email;
+                        $data_customer_session['kit_id'] = 0;
+                        $data_customer_session['active_month'] = 0;
+                        $data_customer_session['active'] = 0;
+                        $data_customer_session['logged_customer'] = "TRUE";
+                        $data_customer_session['status'] = 1;
+                        $_SESSION['customer'] = $data_customer_session;
+                        //send message
+                        //$this->message($username, $pass, $name, $email);
+                        //count data cart
+                        $cart = count($this->cart->contents());
+                        if ($cart > 0) {
+                            $data['status'] = "true2";
+                        } else {
+                            $data['status'] = true;
+                        }
+                    }
                 } else {
-                    $new_ident = 1;
+                    $data['status'] = "false2";
                 }
-                //CREATE UNILEVEL
-                $data_invoice = array(
-                    'customer_id' => $customer_id,
-                    'parend_id' => $parent_id,
-                    'new_parend_id' => $parent_id_2,
-                    'ident' => $new_ident,
-                    'status_value' => 1,
-                    'created_at' => date("Y-m-d H:i:s"),
-                    'created_by' => $customer_id,
-                );
-                $this->obj_unilevel->insert($data_invoice);
-                $data['status'] = "true";
-                //CREAR NUEVA SECION 
-                $data_customer_session['customer_id'] = $customer_id;
-                $data_customer_session['name'] = $name . ' ' . $last_name;
-                $data_customer_session['username'] = $username;
-                $data_customer_session['email'] = $email;
-                $data_customer_session['kit_id'] = 0;
-                $data_customer_session['active_month'] = 0;
-                $data_customer_session['active'] = 0;
-                $data_customer_session['logged_customer'] = "TRUE";
-                $data_customer_session['status'] = 1;
-                $_SESSION['customer'] = $data_customer_session;
-                $data['status'] = "success";
-            $this->message($username, $pass, $name, $email);
+            } else {
+                $data['status'] = "false2";
             }
             echo json_encode($data);
         }
