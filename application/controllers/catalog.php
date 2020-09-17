@@ -331,6 +331,7 @@ class Catalog extends CI_Controller {
             $catalog_id = $this->input->post('catalog_id');
             $name = $this->input->post('name');
             $quantity = $this->input->post('quantity');
+            $img = $this->input->post('img');
             //ADD CART
             $data_param = array(
                 'id' => $catalog_id,

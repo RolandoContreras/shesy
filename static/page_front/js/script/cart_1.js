@@ -105,7 +105,6 @@ function add_cart_refencia(catalog_id, price, name, img) {
 function add_cart_refencia_granel(catalog_id, price, name, img) {
     var quantity = document.getElementById("quantity").value;
     if (quantity == "") {
-        document.getElementById("quantity_error").style.display = "block";
         Swal.fire({
             position: 'top-end',
             icon: 'info',
@@ -116,7 +115,7 @@ function add_cart_refencia_granel(catalog_id, price, name, img) {
     } else {
         $.ajax({
             type: "post",
-            url: site + "catalogo/order/add_cart",
+            url: site + "catalogo/order/add_cart_referencia_granel",
             dataType: "json",
             data: {quantity: quantity,
                 catalog_id: catalog_id,

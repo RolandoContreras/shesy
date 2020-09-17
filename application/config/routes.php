@@ -51,7 +51,7 @@ $route['create_invoice_referencia'] = 'home/create_invoice_referencia';
 $route['catalogo'] = 'catalog';
 $route['catalogo/order/add_cart'] = 'catalog/add_cart';
 $route['catalogo/order/add_cart_referencia'] = 'catalog/add_cart_referencia';
-
+$route['catalogo/order/add_cart_referencia_granel'] = 'catalog/add_cart_referencia_granel';
 
 $route['catalogo/([0-9]+)'] = 'catalog/index/$1';
 $route['catalogo/([0-9a-z_-]+)'] = 'catalog/category/$1';
