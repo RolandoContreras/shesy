@@ -100,6 +100,9 @@
                                             showConfirmButton: false,
                                             timer: 1000
                                         });
+                                        window.setTimeout(function () {
+                                            window.location = site + "iniciar-sesion";
+                                        }, 1000);
                                     } else {
                                         Swal.fire({
                                             icon: 'info',

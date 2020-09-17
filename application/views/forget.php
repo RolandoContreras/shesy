@@ -46,61 +46,63 @@
                     <div class="buttons-w">
                         <input type="hidden" name="google-response-token" id="google-response-token">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Recuperar Contraseña</button>
-                        <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" style="width: 100%; display: block; text-align: center;" class="link">Iniciar Sesión</a>
-                        <a href="<?php echo site_url(); ?>" style="width: 100%; display: block; text-align: center;" class="link">Volver a Inicio</a>
+                        <div class="buttons-w">
+                            <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" style="width: 100%; display: block; text-align: center;" class="link">Iniciar Sesión</a>
+                            <a href="<?php echo site_url(); ?>" style="width: 100%; display: block; text-align: center;" class="link">Volver a Inicio</a>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
         <script src='https://www.google.com/recaptcha/api.js?render=6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso'></script>
         <script type="text/javascript">
-                function forget() {
-                    var form = $('#forger-form');
-                    $.ajax(
+            function forget() {
+                var form = $('#forger-form');
+                $.ajax(
+                        {
+                            type: "POST",
+                            url: site + "login/forget",
+                            data: form.serialize(),
+                            success: function (data)
                             {
-                                type: "POST",
-                                url: site + "login/forget",
-                                data: form.serialize(),
-                                success: function (data)
-                                {
-                                    var data = JSON.parse(data);
-                                    if (data.status == true) {
-                                        Swal.fire({
-                                            position: 'top-end',
-                                            icon: 'success',
-                                            title: 'Mensaje enviado',
-                                            text: 'Velique su email que le llegará un correo ',
-                                            showConfirmButton: false,
-                                            timer: 1500
-                                        });
-                                    } else if (data.status == "false2") {
-                                        Swal.fire({
-                                            position: 'top-end',
-                                            icon: 'info',
-                                            title: 'Capcha no verificado',
-                                            showConfirmButton: false,
-                                            timer: 1000
-                                        });
-                                        window.setTimeout(function () {
-                                            window.location = site + "forget";
-                                        }, 1000);
-                                    }  else {
-                                        Swal.fire({
-                                            icon: 'info',
-                                            title: 'Usuario no registrado',
-                                            text: 'Verifique el Email ingresado'
-                                        });
-                                    }
-
+                                var data = JSON.parse(data);
+                                if (data.status == true) {
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'Mensaje enviado',
+                                        text: 'Velique su email que le llegará un correo ',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                } else if (data.status == "false2") {
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'info',
+                                        title: 'Capcha no verificado',
+                                        showConfirmButton: false,
+                                        timer: 1000
+                                    });
+                                    window.setTimeout(function () {
+                                        window.location = site + "forget";
+                                    }, 1000);
+                                } else {
+                                    Swal.fire({
+                                        icon: 'info',
+                                        title: 'Usuario no registrado',
+                                        text: 'Verifique el Email ingresado'
+                                    });
                                 }
-                            });
-                }
-                grecaptcha.ready(function () {
-                    grecaptcha.execute('6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso', {action: 'homepage'})
-                            .then(function (token) {
-                                $('#google-response-token').val(token);
-                            });
-                });
+
+                            }
+                        });
+            }
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso', {action: 'homepage'})
+                        .then(function (token) {
+                            $('#google-response-token').val(token);
+                        });
+            });
         </script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/jquery.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/popper.min.js'; ?>"></script>
@@ -112,11 +114,11 @@
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/three.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/vanta.globe.min.js'; ?>"></script>
         <script>
-                VANTA.GLOBE({
-                    el: ".vanta-bg",
-                    color: 0xa49b0a,
-                    backgroundColor: 0x141316
-                });
+            VANTA.GLOBE({
+                el: ".vanta-bg",
+                color: 0xa49b0a,
+                backgroundColor: 0x141316
+            });
         </script>
     </body>
 </html>
