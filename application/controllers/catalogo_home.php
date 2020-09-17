@@ -751,6 +751,21 @@ class Catalogo_home extends CI_Controller {
         $total_precio = $this->input->post("total");
         //active customer
         $active_month = $this->input->post("active_month");
+        //INSERT INVOICE
+        $data_invoice = array(
+            'customer_id' => $customer_id,
+            'sub_total' => $total_precio,
+            'igv' => 0,
+            'total' => $total_precio,
+            'type' => 2,
+            'delivery' => 1,
+            'date' => date("Y-m-d H:i:s"),
+            'active' => 2,
+            'status_value' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $customer_id,
+        );
+        $invoice_id = $this->obj_invoices->insert($data_invoice);
         //verify
         if ($ganancia_disponible >= $total_precio) {
             foreach ($this->cart->contents() as $items) {
@@ -765,21 +780,6 @@ class Catalogo_home extends CI_Controller {
                 $qty = $items['qty'];
                 $result = $this->verify_stock($catalog_id, $qty);
                 if ($result === true) {
-                    //INSERT INVOICE
-                    $data_invoice = array(
-                        'customer_id' => $customer_id,
-                        'sub_total' => $items['subtotal'],
-                        'igv' => 0,
-                        'total' => $items['subtotal'],
-                        'type' => 2,
-                        'delivery' => 1,
-                        'date' => date("Y-m-d H:i:s"),
-                        'active' => 2,
-                        'status_value' => 1,
-                        'created_at' => date("Y-m-d H:i:s"),
-                        'created_by' => $customer_id,
-                    );
-                    $invoice_id = $this->obj_invoices->insert($data_invoice);
                     //insert invoice catalog
                     $data_invoice_catalog = array(
                         'invoice_id' => $invoice_id,
@@ -840,21 +840,20 @@ class Catalogo_home extends CI_Controller {
                             $this->obj_commissions->insert($data_comission_compra);
                         }
                     }
-                    //GET DATA CUSTOMER UNILEVEL
-                    $params = array(
-                        "select" => "parend_id,
-                                    ident",
-                        "where" => "customer_id = $customer_id"
-                    );
-                    //GET DATA FROM BONUS
-                    $obj_unilevel = $this->obj_unilevel->get_search_row($params);
                     //set ident customer  company
                     if ($customer_id == 1) {
                         $ident = null;
                     } else {
+                        //GET DATA CUSTOMER UNILEVEL
+                        $params = array(
+                            "select" => "parend_id,
+                                    ident",
+                            "where" => "customer_id = $customer_id"
+                        );
+                        //GET DATA FROM BONUS
+                        $obj_unilevel = $this->obj_unilevel->get_search_row($params);
                         $ident = $obj_unilevel->ident;
                     }
-                    //insert primer registro
                     //select data catalog
                     $params = array(
                         "select" => "bono_n1,
@@ -912,6 +911,8 @@ class Catalogo_home extends CI_Controller {
                         $data['status'] = false;
                     }
                 } else {
+                    //delete invoice
+                    $this->delete_invoice($invoice_id);
                     //no stock
                     $data['status'] = "no_money";
                 }
@@ -1083,7 +1084,7 @@ class Catalogo_home extends CI_Controller {
                         $data['status'] = true;
                     }
                     //update 30 day more to customer
-                    if($customer_id != 1){
+                    if ($customer_id != 1) {
                         $this->add_30_day_customer($customer_id);
                     }
                 } else {
@@ -1259,20 +1260,19 @@ class Catalogo_home extends CI_Controller {
         //GET DATA CATALOGO
         return $obj_sub_category = $this->obj_sub_category->search($params);
     }
-    
+
     public function add_30_day_customer($customer_id) {
         //add 30 day por next pay
-            $date_month = date("Y-m-d", strtotime("+30 day"));
-            //UPDATE TABLE CUSTOMER ACTIVE = 1    
-            $data_customer = array(
-                'active' => 1,
-                'date_month' => $date_month,
-                'active_month' => 1,
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $customer_id,
-            );
-            $this->obj_customer->update($customer_id, $data_customer);
-        
+        $date_month = date("Y-m-d", strtotime("+30 day"));
+        //UPDATE TABLE CUSTOMER ACTIVE = 1    
+        $data_customer = array(
+            'active' => 1,
+            'date_month' => $date_month,
+            'active_month' => 1,
+            'updated_at' => date("Y-m-d H:i:s"),
+            'updated_by' => $customer_id,
+        );
+        $this->obj_customer->update($customer_id, $data_customer);
     }
 
     public function total_comissions($customer_id) {
