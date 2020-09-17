@@ -223,7 +223,7 @@
         <script>
 //    pk_test_igI3EctoA17FeNUD
 //pk_live_d4ZedlvJFWdrXoiI
-            Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
+            Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
             var price = "";
             var price2 = "";
             var kit_id = "";
@@ -304,6 +304,7 @@
                                     showConfirmButton: false,
                                     timer: 1500
                                 });
+                                document.getElementById("pagar").innerHTML = "Pagar";
                             } else {
                                 Swal.fire({
                                     position: 'top-end',

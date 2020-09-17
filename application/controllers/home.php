@@ -110,7 +110,22 @@ class Home extends CI_Controller {
             $sponsor_id = $this->input->post('sponsor_id');
             //MAKE CHARGE
             $charge = $this->culqi->charge($token, $price, $email, $name, $last_name, $address, $phone);
-
+            //INSERT INVOICE
+            $data_invoice = array(
+                'customer_id' => $sponsor_id,
+                'kit_id' => 1,
+                'sub_total' => $price2,
+                'igv' => 0,
+                'total' => $price2,
+                'type' => 3,
+                'recompra' => 0,
+                'date' => date("Y-m-d H:i:s"),
+                'active' => 2,
+                'status_value' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $sponsor_id,
+            );
+            $invoice_id = $this->obj_invoices->insert($data_invoice);
             foreach ($this->cart->contents() as $items) {
                 $option = "";
                 if ($this->cart->has_options($items['rowid']) == TRUE) {
@@ -122,22 +137,6 @@ class Home extends CI_Controller {
                 $catalog_id = $items['id'];
                 //update stock
                 $this->update_stock($catalog_id, $items['qty']);
-                //INSERT INVOICE
-                $data_invoice = array(
-                    'customer_id' => $sponsor_id,
-                    'kit_id' => 1,
-                    'sub_total' => $items['subtotal'],
-                    'igv' => 0,
-                    'total' => $items['subtotal'],
-                    'type' => 3,
-                    'recompra' => 0,
-                    'date' => date("Y-m-d H:i:s"),
-                    'active' => 2,
-                    'status_value' => 1,
-                    'created_at' => date("Y-m-d H:i:s"),
-                    'created_by' => $sponsor_id,
-                );
-                $invoice_id = $this->obj_invoices->insert($data_invoice);
                 //INSERT INVOICE CATALOG    {
                 $data_invoice_catalog = array(
                     'invoice_id' => $invoice_id,
@@ -148,7 +147,7 @@ class Home extends CI_Controller {
                     'sub_total' => $items['subtotal'],
                     'date' => date("Y-m-d H:i:s")
                 );
-                $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+                $this->obj_invoice_catalog->insert($data_invoice_catalog);
                 //search bono
                 $params = array(
                     "select" => "bono_n1",
@@ -171,6 +170,10 @@ class Home extends CI_Controller {
                 );
                 //GET DATA FROM BONUS
                 $result = $this->obj_referencia_compra->insert($data_referencia);
+                //update 30 day more to customer
+                if ($sponsor_id != 1) {
+                    $this->add_30_day_customer($sponsor_id);
+                }
             }
             if (!empty($result)) {
                 $data['status'] = true;
@@ -375,6 +378,21 @@ class Home extends CI_Controller {
             $this->obj_invoices->delete($invoice_id);
             return true;
         }
+    }
+    
+    public function add_30_day_customer($customer_id) {
+        //add 30 day por next pay
+            $date_month = date("Y-m-d", strtotime("+30 day"));
+            //UPDATE TABLE CUSTOMER ACTIVE = 1    
+            $data_customer = array(
+                'active' => 1,
+                'date_month' => $date_month,
+                'active_month' => 1,
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $customer_id,
+            );
+            $this->obj_customer->update($customer_id, $data_customer);
+        
     }
 
     public function nav_videos() {
