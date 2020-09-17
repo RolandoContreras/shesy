@@ -192,8 +192,8 @@
 <script src="<?php echo site_url(); ?>static/catalog/js/pay_order_new.js"></script>
 <script>
                                                                 //    pk_test_igI3EctoA17FeNUD
-
-                                                                Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+                                                                //    pk_live_d4ZedlvJFWdrXoiI
+                                                                Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
                                                                 var price = "";
                                                                 var price2 = "";
                                                                 $('#buyButton').on('click', function (e) {
@@ -262,7 +262,7 @@
                                                                                 }else {
                                                                                     Swal.fire({
                                                                                         position: 'top-end',
-                                                                                        icon: 'error',
+                                                                                        icon: 'info',
                                                                                         title: 'Ups! Sucedio un error ',
                                                                                         footer: "Verifique los datos de la tarjeta"
                                                                                     });
