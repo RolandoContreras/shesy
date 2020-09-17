@@ -124,7 +124,7 @@
         <script src='https://www.google.com/recaptcha/api.js?render=6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso'></script>
         <script type="text/javascript">
                                 function register() {
-                                    document.getElementById("register_boton").innerHTML = "Procesando";
+                                    document.getElementById("register_boton").innerHTML = "Procesando...";
                                     var form = $('#register-form');
                                     $.ajax(
                                             {

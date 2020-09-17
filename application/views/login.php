@@ -48,7 +48,7 @@
                         <div class="pre-icon os-icon os-icon-fingerprint"></div>
                     </div>
                     <input type="hidden" name="google-response-token" id="google-response-token">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Iniciar Sesión</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" id="login_boton">Iniciar Sesión</button>
                     <div class="buttons-w">
                         <a href="<?php echo site_url() . 'register'; ?>" style="width: 100%; display: block; text-align: center;" class="link">¿Aún no tienes una cuenta?</a>
                         <a href="<?php echo site_url() . 'forget'; ?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
@@ -60,7 +60,9 @@
         <script src='https://www.google.com/recaptcha/api.js?render=6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso'></script>
         <script type="text/javascript">
                 function login() {
+                    document.getElementById("login_boton").innerHTML = "Procesando...";
                     var form = $('#loginForm');
+                    
                     $.ajax(
                             {
                                 type: "POST",
@@ -109,6 +111,7 @@
                                             title: 'Usuario no registrado',
                                             text: 'Verifique los datos'
                                         });
+                                        document.getElementById("login_boton").innerHTML = "Iniciar Sesión";
                                     }
 
                                 }
