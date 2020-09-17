@@ -83,10 +83,16 @@ class Login extends CI_Controller {
             header('Access-Control-Max-Age: 86400');
         }
 
-        //GET DATA STRING
-        $username = $this->input->post("username");
-        //SET PARAMETER
-        $params = array("select" => "customer.customer_id,
+        if ($_POST['google-response-token']) {
+            $googleToken = $_POST['google-response-token'];
+            $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Lcff80ZAAAAABeR5cpAa2whczBB7f2s0_VYBCIo&response={$googleToken}");
+            $response = json_decode($response);
+            $response = (array) $response;
+            if ($response['success'] && ($response['score'] && $response['score'] > 0.5)) {
+                //GET DATA STRING
+                $username = $this->input->post("username");
+                //SET PARAMETER
+                $params = array("select" => "customer.customer_id,
                                         customer.first_name,
                                         customer.username,
                                         customer.email,
@@ -94,17 +100,22 @@ class Login extends CI_Controller {
                                         customer.last_name,
                                         customer.active,
                                         customer.status_value",
-            "where" => "customer.username = '$username' and customer.status_value = 1");
+                    "where" => "customer.username = '$username' and customer.status_value = 1");
 
-        $obj_customer_login = $this->obj_customer->get_search_row($params);
+                $obj_customer_login = $this->obj_customer->get_search_row($params);
 
-        if (count($obj_customer_login) > 0) {
-            $this->message($obj_customer_login->username, $obj_customer_login->password, $obj_customer_login->first_name, $obj_customer_login->email);
-            $data['status'] = "true";
+                if (!empty($obj_customer_login)) {
+                    $this->message($obj_customer_login->username, $obj_customer_login->password, $obj_customer_login->first_name, $obj_customer_login->email);
+                    $data['status'] = true;
+                } else {
+                    $data['status'] = false;
+                }
+            } else {
+                $data['status'] = "false2";
+            }
         } else {
-            $data['status'] = "false";
+            $data['status'] = "false2";
         }
-
         echo json_encode($data);
         exit();
     }
@@ -133,9 +144,6 @@ class Login extends CI_Controller {
         <td valign='top' align='center'>
           <table style='border-collapse:collapse;margin:0;padding:0;max-width:600px' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0' align='center'>
             <tbody>
-              <tr>
-                <td style='padding:39px 30px 31px;display:block;background:#fafafa'> <img src='$img' alt='bca-logo' style='display:inline-block;padding-right:12px' class='CToWUd'> </td>
-              </tr>
               <tr>
                 <td style='padding:0 30px;display:block;background:#fafafa'>
                   <p style='padding:32px 32px 0;color:#333333;background:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;line-height:14px;margin:0;font-size:14px;border-radius:5px 5px 0 0'

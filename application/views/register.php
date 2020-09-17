@@ -18,6 +18,9 @@
         <!--//END FAVICON-->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
         <link href="<?php echo site_url().'static/page_front/css/login/main.css?version=4.4.0';?>" rel="stylesheet">
+        <!----- SWEET ALER  ---->
+        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
         <script>
             var site = '<?php echo site_url();?>';
         </script>
@@ -32,7 +35,7 @@
                 </a>
             </div>
             <h4 class="auth-header"> REGÍSTRATE </h4>
-            <form class="form" action="javascript:void(0);" enctype="multipart/form-data">
+            <form class="form" action="javascript:void(0);" enctype="multipart/form-data" id="register-form" method="post" onsubmit="register();">
                 <?php if(isset($obj_customer->username)){ ?>
                 <div class="form-group">
                     <p>Usted será patrocinado por:
@@ -83,60 +86,30 @@
                     <input name="name" id="name" class="form-control" placeholder="Nombres" type="text" autocomplete="off">
                     <div class="pre-icon os-icon"><i class="fa fa-address-book"></i></div>
                 </div>
-                <div class="form-group has-feedback" style="display: none;" id="message_name">
-                    <div class="alert alert-danger validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Ingrese nombres válidos</p>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label>Apellidos</label>
                     <input name="last_name" id="last_name" class="form-control" placeholder="Apellidos" type="text" autocomplete="off">
                     <div class="pre-icon os-icon"><i class="fa fa-user"></i></div>
-                </div>
-                <div class="form-group has-feedback" style="display: none;" id="message_last_name">
-                    <div class="alert alert-danger validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Ingrese apellidos válidos</p>
-                    </div>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
                     <input name="email" id="email" class="form-control" placeholder="Email" type="text" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-envelope-open"></i></div>
                 </div>
-                <div class="form-group has-feedback" style="display: none;" id="message_email">
-                    <div class="alert alert-danger validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Ingrese email válido</p>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label>DNI / Cedula</label>
                     <input name="dni" id="dni" class="form-control" placeholder="DNI / Cedula" type="text" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-id-card"></i></div>
-                </div>
-                <div class="form-group has-feedback" style="display: none;" id="message_dni">
-                    <div class="alert alert-danger validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Ingrese documento válido</p>
-                    </div>
                 </div>
                 <div class="form-group">
                     <label>Teléfono</label>
                     <input name="phone" id="phone" class="form-control" placeholder="Teléfono" type="text" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-phone"></i></div>
                 </div>
-                <div class="form-group has-feedback" style="display: none;" id="message_phone">
-                    <div class="alert alert-danger validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Ingrese teléfono válido</p>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label>Dirección</label>
                     <input name="address" id="address" class="form-control" placeholder="Dirección" type="text" autocomplete="off">
                     <div class="pre-icon os-icon "><i class="fa fa-map-pin"></i></div>
-                </div>
-                <div class="form-group has-feedback" style="display: none;" id="message_address">
-                    <div class="alert alert-danger validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Ingrese dirección válida</p>
-                    </div>
                 </div>
                 <div class="form-group">
                     <label>País</label>
@@ -148,33 +121,79 @@
                     </select>
                     <div class="pre-icon os-icon "><i class="fa fa-flag"></i></div>
                 </div>
-                <div class="form-group has-feedback" style="display: none;" id="message_pais">
-                    <div class="alert alert-danger validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Seleccione país válido</p>
-                    </div>
-                </div>
                 <div class="form-group">
                     <div class="g-recaptcha" data-sitekey="6Lfql9EUAAAAAOijHIuhHoq8ZrcDN8GeTX-95onx"></div>
                 </div>
-                <div class="form-group has-feedback" style="display: none;" id="captcha_messages">
-                    <div class="alert alert-danger validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Captcha no verificado</p>
-                    </div>
-                </div>
-                <div class="form-group has-feedback" style="display: none;" id="messages">
-                    <div class="alert alert-success validation-errors">
-                        <p class="user_login_id" style="text-align: center;">Registro creado con éxito.</p>
-                    </div>
-                </div>  
                 <div class="buttons-w">
-                    <button onclick="register();" class="btn btn-primary btn-lg btn-block">Registar</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Registar</button>
                     <a href="<?php echo site_url().'forget';?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
                     <a href="<?php echo site_url();?>" style="width: 100%; display: block; text-align: center;" class="link">Volver Inicio</a>
                 </div>
             </form>
         </div>
     </div>
-<script src='https://www.google.com/recaptcha/api.js'></script>
+        
+<script src='https://www.google.com/recaptcha/api.js?render=6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso'></script>
+<script type="text/javascript">
+                function login() {
+                    var form = $('#register-form');
+                    $.ajax(
+                            {
+                                type: "POST",
+                                url: site + "iniciar-sesion/validate",
+                                data: form.serialize(),
+                                success: function (data)
+                                {
+                                    var data = JSON.parse(data);
+                                    if (data.status == true) {
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'success',
+                                            title: 'Bienvenido',
+                                            showConfirmButton: false,
+                                            timer: 1000
+                                        });
+                                        setTimeout('document.location.reload()', 1000);
+                                        window.setTimeout(function () {
+                                            window.location = site + "backoffice";
+                                        }, 1000);
+                                    } else if (data.status == "true2") {
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'success',
+                                            title: 'Bienvenido',
+                                            showConfirmButton: false,
+                                            timer: 1000
+                                        });
+                                        window.setTimeout(function () {
+                                            window.location = site + "backoffice/pay_order";
+                                        }, 1000);
+                                    } else if (data.status == "false2") {
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'info',
+                                            title: 'Capcha no verificado',
+                                            showConfirmButton: false,
+                                            timer: 1000
+                                        });
+                                    } else {
+                                        Swal.fire({
+                                            icon: 'info',
+                                            title: 'Usuario no registrado',
+                                            text: 'Verifique los datos'
+                                        });
+                                    }
+
+                                }
+                            });
+                }
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso', {action: 'homepage'})
+                            .then(function (token) {
+                                $('#google-response-token').val(token);
+                            });
+                });
+        </script>
 <script src='<?php echo site_url().'static/page_front/js/script/register.js';?>'></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/jquery.min.js';?>"></script>
 <script src="<?php echo site_url().'static/page_front/js/script/login/popper.min.js';?>"></script>
