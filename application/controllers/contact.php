@@ -55,42 +55,52 @@ class Contact extends CI_Controller {
     public function send_messages() {
         //GET DATA BY POST
 
-        if ($this->input->is_ajax_request()) {
-            $name = $this->input->post("name");
-            $email = $this->input->post("email");
-            $subject = $this->input->post("subject");
-            $message = $this->input->post("message");
+        if ($_POST['google-response-token']) {
+            $googleToken = $_POST['google-response-token'];
+            $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Lcff80ZAAAAABeR5cpAa2whczBB7f2s0_VYBCIo&response={$googleToken}");
+            $response = json_decode($response);
+            $response = (array) $response;
+            if ($response['success'] && ($response['score'] && $response['score'] > 0.5)) {
+                $name = $this->input->post("name");
+                $email = $this->input->post("email");
+                $subject = $this->input->post("subject");
+                $message = $this->input->post("message");
 
-            //SAVE MESSAGES BD
-            //status_value 0 means (not read)
-            $data = array(
-                'name' => $name,
-                'email' => $email,
-                'subject' => $subject,
-                'comment' => $message,
-                'date_comment' => date("Y-m-d H:i:s"),
-                'active' => 1,
-                'status_value' => 1,
-            );
-            $this->obj_comments->insert($data);
-            $data['message'] = true;
-            echo json_encode($data);
-            exit();
+                //SAVE MESSAGES BD
+                //status_value 0 means (not read)
+                $data = array(
+                    'name' => $name,
+                    'email' => $email,
+                    'subject' => $subject,
+                    'comment' => $message,
+                    'date_comment' => date("Y-m-d H:i:s"),
+                    'active' => 1,
+                    'status_value' => 1,
+                );
+                $this->obj_comments->insert($data);
+                $data['status'] = true;
+            } else {
+                $data['status'] = "false2";
+            }
+        } else {
+            $data['status'] = "false2";
         }
+        echo json_encode($data);
+        exit();
     }
-    
-    public function nav_videos(){
-            $params_category_videos = array(
-                        "select" =>"category_id,
+
+    public function nav_videos() {
+        $params_category_videos = array(
+            "select" => "category_id,
                                     slug,
                                     name",
-                "where" => "type = 1 and active = 1",
-            );
-            //GET DATA COMMENTS
-            return $obj_category_videos = $this->obj_category->search($params_category_videos);
-        }
-        
-        public function nav_sub_category() {
+            "where" => "type = 1 and active = 1",
+        );
+        //GET DATA COMMENTS
+        return $obj_category_videos = $this->obj_category->search($params_category_videos);
+    }
+
+    public function nav_sub_category() {
         $params = array(
             "select" => "name,
                          category_id,        
@@ -100,17 +110,16 @@ class Contact extends CI_Controller {
         //GET DATA CATALOGO
         return $obj_sub_category = $this->obj_sub_category->search($params);
     }
-        
-        public function nav_catalogo(){
-           $params_category_catalog = array(
-                        "select" =>"category_id,
+
+    public function nav_catalogo() {
+        $params_category_catalog = array(
+            "select" => "category_id,
                                     slug,
                                     name",
-                "where" => "type = 2 and active = 1",
-            );
-            //GET DATA CATALOGO
-            return $obj_category_catalog = $this->obj_category->search($params_category_catalog);
-             
-        }
+            "where" => "type = 2 and active = 1",
+        );
+        //GET DATA CATALOGO
+        return $obj_category_catalog = $this->obj_category->search($params_category_catalog);
+    }
 
 }
