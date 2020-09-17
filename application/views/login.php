@@ -50,7 +50,7 @@
                     <input type="hidden" name="google-response-token" id="google-response-token">
                     <button class="btn btn-primary btn-lg btn-block" type="submit" id="login_boton">Iniciar Sesión</button>
                     <div class="buttons-w">
-                        <a href="<?php echo site_url() . 'register'; ?>" style="width: 100%; display: block; text-align: center;" class="link">¿Aún no tienes una cuenta?</a>
+                        <a href="<?php echo site_url() . 'registro'; ?>" style="width: 100%; display: block; text-align: center;" class="link">¿Aún no tienes una cuenta?</a>
                         <a href="<?php echo site_url() . 'forget'; ?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
                         <a href="<?php echo site_url(); ?>" style="width: 100%; display: block; text-align: center;" class="link">Volver al Inicio</a>
                     </div>
