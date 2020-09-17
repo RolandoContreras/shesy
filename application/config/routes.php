@@ -64,6 +64,7 @@ $route['contacto'] = 'contact';
 $route['registro'] = 'register';
 
 $route['iniciar-sesion'] = 'login';
+$route['iniciar-sesion/validate'] = 'login/validate';
 $route['forget'] = 'forget';
 
 $route['cursos'] = 'courses';
