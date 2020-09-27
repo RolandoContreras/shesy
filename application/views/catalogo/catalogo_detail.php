@@ -39,7 +39,7 @@
                                                         <h2>
                                                             &dollar; <?php echo $obj_catalog->price; ?>
                                                         </h2>
-
+                                                        <p><span id="comparePrice-product-template" class="sale-tag large title-price"><span class="money conversion-bear-money">16/Sep</span></span></p>
                                                         <br/>
                                                         <?php echo $obj_catalog->description; ?>
                                                         <h6 class="mt-3">Código de Producto</h6>
@@ -47,8 +47,10 @@
                                                             #<?php echo $obj_catalog->catalog_id; ?>
                                                         </p>
                                                         <h6 class="mt-3">Categoría</h6>
-                                                        <p class="text-primary mb-1">
-                                                            <a href="<?php echo site_url() . "mi_catalogo/$obj_catalog->category_slug"; ?>"><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo $obj_catalog->category_name; ?></span></a>
+                                                        <p>
+                                                            <a href="<?php echo site_url() . "mi_catalogo/$obj_catalog->category_slug"; ?>">
+                                                                <span id="comparePrice-product-template" class="sale-tag large title-price"><span class="money conversion-bear-money"><?php echo $obj_catalog->category_name; ?></span></span>
+                                                            </a>
                                                         </p>
                                                         <hr>
                                                         <?php if ($obj_catalog->stock > 0) { ?>
