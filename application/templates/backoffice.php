@@ -112,7 +112,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item pcoded-menu-caption"><label>Navigación</label></li>
+                        <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'backoffice' ?>" class="nav-link <?php echo $home_syle; ?>">
                                 <span class="pcoded-micon"><i class="feather icon-home"></i></span>
