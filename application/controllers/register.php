@@ -183,7 +183,7 @@ class Register extends CI_Controller {
                         $data_customer_session['status'] = 1;
                         $_SESSION['customer'] = $data_customer_session;
                         //send message
-                        $this->message($username, $pass, $name, $email);
+                       // $this->message($username, $pass, $name, $email);
                         //count data cart
                         $cart = count($this->cart->contents());
                         if ($cart > 0) {

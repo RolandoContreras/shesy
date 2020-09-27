@@ -58,8 +58,8 @@
                                   <label for="inputState">Estado</label>
                                         <select name="active" id="active" class="form-control" required>
                                             <option value="" selected="">[ Seleccionar ]</option>
-                                              <option value="2" <?php if(isset($obj_comission)){
-                                                  if($obj_comission->active == 2){ echo "selected";}
+                                              <option value="1" <?php if(isset($obj_comission)){
+                                                  if($obj_comission->active == 1){ echo "selected";}
                                               }else{echo "";} ?>>Abonado</option>
                                               <option value="0" <?php if(isset($obj_comission)){
                                                   if($obj_comission->active == 0){ echo "selected";}
