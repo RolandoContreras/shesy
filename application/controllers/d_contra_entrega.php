@@ -96,6 +96,21 @@ class D_contra_entrega extends CI_Controller {
             //SELECT CUSTOMER_ID
             $customer_id = $this->input->post("customer_id");
             $invoice_id = $this->input->post("invoice_id");
+            $total = $this->input->post("total");
+            //quitar precio del producto
+            $data_param_comission = array(
+                'invoice_id' => $invoice_id,
+                'customer_id' => $customer_id,
+                'bonus_id' => 3,
+                'amount' => -$total,
+                'compras' => 1,
+                'active' => 0,
+                'status_value' => 1,
+                'date' => date("Y-m-d H:i:s"),
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $customer_id,
+            );
+            $this->obj_commissions->insert($data_param_comission);
             //GET DATA CUSTOMER UNILEVEL
             $params = array(
                 "select" => "parend_id,
@@ -106,9 +121,9 @@ class D_contra_entrega extends CI_Controller {
             //GET DATA FROM BONUS
             $obj_unilevel = $this->obj_unilevel->get_search_row($params);
             //set customer_id 1 empresa
-            if($customer_id == 1){
+            if ($customer_id == 1) {
                 $ident = null;
-            }else{
+            } else {
                 $ident = $obj_unilevel->ident;
             }
             //get productos by invoice_id
@@ -130,7 +145,7 @@ class D_contra_entrega extends CI_Controller {
                 }
             }
             //update 30 day more to customer
-            if($customer_id != 1){
+            if ($customer_id != 1) {
                 $this->add_30_day_customer($customer_id);
             }
             //update invoce active
@@ -145,22 +160,21 @@ class D_contra_entrega extends CI_Controller {
             exit();
         }
     }
-    
+
     public function add_30_day_customer($customer_id) {
         //add 30 day por next pay
-            $date_month = date("Y-m-d", strtotime("+30 day"));
-            //UPDATE TABLE CUSTOMER ACTIVE = 1    
-            $data_customer = array(
-                'active' => 1,
-                'date_month' => $date_month,
-                'active_month' => 1,
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $customer_id,
-            );
-            $this->obj_customer->update($customer_id, $data_customer);
-        
+        $date_month = date("Y-m-d", strtotime("+30 day"));
+        //UPDATE TABLE CUSTOMER ACTIVE = 1    
+        $data_customer = array(
+            'active' => 1,
+            'date_month' => $date_month,
+            'active_month' => 1,
+            'updated_at' => date("Y-m-d H:i:s"),
+            'updated_by' => $customer_id,
+        );
+        $this->obj_customer->update($customer_id, $data_customer);
     }
-    
+
     public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5, $customer_id, $qty) {
 
         //get active moth from customer

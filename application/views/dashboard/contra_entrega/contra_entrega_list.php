@@ -71,7 +71,7 @@
                                     <div class="operation">
                                         <div class="btn-group">
                                             <?php if ($value->active == 1) { ?>
-                                                    <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
+                                                    <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->total;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
                                             <?php } ?>
                                                     <button class="btn btn-secondary" type="button" onclick="view_order('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="shopping-cart"></i></span> Ver Pedido</button>
                                                     <button class="btn btn-secondary" type="button" onclick="delete_contra_entrega('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>');"><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</button>

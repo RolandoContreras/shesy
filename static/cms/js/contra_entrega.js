@@ -1,4 +1,4 @@
-function active(invoice_id, customer_id) {
+function active(invoice_id, customer_id, total) {
     bootbox.confirm({
         message: "Confirma que desea procesar el registro?",
         buttons: {
@@ -18,7 +18,8 @@ function active(invoice_id, customer_id) {
                     url: site + "dashboard/contra-entrega/active",
                     dataType: "json",
                     data: {invoice_id: invoice_id,
-                        customer_id: customer_id
+                        customer_id: customer_id,
+                        total: total,
                     },
                     success: function (data) {
                         if (data.status == true) {
