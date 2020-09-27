@@ -1,20 +1,23 @@
-<?php if ( ! defined("BASEPATH")) exit("No direct script access allowed"); 
+<?php
 
-class D_pays extends CI_Controller{    
-    
-    public function __construct(){
+if (!defined("BASEPATH"))
+    exit("No direct script access allowed");
+
+class D_pays extends CI_Controller {
+
+    public function __construct() {
         parent::__construct();
-        $this->load->model("customer_model","obj_customer");
-        $this->load->model("commissions_model","obj_commission");
-        $this->load->model("pay_commission_model","obj_pay_commission");
-        $this->load->model("pay_model","obj_pay");
-    }   
-                
-    public function index(){  
-        
-           $this->get_session();
-           $params = array(
-                        "select" =>"pay.pay_id,
+        $this->load->model("customer_model", "obj_customer");
+        $this->load->model("commissions_model", "obj_commission");
+        $this->load->model("pay_commission_model", "obj_pay_commission");
+        $this->load->model("pay_model", "obj_pay");
+    }
+
+    public function index() {
+
+        $this->get_session();
+        $params = array(
+            "select" => "pay.pay_id,
                                     pay.date,
                                     pay.amount,
                                     pay.descount,
@@ -25,80 +28,107 @@ class D_pays extends CI_Controller{
                                     customer.username,
                                     customer.bank_id,
                                     customer.last_name",
-                        "join" => array('customer, pay.customer_id = customer.customer_id'),
-                        "order" => "pay.pay_id DESC"
-               );
-           //GET DATA FROM CUSTOMER
-           $obj_pay= $this->obj_pay->search($params);
-           
-           /// PAGINADO
-            $modulos ='pagos'; 
-            $seccion = 'Lista';        
-            $link_modulo =  site_url().'dashboard/pagos'; 
-            
-            /// VISTA
-            $this->tmp_mastercms->set('link_modulo',$link_modulo);
-            $this->tmp_mastercms->set('modulos',$modulos);
-            $this->tmp_mastercms->set('seccion',$seccion);
-            $this->tmp_mastercms->set("obj_pay",$obj_pay);
-            $this->tmp_mastercms->render("dashboard/pagos/pagos_list");
+            "join" => array('customer, pay.customer_id = customer.customer_id'),
+            "order" => "pay.pay_id DESC"
+        );
+        //GET DATA FROM CUSTOMER
+        $obj_pay = $this->obj_pay->search($params);
+
+        /// PAGINADO
+        $modulos = 'pagos';
+        $seccion = 'Lista';
+        $link_modulo = site_url() . 'dashboard/pagos';
+
+        /// VISTA
+        $this->tmp_mastercms->set('link_modulo', $link_modulo);
+        $this->tmp_mastercms->set('modulos', $modulos);
+        $this->tmp_mastercms->set('seccion', $seccion);
+        $this->tmp_mastercms->set("obj_pay", $obj_pay);
+        $this->tmp_mastercms->render("dashboard/pagos/pagos_list");
     }
-    
-    public function pagado(){
-        if($this->input->is_ajax_request()){  
+
+    public function pagado() {
+        if ($this->input->is_ajax_request()) {
             ///GET PAY_ID
             $pay_id = $this->input->post("pay_id");
+            $customer_id = $this->input->post("customer_id");
+            $total = $this->input->post("total");
+            //descount comission
+            $data_param = array(
+                'customer_id' => $customer_id,
+                'amount' => -$total,
+                'active' => 1,
+                'pago' => 1,
+                'status_value' => 1,
+                'date' => date("Y-m-d H:i:s"),
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $_SESSION['usercms']['user_id'],
+            );
+            $commissions_id = $this->obj_commission->insert($data_param);
+            //add files on table pay_comission
+            $param_pay_commission = array(
+                'pay_id' => $pay_id,
+                'commissions_id' => $commissions_id,
+                'status_value' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'created_by' => $_SESSION['usercms']['user_id'],
+            );
+            $this->obj_pay_commission->insert($param_pay_commission);
             //UPDATE FILES PAY
             $data_pay = array(
-                        'active' => 2,
-                        'updated_by' =>  $_SESSION['usercms']['user_id'],
-                        'updated_at' => date("Y-m-d H:i:s")
-                    ); 
-            $this->obj_pay->update($pay_id,$data_pay);
-            $data['message'] = "true";
-            echo json_encode($data); 
+                'active' => 2,
+                'updated_by' => $_SESSION['usercms']['user_id'],
+                'updated_at' => date("Y-m-d H:i:s")
+            );
+            $result = $this->obj_pay->update($pay_id, $data_pay);
+            if(!empty($result)){
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
             exit();
         }
     }
-    
-    public function devolver(){
-        if($this->input->is_ajax_request()){  
+
+    public function devolver() {
+        if ($this->input->is_ajax_request()) {
             ///GET PAY_ID
             $pay_id = $this->input->post("pay_id");
-            
+
             //UPDATE FILES PAY
             $data_pay = array(
-                        'active' => 3,
-                        'updated_by' =>  $_SESSION['usercms']['user_id'],
-                        'updated_at' => date("Y-m-d H:i:s")
-                    ); 
-            $this->obj_pay->update($pay_id,$data_pay);
-            
+                'active' => 3,
+                'updated_by' => $_SESSION['usercms']['user_id'],
+                'updated_at' => date("Y-m-d H:i:s")
+            );
+            $this->obj_pay->update($pay_id, $data_pay);
+
             //SELECT COMISSION
             $params = array(
-                        "select" =>"commissions_id",
-                         "where" => "pay_id = $pay_id",
-            ); 
-            $obj_pays  = $this->obj_pay_commission->get_search_row($params); 
+                "select" => "commissions_id",
+                "where" => "pay_id = $pay_id",
+            );
+            $obj_pays = $this->obj_pay_commission->get_search_row($params);
             $commissions_id = $obj_pays->commissions_id;
             //UPDATE DATE
             $data = array(
-                    'amount' => 0,
-                    'updated_at' => date("Y-m-d H:i:s"),
-                    'updated_by' => $_SESSION['usercms']['user_id']
-            );          
+                'amount' => 0,
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $_SESSION['usercms']['user_id']
+            );
             $this->obj_commission->update($commissions_id, $data);
-            
+
             $data['message'] = "true";
-            echo json_encode($data); 
+            echo json_encode($data);
             exit();
         }
     }
-    
-    public function load($pay_id=NULL){
-            /// PARAMETROS PARA EL SELECT 
-            $params = array(
-                        "select" =>"pay.pay_id,
+
+    public function load($pay_id = NULL) {
+        /// PARAMETROS PARA EL SELECT 
+        $params = array(
+            "select" => "pay.pay_id,
                                     pay.amount,
                                     pay.descount,
                                     pay.amount_total,
@@ -108,73 +138,75 @@ class D_pays extends CI_Controller{
                                     customer.first_name,
                                     customer.last_name,
                                     customer.username",
-                         "where" => "pay_id = $pay_id",
-                         "join" => array('customer, pay.customer_id = customer.customer_id'),
-            ); 
-            $obj_pays  = $this->obj_pay->get_search_row($params); 
-            
-            $modulos ='pagos'; 
-            $seccion = 'Formulario';        
-            $link_modulo =  site_url().'dashboard/'.$modulos; 
+            "where" => "pay_id = $pay_id",
+            "join" => array('customer, pay.customer_id = customer.customer_id'),
+        );
+        $obj_pays = $this->obj_pay->get_search_row($params);
 
-            $this->tmp_mastercms->set('link_modulo',$link_modulo);
-            $this->tmp_mastercms->set('modulos',$modulos);
-            $this->tmp_mastercms->set('seccion',$seccion);
-            $this->tmp_mastercms->set("obj_pays",$obj_pays);
-            $this->tmp_mastercms->render("dashboard/pagos/pagos_form");    
+        $modulos = 'pagos';
+        $seccion = 'Formulario';
+        $link_modulo = site_url() . 'dashboard/' . $modulos;
+
+        $this->tmp_mastercms->set('link_modulo', $link_modulo);
+        $this->tmp_mastercms->set('modulos', $modulos);
+        $this->tmp_mastercms->set('seccion', $seccion);
+        $this->tmp_mastercms->set("obj_pays", $obj_pays);
+        $this->tmp_mastercms->render("dashboard/pagos/pagos_form");
     }
-    
-    public function validate(){
-        
-        $pay_id =  $this->input->post('pay_id');
-        $amount =  $this->input->post('amount');
-        $descount =  $this->input->post('descount');
-        $amount_total =  $this->input->post('amount_total');
+
+    public function validate() {
+
+        $pay_id = $this->input->post('pay_id');
+        $amount = $this->input->post('amount');
+        $descount = $this->input->post('descount');
+        $amount_total = $this->input->post('amount_total');
         $date = $this->input->post('date');
-        $active =  $this->input->post('active');
-        
+        $active = $this->input->post('active');
+
         //UPDATE DATA PAY
         $data = array(
-                'amount' => $amount,
-                'descount' => $descount,
-                'amount_total' => $amount_total,
-                'date' => $date,
-                'active' => $active,  
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $_SESSION['usercms']['user_id']
-                );          
-            //SAVE DATA IN TABLE    
-            $this->obj_pay->update($pay_id, $data);
-            
-            //SELECT COMISSION
-            $params = array(
-                        "select" =>"commissions_id",
-                         "where" => "pay_id = $pay_id",
-            ); 
-            $obj_pays  = $this->obj_pay_commission->get_search_row($params); 
-            $commissions_id = $obj_pays->commissions_id;
-            
-            //UPDATE DATA PAY COMISSION
-            $data = array(
-                    'amount' => -$amount,
-                    'updated_at' => date("Y-m-d H:i:s"),
-                    'updated_by' => $_SESSION['usercms']['user_id']
-            );          
-            //SAVE DATA IN TABLE    
-            $this->obj_commission->update($commissions_id, $data);
-        redirect(site_url()."dashboard/pagos");
+            'amount' => $amount,
+            'descount' => $descount,
+            'amount_total' => $amount_total,
+            'date' => $date,
+            'active' => $active,
+            'updated_at' => date("Y-m-d H:i:s"),
+            'updated_by' => $_SESSION['usercms']['user_id']
+        );
+        //SAVE DATA IN TABLE    
+        $this->obj_pay->update($pay_id, $data);
+
+        //SELECT COMISSION
+        $params = array(
+            "select" => "commissions_id",
+            "where" => "pay_id = $pay_id",
+        );
+        $obj_pays = $this->obj_pay_commission->get_search_row($params);
+        $commissions_id = $obj_pays->commissions_id;
+
+        //UPDATE DATA PAY COMISSION
+        $data = array(
+            'amount' => -$amount,
+            'updated_at' => date("Y-m-d H:i:s"),
+            'updated_by' => $_SESSION['usercms']['user_id']
+        );
+        //SAVE DATA IN TABLE    
+        $this->obj_commission->update($commissions_id, $data);
+        redirect(site_url() . "dashboard/pagos");
     }
 
-    public function get_session(){          
-        if (isset($_SESSION['usercms'])){
-            if($_SESSION['usercms']['logged_usercms']=="TRUE" && $_SESSION['usercms']['status']==1){               
+    public function get_session() {
+        if (isset($_SESSION['usercms'])) {
+            if ($_SESSION['usercms']['logged_usercms'] == "TRUE" && $_SESSION['usercms']['status'] == 1) {
                 return true;
-            }else{
-                redirect(site_url().'dashboard');
+            } else {
+                redirect(site_url() . 'dashboard');
             }
-        }else{
-            redirect(site_url().'dashboard');
+        } else {
+            redirect(site_url() . 'dashboard');
         }
     }
+
 }
+
 ?>

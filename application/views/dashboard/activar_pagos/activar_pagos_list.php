@@ -86,7 +86,7 @@
                                         <?php 
                                         if($value->active == 1){ ?>
                                                 <div class="btn-group">
-                                                    <button class="btn btn-secondary" type="button" onclick="pagado('<?php echo $value->pay_id;?>');"><span class="pcoded-micon"><i data-feather="dollar-sign"></i></span> Pagado</button>
+                                                    <button class="btn btn-secondary" type="button" onclick="pagado('<?php echo $value->pay_id;?>', '<?php echo $value->customer_id;?>', '<?php echo $value->amount_total;?>');"><span class="pcoded-micon"><i data-feather="dollar-sign"></i></span> Pagado</button>
                                                     <button class="btn btn-secondary" type="button" onclick="devolver('<?php echo $value->pay_id;?>');"><span class="pcoded-micon"><i data-feather="x-circle"></i></span> Devolver</button>
                                                 </div>
                                             <?php } ?>
