@@ -102,24 +102,12 @@ class D_pays extends CI_Controller {
                 'updated_by' => $_SESSION['usercms']['user_id'],
                 'updated_at' => date("Y-m-d H:i:s")
             );
-            $this->obj_pay->update($pay_id, $data_pay);
-
-            //SELECT COMISSION
-            $params = array(
-                "select" => "commissions_id",
-                "where" => "pay_id = $pay_id",
-            );
-            $obj_pays = $this->obj_pay_commission->get_search_row($params);
-            $commissions_id = $obj_pays->commissions_id;
-            //UPDATE DATE
-            $data = array(
-                'amount' => 0,
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $_SESSION['usercms']['user_id']
-            );
-            $this->obj_commission->update($commissions_id, $data);
-
-            $data['message'] = "true";
+            $result = $this->obj_pay->update($pay_id, $data_pay);
+            if(!empty($result)){
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
             echo json_encode($data);
             exit();
         }

@@ -93,27 +93,6 @@ class B_pay extends CI_Controller {
                     'created_by' => $customer_id,
                 );
                 $pay_id = $this->obj_pay->insert($param_pay);
-                //INSERT COMMISSION TABLE
-//                $data = array(
-//                    'customer_id' => $customer_id,
-//                    'amount' => -$amount,
-//                    'active' => 1,
-//                    'pago' => 1,
-//                    'status_value' => 1,
-//                    'date' => date("Y-m-d H:i:s"),
-//                    'created_at' => date("Y-m-d H:i:s"),
-//                    'created_by' => $customer_id,
-//                );
-//                $commissions_id = $this->obj_commissions->insert($data);
-                //INSERT PAY COMISSIONS TABLE
-//                $param_pay_commission = array(
-//                    'pay_id' => $pay_id,
-//                    'commissions_id' => $commissions_id,
-//                    'status_value' => 1,
-//                    'created_at' => date("Y-m-d H:i:s"),
-//                    'created_by' => $customer_id,
-//                );
-//                $result = $this->obj_pay_commission->insert($param_pay_commission);
                 if(!empty($pay_id)){
                     $data['status'] = true;
                 }else{

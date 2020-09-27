@@ -63,7 +63,23 @@ function devolver(pay_id){
                    dataType: "json",
                    data: {pay_id : pay_id},
                    success:function(data){                             
-                   location.reload();
+                   if (data.status == true) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Procesado',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            setTimeout('document.location.reload()', 1500);
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ups...',
+                                text: 'Sucedió un error',
+                                footer: '<a href>Vuelve a intentarlo!</a>'
+                            });
+                        }
                    }         
            });
     }
