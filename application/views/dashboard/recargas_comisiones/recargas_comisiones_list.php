@@ -54,7 +54,7 @@
                                 <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;"><?php echo "@".$value->username;?></span></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td><?php echo $value->bonus;?></td>
-                                <td><span class="badge badge-pill badge-success" style="font-size: 100%;">s/.<?php echo $value->amount;?></span></td>
+                                <td><span class="badge badge-pill badge-success" style="font-size: 100%;">&dollar;<?php echo format_number_miles($value->amount);?></span></td>
                                 <td>
                                     <?php if (($value->active == 1) || ($value->active == 2)) {
                                         $valor = "Abonado";

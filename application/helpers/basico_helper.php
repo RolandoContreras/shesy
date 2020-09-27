@@ -93,7 +93,7 @@ function convert_mayuscula($string){
 }
 
 function format_number_miles($number){
-    $number = number_format($number, 0, '.', ',');
+    $number = number_format($number, 2, '.', ',');
     return $number;
 }
 

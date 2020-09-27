@@ -52,7 +52,7 @@
                           <div class="form-group col-md-6">
                               <div class="form-group">
                                 <label for="inputState">Importe</label>
-                                <input class="form-control" type="text" id="amount" name="amount" class="input-xlarge-fluid" placeholder="Importe" value="<?php echo isset($obj_comission)?$obj_comission->amount:null;?>" required="">
+                                <input class="form-control" type="text" id="amount" name="amount" class="input-xlarge-fluid" placeholder="Importe" value="<?php echo isset($obj_comission)?format_number_miles($obj_comission->amount):null;?>" required="">
                               </div>
                               <div class="form-group">
                                   <label for="inputState">Estado</label>
