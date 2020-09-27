@@ -108,7 +108,7 @@ header{
 }
 
 .background-image--1590554804411 {
-    background-image: url(https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/1463978/settings_images/s7x1v8UJQxGOwWEcNVk0_su-san-lee-VFT8W5VfHw8-unsplash.png);
+    background-image: url(../images/fondo-person.png);
 }
 .section--1590554804411 {
     background: rgba(0,0,0,.6);
@@ -348,6 +348,8 @@ li .nav_catalog{
 }
 #font-15{
     font-size: 15px !important;
+    color:black !important;
+    font-weight: bold;
 } 
 .btn.btn--secondary-danger{
     background-color: #f3f3f3;
