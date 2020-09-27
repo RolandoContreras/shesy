@@ -82,7 +82,7 @@
                                             </div>
                                         </div>
                                         <div class="progress m-t-30" style="height: 7px;">
-                                            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                             </div>
                                         </div>
                                         <div class="progress m-t-30" style="height: 7px;">
-                                            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                             </div>
                                         </div>
                                         <div class="progress m-t-30" style="height: 7px;">
-                                            <div class="progress-bar progress-c-theme2" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-c-theme2" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@
                                             </div>
                                         </div>
                                         <div class="progress m-t-30" style="height: 7px;">
-                                            <div class="progress-bar progress-c-theme2" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-c-theme2" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@
                                             <div class="col-12">
                                                 <h6 class="text-center m-b-10"></h6>
                                                 <div class="progress">
-                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:60%;height:6px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:<?php echo $percent;?>%;height:6px;" aria-valuenow="<?php echo $percent;?>" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -181,7 +181,7 @@
                                             <div class="col-12">
                                                 <h6 class="text-center m-b-10"></h6>
                                                 <div class="progress">
-                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:60%;height:6px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:100%;height:6px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -202,7 +202,7 @@
                                             <div class="col-12">
                                                 <h6 class="text-center m-b-10"></h6>
                                                 <div class="progress">
-                                                    <div class="progress-bar progress-c-purple" role="progressbar" style="width:40%;height:6px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar progress-c-purple" role="progressbar" style="width:100%;height:6px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -225,7 +225,7 @@
                                             <div class="col-12">
                                                 <h6 class="text-center m-b-10"></h6>
                                                 <div class="progress">
-                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:60%;height:6px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:100%;height:6px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -246,7 +246,7 @@
                                             <div class="col-12">
                                                 <h6 class="text-center m-b-10"></h6>
                                                 <div class="progress">
-                                                    <div class="progress-bar progress-c-theme" role="progressbar" style="width:80%;height:6px;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar progress-c-theme" role="progressbar" style="width:100%;height:6px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>

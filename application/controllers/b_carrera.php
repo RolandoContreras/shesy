@@ -45,7 +45,7 @@ class B_carrera extends CI_Controller {
         //GET TOTAL COMMISION
         $params = array(
             "select" => "sum(amount) as total_comissions",
-            "where" => "customer_id = $customer_id and pago != 1");
+            "where" => "customer_id = $customer_id and pago != 1 and amount > 0");
         //GET DATA FROM CUSTOMER
         $obj_total_commissions = $this->obj_commissions->get_search_row($params);
         $point = $obj_total_commissions->total_comissions;
