@@ -37,7 +37,7 @@ class Crone extends CI_Controller {
             //GET DATA CUSTOMER COMISSION 
             $params = array(
             "select" => "sum(amount) as total_comissions",
-            "where" => "customer_id = $value->customer_id and pago != 1");
+            "where" => "customer_id = $value->customer_id and pago != 1 and amount > 0");
             //GET DATA FROM CUSTOMER
             $obj_total = $this->obj_commissions->get_search_row($params);
             $point = $obj_total->total_comissions;
