@@ -58,7 +58,7 @@
                                     <?php if ($value->active == 1) {
                                         $valor = "En Espera";
                                         $stilo = "label label-warning";
-                                    }elseif($value->active == 0){
+                                    }elseif($value->active == 0 || $value->active == 2){
                                         $valor = "Procesado";
                                         $stilo = "label label-success";
                                     }else{
