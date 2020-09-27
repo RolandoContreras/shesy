@@ -54,9 +54,6 @@
                                                 </div>
                                             </div>
                                                 </form>
-                                            <div class="col-sm">
-
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
