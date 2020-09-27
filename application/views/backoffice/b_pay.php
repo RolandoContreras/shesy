@@ -30,7 +30,7 @@
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
                                                     <i class="feather icon-credit-card text-c-green f-30 m-r-10"></i>
-                                                    &dollar;<?php echo $total_comisiones != "" ? $total_comisiones : "0.00"; ?>
+                                                    &dollar;<?php echo $total_comisiones != "" ? format_number_miles($total_comisiones) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -48,7 +48,7 @@
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
                                                     <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>
-                                                    &dollar;<?php echo $total_disponible != "" ? $total_disponible : "0.00"; ?>
+                                                    &dollar;<?php echo $total_disponible != "" ? format_number_miles($total_disponible) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>

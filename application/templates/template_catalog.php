@@ -55,7 +55,7 @@
                             </li>
                             <li class="nav-item">
                                 <div class="sale-tag medium--right">
-                                    Disponible <span class="money conversion-bear-money">&dollar;<?php echo $total_compra!=""?$total_compra:"0.00";?></span>
+                                    Disponible <span class="money conversion-bear-money">&dollar;<?php echo $total_compra!=""?format_number_miles($total_compra):"0.00";?></span>
                                 </div>
                             </li>
                         </center>

@@ -21,7 +21,7 @@ class B_finance extends CI_Controller {
         $params = array("select" =>"sum(amount) as total,
                                     (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras != 1 and active = 1 and status_value = 1) as total_disponible,
                                     (select sum(amount) FROM commissions WHERE customer_id = $customer_id AND compras = 1 and status_value = 1) as total_compra",
-                        "where" => "customer_id = $customer_id and status_value = 1 and pago != 1",
+                        "where" => "customer_id = $customer_id and status_value = 1 and pago != 1 and amount > 0",
                                     );
         $obj_total = $this->obj_commissions->get_search_row($params);
         //set ganancia disponible

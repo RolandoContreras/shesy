@@ -28,7 +28,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-green f-30 m-r-10"></i>&dollar;<?php echo $obj_total->total!=""?$obj_total->total:"0.00";?>
+                                                    <i class="feather icon-credit-card text-c-green f-30 m-r-10"></i>&dollar;<?php echo $obj_total->total!=""?format_number_miles($obj_total->total):"0.00";?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -45,7 +45,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-blue f-30 m-r-10"></i>&dollar;<?php echo $gananciaDisponible != "" ? $gananciaDisponible : "0.00"; ?>
+                                                    <i class="feather icon-credit-card text-c-blue f-30 m-r-10"></i>&dollar;<?php echo $gananciaDisponible != "" ? format_number_miles($gananciaDisponible): "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -62,7 +62,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>&dollar;<?php echo $obj_total->total_disponible != "" ? $obj_total->total_disponible : "0.00"; ?>
+                                                    <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>&dollar;<?php echo $obj_total->total_disponible != "" ? format_number_miles($obj_total->total_disponible) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -79,7 +79,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>&dollar;<?php echo $obj_total->total_compra != "" ? $obj_total->total_compra : "0.00"; ?>
+                                                    <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>&dollar;<?php echo $obj_total->total_compra != "" ? format_number_miles($obj_total->total_compra) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>

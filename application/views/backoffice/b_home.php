@@ -74,7 +74,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-green f-30 m-r-10"></i>&dollar;<?php echo $obj_total_commissions->total_comissions != "" ? $obj_total_commissions->total_comissions : "0.00"; ?>
+                                                    <i class="feather icon-credit-card text-c-green f-30 m-r-10"></i>&dollar;<?php echo $obj_total_commissions->total_comissions != "" ? format_number($obj_total_commissions->total_comissions) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                             <div class="col-3 text-right">
@@ -94,7 +94,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-blue f-30 m-r-10"></i>&dollar;<?php echo $gananciaDisponible != "" ? $gananciaDisponible : "0.00"; ?>
+                                                    <i class="feather icon-credit-card text-c-blue f-30 m-r-10"></i>&dollar;<?php echo $gananciaDisponible != "" ? format_number($gananciaDisponible) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                             <div class="col-3 text-right">
@@ -114,7 +114,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>&dollar;<?php echo $obj_total_commissions->total_disponible != "" ? $obj_total_commissions->total_disponible : "0.00"; ?>
+                                                    <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>&dollar;<?php echo $obj_total_commissions->total_disponible != "" ? format_number($obj_total_commissions->total_disponible) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -131,7 +131,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>&dollar;<?php echo $obj_total_commissions->total_compra != "" ? $obj_total_commissions->total_compra : "0.00"; ?>
+                                                    <i class="feather icon-credit-card text-c-red f-30 m-r-10"></i>&dollar;<?php echo $obj_total_commissions->total_compra != "" ? format_number($obj_total_commissions->total_compra) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
