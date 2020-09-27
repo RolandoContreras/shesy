@@ -32,6 +32,7 @@ class B_finance extends CI_Controller {
                         "select" =>"commissions.commissions_id,
                                     commissions.amount,
                                     commissions.date,
+                                    commissions.pago,
                                     customer.username,
                                     commissions.status_value,
                                     bonus.name as bonus",
@@ -42,7 +43,7 @@ class B_finance extends CI_Controller {
                 "order" => "commissions.commissions_id DESC",
                 "limit" => "100");
            //GET DATA FROM CUSTOMER
-        $obj_commissions = $this->obj_commissions->search($params);
+        $obj_commissions = $this->obj_commissions->search_left_join($params);
         //GET PRICE CURRENCY
         $this->tmp_backoffice->set("gananciaDisponible",$gananciaDisponible);
         $this->tmp_backoffice->set("obj_commissions",$obj_commissions);

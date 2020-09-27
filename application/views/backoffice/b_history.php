@@ -28,7 +28,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-green f-30 m-r-10"></i>&dollar;<?php echo $obj_total->total!=""?format_number_miles($obj_total->total):"0.00";?>
+                                                    <i class="feather icon-credit-card text-c-green f-30 m-r-10"></i>&dollar;<?php echo $obj_total->total != "" ? format_number_miles($obj_total->total) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -45,7 +45,7 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
-                                                    <i class="feather icon-credit-card text-c-blue f-30 m-r-10"></i>&dollar;<?php echo $gananciaDisponible != "" ? format_number_miles($gananciaDisponible): "0.00"; ?>
+                                                    <i class="feather icon-credit-card text-c-blue f-30 m-r-10"></i>&dollar;<?php echo $gananciaDisponible != "" ? format_number_miles($gananciaDisponible) : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -118,16 +118,23 @@
                                                                         <td align="center"> 
                                                                             Administrador 
                                                                         </td>
-                                                                        <td align="center"><?php echo "Bono de " . $value->bonus; ?></td>
+                                                                        <td align="center">
+                                                                            <?php
+                                                                            if ($value->pago == 1) {
+                                                                                echo "Retiro";
+                                                                            } else {
+                                                                                echo "Bono de " . $value->bonus;
+                                                                            }
+                                                                            ?>
+                                                                        </td>
                                                                         <td align="center"> 
                                                                             <span><?php echo formato_fecha_barras($value->date); ?></span><br> 
                                                                             <span class="smaller lighter "><i class="fa fa-clock-o"></i> <?php echo formato_fecha_minutos($value->date); ?></span>
                                                                         </td>
                                                                         <td align="center">
-                                                                            <?php 
-                                                                            if($value->amount < 0){ ?>
+                                                                            <?php if ($value->amount < 0) { ?>
                                                                                 <span class="badge-danger-inverted"> <?php echo $value->amount; ?>&dollar;</span>
-                                                                            <?php }else{ ?>
+                                                                            <?php } else { ?>
                                                                                 <span class="badge-success-inverted"> + &dollar;<?php echo $value->amount; ?></span>
                                                                             <?php } ?>
                                                                         </td>

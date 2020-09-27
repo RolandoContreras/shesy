@@ -95,15 +95,17 @@ class B_home extends CI_Controller {
                                     commissions.commissions_id,
                                     customer.username,
                                     commissions.status_value,
+                                    commissions.pago,
                                     bonus.name as bonus",
             "join" => array('bonus, commissions.bonus_id = bonus.bonus_id',
-                'invoices, commissions.invoice_id = invoices.invoice_id',
-                'customer, invoices.customer_id = customer.customer_id'),
+            'invoices, commissions.invoice_id = invoices.invoice_id',
+            'customer, invoices.customer_id = customer.customer_id'),
             "where" => "commissions.customer_id = $customer_id and commissions.active = 1",
             "order" => "commissions.commissions_id DESC",
             "limit" => "10");
         //GET DATA FROM CUSTOMER
-        $obj_commissions = $this->obj_commissions->search($params);
+        $obj_commissions = $this->obj_commissions->search_left_join($params);
+        
         //GET MONTH AND YEAR
         $month = date('m');
         $year = date('Y');

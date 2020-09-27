@@ -31,31 +31,32 @@
                                 <div class="card card-social">
                                     <div class="space-15"></div>
                                     <?php
-                                        if (!empty($obj_next_range)) {
-                                            if ($obj_total_commissions->total_comissions == 0) {
-                                                $percent = 0;
-                                            } else {
-                                                $percent = ($obj_total_commissions->total_comissions / $obj_next_range->point_grupal) * 100;
-                                                $percent_js = $obj_total_commissions->total_comissions / $obj_next_range->point_grupal;
-                                                $percent = ceil($percent);
-                                            }
+                                    if (!empty($obj_next_range)) {
+                                        if ($obj_total_commissions->total_comissions == 0) {
+                                            $percent = 0;
+                                        } else {
+                                            $percent = ($obj_total_commissions->total_comissions / $obj_next_range->point_grupal) * 100;
+                                            $percent_js = $obj_total_commissions->total_comissions / $obj_next_range->point_grupal;
+                                            $percent = ceil($percent);
+                                        }
                                         ?>
                                         <div class="circle">
-                                            <strong class="number-cicle"><?php echo $percent;?>% <br/> 
+                                            <strong class="number-cicle"><?php echo $percent; ?>% <br/> 
                                                 <strong class="number-range">
-                                                    <?php echo $obj_next_range->name;?>
+                                                    <?php echo $obj_next_range->name; ?>
                                                 </strong>
                                             </strong>
                                             <div class="os-progress-bar warning">
                                                 <div class="bar-labels">
-                                                    <div class="bar-label-left"> <?php echo format_number_miles($obj_total_commissions->total_comissions);?> PTS </div>
-                                                    <div class="bar-label-right"> <span class="info"><?php echo format_number_miles($obj_next_range->point_grupal);?> PTS</span> </div>
+                                                    <div class="bar-label-left"> <?php echo format_number_miles($obj_total_commissions->total_comissions); ?> PTS </div>
+                                                    <div class="bar-label-right"> <span class="info"><?php echo format_number_miles($obj_next_range->point_grupal); ?> PTS</span> </div>
                                                 </div>
                                             </div>
                                         </div>
                                     <?php } else {
-                                        $percent_js = 1;?>
-                                    <div class="circle">
+                                        $percent_js = 1;
+                                        ?>
+                                        <div class="circle">
                                             <strong class="number-cicle">100%</strong>
                                             <div class="os-progress-bar warning">
                                                 <div class="bar-labels">
@@ -64,7 +65,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php } ?>
+<?php } ?>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-4">
@@ -157,7 +158,7 @@
                                             <div class="col-12">
                                                 <h6 class="text-center m-b-10"></h6>
                                                 <div class="progress">
-                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:<?php echo $percent;?>%;height:6px;" aria-valuenow="<?php echo $percent;?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar progress-c-green" role="progressbar" style="width:<?php echo $percent; ?>%;height:6px;" aria-valuenow="<?php echo $percent; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -253,7 +254,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-6 col-xl-6 offset-2">
+                            <div class="col-md-6 col-xl-6 offset-2">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
                                         <div class="row align-items-center justify-content-center">
@@ -310,13 +311,25 @@
                                                                 <td align="center"> 
                                                                     Administrador 
                                                                 </td>
-                                                                <td align="center"><?php echo "Bono de " . $value->bonus; ?></td>
+                                                                <td align="center">
+                                                                    <?php
+                                                                    if ($value->pago == 1) {
+                                                                        echo "Retiro";
+                                                                    } else {
+                                                                        echo "Bono de " . $value->bonus;
+                                                                    }
+                                                                    ?>
+                                                                </td>
                                                                 <td align="center"> 
                                                                     <span><?php echo formato_fecha_barras($value->date); ?></span><br> 
                                                                     <span class="smaller lighter "><i class="fa fa-clock-o"></i> <?php echo formato_fecha_minutos($value->date); ?></span>
                                                                 </td>
                                                                 <td align="center">
-                                                                    <span class="badge-success-inverted"> + &dollar;<?php echo $value->amount; ?></span>
+                                                                    <?php if ($value->amount < 0) { ?>
+                                                                        <span class="badge-danger-inverted"> <?php echo $value->amount; ?>&dollar;</span>
+                                                                    <?php } else { ?>
+                                                                        <span class="badge-success-inverted"> + &dollar;<?php echo $value->amount; ?></span>
+                                                                    <?php } ?>
                                                                 </td>
                                                             </tr>
                                                             <?php
@@ -333,8 +346,8 @@
                                     </div>
                                 </div>
                             </div>
-                           
-                            
+
+
                         </div>
                     </div>
                 </div>
@@ -344,7 +357,7 @@
 </div>
 <script>
     $('.circle').circleProgress({
-        value: <?php echo $percent_js;?>,
+        value: <?php echo $percent_js; ?>,
         size: 280.0,
         startAngle: -Math.PI,
         thickness: '20',

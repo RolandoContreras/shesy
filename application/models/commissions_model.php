@@ -90,6 +90,19 @@ class Commissions_Model extends CI_Model{
         $dato = $query->result();
         return $dato;
     }
+    
+    public function search_left_join($data){ 
+        if (isset($data["select"])&& $data["select"]!=""){$this->db->select($data["select"]);}
+        if (isset($data["where"]) && $data["where"]!=""){$this->db->where($data["where"]);}
+        if (isset($data["order"]) && $data["order"]!=""){$this->db->order_by($data["order"]);}
+        if (isset($data["group"]) && $data["group"]!=""){$this->db->group_by($data["group"]);}
+        if (isset($data["join"])){if (count($data["join"])>0){ foreach ($data["join"] as $rowJoin){$split = explode(",",$rowJoin);$this->db->join($split[0],$split[1],'left');}}}
+        if (isset($data["limit"]) && $data["limit"]!=""){$this->db->limit($data["limit"]);}
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        $dato = $query->result();
+        return $dato;
+    }
 
     public function total_records($data){        
         if (isset($data["select"])&& $data["select"]!=""){$this->db->select($data["select"]);}

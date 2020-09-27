@@ -126,7 +126,7 @@ class Customer_Model extends CI_Model{
         $dato = $query->result();
         return $dato;
     }
-
+    
     public function total_records($data){        
         if (isset($data["select"])&& $data["select"]!=""){$this->db->select($data["select"]);}
         if (isset($data["where"]) && $data["where"]!=""){$this->db->where($data["where"]);}
