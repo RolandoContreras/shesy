@@ -52,12 +52,16 @@ class Catalogo_home extends CI_Controller {
             $order = "catalog.catalog_id DESC";
         }
 
-        if ($kid_id > 0) {
-            $where = "catalog.active = 1";
+        if (isset($_GET['search'])) {
+            $word = $_GET['search'];
+            $where = "catalog.name like '%$word%' and catalog.active = 1";
         } else {
-            $where = "catalog.active = 1";
+            if ($kid_id > 0) {
+                $where = "catalog.active = 1";
+            } else {
+                $where = "catalog.active = 1";
+            }
         }
-
         $category_name = "Todos los Productos";
         //get catalog
         $params = array(

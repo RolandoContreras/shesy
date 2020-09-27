@@ -26,14 +26,36 @@
                                         <h5>Ver Productos</h5>
                                     </div>
                                     <div class="card-block">
-                                        <div class="btn-group mb-2 mr-2">
-                                            <button type="button" class="btn btn btn-outline-secondary">Ver Por:</button>
-                                            <button type="button" class="btn btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
-                                            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(92px, 43px, 0px);">
-                                                <a class="dropdown-item" href="<?php echo site_url() . $url . '?orderby=date'; ?>">Ordenar por Defecto</a>
-                                                <a class="dropdown-item" href="<?php echo site_url() . $url . '?orderby=date' ?>">Ordenar por Novedad</a>
-                                                <a class="dropdown-item" href="<?php echo site_url() . $url . '?orderby=price' ?>">Precio Menor a Mayor</a>
-                                                <a class="dropdown-item" href="<?php echo site_url() . $url . '?orderby=price-desc' ?>">Precio Mayor a Menor</a>
+
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="btn-group mb-2 mr-2">
+                                                    <button type="button" class="btn btn btn-outline-secondary">Ver Por:</button>
+                                                    <button type="button" class="btn btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
+                                                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(92px, 43px, 0px);">
+                                                        <a class="dropdown-item" href="<?php echo site_url() . $url . '?orderby=date'; ?>">Ordenar por Defecto</a>
+                                                        <a class="dropdown-item" href="<?php echo site_url() . $url . '?orderby=date' ?>">Ordenar por Novedad</a>
+                                                        <a class="dropdown-item" href="<?php echo site_url() . $url . '?orderby=price' ?>">Precio Menor a Mayor</a>
+                                                        <a class="dropdown-item" href="<?php echo site_url() . $url . '?orderby=price-desc' ?>">Precio Mayor a Menor</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <form method="get" action="<?php echo site_url()."mi_catalogo"?>">
+                                            <div class="col-sm">
+                                                <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon2" name="search">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-dark" type="submit">
+                                                                <span class="pcoded-micon">
+                                                                    <i data-feather="search"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                                </form>
+                                            <div class="col-sm">
+
                                             </div>
                                         </div>
                                     </div>
@@ -53,7 +75,7 @@
                                                     <div class="col-lg-3 col-sm-6">
                                                         <div class="card-block p-0">
                                                             <a href="<?php echo site_url() . "mi_catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>">
-                                                                <img class="img-fluid" style="width:100%;" src="http://html.codedthemes.com/datta-able/bootstrap/assets/images/widget/dashborad-2.jpg" alt="dashboard-user">
+                                                                <img class="img-fluid" style="width:100%;" src="<?php echo site_url() . "static/catalog/$value->img"; ?>" alt="dashboard-user">
                                                             </a>
                                                             <div class="ux-designer">
                                                                 <button class="btn btn-primary" style="background-color: white;">
@@ -70,17 +92,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-                                                    <!--                                                <figure class="effect-apollo">
-                                                                                                        <img width="400" height="260" src="<?php echo site_url() . "static/catalog/$value->img"; ?>" alt="advance-3">
-                                                                                                        <figcaption>
-                                                                                                            <p><?php echo corta_texto($value->summary, 100); ?></p>
-                                                                                                            <a href="<?php echo site_url() . "mi_catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>">Ver Más</a>
-                                                                                                        </figcaption>
-                                                    
-                                                                                                    </figure>-->
-
                                                     <?php
                                                 }
                                             } else {
