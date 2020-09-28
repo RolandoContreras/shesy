@@ -92,7 +92,7 @@
                                             timer: 1000
                                         });
                                         window.setTimeout(function () {
-                                            window.location = site + "backoffice/pay_order";
+                                            window.location = site + "mi_catalogo/pay_order";
                                         }, 1000);
                                     } else if (data.status == "false2") {
                                         Swal.fire({
