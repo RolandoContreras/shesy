@@ -69,7 +69,6 @@
                         } else {
                             $nav = "home";
                         }
-                        
                         $catalog_syle = "";
                         $home_syle = "";
                         $order_syle = "";
@@ -95,7 +94,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="nav-link">
+                            <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="nav-link <?php echo $home_syle;?>">
                                 <span class="pcoded-micon">
                                     <i data-feather="home"></i>
                                 </span>
@@ -111,14 +110,14 @@
                             <ul class="pcoded-submenu">
                                 <?php foreach ($obj_category_catalogo as $value) { ?>
                                     <li class="pcoded-hasmenu pcoded-trigger">
-                                        <a class="<?php echo $catalog_syle; ?>" href="<?php echo site_url() . "mi_catalogo/$value->slug"; ?>"><b><?php echo $value->name; ?></b></a>
+                                        <a href="<?php echo site_url() . "mi_catalogo/$value->slug"; ?>"><b><?php echo $value->name; ?></b></a>
                                         <ul class="pcoded-submenu" style="display: block;">
                                             <?php
                                             foreach ($obj_sub_category as $value_sub) {
                                                 if ($value_sub->category_id == $value->category_id) {
                                                     ?>
                                                     <li>
-                                                        <a class="<?php echo $catalog_syle; ?>" href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
+                                                        <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
                                                     </li>
                                                     <?php
                                                 }

@@ -2421,11 +2421,6 @@ p.text-muted {
     width: 3px;
     height: calc(100% - 5px)
 }
-.pcoded-navbar .pcoded-inner-navbar>li.active>a,
-.pcoded-navbar .pcoded-inner-navbar>li.pcoded-trigger>a {
-    background: #333f54;
-    color: #fff
-}
 .pcoded-navbar .pcoded-inner-navbar>.pcoded-menu-caption.active:after,
 .pcoded-navbar .pcoded-inner-navbar>.pcoded-menu-caption.pcoded-trigger:after {
     display: none
@@ -3671,10 +3666,6 @@ p.text-muted {
     color: white;
 }
 .pcoded-navbar.menu-light .pcoded-inner-navbar>li.active>a,
-.pcoded-navbar.menu-light .pcoded-inner-navbar>li.pcoded-trigger>a {
-    background: #323437;
-    color: white !important;
-}
 .pcoded-navbar.menu-light.theme-horizontal .pcoded-inner-navbar>li.active a,
 .pcoded-navbar.menu-light.theme-horizontal .pcoded-inner-navbar>li.pcoded-trigger a,
 .pcoded-navbar.menu-light.theme-horizontal .pcoded-inner-navbar>li:hover a {
