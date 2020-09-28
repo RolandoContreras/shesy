@@ -1,3 +1,38 @@
+function add_cart_1(catalog_id, price, name) {
+        $.ajax({
+            type: "post",
+            url: site + "catalogo/order/add_cart",
+            dataType: "json",
+            data: {
+                quantity: 1,
+                catalog_id: catalog_id,
+                price: price,
+                name: name
+            },
+            success: function (data) {
+                if (data.status == true) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Producto Agregado',
+                        showConfirmButton: false
+                    })
+                    var url = site + "mi_catalogo/pay_order";
+                    setTimeout(function () {
+                        location.href = url
+                    }, 1500);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        text: 'Sucedió un error',
+                        footer: '<a href>Vuelve a intentarlo!</a>'
+                    });
+                }
+            }
+        });
+}
+
 function add_cart(catalog_id, price, name) {
     var quantity = document.getElementById("quantity").value;
     var talla = document.getElementById("talla").value;

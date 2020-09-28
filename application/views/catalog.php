@@ -80,7 +80,7 @@
                                                     Precio <span class="money conversion-bear-money">&dollar;<?php echo $value->price; ?></span>
                                                 </div>
                                                 <div class="sale-tag medium--right">
-                                                    <span style="cursor:pointer" onclick="add_cart('<?php echo $value->catalog_id; ?>', '<?php echo $value->price; ?>', '<?php echo $value->name; ?>');" class="money conversion-bear-money"><i class="fa fa-shopping-cart"></i></span>
+                                                    <span style="cursor:pointer" onclick="add_cart_1('<?php echo $value->catalog_id; ?>', '<?php echo $value->price; ?>', '<?php echo $value->name; ?>');" class="money conversion-bear-money"><i class="fa fa-shopping-cart"></i></span>
                                                 </div>
                                             </div>
                                         </div>
