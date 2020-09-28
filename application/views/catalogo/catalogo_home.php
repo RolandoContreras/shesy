@@ -75,7 +75,7 @@
                                                                 <img class="img-fluid" style="width:100%;" src="<?php echo site_url() . "static/catalog/$value->img"; ?>" alt="dashboard-user">
                                                             </a>
                                                             <div class="ux-designer">
-                                                                <button class="btn btn-primary" style="background-color: white;">
+                                                                <button onclick="add_cart_granel_1('<?php echo $value->catalog_id; ?>', '<?php echo $value->price; ?>', '<?php echo $value->name; ?>');" class="btn btn-primary" style="background-color: white;">
                                                                     <i style="color:black;" data-feather="shopping-cart"></i>
                                                                 </button>
                                                                 <h5>
@@ -117,3 +117,4 @@
                 </div>
             </div>
             </section>
+<script src="<?php echo site_url(); ?>static/catalog/js/pay_order_new.js"></script>
