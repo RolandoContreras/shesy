@@ -30,7 +30,8 @@
         <script src="https://checkout.culqi.com/js/v3"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!--//swetaler2-->
-        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet" media="none" onload="if (media != 'all') media = 'all'">
+        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet" media="none" onload="if (media != 'all')
+                    media = 'all'">
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     </head>
     <body class="layout-6" style="background-image: url('<?php echo site_url() . 'static/course/img/bg1.jpg'; ?>'); background-size: cover;">
@@ -55,7 +56,7 @@
                             </li>
                             <li class="nav-item">
                                 <div class="sale-tag medium--right">
-                                    Disponible <span class="money conversion-bear-money">&dollar;<?php echo $total_compra!=""?format_number_miles($total_compra):"0.00";?></span>
+                                    Disponible <span class="money conversion-bear-money">&dollar;<?php echo $total_compra != "" ? format_number_miles($total_compra) : "0.00"; ?></span>
                                 </div>
                             </li>
                         </center>
@@ -72,7 +73,7 @@
                         $catalog_syle = "";
                         $home_syle = "";
                         $order_syle = "";
-                        
+
                         switch ($nav) {
                             case "home":
                                 $home_syle = "color-black";
@@ -81,7 +82,7 @@
                                 $order_syle = "color-black";
                                 break;
                             default:
-                                 $catalog_syle = "color-black";
+                                $catalog_syle = "color-black";
                                 break;
                         }
                         ?>
@@ -94,7 +95,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="nav-link <?php echo $home_syle;?>">
+                            <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="nav-link <?php echo $home_syle; ?>">
                                 <span class="pcoded-micon">
                                     <i data-feather="home"></i>
                                 </span>
@@ -110,15 +111,20 @@
                             <ul class="pcoded-submenu">
                                 <?php foreach ($obj_category_catalogo as $value) { ?>
                                     <li class="pcoded-hasmenu pcoded-trigger">
-                                        <a href="<?php echo site_url() . "mi_catalogo/$value->slug"; ?>"><b><?php echo $value->name; ?></b></a>
+                                        <a href="#"><b><?php echo $value->name; ?></b></a>
                                         <ul class="pcoded-submenu" style="display: block;">
                                             <?php
-                                            foreach ($obj_sub_category as $value_sub) {
-                                                if ($value_sub->category_id == $value->category_id) {
-                                                    ?>
-                                                    <li>
-                                                        <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
-                                                    </li>
+                                            foreach ($obj_sub_category as $key => $value_sub) {
+                                                if ($value_sub->category_id == $value->category_id && $value_sub != "") {?>
+                                                        <li>
+                                                            <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
+                                                        </li>
+                                                <?php } else {
+                                                    if ($key == 0) { ?>
+                                                        <li>
+                                                            <a href='<?php echo site_url() . "mi_catalogo/$value->slug"; ?>'>Ver</a>
+                                                        </li>
+                                                    <?php } ?>
                                                     <?php
                                                 }
                                             }
@@ -184,10 +190,10 @@
                             </div>
                         </li>
                     </ul>
-                <?php } ?>   
+        <?php } ?>   
             </div>
         </header>
-        <?php echo $body; ?>
+<?php echo $body; ?>
         <!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
         <script src="<?php echo site_url() . 'static/course/js/vendor-all.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/course/js/bootstrap.min.js'; ?>"></script>

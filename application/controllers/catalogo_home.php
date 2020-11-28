@@ -191,7 +191,7 @@ class Catalogo_home extends CI_Controller {
         $config['prev_tag_close'] = '</li>';
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="active"><span aria-current="page" class="page-numbers current">';
+        $config['cur_tag_open'] = '<li class="page-item active"><span class="page-link current">';
         $config['cur_tag_close'] = '</span></li>';
         $config['next_tag_open'] = '<li>';
         $config['next_tag_close'] = '</li>';
@@ -201,7 +201,7 @@ class Catalogo_home extends CI_Controller {
         $this->pagination->initialize($config);
         $obj_pagination = $this->pagination->create_links();
         /// DATA
-        $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
+        $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(3));
         //GET DATA FROM CUSTOMER
         $obj_profile = $this->get_profile($customer_id);
         //total comission compra
