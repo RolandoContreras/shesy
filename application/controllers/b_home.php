@@ -90,7 +90,7 @@ class B_home extends CI_Controller {
         
         //GET DATA COMISION
         $params = array(
-            "select" => "commissions.amount,
+            "select" => "   commissions.amount,
                                     commissions.date,
                                     commissions.commissions_id,
                                     customer.username,
@@ -105,7 +105,6 @@ class B_home extends CI_Controller {
             "limit" => "10");
         //GET DATA FROM CUSTOMER
         $obj_commissions = $this->obj_commissions->search_left_join($params);
-        
         //GET MONTH AND YEAR
         $month = date('m');
         $year = date('Y');

@@ -31,6 +31,12 @@
                                                 <a href='<?php echo site_url() . "static/catalog/$obj_catalog->img"; ?>' data-toggle="lightbox" data-gallery="<?php echo $obj_catalog->name; ?>">
                                                     <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img"; ?>' class="img-fluid m-b-10" alt="<?php echo $obj_catalog->name; ?>">
                                                 </a>
+                                                <a href='<?php echo site_url() . "static/catalog/$obj_catalog->img2"; ?>' data-toggle="lightbox" data-gallery="<?php echo $obj_catalog->name; ?>">
+                                                    <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img2"; ?>' class="img-fluid m-b-10" alt="<?php echo $obj_catalog->name; ?>">
+                                                </a>
+                                                <a href='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' data-toggle="lightbox" data-gallery="<?php echo $obj_catalog->name; ?>">
+                                                    <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' class="img-fluid m-b-10" alt="<?php echo $obj_catalog->name; ?>">
+                                                </a>
                                             </div>
                                             <div class="col-xl-7 col-lg-7 col-sm-7 col-xs-12">
                                                 <div class="tab-content" id="v-pills-tabContent">
