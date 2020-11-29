@@ -133,4 +133,9 @@
                 </div>
                 </section>
                 <script src="<?php echo site_url(); ?>static/catalog/js/pay_order_new.js"></script>
+                <style>
+                    .white{
+                        color:white !important;
+                    }
+                </style>
 

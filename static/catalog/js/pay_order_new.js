@@ -72,7 +72,7 @@ function add_cart(catalog_id, price, name) {
                         position: 'top-end',
                         title: 'Producto Agregado a la Cesta',
                         icon: 'success',
-                        showConfirmButton: false
+                        showConfirmButton: true
                     });
                     url = site + "mi_catalogo/pay_order";
                     setTimeout(function () {
@@ -111,12 +111,13 @@ function add_cart_granel(catalog_id, price, name) {
                         position: 'top-end',
                         title: 'Producto Agregado a la Cesta',
                         icon: 'success',
-                        showConfirmButton: false
+                        showCloseButton: true,
+                        showCancelButton: true,
+                        confirmButtonText:
+                                '<a class="white" href="' + site + 'mi_catalogo/pay_order">Pagar!</a>',
+                        cancelButtonText:
+                                'Seguir Comprando'
                     });
-                    url = site + "mi_catalogo/pay_order";
-                    setTimeout(function () {
-                        location.href = url
-                    }, 1500);
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -130,35 +131,41 @@ function add_cart_granel(catalog_id, price, name) {
 }
 
 function add_cart_granel_1(catalog_id, price, name) {
-        $.ajax({
-            type: "post",
-            url: site + "mi_catalogo/order/add_cart",
-            dataType: "json",
-            data: {quantity: 1,
-                catalog_id: catalog_id,
-                price: price,
-                name: name},
-            success: function (data) {
-                if (data.status == "true") {
-                    Swal.fire({
-                        position: 'top-end',
-                        title: 'Producto Agregado a la Cesta',
-                        icon: 'success',
-                        showConfirmButton: false
-                    });
-                    url = site + "mi_catalogo/pay_order";
-                    setTimeout(function () {
-                        location.href = url
-                    }, 1500);
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Ups! Hubo un error',
-                        footer: 'Comuniquese con soporte',
-                    });
-                }
+    $.ajax({
+        type: "post",
+        url: site + "mi_catalogo/order/add_cart",
+        dataType: "json",
+        data: {quantity: 1,
+            catalog_id: catalog_id,
+            price: price,
+            name: name},
+        success: function (data) {
+            if (data.status == "true") {
+                Swal.fire({
+                    position: 'top-end',
+                    title: 'Producto Agregado a la Cesta',
+                    icon: 'success',
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    confirmButtonText:
+                            '<a class="white" href="' + site + 'mi_catalogo/pay_order">Pagar!</a>',
+                    cancelButtonText:
+                            'Seguir Comprando'
+
+                });
+                url = site + "mi_catalogo/pay_order";
+                setTimeout(function () {
+                    location.href = url
+                }, 1500);
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Hubo un error',
+                    footer: 'Comuniquese con soporte',
+                });
             }
-        });
+        }
+    });
 }
 
 function contra_entrega() {
