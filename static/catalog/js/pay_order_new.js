@@ -72,12 +72,13 @@ function add_cart(catalog_id, price, name) {
                         position: 'top-end',
                         title: 'Producto Agregado a la Cesta',
                         icon: 'success',
-                        showConfirmButton: true
+                        showCloseButton: true,
+                        showCancelButton: true,
+                        confirmButtonText:
+                                '<a class="white" href="' + site + 'mi_catalogo/pay_order">Pagar!</a>',
+                        cancelButtonText:
+                                'Seguir Comprando'
                     });
-                    url = site + "mi_catalogo/pay_order";
-                    setTimeout(function () {
-                        location.href = url
-                    }, 1500);
                 } else {
                     Swal.fire({
                         icon: 'error',
