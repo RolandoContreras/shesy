@@ -112,7 +112,7 @@ class Register extends CI_Controller {
                 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Lcff80ZAAAAABeR5cpAa2whczBB7f2s0_VYBCIo&response={$googleToken}");
                 $response = json_decode($response);
                 $response = (array) $response;
-                if ($response['success'] && ($response['score'] && $response['score'] > 0.5)) {
+                if ($response['success'] && ($response['score'] && $response['score'] > 0.3)) {
                     //get data
                     $username = str_to_minuscula($this->input->post("username"));
                     //VALIDATE USERNAME
@@ -183,7 +183,7 @@ class Register extends CI_Controller {
                         $data_customer_session['status'] = 1;
                         $_SESSION['customer'] = $data_customer_session;
                         //send message
-                       // $this->message($username, $pass, $name, $email);
+                        $this->message($username, $pass, $name, $email);
                         //count data cart
                         $cart = count($this->cart->contents());
                         if ($cart > 0) {
