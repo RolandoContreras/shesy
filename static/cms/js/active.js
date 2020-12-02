@@ -51,12 +51,16 @@ function active() {
                             type: type},
                         success: function (data) {
                             if (data.status == "true") {
-                                var texto = "";
-                                texto = texto + '<div class="alert alert-success">';
-                                texto = texto + '<p style="text-align: center;">Activado Éxitosamente</p>';
-                                texto = texto + '</div>';
-                                $("#message").html(texto);
-                                location.href = site + "dashboard/activaciones";
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Activado Éxitosamente',
+                                    showConfirmButton: false
+                                  });
+                                  var url = site + "dashboard/activaciones";
+                                    setTimeout(function () {
+                                        location.href = url
+                                    }, 1500);
                             } else {
                                 var texto = "";
                                 texto = texto + '<div class="alert alert-danger">';
@@ -64,7 +68,6 @@ function active() {
                                 texto = texto + '</div>';
                                 $("#message").html(texto);
                             }
-
                         }
                     });
                 }
