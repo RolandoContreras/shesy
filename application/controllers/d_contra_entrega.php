@@ -91,26 +91,11 @@ class D_contra_entrega extends CI_Controller {
     public function active() {
         //ACTIVE CUSTOMER NORMALY
         if ($this->input->is_ajax_request()) {
-
             date_default_timezone_set('America/Lima');
             //SELECT CUSTOMER_ID
             $customer_id = $this->input->post("customer_id");
             $invoice_id = $this->input->post("invoice_id");
             $total = $this->input->post("total");
-            //quitar precio del producto
-            $data_param_comission = array(
-                'invoice_id' => $invoice_id,
-                'customer_id' => $customer_id,
-                'bonus_id' => 3,
-                'amount' => -$total,
-                'compras' => 0,
-                'active' => 1,
-                'status_value' => 1,
-                'date' => date("Y-m-d H:i:s"),
-                'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $customer_id,
-            );
-            $this->obj_commissions->insert($data_param_comission);
             //GET DATA CUSTOMER UNILEVEL
             $params = array(
                 "select" => "parend_id,
