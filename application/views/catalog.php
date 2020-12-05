@@ -7,10 +7,10 @@
         </div>
         <main class="wrapper main-content" role="main">
             <div id="shopify-section-collection-template" class="shopify-section collection-template-section">
-                <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs" style="background: #343a40 !important;">
+                <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs" style="background: #323437 !important;">
                     <a href="<?php echo site_url(); ?>" title="Volver a la portada">Inicio</a>
                     <span class="divider" aria-hidden="true">›</span>
-                    <span>Catalogo</span>
+                    <span class="color-title">Catalogo</span>
                 </nav>
                 <div id="CollectionSection">
                     <div class="grid grid-border">
@@ -27,7 +27,7 @@
                         </aside>
                         <div class="grid-item large--four-fifths grid-border--left">
                             <header class="section-header">
-                                <div id="catalog-title" class="section-header--title section-header--left h1">Catalogo</div>
+                                <div id="catalog-title" class="section-header--title section-header--left h1 color-title">Catalogo</div>
                                 <div class="section-header--right">
                                     <div class="form-horizontal">
                                         <label for="sortBy" class="small--hide">Ordenar por</label>

@@ -216,6 +216,9 @@ li .nav_catalog{
     background-color: #fff;
     border-radius: 4px;
 }
+.color-title{
+    color: #c9d0d5 !important;
+}
 @media (min-width: 768px) {
     #block-1597943616686 .block {
         display: flex;
