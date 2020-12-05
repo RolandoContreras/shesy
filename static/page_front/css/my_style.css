@@ -176,7 +176,7 @@ header{
     margin-bottom: 0;
 }
 li .nav_catalog{
-    color: #381640 !important;
+    color: white !important;
 }
 #title-description{
     font-weight: bold;
@@ -374,7 +374,7 @@ li .nav_catalog{
     list-style-type:none !important;
 }
 .green{
-    color:greenyellow !important;
+    color:grey !important;
 }
 @media (max-width: 767px) {
     #block-1597347523879 {

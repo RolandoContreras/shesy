@@ -7,7 +7,7 @@
         </div>
         <main class="wrapper main-content" role="main">
             <div id="shopify-section-collection-template" class="shopify-section collection-template-section">
-                <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+                <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs" style="background: #343a40 !important;">
                     <a href="<?php echo site_url(); ?>" title="Volver a la portada">Inicio</a>
                     <span class="divider" aria-hidden="true">›</span>
                     <span>Catalogo</span>
@@ -20,7 +20,7 @@
                             <ul>
                                 <?php foreach ($obj_category_catalog as $value) { ?>
                                     <li>  
-                                        <a class="nav_catalog" href="<?php echo site_url() . "catalogo/$value->slug"; ?>" title="<?php echo $value->name; ?>"><?php echo $value->name; ?></a>
+                                        <a class="nav_catalog white" href="<?php echo site_url() . "catalogo/$value->slug"; ?>" title="<?php echo $value->name; ?>"><?php echo $value->name; ?></a>
                                     </li>
                                 <?php } ?>
                             </ul>

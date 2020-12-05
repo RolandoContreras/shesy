@@ -24,6 +24,7 @@
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/styles.css?15964308185009978"?>"/>
     <!-- Customer CSS ====================================================== -->
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/my_style.css";?>"/>
+    <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/catalog.css";?>"/>
     <!-- Shopping ====================================================== -->
     
     <?php 
