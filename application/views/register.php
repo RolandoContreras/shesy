@@ -55,12 +55,13 @@
                             <input type="hidden" id="parent_id_2" name="parent_id_2" value="<?php echo $parent_id; ?>">
                             <span class="alert-1"></span>
                         </div>
-                    <?php } else {
+                    <?php
+                    } else {
                         $parent_id = "1";
                         ?>
                         <input type="hidden" id="parent_id" name="parent_id" value="<?php echo $parent_id; ?>">
                         <input type="hidden" id="parent_id_2" name="parent_id_2" value="<?php echo $parent_id; ?>">
-                    <?php } ?>
+<?php } ?>
                     <div class="form-group">
                         <label>Usuario</label>
                         <input type="text" onkeyup="this.value = Numtext(this.value)" onblur="validate_username(this.value);" class="form-control" id="username" name="username" placeholder="Usuario"  style="text-transform:lowercase;" autofocus="" required="">
@@ -69,8 +70,15 @@
                     </div>
                     <div class="form-group">
                         <label>Contraseña</label>
-                        <input name="pass" id="pass" class="form-control" placeholder="Contraseña" type="password" autocomplete="off" required="">
-                        <div class="pre-icon os-icon "><i class="fa fa-unlock"></i></div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="validationTooltipUsernamePrepend" style="cursor: pointer;" onclick="show_pass();"><i class="fa fa-eye"></i></span>
+                            </div>
+                            <input class="form-control" type="password" id="password" name="password" value="<?php echo isset($obj_customer->password) ? $obj_customer->password : ""; ?>" class="input-xlarge-fluid" placeholder="Password" required>
+                            <div class="pre-icon os-icon "><i class="fa fa-unlock"></i></div>
+                        </div>
+<!--                        <input name="pass" id="pass" class="form-control" placeholder="Contraseña" type="password" autocomplete="off" required="">
+                        <div class="pre-icon os-icon "><i class="fa fa-unlock"></i></div>-->
                     </div>
                     <div class="form-group">
                         <label>Nombres</label>
@@ -108,7 +116,7 @@
                             <option  selected value="">selección país</option>
                             <?php foreach ($obj_paises as $key => $value) { ?>
                                 <option style="border-style: solid !important" value="<?php echo $value->id; ?>"><?php echo $value->nombre; ?></option>
-                            <?php } ?>
+<?php } ?>
                         </select>
                         <div class="pre-icon os-icon "><i class="fa fa-flag"></i></div>
                     </div>
@@ -123,77 +131,77 @@
         </div>
         <script src='https://www.google.com/recaptcha/api.js?render=6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso'></script>
         <script type="text/javascript">
-                                function register() {
-                                    document.getElementById("register_boton").innerHTML = "Procesando...";
-                                    var form = $('#register-form');
-                                    $.ajax(
-                                            {
-                                                type: "POST",
-                                                url: site + "register/validate",
-                                                data: form.serialize(),
-                                                success: function (data)
+                                    function register() {
+                                        document.getElementById("register_boton").innerHTML = "Procesando...";
+                                        var form = $('#register-form');
+                                        $.ajax(
                                                 {
-                                                    var data = JSON.parse(data);
-                                                    if (data.status == true) {
-                                                        Swal.fire({
-                                                            position: 'top-end',
-                                                            icon: 'success',
-                                                            title: 'Bienvenido, registro creado',
-                                                            showConfirmButton: false,
-                                                            timer: 1000
-                                                        });
-                                                        setTimeout('document.location.reload()', 1000);
-                                                        window.setTimeout(function () {
-                                                            window.location = site + "backoffice";
-                                                        }, 1000);
-                                                    } else if (data.status == "true2") {
-                                                        Swal.fire({
-                                                            position: 'top-end',
-                                                            icon: 'success',
-                                                            title: 'Bienvenido, registro creado',
-                                                            showConfirmButton: false,
-                                                            timer: 1000
-                                                        });
-                                                        window.setTimeout(function () {
-                                                            window.location = site + "mi_catalogo/pay_order";
-                                                        }, 1000);
-                                                    } else if (data.status == "username") {
-                                                        Swal.fire({
-                                                            position: 'top-end',
-                                                            icon: 'info',
-                                                            title: 'El usuario ya fue tomado',
-                                                            text: 'Ingrese un nuevo usuario',
-                                                            showConfirmButton: false,
-                                                            timer: 1000
-                                                        });
-                                                    } else if (data.status == "false2") {
-                                                        Swal.fire({
-                                                            position: 'top-end',
-                                                            icon: 'info',
-                                                            title: 'Capcha no verificado',
-                                                            showConfirmButton: false,
-                                                            timer: 1000
-                                                        });
-                                                        window.setTimeout(function () {
-                                                            location.reload();
-                                                        }, 1000);
-                                                    } else {
-                                                        Swal.fire({
-                                                            icon: 'info',
-                                                            title: 'Usuario no registrado',
-                                                            text: 'Verifique los datos'
-                                                        });
-                                                        document.getElementById("register_boton").innerHTML = "Registrar";
+                                                    type: "POST",
+                                                    url: site + "register/validate",
+                                                    data: form.serialize(),
+                                                    success: function (data)
+                                                    {
+                                                        var data = JSON.parse(data);
+                                                        if (data.status == true) {
+                                                            Swal.fire({
+                                                                position: 'top-end',
+                                                                icon: 'success',
+                                                                title: 'Bienvenido, registro creado',
+                                                                showConfirmButton: false,
+                                                                timer: 1000
+                                                            });
+                                                            setTimeout('document.location.reload()', 1000);
+                                                            window.setTimeout(function () {
+                                                                window.location = site + "backoffice";
+                                                            }, 1000);
+                                                        } else if (data.status == "true2") {
+                                                            Swal.fire({
+                                                                position: 'top-end',
+                                                                icon: 'success',
+                                                                title: 'Bienvenido, registro creado',
+                                                                showConfirmButton: false,
+                                                                timer: 1000
+                                                            });
+                                                            window.setTimeout(function () {
+                                                                window.location = site + "mi_catalogo/pay_order";
+                                                            }, 1000);
+                                                        } else if (data.status == "username") {
+                                                            Swal.fire({
+                                                                position: 'top-end',
+                                                                icon: 'info',
+                                                                title: 'El usuario ya fue tomado',
+                                                                text: 'Ingrese un nuevo usuario',
+                                                                showConfirmButton: false,
+                                                                timer: 1000
+                                                            });
+                                                        } else if (data.status == "false2") {
+                                                            Swal.fire({
+                                                                position: 'top-end',
+                                                                icon: 'info',
+                                                                title: 'Capcha no verificado',
+                                                                showConfirmButton: false,
+                                                                timer: 1000
+                                                            });
+                                                            window.setTimeout(function () {
+                                                                location.reload();
+                                                            }, 1000);
+                                                        } else {
+                                                            Swal.fire({
+                                                                icon: 'info',
+                                                                title: 'Usuario no registrado',
+                                                                text: 'Verifique los datos'
+                                                            });
+                                                            document.getElementById("register_boton").innerHTML = "Registrar";
+                                                        }
                                                     }
-                                                }
-                                            });
-                                }
-                                grecaptcha.ready(function () {
-                                    grecaptcha.execute('6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso', {action: 'homepage'})
-                                            .then(function (token) {
-                                                $('#google-response-token').val(token);
-                                            });
-                                });
+                                                });
+                                    }
+                                    grecaptcha.ready(function () {
+                                        grecaptcha.execute('6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso', {action: 'homepage'})
+                                                .then(function (token) {
+                                                    $('#google-response-token').val(token);
+                                                });
+                                    });
         </script>
         <script src='<?php echo site_url() . 'static/page_front/js/script/register.js'; ?>'></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/jquery.min.js'; ?>"></script>
@@ -204,13 +212,13 @@
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/stats.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/vanta.globe.min.js'; ?>"></script>
         <script>
-                                $(document).ready(function () {
-                                    $('#cbox2').click(function () {
-                                        if ($(this).is(':checked')) {
-                                            $("#show").show(500);
-                                        }
+                                    $(document).ready(function () {
+                                        $('#cbox2').click(function () {
+                                            if ($(this).is(':checked')) {
+                                                $("#show").show(500);
+                                            }
+                                        });
                                     });
-                                });
         </script>
         <script>
             VANTA.GLOBE({
@@ -218,6 +226,16 @@
                 color: 0xa49b0a,
                 backgroundColor: 0x141316
             });
+        </script>
+        <script>
+            function show_pass() {
+                var tipo = document.getElementById("password");
+                if (tipo.type == "password") {
+                    tipo.type = "text";
+                } else {
+                    tipo.type = "password";
+                }
+            }
         </script>
     </body>
 </html>
