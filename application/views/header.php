@@ -54,7 +54,7 @@
             <a class="link-list__link" href="<?php echo site_url(); ?>">Inicio</a>
             <a class="link-list__link" href="#">Cursos</a>
             <a class="link-list__link" href="javascript:void(0);" onclick="show_category();">Catalogo</a>
-            <ul style="display:none;" id="ul_category">
+            <ul style="display:none; list-style-type:none !important;" id="ul_category">
                 <?php 
                  foreach ($obj_category_catalog as $value) { ?>
                 <li><a class="link-list__link style_nav_mobile" href="<?php echo site_url()."catalogo/$value->slug";?>"><i class="fa fa-check green"></i> <?php echo $value->slug;?></a></li>
