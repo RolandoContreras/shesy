@@ -367,6 +367,14 @@ li .nav_catalog{
 .padding-bot-20p{
     padding-bottom: 20px !important;
 }
+.style_nav_mobile{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 30px !important;
+}
+.green{
+    color:greenyellow !important;
+}
 @media (max-width: 767px) {
     #block-1597347523879 {
         text-align: left;

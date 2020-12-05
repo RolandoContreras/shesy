@@ -35,6 +35,7 @@ class Catalog extends CI_Controller {
         //GET NAV
         $data['obj_category_videos'] = $this->nav_videos();
         $data['obj_category_catalog'] = $this->nav_catalogo();
+        
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
 

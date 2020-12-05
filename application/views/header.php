@@ -17,13 +17,11 @@
                         <img class="logo__image" src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" alt="Logo" width="50"/>
                     </a>
                 </div>
-                <div id="block-1555988491313"
-                    class="header__block header__switch-content header__block--menu media__body">
-                    <div class="link-list justify-content-right"
-                        kjb-settings-id="sections_header_blocks_1555988491313_settings_menu">
+                <div id="block-1555988491313" class="header__block header__switch-content header__block--menu media__body">
+                    <div class="link-list justify-content-right">
                         <a class="link-list__link" href="<?php echo site_url(); ?>">Inicio</a>
                         <a class="link-list__link" href="#">Cursos</a>
-                        <a class="link-list__link" href="<?php echo site_url() . "catalogo"; ?>">Catalogo</a>
+                        <a class="link-list__link" href="#">Catalogo</a>
                         <a class="link-list__link" href="<?php echo site_url() . 'contacto'; ?>">Contacto</a>
                         <a class="link-list__link" href="<?php echo site_url() . 'registro'; ?>">Registro</a>
                     </div>
@@ -55,7 +53,14 @@
             kjb-settings-id="sections_header_blocks_1555988491313_settings_menu">
             <a class="link-list__link" href="<?php echo site_url(); ?>">Inicio</a>
             <a class="link-list__link" href="#">Cursos</a>
-            <a class="link-list__link" href="<?php echo site_url() . 'catalogo'; ?>">Catalogo</a>
+            <a class="link-list__link" href="javascript:void(0);" onclick="show_category();">Catalogo</a>
+            <ul style="display:none;" id="ul_category">
+                <?php 
+                 foreach ($obj_category_catalog as $value) { ?>
+                <li><a class="link-list__link style_nav_mobile" href="<?php echo site_url()."catalogo/$value->slug";?>"><i class="fa fa-check green"></i> <?php echo $value->slug;?></a></li>
+                <?php } ?>
+                
+            </ul>
             <a class="link-list__link" href="<?php echo site_url() . 'contacto'; ?>">Contacto</a>
             <a class="link-list__link" href="<?php echo site_url() . 'registro'; ?>">Registro</a>
         </div>
@@ -64,6 +69,14 @@
 <script>
 function show_nav_mobile() {
     var value = document.getElementById('nav_mobile');
+    if (value.style.display === 'none') {
+        value.style.display = 'block';
+    } else {
+        value.style.display = 'none';
+    }
+}
+function show_category() {
+    var value = document.getElementById('ul_category');
     if (value.style.display === 'none') {
         value.style.display = 'block';
     } else {
