@@ -8,7 +8,7 @@
         <main class="wrapper main-content" role="main">
             <div id="shopify-section-product-template" class="shopify-section product-template-section">
                 <div id="ProductSection">
-                    <nav class="breadcrumb" role="navigation" style="background: #343a40 !important;">
+                    <nav class="breadcrumb" role="navigation" style="background: #323437 !important;">
                         <a href="<?php echo site_url(); ?>" title="Volver al Inicio">Inicio</a>
                         <span class="divider">›</span>
                         <a href="<?php echo site_url() . "catalogo"; ?>" title="Ir al Catalogo">Catalogo</a>
