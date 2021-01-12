@@ -57,7 +57,7 @@
                 </form>
             </div>
         </div>
-        <script src='https://www.google.com/recaptcha/api.js?render=6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso'></script>
+        <script src='https://www.google.com/recaptcha/api.js?render=6LedZSkaAAAAAGBNpm7HRQ78LJiwqrYhtdpWWWb2'></script>
         <script type="text/javascript">
                 function login() {
                     document.getElementById("login_boton").innerHTML = "Procesando...";
@@ -118,7 +118,7 @@
                             });
                 }
                 grecaptcha.ready(function () {
-                    grecaptcha.execute('6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso', {action: 'homepage'})
+                    grecaptcha.execute('6LedZSkaAAAAAGBNpm7HRQ78LJiwqrYhtdpWWWb2', {action: 'homepage'})
                             .then(function (token) {
                                 $('#google-response-token').val(token);
                             });
