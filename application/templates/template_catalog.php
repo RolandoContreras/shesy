@@ -64,7 +64,6 @@
                         <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
                         <?php
                         $url = explode("/", uri_string());
-
                         if (isset($url[1])) {
                             $nav = $url[1];
                         } else {
@@ -94,62 +93,107 @@
                                 <span class="pcoded-mtext">Mi Oficina</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="nav-link <?php echo $home_syle; ?>">
-                                <span class="pcoded-micon">
-                                    <i data-feather="home"></i>
-                                </span>
-                                <span class="pcoded-mtext">Inicio</span>
-                            </a>
-                        </li>
-                        <li class="nav-item pcoded-hasmenu pcoded-trigger">
-                            <a href="#!" class="nav-link <?php echo $catalog_syle; ?>">
-                                <span class="pcoded-micon">
-                                    <i data-feather="airplay"></i>
-                                </span>
-                                <span class="pcoded-mtext">Mis Categorías</span></a>
-                            <ul class="pcoded-submenu">
-                                <?php foreach ($obj_category_catalogo as $value) { ?>
-                                    <li class="pcoded-hasmenu pcoded-trigger">
-                                        <a href="#"><b><?php echo $value->name; ?></b></a>
-                                        <ul class="pcoded-submenu" style="display: block;">
-                                            <?php
-                                            foreach ($obj_sub_category as $key => $value_sub) {
-                                                if ($value_sub->category_id == $value->category_id && $value_sub != "") {?>
-                                                        <li>
-                                                            <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
-                                                        </li>
-                                                <?php } else {
-                                                    if ($key == 0) { ?>
-                                                        <li>
-                                                            <a href='<?php echo site_url() . "mi_catalogo/$value->slug"; ?>'>Ver</a>
-                                                        </li>
-                                                    <?php } ?>
-                                                    <?php
+                        <?php
+                        $url = explode("/", uri_string()); 
+                        if($url[0] == "backoffice"){?>
+                            <li class="nav-item">
+                                <a href="<?php echo site_url() . 'backoffice/cursos'; ?>" class="nav-link <?php echo $home_syle; ?>">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="home"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Inicio</span>
+                                </a>
+                            </li>
+                            <li class="nav-item pcoded-hasmenu pcoded-trigger">
+                                <a href="#!" class="nav-link">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="airplay"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Mis Categorías</span></a>
+                                <ul class="pcoded-submenu">
+                                    <?php foreach ($obj_category_catalogo as $value) { ?>
+                                        <li class="pcoded-hasmenu pcoded-trigger">
+                                            <a href="#"><b><?php echo $value->name; ?></b></a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="shopping-cart"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Mis Pedidos</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo site_url() . 'login/logout'; ?>" class="nav-link">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="log-out"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Salir</span>
+                                </a>
+                            </li>
+                            
+
+                        <?php }else{ ?>
+                            <li class="nav-item">
+                                <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="nav-link <?php echo $home_syle; ?>">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="home"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Inicio</span>
+                                </a>
+                            </li>
+                            <li class="nav-item pcoded-hasmenu pcoded-trigger">
+                                <a href="#!" class="nav-link <?php echo $catalog_syle; ?>">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="airplay"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Mis Categorías</span></a>
+                                <ul class="pcoded-submenu">
+                                    <?php foreach ($obj_category_catalogo as $value) { ?>
+                                        <li class="pcoded-hasmenu pcoded-trigger">
+                                            <a href="#"><b><?php echo $value->name; ?></b></a>
+                                            <ul class="pcoded-submenu" style="display: block;">
+                                                <?php
+                                                foreach ($obj_sub_category as $key => $value_sub) {
+                                                    if ($value_sub->category_id == $value->category_id && $value_sub != "") {?>
+                                                            <li>
+                                                                <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
+                                                            </li>
+                                                    <?php } else {
+                                                        if ($key == 0) { ?>
+                                                            <li>
+                                                                <a href='<?php echo site_url() . "mi_catalogo/$value->slug"; ?>'>Ver</a>
+                                                            </li>
+                                                        <?php } ?>
+                                                        <?php
+                                                    }
                                                 }
-                                            }
-                                            ?> 
-                                        </ul>
-                                    </li>
-                                <?php } ?>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?php echo site_url() . 'mi_catalogo/order'; ?>" class="nav-link <?php echo $order_syle; ?>">
-                                <span class="pcoded-micon">
-                                    <i data-feather="shopping-cart"></i>
-                                </span>
-                                <span class="pcoded-mtext">Mis Pedidos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?php echo site_url() . 'login/logout'; ?>" class="nav-link">
-                                <span class="pcoded-micon">
-                                    <i data-feather="log-out"></i>
-                                </span>
-                                <span class="pcoded-mtext">Salir</span>
-                            </a>
-                        </li>
+                                                ?> 
+                                            </ul>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo site_url() . 'mi_catalogo/order'; ?>" class="nav-link <?php echo $order_syle; ?>">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="shopping-cart"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Mis Pedidos</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo site_url() . 'login/logout'; ?>" class="nav-link">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="log-out"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Salir</span>
+                                </a>
+                            </li>
+                        <?php }  ?>    
                     </ul>
                 </div>
             </div>
