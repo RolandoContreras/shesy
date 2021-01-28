@@ -475,38 +475,46 @@ class Home extends CI_Controller {
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     ';
         foreach ($obj_videos as $value) {
+            $explode_data = explode(" ", $value->date);
+            $date = "$explode_data[0]" . 'T' . $explode_data[1] . "+00:00";
             $codigo .='<url>
         <loc>' . site_url() . "courses/" . $value->category_slug . "/" . $value->slug;
             $codigo .='</loc>
-        <lastmod>' . $value->date . '</lastmod>
+        <lastmod>' . $date . '</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>';
         }
         foreach ($obj_catalog as $value) {
+            $explode_data = explode(" ", $value->date);
+            $date = "$explode_data[0]" . 'T' . $explode_data[1] . "+00:00";
             $codigo .='<url>
         <loc>' . site_url() . "catalog/" . $value->category_slug . "/" . $value->slug;
             $codigo .='</loc>
-        <lastmod>' . $value->date . '</lastmod>
+        <lastmod>' . $date . '</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>';
         }
         foreach ($obj_category_videos as $value) {
+            $explode_data = explode(" ", $value->created_at);
+            $date = "$explode_data[0]" . 'T' . $explode_data[1] . "+00:00";
             $codigo .='<url>
         <loc>' . site_url() . "courses/" . $value->slug;
             $codigo .='</loc>
-        <lastmod>' . $value->created_at . '</lastmod>
+        <lastmod>' . $date . '</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>';
         }
 
         foreach ($obj_category_catalog as $value) {
+            $explode_data = explode(" ", $value->created_at);
+            $date = "$explode_data[0]" . 'T' . $explode_data[1] . "+00:00";
             $codigo .='<url>
         <loc>' . site_url() . "catalog/" . $value->slug;
             $codigo .='</loc>
-        <lastmod>' . $value->created_at . '</lastmod>
+        <lastmod>' . $date . '</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>';
@@ -514,42 +522,48 @@ class Home extends CI_Controller {
 
         $codigo .='<url>';
         $codigo .='<loc>' . site_url() . '</loc>';
+        $codigo .='<lastmod>2021-01-20T19:18:39+00:00</lastmod>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
         $codigo .='<url>';
         $codigo .='<loc>' . site_url() . 'home' . '</loc>';
+        $codigo .='<lastmod>2021-01-20T19:18:39+00:00</lastmod>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
         $codigo .='<url>';
-        $codigo .='<loc>' . site_url() . 'courses' . '</loc>';
+        $codigo .='<loc>' . site_url() . 'cursos' . '</loc>';
+        $codigo .='<lastmod>2021-01-20T19:18:39+00:00</lastmod>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
         $codigo .='<url>';
-        $codigo .='<loc>' . site_url() . 'catalog' . '</loc>';
+        $codigo .='<loc>' . site_url() . 'catalogo' . '</loc>';
+        $codigo .='<lastmod>2021-01-20T19:18:39+00:00</lastmod>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
         $codigo .='<url>';
-        $codigo .='<loc>' . site_url() . 'register' . '</loc>';
+        $codigo .='<loc>' . site_url() . 'registro' . '</loc>';
+        $codigo .='<lastmod>2021-01-20T19:18:39+00:00</lastmod>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
         $codigo .='<url>';
-        $codigo .='<loc>' . site_url() . 'contact' . '</loc>';
+        $codigo .='<loc>' . site_url() . 'contacto' . '</loc>';
+        $codigo .='<lastmod>2021-01-20T19:18:39+00:00</lastmod>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
     </url>';
         $codigo .='<url>';
-        $codigo .='<loc>' . site_url() . 'login' . '</loc>';
+        $codigo .='<loc>' . site_url() . 'iniciar-sesion' . '</loc>';
         $codigo .='<changefreq>weekly</changefreq>
         <priority>0.80</priority>';
         $codigo .='
