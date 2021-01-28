@@ -535,6 +535,30 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->render("catalogo/catalogo_contra_entrega");
     }
 
+
+    //ganancia disponible pago
+    public function ganancia_disponible_view() {
+        //GET SESION ACTUALY
+        $this->get_session();
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total commission compra
+        $obj_total_compra = $this->total_comissions($customer_id);
+        $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
+        //get nav ctalogo
+        $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
+        //send data
+        $this->tmp_catalog->set("obj_total_compra", $obj_total_compra);
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
+        $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
+        $this->tmp_catalog->render("catalogo/catalogo_ganancia_disponible");
+    }
+
     //procesando contra entrega
     public function procesar_contra_entrega() {
         //GET SESION ACTUALY
@@ -755,6 +779,11 @@ class Catalogo_home extends CI_Controller {
         $total_disponible = $this->input->post("total_disponible");
         $total_compra = $this->input->post("total_compra");
         $total_precio = $this->input->post("total");
+        //data address
+        $name = $this->input->post('name');
+        $phone = $this->input->post('phone');
+        $address = $this->input->post('address');
+        $reference = $this->input->post('reference');
         //active customer
         $active_month = $this->input->post("active_month");
         //INSERT INVOICE
@@ -846,6 +875,17 @@ class Catalogo_home extends CI_Controller {
                             $this->obj_commissions->insert($data_comission_compra);
                         }
                     }
+                    //insert data contra entrega
+                    $param = array(
+                        'invoice_id' => $invoice_id,
+                        'customer' => $name,
+                        'phone' => $phone,
+                        'address' => $address,
+                        'reference' => $reference,
+                        'active' => 1,
+                        'status_value' => 1,
+                    );
+                    $contra_entrega_id = $this->obj_contra_entrega->insert($param);
                     //set ident customer  company
                     if ($customer_id == 1) {
                         $ident = null;

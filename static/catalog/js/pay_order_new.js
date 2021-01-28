@@ -174,13 +174,27 @@ function contra_entrega() {
     location.href = site + url;
 }
 
-function ganancia_disponible() {
+function ganancia_disponible_view() {
+    var url = 'mi_catalogo/ganancia_disponible';
+    location.href = site + url;
+}
+
+function regresar() {
+    var url = 'mi_catalogo/pay_order';
+    location.href = site + url;
+}
+
+function ganancia_disponible_2() {
     document.getElementById("puntos_button").innerHTML = "Procesando";
     var ganancia_disponible = document.getElementById("ganancia_disponible").value;
     var total_disponible = document.getElementById("total_disponible").value;
     var total_compra = document.getElementById("total_compra").value;
     var total = document.getElementById("total").value;
     var active_month = document.getElementById("active_month").value;
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var address = document.getElementById("address").value;
+    var reference = document.getElementById("reference").value;
 
     $.ajax({
         type: "post",
@@ -190,7 +204,11 @@ function ganancia_disponible() {
             total_compra: total_compra,
             total_disponible: total_disponible,
             total: total,
-            active_month: active_month},
+            active_month: active_month,
+            name: name,
+            phone: phone,
+            address: address,
+            reference: reference},
         success: function (data) {
             if (data.status == true) {
                 Swal.fire({
