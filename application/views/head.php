@@ -12,14 +12,14 @@
     <meta name="distribution" content="Global">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo site_url();?>">
-    <meta property="og:title" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica">
+    <meta property="og:title" content="Cultura Emprendedora | Organización Neuronal de emprendedores">
     <meta property="og:url" content="<?php echo site_url();?>">
     <meta property="og:description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
     <meta property="og:image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
     <meta property="og:type" content="video_lecture">
     <meta property="og:site_name" content="Cultura Emprendedora">
     <meta property="og:locale" content="es_PE">
-    <meta itemprop="name" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica">
+    <meta itemprop="name" content="Cultura Emprendedora | Organización Neuronal de emprendedores">
     <meta itemprop="url" content="<?php echo site_url();?>">
     <meta itemprop="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
     <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
@@ -28,19 +28,19 @@
     <meta name="author" content="Evolucion Web"> 
     <meta name="robots" content="follow, index"/> 
     <meta name="googlebot" content="index, follow" /> 
-    <meta property="og:title" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica"> 
+    <meta property="og:title" content="Cultura Emprendedora | Organización Neuronal de emprendedores"> 
     <meta property="og:url" content="<?php echo site_url(); ?>"> 
     <meta property="og:description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos"> 
     <meta property="og:image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>"> 
     <meta property="og:type" content="website"> 
     <meta property="og:site_name" content="Cultura Emprendedora"> 
     <meta property="og:locale" content="es"> 
-    <meta itemprop="name" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica"> 
+    <meta itemprop="name" content="Cultura Emprendedora | Organización Neuronal de emprendedores"> 
     <meta itemprop="url" content="<?php echo site_url();?>"> 
     <meta itemprop="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos"> 
     <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>"> 
     <meta name="twitter:card" content="summary_large_image"> 
-    <meta name="twitter:title" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica"> 
+    <meta name="twitter:title" content="Cultura Emprendedora | Organización Neuronal de emprendedores"> 
     <link rel="canonical" href="<?php echo site_url(); ?>" /> 
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
