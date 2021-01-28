@@ -85,7 +85,7 @@ class Login extends CI_Controller {
 
         if ($_POST['google-response-token']) {
             $googleToken = $_POST['google-response-token'];
-            $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Lcff80ZAAAAABeR5cpAa2whczBB7f2s0_VYBCIo&response={$googleToken}");
+            $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LenFywaAAAAAPEo2HUIccja43Xz6_97TZ2EUzFM&response={$googleToken}");
             $response = json_decode($response);
             $response = (array) $response;
             if ($response['success'] && ($response['score'] && $response['score'] > 0.5)) {
@@ -162,7 +162,7 @@ class Login extends CI_Controller {
                           <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$username</strong></span>
                             <span style='display:block'><span style='width:101px;display:inline-block'>Contraseña: </span><strong>$pass</strong></span>
                           </p> 
-                          <a href='https://culturaimparable.com/iniciar-sesion' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
+                          <a href='https://culturaemprendedora.online/iniciar-sesion' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
                             target='_blank'>Iniciar Sesión</a>                          
                           </td>
                       </tr>
@@ -178,7 +178,7 @@ class Login extends CI_Controller {
                       <tr>
                         <td style='max-width:290px;display:inline-block;padding:0 19px 30px;box-sizing:border-box;text-align:left'>
                           <p style='margin:0;text-align:center;line-height:20px;color:#888888;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:12px'>
-                          Visítanos en  <a href='https://culturaimparable.com' style='color:#2d6ced;text-decoration:none' target='_blank'>www.culturaimparable.com</a></p>
+                          Visítanos en  <a href='https://culturaemprendedora.online' style='color:#2d6ced;text-decoration:none' target='_blank'>www.culturaemprendedora.online</a></p>
                         </td>
                       </tr>
                     </tbody>
@@ -193,10 +193,10 @@ class Login extends CI_Controller {
   </table>
   </div>
                             .</html>", 70, "\n", true);
-        $titulo = "Recuperar Contraseña - [CULTURA IMPARABLE]";
+        $titulo = "Recuperar Contraseña - [CULTURA EMPRENDEDORA]";
         $headers = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-        $headers .= "From: CULTURA IMPARABLE <contacto@culturafk.com>\r\n";
+        $headers .= "From: CULTURA EMPRENDEDORA <contacto@https://culturaemprendedora.online>\r\n";
         $bool = mail("$email", $titulo, $mensaje, $headers);
     }
 

@@ -54,7 +54,7 @@
                 </form>
             </div>
         </div>
-        <script src='https://www.google.com/recaptcha/api.js?render=6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso'></script>
+        <script src='https://www.google.com/recaptcha/api.js?render=6LenFywaAAAAADc77bVcFP4pFKkXGNG8GKkRaRoY'></script>
         <script type="text/javascript">
             function forget() {
                 var form = $('#forger-form');
@@ -98,7 +98,7 @@
                         });
             }
             grecaptcha.ready(function () {
-                grecaptcha.execute('6Lcff80ZAAAAALUXxyrn7mgeJQ1PFuBAb-ITWWso', {action: 'homepage'})
+                grecaptcha.execute('6LenFywaAAAAADc77bVcFP4pFKkXGNG8GKkRaRoY', {action: 'homepage'})
                         .then(function (token) {
                             $('#google-response-token').val(token);
                         });
