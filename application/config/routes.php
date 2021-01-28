@@ -219,11 +219,11 @@ $route['dashboard/clientes/validate'] = "d_customer/validate";
 $route['dashboard/clientes/delete'] = "d_customer/delete";
 
 //DASHBOARD CURSOS
-$route['dashboard/pagina3'] = "d_cursos";
-$route['dashboard/d_cursosd_cursosourses-2'] = "d_cursos/financiados";
-$route['dashboard/courses-2/load/([0-9]+)'] = "d_cursos/load/$1";
-$route['dashboard/courses-2/validate'] = "d_cursos/validate";
-$route['dashboard/courses-2/delete'] = "d_cursos/delete";
+$route['dashboard/mis-cursos'] = "d_cursos";
+$route['dashboard/mis-cursos/load'] = "d_cursos/load";
+$route['dashboard/mis-cursos/load/([0-9]+)'] = "d_cursos/load/$1";
+$route['dashboard/mis-cursos/validate'] = "d_cursos/validate";
+$route['dashboard/mis-cursos/delete'] = "d_cursos/delete";
 
 
 $route['dashboard/categorias'] = "d_category";

@@ -188,7 +188,7 @@
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Cursos</label></li>
         <li class="nav-item">
-            <a href="<?php echo site_url()."dashboard/pagina3";?>" class="nav-link <?php echo $pagos_syle;?>">
+            <a href="<?php echo site_url()."dashboard/mis-cursos";?>" class="nav-link <?php echo $pagos_syle;?>">
                 <span class="pcoded-micon">
                     <i data-feather="dollar-sign"></i>
                 </span>

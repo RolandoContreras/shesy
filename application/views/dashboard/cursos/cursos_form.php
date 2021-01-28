@@ -7,14 +7,14 @@
                         <div class="row align-items-center">
                             <div class="col-md-12">
                                 <div class="page-header-title">
-                                    <h5 class="m-b-10">Formulario de Catalogo</h5>
+                                    <h5 class="m-b-10">Formulario de Cursos</h5>
                                 </div>
                                 <ul class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="<?php echo site_url() . 'dashboard/panel'; ?>">
                                             <span class="pcoded-micon"><i data-feather="home"></i></span>
                                         </a></li>
-                                    <li class="breadcrumb-item"><a href="<?php echo site_url() . 'dashboard/catalogo'; ?>">Listado de Catalogo</a></li>
-                                    <li class="breadcrumb-item"><a href="#!">Catalogo</a></li>
+                                    <li class="breadcrumb-item"><a href="<?php echo site_url() . 'dashboard/mis-cursos'; ?>">Listado de Cursos</a></li>
+                                    <li class="breadcrumb-item"><a href="#!">Cursos</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -29,113 +29,54 @@
                                         <h5>Datos</h5>
                                     </div>
                                     <div class="card-body">
-                                        <form enctype="multipart/form-data" method="post" action="<?php echo site_url() . "dashboard/catalogo/validate"; ?>">
+                                        <form name="cursos_form" name="cursos_form" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate();">
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <?php if (isset($obj_catalog)) { ?>
+                                                    <?php if (isset($obj_courses)) { ?>
                                                         <div class="form-group">
                                                             <label>ID</label>
-                                                            <input class="form-control" type="text" value="<?php echo isset($obj_catalog->catalog_id) ? $obj_catalog->catalog_id : ""; ?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
-                                                            <input type="hidden" id="catalog_id" name="catalog_id" value="<?php echo isset($obj_catalog->catalog_id) ? $obj_catalog->catalog_id : ""; ?>">
+                                                            <input class="form-control" type="text" value="<?php echo isset($obj_courses->course_id) ? $obj_courses->course_id : ""; ?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
+                                                            <input type="hidden" id="course_id" name="course_id" value="<?php echo isset($obj_courses->course_id) ? $obj_courses->course_id : ""; ?>">
                                                         </div>
                                                     <?php } ?>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <div class="form-group">
                                                         <label>Nombre</label>
-                                                        <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_catalog->name) ? $obj_catalog->name : ""; ?>" class="input-xlarge-fluid" placeholder="Titulo" required>
+                                                        <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_courses->name) ? $obj_courses->name : ""; ?>" class="input-xlarge-fluid" placeholder="Titulo" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Precio Eliminado</label>
+                                                        <input class="form-control" type="number" step="any" id="price_del" name="price_del" value="<?php echo isset($obj_courses->price_del) ? $obj_courses->price_del : ""; ?>" class="input-xlarge-fluid" placeholder="Precio Eliminado">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Precio</label>
-                                                        <input class="form-control" type="number" step="any" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label>Sumilla</label>
-                                                        <textarea name="summary" id="summary" placeholder="Sumilla"><?php echo isset($obj_catalog->summary) ? $obj_catalog->summary : ""; ?></textarea>
-                                                        <script>
-                                                            CKEDITOR.replace('summary');
-                                                        </script>
+                                                        <input class="form-control" type="number" step="any" id="price" name="price" value="<?php echo isset($obj_courses->price) ? $obj_courses->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Descripción</label>
-                                                        <textarea name="description" id="description"><?php echo isset($obj_catalog->description) ? $obj_catalog->description : ""; ?></textarea>
-                                                        <script>
-                                                            CKEDITOR.replace('description');
-                                                        </script>
-                                                    </div>
-
-                                                    <div class="form-group col-md-3">
-                                                        <div class="form-group">
-                                                            <label>Bonificación N°1</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_catalog->bono_n1) ? $obj_catalog->bono_n1 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°1" required>
-                                                        </div>    
-                                                        <div class="form-group">
-                                                            <label>Bonificación N°2</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_catalog->bono_n2) ? $obj_catalog->bono_n2 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°2" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Bonificación N°3</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_catalog->bono_n3) ? $obj_catalog->bono_n3 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°3" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <div class="form-group">
-                                                            <label>Bonificación N°4</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_catalog->bono_n4) ? $obj_catalog->bono_n4 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°4" required>
-                                                        </div>    
-                                                        <div class="form-group">
-                                                            <label>Bonificación N°5</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_catalog->bono_n5) ? $obj_catalog->bono_n5 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°5" required>
-                                                        </div>
+                                                        <textarea name="description" id="description" class="form-control"><?php echo isset($obj_courses->description) ? $obj_courses->description : ""; ?></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <?php if (isset($obj_catalog)) { ?>
+                                                    <?php if (isset($obj_courses)) { ?>
                                                         <div class="form-group">
                                                             <label>Imagen 1</label><br/>
-                                                            <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img"; ?>' width="100" />
-                                                            <input class="form-control" type="hidden" name="img_2" id="img_2" value="<?php echo isset($obj_catalog) ? $obj_catalog->img : ""; ?>">
+                                                            <img src='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img"; ?>' width="100" />
+                                                            <input class="form-control" type="hidden" name="img_2" id="img_2" value="<?php echo isset($obj_courses) ? $obj_courses->img : ""; ?>">
                                                         </div>
                                                     <?php } ?>
                                                     <div class="form-group">
-                                                        <label>Imagen 1 (Tamaño 400 x 400)</label>
+                                                        <label>Imagen 1 (Tamaño 600 x 600)</label>
                                                         <div class="custom-file">
-                                                            <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();" <?php echo isset($obj_catalog->img) ? "" : "required"; ?> >
+                                                            <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();" <?php echo isset($obj_courses) ? "" : "required"; ?> >
                                                             <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img"></div>
                                                         </div>
                                                     </div>
-
-                                                    <?php if (isset($obj_catalog->img2)) { ?>
-                                                        <div class="form-group">
-                                                            <label>Imagen 2</label><br/>
-                                                            <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img2"; ?>' width="100" />
-                                                            <input class="form-control" type="hidden" name="img_3" id="img_3" value="<?php echo isset($obj_catalog) ? $obj_catalog->img2 : ""; ?>">
-                                                        </div>
-                                                    <?php } ?>
                                                     <div class="form-group">
-                                                        <label>Imagen 2 (Tamaño 400 x 400)</label>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="image_file2" id="image_file2" class="custom-file-input" onchange="upload_img2();" <?php echo isset($obj_catalog->img2) ? "" : "required"; ?>>
-                                                            <label id="label_img2" class="custom-file-label invalid">Elegir archivos...</label>
-                                                            <div id="respose_img2"></div>
-                                                        </div>
-                                                    </div>
-                                                    <?php if (isset($obj_catalog->img3)) { ?>
-                                                        <div class="form-group">
-                                                            <label>Imagen 3</label><br/>
-                                                            <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' width="100" />
-                                                            <input class="form-control" type="hidden" name="img_4" id="img_4" value="<?php echo isset($obj_catalog) ? $obj_catalog->img3 : ""; ?>">
-                                                        </div>
-                                                    <?php } ?>
-                                                    <div class="form-group">
-                                                        <label>Imagen 3 (Tamaño 400 x 400)</label>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="image_file3" id="image_file3" class="custom-file-input" onchange="upload_img3();" <?php echo isset($obj_catalog->img3) ? "" : "required"; ?>>
-                                                            <label id="label_img3" class="custom-file-label invalid">Elegir archivos...</label>
-                                                            <div id="respose_img3"></div>
-                                                        </div>
+                                                        <label>Duración Horas</label>
+                                                        <input class="form-control" type="text" id="duration" name="duration" value="<?php echo isset($obj_courses->duration) ? $obj_courses->duration : ""; ?>" class="input-xlarge-fluid" placeholder="Duración Hrs">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputState">Categoría</label>
@@ -144,8 +85,8 @@
                                                             <?php foreach ($obj_category as $value): ?>
                                                                 <option value="<?php echo $value->category_id; ?>"
                                                                 <?php
-                                                                if (isset($obj_catalog->category_id)) {
-                                                                    if ($obj_catalog->category_id == $value->category_id) {
+                                                                if (isset($obj_courses)) {
+                                                                    if ($obj_courses->category_id == $value->category_id) {
                                                                         echo "selected";
                                                                     }
                                                                 } else {
@@ -157,31 +98,12 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="inputState">Sub Categoría</label>
-                                                        <select name="sub_category_id" id="sub_category_id" class="form-control">
-                                                            <option value="">[ Seleccionar Sub Categoría ]</option>
-                                                            <?php foreach ($obj_sub_category as $value): ?>
-                                                                <option value="<?php echo $value->sub_category_id; ?>"
-                                                                <?php
-                                                                if (isset($obj_catalog->sub_category_id)) {
-                                                                    if ($obj_catalog->sub_category_id == $value->sub_category_id) {
-                                                                        echo "selected";
-                                                                    }
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                ?>><?php echo $value->name; ?>
-                                                                </option>
-                                                            <?php endforeach; ?>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="inputState">Granel (Kg)</label>
-                                                        <select name="granel" id="granel" class="form-control" required>
+                                                        <label for="inputState">Libre</label>
+                                                        <select name="free" id="free" class="form-control" required>
                                                             <option value="">[ Seleccionar ]</option>
                                                             <option value="1" <?php
-                                                            if (isset($obj_catalog)) {
-                                                                if ($obj_catalog->granel == 1) {
+                                                            if (isset($obj_courses)) {
+                                                                if ($obj_courses->free == 1) {
                                                                     echo "selected";
                                                                 }
                                                             } else {
@@ -189,8 +111,8 @@
                                                             }
                                                             ?>>Si</option>
                                                             <option value="0" <?php
-                                                            if (isset($obj_catalog)) {
-                                                                if ($obj_catalog->granel == 0) {
+                                                            if (isset($obj_courses)) {
+                                                                if ($obj_courses->free == 0) {
                                                                     echo "selected";
                                                                 }
                                                             } else {
@@ -200,16 +122,12 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Stock</label>
-                                                        <input class="form-control" type="number" id="stock" name="stock" value="<?php echo isset($obj_catalog->stock) ? $obj_catalog->stock : ""; ?>" class="input-xlarge-fluid" placeholder="Stock del Producto" required>
-                                                    </div>
-                                                    <div class="form-group">
                                                         <label for="inputState">Estado</label>
                                                         <select name="active" id="active" class="form-control" required>
                                                             <option value="">[ Seleccionar ]</option>
                                                             <option value="1" <?php
-                                                            if (isset($obj_catalog)) {
-                                                                if ($obj_catalog->active == 1) {
+                                                            if (isset($obj_courses)) {
+                                                                if ($obj_courses->active == 1) {
                                                                     echo "selected";
                                                                 }
                                                             } else {
@@ -217,8 +135,8 @@
                                                             }
                                                             ?>>Activo</option>
                                                             <option value="0" <?php
-                                                            if (isset($obj_catalog)) {
-                                                                if ($obj_catalog->active == 0) {
+                                                            if (isset($obj_courses)) {
+                                                                if ($obj_courses->active == 0) {
                                                                     echo "selected";
                                                                 }
                                                             } else {
@@ -230,8 +148,8 @@
 
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
-                                            <button class="btn btn-danger" type="reset" onclick="cancel_catalog();">Cancelar</button>                    
+                                            <button type="submit" id="submit" class="btn btn-primary">Guardar</button>
+                                            <button class="btn btn-danger" type="reset" onclick="cancel_curso();">Cancelar</button>                    
                                         </form>
                                     </div>
                                 </div>
@@ -243,11 +161,5 @@
         </div>
     </div>
 </div>
-<script src="<?php echo site_url() . 'static/cms/js/catalog.js' ?>"></script>
-<script type="text/javascript">
-                                                $(window).on('load', function () {
-                                                    // classic editor
-                                                    ClassicEditor.create(document.querySelector('#sumilla'))
-                                                });
-</script>
+<script src="<?php echo site_url() . 'static/cms/js/cursos.js' ?>"></script>
 

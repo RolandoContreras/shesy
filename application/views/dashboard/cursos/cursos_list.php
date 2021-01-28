@@ -40,11 +40,11 @@
                                   <th class="sorting_asc" tabindex="0" >ID</th>
                                   <th class="sorting">Nombre</th>
                                   <th class="sorting">Categoría</th>
-                                  <th class="sorting">Fecha</th>
-                                  <th class="sorting">Precio</th>
-                                  <th class="sorting">Stock</th>
-                                  <th class="sorting">Granel</th>
+                                  <th class="sorting">Descripción</th>
                                   <th class="sorting">Imagen</th>
+                                  <th class="sorting">Precio</th>
+                                  <th class="sorting">Tipo</th>
+                                  <th class="sorting">Fecha</th>
                                   <th class="sorting">Estado</th>
                                   <th class="sorting">Acciones</th>
                                 </tr>
@@ -53,31 +53,25 @@
                                   
                                    <?php foreach ($obj_courses as $value): ?>
                                 <tr>
-                                <th><?php echo $value->catalog_id;?></th>
-                                <td><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo strtoupper($value->name);?></span></td>
-                                <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->category_name;?></span></td>
-                                <td><?php echo formato_fecha_barras($value->date);?></td>
-                                <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;">&dollar;<?php echo $value->price;?></span></td>
+                                <th><?php echo $value->course_id;?></th>
+                                <td><h6><?php echo strtoupper($value->name);?><h6></td>
+                                <td><span class="badge badge-pill badge-info" style="font-size: 90%;"><?php echo $value->category;?></span></td>
+                                <td><?php echo corta_texto($value->description, 70);?></td>
+                                <td><img src='<?php echo site_url()."static/cms/images/cursos/$value->img";?>' width="60"/></td>                                    
+                                <td><h6><?php echo strtoupper($value->price);?><h6></td>
                                 <td>
                                     <?php 
-                                        if($value->stock == 0){
-                                            $style = "badge-danger";
+                                        if($value->free == 0){
+                                            $style = "badge-info";
+                                            $valor = "No";
                                         }else{
                                             $style = "badge-warning";
+                                            $valor = "Si";
                                         }
                                     ?>
-                                    <span class="badge badge-pill <?php echo $style;?>" style="font-size: 100%;"><?php echo $value->stock;?></span>
+                                    <span class="badge badge-pill <?php echo $style;?>" style="font-size: 100%;"><?php echo $valor;?></span>
                                 </td>
-                                <td>
-                                     <?php if ($value->granel == 1) {
-                                        $valor = "Si";
-                                    }else{
-                                        $valor = "No";
-                                        
-                                    } ?>
-                                    <span class="badge badge-pill badge-warning" style="font-size: 100%;"><?php echo $valor;?></span>
-                                </td>
-                                <td><img src='<?php echo site_url()."static/catalog/$value->img";?>' width="60"/></td>                                    
+                                <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td>
                                     <?php if ($value->active == 0) {
                                         $valor = "No Activo";
@@ -91,28 +85,14 @@
                                 <td>
                                     <div class="operation">
                                             <div class="btn-group">
-                                               <button class="btn btn-secondary" type="button" onclick="edit_catalog('<?php echo $value->catalog_id;?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
-                                               <button class="btn btn-secondary" type="button" onclick="delete_catalog('<?php echo $value->catalog_id;?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
+                                               <button class="btn btn-secondary" type="button" onclick="edit_curso('<?php echo $value->course_id;?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
+                                               <button class="btn btn-secondary" type="button" onclick="delete_curso('<?php echo $value->course_id;?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
                                             </div>
                                     </div>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
                               </tbody>
-                              <tfoot>
-                                <tr>
-                                  <th rowspan="1" colspan="1">ID</th>
-                                  <th rowspan="1" colspan="1">Nombre</th>
-                                  <th rowspan="1" colspan="1">Categoría</th>
-                                  <th rowspan="1" colspan="1">Fecha</th>
-                                  <th rowspan="1" colspan="1">Precio</th>
-                                  <th rowspan="1" colspan="1">Sumilla</th>
-                                  <th rowspan="1" colspan="1">Granel</th>
-                                  <th rowspan="1" colspan="1">Imagen</th>
-                                  <th rowspan="1" colspan="1">Estado</th>
-                                  <th rowspan="1" colspan="1">Acciones</th>
-                                </tr>
-                              </tfoot>
                             </table>
                           </div>
                         </div>
@@ -128,4 +108,4 @@
           </div>
         </div>
 </section>
-<script src="<?php echo site_url();?>static/cms/js/catalog.js"></script>
+<script src="<?php echo site_url();?>static/cms/js/cursos.js"></script>
