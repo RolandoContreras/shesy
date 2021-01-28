@@ -56,10 +56,13 @@
                                 <td>
                                     <?php if ($value->type == 1) {
                                         $valor = "Videos";
-                                        $stilo = "label label-info";
-                                    }else{
+                                        $stilo = "label label-warning";
+                                    }elseif($value->type == 2){
                                         $valor = "Catalogo";
                                         $stilo = "label label-success";
+                                    }else{
+                                        $valor = "Cursos";
+                                        $stilo = "label label-info";
                                     } ?>
                                     <span class="<?php echo $stilo;?>"><?php echo $valor;?></span>
                                 </td>

@@ -92,9 +92,9 @@
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
-                            <a href="#" class="btn" style="width: 100%">
+                            <a href="<?php echo site_url()."backoffice/cursos";?>" class="btn" style="width: 100%">
                                 <div class="access-dam-purple" align="center"> 
-                                    <span>University</span>                
+                                    <span>Cursos</span>                
                                 </div>
                             </a>
                         </li>

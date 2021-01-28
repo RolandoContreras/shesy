@@ -44,8 +44,7 @@
                                 <label>Nombre</label>
                                 <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_category->name)?$obj_category->name:"";?>" class="input-xlarge-fluid" placeholder="Nombre">
                               </div>
-                              <div class="form-group">
-                                <div class="form-group col-md-12">
+                                <div class="form-group">
                                     <label for="inputState">Tipo</label>
                                         <select name="type" id="type" class="form-control">
                                          <option value="">[ Seleccionar ]</option>
@@ -55,9 +54,11 @@
                                           <option value="2" <?php if(isset($obj_category)){
                                               if($obj_category->type == 2){ echo "selected";}
                                           }else{echo "";} ?>>Catalogo</option>
+                                          <option value="3" <?php if(isset($obj_category)){
+                                              if($obj_category->type == 3){ echo "selected";}
+                                          }else{echo "";} ?>>Cursos</option>
                                     </select>
                                 </div>
-                              </div>
                           </div>
                           <div class="form-group col-md-6">
                               <div class="form-row">

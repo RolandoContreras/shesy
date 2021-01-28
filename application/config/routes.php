@@ -111,6 +111,9 @@ $route['course/([0-9a-z_-]+)'] = 'c_home/category/$1';
 $route['course/([0-9a-z_-]+)/([0-9]+)'] = 'c_home/category/$1';
 $route['course/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'c_home/detail/$1';
 
+//CURSOS BACKOFFICE
+$route['backoffice/cursos'] = "b_cursos";
+
 $route['backoffice/profile'] = "b_profile";
 $route['backoffice/profile/update_data'] = "b_profile/update_data";
 $route['backoffice/profile/update_password'] = "b_profile/update_password";
@@ -214,6 +217,14 @@ $route['dashboard/clientes/no_active_customer'] = "d_customer/no_active_customer
 $route['dashboard/clientes/load/([0-9]+)'] = "d_customer/load/$1";
 $route['dashboard/clientes/validate'] = "d_customer/validate";
 $route['dashboard/clientes/delete'] = "d_customer/delete";
+
+//DASHBOARD CURSOS
+$route['dashboard/pagina3'] = "d_cursos";
+$route['dashboard/d_cursosd_cursosourses-2'] = "d_cursos/financiados";
+$route['dashboard/courses-2/load/([0-9]+)'] = "d_cursos/load/$1";
+$route['dashboard/courses-2/validate'] = "d_cursos/validate";
+$route['dashboard/courses-2/delete'] = "d_cursos/delete";
+
 
 $route['dashboard/categorias'] = "d_category";
 $route['dashboard/categorias/load'] = "d_category/load";

@@ -186,6 +186,15 @@
                 <span class="pcoded-mtext">Enlace de Compra</span>
             </a>
         </li>
+        <li class="nav-item pcoded-menu-caption"><label>Cursos</label></li>
+        <li class="nav-item">
+            <a href="<?php echo site_url()."dashboard/pagina3";?>" class="nav-link <?php echo $pagos_syle;?>">
+                <span class="pcoded-micon">
+                    <i data-feather="dollar-sign"></i>
+                </span>
+                <span class="pcoded-mtext">Cursos</span>
+            </a>
+        </li>
         <li class="nav-item pcoded-menu-caption"><label>Pagos</label></li>
         <li class="nav-item">
             <a href="<?php echo site_url()."dashboard/activar_pagos";?>" class="nav-link <?php echo $pagos_syle;?>">
