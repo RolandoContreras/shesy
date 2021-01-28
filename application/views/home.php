@@ -38,7 +38,7 @@
                         <div class="container">
                             <div class="space-20"></div>
                             <div  class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/cultura.mp4" frameborder="0" allowfullscreen></iframe>
+                                <iframe class="embed-responsive-item" src="<?php echo site_url() . "static/page_front/video/cultura.mp4";?>" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                                                 src="<?php echo site_url() . "static/page_front/images/video_embajada.png"; ?>" alt="Mira el siguiente Vídeo" />
                                             <div class="space-20"></div>
                                             <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item" src="https://culturaimparable.com/static/page_front/video/embajada.mp4" frameborder="0" allowfullscreen></iframe>
+                                                <iframe class="embed-responsive-item" src="<?php echo site_url() . "static/page_front/video/embajada.mp4";?>" frameborder="0" allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>

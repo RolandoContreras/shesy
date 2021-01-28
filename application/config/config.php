@@ -23,7 +23,7 @@
 |
 */
 //$config['base_url'] = 'https://culturaimparable.com/';
-$config['base_url'] = 'http://localhost/shesy/';
+$config['base_url'] = 'http://localhost/shesy';
 
 
 /*
