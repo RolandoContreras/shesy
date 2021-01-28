@@ -175,7 +175,7 @@
                 <span class="pcoded-micon">
                     <i data-feather="user-check"></i>
                 </span>
-                <span class="pcoded-mtext">Contra Entrega</span>
+                <span class="pcoded-mtext">Contra Entrega / Ganancia Disponible</span>
             </a>
         </li>
         <li class="nav-item pcoded-hasmenu">

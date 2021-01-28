@@ -30,12 +30,17 @@ class D_contra_entrega extends CI_Controller {
                                     customer.username,
                                     customer.first_name,
                                     customer.last_name,
-                                    invoices.active",
-            "join" => array('customer, invoices.customer_id = customer.customer_id'),
+                                    invoices.active,
+                                    contra_entrega.contra_entrega_id as contra_entrega_id,
+                                    contra_entrega.active as entregado,
+                                    contra_entrega.ganancia_dispobible",
+            "join" => array('customer, invoices.customer_id = customer.customer_id',
+                            'contra_entrega, contra_entrega.invoice_id = invoices.invoice_id'),
             "where" => "invoices.type = 2 and invoices.status_value = 1",
-            "order" => "invoices.invoice_id ASC");
+            "order" => "invoices.invoice_id DESC");
         //GET DATA FROM CUSTOMER
         $obj_invoices = $this->obj_invoices->search($params);
+
         /// VISTA
         $this->tmp_mastercms->set("obj_invoices", $obj_invoices);
         $this->tmp_mastercms->render("dashboard/contra_entrega/contra_entrega_list");
@@ -271,6 +276,20 @@ class D_contra_entrega extends CI_Controller {
                     }
                 }
             }
+        }
+    }
+
+    public function entregado() {
+        if ($this->input->is_ajax_request()) {
+            //GET SESION ACTUALY
+            $id = $this->input->post('id');
+            //update active = 0
+            $param = array(
+                'active' => 0,
+            );
+            $this->obj_contra_entrega->update($id, $param);
+            $data['status'] = true;
+            echo json_encode($data);
         }
     }
 

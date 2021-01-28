@@ -3,7 +3,7 @@
 | -------------------------------------------------------------------------
 | URI ROUTING
 | -------------------------------------------------------------------------
-| This file lets you re-map URI requests to specific controller functions.
+| This file lets you re-conap URI requests to specific controller functions.
 |
 | Typically there is a one-to-one relationship between a URL string
 | and its corresponding controller class/method. The segments in a
@@ -271,6 +271,7 @@ $route['dashboard/contra-entrega/([0-9]+)'] = "d_contra_entrega/order/$1";
 $route['dashboard/contra-entrega/validate_user'] = "d_activate/validate_user";
 $route['dashboard/contra-entrega/active'] = "d_contra_entrega/active";
 $route['dashboard/contra-entrega/delete'] = "d_contra_entrega/delete";
+$route['dashboard/contra-entrega/entregado'] = "d_contra_entrega/entregado";
 
 $route['dashboard/enlace-compra'] = "d_referencia_compra";
 $route['dashboard/enlace-compra/([0-9]+)'] = "d_referencia_compra/order/$1";

@@ -727,7 +727,6 @@ class Catalogo_home extends CI_Controller {
     }
 
     public function update_cart() {
-
         if ($this->input->is_ajax_request()) {
             //GET SESION ACTUALY
             $this->get_session();
@@ -740,13 +739,13 @@ class Catalogo_home extends CI_Controller {
                 'rowid' => "$id",
                 'qty' => $qty
             );
-
-            $this->cart->update($data);
-
-            $data['status'] = "true";
+            $this->obj_invoices->update($invoice_id, $data);
+            $data['status'] = true;
             echo json_encode($data);
         }
     }
+
+    
 
     public function delete_cart() {
 
@@ -769,7 +768,7 @@ class Catalogo_home extends CI_Controller {
         }
     }
 
-    //procesar pagos con balance disponible
+    //procesar pagos con G disponible
     public function puntos_compra() {
         //GET SESION ACTUALY
         $this->get_session();
@@ -880,6 +879,7 @@ class Catalogo_home extends CI_Controller {
                         'invoice_id' => $invoice_id,
                         'customer' => $name,
                         'phone' => $phone,
+                        'ganancia_dispobible' => 1,
                         'address' => $address,
                         'reference' => $reference,
                         'active' => 1,

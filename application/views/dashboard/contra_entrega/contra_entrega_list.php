@@ -25,7 +25,7 @@
               <div class="col-sm-12">
                 <div class="card">
                   <div class="card-header">
-                    <h5>Listado de Contra Entrega</h5>
+                    <h5>Listado de Contra Entrega / Ganancia Disponible</h5>
                   </div>
                   <div class="card-block">
                     <div class="table-responsive">
@@ -37,9 +37,11 @@
                                 <tr role="row">
                                   <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Fecha</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Tipo</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Usuario</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Cliente</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Total</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Pagado</th>}
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Estado</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1">Acciones</th>
                                 </tr>
@@ -49,6 +51,15 @@
                                 <td><?php echo $value->invoice_id;?></td>
                                 <td>
                                     <span class="badge badge-pill badge-warning" style="font-size: 100%;"><?php echo formato_fecha_barras($value->date);?></span>
+                                </td>
+                                <td>
+                                  <?php if($value->ganancia_dispobible == 1){
+                                      $text = "Ganancia Disponible";
+                                  }else{
+                                      $text = "Contra Entrega";
+                                  }
+                                    ?>
+                                    <h6><?php echo $text;?></h6>
                                 </td>
                                 <td><b><?php echo "@".$value->username;?></b></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
@@ -68,6 +79,16 @@
                                     <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
                                 </td>
                                 <td>
+                                    <?php if ($value->entregado == 1) {
+                                        $valor = "Falta Entregar";
+                                        $stilo = "label label-warning";
+                                    }else{
+                                        $valor = "Entregado";
+                                        $stilo = "label label-success";
+                                    }?>
+                                    <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
+                                </td>
+                                <td>
                                     <div class="operation">
                                         <div class="btn-group">
                                             <?php if ($value->active == 1) { ?>
@@ -75,6 +96,9 @@
                                             <?php } ?>
                                                     <button class="btn btn-secondary" type="button" onclick="view_order('<?php echo $value->invoice_id;?>');"><span class="pcoded-micon"><i data-feather="shopping-cart"></i></span> Ver Pedido</button>
                                                     <button class="btn btn-secondary" type="button" onclick="delete_contra_entrega('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>');"><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</button>
+                                            <?php if ($value->ganancia_dispobible == 1 && $value->entregado == 1) { ?>
+                                                    <button class="btn btn-secondary" type="button" onclick="entregado('<?php echo $value->contra_entrega_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->total;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Marcar Entregado</button>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </td>
