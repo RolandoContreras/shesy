@@ -1,14 +1,47 @@
 <head>
-    <title>Cultura Imparable | <?php echo $title; ?> </title>
+    <title>Cultura Emprendedora | <?php echo $title; ?> </title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
-    <meta name="author" content="Cultura Imparable">
-    <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, red social, mlm, mmn, culturaimprable.com, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
+    <meta name="author" content="Cultura Emprendedora">
+    <meta name="keyword" content="Cultura Emprendedora, Movimiento Emprendedor, Cultura Emprendedora Perú, Embajadores, Emprendedor Social, red social, mlm, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
     <meta name="robots" content="Index, Follow">
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="Evolution Web">
+    <meta name="distribution" content="Global">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo site_url();?>">
+    <meta property="og:title" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica">
+    <meta property="og:url" content="<?php echo site_url();?>">
+    <meta property="og:description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
+    <meta property="og:image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
+    <meta property="og:type" content="video_lecture">
+    <meta property="og:site_name" content="Cultura Emprendedora">
+    <meta property="og:locale" content="es_PE">
+    <meta itemprop="name" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica">
+    <meta itemprop="url" content="<?php echo site_url();?>">
+    <meta itemprop="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
+    <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
+    <meta name="description" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica"> 
+    <meta name="keywords" content="Cultura Emprendedora, Movimiento Emprendedor, Cultura Emprendedora Perú, Embajadores, Emprendedor Social, red social, mlm, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online"> 
+    <meta name="author" content="Evolucion Web"> 
+    <meta name="robots" content="follow, index"/> 
+    <meta name="googlebot" content="index, follow" /> 
+    <meta property="og:title" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica"> 
+    <meta property="og:url" content="<?php echo site_url(); ?>"> 
+    <meta property="og:description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos"> 
+    <meta property="og:image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>"> 
+    <meta property="og:type" content="website"> 
+    <meta property="og:site_name" content="Cultura Emprendedora"> 
+    <meta property="og:locale" content="es"> 
+    <meta itemprop="name" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica"> 
+    <meta itemprop="url" content="<?php echo site_url();?>"> 
+    <meta itemprop="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos"> 
+    <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>"> 
+    <meta name="twitter:card" content="summary_large_image"> 
+    <meta name="twitter:title" content="Cultura Emprendedora - Organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica"> 
+    <link rel="canonical" href="<?php echo site_url(); ?>" /> 
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
@@ -26,7 +59,6 @@
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/my_style.css";?>"/>
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/catalog.css";?>"/>
     <!-- Shopping ====================================================== -->
-    
     <?php 
       $url = explode("/", uri_string());
       if (isset($url[0])) {
