@@ -83,6 +83,7 @@
             $recargas_syle = "";
             $contra_entrega_syle = null;
             $enlace_compra = null;
+            $mis_cursos = null;
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active";
@@ -116,6 +117,9 @@
                     break;
                 case "report_pay":
                     $report_syle = "active";
+                    break;
+                case "mis-cursos":
+                    $mis_cursos = "active";
                     break;
                 default:
                     $mantenimiento_syle = "active";
@@ -188,9 +192,9 @@
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Cursos</label></li>
         <li class="nav-item">
-            <a href="<?php echo site_url()."dashboard/mis-cursos";?>" class="nav-link <?php echo $pagos_syle;?>">
+            <a href="<?php echo site_url()."dashboard/mis-cursos";?>" class="nav-link <?php echo $mis_cursos;?>">
                 <span class="pcoded-micon">
-                    <i data-feather="dollar-sign"></i>
+                    <i data-feather="film"></i>
                 </span>
                 <span class="pcoded-mtext">Cursos</span>
             </a>
