@@ -25,7 +25,7 @@ class Login extends CI_Controller {
                 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LenFywaAAAAAPEo2HUIccja43Xz6_97TZ2EUzFM&response={$googleToken}");
                 $response = json_decode($response);
                 $response = (array) $response;
-                if ($response['success'] && ($response['score'] && $response['score'] > 0.5)) {
+                if ($response['success'] && ($response['score'] && $response['score'] > 0.3)) {
                     //GET DATA STRING
                     $code = $this->input->post("code");
                     $pass = $this->input->post("pass");
@@ -88,7 +88,7 @@ class Login extends CI_Controller {
             $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LenFywaAAAAAPEo2HUIccja43Xz6_97TZ2EUzFM&response={$googleToken}");
             $response = json_decode($response);
             $response = (array) $response;
-            if ($response['success'] && ($response['score'] && $response['score'] > 0.5)) {
+            if ($response['success'] && ($response['score'] && $response['score'] > 0.3)) {
                 //GET DATA STRING
                 $username = $this->input->post("username");
                 //SET PARAMETER
