@@ -116,6 +116,140 @@ class B_cursos extends CI_Controller {
         $this->tmp_catalog->render("backoffice/b_cursos");
     }
 
+    public function category($category)
+	{
+            
+            $kid_id = $_SESSION['customer']['kit_id'];
+            //GET NAV CURSOS
+            $obj_category_videos = $this->nav_videos();
+            //get data catalog
+            $params_categogory_id = array(
+                        "select" =>"category_id,
+                                    name",
+                "where" => "slug like '%$category%'");
+            $obj_category = $this->obj_category->get_search_row($params_categogory_id);
+            $category_id = $obj_category->category_id;
+            $category_name = "Videos - ".$obj_category->name;
+            
+             //get catalog
+            $params = array(
+                        "select" =>"videos.video_id,
+                                    videos.summary,
+                                    videos.type,
+                                    videos.name,
+                                    videos.slug,
+                                    videos.img2,
+                                    videos.date,
+                                    videos.active,
+                                    category.slug as category_slug,
+                                    videos.date",
+                "join" => array( 'category, category.category_id = videos.category_id'),
+                "where" => "videos.category_id = $category_id and category.type = 1 and videos.active = 1");
+            
+             /// PAGINADO
+            $config=array();
+            $config["base_url"] = site_url("course"); 
+            $config["total_rows"] = $this->obj_videos->total_records($params);  
+            $config["per_page"] = 12; 
+            $config["num_links"] = 1;
+            $config["uri_segment"] = 2;   
+            
+            $config['first_tag_open'] = '<li>';
+            $config['first_tag_close'] = '</li>';
+            $config['prev_tag_open'] = '<li>';
+            $config['prev_tag_close'] = '</li>';            
+            $config['num_tag_open']='<li>';
+            $config['num_tag_close'] = '</li>';            
+            $config['cur_tag_open']= '<li class="active"><span aria-current="page" class="page-numbers current">';
+            $config['cur_tag_close']= '</span></li>';            
+            $config['next_tag_open'] = '<li>';
+            $config['next_tag_close'] = '</li>';            
+            $config['last_tag_open'] = '<li>';
+            $config['last_tag_close'] = '</li>';
+            
+            $this->pagination->initialize($config);        
+            $obj_pagination = $this->pagination->create_links();
+            /// DATA
+            $obj_videos = $this->obj_videos->search_data($params, $config["per_page"],$this->uri->segment(2));
+            //send total row
+           
+            //SEND DATA
+            $url = 'course';
+            $this->tmp_course->set("url",$url);    
+            $this->tmp_course->set("kid_id",$kid_id);
+            $this->tmp_course->set("category_name",$category_name);
+            $this->tmp_course->set("obj_pagination",$obj_pagination);
+            $this->tmp_course->set("obj_category_videos",$obj_category_videos);
+            $this->tmp_course->set("obj_videos",$obj_videos);
+            $this->tmp_course->render("course/c_home");
+	}
+    
+    public function detail($slug)
+	{   
+            //GET CUSTOMER_ID
+            $kid_id = $_SESSION['customer']['kit_id'];
+            //GET CUSTOMER_ID
+            $customer_id = $_SESSION['customer']['customer_id'];
+            //GET NAV CURSOS
+            $obj_category_catalogo = $this->nav_cursos();
+            $url = explode("/",uri_string());
+            //get course_id
+            $category_slug = $url[2];
+            //get course_id
+            $course_id = $url[3];
+             //get course
+             $params = array( 
+                "select" => "courses.course_id,
+                             courses.name,
+                             courses.slug,
+                             category.category_id,
+                             category.name as category_name,
+                             category.slug as category_slug,
+                             courses.description,
+                             courses.img,
+                             courses.price,
+                             courses.price_del,
+                             courses.free,
+                             courses.duration,
+                             courses.active,
+                             courses.date",
+                "join" => array('category, category.category_id = courses.category_id'),
+                "where" => "courses.course_id = $course_id");
+            $obj_courses = $this->obj_courses->get_search_row($params);
+            //get catalog
+            $params = array(
+                "select" => "courses.course_id,
+                            courses.name,
+                            courses.slug,
+                            category.category_id,
+                            category.name as category_name,
+                            category.slug as category_slug,
+                            courses.img,
+                            courses.price,
+                            courses.price_del,
+                            courses.free,
+                            courses.active,
+                            courses.date",
+                "join" => array( 'category, category.category_id = courses.category_id'),
+                "where" => "category.slug = '$category_slug' and courses.active = 1",
+                "order" => "courses.course_id DESC",
+                "limit" => "3");
+            $obj_courses_all = $this->obj_courses->search($params);
+            //GET DATA FROM CUSTOMER
+            $obj_profile = $this->get_profile($customer_id);
+            //total comission compra
+            $obj_total_compra = $this->total_comissions($customer_id);
+            $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
+            //SEND DATA
+            $this->tmp_catalog->set("obj_profile",$obj_profile);
+            $this->tmp_catalog->set("total_compra",$total_compra);
+            $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
+            $this->tmp_catalog->set("obj_courses_all",$obj_courses_all);
+            $this->tmp_catalog->set("obj_courses",$obj_courses);
+            $this->tmp_catalog->render("backoffice/b_cursos_detail");
+	}
+
+
     public function nav_cursos() {
         $params_category_catalogo = array(
             "select" => "category_id,
@@ -126,6 +260,7 @@ class B_cursos extends CI_Controller {
         //GET DATA COMMENTS
         return $obj_category_catalogo = $this->obj_category->search($params_category_catalogo);
     }
+
 
     public function total_comissions($customer_id) {
         //GET TOTAL COMMISION

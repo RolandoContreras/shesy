@@ -71,7 +71,7 @@
                                                     ?>
                                                     <div class="col-lg-3 col-sm-6">
                                                         <div class="card-block p-0">
-                                                            <a href="#">
+                                                            <a href="<?php echo site_url() . "backoffice/cursos/$value->category_slug/$value->course_id/$value->slug";?>">
                                                                 <img class="img-fluid" style="width:100%;" src="<?php echo site_url() . "static/cms/images/cursos/$value->img"; ?>" alt="dashboard-user">
                                                             </a>
                                                             <div class="ux-designer">
@@ -79,7 +79,7 @@
                                                                     <i style="color:black;" data-feather="shopping-cart"></i>
                                                                 </button>
                                                                 <h5>
-                                                                    <a href="#">
+                                                                    <a href="<?php echo site_url() . "backoffice/cursos/$value->category_slug/$value->course_id/$value->slug";?>">
                                                                         <?php echo $value->name; ?>
                                                                     </a>
                                                                 </h5>
