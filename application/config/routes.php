@@ -113,6 +113,7 @@ $route['course/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'c_home/detail/$1';
 
 //CURSOS BACKOFFICE
 $route['backoffice/cursos'] = "b_cursos";
+$route['backoffice/cursos/([0-9a-z_-]+)'] = 'b_cursos/category/$1';
 $route['backoffice/cursos/([0-9a-z_-]+)/([0-9]+)/([0-9a-z_-]+)'] = 'b_cursos/detail/$1';
 
 $route['backoffice/profile'] = "b_profile";
