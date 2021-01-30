@@ -110,13 +110,13 @@
                                         <i data-feather="airplay"></i>
                                     </span>
                                     <span class="pcoded-mtext">Mis Categorías</span></a>
-                                <ul class="pcoded-submenu">
-                                    <?php foreach ($obj_category_catalogo as $value) { ?>
-                                        <li class="pcoded-hasmenu pcoded-trigger">
-                                            <a href="#"><b><?php echo $value->name; ?></b></a>
-                                        </li>
-                                    <?php } ?>
-                                </ul>
+                                        <ul class="pcoded-submenu">
+                                            <?php foreach ($obj_category_catalogo as $value) { ?>
+                                                <li class="pcoded-trigger">
+                                                    <a href="<?php echo site_url()."backoffice/cursos/".$value->slug;?>"><b><?php echo $value->name; ?></b></a>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
