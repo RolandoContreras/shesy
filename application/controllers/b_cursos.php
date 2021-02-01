@@ -24,26 +24,26 @@ class B_cursos extends CI_Controller {
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_cursos();
 
-        /*if (isset($_GET['orderby'])) {
+        if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
 
             switch ($type) {
                 case 'date':
-                    $order = "catalog.date DESC";
+                    $order = "courses.date DESC";
                     break;
                 case 'price':
-                    $order = "catalog.price ASC";
+                    $order = "courses.price ASC";
                     break;
                 case 'price-desc':
-                    $order = "catalog.price DESC";
+                    $order = "courses.price DESC";
                     break;
                 default:
-                    $order = "catalog.catalog_id ASC";
+                    $order = "courses.course_id ASC";
                     break;
             }
         } else {
-            $order = "catalog.catalog_id DESC";
-        }*/
+            $order = "courses.course_id DESC";
+        }
 
         if (isset($_GET['search'])) {
             $word = $_GET['search'];
@@ -68,7 +68,8 @@ class B_cursos extends CI_Controller {
                          courses.active,
                          courses.date",
             "join" => array('category, category.category_id = courses.category_id'),
-            "where" => "$where");
+            "where" => "$where",
+            "order" => "$order");
         /// PAGINADO
         $config = array();
         $config["base_url"] = site_url("backoffice/cursos");
