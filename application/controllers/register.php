@@ -129,7 +129,7 @@ class Register extends CI_Controller {
                         $email = $this->input->post("email");
                         $dni = $this->input->post("dni");
                         $phone = $this->input->post("phone");
-                        $pass = $this->input->post("pass");
+                        $pass = $this->input->post("password");
                         $address = $this->input->post("address");
                         $country = $this->input->post("country");
                         //INSERT TABLE CUSTOMER
@@ -185,7 +185,7 @@ class Register extends CI_Controller {
                         $data_customer_session['status'] = 1;
                         $_SESSION['customer'] = $data_customer_session;
                         //send message
-                        $this->message($username, $pass, $name, $email);
+                        $this->message($username, $name, $email);
                         //count data cart
                         $cart = count($this->cart->contents());
                         if ($cart > 0) {
@@ -204,7 +204,7 @@ class Register extends CI_Controller {
         }
     }
 
-    public function message($username, $pass, $name, $email) {
+    public function message($username, $name, $email) {
         $mensaje = wordwrap("<html>
                     
  <div bgcolor='#E9E9E9' style='background:#fff;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
@@ -230,8 +230,7 @@ class Register extends CI_Controller {
                           <p style='margin:0;padding-bottom:20px;color:#333333;line-height:22px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
                           Tu cuenta ha sido creada exitosamente accede a tu oficina virtual a través del siguiente enlace  <a href='https://culturaemprendedora.online/iniciar-sesion/' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://culturaemprendedora.online&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>culturaemprendedora.online</a> <br/>Encuentra aquí tus credenciales de ingreso. </p>
                           <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-                          <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$username</strong></span>
-                            <span style='display:block'><span style='width:101px;display:inline-block'>Contraseña: </span><strong>$pass</strong></span>
+                            <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$username</strong></span>
                           </p> 
                           <a href='https://culturaemprendedora.online/iniciar-sesion' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
                             target='_blank'>Iniciar Sesión</a>                          

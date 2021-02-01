@@ -109,11 +109,9 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="validationTooltipUsernamePrepend" style="cursor: pointer;" onclick="show_pass();"><i class="fa fa-eye"></i></span>
                             </div>
-                            <input class="form-control" type="password" id="password" name="password" value="<?php echo isset($obj_customer->password) ? $obj_customer->password : ""; ?>" class="input-xlarge-fluid" placeholder="Password" required>
+                            <input class="form-control" type="password" id="password" name="password" class="input-xlarge-fluid" placeholder="Password" required>
                             <div class="pre-icon os-icon "><i class="fa fa-unlock"></i></div>
                         </div>
-<!--                        <input name="pass" id="pass" class="form-control" placeholder="Contraseña" type="password" autocomplete="off" required="">
-                        <div class="pre-icon os-icon "><i class="fa fa-unlock"></i></div>-->
                     </div>
                     <div class="form-group">
                         <label>Nombres</label>
