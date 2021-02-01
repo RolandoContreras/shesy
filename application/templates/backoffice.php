@@ -87,28 +87,28 @@
                         <li data-username="Tablero" class="nav-item">
                             <a href="#" class="btn">
                                 <div class="access-dam-yellow" align="center"> 
-                                    <span>Academy</span>                
+                                    <span>ACADEMIA</span>                
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url()."backoffice/cursos";?>" class="btn" style="width: 100%">
                                 <div class="access-dam-purple" align="center"> 
-                                    <span>Cursos</span>                
+                                    <span>CURSOS</span>                
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="btn" style="width: 100%">
                                 <div class="access-dam-green" align="center"> 
-                                    <span>Business</span>
+                                    <span>EMPRESAS</span>
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'backoffice/inversiones' ?>" class="btn" style="width: 100%">
                                 <div class="access-dam-black" align="center"> 
-                                    <span>Portafolio de Inversión</span>
+                                    <span>PORTAFOLIO DE INVERSIÓN</span>
                                 </div>
                             </a>
                         </li>
