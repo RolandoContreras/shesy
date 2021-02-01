@@ -56,6 +56,9 @@
                                                     <div class="form-group">
                                                         <label>Descripción</label>
                                                         <textarea name="description" id="description" class="form-control"><?php echo isset($obj_courses->description) ? $obj_courses->description : ""; ?></textarea>
+                                                        <script>
+                                                            CKEDITOR.replace('description');
+                                                        </script>
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -162,4 +165,10 @@
     </div>
 </div>
 <script src="<?php echo site_url() . 'static/cms/js/cursos.js' ?>"></script>
+<script type="text/javascript">
+    $(window).on('load', function () {
+        // classic editor
+        ClassicEditor.create(document.querySelector('#sumilla'))
+    });
+</script>
 
