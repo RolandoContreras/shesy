@@ -68,7 +68,7 @@ class B_cursos extends CI_Controller {
                          courses.active,
                          courses.date",
             "join" => array('category, category.category_id = courses.category_id'),
-            "where" => "courses.active = 1");
+            "where" => "$where");
         /// PAGINADO
         $config = array();
         $config["base_url"] = site_url("backoffice/cursos");
