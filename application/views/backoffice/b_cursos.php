@@ -40,7 +40,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <form method="get" action="<?php echo site_url()."mi_catalogo"?>">
+                                            <form method="get" action="<?php echo site_url()."backoffice/cursos"?>">
                                             <div class="col-sm">
                                                 <div class="input-group mb-3">
                                                         <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon2" name="search">

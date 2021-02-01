@@ -47,13 +47,9 @@ class B_cursos extends CI_Controller {
 
         if (isset($_GET['search'])) {
             $word = $_GET['search'];
-            $where = "catalog.name like '%$word%' and catalog.active = 1";
+            $where = "courses.name like '%$word%' and courses.active = 1";
         } else {
-            if ($kid_id > 0) {
-                $where = "catalog.active = 1";
-            } else {
-                $where = "catalog.active = 1";
-            }
+            $where = "courses.active = 1";
         }
         $category_name = "Todos los Cursos";
         //get catalog
@@ -79,7 +75,7 @@ class B_cursos extends CI_Controller {
         $config["total_rows"] = $this->obj_courses->total_records($params);
         $config["per_page"] = 12;
         $config["num_links"] = 1;
-        $config["uri_segment"] = 2;
+        $config["uri_segment"] = 3;
 
         $config['first_tag_open'] = '<li class="paginate_button page-item">';
         $config['first_tag_close'] = '</li>';
@@ -87,7 +83,7 @@ class B_cursos extends CI_Controller {
         $config['prev_tag_close'] = '</li>';
         $config['num_tag_open'] = '<li class="paginate_button page-item">';
         $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class=" paginate_button page-item"><a class="page-link">';
+        $config['cur_tag_open']= '<li class="page-item active"><span aria-current="page" class="page-link page-numbers current">';
         $config['cur_tag_close'] = '</a></li>';
         $config['next_tag_open'] = '<li class="paginate_button page-item">';
         $config['next_tag_close'] = '</a></li>';
@@ -97,7 +93,7 @@ class B_cursos extends CI_Controller {
         $this->pagination->initialize($config);
         $obj_pagination = $this->pagination->create_links();
         /// DATA
-        $obj_courses = $this->obj_courses->search_data($params, $config["per_page"], $this->uri->segment(2));
+        $obj_courses = $this->obj_courses->search_data($params, $config["per_page"], $this->uri->segment(3));
         //GET DATA FROM CUSTOMER
         $obj_profile = $this->get_profile($customer_id);
         //total comission compra
@@ -125,10 +121,12 @@ class B_cursos extends CI_Controller {
             //get data catalog
             $params_categogory_id = array(
                         "select" =>"category_id,
-                                    name",
+                                    name,
+                                    slug",
                 "where" => "slug like '%$category%'");
             $obj_category = $this->obj_category->get_search_row($params_categogory_id);
             $category_id = $obj_category->category_id;
+            $slug = $obj_category->slug;
             $category_name = "Cursos - ".$obj_category->name;
              //get catalog
             $params = array(
@@ -151,11 +149,11 @@ class B_cursos extends CI_Controller {
             
              /// PAGINADO
             $config=array();
-            $config["base_url"] = site_url("backoffice/cursos"); 
+            $config["base_url"] = site_url("backoffice/cursos/$slug"); 
             $config["total_rows"] = $this->obj_courses->total_records($params);  
             $config["per_page"] = 12; 
             $config["num_links"] = 1;
-            $config["uri_segment"] = 2;   
+            $config["uri_segment"] = 4;   
             
             $config['first_tag_open'] = '<li>';
             $config['first_tag_close'] = '</li>';
@@ -163,7 +161,7 @@ class B_cursos extends CI_Controller {
             $config['prev_tag_close'] = '</li>';            
             $config['num_tag_open']='<li>';
             $config['num_tag_close'] = '</li>';            
-            $config['cur_tag_open']= '<li class="active"><span aria-current="page" class="page-numbers current">';
+            $config['cur_tag_open']= '<li class="page-item active"><span aria-current="page" class="page-link page-numbers current">';
             $config['cur_tag_close']= '</span></li>';            
             $config['next_tag_open'] = '<li>';
             $config['next_tag_close'] = '</li>';            
@@ -173,7 +171,7 @@ class B_cursos extends CI_Controller {
             $this->pagination->initialize($config);        
             $obj_pagination = $this->pagination->create_links();
             /// DATA
-            $obj_courses = $this->obj_courses->search_data($params, $config["per_page"],$this->uri->segment(2));
+            $obj_courses = $this->obj_courses->search_data($params, $config["per_page"],$this->uri->segment(4));
             //GET DATA FROM CUSTOMER
             $obj_profile = $this->get_profile($customer_id);
             //total comission compra
