@@ -255,6 +255,107 @@ class B_cursos extends CI_Controller {
 	}
 
 
+    public function pay_order() {
+        //GET SESION ACTUALY
+        $this->get_session();
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //get nav ctalogo
+        $obj_category_catalogo = $this->nav_cursos();
+        //Type 1 = pagos de membresia
+        //Type 2 = pagos de catalogo
+        //Type 3 = pagos de cursos
+        $params = array(
+            "select" => "invoices.invoice_id,
+                                    invoices.type,
+                                    invoices.date,
+                                    invoices.total,
+                                    invoices.active,
+                                    customer.first_name,
+                                    customer.last_name,",
+            "where" => "invoices.customer_id = $customer_id and invoices.type = 3 and invoices.status_value = 1",
+            "join" => array('customer, customer.customer_id = invoices.customer_id'),
+        );
+        $obj_invoices = $this->obj_invoices->search($params);
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total commission compra
+        $obj_total_compra = $this->total_comissions($customer_id);
+        $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
+        //send data
+        $this->tmp_catalog->set("obj_total_compra", $obj_total_compra);
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
+        $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_invoices", $obj_invoices);
+        $this->tmp_catalog->render("backoffice/b_cursos_pay_order");
+    }
+
+    public function add_cart() {
+        if ($this->input->is_ajax_request()) {
+            //GET SESION ACTUALY
+            $this->get_session();
+            //GET CUSTOMER_ID
+            $price = $this->input->post('price');
+            $course_id = $this->input->post('course_id');
+            $quantity = $this->input->post('quantity');
+            $name = $this->input->post('name');
+            $slug_ame = convert_slug($name);
+            //ADD CART
+            $data_param = array(
+                'id' => $course_id,
+                'qty' => $quantity,
+                'price' => $price,
+                'name' => "$slug_ame"
+            );
+            $cart_id = $this->cart->insert($data_param);
+            if (isset($cart_id) != "") {
+                $data['status'] = "true";
+                $data['url'] = site_url() . "backoffice/cursos/pay_order";
+            } else {
+                $data['status'] = "false";
+            }
+            echo json_encode($data);
+        }
+    }
+
+    public function update_cart() {
+        if ($this->input->is_ajax_request()) {
+            //GET SESION ACTUALY
+            $this->get_session();
+            //GET CUSTOMER_ID
+            $qty = $this->input->post('qty');
+            $id = $this->input->post('id');
+            //UPDATE CART
+            $data = array(
+                'rowid' => "$id",
+                'qty' => $qty
+            );
+            $this->obj_invoices->update($invoice_id, $data);
+            $data['status'] = true;
+            echo json_encode($data);
+        }
+    }
+
+    public function delete_cart() {
+
+        if ($this->input->is_ajax_request()) {
+            //GET SESION ACTUALY
+            $this->get_session();
+            //GET CUSTOMER_ID
+
+            $id = $this->input->post('id');
+            //UPDATE CART
+            $data = array(
+                'rowid' => "$id",
+                'qty' => 0
+            );
+            $this->cart->update($data);
+            $data['status'] = "true";
+            echo json_encode($data);
+        }
+    }
+
     public function nav_cursos() {
         $params_category_catalogo = array(
             "select" => "category_id,

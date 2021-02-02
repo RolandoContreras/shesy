@@ -61,7 +61,7 @@
                                                                     <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="quantity" id="quantity" placeholder="Ingrese Cantidad">
                                                                 </div>
                                                                 <div class="col-sm-6">
-                                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart_granel('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
+                                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
                                                                 </div>
                                                             </div>
                                                         
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 </section>
-                <script src="<?php echo site_url(); ?>static/catalog/js/pay_order_new.js"></script>
+                <script src="<?php echo site_url(); ?>static/backoffice/js/script/pay_order_curso.js"></script>
                 <style>
                     .white{
                         color:white !important;
