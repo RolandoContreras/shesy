@@ -60,6 +60,26 @@
                                                             CKEDITOR.replace('description');
                                                         </script>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label><b>Bono 1 Nivel</b> - (3 decimales)</label>
+                                                        <input class="form-control" type="number" step="any" id="bono_1" name="bono_1" value="<?php echo isset($obj_courses->bono_1) ? $obj_courses->bono_1 : ""; ?>" class="input-xlarge-fluid" placeholder="Ingresar Bono de Nivel 1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><b>Bono 2 Nivel</b> - (3 decimales)</label>
+                                                        <input class="form-control" type="number" step="any" id="bono_2" name="bono_2" value="<?php echo isset($obj_courses->bono_2) ? $obj_courses->bono_2 : ""; ?>" class="input-xlarge-fluid" placeholder="Ingresar Bono de Nivel 2">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><b>Bono 3 Nivel</b> - (3 decimales)</label>
+                                                        <input class="form-control" type="number" step="any" id="bono_3" name="bono_3" value="<?php echo isset($obj_courses->bono_3) ? $obj_courses->bono_3 : ""; ?>" class="input-xlarge-fluid" placeholder="Ingresar Bono de Nivel 3">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><b>Bono 4 Nivel</b> - (3 decimales)</label>
+                                                        <input class="form-control" type="number" step="any" id="bono_4" name="bono_4" value="<?php echo isset($obj_courses->bono_4) ? $obj_courses->bono_4 : ""; ?>" class="input-xlarge-fluid" placeholder="Ingresar Bono de Nivel 4">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><b>Bono 5 Nivel</b> - (3 decimales)</label>
+                                                        <input class="form-control" type="number" step="any" id="bono_5" name="bono_5" value="<?php echo isset($obj_courses->bono_5) ? $obj_courses->bono_5 : ""; ?>" class="input-xlarge-fluid" placeholder="Ingresar Bono de Nivel 5">
+                                                    </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <?php if (isset($obj_courses)) { ?>
@@ -123,6 +143,10 @@
                                                             }
                                                             ?>>No</option>
                                                         </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Hot Link</label>
+                                                        <input class="form-control" type="text" id="hot_link" name="hot_link" value="<?php echo isset($obj_courses->hot_link) ? $obj_courses->hot_link : ""; ?>" class="input-xlarge-fluid" placeholder="Ingrese Hot Link">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputState">Estado</label>
