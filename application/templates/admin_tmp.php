@@ -86,40 +86,46 @@
             $mis_cursos = null;
             switch ($nav) {
                 case "panel":
-                    $panel_syle = "active";
+                    $panel_syle = "active pcoded-trigger";
                     break;
                 case "activaciones":
-                    $activaciones_syle = "active";
+                    $activaciones_syle = "active pcoded-trigger";
                     break;
                 case "contra-entrega":
-                    $contra_entrega_syle = "active";
+                    $contra_entrega_syle = "active pcoded-trigger";
                     break;
                 case "enlace-compra":
-                    $enlace_compra = "active";
+                    $enlace_compra = "active pcoded-trigger";
                     break;
                 case "inversiones":
-                    $inversiones_syle = "active";
+                    $inversiones_syle = "active pcoded-trigger";
                     break;
                 case "activar_pagos":
-                    $pagos_syle = "active";
+                    $pagos_syle = "active pcoded-trigger";
                     break;
-                case "recargas":
-                    $recargas_syle = "active";
+                case "recargas_comisiones":
+                    $recargas_syle = "active pcoded-trigger";
+                    break;
+                case "recargas_compras":
+                    $recargas_syle = "active pcoded-trigger";
                     break;
                 case "report_global":
-                    $report_syle = "active";
+                    $report_syle = "active pcoded-trigger";
                     break;
                 case "report_customer":
-                    $report_syle = "active";
+                    $report_syle = "active pcoded-trigger";
                     break;
                 case "report_invoice":
-                    $report_syle = "active";
+                    $report_syle = "active pcoded-trigger";
                     break;
                 case "report_pay":
-                    $report_syle = "active";
+                    $report_syle = "active pcoded-trigger";
                     break;
                 case "mis-cursos":
-                    $mis_cursos = "active";
+                    $mis_cursos = "active pcoded-trigger";
+                    break;
+                case "recargas_comisiones":
+                    $recargas = "active pcoded-trigger";
                     break;
                 default:
                     $mantenimiento_syle = "active";
@@ -135,46 +141,46 @@
               </a>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Mantenimientos</label></li>
-        <li class="nav-item pcoded-hasmenu">
-            <a href="#!" class="<?php echo $mantenimiento_syle;?>">
+        <li class="nav-item pcoded-hasmenu <?php echo $mantenimiento_syle;?>">
+            <a href="#!">
                 <span class="pcoded-micon">
                     <i data-feather="sliders"></i>
                 </span>
                 <span class="pcoded-mtext">Mantenimientos</span>
             </a>
             <ul class="pcoded-submenu">
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/bonos";?>"><i class="icon-large icon-th"></i>Bonos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/categorias";?>"><i class="icon-large icon-th"></i>Categórías</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/catalogo";?>"><i class="icon-large icon-th"></i>Catalogo</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/clientes";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comentarios";?>"><i class="icon-large icon-th"></i>Comentarios</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/embassy";?>"><i class="icon-large icon-th"></i>Embajadores</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas";?>"><i class="icon-large icon-th"></i>Facturas Pack</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas_catalogo";?>"><i class="icon-large icon-th"></i>Facturas Catalogo</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/membresias";?>"><i class="icon-large icon-th"></i>Pack</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/pagos";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/puntos";?>"><i class="icon-large icon-th"></i>Puntos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/rangos";?>"><i class="icon-large icon-th"></i>Rangos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/bonos";?>"><i class="icon-large icon-th"></i>Bonos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/categorias";?>"><i class="icon-large icon-th"></i>Categórías</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/catalogo";?>"><i class="icon-large icon-th"></i>Catalogo</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/clientes";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/comentarios";?>"><i class="icon-large icon-th"></i>Comentarios</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/embassy";?>"><i class="icon-large icon-th"></i>Embajadores</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/facturas";?>"><i class="icon-large icon-th"></i>Facturas Pack</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/facturas_catalogo";?>"><i class="icon-large icon-th"></i>Facturas Catalogo</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/membresias";?>"><i class="icon-large icon-th"></i>Pack</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/pagos";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/puntos";?>"><i class="icon-large icon-th"></i>Puntos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/rangos";?>"><i class="icon-large icon-th"></i>Rangos</a></li>
                 <?php if($_SESSION['usercms']['privilage'] > 1){ ?>
-                <li class="pcoded-hasmenu" ><a href="<?php echo site_url()."dashboard/usuarios";?>"><i class="icon-large icon-th"></i>Usuarios</a></li>
+                <li class="pcoded" ><a href="<?php echo site_url()."dashboard/usuarios";?>"><i class="icon-large icon-th"></i>Usuarios</a></li>
                 <?php } ?>
             </ul>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Activar</label></li>
-        <li class="nav-item pcoded-hasmenu">
-            <a href="#!" class="nav-link <?php echo $activaciones_syle;?>">
+        <li class="nav-item pcoded-hasmenu <?php echo $activaciones_syle;?>">
+            <a href="#!" class="nav-link ">
                 <span class="pcoded-micon">
                     <i data-feather="check-circle"></i>
                 </span>
                 <span class="pcoded-mtext">Activaciones</span>
             </a>
             <ul class="pcoded-submenu">
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones";?>"><i class="icon-large icon-th"></i>Pack</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/activaciones";?>"><i class="icon-large icon-th"></i>Pack</a></li>
             </ul>
         </li>
-        <li class="nav-item pcoded-hasmenu">
+        <li class="nav-item pcoded">
             <a href="<?php echo site_url()."dashboard/contra-entrega";?>" class="nav-link <?php echo $contra_entrega_syle;?>">
                 <span class="pcoded-micon">
                     <i data-feather="user-check"></i>
@@ -182,7 +188,7 @@
                 <span class="pcoded-mtext">Contra Entrega / Ganancia Disponible</span>
             </a>
         </li>
-        <li class="nav-item pcoded-hasmenu">
+        <li class="nav-item pcoded">
             <a href="<?php echo site_url()."dashboard/enlace-compra";?>" class="nav-link <?php echo $enlace_compra;?>">
                 <span class="pcoded-micon">
                     <i data-feather="shopping-cart"></i>
@@ -218,17 +224,16 @@
             </a>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Recargas</label></li>
-        <li class="nav-item pcoded-hasmenu">
-            <a href="#!" class="nav-link <?php echo $recargas_syle;?>">
+        <li class="nav-item pcoded-hasmenu <?php echo $recargas_syle;?>">
+            <a href="#!" class="nav-link ">
                 <span class="pcoded-micon">
                     <i data-feather="credit-card"></i>
                 </span>
                 <span class="pcoded-mtext">Recargas</span>
             </a>
             <ul class="pcoded-submenu">
-                <!--<li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas";?>"><i class="icon-large icon-th"></i>Puntos</a></li>-->
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas_comisiones";?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/recargas_compras";?>"><i class="icon-large icon-th"></i>Compras</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/recargas_comisiones";?>">Comisiones</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/recargas_compras";?>">Compras</a></li>
             </ul>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Reportes</label></li>
@@ -240,10 +245,10 @@
                 <span class="pcoded-mtext">Reportes</span>
             </a>
             <ul class="pcoded-submenu">
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_global";?>"><i class="icon-large icon-th"></i>Datos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_customer";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_invoice";?>"><i class="icon-large icon-th"></i>Ventas</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_pay";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/report_global";?>">Datos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/report_customer";?>">Clientes</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/report_invoice";?>">Ventas</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/report_pay";?>">Pagos</a></li>
             </ul>
         </li>
     </ul>

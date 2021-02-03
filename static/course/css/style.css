@@ -3669,7 +3669,7 @@ p.text-muted {
 .pcoded-navbar.menu-light.theme-horizontal .pcoded-inner-navbar>li.active a,
 .pcoded-navbar.menu-light.theme-horizontal .pcoded-inner-navbar>li.pcoded-trigger a,
 .pcoded-navbar.menu-light.theme-horizontal .pcoded-inner-navbar>li:hover a {
-    color: #3f4d67;
+    color: #1dc4e9 !important;
     background: 0 0
 }
 .pcoded-navbar.menu-light.theme-horizontal .pcoded-inner-navbar>li.pcoded-hasmenu.active:before,

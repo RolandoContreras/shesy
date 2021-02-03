@@ -68,7 +68,6 @@
                                 <td>
                                     <div class="operation">
                                             <div class="btn-group">
-                                               <button class="btn btn-secondary" type="button" onclick="edit_recargas_comisiones('<?php echo $value->commissions_id;?>');"><span><i data-feather="edit"></i> Editar</span></button>
                                                <button class="btn btn-secondary" type="button" onclick="delete_recargas_comisiones('<?php echo $value->commissions_id;?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
                                             </div>
                                     </div>
