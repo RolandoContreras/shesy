@@ -254,7 +254,6 @@ class B_cursos extends CI_Controller {
             $this->tmp_catalog->render("backoffice/b_cursos_detail");
 	}
 
-
     public function pay_order() {
         //GET SESION ACTUALY
         $this->get_session();
@@ -279,6 +278,19 @@ class B_cursos extends CI_Controller {
         $obj_invoices = $this->obj_invoices->search($params);
         ////GET DATA FROM CUSTOMER
         $obj_profile = $this->get_profile($customer_id);
+        //get curso hotlink
+        foreach ($this->cart->contents() as $items){
+            $course_id = $items['id'];
+        } 
+        if($course_id != ""){
+            $params = array(
+                "select" => "hot_link,
+                             price",
+                "where" => "course_id = $course_id"
+            );
+            $obj_courses = $this->obj_courses->get_search_row($params);
+            $this->tmp_catalog->set("obj_courses", $obj_courses);
+        }
         //total commission compra
         $obj_total_compra = $this->total_comissions($customer_id);
         $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
@@ -287,7 +299,6 @@ class B_cursos extends CI_Controller {
         $this->tmp_catalog->set("total_compra", $total_compra);
         $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
-        $this->tmp_catalog->set("obj_invoices", $obj_invoices);
         $this->tmp_catalog->render("backoffice/b_cursos_pay_order");
     }
 
