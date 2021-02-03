@@ -1,90 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-PE">
-    <?php $this->load->view("head"); ?>
-    <body class="bp-nouveau error404 wp-embed-responsive theme-wordpress-lms woocommerce-no-js pagetitle-show hfeed bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 buy-through-membership header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
-        <div id="thim-preloading">
-            <div class="thim-loading-icon">
-                <div class="sk-folding-cube">
-                    <div class="sk-cube1 sk-cube"></div>
-                    <div class="sk-cube2 sk-cube"></div>
-                    <div class="sk-cube4 sk-cube"></div>
-                    <div class="sk-cube3 sk-cube"></div>
-                </div>
-            </div>
-        </div>
-        <div id="wrapper-container" class="content-pusher creative-right bg-type-color">
-            <div class="overlay-close-menu"></div>
-            <?php $this->load->view("header"); ?>
-            <?php $this->load->view("nav"); ?>
-            <div id="main-content">
-                <section class="content-area">
-                    <div class="page-title layout-1">
-                        <div class="main-top no-parallax" style="background-image:url(<?php echo site_url() . 'static/page_front/images/background_2.jpg'; ?>)"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
-                            <div class="content container">
-                                <div class="row">
-                                    <div class="text-title col-md-6">
-                                        <h1>404 Página</h1>
-                                    </div>
-                                    <div class="text-description col-md-6">
-                                        <div class="banner-description">
-                                            <p><strong class="br">Te encuentras en cultura imparable </strong> Si aún no eres socio, entonces regístrate.</p>
+<?php $this->load->view("head"); ?>
+<body>
+    <div id="section-header" data-section-id="header">
+        <?php $this->load->view("header"); ?>
+    </div>
+    <main>
+        <div data-content-for-index data-dynamic-sections="index">
+            <!--FIN - QUIENES SOMOS-->
+            <div>
+                <div class="section background-dark">
+                    <div class="sizer ">
+                        <div class="backgroundVideo"></div>
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="block-type--image text- col-6 animated" data-reveal-units="seconds">
+                                    <div class="block box-shadow-medium background-unrecognized" data-aos="fade-down" data-aos-delay="500" data-aos-duration="0">
+                                        <div class="image">
+                                            <img class="image__image" src="<?php echo site_url() . "static/page_front/images/logo_embajada.png" ?>" alt="Cultura Imparable" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="breadcrumb-content ">
-                            <div class="breadcrumbs-wrapper container">
-                                <ul itemscope id="breadcrumbs" class="breadcrumbs">
-                                    <li itemprop="itemListElement" itemscope>
-                                        <a itemprop="item" href="<?php echo site_url();?>" title="Home"><span itemprop="Inicio">Inicio</span></a>
-                                        <meta itemprop="position" content="1"><span class="breadcrum-icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
-                                    <li itemprop="itemListElement" itemscope>
-                                        <span itemprop="name" title="404 Page">404 Página</span>
-                                        <meta itemprop="position" content="2">
-                                    </li>
-                                </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="fullscreen-bg backgroundVideo">
+                <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+                    <source src="<?php echo site_url()."static/page_front/video/video.mp4"?>" type="video/mp4">
+                </video>
+            </div>
+            <!--Sé parte de los profesores-->
+            <div class="section background-dark color-teacher" data-reveal-units="seconds">
+                <div id="block-1597943616686" class="block-type--image text-col-5" data-reveal-units="seconds">
+                    <div class="block box-shadow-none background-unrecognized aos-init aos-animate" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                        <div class="center">
+                            <img class="image__image" src="<?php echo site_url()."static/page_front/images/arrow.gif";?>" alt="arrow-fown" width="50">
+                        </div>
+                    </div>
+                </div>
+                <div class="sizer">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="block-break"></div>
+                            <div id="block-1597347523879" class=" block-type--text text-center col-11" data-reveal-units="seconds">
+                                <div class="block box-shadow-none background-unrecognized aos-init aos-animate" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                                    <h1><span class="JsGRdQ" style="color: #fffd55;">La página que estas buscando no existe.</span></h1>
+                                    <p>
+                                        <span class="JsGRdQ">Verifica el enlace o regresa al inicio. <b>Cultura Emprendedora</b></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="block-break"></div>
+                            <div id="block-1598224544471" class="block-type--cta text-center col-6" data-reveal-units="seconds">
+                                <div class="block box-shadow-none background-unrecognized aos-init aos-animate" data-aos="none" data-aos-delay="0" data-aos-duration="0">
+                                    <a class="btn btn-large btn-solid btn-full background-light" href="<?php echo site_url();?>">
+                                        ¡IR AL INICIO!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="container site-content ">
-                        <div class="row">
-                            <main id="main" class="site-main col-sm-12 full-width">
-                                <section class="error-404 not-found">
-                                    <div class="page-content">
-                                        <h3 class="intro">Página no encontrada!</h3>
-                                        <p class="404-message">Lo sentimos, no podemos encontrar la página que estás buscando. Por favor ve a <a href='<?php echo site_url();?>'>Inicio.</a></p>
-                                    </div>
-                                </section>
-                            </main>
-                        </div>
-                    </div>
-                </section>
+                </div>
             </div>
-           <?php $this->load->view("footer_2"); ?>
         </div>
-        <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
-        <div class="gallery-slider-content"></div>
-        <script>
-            var BP_Nouveau = {"ajaxurl": "", "object_nav_parent": "#buddypress", "objects": {"0": "activity", "1": "members", "4": "xprofile", "7": "settings", "8": "notifications"}, "nonces": {"activity": "fcd5ecf43e", "members": "9af41e8848", "xprofile": "10dfc2af2b", "settings": "8d89e10911"}};
-        </script>
-        <script>
-            window.lazySizesConfig = window.lazySizesConfig || {};
-            window.lazySizesConfig.lazyClass = 'lazyload';
-            window.lazySizesConfig.loadingClass = 'lazyloading';
-            window.lazySizesConfig.loadedClass = 'lazyloaded';
-            lazySizesConfig.loadMode = 1;
-        </script>
-        <script>
-            lazySizes.init();
-        </script>
-        <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
-        <script>
-            WebFont.load({google: {families: ['Roboto:400,300']}});
-        </script>
-        <script defer src="<?php echo site_url() . 'static/page_front/js/autoptimize_282.js'; ?>"></script>
-        <script src='https://www.google.com/recaptcha/api.js'></script>
-        <script src='<?php echo site_url() . 'static/page_front/js/script/contact.js'; ?>'></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    </body>
+    </main>
+    <div id="section-footer">
+        <?php $this->load->view("footer"); ?>
+    </div>
+    <script
+        src="<?php echo site_url() . "static/page_front/js/encore_core-391b174ddfaf72e8ec9615d1579235b5c2c755e7cd65e22cf10938c815f7f394.js"; ?>">
+    </script>
+    <script src="<?php echo site_url() . "static/page_front/js/scripts.js?15964308185009978"; ?>"></script>
+</body>
+
 </html>
