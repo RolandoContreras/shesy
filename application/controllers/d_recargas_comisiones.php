@@ -63,26 +63,17 @@ class D_recargas_comisiones extends CI_Controller{
                 date_default_timezone_set('America/Lima');
                 $commissions_id = $this->input->post("commissions_id");
                 $customer_id = $this->input->post("customer_id");
-                $amount = $this->input->post("amount");
                 $active = $this->input->post("active");
+                $amount = $this->input->post("amount");
+                //set recarga 90% y 10%
+                $amont_90 = $amount * 0.9;
+                $amont_10 = $amount * 0.1;
                 if($customer_id != null){
-                    if($commissions_id != null){
-                        //updated
-                        $data_comission = array(
-                            'customer_id' => $customer_id,
-                            'amount' => $amount,
-                            'active' => $active,
-                            'status_value' => 1,
-                            'updated_at' => date("Y-m-d H:i:s"),
-                            'updated_by' => $_SESSION['usercms']['user_id'],
-                        );
-                        $result = $this->obj_comission->update($commissions_id, $data_comission);
-                    }else{
-                        //insert
+                        //insert comission 90%
                         $data_comission = array(
                             'customer_id' => $customer_id,
                             'bonus_id' => 2,
-                            'amount' => $amount,
+                            'amount' => $amont_90,
                             'recarga' => 1,
                             'date' => date("Y-m-d H:i:s"),
                             'active' => $active,
@@ -91,7 +82,21 @@ class D_recargas_comisiones extends CI_Controller{
                             'created_by' => $customer_id,
                         );
                         $result = $this->obj_comission->insert($data_comission);
-                    }
+                        //insert comission 90%
+                        //insert
+                        $data_comission = array(
+                            'customer_id' => $customer_id,
+                            'bonus_id' => 2,
+                            'amount' => $amont_10,
+                            'recarga' => 1,
+                            'compras' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'active' => $active,
+                            'status_value' => 1,
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $result = $this->obj_comission->insert($data_comission);
                     if($result != null){
                         $data['status'] = true;
                     }else{
