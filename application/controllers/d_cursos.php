@@ -75,10 +75,6 @@ class d_cursos extends CI_Controller {
             $img_2 = $this->input->post("img_2");
             $name = $this->input->post('name');
             $slug =  convert_slug($this->input->post('name'));
-
-            var_dump($slug);
-            die();
-
             //upload img  
             if($_FILES["image_file"]["name"] != null){
                 if (isset($_FILES["image_file"]["name"])) {
