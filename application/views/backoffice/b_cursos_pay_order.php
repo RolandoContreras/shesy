@@ -102,7 +102,7 @@
                                                         <div class="card-block text-center">
                                                         <?php 
                                                             if($obj_courses->hot_link != ""){ ?>
-                                                               <a href="<?php echo $obj_courses->hot_link;?>" target="_blank"><button type="button" class="btn btn-danger">Pagar con Hot Link</button></a>
+                                                               <a href="<?php echo $obj_courses->hot_link;?>" target="_blank"><button type="button" class="btn theme-bg">Metodos de Pago</button></a>
                                                         <?php }else{ ?>
                                                                <button type="button" disabled class="btn btn-primary" id="buyButton" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>" data-price2="<?php echo $this->cart->format_number($this->cart->total()); ?>">Pagar con Tarjeta &nbsp;&nbsp;<i data-feather="credit-card"></i></button>    
                                                         <?php } ?>
