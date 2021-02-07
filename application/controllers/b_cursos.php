@@ -12,7 +12,7 @@ class B_cursos extends CI_Controller {
         $this->load->model("commissions_model", "obj_commissions");
         $this->load->model("points_model", "obj_points");
         $this->load->model("contra_entrega_model", "obj_contra_entrega");
-        
+        $this->load->model("customer_courses_model", "obj_customer_courses");
     }
 
     public function index() {
@@ -187,6 +187,27 @@ class B_cursos extends CI_Controller {
             $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
             $this->tmp_catalog->set("obj_courses",$obj_courses);
             $this->tmp_catalog->render("backoffice/b_cursos");
+	}
+
+    public function mis_cursos()
+	{   
+            //get customer id
+            $customer_id = $_SESSION['customer']['customer_id'];
+            //get cursos comprados
+            $obj_courses_by_customer = $this->courses_by_customer($customer_id);
+            //GET DATA FROM CUSTOMER
+            $obj_profile = $this->get_profile($customer_id);
+            //GET NAV CURSOS
+            $obj_category_catalogo = $this->nav_cursos();
+            //total comission compra
+            $obj_total_compra = $this->total_comissions($customer_id);
+            $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
+            //SEND DATA
+            $this->tmp_catalog->set("obj_profile",$obj_profile);
+            $this->tmp_catalog->set("total_compra",$total_compra);
+            $this->tmp_catalog->set("obj_courses_by_customer", $obj_courses_by_customer);
+            $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
+            $this->tmp_catalog->render("backoffice/b_mis_cursos");
 	}
     
     public function detail($slug)
@@ -407,6 +428,38 @@ class B_cursos extends CI_Controller {
         return $obj_customer = $this->obj_customer->get_search_row($params_profile);
     }
 
+    public function courses_by_customer($customer_id) {
+        $params_customer_courses = array(
+            "select" => "customer_courses.customer_course_id,
+                            customer_courses.duration_time,
+                                                customer_courses.date_start,
+                                                courses.course_id,
+                                                courses.category_id,
+                                                courses.name,
+                                                courses.duration,
+                                                courses.free,
+                                                courses.slug,
+                                                courses.img,
+                                                customer_courses.total_video,
+                                                customer_courses.certificate,
+                                                customer_courses.complete,
+                                                customer_courses.total,
+                                                customer_courses.quiz_complete,
+                                                customer_courses.quiz,
+                                                courses.price,
+                                                courses.price_del,
+                                                courses.date,
+                                                customer.customer_id,
+                                                category.slug as category_slug,
+                                                category.name as category_name",
+            "join" => array('customer, customer_courses.customer_id = customer.customer_id',
+                'courses, customer_courses.course_id = courses.course_id',
+                'category, courses.category_id = category.category_id'),
+            "where" => "customer.customer_id = $customer_id",
+            "order" => "courses.course_id DESC",
+        );
+        return $obj_customer_courses = $this->obj_customer_courses->search($params_customer_courses);
+    }
 
     public function get_session() {
         if (isset($_SESSION['customer'])) {

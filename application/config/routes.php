@@ -121,7 +121,15 @@ $route['backoffice/cursos/pay_order'] = 'b_cursos/pay_order';
 $route['backoffice/cursos/pay_order/add_cart'] = 'b_cursos/add_cart';
 $route['backoffice/cursos/pay_order/update_cart'] = "b_cursos/update_cart";
 $route['backoffice/cursos/pay_order/delete_cart'] = "b_cursos/delete_cart";
+$route['backoffice/mis-cursos'] = 'b_cursos/mis_cursos';
 
+$route['virtual'] = "c_home";
+$route['virtual/send_message'] = "c_home/send_message";
+$route['virtual/([0-9]+)'] = 'c_home/index/$1';
+$route['virtual/([0-9a-z_-]+)'] = 'c_home/category/$1';
+$route['virtual/([0-9a-z_-]+)/([0-9]+)'] = 'c_home/category/$1';
+$route['virtual/([0-9a-z_-]+)/([0-9a-z|&_-]+)'] = 'c_home/detail/$1';
+$route['virtual/([0-9a-z_-]+)/([0-9a-z_|&-]+)/([0-9a-z|&_-]+)'] = 'c_home/detail/$1';
 
 $route['backoffice/profile'] = "b_profile";
 $route['backoffice/profile/update_data'] = "b_profile/update_data";

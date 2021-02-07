@@ -362,6 +362,11 @@ function str_to_first_capital($string){
     return $str;
 }
 
+function eliminar_ultimo_caracter($string){    
+    $new_value = substr($string, 0, -1);    
+    return $new_value;
+}
+
 function get_session() {
     if (isset($_SESSION['usercms'])) {
         if ($_SESSION['usercms']['logged_usercms'] == "TRUE") {

@@ -1,83 +1,61 @@
-  <section class="pcoded-main-container">
-    <div class="pcoded-wrapper">
-      <div class="pcoded-content">
-        <div class="pcoded-inner-content">
-          <div class="page-header">
-            <div class="page-block">
-              <div class="row align-items-center">
+<div id="stm-lms-lessons">
+    <div class="stm-lms-course__content">
+        <div class="container">
+            <div class="row">
                 <div class="col-md-12">
-                  <div class="page-header-title">
-                    <h5 class="m-b-10">Listado</h5>
-                  </div>
-                  <ul class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="<?php echo site_url().'course';?>"><i data-feather="home"></i></a></li>
-                    <li class="breadcrumb-item"><a>Videos Todos</a></li>
-                  </ul>
+                    <div class="stm-lms-course__lesson-content__top">
+                        <h3>Video Actual</h3>
+                        <h1><?php echo $obj_courses_overview->name; ?></h1>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="main-body">
-            <div class="page-wrapper">
-              <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            ¿Qué curso estas buscando?
-                        </div>
-                        <div class="card-block">
-                           <div class="row justify-content-center">
-                                <div class="col-sm-6">
-                                    <form method="get" action="<?php echo site_url().$url;?>">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" name="search" id="search" placeholder="Buscar tu Curso">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="submit"><i data-feather="search"></i></button>
+        </div>
+        <div class="stm-lms-course__content_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="stm-lms-course__lesson-content">
+                            <div class="vc_row wpb_row vc_row-fluid">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="wpb_text_column wpb_content_element ">
+                                                <div class="wpb_wrapper">
+                                                    <?php
+                                                    $url = explode("/", $obj_courses_overview->video);
+                                                    $link = $url[3];
+                                                    ?>
+                                                    <iframe src="https://player.vimeo.com/video/<?php echo $link; ?>" width="840" height="560" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                            <div class="wpb_text_column wpb_content_element ">
+                                                <div class="wpb_wrapper">
+                                                    <p>
+                                                        <?php echo $obj_courses_overview->description; ?>
+                                                    </p>
+                                                </div>
+                                                <div class="wpb_wrapper">
+                                                    <center>
+                                                        <?php if ($result_program == 0) { ?>
+                                                            <!--show button pagar programa-->
+                                                            <a id="pay_program" href="<?php echo site_url()."transformacion";?>" class="btn btn-success" style="padding: 18px 30px;border-radius: 30px;"><span style="font-size: 25px;"><i class="fa fa-check"></i> VER PROGRAMA</span> </a>
+                                                        <?php } ?>
+                                                    </center>
+                                                </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>  
-                <div class="col-sm-12">
-                    <div class="card">
-                      <div class="card-header">
-                        <h5><?php echo $category_name;?></h5>
-                      </div>
-                      <div class="card-block">
-                        <div class="grid">
-                        <?php
-                        foreach ($obj_videos as $value) { ?>
-                          <figure class="effect-apollo">
-                              <img width="365" height="340" src="<?php echo site_url()."static/course/img/$value->img2";?>" alt="advance-3">
-                            <figcaption>
-                                <h2><span style="font-size: 32px !important;font-weight: 300 !important;"><?php echo $value->name;?></span></h2>
-                              <p><?php echo corta_texto($value->summary, 100);?></p>
-                              <a href="<?php echo site_url()."course/$value->category_slug/$value->slug";?>">Ver Más</a>
-                            </figcaption>
-                          </figure>
-                        <?php } ?>
-                        </div>
-                      </div>
-                        
-                        <div class="row">
-                          <div class="col-sm-12 col-md-5"></div>
-                          <div class="col-sm-12 col-md-7">
-                            <div class="dataTables_paginate paging_simple_numbers">
-                              <ul class="pagination">
-                                <?php echo $obj_pagination; ?>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-    
+</div>
+<script src="<?php echo site_url() . 'assets/course/js/script/c_home.js'; ?>"></script>  
+<script src="<?php echo site_url() . 'assets/course/js/script/campana.js'; ?>"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+

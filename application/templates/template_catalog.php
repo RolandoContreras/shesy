@@ -72,16 +72,23 @@
                         $catalog_syle = "";
                         $home_syle = "";
                         $order_syle = "";
-
+                        $cursos_syle =  null;
+                        $mis_cursos_syle = null;
                         switch ($nav) {
                             case "home":
-                                $home_syle = "color-black";
+                                $home_syle = "color-black pcoded-trigger";
+                                break;
+                            case "cursos":
+                                $cursos_syle = "color-black pcoded-trigger";
+                                break;
+                            case "mis-cursos":
+                                $mis_cursos_syle = "color-black pcoded-trigger";
                                 break;
                             case "order":
-                                $order_syle = "color-black";
+                                $order_syle = "color-black pcoded-trigger";
                                 break;
                             default:
-                                $catalog_syle = "color-black";
+                                $catalog_syle = "color-black pcoded-trigger";
                                 break;
                         }
                         ?>
@@ -96,15 +103,23 @@
                         <?php
                         $url = explode("/", uri_string()); 
                         if($url[0] == "backoffice"){?>
-                            <li class="nav-item">
-                                <a href="<?php echo site_url() . 'backoffice/cursos'; ?>" class="nav-link <?php echo $home_syle; ?>">
+                            <li class="nav-item <?php echo $cursos_syle; ?>">
+                                <a href="<?php echo site_url() . 'backoffice/cursos'; ?>" class="nav-link ">
                                     <span class="pcoded-micon">
                                         <i data-feather="home"></i>
                                     </span>
                                     <span class="pcoded-mtext">Inicio</span>
                                 </a>
                             </li>
-                            <li class="nav-item pcoded-hasmenu pcoded-trigger">
+                            <li class="nav-item <?php echo $mis_cursos_syle;?>">
+                                <a href="<?php echo site_url() . 'backoffice/mis-cursos'; ?>" class="nav-link ">
+                                    <span class="pcoded-micon">
+                                        <i data-feather="home"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Mis Cursos</span>
+                                </a>
+                            </li>
+                            <li class="nav-item pcoded-hasmenu">
                                 <a href="#!" class="nav-link">
                                     <span class="pcoded-micon">
                                         <i data-feather="airplay"></i>

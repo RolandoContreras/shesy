@@ -1,156 +1,174 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en-US" class="no-js stm_lms_type_video">
     <head>
-        <title>Universidad Imparable - Plataforma de Cursos</title>
-        <!--[if lt IE 10]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
-        <meta name="author" content="Cultura Imparable">
-        <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, red social, mlm, mmn, culturaimprable.com, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
-        <meta name="robots" content="Index, Follow">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cultura Emprendedora | Plataforma de Curso</title>
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/mystyle.css?ver=29'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/linear-icons.css?ver=2.0'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/stmlms_icons.css?ver=2.0'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/font-awesome.min.css?ver=2.0'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/animate.css'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/lesson_video.css?ver=29'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/bootstrap.min.css?ver=3.2'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/styles.css?ver=3.2'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat%3A200%2C300%2C500%2C600%2C400%2C700%7COpen+Sans%3A300%2C400%2C600%2C700%2C800%2C300italic%2C400italic%2C600italic%2C700italic%2C800italic&#038;subset=latin&#038;ver=1589966475' type='text/css' media='all' />
         <!--//STAR FAVICON-->
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
         <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
         <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-16x16.png'; ?>">
         <link rel="manifest" href="<?php echo site_url() . 'static/page_front/images/logo/favico/site.webmanifest'; ?>">
-        <!--//END FAVICON-->
-        <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/style.css'; ?>">
-        <link rel="stylesheet" href="<?php echo site_url() . 'static/course/css/gallery.css'; ?>">
-        <script src="https://unpkg.com/feather-icons"></script>
+        <script>
+            var site = "<?php echo site_url(); ?>"
+        </script>
+        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     </head>
-
-    <body class="layout-6" style="background-image: url('<?php echo site_url() . 'static/page_front/images/sc-step-bg-2.png'; ?>'); background-size: cover;">
-        <nav class="pcoded-navbar menu-light brand-lightblue menupos-static">
-            <div class="navbar-wrapper">
-                <div class="navbar-brand header-logo">
-                    <a href="<?php echo site_url() . 'course'; ?>" class="b-brand">
-                        <img src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" alt="Logo" width="35"/>
-                        <span class="b-title">Cursos</span>
-                    </a>
-                    <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
-                <div class="navbar-content scroll-div">
-                    <ul class="nav pcoded-inner-navbar">
-                        <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
-                        <?php
-                        $url = explode("/", uri_string());
-                        if (isset($url[1])) {
-                            $nav = "course";
-                        } else {
-                            $nav = "";
-                        }
-
-                        $course_syle = "";
-                        $home_syle = "";
-
-                        switch ($nav) {
-                            case "course":
-                                $course_syle = "active";
-                                break;
-                            default:
-                                $home_syle = "active";
-                                break;
-                        }
-                        ?>
-                        <li class="nav-item">
-                            <a href="<?php echo site_url() . 'backoffice'; ?>" class="nav-link">
-                                <span class="pcoded-micon">
-                                    <i data-feather="arrow-left"></i>
-                                </span>
-                                <span class="pcoded-mtext">Mi Oficina</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="<?php echo site_url() . 'course'; ?>" class="nav-link <?php echo $home_syle; ?>">
-                                <span class="pcoded-micon">
-                                    <i data-feather="home"></i>
-                                </span>
-                                <span class="pcoded-mtext">Inicio</span>
-                            </a>
-                        </li>
-                        <li class="nav-item pcoded-hasmenu">
-                            <a href="#!" class="<?php echo $course_syle; ?>">
-                                <span class="pcoded-micon">
-                                    <i data-feather="airplay"></i>
-                                </span>
-                                <span class="pcoded-mtext">Mis Cursos</span>
-                            </a>
-                            <ul class="pcoded-submenu">
-                                <?php foreach ($obj_category_videos as $value) { ?>
-                                    <li><a href='<?php echo site_url() . "course/$value->slug"; ?>' class=""><?php echo $value->name; ?></a></li>          
-                                <?php } ?>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?php echo site_url() . 'login/logout'; ?>" class="nav-link">
-                                <span class="pcoded-micon">
-                                    <i data-feather="log-out"></i>
-                                </span>
-                                <span class="pcoded-mtext">Salir</span>
-                            </a>
-                        </li>
-                    </ul>
+    <body class="logged-in stm_lms_button skin_custom_color classic_lms wpb-js-composer js-comp-ver-5.6 vc_responsive">
+        <div class="stm_lms_lesson_header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-4">
+                        <div class="stm_lms_lesson_header__left">
+                            <div class="stm-lms-curriculum-trigger"> <i class="fa fa-list-ul"></i></div>
+                            <div class="logo-unit">
+                                <a href="<?php echo site_url() . 'backoffice'; ?>"> 
+                                    <img class="img-responsive logo_transparent_static visible" src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" style="width: 120px;" alt="Expansión Consciente Logo" /> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-6 col-sm-6 col-xs-8">
+                        <div class="row">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8 col-md-push-2">
+                                        <div class="stm_lms_lesson_header__center">
+                                            <h5><?php echo $obj_courses->name; ?></h5>
+                                            <a href="<?php echo site_url() . 'backoffice'; ?>"> <i class="lnr lnr-arrow-left"></i> Regresar al Inicio </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                        <div class="stm_lms_lesson_header__right">
+                            <div class="stm_lms_account_dropdown">
+                                <div class="dropdown"> 
+                                    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="lnr lnr-user"></i> 
+                                        <span class="login_name">Hola <?php echo corta_texto($_SESSION['customer']['name'], 8); ?></span> <span class="caret"></span> 
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li> 
+                                            <a href="<?php echo site_url() . 'backoffice'; ?>">Inicio</a> 
+                                            <a href="<?php echo site_url() . 'salir'; ?>" class="stm_lms_logout">Salir</a>                    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="stm_lms_settings_button">
+                                <a href="<?php echo site_url() . 'backoffice/#settings'; ?>"><i class="lnr lnr-cog"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-        <header class="navbar pcoded-header navbar-expand-lg navbar-light">
-            <div class="m-header"><a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
-                <a href="<?php echo site_url() . 'course'; ?>" class="b-brand">
-                    <img src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" alt="Logo" width="35"/>
-                    <span class="b-title">Universidad Imparable</span></a>
+        </div>
+        <div class="stm-lms-course__overlay"></div>
+        <div class="stm-lms-wrapper stm-lessons">
+            <div class="stm-lms-course__curriculum">
+                <div class="stm-curriculum__close"> <i class="lnr lnr-cross"></i></div>
+                <div class="stm-curriculum">
+                    <h3 class="stm-curriculum__title text-black">Sección del Curso</h3>
+                    <?php foreach ($obj_modules as $key => $value) { ?>
+                        <div class="stm-curriculum-section opened">
+                            <div class="stm-curriculum-item stm-curriculum-item__section opened">
+                                <div class="stm-curriculum-section__info"> <span>Section <?php echo $key = $key + 1; ?></span>
+                                    <h5><?php echo $value->name; ?></h5>
+                                </div>
+                            </div>
+                            <div class="stm-curriculum-section__lessons">
+                                <?php
+                                foreach ($obj_videos as $key_videos => $videos) {
+                                    if ($value->module_id == $videos->module_id) {
+                                        $key_videos += 1
+                                        ?> 
+                                        <a href="<?php echo site_url() . "virtual/$slug/$obj_courses->slug/$videos->slug"; ?>" class="stm-curriculum-item text is-completed first">
+                                            <div class="stm-curriculum-item__icon"> <i class="stmlms-text"></i> </div>
+                                            <div class="stm-curriculum-item__num"> <?php echo $key_videos; ?></div>
+                                            <div class="stm-curriculum-item__title">
+                                                <div class="heading_font"> <?php echo $videos->name; ?></div>
+                                            </div>
+                                            <div class="stm-curriculum-item__meta"> </div>
+                                            <?php
+                                            if ($videos->video_id <= $obj_courses_overview->video_actual) {
+                                                $complete = "completed";
+                                            } else {
+                                                $complete = "";
+                                            }
+                                            ?>
+                                            <div class="stm-curriculum-item__completed <?php echo $complete; ?>"> <i class="fa fa-check"></i> </div>
+                                        </a>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
-            <a class="mobile-menu" id="mobile-header" href="#!">
-                <i class="feather icon-more-horizontal"></i>
-            </a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li>
-                        <a href="#!" class="full-screen" onclick="javascript:toggleFullScreen()">
-                            <i data-feather="maximize"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="stm-lms-course__sidebar">
+                <div class="stm-lesson_sidebar__close">
+                    <i class="lnr lnr-cross"></i>
+                </div>
             </div>
-        </header>
-    </li>
-</ul>
-</div>
-</div>
-</li>
-</ul>
-<?php echo $body; ?>
-<!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
-<script src="<?php echo site_url() . 'static/course/js/vendor-all.min.js'; ?>"></script>
-<script src="<?php echo site_url() . 'static/course/js/bootstrap.min.js'; ?>"></script>
-<script src="<?php echo site_url() . 'static/course/js/pcoded.min.js'; ?>"></script>
-<script src="<?php echo site_url() . 'static/course/js/ekko-lightbox.min.js'; ?>"></script>
-<script src="<?php echo site_url() . 'static/course/js/ac-lightbox.js'; ?>"></script>
-
-
-<script>
-                            var BP_Nouveau = {"ajaxurl": "", "object_nav_parent": "#buddypress", "objects": {"0": "activity", "1": "members", "4": "xprofile", "7": "settings", "8": "notifications"}, "nonces": {"activity": "fcd5ecf43e", "members": "9af41e8848", "xprofile": "10dfc2af2b", "settings": "8d89e10911"}};
-</script>
-<script>
-    window.lazySizesConfig = window.lazySizesConfig || {};
-    window.lazySizesConfig.lazyClass = 'lazyload';
-    window.lazySizesConfig.loadingClass = 'lazyloading';
-    window.lazySizesConfig.loadedClass = 'lazyloaded';
-    lazySizesConfig.loadMode = 1;
-</script>
-<script>
-    lazySizes.init();
-</script>
-<script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
-<script>
-    WebFont.load({google: {families: ['Roboto:400,300']}});
-</script>
-<script defer src="<?php echo site_url() . 'static/page_front/js/autoptimize_282.js'; ?>"></script>
-
-<script>
-    feather.replace()
-</script>
-</body>
-
+            <!--curso-->
+            <?php echo $body ?>
+        </div>
+        <!--footer-->
+        <?php
+        if ($obj_courses_overview->video_id <= $obj_courses_overview->video_actual) {
+            $style = "completed";
+        } else {
+            $style = "";
+        }
+        ?>
+        <div id="complete"  class="stm-lms-lesson_navigation heading_font uncompleted <?php echo $style; ?>">
+            <div class="stm-lms-lesson_navigation_side stm-lms-lesson_navigation_prev">
+                <?php if ($obj_video_ant != null) { ?>
+                    <a href="<?php echo site_url() . "virtual/$obj_courses->category_slug/$obj_courses->slug/$obj_video_ant->slug"; ?>"> 
+                        <i class="lnr lnr-chevron-left"></i> <span class="stm_lms_section_text"><?php echo $obj_video_ant->name; ?></span> 
+                        <span>Anterior</span>        
+                    </a>
+                <?php } ?>
+            </div>
+            <div class="stm-lms-lesson_navigation_complete">
+                <a onclick="complete('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses_overview->video_id; ?>', <?php echo $total_videos; ?>);" class="btn btn-default stm_lms_complete_lesson uncompleted"><span>Completo</span> </a>
+            </div>
+            <div class="stm-lms-lesson_navigation_side stm-lms-lesson_navigation_next">
+                <?php if ($obj_video_next != null) { ?>
+                    <a href="<?php echo site_url() . "virtual/$obj_courses->category_slug/$obj_courses->slug/$obj_video_next->slug"; ?>"> 
+                        <span class="stm_lms_section_text"><?php echo $obj_video_next->name; ?></span> 
+                        <span>Siguiente</span> <i class="lnr lnr-chevron-right"></i>        
+                    </a>
+                <?php } ?>
+            </div>
+        </div>
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/curriculum_trigger.css?ver=29'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/lesson.css?ver=29'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/curriculum.css?ver=29'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/lesson_comments.css?ver=92'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo site_url() . 'static/backoffice/css/footer/total_progress.css?ver=92'; ?>' type='text/css' media='all' />
+        <script src='<?php echo site_url() . 'static/course/js/bootstrap.min.js?ver=3.2'; ?>'></script>
+        <script src='<?php echo site_url() . 'static/backoffice/js/jquery.fancybox.js?ver=3.2'; ?>'></script>
+        <script src='<?php echo site_url() . 'static/backoffice/js/select2.full.min.js?ver=3.2'; ?>'></script>
+        <script src='<?php echo site_url() . 'static/backoffice/js/custom.js?ver=3.2'; ?>'></script>
+        <script src='<?php echo site_url() . 'static/course/js/curriculum_trigger.js?ver=29'; ?>'></script>
+        <script src='<?php echo site_url() . 'static/course/js/lesson_sidebar.js?ver=29'; ?>'></script>
+        <script defer src="<?php echo site_url() . 'static/course/js/script/question.js'; ?>"></script>
+        <script src="<?php echo site_url() . 'static/cms/js/core/bootbox.locales.min.js'; ?>"></script>
+        <script src="<?php echo site_url() . 'static/cms/js/core/bootbox.min.js'; ?>"></script>
+    </body>
 </html>

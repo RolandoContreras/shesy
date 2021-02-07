@@ -1,0 +1,13 @@
+.stm-lms-curriculum-trigger{display:inline-block;vertical-align:top;width:50px;height:50px;text-align:center;line-height:46px;color:#f0f4fa;border-radius:50%;font-size:16px;background-color:#385bce;border:2px solid #385bce;cursor:pointer;transition:.3s ease}.stm-lms-curriculum-trigger:hover{color:#385bce;background-color:#fff}
+/* line 1, assets/scss/vc_modules/curriculum_trigger/style_1.scss */
+.stm-lms-curriculum-trigger {
+  position: absolute;
+  bottom: -111px;
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 9999; }
+
+/* line 10, assets/scss/vc_modules/curriculum_trigger/style_1.scss */
+.curriculum-opened .stm-lms-curriculum-trigger {
+  transform: translateX(-100px);
+  opacity: 0; }
