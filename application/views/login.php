@@ -143,8 +143,8 @@
                                     } else {
                                         Swal.fire({
                                             icon: 'info',
-                                            title: 'Usuario no registrado',
-                                            text: 'Verifique los datos'
+                                            title: 'Datos Incorrectos',
+                                            text: 'Verifique usuario y/o contraseña'
                                         });
                                         document.getElementById("login_boton").innerHTML = "Iniciar Sesión";
                                     }
