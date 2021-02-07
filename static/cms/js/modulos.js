@@ -98,4 +98,7 @@ function delete_modulo(module_id) {
         }
     });
 }
-
+function view_videos(course_id, module_id){    
+    var url = 'dashboard/videos/'+course_id+"/modulo/"+module_id;
+    location.href = site+url;   
+}

@@ -14,10 +14,10 @@ class D_videos extends CI_Controller {
     }
 
     public function index() {
-
-        $this->get_session();
+        get_session();
         $url = explode("/", uri_string());
         $course_id = $url[2];
+        $module_id = $url[4];
         $params = array(
             "select" => "videos.video_id,
                                     videos.module_id,
@@ -31,22 +31,23 @@ class D_videos extends CI_Controller {
                                     courses.name as course_name",
             "join" => array('modules, videos.module_id = modules.module_id',
                 'courses, modules.course_id = courses.course_id'),
-            "where" => "modules.course_id = $course_id",
+            "where" => "modules.module_id = $module_id",
             "order" => "videos.video_id DESC");
         //GET DATA FROM CUSTOMER
         $obj_videos = $this->obj_videos->search($params);
         //send
         $this->tmp_mastercms->set("obj_videos", $obj_videos);
         $this->tmp_mastercms->set("course_id", $course_id);
+        $this->tmp_mastercms->set("module_id", $module_id);
         $this->tmp_mastercms->render("dashboard/videos/videos_list");
     }
 
     public function load($course_id = NULL) {
-
+        get_session();
         //obtener id de curso
         $url = explode("/", uri_string());
-        $video_id = isset($url[4]) ? $url[4] : "";
-        $course_id = isset($course_id) ? $course_id : $url[2];
+        $module_id = $url[4];
+        $video_id = isset($url[6]) ? $url[6] : "";
         if ($video_id != "") {
             /// PARAM FOR SELECT 
             $params = array(
@@ -80,11 +81,12 @@ class D_videos extends CI_Controller {
         $params = array(
             "select" => "module_id,
                                     name",
-            "where" => "course_id = $course_id",
+            "where" => "module_id = $module_id",
         );
-        $obj_modules = $this->obj_modules->search($params);
+        $obj_modules = $this->obj_modules->get_search_row($params);
         //send data
         $this->tmp_mastercms->set("course_id", $course_id);
+        $this->tmp_mastercms->set("module_id", $module_id);
         $this->tmp_mastercms->set("obj_courses", $obj_courses);
         $this->tmp_mastercms->set("obj_modules", $obj_modules);
         $this->tmp_mastercms->render("dashboard/videos/videos_form");
@@ -101,6 +103,7 @@ class D_videos extends CI_Controller {
                     'type' => $this->input->post('type'),
                     'time' => $this->input->post('time'),
                     'video' => $this->input->post('video'),
+                    'description' => $this->input->post('description'),
                     'module_id' => $this->input->post('module_id'),
                     'date' => date("Y-m-d H:i:s"),
                     'active' => $this->input->post('active'),
@@ -121,6 +124,7 @@ class D_videos extends CI_Controller {
                     'time' => $this->input->post('time'),
                     'type' => $this->input->post('type'),
                     'video' => $this->input->post('video'),
+                    'description' => $this->input->post('description'),
                     'module_id' => $this->input->post('module_id'),
                     'date' => date("Y-m-d H:i:s"),
                     'active' => $this->input->post('active'),
@@ -169,18 +173,6 @@ class D_videos extends CI_Controller {
             }
             $data['obj_modules'] = $obj_modules;
             echo json_encode($data);
-        }
-    }
-
-    public function get_session() {
-        if (isset($_SESSION['usercms'])) {
-            if ($_SESSION['usercms']['logged_usercms'] == "TRUE") {
-                return true;
-            } else {
-                redirect(site_url() . 'dashboard');
-            }
-        } else {
-            redirect(site_url() . 'dashboard');
         }
     }
 

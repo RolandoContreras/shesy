@@ -139,8 +139,5 @@ function view_modulos(course_id){
     var url = 'dashboard/modulos/'+course_id;
     location.href = site+url;   
 }
-function view_videos(course_id){    
-    var url = 'dashboard/videos/'+course_id;
-    location.href = site+url;   
-}
+
 

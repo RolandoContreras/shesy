@@ -29,7 +29,7 @@
                                         <h5>Datos</h5>
                                     </div>
                                     <div class="card-body">
-                                        <form enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_videos('<?php echo $course_id; ?>');">
+                                        <form enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_videos('<?php echo $course_id; ?>', '<?php echo $module_id; ?>');" name="form">
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <?php if (isset($obj_videos)) { ?>
@@ -46,8 +46,34 @@
                                                         <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_videos->name) ? $obj_videos->name : ""; ?>" class="input-xlarge-fluid" placeholder="Titulo" required="">
                                                     </div>
                                                     <div class="form-group">
+                                                        <label>Descripción del Vídeo</label>
+                                                        <textarea class="form-control" id="description" name="description" rows="3" required=""><?php echo isset($obj_videos->description) ? $obj_videos->description : ""; ?></textarea>
+                                                        <script>
+                                                            CKEDITOR.replace('description');
+                                                        </script>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label>Enlace Embedido</label>
                                                         <textarea class="form-control" id="video" name="video" rows="3" required=""><?php echo isset($obj_videos->video) ? $obj_videos->video : ""; ?></textarea>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="inputState">Curso</label>
+                                                        <select name="course_id" id="course_id" class="form-control" disabled="">
+                                                            <option value="<?php echo $obj_courses->course_id; ?>"><?php echo $obj_courses->name; ?></option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputState">Modulo</label>
+                                                        <select name="module_id" id="module_id" class="form-control" disabled="">
+                                                            <option value="<?php echo $obj_courses->course_id; ?>"><?php echo $obj_modules->name; ?></option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Tiempo (minutos)</label>
+                                                        <input class="form-control" type="text" id="time" name="time" value="<?php echo isset($obj_videos->time) ? $obj_videos->time : ""; ?>" class="input-xlarge-fluid" placeholder="Duración del vídeo" required="">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputState">Tipo</label>
@@ -72,35 +98,6 @@
                                                     }
                                                     ?>>Normal</option>
                                                         </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="inputState">Curso</label>
-                                                        <select name="course_id" id="course_id" class="form-control" disabled="">
-                                                            <option value="<?php echo $obj_courses->course_id; ?>"><?php echo $obj_courses->name; ?></option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="inputState">Módulos</label>
-                                                        <select name="module_id" id="module_id" class="form-control" required="">
-                                                            <option value="">Seleccionar Módulo</option>
-<?php foreach ($obj_modules as $value) { ?>
-                                                                <option  <?php
-    if (isset($obj_videos)) {
-        if ($obj_videos->module_id == $value->module_id) {
-            echo "selected";
-        }
-    } else {
-        echo "";
-    }
-    ?> value="<?php echo $value->module_id; ?>"><?php echo $value->name; ?></option>
-                                                                    <?php } ?>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Tiempo (minutos)</label>
-                                                        <input class="form-control" type="text" id="time" name="time" value="<?php echo isset($obj_videos->time) ? $obj_videos->time : ""; ?>" class="input-xlarge-fluid" placeholder="Duración del vídeo" required="">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputState">Estado</label>
@@ -128,7 +125,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="submit" id="send" class="btn btn-primary">Guardar</button>
                                             <button class="btn btn-danger" type="reset" onclick="cancel_video('<?php echo $course_id; ?>');">Cancelar</button>                    
                                         </form>
                                     </div>
@@ -141,4 +138,4 @@
         </div>
     </div>
 </div>
-<script src="<?php echo site_url() . 'assets/cms/js/videos.js' ?>"></script>
+<script src="<?php echo site_url() . 'static/cms/js/videos.js' ?>"></script>

@@ -56,6 +56,7 @@
                                                                             <div class="operation">
                                                                                 <div class="btn-group">
                                                                                     <button class="btn btn-secondary" type="button" onclick="edit_modulo('<?php echo $course_id; ?>', '<?php echo $value->module_id; ?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
+                                                                                    <button class="btn btn-secondary" type="button" onclick="view_videos('<?php echo $course_id; ?>','<?php echo $value->module_id; ?>');"><span><span class="pcoded-micon"><i data-feather="eye"></i></span>Ver Vídeos</span></button>
                                                                                     <button class="btn btn-secondary" type="button" onclick="delete_modulo('<?php echo $value->module_id; ?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
                                                                                 </div>
                                                                             </div>

@@ -240,10 +240,11 @@ $route['dashboard/modulos/([0-9]+)/load/([0-9]+)'] = "d_modulos/load/$1";
 $route['dashboard/modulos/([0-9]+)/validate'] = "d_modulos/validate";
 $route['dashboard/modulos/delete'] = "d_modulos/delete";
 
-$route['dashboard/videos/([0-9]+)'] = "d_videos";
-$route['dashboard/videos/([0-9]+)/load'] = "d_videos/load";
+$route['dashboard/videos/([0-9]+)/modulo/([0-9]+)'] = "d_videos";
+$route['dashboard/videos/([0-9]+)/modulo/([0-9]+)/load'] = "d_videos/load/$1";
+$route['dashboard/videos/([0-9]+)/modulo/([0-9]+)/load/([0-9]+)'] = "d_videos/load/$1";
 $route['dashboard/videos/([0-9]+)/load/([0-9]+)'] = "d_videos/load/$1";
-$route['dashboard/videos/([0-9]+)/validate'] = "d_videos/validate";
+$route['dashboard/videos/validate'] = "d_videos/validate";
 $route['dashboard/videos/delete'] = "d_videos/delete";
 $route['dashboard/videos/verificar_curso'] = "d_videos/verificar_curso";
 
