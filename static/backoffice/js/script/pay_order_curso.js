@@ -47,33 +47,26 @@ function process_pay_invoice() {
     });
 }
 function add_cart(course_id, price, name) {
-    var quantity = document.getElementById("quantity").value;
-    if (quantity == "") {
-        document.getElementById("quantity_error").style.display = "block";
-        $("#quantity").focus();
-    } else {
         $.ajax({
             type: "post",
             url: site + "backoffice/cursos/pay_order/add_cart",
             dataType: "json",
-            data: {quantity: quantity,
+            data: {quantity: 1,
                 course_id: course_id,
                 price: price,
                 name: name},
             success: function (data) {
                 if (data.status == "true") {
-                    document.getElementById("quantity_error").style.display = "none";
                     Swal.fire({
                         position: 'top-end',
-                        title: 'Producto Agregado a la Cesta',
+                        title: 'Producto Agregado al Carrito',
                         icon: 'success',
-                        showCloseButton: true,
-                        showCancelButton: true,
-                        confirmButtonText:
-                                '<a class="white" href="' + site + 'backoffice/cursos/pay_order">Pagar!</a>',
-                        cancelButtonText:
-                                'Seguir Comprando'
-                    });
+                        timer: 1000,
+                        showConfirmButton: false
+                });
+                setTimeout(function () {
+                    location.href = site + "backoffice/cursos/pay_order";
+                }, 1000);
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -83,7 +76,6 @@ function add_cart(course_id, price, name) {
                 }
             }
         });
-    }
 }
 
 function contra_entrega() {

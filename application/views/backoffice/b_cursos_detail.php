@@ -54,28 +54,10 @@
                                                         </p>
                                                         <hr>
                                                             <div class="row form-group">
-                                                                <div class="col-sm-2">
-                                                                    <label class="col-form-label" style="color:#888 !important;">Cantidad</label>
-                                                                </div>
-                                                                <div class="col-sm-3">
-                                                                    <input type="text" class="form-control autonumber" data-v-max="9999" data-v-min="0" name="quantity" id="quantity" placeholder="Ingrese Cantidad">
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
+                                                                <div class="col-sm-8">
+                                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>');"><i data-feather="shopping-cart"></i> Agregar al Carrito</button>
                                                                 </div>
                                                             </div>
-                                                        
-                                                        <div class="form-group has-feedback" style="display: none;" id="quantity_error">
-                                                            <div class="alert alert-danger validation-errors">
-                                                                <p class="user_login_id" style="text-align: center;">La cantidad es invalida.</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group has-feedback" style="display: none;" id="quantity_success">
-                                                            <div class="alert alert-success validation-errors">
-                                                                <p class="user_login_id" style="text-align: center;">Producto Agregado.</p>
-                                                            </div>
-                                                        </div>
-
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">

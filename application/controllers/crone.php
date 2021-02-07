@@ -71,6 +71,6 @@ class Crone extends CI_Controller {
                 }
             }
         }
-        echo "exito";
+        echo "Verificacion de Rangos";
     }
 }
