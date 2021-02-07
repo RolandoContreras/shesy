@@ -10,7 +10,6 @@ class Home extends CI_Controller {
         $this->load->model("customer_model", "obj_customer");
         $this->load->model("category_model", "obj_category");
         $this->load->model("sub_category_model", "obj_sub_category");
-        $this->load->model("videos_model", "obj_videos");
         $this->load->model("invoices_model", "obj_invoices");
         $this->load->model("commissions_model", "obj_commissions");
         $this->load->model("invoice_catalog_model", "obj_invoice_catalog");
@@ -40,25 +39,7 @@ class Home extends CI_Controller {
             "where" => "catalog.active = 1 and catalog.status_value = 1",
             "order" => "catalog.catalog_id DESC",
             "limit" => "7");
-
         $data['catalog'] = $this->obj_catalog->search($params);
-
-        //GET COURSES
-        $params = array(
-            "select" => "videos.video_id,
-                                    videos.summary,
-                                    videos.type,
-                                    videos.name,
-                                    videos.slug,
-                                    videos.img2,
-                                    videos.active,
-                                    category.slug as category_slug,
-                                    videos.date",
-            "join" => array('category, category.category_id = videos.category_id'),
-            "where" => "videos.type = 1 and videos.active = 1",
-            "order" => "videos.video_id DESC",
-            "limit" => "5");
-        $data['courses'] = $this->obj_videos->search($params);
         //SEND META TITLE 
         $data['title'] = "Inicio";
         $this->load->view('home', $data);
