@@ -361,4 +361,16 @@ function str_to_first_capital($string){
     $str = ucfirst($string);
     return $str;
 }
+
+function get_session() {
+    if (isset($_SESSION['usercms'])) {
+        if ($_SESSION['usercms']['logged_usercms'] == "TRUE") {
+            return true;
+        } else {
+            redirect(site_url() . 'dashboard');
+        }
+    } else {
+        redirect(site_url() . 'dashboard');
+    }
+}
 ?>

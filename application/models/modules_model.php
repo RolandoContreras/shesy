@@ -15,44 +15,29 @@ BITSHARE S.A.C
 * Fecha: 16/11/2016
 ****/
 
-class videos_model_atributos{	
-    var $video_id='';
-    var $category_id='';
-    var $module='';
+class modules_model_atributos{	
+    var $module_id='';
+    var $course_id='';
     var $name='';
-    var $summary='';
-    var $video='';
     var $date='';
-    var $type_product='';
-    var $active='';
-    var $status_value='';
-    var $created_at='';
-    var $created_by='';
-    var $update_at='';
-    var $update_by='';
+    var $updated_at='';
+    var $updated_by='';
 }
 
-class Videos_Model extends CI_Model{ 
+class Modules_Model extends CI_Model{ 
 
     public function __construct() {
         parent::__construct();  
-        $this->table = 'videos';
-	$this->table_id = 'video_id';
-        $this->video_id='';
-        $this->category_id='';
-        $this->module='';
+        $this->table = 'modules';
+	$this->table_id = 'module_id';
+        $this->module_id='';
+        $this->course_id='';
         $this->name='';
-        $this->summary='';
-        $this->video='';
         $this->date='';
-        $this->type_product='';
         $this->active='';
-	$this->status_value='';
-        $this->created_at='';
-        $this->created_by='';
-        $this->update_at='';
-        $this->update_by='';
-	$this->fields = new videos_model_atributos();
+        $this->updated_at='';
+        $this->updated_by='';
+	$this->fields = new modules_model_atributos();
     }   
     
     public function fields(){

@@ -234,6 +234,18 @@ $route['dashboard/mis-cursos/load/([0-9]+)'] = "d_cursos/load/$1";
 $route['dashboard/mis-cursos/validate'] = "d_cursos/validate";
 $route['dashboard/mis-cursos/delete'] = "d_cursos/delete";
 
+$route['dashboard/modulos/([0-9]+)'] = "d_modulos";
+$route['dashboard/modulos/([0-9]+)/load'] = "d_modulos/load";
+$route['dashboard/modulos/([0-9]+)/load/([0-9]+)'] = "d_modulos/load/$1";
+$route['dashboard/modulos/([0-9]+)/validate'] = "d_modulos/validate";
+$route['dashboard/modulos/delete'] = "d_modulos/delete";
+
+$route['dashboard/videos/([0-9]+)'] = "d_videos";
+$route['dashboard/videos/([0-9]+)/load'] = "d_videos/load";
+$route['dashboard/videos/([0-9]+)/load/([0-9]+)'] = "d_videos/load/$1";
+$route['dashboard/videos/([0-9]+)/validate'] = "d_videos/validate";
+$route['dashboard/videos/delete'] = "d_videos/delete";
+$route['dashboard/videos/verificar_curso'] = "d_videos/verificar_curso";
 
 $route['dashboard/categorias'] = "d_category";
 $route['dashboard/categorias/load'] = "d_category/load";
