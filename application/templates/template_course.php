@@ -33,7 +33,7 @@
                             <div class="stm-lms-curriculum-trigger"> <i class="fa fa-list-ul"></i></div>
                             <div class="logo-unit">
                                 <a href="<?php echo site_url() . 'backoffice'; ?>"> 
-                                    <img class="img-responsive logo_transparent_static visible" src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" style="width: 120px;" alt="Expansión Consciente Logo" /> 
+                                    <img class="img-responsive logo_transparent_static visible" src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" style="width: 50px;" alt="Cultura Emprendedora" /> 
                                 </a>
                             </div>
                         </div>

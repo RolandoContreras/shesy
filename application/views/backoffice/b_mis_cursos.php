@@ -37,17 +37,24 @@
                                                                 <img class="img-fluid" style="width:100%;" src="<?php echo site_url() . "static/cms/images/cursos/$value->img"; ?>" alt="dashboard-user">
                                                             </a>
                                                             <div style="padding:10px;">
-                                                                <h5>
-                                                                    <a href="<?php echo site_url() . "backoffice/cursos/$value->category_slug/$value->course_id/$value->slug";?>">
-                                                                        <?php echo $value->name; ?>
-                                                                    </a>
-                                                                </h5>
-                                                                <div class="card-block">
+                                                                <div class="p-10">
                                                                     <div class="row align-items-center justify-content-center card-active">
                                                                         <div class="col-12">
-                                                                            <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Completado:</span>5%</h6>
+                                                                            <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Avance:</span>
+                                                                            <?php
+                                                                                if ($value->total == null || $value->total == 0) {
+                                                                                    $percent = 0;
+                                                                                    echo "0% Completado";
+                                                                                } else {
+                                                                                    $percent = null;
+                                                                                    $percent = ($value->total_video / $value->total) * 100;
+                                                                                    echo ceil($percent) . "% Completado";
+                                                                                }
+                                                                            ?>
+                                                                            </h6>
+                                                                            
                                                                             <div class="progress">
-                                                                                <div class="progress-bar progress-c-green" role="progressbar" style="width:40%;height:6px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                <div class="progress-bar progress-c-green" role="progressbar" style="width:<?php echo $percent;?>%;height:6px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                                                             </div>
                                                                             
                                                                             <a href="<?php echo site_url() . "virtual/$value->category_slug/$value->slug"; ?>"><button type="button" class="btn btn-warning btn-block" >VER CURSO</button></a>
