@@ -109,7 +109,7 @@ function active() {
                                     timer: 1500
                                 });
                                 window.setTimeout(function () {
-                                    window.location = site + "cursos-activaciones/cursos-activaciones";
+                                    window.location = site + "dashboard/cursos-activaciones";
                                 }, 1500);
                             } else {
                                 Swal.fire({
