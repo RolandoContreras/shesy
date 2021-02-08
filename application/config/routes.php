@@ -130,6 +130,7 @@ $route['virtual/([0-9a-z_-]+)'] = 'c_home/category/$1';
 $route['virtual/([0-9a-z_-]+)/([0-9]+)'] = 'c_home/category/$1';
 $route['virtual/([0-9a-z_-]+)/([0-9a-z|&_-]+)'] = 'c_home/detail/$1';
 $route['virtual/([0-9a-z_-]+)/([0-9a-z_|&-]+)/([0-9a-z|&_-]+)'] = 'c_home/detail/$1';
+$route['virtual/update_complete'] = "c_home/update_complete";
 
 $route['backoffice/profile'] = "b_profile";
 $route['backoffice/profile/update_data'] = "b_profile/update_data";

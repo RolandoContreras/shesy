@@ -34,14 +34,6 @@
                                                         <?php echo $obj_courses_overview->description; ?>
                                                     </p>
                                                 </div>
-                                                <div class="wpb_wrapper">
-                                                    <center>
-                                                        <?php if ($result_program == 0) { ?>
-                                                            <!--show button pagar programa-->
-                                                            <a id="pay_program" href="<?php echo site_url()."transformacion";?>" class="btn btn-success" style="padding: 18px 30px;border-radius: 30px;"><span style="font-size: 25px;"><i class="fa fa-check"></i> VER PROGRAMA</span> </a>
-                                                        <?php } ?>
-                                                    </center>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -54,8 +46,7 @@
         </div>
     </div>
 </div>
-<script src="<?php echo site_url() . 'assets/course/js/script/c_home.js'; ?>"></script>  
-<script src="<?php echo site_url() . 'assets/course/js/script/campana.js'; ?>"></script>  
+<script src="<?php echo site_url() . 'static/course/js/script/c_home.js'; ?>"></script>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
