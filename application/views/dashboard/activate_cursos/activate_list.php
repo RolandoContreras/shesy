@@ -50,7 +50,7 @@
                                                                     <?php foreach ($obj_customer_courses as $key => $value): ?>
                                                                         <th><?php echo $value->customer_course_id; ?></th>
                                                                         <td><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo formato_fecha_barras($value->date_start); ?></span></td>
-                                                                        <td><b><?php echo "@" . $value->email; ?></b></td>
+                                                                        <td><b><?php echo $value->username; ?></b></td>
                                                                         <td><?php echo $value->first_name . " " . $value->last_name; ?></td>
                                                                         <td>
                                                                             <span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->course_name; ?></span>                               

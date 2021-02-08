@@ -42,7 +42,7 @@
                                                 <div class="form-group col-md-6">
                                                     <div class="form-group">
                                                         <label>Ingrese Usuario</label>
-                                                        <input class="form-control" onblur="validate_user(this.value);" type="text" id="username" name="username" class="input-xlarge-fluid" placeholder="Ingrese Usuario" value="<?php echo isset($obj_customer_courses) ? $obj_customer_courses->email : "" ?>" required>
+                                                        <input class="form-control" onblur="validate_user(this.value);" type="text" id="username" name="username" class="input-xlarge-fluid" placeholder="Ingrese Usuario" value="<?php echo isset($obj_customer_courses) ? $obj_customer_courses->username : "" ?>" required>
                                                         <input type="hidden" id="customer_id" name="customer_id" value="<?php echo isset($obj_customer_courses) ? $obj_customer_courses->customer_id : ""; ?>">
                                                         <span class="alert-0"></span>
                                                     </div>
