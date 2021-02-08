@@ -1,10 +1,6 @@
-<?php
-
-if (!defined("BASEPATH"))
-    exit("No direct script access allowed");
+<?php if (!defined("BASEPATH"))exit("No direct script access allowed");
 
 class D_activate_cursos extends CI_Controller {
-
     public function __construct() {
         parent::__construct();
         $this->load->model("customer_model", "obj_customer");
@@ -20,7 +16,7 @@ class D_activate_cursos extends CI_Controller {
                                     courses.course_id,
                                     customer.customer_id,
                                     customer.email,
-                                    customer.name,
+                                    customer.first_name,
                                     customer.last_name,
                                     customer_courses.customer_course_id,
                                     customer_courses.complete,
@@ -32,7 +28,7 @@ class D_activate_cursos extends CI_Controller {
         $obj_customer_courses = $this->obj_customer_courses->search($params);
         //SEND DATA
         $this->tmp_mastercms->set("obj_customer_courses", $obj_customer_courses);
-        $this->tmp_mastercms->render("dashboard/activate/activate_list");
+        $this->tmp_mastercms->render("dashboard/activate_cursos/activate_list");
     }
 
     public function load($customer_course_id = null) {
@@ -48,7 +44,7 @@ class D_activate_cursos extends CI_Controller {
                                     customer.customer_id,
                                     customer.phone,
                                     customer.email,
-                                    customer.name,
+                                    customer.first_name,
                                     customer.last_name,
                                     customer_courses.complete,
                                     customer_courses.date_start",
@@ -70,7 +66,7 @@ class D_activate_cursos extends CI_Controller {
         $obj_courses = $this->obj_courses->search($params);
         //send data
         $this->tmp_mastercms->set("obj_courses", $obj_courses);
-        $this->tmp_mastercms->render("dashboard/activate/active_form");
+        $this->tmp_mastercms->render("dashboard/activate_cursos/active_form");
     }
 
     public function active() {
