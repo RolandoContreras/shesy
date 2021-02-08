@@ -61,7 +61,7 @@
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dLabel">
                                         <li> 
-                                            <a href="<?php echo site_url() . 'backoffice'; ?>">Inicio</a> 
+                                            <a href="<?php echo site_url() . 'backoffice/cursos'; ?>">Inicio</a> 
                                             <a href="<?php echo site_url() . 'salir'; ?>" class="stm_lms_logout">Salir</a>                    
                                         </li>
                                     </ul>

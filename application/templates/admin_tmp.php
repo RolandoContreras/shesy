@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-16x16.png';?>">
     <link rel="manifest" href="<?php echo site_url().'static/page_front/images/logo/favico/site.webmanifest';?>">
     <!--//END FAVICON-->
-  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/style.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'static/catalog/css/style.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/mystyle.css';?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/animate.min.css';?>">
@@ -124,6 +124,9 @@
                 case "mis-cursos":
                     $mis_cursos = "active pcoded-trigger";
                     break;
+                case "cursos-activaciones":
+                    $mis_cursos = "active pcoded-trigger";
+                    break;
                 case "recargas_comisiones":
                     $recargas = "active pcoded-trigger";
                     break;
@@ -197,14 +200,20 @@
             </a>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Cursos</label></li>
-        <li class="nav-item">
-            <a href="<?php echo site_url()."dashboard/mis-cursos";?>" class="nav-link <?php echo $mis_cursos;?>">
+        <li class="nav-item pcoded-hasmenu <?php echo $mis_cursos;?>">
+            <a href="#!" class="nav-link ">
                 <span class="pcoded-micon">
-                    <i data-feather="film"></i>
+                <i data-feather="film"></i>
                 </span>
                 <span class="pcoded-mtext">Cursos</span>
             </a>
-        </li>
+            <ul class="pcoded-submenu">
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/mis-cursos";?>"><i class="icon-large icon-th"></i>Cursos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/cursos-activaciones";?>"><i class="icon-large icon-th"></i>Activaciones</a></li>
+            </ul>
+        </li>            
+
+
         <li class="nav-item pcoded-menu-caption"><label>Pagos</label></li>
         <li class="nav-item">
             <a href="<?php echo site_url()."dashboard/activar_pagos";?>" class="nav-link <?php echo $pagos_syle;?>">
@@ -296,10 +305,10 @@
   </header>
   <?php echo $body;?>
 <!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
-<script src="<?php echo site_url().'static/course/js/vendor-all.min.js';?>"></script>
-<script src="<?php echo site_url().'static/course/js/pcoded.min.js';?>"></script>
-<script src="<?php echo site_url().'static/course/js/ekko-lightbox.min.js';?>"></script>
-<script src="<?php echo site_url().'static/course/js/ac-lightbox.js';?>"></script>
+<script src="<?php echo site_url().'static/catalog/js/vendor-all.min.js';?>"></script>
+<script src="<?php echo site_url().'static/catalog/js/pcoded.min.js';?>"></script>
+<script src="<?php echo site_url().'static/catalog/js/ekko-lightbox.min.js';?>"></script>
+<script src="<?php echo site_url().'static/catalog/js/ac-lightbox.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/datatables.min.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/tbl-datatable-custom.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/core/amcharts.js';?>"></script>

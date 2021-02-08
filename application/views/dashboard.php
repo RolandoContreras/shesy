@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-16x16.png';?>">
     <link rel="manifest" href="<?php echo site_url().'static/page_front/images/logo/favico/site.webmanifest';?>">
     <!--//END FAVICON-->
-  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/style.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'static/catalog/css/style.css';?>">
 </head>
 
 <body>
@@ -49,9 +49,9 @@
       </div>
     </div>
   </div>
-    <script src="<?php echo site_url().'static/course/js/vendor-all.min.js';?>"></script>
-    <script src="<?php echo site_url().'static/course/js/bootstrap.min.js';?>"></script>
-    <script src="<?php echo site_url().'static/course/js/pcoded.min.js';?>"></script>
+    <script src="<?php echo site_url().'static/catalog/js/vendor-all.min.js';?>"></script>
+    <script src="<?php echo site_url().'static/catalog/js/bootstrap.min.js';?>"></script>
+    <script src="<?php echo site_url().'static/catalog/js/pcoded.min.js';?>"></script>
   <script src="<?php echo site_url().'static/cms/js/login.js';?>"></script>
 </body>
 </html>

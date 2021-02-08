@@ -243,6 +243,16 @@ $route['dashboard/mis-cursos/load/([0-9]+)'] = "d_cursos/load/$1";
 $route['dashboard/mis-cursos/validate'] = "d_cursos/validate";
 $route['dashboard/mis-cursos/delete'] = "d_cursos/delete";
 
+//DASHBOARD activaciones de cursos
+$route['dashboard/cursos-activaciones'] = "d_activate_cursos";
+$route['dashboard/cursos-activaciones/load'] = "d_activate_cursos/load";
+$route['dashboard/cursos-activaciones/load/([0-9]+)'] = "d_activate_cursos/load/$1";
+$route['dashboard/cursos-activaciones/validate_user'] = "d_activate_cursos/validate_user";
+$route['dashboard/cursos-activaciones/active'] = "d_activate_cursos/active";
+$route['dashboard/cursos-activaciones/update_confirmation'] = "d_activate_cursos/update_confirmation";
+$route['dashboard/cursos-activaciones/validate'] = "d_activate_cursos/validate";
+$route['dashboard/cursos-activaciones/delete'] = "d_activate_cursos/delete";
+
 $route['dashboard/modulos/([0-9]+)'] = "d_modulos";
 $route['dashboard/modulos/([0-9]+)/load'] = "d_modulos/load";
 $route['dashboard/modulos/([0-9]+)/load/([0-9]+)'] = "d_modulos/load/$1";
