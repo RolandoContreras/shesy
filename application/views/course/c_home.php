@@ -19,15 +19,7 @@
                                 <div class="wpb_column vc_column_container vc_col-sm-12">
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
-                                            <div class="wpb_text_column wpb_content_element ">
-                                                <div class="wpb_wrapper">
-                                                    <?php
-                                                    $url = explode("/", $obj_courses_overview->video);
-                                                    $link = $url[3];
-                                                    ?>
-                                                    <iframe src="https://player.vimeo.com/video/<?php echo $link; ?>" width="840" height="560" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                                </div>
-                                            </div>
+                                                    <?php echo $obj_courses_overview->video;?>
                                             <div class="wpb_text_column wpb_content_element ">
                                                 <div class="wpb_wrapper">
                                                     <p>
