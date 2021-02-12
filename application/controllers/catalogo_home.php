@@ -378,6 +378,7 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_catalog_all", $obj_catalog_all);
         $this->tmp_catalog->set("obj_catalog", $obj_catalog);
+        $this->tmp_catalog->set("customer_id", $customer_id);
         $this->tmp_catalog->render("catalogo/catalogo_detail");
     }
 

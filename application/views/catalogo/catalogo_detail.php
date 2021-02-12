@@ -87,6 +87,11 @@
                                                                     <?php } else { ?>
                                                                         <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart_granel('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
                                                                     <?php } ?>
+                                                                    <input type="text" id="copy" value="<?php echo site_url()."$obj_catalog->category_slug/$obj_catalog->slug?".encrypt($customer_id);?>"/>
+                                                                    <button type="button" class="btn btn-info" title="Copiar Enlace"  onclick="copy();" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="copy"></i> Copiar Enlace del Producto</button>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                        
                                                                 </div>
                                                             </div>
 
@@ -138,4 +143,14 @@
                         color:white !important;
                     }
                 </style>
-
+<script>
+ function copy() {
+        var copyText = document.getElementById("copy");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        /* Alert the copied text */
+        alert("Copiado");
+        }
+</script>

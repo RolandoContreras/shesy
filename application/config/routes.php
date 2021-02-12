@@ -41,6 +41,8 @@
 $route['default_controller'] = "home";
 $route['404_override'] = 'errors/error_404';
 
+$route['landing'] = 'landing';
+
 $route['home'] = 'home';
 $route['postula'] = 'home/postula';
 $route['home/sitemap'] = 'home/sitemap';
