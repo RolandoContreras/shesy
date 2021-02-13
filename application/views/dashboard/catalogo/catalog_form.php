@@ -29,7 +29,7 @@
                                         <h5>Datos</h5>
                                     </div>
                                     <div class="card-body">
-                                        <form enctype="multipart/form-data" method="post" action="<?php echo site_url() . "dashboard/catalogo/validate"; ?>">
+                                        <form name="form-validate" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate();">
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <?php if (isset($obj_catalog)) { ?>
@@ -46,8 +46,12 @@
                                                         <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_catalog->name) ? $obj_catalog->name : ""; ?>" class="input-xlarge-fluid" placeholder="Titulo" required>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label>Precio Eliminado</label>
+                                                        <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price_del) ? $obj_catalog->price_del : ""; ?>" class="input-xlarge-fluid" placeholder="Precio Marketing" required>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label>Precio</label>
-                                                        <input class="form-control" type="number" step="any" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
+                                                        <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Descripción</label>
@@ -70,7 +74,7 @@
                                                     <div class="form-group">
                                                         <label>Banner Principal (Tamaño 1024 x 469)</label>
                                                         <div class="custom-file">
-                                                            <input type="file" name="image_file4" id="image_file4" class="custom-file-input" onchange="upload_img4();" <?php echo isset($obj_catalog->img4) ? "" : "required"; ?>>
+                                                            <input type="file" name="image_file4" id="image_file4" class="custom-file-input" onchange="upload_img4();">
                                                             <label id="label_img4" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img4"></div>
                                                         </div>
@@ -109,7 +113,7 @@
                                                         </div>
                                                     <?php } ?>
                                                     <div class="form-group">
-                                                        <label>Imagen 1 (Tamaño 400 x 400)</label>
+                                                        <label>Imagen 1 (Tamaño 1024 x 469)</label>
                                                         <div class="custom-file">
                                                             <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();" <?php echo isset($obj_catalog->img) ? "" : "required"; ?> >
                                                             <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
@@ -125,7 +129,7 @@
                                                         </div>
                                                     <?php } ?>
                                                     <div class="form-group">
-                                                        <label>Imagen 2 (Tamaño 400 x 400)</label>
+                                                        <label>Imagen 2 (Tamaño 1024 x 469)</label>
                                                         <div class="custom-file">
                                                             <input type="file" name="image_file2" id="image_file2" class="custom-file-input" onchange="upload_img2();" <?php echo isset($obj_catalog->img2) ? "" : "required"; ?>>
                                                             <label id="label_img2" class="custom-file-label invalid">Elegir archivos...</label>
@@ -140,7 +144,7 @@
                                                         </div>
                                                     <?php } ?>
                                                     <div class="form-group">
-                                                        <label>Imagen 3 (Tamaño 400 x 400)</label>
+                                                        <label>Imagen 3 (Tamaño 600 x 600 lado derecho) </label>
                                                         <div class="custom-file">
                                                             <input type="file" name="image_file3" id="image_file3" class="custom-file-input" onchange="upload_img3();" <?php echo isset($obj_catalog->img3) ? "" : "required"; ?>>
                                                             <label id="label_img3" class="custom-file-label invalid">Elegir archivos...</label>
@@ -214,6 +218,11 @@
                                                         <input class="form-control" type="number" id="stock" name="stock" value="<?php echo isset($obj_catalog->stock) ? $obj_catalog->stock : ""; ?>" class="input-xlarge-fluid" placeholder="Stock del Producto" required>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label>Enlace Hot Link</label>
+                                                        <input class="form-control" type="text" id="hot_link" name="hot_link" value="<?php echo isset($obj_catalog->hot_link) ? $obj_catalog->hot_link : ""; ?>" class="input-xlarge-fluid" placeholder="Enlace de Pago Hot Link">
+                                                    </div>        
+                                                    
+                                                    <div class="form-group">
                                                         <label for="inputState">Estado</label>
                                                         <select name="active" id="active" class="form-control" required>
                                                             <option value="">[ Seleccionar ]</option>
@@ -240,7 +249,7 @@
 
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="submit" id="submit" class="btn btn-primary">Guardar</button>
                                             <button class="btn btn-danger" type="reset" onclick="cancel_catalog();">Cancelar</button>                    
                                         </form>
                                     </div>

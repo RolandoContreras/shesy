@@ -75,168 +75,156 @@ class D_catalog extends CI_Controller {
     }
 
     public function validate() {
-
-        //GET CUSTOMER_ID
-        $catalog_id = $this->input->post("catalog_id");
-        $sub_category_id = $this->input->post("sub_category_id");
-        $name = $this->input->post("name");
-        $slug = convert_slug($name);
-        $bono_n1 = $this->input->post('bono_n1');
-        $bono_n2 = $this->input->post('bono_n2');
-        $bono_n3 = $this->input->post('bono_n3');
-        $bono_n4 = $this->input->post('bono_n4');
-        $bono_n5 = $this->input->post('bono_n5');
-        $category_id = $this->input->post('category_id');
-        $summary = $this->input->post('summary');
-        $price = $this->input->post('price');
-        $description = $this->input->post('description');
-        $img_2 = $this->input->post("img_2");
-        $img_3 = $this->input->post("img_3");
-        $img_4 = $this->input->post("img_4");
-        $img_5 = $this->input->post("img_5");
-        $stock = $this->input->post("stock");
-        $active = $this->input->post('active');
-
-        if (isset($_FILES["image_file"]["name"])) {
-            $config['upload_path'] = './static/catalog';
-            $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size'] = 3000;
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('image_file')) {
-                $error = array('error' => $this->upload->display_errors());
-                echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
-            } else {
-                $data = array('upload_data' => $this->upload->data());
+        if ($this->input->is_ajax_request()) {
+            $description = $this->input->post('description');
+            if (isset($_FILES["image_file4"]["name"]) && $_FILES["image_file4"]["name"] != "") {
+                $config['upload_path'] = './static/catalog';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = 3000;
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('image_file4')) {
+                    $error = array('error' => $this->upload->display_errors());
+                    echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                }
+                $img_4 = $_FILES["image_file4"]["name"];
+            }else{
+                $img_4 = $this->input->post("img_5");
             }
-            $img = $_FILES["image_file"]["name"];
-            if ($img == "") {
-                $img = $img_2;
-            } else {
-                //eliminar imagenes guardadas
-                unlink("./static/catalog/$img_2");
+
+            //GET CUSTOMER_ID
+            $catalog_id = $this->input->post("catalog_id");
+            $name = $this->input->post("name");
+            $slug = convert_slug($name);
+            if (isset($_FILES["image_file"]["name"]) && $_FILES["image_file"]["name"] != "") {
+                $config['upload_path'] = './static/catalog';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = 3000;
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('image_file')) {
+                    $error = array('error' => $this->upload->display_errors());
+                    echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                }
+                $img = $_FILES["image_file"]["name"];
+            }else{
+                $img = $this->input->post("img_2");
             }
+
+            if (isset($_FILES["image_file2"]["name"]) && $_FILES["image_file2"]["name"] != "") {
+                $config['upload_path'] = './static/catalog';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = 3000;
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('image_file2')) {
+                    $error = array('error' => $this->upload->display_errors());
+                    echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                }
+                $img2 = $_FILES["image_file2"]["name"];
+            }else{
+                $img2 = $this->input->post("img_3");
+            }
+
+            if (isset($_FILES["image_file3"]["name"]) && $_FILES["image_file3"]["name"] != "") {
+                $config['upload_path'] = './static/catalog';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = 3000;
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('image_file3')) {
+                    $error = array('error' => $this->upload->display_errors());
+                    echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                }
+                $img3 = $_FILES["image_file3"]["name"];
+            }else{
+                $img3 = $this->input->post("img_4");
+            }
+
+            if (isset($_FILES["image_file4"]["name"]) && $_FILES["image_file4"]["name"] != "") {
+                $config['upload_path'] = './static/catalog';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = 3000;
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('image_file4')) {
+                    $error = array('error' => $this->upload->display_errors());
+                    echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                }
+                $img4 = $_FILES["image_file4"]["name"];
+            }else{
+                $img4 = $this->input->post("img_5");
+            }
+
+            if ($catalog_id != "") {
+                $param = array(
+                    'name' => $name,
+                    'slug' => $slug,
+                    'price_del' => $this->input->post('price_del'),
+                    'price' => $this->input->post('price'),
+                    'bono_n1' => $this->input->post('bono_n1'),
+                    'bono_n2' => $this->input->post('bono_n2'),
+                    'bono_n3' => $this->input->post('bono_n3'),
+                    'bono_n4' => $this->input->post('bono_n4'),
+                    'bono_n5' => $this->input->post('bono_n5'),
+                    'stock' => $this->input->post("stock"),
+                    'category_id' => $this->input->post('category_id'),
+                    'sub_category_id' => $this->input->post("sub_category_id"),
+                    'description' => $description,
+                    'img' => $img,
+                    'img2' => $img2,
+                    'img3' => $img3,
+                    'img4' => $img_4,
+                    'video' => $this->input->post('video'),
+                    'hot_link' => $this->input->post('hot_link'),
+                    'date' => date("Y-m-d H:i:s"),
+                    'granel' => $this->input->post('granel'),
+                    'active' => $this->input->post('active'),
+                    'updated_at' => date("Y-m-d H:i:s"),
+                    'updated_by' => $_SESSION['usercms']['user_id']
+                );
+                $this->obj_catalog->update($catalog_id, $param);
+                //SAVE DATA IN TABLE    
+                $data['status'] = true;
+            } else {
+                $param = array(
+                    'name' => $name,
+                    'slug' => $slug,
+                    'price_del' => $this->input->post('price_del'),
+                    'price' => $this->input->post('price'),
+                    'bono_n1' => $this->input->post('bono_n1'),
+                    'bono_n2' => $this->input->post('bono_n2'),
+                    'bono_n3' => $this->input->post('bono_n3'),
+                    'bono_n4' => $this->input->post('bono_n4'),
+                    'bono_n5' => $this->input->post('bono_n5'),
+                    'stock' => $this->input->post("stock"),
+                    'category_id' => $this->input->post('category_id'),
+                    'sub_category_id' => $this->input->post("sub_category_id"),
+                    'description' => $description,
+                    'img' => $img,
+                    'img2' => $img2,
+                    'img3' => $img3,
+                    'img4' => $img4,
+                    'video' => $this->input->post('video'),
+                    'hot_link' => $this->input->post('hot_link'),
+                    'date' => date("Y-m-d H:i:s"),
+                    'granel' => $this->input->post('granel'),
+                    'active' => $this->input->post('active'),
+                    'status_value' => 1,
+                    'created_at' => date("Y-m-d H:i:s"),
+                    'created_by' => $_SESSION['usercms']['user_id']
+                );
+                $this->obj_catalog->insert($param);
+                //SAVE DATA IN TABLE    
+                $data['status'] = true;
         }
-
-        if (isset($_FILES["image_file2"]["name"])) {
-            $config['upload_path'] = './static/catalog';
-            $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size'] = 3000;
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('image_file2')) {
-                $error = array('error' => $this->upload->display_errors());
-                echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
-            } else {
-                $data = array('upload_data' => $this->upload->data());
-            }
-            $img2 = $_FILES["image_file2"]["name"];
-            if ($img2 == "") {
-                $img2 = $img_3;
-            } else {
-                //eliminar imagenes guardadas
-                unlink("./static/catalog/$img_3");
-            }
-        }
-
-        
-
-        if (isset($_FILES["image_file3"]["name"])) {
-            $config['upload_path'] = './static/catalog';
-            $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size'] = 3000;
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('image_file3')) {
-                $error = array('error' => $this->upload->display_errors());
-                echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
-            } else {
-                $data = array('upload_data' => $this->upload->data());
-            }
-            $img3 = $_FILES["image_file3"]["name"];
-            if ($img3 == "") {
-                $img3 = $img_4;
-            } else {
-                //eliminar imagenes guardadas
-                unlink("./static/catalog/$img_4");
-            }
-        }
-
-        if (isset($_FILES["image_file4"]["name"])) {
-            $config['upload_path'] = './static/catalog';
-            $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size'] = 30000;
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('image_file4')) {
-                $error = array('error' => $this->upload->display_errors());
-                echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
-            } else {
-                $data = array('upload_data' => $this->upload->data());
-            }
-            $img_4 = $_FILES["image_file4"]["name"];
-            if ($img_4 == "") {
-                $img_4 = $img_5;
-            } else {
-                //eliminar imagenes guardadas
-                unlink("./static/catalog/$img_5");
-            }
-        }
-
-        if ($catalog_id != "") {
-            $data = array(
-                'name' => $name,
-                'slug' => $slug,
-                'summary' => $summary,
-                'price' => $price,
-                'bono_n1' => $bono_n1,
-                'bono_n2' => $bono_n2,
-                'bono_n3' => $bono_n3,
-                'bono_n4' => $bono_n4,
-                'bono_n5' => $bono_n5,
-                'stock' => $stock,
-                'category_id' => $category_id,
-                'sub_category_id' => $sub_category_id,
-                'description' => $description,
-                'img' => $img,
-                'img2' => $img2,
-                'img3' => $img3,
-                'img4' => $img_4,
-                'video' => $this->input->post('video'),
-                'date' => date("Y-m-d H:i:s"),
-                'granel' => $this->input->post('granel'),
-                'active' => $active,
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $_SESSION['usercms']['user_id']
-            );
-            $this->obj_catalog->update($catalog_id, $data);
-        } else {
-            $data = array(
-                'name' => $name,
-                'slug' => $slug,
-                'summary' => $summary,
-                'price' => $price,
-                'bono_n1' => $bono_n1,
-                'bono_n2' => $bono_n2,
-                'bono_n3' => $bono_n3,
-                'bono_n4' => $bono_n4,
-                'bono_n5' => $bono_n5,
-                'stock' => $stock,
-                'category_id' => $category_id,
-                'sub_category_id' => $sub_category_id,
-                'description' => $description,
-                'img' => $img,
-                'img2' => $img2,
-                'img3' => $img3,
-                'img4' => $img4,
-                'video' => $this->input->post('video'),
-                'date' => date("Y-m-d H:i:s"),
-                'granel' => $this->input->post('granel'),
-                'active' => $active,
-                'status_value' => 1,
-                'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $_SESSION['usercms']['user_id']
-            );
-            $this->obj_catalog->insert($data);
-            //SAVE DATA IN TABLE    
-        }
-        redirect(site_url() . "dashboard/catalogo");
+        echo json_encode($data);
+      }
     }
 
     public function delete() {

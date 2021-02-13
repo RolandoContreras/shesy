@@ -336,9 +336,6 @@ $route['dashboard/enlace-compra/active'] = "d_referencia_compra/active";
 $route['dashboard/enlace-compra/marcar_enviado'] = "d_referencia_compra/marcar_enviado";
 $route['dashboard/enlace-compra/delete'] = "d_referencia_compra/delete";
 
-
-
-
 $route['dashboard/activaciones_catalogo'] = "d_activate/activaciones_catalogo";
 $route['dashboard/activaciones_catalogo/([0-9]+)'] = "d_activate/order_catalog/$1";
 $route['dashboard/activaciones_catalogo/active_catalogo'] = "d_activate/active_catalogo";
@@ -385,13 +382,6 @@ $route['dashboard/report_pay/load'] = "d_report_pay/load";
 $route['dashboard/report_pay/export'] = "d_report_pay/export";
 
 $route['dashboard/report_global'] = "d_report_global";
-
-
-
 $route['salir'] = "login/logout";
-
-
-
-
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
