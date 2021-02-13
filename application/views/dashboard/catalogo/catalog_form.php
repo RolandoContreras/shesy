@@ -47,7 +47,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Precio Eliminado</label>
-                                                        <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price_del) ? $obj_catalog->price_del : ""; ?>" class="input-xlarge-fluid" placeholder="Precio Marketing" required>
+                                                        <input class="form-control" type="text" id="price_del" name="price_del" value="<?php echo isset($obj_catalog->price_del) ? $obj_catalog->price_del : ""; ?>" class="input-xlarge-fluid" placeholder="Precio Marketing" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Precio</label>
