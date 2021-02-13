@@ -73,13 +73,13 @@
                 </h4>
                 <form class="form" action="javascript:void(0);" method="post" id="loginForm" onsubmit="login();">
                     <div class="form-group">
-                        <label>Usuario</label>
-                        <input type="text" class="form-control" id="code" name="code" placeholder="Usuario" autofocus="">
+                        <label>Usuario / Email</label>
+                        <input type="text" class="form-control" id="code" name="code" placeholder="Usuario" autofocus="" required="">
                         <div class="pre-icon os-icon os-icon-user-male-circle"></div>
                     </div>
                     <div class="form-group">
                         <label>Contraseña</label>
-                        <input name="pass" id="pass" class="form-control" placeholder="Contraseña" type="password" autocomplete="off">
+                        <input name="pass" id="pass" class="form-control" placeholder="Contraseña" type="password" autocomplete="off" required="">
                         <div class="pre-icon os-icon os-icon-fingerprint"></div>
                     </div>
                     <input type="hidden" name="google-response-token" id="google-response-token">
@@ -96,8 +96,8 @@
         <script type="text/javascript">
                 function login() {
                     document.getElementById("login_boton").innerHTML = "Procesando...";
+                    document.getElementById("login_boton").disabled = true;
                     var form = $('#loginForm');
-                    
                     $.ajax(
                             {
                                 type: "POST",
@@ -129,17 +129,6 @@
                                         window.setTimeout(function () {
                                             window.location = site + "mi_catalogo/pay_order";
                                         }, 1000);
-                                    } else if (data.status == "false2") {
-                                        Swal.fire({
-                                            position: 'top-end',
-                                            icon: 'info',
-                                            title: 'Capcha no verificado',
-                                            showConfirmButton: false,
-                                            timer: 1000
-                                        });
-                                        window.setTimeout(function () {
-                                            window.location = site + "iniciar-sesion";
-                                        }, 1000);
                                     } else {
                                         Swal.fire({
                                             icon: 'info',
@@ -147,6 +136,7 @@
                                             text: 'Verifique usuario y/o contraseña'
                                         });
                                         document.getElementById("login_boton").innerHTML = "Iniciar Sesión";
+                                        document.getElementById("login_boton").disabled = false;
                                     }
 
                                 }

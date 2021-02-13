@@ -19,16 +19,9 @@ class Login extends CI_Controller {
             header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
             header('Access-Control-Allow-Credentials: true');
             header('Access-Control-Max-Age: 86400');
-
-            if ($_POST['google-response-token']) {
-                $googleToken = $_POST['google-response-token'];
-                $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LenFywaAAAAAPEo2HUIccja43Xz6_97TZ2EUzFM&response={$googleToken}");
-                $response = json_decode($response);
-                $response = (array) $response;
-                if ($response['success'] && ($response['score'] && $response['score'] > 0.3)) {
                     //GET DATA STRING
-                    $code = $this->input->post("code");
-                    $pass = $this->input->post("pass");
+                    $code = trim($this->input->post("code"));
+                    $pass = trim($this->input->post("pass"));
                     //SET PARAMETER
                     $params = array("select" => "customer.customer_id,
                                         customer.first_name,
@@ -39,11 +32,10 @@ class Login extends CI_Controller {
                                         customer.email,
                                         customer.active,
                                         customer.status_value",
-                        "where" => "customer.username = '$code' and customer.password = '$pass' and customer.status_value = 1");
-                    $obj_customer_login = $this->obj_customer->total_records($params);
-                    //verufy
-                    if ($obj_customer_login > 0) {
-                        $obj_customer = $this->obj_customer->get_search_row($params);
+                        "where" => "customer.username = '$code' or customer.email like '%$code%' and customer.password = '$pass' and customer.status_value = 1");
+                    $obj_customer = $this->obj_customer->get_search_row($params);
+                    //verify
+                    if (!empty($obj_customer)) {
                         $data_customer_session['customer_id'] = $obj_customer->customer_id;
                         $data_customer_session['name'] = $obj_customer->first_name . ' ' . $obj_customer->last_name;
                         $data_customer_session['username'] = $obj_customer->username;
@@ -65,12 +57,6 @@ class Login extends CI_Controller {
                     } else {
                         $data['status'] = "false";
                     }
-                    echo json_encode($data);
-                    exit();
-                } else {
-                    $data['status'] = "false2";
-                }
-            }
             echo json_encode($data);
             exit();
         }
