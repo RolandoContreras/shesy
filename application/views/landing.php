@@ -9,6 +9,29 @@
     <meta name="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
     <meta name="author" content="Cultura Emprendedora">
     <meta name="keyword" content="Cultura Emprendedora, Movimiento Emprendedor, Emprendedor Perú, embajadores, Imparable social, red social, mlm, mmn, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
+
+    <meta name="robots" content="Index, Follow">
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="Evolution Web">
+    <meta name="distribution" content="Global">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo site_url();?>">
+    <meta property="og:title" content="Market Cultura Emprendedora | Organización Neuronal de emprendedores">
+    <meta property="og:url" content="<?php echo site_url();?>">
+    <meta property="og:description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
+    <meta property="og:image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
+    <meta property="og:site_name" content="Market Cultura Emprendedora">
+    <meta property="og:locale" content="es_PE">
+    <meta itemprop="name" content=" Market Cultura Emprendedora | Organización Neuronal de emprendedores">
+    <meta itemprop="url" content="<?php echo site_url();?>">
+    <meta itemprop="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
+    <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
+    <meta name="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas."> 
+    <meta itemprop="url" content="<?php echo site_url();?>"> 
+    <meta itemprop="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas."> 
+    <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>"> 
+    <meta name="twitter:card" content="summary_large_image"> 
+    <meta name="twitter:title" content="Cultura Emprendedora | Organización Neuronal de emprendedores"> 
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
@@ -45,14 +68,15 @@
                 <div class="custom-skin-column width-3">
                   <div class="hotpay-image crop-default size-default">
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="https://static-media.hotmart.com/fu8O_G80JJVntu64Ib_nRQoBsig=/1024x730/filters:quality(100)/hotmart/checkout_custom/1eb91b43-f2ff-4e44-9a1b-cfb448392639/dyxn6s2d.jpg" data-v-49edbfa8>
+                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img4";?>" data-v-49edbfa8>
                     </div>
                   </div>
                   <div class="hotpay-video" data-v-4d187430>
                     <h2 class="hotpay-subtitle" data-v-176b9906 data-v-4d187430></h2>
                     <div class="hotpay-video-container large" data-v-4d187430>
                         <iframe src="https://player.vimeo.com/video/506276092?api=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay; fullscreen" data-v-4d187430></iframe>
-                      <div class="hotpay-video-wrapper" data-v-4d187430></div>
+                      <div class="hotpay-video-wrapper" data-v-4d187430>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -61,12 +85,12 @@
                 <div class="custom-skin-column width-2">
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="https://static-media.hotmart.com/1ysFSqEU3Z4xuhe9-ah3IQ8kHYo=/1024x469/filters:quality(100)/hotmart/checkout_custom/2dc7d5a6-d11d-4653-bbc1-66dc0061e4c6/umlhja.jpg" data-v-49edbfa8>
+                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img";?>" data-v-49edbfa8>
                     </div>
                   </div>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                        <img src="https://static-media.hotmart.com/sMNFnodGXTh5Pq3ecexNNhW-j1g=/1024x708/filters:quality(100)/hotmart/checkout_custom/8b172154-7628-45c3-87f3-0992a356f7ef/4zgynwj.jpg" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/catalog/$obj_catalog->img2";?>" data-v-49edbfa8>
                     </div>
                   </div>
                   <div class="hotpay-text ql-editor" data-v-490f5234>
@@ -102,7 +126,7 @@
                   </div>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                            <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo !is_null($obj_catalog->price_del)?"":$obj_catalog->price_del;?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
+                            <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo $obj_catalog->price_del;?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
                       </div>
                   </div>
                 </div>
@@ -156,7 +180,7 @@
                 <div class="custom-skin-column width-1">
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="<?php echo site_url()."static/page_front/images/landing/comercial.jpg";?>" data-v-49edbfa8>
+                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>" data-v-49edbfa8>
                     </div>
                   </div>
                   <div class="hotpay-advantages hotpay-advantages-vertical small-container dark" data-v-76f37c86>
