@@ -18,6 +18,12 @@
     <link href="<?php echo site_url() . 'static/page_front/css/hot.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="<?php echo site_url() . 'static/page_front/css/bootstrap.min.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+    var site = '<?php echo site_url();?>';
+  </script>
   </head>
   <body>
   <div data-server-rendered="true">
@@ -119,12 +125,12 @@
                                 Ingrese sus datos y adquiera su compra
                               </a>
                           </div>
-                        <form style="padding-top:25px;">
+                        <form name="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);"  style="padding-top:25px;" onsubmit="validate_hotmark('<?php echo $hot_link;?>');">
                             <div class="input-group">
                                   <div class="input-group-prepend">
                                       <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
                                   </div>
-                                  <input type="text" class="form-control" id="validationCustomUsername" placeholder="Ingrese sus nombres"  required="">
+                                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Ingrese sus nombres"  required="">
                               </div>
                               <br/>
                               <div class="input-group">
@@ -141,8 +147,7 @@
                                   <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese sus correo" required="">
                               </div>
                               <br/>
-                          <button type="submit" class="btn btn-primary btn-block">Ralizar Pago</button>
-                          <div class="hotpay-advantages hotpay-advantages-vertical small-container dark" data-v-76f37c86="">
+                        <div class="hotpay-advantages hotpay-advantages-vertical small-container dark" data-v-76f37c86="">
                           <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
                             <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
                               <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
@@ -152,7 +157,17 @@
                             </div>
                           </div>
                         </div> 
-
+                        <div class="row">
+                        <div class="col-md-6"><br/>
+                          <input type="hidden" name="hot_link" id="hot_link" value="<?php echo $hot_link;?>"/>
+                          <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customer_id;?>"/>
+                          <button type="submit" id="submit_hot" class="btn btn-block btn-danger" <?php echo $hot_link==""?"disabled":"";?> >Metodos de Pagos - Hotmart</button>
+                        </div>
+                        <div class="col-md-6"><br/>
+                          <!--<button type="submit" class="btn btn-block btn-primary" onsubmit="validate_culqi();">Tarjeta de Crédito / Debito</button>-->
+                        </div>
+                        </div>
+                        <br/>
                           <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
                             <div class="hotpay-advantage-info" data-v-76f37c86="">
                             <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
@@ -201,10 +216,6 @@
       </div>
     </div>
   </div>
-  <script>
-  $( document ).ready(function() {
-    document.getElementByName("frame").setAttribute("data-v-4d187430", "");
-  });
-  </script>
+  <script src="<?php echo site_url();?>static/page_front/js/pagos.js"></script>
 </body>
 </html>
