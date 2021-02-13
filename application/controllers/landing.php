@@ -32,8 +32,8 @@ class Landing extends CI_Controller {
         }
         //get data nav
         $url = explode("/", uri_string());
-        $category_slug = $url[0];
-        $slug = $url[1];   
+        $category_slug = $url[1];
+        $slug = $url[2];   
         //get catalog
         $params = array(
             "select" => "catalog.catalog_id,
@@ -55,6 +55,10 @@ class Landing extends CI_Controller {
             "join" => array('category, category.category_id = catalog.category_id'),
             "where" => "catalog.slug = '$slug' and category.slug = '$category_slug' and catalog.active = 1");
         $data['obj_catalog'] = $this->obj_catalog->get_search_row($params);
+
+            var_dump($data['obj_catalog']);
+            die();
+            
         //SEND DATA
         $this->load->view('landing',$data);
 	}
