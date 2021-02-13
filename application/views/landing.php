@@ -2,10 +2,19 @@
 <!doctype html>
 <html data-n-head-ssr class="page--loading" data-version="prod/2021.02.09-1" data-n-head="%7B%22class%22:%7B%22ssr%22:%22page--loading%22%7D,%22data-version%22:%7B%22ssr%22:%22prod/2021.02.09-1%22%7D%7D">
   <head >
-    <title>Hotmart</title>
+    <title>Cultura Emprendedora - Market</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" name="referrer" content="no-referrer-when-downgrade">
+    <meta name="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
+    <meta name="author" content="Cultura Emprendedora">
+    <meta name="keyword" content="Cultura Emprendedora, Movimiento Emprendedor, Emprendedor Perú, embajadores, Imparable social, red social, mlm, mmn, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
+    <!--//STAR FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-16x16.png'; ?>">
+    <link rel="manifest" href="<?php echo site_url() . 'static/page_front/images/logo/favico/site.webmanifest'; ?>">
+    <!--//END FAVICON-->
     <link href="<?php echo site_url() . 'static/page_front/css/hot.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="<?php echo site_url() . 'static/page_front/css/bootstrap.min.css?version=4.4.0'; ?>" rel="stylesheet" >
   </head>
@@ -61,10 +70,9 @@
                     </div>
                   </div>
                   <div class="hotpay-text ql-editor" data-v-490f5234>
-                    <p><strong style="color:#ffff00">El Sushi es uno de los platillos más famosos y exclusivos del mundo. Es ligero y su presentación colorida activa los sentidos. </strong><br/><br/>Aprende
-                      con el MasterClass SUSHI DESDE CASA y conecta a tus invitados capturando la esencia de la comida asiática sin tener conocimientos
-                      culinarios.<br/><br/>Te enseñamos el mejor método para que prepares con destreza los mejores rollos crudos, tempurizados con increíbles
-                      combinaciones. ¡incluso, para que crees tu propio negocio!<br/><br/><br/><strong class="ql-size-large" style="color:#ffff00">¿QUÉ VAS A LOGRAR?</strong><br/><br/></p>
+                    <p>
+                     <?php echo $obj_catalog->description;?>     
+                    </p>
                   </div>
                 </div>
                 <div class="custom-skin-column width-1">
@@ -94,7 +102,7 @@
                   </div>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                            <span style="font-size:40px;color:orange;text-decoration: line-through;"><b>$12.99</b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b>$12.99</b></span>
+                            <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo !is_null($obj_catalog->price_del)?"":$obj_catalog->price_del;?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
                       </div>
                   </div>
                 </div>

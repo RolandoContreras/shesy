@@ -75,7 +75,7 @@
                                                                 </div>
                                                             <?php } ?>
                                                             <div class="row form-group">
-                                                                <div class="col-sm-2">
+                                                                <div class="col-sm-3">
                                                                     <label class="col-form-label" style="color:#888 !important;">Cantidad <?php echo $obj_catalog->granel == 1 ? "(Kg) / (Und)" : ""; ?></label>
                                                                 </div>
                                                                 <div class="col-sm-3">
@@ -83,15 +83,25 @@
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     <?php if ($obj_catalog->granel == 0) { ?>
-                                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
+                                                                        <button type="button" class="btn btn-glow-success btn-success btn-block" title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
                                                                     <?php } else { ?>
-                                                                        <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart_granel('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
+                                                                        <button type="button" class="btn btn-glow-success btn-success btn-block" title="Agregar al Carrito" onclick="add_cart_granel('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="shopping-cart"></i> Agregar</button>
                                                                     <?php } ?>
-                                                                    <input type="text" id="copy" value="<?php echo site_url()."$obj_catalog->category_slug/$obj_catalog->slug?".encrypt($customer_id);?>"/>
-                                                                    <button type="button" class="btn btn-info" title="Copiar Enlace"  onclick="copy();" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="copy"></i> Copiar Enlace del Producto</button>
+                                                                    
                                                                 </div>
+                                                            </div>
+                                                            <hr style="color:white"/>
+                                                            <p>
+                                                            <a>
+                                                                <span id="comparePrice-product-template" class="sale-tag large title-price"><span class="money conversion-bear-money">COMPARTE EL PRODUCTO</span></span>
+                                                            </a>
+                                                        </p>
+                                                            <div class="row form-group">
                                                                 <div class="col-sm-6">
-                                                                        
+                                                                    <input type="text" id="copy" value="<?php echo site_url()."soloporhoy/$obj_catalog->category_slug/$obj_catalog->slug?id=".encrypt($customer_id);?>" class="form-control" readonly=""/>
+                                                                </div>           
+                                                                <div class="col-sm-6">
+                                                                    <button type="button" class="btn btn-info btn-block" title="Copiar Enlace"  onclick="copy();" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="copy"></i> Copiar Enlace del Producto</button>
                                                                 </div>
                                                             </div>
 

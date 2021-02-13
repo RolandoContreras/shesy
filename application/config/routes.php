@@ -69,6 +69,8 @@ $route['iniciar-sesion'] = 'login';
 $route['iniciar-sesion/validate'] = 'login/validate';
 $route['forget'] = 'forget';
 
+$route['soloporhoy/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'landing';
+
 $route['cursos'] = 'courses';
 $route['cursos/([0-9]+)'] = 'courses/index/$1';
 $route['cursos/([0-9a-z_-]+)'] = 'courses/category/$1';
