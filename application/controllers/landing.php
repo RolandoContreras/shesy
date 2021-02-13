@@ -28,7 +28,7 @@ class Landing extends CI_Controller {
 	public function index()
 	{   
         if(isset($_GET["id"])){
-            $customer_id = decrypt($_GET["id"]);
+            $customer_id = $_GET["id"];
         }else{
             $customer_id = 1;            
         }
