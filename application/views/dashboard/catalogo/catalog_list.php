@@ -44,7 +44,6 @@
                                   <th class="sorting">Precio</th>
                                   <th class="sorting">Stock</th>
                                   <th class="sorting">Granel</th>
-                                  <th class="sorting">Imagen</th>
                                   <th class="sorting">Estado</th>
                                   <th class="sorting">Acciones</th>
                                 </tr>
@@ -77,7 +76,6 @@
                                     } ?>
                                     <span class="badge badge-pill badge-warning" style="font-size: 100%;"><?php echo $valor;?></span>
                                 </td>
-                                <td><img src='<?php echo site_url()."static/catalog/$value->img";?>' width="60"/></td>                                    
                                 <td>
                                     <?php if ($value->active == 0) {
                                         $valor = "No Activo";
