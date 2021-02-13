@@ -165,7 +165,8 @@
         <script src='https://www.google.com/recaptcha/api.js?render=6LenFywaAAAAADc77bVcFP4pFKkXGNG8GKkRaRoY'></script>
         <script type="text/javascript">
                                     function register() {
-                                        document.getElementById("register_boton").innerHTML = "Procesando...";
+                                        document.getElementById("register_boton").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
+                                        document.getElementById("register_boton").disabled = true;
                                         var form = $('#register-form');
                                         $.ajax(
                                                 {
@@ -207,17 +208,6 @@
                                                                 showConfirmButton: false,
                                                                 timer: 1000
                                                             });
-                                                        } else if (data.status == "false2") {
-                                                            Swal.fire({
-                                                                position: 'top-end',
-                                                                icon: 'info',
-                                                                title: 'Capcha no verificado',
-                                                                showConfirmButton: false,
-                                                                timer: 1000
-                                                            });
-                                                            window.setTimeout(function () {
-                                                                location.reload();
-                                                            }, 1000);
                                                         } else {
                                                             Swal.fire({
                                                                 icon: 'info',
@@ -225,6 +215,7 @@
                                                                 text: 'Verifique los datos'
                                                             });
                                                             document.getElementById("register_boton").innerHTML = "Registrar";
+                                                            document.getElementById("login_boton").disabled = false;
                                                         }
                                                     }
                                                 });

@@ -108,14 +108,6 @@ class Register extends CI_Controller {
         if ($this->input->is_ajax_request()) {
             //SET TIMEZONE AMERICA
             date_default_timezone_set('America/Lima');
-            //verify recaptcha
-            if ($_POST['google-response-token']) {
-                $googleToken = $_POST['google-response-token'];
-                $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LenFywaAAAAAPEo2HUIccja43Xz6_97TZ2EUzFM&response={$googleToken}");
-                $response = json_decode($response);
-                $response = (array) $response;
-                if ($response['success'] && ($response['score'] && $response['score'] > 0.1)) {
-                    //get data
                     $username = str_to_minuscula($this->input->post("username"));
                     //VALIDATE USERNAME
                     $result = $this->validate_username_register($username);
@@ -194,12 +186,6 @@ class Register extends CI_Controller {
                             $data['status'] = true;
                         }
                     }
-                } else {
-                    $data['status'] = "false2";
-                }
-            } else {
-                $data['status'] = "false2";
-            }
             echo json_encode($data);
         }
     }

@@ -95,7 +95,7 @@
         <script src='https://www.google.com/recaptcha/api.js?render=6LenFywaAAAAADc77bVcFP4pFKkXGNG8GKkRaRoY'></script>
         <script type="text/javascript">
                 function login() {
-                    document.getElementById("login_boton").innerHTML = "Procesando...";
+                    document.getElementById("login_boton").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
                     document.getElementById("login_boton").disabled = true;
                     var form = $('#loginForm');
                     $.ajax(
