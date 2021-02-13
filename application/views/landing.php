@@ -52,7 +52,7 @@
                   <div class="hotpay-video" data-v-4d187430>
                     <h2 class="hotpay-subtitle" data-v-176b9906 data-v-4d187430></h2>
                     <div class="hotpay-video-container large" data-v-4d187430>
-                        <iframe src="https://player.vimeo.com/video/506276092?api=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay; fullscreen" data-v-4d187430></iframe>
+                    <iframe src="https://player.vimeo.com/video/<?php echo $video_id;?>" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
                       <div class="hotpay-video-wrapper" data-v-4d187430></div>
                     </div>
                   </div>
@@ -201,5 +201,10 @@
       </div>
     </div>
   </div>
+  <script>
+  $( document ).ready(function() {
+    document.getElementByName("frame").setAttribute("data-v-4d187430", "");
+  });
+  </script>
 </body>
 </html>

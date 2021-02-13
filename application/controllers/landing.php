@@ -49,6 +49,7 @@ class Landing extends CI_Controller {
                                     catalog.img2,
                                     catalog.img3,
                                     catalog.img4,
+                                    catalog.video,
                                     catalog.date,
                                     catalog.active,
                                     category.slug as category_slug,
@@ -56,6 +57,13 @@ class Landing extends CI_Controller {
             "join" => array('category, category.category_id = catalog.category_id'),
             "where" => "catalog.slug = '$slug' and category.slug = '$category_slug' and catalog.active = 1");
         $data['obj_catalog'] = $this->obj_catalog->get_search_row($params);
+        
+        if($data['obj_catalog']->video != ""){
+            $video = $data['obj_catalog']->video;
+            $explode =  explode("/",$video);
+            $video_id = $explode[3];
+            $data['video_id'] = $video_id;
+        }
         //SEND DATA
         $this->load->view('landing',$data);
 	}

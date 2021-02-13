@@ -61,8 +61,8 @@
                                                         </script>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Vídeo (Embebido)</label>
-                                                        <textarea name="video" id="video" class="form-control"><?php echo isset($obj_catalog->video) ? $obj_catalog->video : ""; ?></textarea>
+                                                        <label>Enlace Vídeo VIMEO - https://vimeo.com/12149946 </label>
+                                                        <input class="form-control" type="text" id="video" name="video" value="<?php echo isset($obj_catalog->video) ? $obj_catalog->video : ""; ?>" class="input-xlarge-fluid" placeholder="Ingrese Enlace Vimeo" required>
                                                     </div>
                                                     <?php if (isset($obj_catalog)) { ?>
                                                         <div class="form-group">
