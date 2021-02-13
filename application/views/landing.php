@@ -17,6 +17,7 @@
     <!--//END FAVICON-->
     <link href="<?php echo site_url() . 'static/page_front/css/hot.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="<?php echo site_url() . 'static/page_front/css/bootstrap.min.css?version=4.4.0'; ?>" rel="stylesheet" >
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body>
   <div data-server-rendered="true">
@@ -45,7 +46,7 @@
                 <div class="custom-skin-column width-3">
                   <div class="hotpay-image crop-default size-default">
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="https://static-media.hotmart.com/fu8O_G80JJVntu64Ib_nRQoBsig=/1024x730/filters:quality(100)/hotmart/checkout_custom/1eb91b43-f2ff-4e44-9a1b-cfb448392639/dyxn6s2d.jpg" data-v-49edbfa8>
+                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img4";?>" data-v-49edbfa8>
                     </div>
                   </div>
                   <div class="hotpay-video" data-v-4d187430>
@@ -61,18 +62,18 @@
                 <div class="custom-skin-column width-2">
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="https://static-media.hotmart.com/1ysFSqEU3Z4xuhe9-ah3IQ8kHYo=/1024x469/filters:quality(100)/hotmart/checkout_custom/2dc7d5a6-d11d-4653-bbc1-66dc0061e4c6/umlhja.jpg" data-v-49edbfa8>
+                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img";?>" data-v-49edbfa8>
                     </div>
                   </div>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                        <img src="https://static-media.hotmart.com/sMNFnodGXTh5Pq3ecexNNhW-j1g=/1024x708/filters:quality(100)/hotmart/checkout_custom/8b172154-7628-45c3-87f3-0992a356f7ef/4zgynwj.jpg" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/catalog/$obj_catalog->img2";?>" data-v-49edbfa8>
                     </div>
                   </div>
+                  
                   <div class="hotpay-text ql-editor" data-v-490f5234>
-                    <p>
+                  <h1 style="color:#ffff00" style="text-align:center"><?php echo $obj_catalog->name;?></h1>
                      <?php echo $obj_catalog->description;?>     
-                    </p>
                   </div>
                 </div>
                 <div class="custom-skin-column width-1">
@@ -102,7 +103,7 @@
                   </div>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                            <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo !is_null($obj_catalog->price_del)?"":$obj_catalog->price_del;?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
+                            <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo format_number_moneda_dolares($obj_catalog->price_del);?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
                       </div>
                   </div>
                 </div>
@@ -113,42 +114,53 @@
                     <div class="checkout-wrapper" data-v-4b7ee574>
                       <div data-v-4b7ee574></div> 
                       <div class="bd-example" style="padding:25px;">
-                        <form>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese su correo">
+                          <div data-v-402bdc66="" class="disclaimer-product">
+                              <a data-v-402bdc66="" href="javascript:void(0);">
+                                Ingrese sus datos y adquiera su compra
+                              </a>
                           </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Nombres</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese sus nombre">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Apellidos</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese sus apellidos">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Usuario</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese un usuario">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                          </div>
+                        <form style="padding-top:25px;">
+                            <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                                  </div>
+                                  <input type="text" class="form-control" id="validationCustomUsername" placeholder="Ingrese sus nombres"  required="">
+                              </div>
+                              <br/>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                                  </div>
+                                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Ingrese sus apellidos" required="">
+                              </div>
+                              <br/>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-envelope-open"></i></span>
+                                  </div>
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese sus correo" required="">
+                              </div>
+                              <br/>
                           <button type="submit" class="btn btn-primary btn-block">Ralizar Pago</button>
+                          <div class="hotpay-advantages hotpay-advantages-vertical small-container dark" data-v-76f37c86="">
+                          <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
+                            <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
+                              <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
+                            </div>
+                            <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
+                              <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
+                            </div>
+                          </div>
+                        </div> 
+
+                          <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
+                            <div class="hotpay-advantage-info" data-v-76f37c86="">
+                            <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
+                              Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
+                              Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
+                            </div>
+                          </div>
                         </form>
-                        <div data-v-402bdc66="" class=""><div data-v-402bdc66="" class=""><div data-v-402bdc66="" class="pay-beta-support"><b data-v-402bdc66="">¿Necesitas ayuda?</b> <a data-v-402bdc66="" name="emailLink" class="emailLink">
-                              Entra en contacto
-                            </a></div> <div data-v-402bdc66="" class="disclaimer-product">
-                              <a data-v-402bdc66="" href="https://atendimento.hotmart.com.br/hc/es-es/requests/new" target="_blank">
-                              Necesito ayuda para rellenar los datos de esta pantalla
-                            </a></div> <!----> <div data-v-402bdc66="" class="disclaimer-product"><p data-v-402bdc66="">
-                              Hotmart está procesando esta solicitud al servicio de Seminarios.Online®, al continuar estás de acuerdo con los
-                              <a data-v-402bdc66="" class="pay-modal tip">
-                                Términos de Compra
-                              </a></p></div></div> <div data-v-402bdc66="" class=""><div data-v-402bdc66="" class="pay-beta-rights">
-                            Hotmart © <span data-v-402bdc66="" id="anoFooter" class="rightsText">2021</span> - Todos los derechos reservados<br data-v-402bdc66="">
-                            2021-02-12T21:13:57.572Z REF.: V47649337K
-                          </div></div></div>
                         </div>
                       </div>
                   </div>

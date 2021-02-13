@@ -48,6 +48,7 @@ class Landing extends CI_Controller {
                                     catalog.img,
                                     catalog.img2,
                                     catalog.img3,
+                                    catalog.img4,
                                     catalog.date,
                                     catalog.active,
                                     category.slug as category_slug,
