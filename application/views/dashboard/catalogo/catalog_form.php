@@ -49,14 +49,6 @@
                                                         <label>Precio</label>
                                                         <input class="form-control" type="number" step="any" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
                                                     </div>
-
-                                                    <div class="form-group">
-                                                        <label>Sumilla</label>
-                                                        <textarea name="summary" id="summary" placeholder="Sumilla"><?php echo isset($obj_catalog->summary) ? $obj_catalog->summary : ""; ?></textarea>
-                                                        <script>
-                                                            CKEDITOR.replace('summary');
-                                                        </script>
-                                                    </div>
                                                     <div class="form-group">
                                                         <label>Descripción</label>
                                                         <textarea name="description" id="description"><?php echo isset($obj_catalog->description) ? $obj_catalog->description : ""; ?></textarea>
@@ -64,7 +56,25 @@
                                                             CKEDITOR.replace('description');
                                                         </script>
                                                     </div>
-
+                                                    <div class="form-group">
+                                                        <label>Vídeo (Embebido)</label>
+                                                        <textarea name="video" id="video" class="form-control"><?php echo isset($obj_catalog->video) ? $obj_catalog->video : ""; ?></textarea>
+                                                    </div>
+                                                    <?php if (isset($obj_catalog)) { ?>
+                                                        <div class="form-group">
+                                                            <label>Banner Principal</label><br/>
+                                                            <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img4"; ?>' width="100" />
+                                                            <input class="form-control" type="hidden" name="img_5" id="img_5" value="<?php echo isset($obj_catalog) ? $obj_catalog->img4 : ""; ?>">
+                                                        </div>
+                                                    <?php } ?>
+                                                    <div class="form-group">
+                                                        <label>Banner Principal (Tamaño 1024 x 469)</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" name="image_file4" id="image_file4" class="custom-file-input" onchange="upload_img4();" <?php echo isset($obj_catalog->img4) ? "" : "required"; ?>>
+                                                            <label id="label_img4" class="custom-file-label invalid">Elegir archivos...</label>
+                                                            <div id="respose_img4"></div>
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group col-md-3">
                                                         <div class="form-group">
                                                             <label>Bonificación N°1</label>

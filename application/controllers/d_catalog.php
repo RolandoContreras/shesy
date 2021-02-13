@@ -93,6 +93,7 @@ class D_catalog extends CI_Controller {
         $img_2 = $this->input->post("img_2");
         $img_3 = $this->input->post("img_3");
         $img_4 = $this->input->post("img_4");
+        $img_5 = $this->input->post("img_5");
         $stock = $this->input->post("stock");
         $active = $this->input->post('active');
 
@@ -136,6 +137,8 @@ class D_catalog extends CI_Controller {
             }
         }
 
+        
+
         if (isset($_FILES["image_file3"]["name"])) {
             $config['upload_path'] = './static/catalog';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -153,6 +156,26 @@ class D_catalog extends CI_Controller {
             } else {
                 //eliminar imagenes guardadas
                 unlink("./static/catalog/$img_4");
+            }
+        }
+
+        if (isset($_FILES["image_file4"]["name"])) {
+            $config['upload_path'] = './static/catalog';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size'] = 30000;
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('image_file4')) {
+                $error = array('error' => $this->upload->display_errors());
+                echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+            } else {
+                $data = array('upload_data' => $this->upload->data());
+            }
+            $img_4 = $_FILES["image_file4"]["name"];
+            if ($img_4 == "") {
+                $img_4 = $img_5;
+            } else {
+                //eliminar imagenes guardadas
+                unlink("./static/catalog/$img_5");
             }
         }
 
@@ -174,7 +197,8 @@ class D_catalog extends CI_Controller {
                 'img' => $img,
                 'img2' => $img2,
                 'img3' => $img3,
-                'summary' => $summary,
+                'img4' => $img_4,
+                'video' => $this->input->post('video'),
                 'date' => date("Y-m-d H:i:s"),
                 'granel' => $this->input->post('granel'),
                 'active' => $active,
@@ -200,7 +224,8 @@ class D_catalog extends CI_Controller {
                 'img' => $img,
                 'img2' => $img2,
                 'img3' => $img3,
-                'summary' => $summary,
+                'img4' => $img4,
+                'video' => $this->input->post('video'),
                 'date' => date("Y-m-d H:i:s"),
                 'granel' => $this->input->post('granel'),
                 'active' => $active,

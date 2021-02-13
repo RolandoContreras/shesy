@@ -55,10 +55,6 @@ class Landing extends CI_Controller {
             "join" => array('category, category.category_id = catalog.category_id'),
             "where" => "catalog.slug = '$slug' and category.slug = '$category_slug' and catalog.active = 1");
         $data['obj_catalog'] = $this->obj_catalog->get_search_row($params);
-
-            var_dump($data['obj_catalog']);
-            die();
-            
         //SEND DATA
         $this->load->view('landing',$data);
 	}

@@ -49,6 +49,19 @@ function upload_img3() {
         $("#label_img3").removeClass("valid").addClass("invalid");
     }
 }
+function upload_img4() {
+    var input = document.getElementById('image_file4').value;
+    if (input != null) {
+        $("#respose_img").html();
+        var texto = "";
+        texto = texto + 'Seleccionado: ';
+        texto = texto + input;
+        $("#respose_img4").html(texto);
+        $("#label_img4").removeClass("invalid").addClass("valid");
+    } else {
+        $("#label_img4").removeClass("valid").addClass("invalid");
+    }
+}
 function delete_catalog(catalog_id) {
     bootbox.confirm({
         message: "¿Confirma que desea eliminar el producto?",
