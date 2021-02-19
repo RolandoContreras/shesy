@@ -61,8 +61,9 @@
                                                         </script>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Enlace Vídeo VIMEO - https://vimeo.com/12149946 </label>
-                                                        <input class="form-control" type="text" id="video" name="video" value="<?php echo isset($obj_catalog->video) ? $obj_catalog->video : ""; ?>" class="input-xlarge-fluid" placeholder="Ingrese Enlace Vimeo" required>
+                                                        <label><b>Enlace Vídeo</b><br/> VIMEO - <b>(https://vimeo.com/12149946)</b><br/>
+                                                                    Youtube - <b>(https://youtu.be/3uUJCvdbH3k)</b></label>
+                                                        <input class="form-control" type="text" id="video" name="video" value="<?php echo isset($obj_catalog->video) ? $obj_catalog->video : ""; ?>" class="input-xlarge-fluid" placeholder="Ingrese Enlace Vimeo / Youtube">
                                                     </div>
                                                     <?php if (isset($obj_catalog)) { ?>
                                                         <div class="form-group">

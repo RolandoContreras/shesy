@@ -27,8 +27,8 @@ class Landing extends CI_Controller {
 	 */
 	public function index()
 	{   
-        if(isset($_GET["id"])){
-            $customer_id = $_GET["id"];
+        if(isset($_GET["d"])){
+            $customer_id = $_GET["d"];
         }else{
             $customer_id = 1;            
         }
@@ -67,10 +67,12 @@ class Landing extends CI_Controller {
             "where" => "catalog.slug = '$slug' and category.slug = '$category_slug' and catalog.active = 1");
         $data['obj_catalog'] = $this->obj_catalog->get_search_row($params);
         $data['hot_link'] = $data['obj_catalog']->hot_link;
-        if($data['obj_catalog']->video != ""){
+        if($data['obj_catalog']->video != null){
             $video = $data['obj_catalog']->video;
             $explode =  explode("/",$video);
+            $host = $explode[2];
             $video_id = $explode[3];
+            $data['host'] = $host;
             $data['video_id'] = $video_id;
         }
         //SEND DATA

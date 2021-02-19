@@ -42,7 +42,7 @@
     <link href="<?php echo site_url() . 'static/page_front/css/bootstrap.min.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    <link href="https://codedthemes.com/demos/admin-templates/datta-able/bootstrap/assets/css/style.css" rel="stylesheet" >
+    <link href="<?php echo site_url() . 'static/page_front/css/new_style.css';?>" rel="stylesheet" >
     <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
@@ -75,33 +75,49 @@
               </div>
               <div class="custom-skin-row">
                 <div class="custom-skin-column width-3">
-                  <div class="hotpay-image crop-default size-default">
-                    <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img4";?>" data-v-49edbfa8>
-                    </div>
+                  <?php 
+                  if($obj_catalog->img4 != null){ ?>
+                    <div class="hotpay-image crop-default size-default">
+                      <div class="hotpay-image-crop" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/catalog/$obj_catalog->img4";?>" data-v-49edbfa8>
+                      </div>
                   </div>
-                  <div class="hotpay-video" data-v-4d187430>
-                    <h2 class="hotpay-subtitle" data-v-176b9906 data-v-4d187430></h2>
-                    <div class="hotpay-video-container large" data-v-4d187430>
-                    <iframe src="https://player.vimeo.com/video/<?php echo $video_id;?>" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
-                      <div class="hotpay-video-wrapper" data-v-4d187430></div>
-                    </div>
-                  </div>
+                  <?php } ?>
+                  <?php 
+                  if($obj_catalog->video != null){ ?>
+                      <div class="hotpay-video" data-v-4d187430>
+                        <h2 class="hotpay-subtitle" data-v-176b9906 data-v-4d187430></h2>
+                        <div class="hotpay-video-container large" data-v-4d187430>
+                        <?php
+                          if($host == "vimeo.com"){ ?>
+                            <iframe src="https://player.vimeo.com/video/<?php echo $video_id;?>" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
+                        <?php  }else{ ?>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id;?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
+                        <?php } ?>
+                          <div class="hotpay-video-wrapper" data-v-4d187430></div>
+                        </div>
+                      </div>
+                  <?php } ?>
                 </div>
               </div>
               <div class="custom-skin-row">
                 <div class="custom-skin-column width-2">
-                  <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
-                    <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img";?>" data-v-49edbfa8>
+                <?php 
+                  if($obj_catalog->img != null){ ?>
+                    <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
+                      <div class="hotpay-image-crop" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/catalog/$obj_catalog->img";?>" data-v-49edbfa8>
+                      </div>
                     </div>
-                  </div>
+                  <?php } ?>
+                  <?php 
+                  if($obj_catalog->img2 != null){ ?>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
                         <img src="<?php echo site_url()."static/catalog/$obj_catalog->img2";?>" data-v-49edbfa8>
                     </div>
                   </div>
-                  
+                  <?php } ?>
                   <div class="hotpay-text ql-editor" data-v-490f5234>
                   <h1 style="color:#ffff00" style="text-align:center"><?php echo $obj_catalog->name;?></h1>
                      <?php echo $obj_catalog->description;?>     
@@ -193,9 +209,12 @@
                                     <br/>
                                     <div class="hotpay-advantages hotpay-advantages-vertical small-container dark">
                                         <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
-                                          <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
-                                            <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
-                                          </div>
+                                        <?php 
+                                          if($obj_catalog->img3 != null){ ?>
+                                            <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
+                                              <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
+                                            </div>
+                                          <?php } ?>
                                           <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
                                             <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
                                           </div>
@@ -302,7 +321,7 @@
     </div>
   </div>
   <script src="<?php echo site_url();?>static/page_front/js/pagos.js"></script>
-  <script src="https://codedthemes.com/demos/admin-templates/datta-able/bootstrap/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="<?php echo site_url();?>static/page_front/js/bootstrap.min.js"></script>
   <script>
   function show_second(){
     $first_name = document.getElementById("first_name").value;
