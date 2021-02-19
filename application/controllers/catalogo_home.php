@@ -370,6 +370,8 @@ class Catalogo_home extends CI_Controller {
         //total commission compra
         $obj_total_compra = $this->total_comissions($customer_id);
         $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
+        //set url sell
+        $url =  site_url()."soloporhoy/$obj_catalog->category_slug/$obj_catalog->slug?d=$customer_id";    
         //SEND DATA
         $this->tmp_catalog->set("obj_total_compra", $obj_total_compra);
         $this->tmp_catalog->set("total_compra", $total_compra);
@@ -379,6 +381,7 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->set("obj_catalog_all", $obj_catalog_all);
         $this->tmp_catalog->set("obj_catalog", $obj_catalog);
         $this->tmp_catalog->set("customer_id", $customer_id);
+        $this->tmp_catalog->set("url", $url);
         $this->tmp_catalog->render("catalogo/catalogo_detail");
     }
 
