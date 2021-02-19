@@ -119,7 +119,6 @@
                   </div>
                   <?php } ?>
                   <div class="hotpay-text ql-editor" data-v-490f5234>
-                  <h1 style="color:#ffff00" style="text-align:center"><?php echo $obj_catalog->name;?></h1>
                      <?php echo $obj_catalog->description;?>     
                   </div>
                 </div>
