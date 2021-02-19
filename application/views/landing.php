@@ -41,6 +41,8 @@
     <link href="<?php echo site_url() . 'static/page_front/css/hot.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="<?php echo site_url() . 'static/page_front/css/bootstrap.min.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link href="https://codedthemes.com/demos/admin-templates/datta-able/bootstrap/assets/css/style.css" rel="stylesheet" >
     <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
@@ -81,14 +83,8 @@
                   <div class="hotpay-video" data-v-4d187430>
                     <h2 class="hotpay-subtitle" data-v-176b9906 data-v-4d187430></h2>
                     <div class="hotpay-video-container large" data-v-4d187430>
-<<<<<<< HEAD
-                        <iframe src="https://player.vimeo.com/video/506276092?api=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay; fullscreen" data-v-4d187430></iframe>
-                      <div class="hotpay-video-wrapper" data-v-4d187430>
-                      </div>
-=======
                     <iframe src="https://player.vimeo.com/video/<?php echo $video_id;?>" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
                       <div class="hotpay-video-wrapper" data-v-4d187430></div>
->>>>>>> 650aed93c87742d24007b7f5fac9eec450075ddd
                     </div>
                   </div>
                 </div>
@@ -138,78 +134,139 @@
                   </div>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-<<<<<<< HEAD
-                            <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo $obj_catalog->price_del;?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
-=======
                             <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo format_number_moneda_dolares($obj_catalog->price_del);?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
->>>>>>> 650aed93c87742d24007b7f5fac9eec450075ddd
                       </div>
                   </div>
                 </div>
               </div>
               <div class="custom-skin-row">
-                <div class="custom-skin-column width-2" style="background-color:white;border-radius:10px;">
+                <div class="custom-skin-column width-2" style="background-color:#f4f7fa;border-radius:10px;">
                   <div>
                     <div class="checkout-wrapper" data-v-4b7ee574>
                       <div data-v-4b7ee574></div> 
-                      <div class="bd-example" style="padding:25px;">
-                          <div data-v-402bdc66="" class="disclaimer-product">
-                              <a data-v-402bdc66="" href="javascript:void(0);">
-                                Ingrese sus datos y adquiera su compra
-                              </a>
-                          </div>
-                        <form name="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);"  style="padding-top:25px;" onsubmit="validate_hotmark('<?php echo $hot_link;?>');">
-                            <div class="input-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                      <form name="form_pay" id="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_hotmark();">
+                        <div class="col-xl-12 col-md-12 m-b-30" style="margin-top:20px;">
+                          <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                              <li class="nav-item complete">
+                                  <a class="nav-link show active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="home" aria-selected="false">Datos Personales</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link show" id="designer-tab" data-toggle="tab" href="#designer" role="tab" aria-controls="profile" aria-selected="true">Metodo de Pago</a>
+                              </li>
+                          </ul>
+                          <div class="tab-content User-Lists active" id="myTabContent1" style="padding:18px;">
+                              <div class="tab-pane active" id="user" role="tabpanel" aria-labelledby="home-tab">
+                                <div style="padding:10px;">
+                                  <div data-v-402bdc66="" class="disclaimer-product">
+                                      <a data-v-402bdc66="" href="javascript:void(0);">
+                                        Ingrese sus datos y adquiera su compra
+                                      </a>
                                   </div>
-                                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Ingrese sus nombres"  required="">
-                              </div>
-                              <br/>
-                              <div class="input-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                                  <br/>
+                                    <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                                          </div>
+                                          <input type="text" onkeypress="show_second();" class="form-control" id="first_name" name="first_name" placeholder="Ingrese sus nombres"  required="">
+                                    </div>
+                                    <br/>
+                                    <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                                          </div>
+                                          <input type="text" onkeypress="show_second();" class="form-control" id="last_name" name="last_name" placeholder="Ingrese sus apellidos" required="">
+                                    </div>
+                                    <br/>
+                                    <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                          </div>
+                                          <input type="email" onkeypress="show_second();" class="form-control" id="email" name="email" placeholder="Ingrese su correo" required="">
+                                    </div>
+                                    <br/>
+                                    <div class="input-group">
+                                          <div class="input-group-prepend">
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
+                                          </div>
+                                          <input type="password" onkeypress="show_second();" class="form-control" id="pass" name="pass" placeholder="Ingrese su Contraseña" required="">
+                                    </div>
+                                    <br/>
+                                    <div class="hotpay-advantages hotpay-advantages-vertical small-container dark">
+                                        <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
+                                          <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
+                                            <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
+                                          </div>
+                                          <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
+                                            <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
+                                          </div>
+                                        </div>
+                                    </div> 
+                                    <br/>
+                                    <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
+                                        <div class="hotpay-advantage-info" data-v-76f37c86="">
+                                        <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
+                                          Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
+                                          Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><br/>
+                                          <input type="hidden" name="hot_link" id="hot_link" value="<?php echo $hot_link;?>"/>
+                                          <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customer_id;?>"/>
+                                          <a onclick="change_title_designer();" class="btn-info btn nav-link show" style="position: absolute; right: 0;" class="btn btn-info" id="button-second" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="true">Siguiente <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <br/>
                                   </div>
-                                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Ingrese sus apellidos" required="">
                               </div>
-                              <br/>
-                              <div class="input-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-envelope-open"></i></span>
+                              <div class="tab-pane fade show" id="designer" role="tabpanel" aria-labelledby="profile-tab">
+                              <div style="padding:10px;">
+                                  <div data-v-402bdc66="" class="disclaimer-product">
+                                      <a data-v-402bdc66="" href="javascript:void(0);">
+                                        Utilice el método de pago de su preferencia
+                                      </a>
                                   </div>
-                                  <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese sus correo" required="">
+                                  <br/>
+                                    <div class="hotpay-advantages hotpay-advantages-vertical small-container dark">
+                                        <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
+                                          <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
+                                            <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
+                                          </div>
+                                          <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
+                                            <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
+                                          </div>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-md-12"><br/>
+                                          <?php 
+                                            if($hot_link != ""){ ?>
+                                                <button type="submit" class="btn-success btn-block btn" id="submit_hot"> Métodos de Pago 1</button>
+                                          <?php }else{ ?>
+                                                
+                                          <?php } ?>
+                                          
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
+                                        <div class="hotpay-advantage-info" data-v-76f37c86="">
+                                        <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
+                                          Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
+                                          Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><br/>
+                                          <a onclick="change_title_user();"; class="btn-info btn nav-link show" style="position: absolute; right: 0;" id="button-second" data-toggle="tab" href="#user" role="tab" aria-controls="profile" aria-selected="true"><i class="fa fa-arrow-left" aria-hidden="true"></i> Atrás</a>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                  </div>
                               </div>
-                              <br/>
-                        <div class="hotpay-advantages hotpay-advantages-vertical small-container dark" data-v-76f37c86="">
-                          <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
-                            <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
-                              <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
-                            </div>
-                            <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
-                              <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
-                            </div>
                           </div>
-                        </div> 
-                        <div class="row">
-                        <div class="col-md-6"><br/>
-                          <input type="hidden" name="hot_link" id="hot_link" value="<?php echo $hot_link;?>"/>
-                          <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customer_id;?>"/>
-                          <button type="submit" id="submit_hot" class="btn btn-block btn-danger" <?php echo $hot_link==""?"disabled":"";?> >Metodos de Pagos - Hotmart</button>
-                        </div>
-                        <div class="col-md-6"><br/>
-                          <!--<button type="submit" class="btn btn-block btn-primary" onsubmit="validate_culqi();">Tarjeta de Crédito / Debito</button>-->
-                        </div>
-                        </div>
-                        <br/>
-                          <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
-                            <div class="hotpay-advantage-info" data-v-76f37c86="">
-                            <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
-                              Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
-                              Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
-                            </div>
-                          </div>
-                        </form>
-                        </div>
+                      </div>
+                      </form>
                       </div>
                   </div>
                 </div>
@@ -235,11 +292,6 @@
                       <div class="hotpay-advantage-info" data-v-76f37c86><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86> Delivery Seguro </span> <span class="hotpay-advantage-content"
                           style="color:#92e32e;" data-v-76f37c86>Acceso al producto inmediatamente.</span></div>
                     </div>
-                    <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86>
-                      <div class="icon-content hotpay-advantage-icon" data-v-5577a166 data-v-76f37c86><svg viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg" data-v-5577a166><path d="M19.716 16.916l-8.248-8.347-1.067-1.08-1.067 1.08-5.256 5.32-1.042 1.054 1.042 1.054 5.552 5.619 9.019 9.127 1.067 1.08 1.067-1.08 9.475-9.59 9.664-9.78 1.042-1.055-1.042-1.055-5.257-5.318-1.067-1.079-1.067 1.08-12.815 12.97z" stroke="#128ECE" stroke-width="3" fill="none" style="stroke:#92e32e;" data-v-5577a166></path></svg></div>
-                      <div class="hotpay-advantage-info" data-v-76f37c86><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86> Contenido Aprobado </span> <span class="hotpay-advantage-content"
-                          style="color:#92e32e;" data-v-76f37c86>100% revisado bajo políticas de privacidad</span></div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -250,5 +302,30 @@
     </div>
   </div>
   <script src="<?php echo site_url();?>static/page_front/js/pagos.js"></script>
+  <script src="https://codedthemes.com/demos/admin-templates/datta-able/bootstrap/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+  function show_second(){
+    $first_name = document.getElementById("first_name").value;
+    $last_name = document.getElementById("last_name").value;
+    $email = document.getElementById("email").value;
+    $pass = document.getElementById("pass").value;
+    if($first_name != "" && $last_name != "" && $email != "" && $pass != ""){
+      var a = document.getElementById('button-second'); //or grab it by tagname etc
+      a.href = "#designer"
+    }
+  }
+  </script>
+  <script>
+  function change_title_designer(){
+    $designer_tab = document.getElementById("designer-tab").classList.add("active");
+    $user_tab = document.getElementById("user-tab").classList.remove("active");
+  }
+  </script>
+<script>
+  function change_title_user(){
+    $designer_tab = document.getElementById("designer-tab").classList.remove("active");
+    $user_tab = document.getElementById("user-tab").classList.add("active");
+  }
+  </script>
 </body>
 </html>

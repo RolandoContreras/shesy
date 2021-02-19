@@ -52,8 +52,6 @@ class Landing extends CI_Controller {
                                     catalog.price_del,
                                     catalog.price,
                                     catalog.stock,
-<<<<<<< HEAD
-=======
                                     catalog.img,
                                     catalog.img2,
                                     catalog.img3,
@@ -61,7 +59,6 @@ class Landing extends CI_Controller {
                                     catalog.video,
                                     catalog.hot_link,
                                     catalog.date,
->>>>>>> 650aed93c87742d24007b7f5fac9eec450075ddd
                                     catalog.active,
                                     catalog.hot_link,
                                     category.slug as category_slug,
@@ -92,6 +89,7 @@ class Landing extends CI_Controller {
             $data_param = array(
                 'first_name' => $this->input->post("first_name"),
                 'last_name' => $this->input->post("last_name"),
+                'password' => $this->input->post("pass"),
                 'kit_id' => 0,
                 'range_id' => 0,
                 'active_month' => 0,
