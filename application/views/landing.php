@@ -40,6 +40,13 @@
     <!--//END FAVICON-->
     <link href="<?php echo site_url() . 'static/page_front/css/hot.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="<?php echo site_url() . 'static/page_front/css/bootstrap.min.css?version=4.4.0'; ?>" rel="stylesheet" >
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+    var site = '<?php echo site_url();?>';
+  </script>
   </head>
   <body>
   <div data-server-rendered="true">
@@ -74,9 +81,14 @@
                   <div class="hotpay-video" data-v-4d187430>
                     <h2 class="hotpay-subtitle" data-v-176b9906 data-v-4d187430></h2>
                     <div class="hotpay-video-container large" data-v-4d187430>
+<<<<<<< HEAD
                         <iframe src="https://player.vimeo.com/video/506276092?api=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay; fullscreen" data-v-4d187430></iframe>
                       <div class="hotpay-video-wrapper" data-v-4d187430>
                       </div>
+=======
+                    <iframe src="https://player.vimeo.com/video/<?php echo $video_id;?>" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
+                      <div class="hotpay-video-wrapper" data-v-4d187430></div>
+>>>>>>> 650aed93c87742d24007b7f5fac9eec450075ddd
                     </div>
                   </div>
                 </div>
@@ -93,10 +105,10 @@
                         <img src="<?php echo site_url()."static/catalog/$obj_catalog->img2";?>" data-v-49edbfa8>
                     </div>
                   </div>
+                  
                   <div class="hotpay-text ql-editor" data-v-490f5234>
-                    <p>
+                  <h1 style="color:#ffff00" style="text-align:center"><?php echo $obj_catalog->name;?></h1>
                      <?php echo $obj_catalog->description;?>     
-                    </p>
                   </div>
                 </div>
                 <div class="custom-skin-column width-1">
@@ -126,7 +138,11 @@
                   </div>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
+<<<<<<< HEAD
                             <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo $obj_catalog->price_del;?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
+=======
+                            <span style="font-size:40px;color:orange;text-decoration: line-through;"><b><?php echo format_number_moneda_dolares($obj_catalog->price_del);?></b></span>&nbsp&nbsp<span style="font-size:50px;;color:yellow"><b><?php echo format_number_moneda_dolares($obj_catalog->price);?></b></span>
+>>>>>>> 650aed93c87742d24007b7f5fac9eec450075ddd
                       </div>
                   </div>
                 </div>
@@ -137,42 +153,62 @@
                     <div class="checkout-wrapper" data-v-4b7ee574>
                       <div data-v-4b7ee574></div> 
                       <div class="bd-example" style="padding:25px;">
-                        <form>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese su correo">
+                          <div data-v-402bdc66="" class="disclaimer-product">
+                              <a data-v-402bdc66="" href="javascript:void(0);">
+                                Ingrese sus datos y adquiera su compra
+                              </a>
                           </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Nombres</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese sus nombre">
+                        <form name="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);"  style="padding-top:25px;" onsubmit="validate_hotmark('<?php echo $hot_link;?>');">
+                            <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                                  </div>
+                                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Ingrese sus nombres"  required="">
+                              </div>
+                              <br/>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                                  </div>
+                                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Ingrese sus apellidos" required="">
+                              </div>
+                              <br/>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-envelope-open"></i></span>
+                                  </div>
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese sus correo" required="">
+                              </div>
+                              <br/>
+                        <div class="hotpay-advantages hotpay-advantages-vertical small-container dark" data-v-76f37c86="">
+                          <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
+                            <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
+                              <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
+                            </div>
+                            <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
+                              <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
+                            </div>
                           </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Apellidos</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese sus apellidos">
+                        </div> 
+                        <div class="row">
+                        <div class="col-md-6"><br/>
+                          <input type="hidden" name="hot_link" id="hot_link" value="<?php echo $hot_link;?>"/>
+                          <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customer_id;?>"/>
+                          <button type="submit" id="submit_hot" class="btn btn-block btn-danger" <?php echo $hot_link==""?"disabled":"";?> >Metodos de Pagos - Hotmart</button>
+                        </div>
+                        <div class="col-md-6"><br/>
+                          <!--<button type="submit" class="btn btn-block btn-primary" onsubmit="validate_culqi();">Tarjeta de Crédito / Debito</button>-->
+                        </div>
+                        </div>
+                        <br/>
+                          <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
+                            <div class="hotpay-advantage-info" data-v-76f37c86="">
+                            <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
+                              Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
+                              Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
+                            </div>
                           </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Usuario</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese un usuario">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                          </div>
-                          <button type="submit" class="btn btn-primary btn-block">Ralizar Pago</button>
                         </form>
-                        <div data-v-402bdc66="" class=""><div data-v-402bdc66="" class=""><div data-v-402bdc66="" class="pay-beta-support"><b data-v-402bdc66="">¿Necesitas ayuda?</b> <a data-v-402bdc66="" name="emailLink" class="emailLink">
-                              Entra en contacto
-                            </a></div> <div data-v-402bdc66="" class="disclaimer-product">
-                              <a data-v-402bdc66="" href="https://atendimento.hotmart.com.br/hc/es-es/requests/new" target="_blank">
-                              Necesito ayuda para rellenar los datos de esta pantalla
-                            </a></div> <!----> <div data-v-402bdc66="" class="disclaimer-product"><p data-v-402bdc66="">
-                              Hotmart está procesando esta solicitud al servicio de Seminarios.Online®, al continuar estás de acuerdo con los
-                              <a data-v-402bdc66="" class="pay-modal tip">
-                                Términos de Compra
-                              </a></p></div></div> <div data-v-402bdc66="" class=""><div data-v-402bdc66="" class="pay-beta-rights">
-                            Hotmart © <span data-v-402bdc66="" id="anoFooter" class="rightsText">2021</span> - Todos los derechos reservados<br data-v-402bdc66="">
-                            2021-02-12T21:13:57.572Z REF.: V47649337K
-                          </div></div></div>
                         </div>
                       </div>
                   </div>
@@ -213,5 +249,6 @@
       </div>
     </div>
   </div>
+  <script src="<?php echo site_url();?>static/page_front/js/pagos.js"></script>
 </body>
 </html>

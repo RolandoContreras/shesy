@@ -70,6 +70,7 @@ $route['iniciar-sesion/validate'] = 'login/validate';
 $route['forget'] = 'forget';
 
 $route['soloporhoy/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'landing';
+$route['pago/hotmark'] = 'landing/validate_hot';
 
 $route['cursos'] = 'courses';
 $route['cursos/([0-9]+)'] = 'courses/index/$1';

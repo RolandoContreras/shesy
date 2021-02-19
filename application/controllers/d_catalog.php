@@ -77,22 +77,6 @@ class D_catalog extends CI_Controller {
     public function validate() {
         if ($this->input->is_ajax_request()) {
             $description = $this->input->post('description');
-            if (isset($_FILES["image_file4"]["name"]) && $_FILES["image_file4"]["name"] != "") {
-                $config['upload_path'] = './static/catalog';
-                $config['allowed_types'] = 'gif|jpg|png|jpeg';
-                $config['max_size'] = 3000;
-                $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('image_file4')) {
-                    $error = array('error' => $this->upload->display_errors());
-                    echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
-                } else {
-                    $data = array('upload_data' => $this->upload->data());
-                }
-                $img_4 = $_FILES["image_file4"]["name"];
-            }else{
-                $img_4 = $this->input->post("img_5");
-            }
-
             //GET CUSTOMER_ID
             $catalog_id = $this->input->post("catalog_id");
             $name = $this->input->post("name");
@@ -179,7 +163,7 @@ class D_catalog extends CI_Controller {
                     'img' => $img,
                     'img2' => $img2,
                     'img3' => $img3,
-                    'img4' => $img_4,
+                    'img4' => $img4,
                     'video' => $this->input->post('video'),
                     'hot_link' => $this->input->post('hot_link'),
                     'date' => date("Y-m-d H:i:s"),
