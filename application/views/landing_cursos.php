@@ -274,7 +274,7 @@
                                             if($hot_link != ""){ ?>
                                                 <button type="submit" class="btn-success btn-block btn" id="submit_hot"><i class="fa fa-shopping-bag text-c-white"></i> Métodos de Pago</button>
                                           <?php }else{ ?>
-                                            <button id="submit_culqi" type="button" style="color:white" data-price="<?php echo quitar_punto_number($obj_courses->price); ?>" data-price2="<?php echo $obj_courses->price; ?>" data-kit="<?php echo $obj_courses->course_id; ?>" class="buyButton btn theme-bg shadow-2 text-uppercase btn-block"><i class="fa fa-shopping-bag text-c-white"></i> <b>Metodo de Pago</b></button>
+                                            <button id="submit_culqi" type="button" style="color:white" data-price="<?php echo quitar_coma_number($obj_courses->price); ?>" data-price2="<?php echo $obj_courses->price; ?>" data-kit="<?php echo $obj_courses->course_id; ?>" class="buyButton btn theme-bg shadow-2 text-uppercase btn-block"><i class="fa fa-shopping-bag text-c-white"></i> <b>Metodo de Pago</b></button>
                                           <?php } ?>
                                         </div>
                                     </div>
