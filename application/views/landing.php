@@ -379,7 +379,7 @@
   <script>
 //    pk_test_igI3EctoA17FeNUD
 //pk_live_d4ZedlvJFWdrXoiI
-    Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+    Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
     var price = "";
     var price2 = "";
     var kit_id = "";
