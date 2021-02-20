@@ -123,7 +123,7 @@ class Landing extends CI_Controller {
                        courses.hot_link,
                        courses.date",
           "join" => array('category, category.category_id = courses.category_id'),
-          "where" => "category.slug = '$category_slug'");
+          "where" => "category.slug = '$category_slug' and courses.slug = '$slug'");
           $data['obj_courses'] = $this->obj_courses->get_search_row($params);
           $data['hot_link'] = $data['obj_courses']->hot_link;
         if($data['obj_courses']->video != null){
