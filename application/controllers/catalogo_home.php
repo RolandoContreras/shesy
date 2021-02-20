@@ -403,9 +403,12 @@ class Catalogo_home extends CI_Controller {
                                     invoices.total,
                                     invoices.active,
                                     customer.first_name,
-                                    customer.last_name,",
+                                    customer.last_name,
+                                    invoice_catalog.landing,
+                                    invoice_catalog.pending",
             "where" => "invoices.customer_id = $customer_id and invoices.type = 2 and invoices.status_value = 1",
-            "join" => array('customer, customer.customer_id = invoices.customer_id'),
+            "join" => array('customer, customer.customer_id = invoices.customer_id',
+                            'invoice_catalog, invoices.invoice_id = invoice_catalog.invoice_id'),
         );
 
         $obj_invoices = $this->obj_invoices->search($params);
@@ -479,6 +482,76 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_invoice_catalog", $obj_invoice_catalog);
         $this->tmp_catalog->render("catalogo/catalogo_order_detail");
+    }
+
+    public function complete_order($invoice_id) {
+        //GET SESION ACTUALY
+        $this->get_session();
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //get nav ctalogo
+        $obj_category_catalogo = $this->nav_catalogo();
+        $obj_sub_category = $this->nav_sub_category();
+        ////GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //total commission compra
+        $obj_total_compra = $this->total_comissions($customer_id);
+        $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
+        //GET DATA
+        $params = array(
+            "select" => "invoice_catalog.quantity,
+                         invoice_catalog.invoice_catalog_id,
+                        invoice_catalog.price,
+                        invoice_catalog.option,
+                        invoice_catalog.sub_total,
+                        invoice_catalog.date,
+                        catalog.name",
+            "where" => "invoice_catalog.invoice_id = $invoice_id",
+            "join" => array('catalog, invoice_catalog.catalog_id = catalog.catalog_id'),
+        );
+
+        $obj_invoice_catalog = $this->obj_invoice_catalog->get_search_row($params);
+        //send data
+        $this->tmp_catalog->set("obj_total_compra", $obj_total_compra);
+        $this->tmp_catalog->set("invoice_id", $invoice_id);
+        $this->tmp_catalog->set("total_compra", $total_compra);
+        $this->tmp_catalog->set("obj_profile", $obj_profile);
+        $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
+        $this->tmp_catalog->set("obj_invoice_catalog", $obj_invoice_catalog);
+        $this->tmp_catalog->render("catalogo/catalogo_order_data");
+    }
+    
+    public function validate_data_landing() {
+        if ($this->input->is_ajax_request()) {
+            //GET SESION ACTUALY
+            $this->get_session();
+            $invoice_id = $this->input->post('invoice_id');
+            $customer_id = $_SESSION['customer']['customer_id'];
+            $name = $this->input->post('name');
+            $phone = $this->input->post('phone');
+            $address = $this->input->post('address');
+            $reference = $this->input->post('reference');
+            $invoice_catalog_id = $this->input->post('invoice_catalog_id');
+            //insert data
+            $param = array(
+                'invoice_id' => $invoice_id,
+                'customer' => $name,
+                'phone' => $phone,
+                'address' => $address,
+                'reference' => $reference,
+                'active' => 1,
+                'status_value' => 1,
+            );
+            $contra_entrega_id = $this->obj_contra_entrega->insert($param);
+            //updated invoice catalog
+            $param_data = array(
+                'pending' => 0,
+            );
+            $this->obj_invoice_catalog->update($invoice_catalog_id, $param_data);
+            $data['status'] = true;
+            echo json_encode($data);
+        }
     }
 
     public function pay_order() {

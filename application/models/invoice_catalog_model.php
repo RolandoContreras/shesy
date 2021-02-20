@@ -26,7 +26,7 @@ class Invoice_catalog_Model extends CI_Model{
     public function __construct() {
         parent::__construct();  
         $this->table = 'invoice_catalog';
-	$this->table_id = 'invoice_catalog';
+	    $this->table_id = 'invoice_catalog_id';
         $this->invoice_catalog_id='';
         $this->invoice_id='';
         $this->catalog_id='';

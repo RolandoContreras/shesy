@@ -130,7 +130,7 @@ class Landing extends CI_Controller {
             );
             $this->obj_unilevel->insert($data_unilevel);
             //send message
-        //    $this->message($name, $email, $pass);
+            $this->message($email, $pass);
             //send 
             $data['status'] = true;
             echo json_encode($data);            
@@ -229,7 +229,9 @@ public function create_invoice() {
         'catalog_id' => $catalog_id,
         'price' => $price2,
         'quantity' => $qty,
-        'sub_total' => $price2,
+        'sub_total' => $sub_total,
+        'landing' => 1,
+        'pending' => 1,
         'date' => date("Y-m-d H:i:s")
     );
     $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);

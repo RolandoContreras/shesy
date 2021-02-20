@@ -91,6 +91,9 @@ $route['backoffice'] = "b_home";
 $route['mi_catalogo'] = "catalogo_home";
 $route['mi_catalogo/([0-9]+)'] = 'catalogo_home/index/$1';
 $route['mi_catalogo/order'] = "catalogo_home/order";
+$route['mi_catalogo/complete_order/([0-9]+)'] = "catalogo_home/complete_order/$1";
+$route['mi_catalogo/order/validate_data_landing'] = "catalogo_home/validate_data_landing";
+
 
 $route['mi_catalogo/puntos_compra'] = "catalogo_home/puntos_compra";
 

@@ -395,7 +395,7 @@
       if(email_nuevo != "" && pass != "" && qty != ""){
         document.getElementById("alert_message").style.display = "none";
         price = $(this).attr('data-price');
-        price = price * 3.5;
+        price = price * 3.5 * qty;
         price2 = $(this).attr('data-price2');
         kit_id = $(this).attr('data-kit');
         Culqi.options({

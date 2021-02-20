@@ -78,6 +78,11 @@
                                 </td>
                                 <td>
                                     <div class="operation">
+                                    <?php if($value->pending == 1){ ?>
+                                        <div class="btn-group">
+                                            <button type="button" onclick="complete_data('<?php echo $value->invoice_id;?>');" class="btn btn-rounded btn-outline-warning">Completar Datos de Compra</button>
+                                         </div>
+                                      <?php }else{ ?>
                                         <?php if($value->active == 0){ ?>
                                             <div class="btn-group">
                                                 <a style="color:rgb(29, 233, 182);" type="button" data-toggle="modal" data-target="#pay_modal" data-whatever="@getbootstrap" onclick="upload_invoice('<?php echo $value->invoice_id;?>');" class="btn btn-icon btn-rounded btn-outline-success"><i data-feather="upload"></i></a>
@@ -117,8 +122,13 @@
                                               </div>
                                         <?php } ?>
                                         <div class="btn-group">
-                                                   <button type="button" onclick="ver_order('<?php echo $value->invoice_id;?>');" class="btn btn-icon btn-rounded btn-outline-info"><i data-feather="eye"></i></button>
-                                            </div>
+                                            <button type="button" onclick="ver_order('<?php echo $value->invoice_id;?>');" class="btn btn-icon btn-rounded btn-outline-info"><i data-feather="eye"></i></button>
+                                         </div>
+
+                                      <?php } ?>
+
+
+                                      
                                     </div>
                                 </td>
                             </tr>
