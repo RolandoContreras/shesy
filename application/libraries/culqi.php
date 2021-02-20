@@ -18,6 +18,20 @@ class Culqi {
                   "description" => "Venta de Producto y/o Servicios",
                   "email" => "$email",
                   "installments" => 0,
+                  "source_id" => "$token"
+                )
+            );
+        return $charge;
+
+        /*
+         $charge = $culqi->Charges->create(
+                array(
+                  "amount" => $price,
+                  "capture" => true,
+                  "currency_code" => "PEN",
+                  "description" => "Venta de Producto y/o Servicios",
+                  "email" => "$email",
+                  "installments" => 0,
                   "antifraud_details" => array(
                       "country_code" => "PE",
                       "first_name" => "$first_name",
@@ -26,7 +40,7 @@ class Culqi {
                   "source_id" => "$token"
                 )
             );
-        return $charge;
+        return $charge;*/
     }
 }
 

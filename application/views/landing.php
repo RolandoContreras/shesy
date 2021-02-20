@@ -158,7 +158,23 @@
                 </div>
               </div>
               <div class="custom-skin-row">
-                <div class="custom-skin-column width-2" style="background-color:#f4f7fa;border-radius:10px;">
+              <style>
+                    .card-header {
+                        padding: .75rem 1.25rem;
+                        margin-bottom: 0;
+                        background-color: rgba(0, 0, 0, .03);
+                        border-bottom: 1px solid rgba(0, 0, 0, .125);
+                        background-color: black;
+                    }
+                    .card-header:first-child {
+                        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+                    }
+                    </style>
+                    
+                <div class="custom-skin-column width-2" style="background-color:#f4f7fa;border-radius:10px;padding:0px;border-radius: 10px;">
+                <div class="card-header" style="blackground-color:black !important:border-radius:20px;">
+                      <h3 style="text-align:center"><b>¡OBTENLO AHORA!</b></h3>
+                  </div>
                   <div>
                     <div class="checkout-wrapper" data-v-4b7ee574>
                       <div data-v-4b7ee574></div> 
@@ -169,10 +185,10 @@
                         <div class="col-xl-12 col-md-12 m-b-30" style="margin-top:20px;">
                           <ul class="nav nav-tabs" id="myTab1" role="tablist">
                               <li class="nav-item complete">
-                                  <a class="nav-link show active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="home" aria-selected="false">Datos Personales</a>
+                                  <a class="nav-link show active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="home" aria-selected="false"><b>PASO 1</b> <br/>Datos Personales</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link show" id="designer-tab" data-toggle="tab" href="#designer" role="tab" aria-controls="profile" aria-selected="true">Metodo de Pago</a>
+                                  <a class="nav-link show" id="designer-tab" data-toggle="tab" href="#designer" role="tab" aria-controls="profile" aria-selected="true"><b>PASO 2</b> <br/>Metodo de Pago</a>
                               </li>
                           </ul>
                           <div class="tab-content User-Lists active" id="myTabContent1" style="padding:18px;">
@@ -180,43 +196,37 @@
                                 <div style="padding:10px;">
                                   <div data-v-402bdc66="" class="disclaimer-product">
                                       <a data-v-402bdc66="" href="javascript:void(0);">
-                                        Ingrese sus datos y adquiera su compra
+                                      Enviaremos a tu correo el acceso de tu plataforma educativa
                                       </a>
                                   </div>
                                   <br/>
-                                    <div class="input-group">
-                                          <div class="input-group-prepend">
-                                              <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
-                                          </div>
-                                          <input type="text" onkeypress="show_second();" class="form-control" id="first_name" name="first_name" placeholder="Ingrese sus nombres"  required="">
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                          <div class="input-group-prepend">
-                                              <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
-                                          </div>
-                                          <input type="text" onkeypress="show_second();" class="form-control" id="last_name" name="last_name" placeholder="Ingrese sus apellidos" required="">
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                          <div class="input-group-prepend">
-                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
-                                          </div>
-                                          <input type="password" onkeypress="show_second();" class="form-control" id="pass" name="pass" placeholder="Ingrese su Contraseña" required="">
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
+                                  <label style="color:#888;margin-bottom:.5em;">+ Correo Electrónico</label>
+                                  <div class="input-group" style="padding-bottom:15px;">
                                           <div class="input-group-prepend">
                                               <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                           </div>
                                           <input type="email" onkeypress="show_second();" class="form-control" id="email" name="email" placeholder="Ingrese su correo" required="">
                                     </div>
-                                    <br/>
+                                    <label style="color:#888;margin-bottom:.5em;">+ Nueva Contraseña</label>
+                                    <div class="input-group" style="padding-bottom:15px;">
+                                          <div class="input-group-prepend">
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
+                                          </div>
+                                          <input type="password" onkeypress="show_second();" class="form-control" id="pass" name="pass" placeholder="Crear nueva Contraseña" required="">
+                                    </div>
+                                    <label style="color:#888;margin-bottom:.5em;">+ Teléfono Celular</label>
+                                    <div class="input-group" style="padding-bottom:15px;">
+                                          <div class="input-group-prepend">
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
+                                          </div>
+                                          <input type="text" onkeypress="show_second();" class="form-control" id="phone" name="phone" placeholder="Ingrese Celular" required="">
+                                    </div>
+                                    <label style="color:#888;margin-bottom:.5em;">+ Cantidad</label>
                                     <div class="input-group">
                                           <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shopping-basket"></i></span>
                                           </div>
-                                          <input type="text" onkeypress="show_second();" class="form-control" id="qty" name="qty" placeholder="Ingrese Cantidad (Kg) / (Und)" required="">
+                                          <input type="text" onkeypress="show_second();" class="form-control" id="qty" name="qty" placeholder="Cantidad (Kg) / (Und)" required="">
                                     </div>
                                     <br/>
                                     <div class="hotpay-advantages hotpay-advantages-vertical small-container dark">
@@ -272,7 +282,7 @@
                                         <div class="col-md-12"><br/>
                                           <?php 
                                             if($hot_link != ""){ ?>
-                                                <button type="submit" class="btn-success btn-block btn" id="submit_hot"><i class="fa fa-shopping-bag text-c-white"></i> Métodos de Pago 1</button>
+                                                <button type="submit" class="btn-success btn-block btn" id="submit_hot"><i class="fa fa-shopping-bag text-c-white"></i> Métodos de Pago</button>
                                           <?php }else{ ?>
                                             <button id="submit_culqi" type="button" style="color:white" data-price="<?php echo quitar_punto_number($obj_catalog->price); ?>" data-price2="<?php echo $obj_catalog->price; ?>" data-kit="<?php echo $obj_catalog->catalog_id; ?>" class="buyButton btn theme-bg shadow-2 text-uppercase btn-block"><i class="fa fa-shopping-bag text-c-white"></i> <b>Metodo de Pago</b></button>
                                           <?php } ?>
@@ -335,11 +345,11 @@
   <script src="<?php echo site_url();?>static/page_front/js/bootstrap.min.js"></script>
   <script>
   function show_second(){
-    $first_name = document.getElementById("first_name").value;
-    $last_name = document.getElementById("last_name").value;
     $email = document.getElementById("email").value;
     $pass = document.getElementById("pass").value;
-    if($first_name != "" && $last_name != "" && $email != "" && $pass != ""){
+    $qty = document.getElementById("qty").value;
+    $phone = document.getElementById("phone").value;
+    if($qty != "" && $email != "" && $pass != "" && $phone != ""){
       var a = document.getElementById('button-second'); //or grab it by tagname etc
       a.href = "#designer"
     }
@@ -347,12 +357,11 @@
   </script>
   <script>
   function change_title_designer(){
-    $first_name = document.getElementById("first_name").value;
-    $last_name = document.getElementById("last_name").value;
     $email = document.getElementById("email").value;
     $pass = document.getElementById("pass").value;
     $qty = document.getElementById("qty").value;
-    if($first_name != "" && $last_name != "" && $email != "" && $pass != "" && $qty != ""){ 
+    $phone = document.getElementById("phone").value;
+    if($email != "" && $pass != "" && $qty != "" && $phone != ""){ 
       $designer_tab = document.getElementById("designer-tab").classList.add("active");
       $user_tab = document.getElementById("user-tab").classList.remove("active");
     }else{
@@ -378,13 +387,12 @@
     $('.buyButton').on('click', function (e) {
       document.getElementById("submit_culqi").disabled = true;
       document.getElementById("submit_culqi").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
-      first_name = document.getElementById("first_name").value;
-      last_name = document.getElementById("last_name").value;
       email_nuevo = document.getElementById("email").value;
       pass = document.getElementById("pass").value;
       qty = document.getElementById("qty").value;
+      phone = document.getElementById("phone").value;
       customer_id = document.getElementById("customer_id").value;
-      if(first_name != "" && last_name != "" && email_nuevo != "" && pass != "" && qty != ""){
+      if(email_nuevo != "" && pass != "" && qty != ""){
         document.getElementById("alert_message").style.display = "none";
         price = $(this).attr('data-price');
         price = price * 3.5;
@@ -428,10 +436,9 @@
                     kit_id: kit_id,
                     email: email,
                     token: token,
-                    first_name: first_name,
-                    last_name: last_name,
                     email_nuevo: email_nuevo,
                     pass: pass,
+                    phone: phone,
                     customer_id: customer_id,
                     qty: qty
                 },

@@ -148,8 +148,7 @@ public function create_invoice() {
       $email_nuevo = $this->input->post('email_nuevo');
       $price = $this->input->post('price');
       $price2 = $this->input->post('price2');
-      $first_name =  $this->input->post("first_name");
-      $last_name =  $this->input->post("last_name");
+      $phone =  $this->input->post("phone");
       $pass =  $this->input->post("pass");
       $qty =  $this->input->post("qty");
       $sub_total = $price2 * $qty;
@@ -157,50 +156,58 @@ public function create_invoice() {
       $parent_id = $this->input->post("customer_id");
       $date_month = date("Y-m-d", strtotime("+30 day"));
       //MAKE CHARGE
-      $charge = $this->culqi->charge($token, $price, $email, $first_name, $last_name, "", "");
-       //create user
-       $data_param = array(
-        'first_name' => $first_name,
-        'last_name' => $last_name,
-        'password' => $pass,
-        'kit_id' => 0,
-        'range_id' => 0,
-        'email' => $email_nuevo,
-        'active' => 1,
-        'date_start' => date("Y-m-d H:i:s"),
-        'date_month' => $date_month,
-        'active_month' => 1,
-        'country' => 89,
-        'status_value' => 1,
-        'landing' => 1,
-        'created_at' => date("Y-m-d H:i:s"),
+      $charge = $this->culqi->charge($token, $price, $email, "", "", "", "");
+      //verify customer
+      $obj_customer = $this->verify_email($email);
+      if (!empty($obj_customer)) {
+        //start session
+        $customer_id = $obj_customer->customer_id;
+    } else {
+        //create user
+        $data_param = array(
+          'first_name' => "Cultura",
+          'last_name' => "Emprendedora",
+          'password' => $pass,
+          'kit_id' => 0,
+          'range_id' => 0,
+          'phone' => $phone,
+          'email' => $email_nuevo,
+          'active' => 1,
+          'date_start' => date("Y-m-d H:i:s"),
+          'date_month' => $date_month,
+          'active_month' => 1,
+          'country' => 89,
+          'status_value' => 1,
+          'landing' => 1,
+          'created_at' => date("Y-m-d H:i:s"),
       );
       $customer_id = $this->obj_customer->insert($data_param);
       //create unilevel      
       //confition
       if ($parent_id == 1) {
-      $new_ident = 1;
-      } else {
-      $param_customer = array(
-          "select" => "ident",
-          "where" => "customer_id = $parent_id");
-      $customer = $this->obj_unilevel->get_search_row($param_customer);
-      $ident = $customer->ident;
-      $new_ident = $ident . ",$parent_id";
-      }
-      //CREATE UNILEVEL
-      $data_unilevel = array(
-        'customer_id' => $customer_id,
-        'parend_id' => $parent_id,
-        'new_parend_id' => $parent_id,
-        'ident' => $new_ident,
-        'status_value' => 1,
-        'created_at' => date("Y-m-d H:i:s"),
-        'created_by' => $customer_id,
-        );
-      $this->obj_unilevel->insert($data_unilevel);
-      //send message
-      //    $this->message($name, $email, $pass);
+        $new_ident = 1;
+        } else {
+        $param_customer = array(
+            "select" => "ident",
+            "where" => "customer_id = $parent_id");
+        $customer = $this->obj_unilevel->get_search_row($param_customer);
+        $ident = $customer->ident;
+        $new_ident = $ident . ",$parent_id";
+        }
+        //CREATE UNILEVEL
+        $data_unilevel = array(
+          'customer_id' => $customer_id,
+          'parend_id' => $parent_id,
+          'new_parend_id' => $parent_id,
+          'ident' => $new_ident,
+          'status_value' => 1,
+          'created_at' => date("Y-m-d H:i:s"),
+          'created_by' => $customer_id,
+          );
+        $this->obj_unilevel->insert($data_unilevel);
+        //send message
+    }
+      //$this->message($email, $pass);
       //INSERT INVOICE
       $data_invoice = array(
         'customer_id' => $customer_id,
@@ -244,7 +251,7 @@ public function create_invoice() {
         }
          //iniciar sesion
          $data_customer_session['customer_id'] = $customer_id;
-         $data_customer_session['name'] = $first_name . ' ' . $last_name;
+         $data_customer_session['name'] = "Cultura Imparable";
          $data_customer_session['username'] = "";
          $data_customer_session['email'] = $email;
          $data_customer_session['kit_id'] = 0;
@@ -262,56 +269,12 @@ public function create_invoice() {
 }
 
 public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5, $customer_id, $qty) {
-
-  //get active moth from customer
-  $params = array(
-      "select" => "active_month",
-      "where" => "customer_id = $customer_id"
-  );
-  //GET DATA FROM BONUS
-  $obj_customer = $this->obj_customer->get_search_row($params);
-  $active_month = $obj_customer->active_month;
-  //verify
-  if ($active_month == 1) {
-      $amount = $bono_n1 * $qty;
-      $noventa_percent = $amount * 0.9;
-      $diez_percent = $amount * 0.1;
-      //set patam
-      $data_param = array(
-          'invoice_id' => $invoice_id,
-          'customer_id' => $customer_id,
-          'bonus_id' => 3,
-          'amount' => $noventa_percent,
-          'active' => 1,
-          'pago' => 0,
-          'status_value' => 1,
-          'date' => date("Y-m-d H:i:s"),
-          'created_at' => date("Y-m-d H:i:s"),
-          'created_by' => $customer_id,
-      );
-      $this->obj_commissions->insert($data_param);
-      //insert commission 10%
-      $data_param_2 = array(
-          'invoice_id' => $invoice_id,
-          'customer_id' => $customer_id,
-          'bonus_id' => 3,
-          'amount' => $diez_percent,
-          'active' => 1,
-          'pago' => 0,
-          'compras' => 1,
-          'status_value' => 1,
-          'date' => date("Y-m-d H:i:s"),
-          'created_at' => date("Y-m-d H:i:s"),
-          'created_by' => $customer_id,
-      );
-      $this->obj_commissions->insert($data_param_2);
-  }
-  //make upline
+//make upline
   $new_ident = explode(",", $ident);
   rsort($new_ident);
   //BOUCLE ULTI 5 LEVEL
   if (!empty($new_ident)) {
-      for ($x = 0; $x <= 3; $x++) {
+      for ($x = 0; $x <= 4; $x++) {
           if (isset($new_ident[$x])) {
               if ($new_ident[$x] != "") {
                   //get customer active
@@ -325,17 +288,20 @@ public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, 
                       //INSERT COMMISSION TABLE
                       switch ($x) {
                           case 0:
-                              $amount = $bono_n2 * $qty;
+                              $amount = $bono_n1 * $qty;
                               break;
                           case 1:
-                              $amount = $bono_n3 * $qty;
+                              $amount = $bono_n2 * $qty;
                               break;
                           case 2:
-                              $amount = $bono_n4 * $qty;
+                              $amount = $bono_n3 * $qty;
                               break;
                           case 3:
-                              $amount = $bono_n5 * $qty;
+                              $amount = $bono_n4 * $qty;
                               break;
+                          case 4:
+                              $amount = $bono_n5 * $qty;
+                            break;    
                       }
                       $noventa_percent = $amount * 0.9;
                       $diez_percent = $amount * 0.1;
@@ -375,7 +341,17 @@ public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, 
   }
 }
 
-public function message($name, $email,  $pass) {
+public function verify_email($email) {
+  $params = array(
+      "select" => "customer_id,
+                  first_name,
+                  last_name",
+      "where" => "email = '$email'");
+  $obj_customer = $this->obj_customer->get_search_row($params);
+  return $obj_customer;
+}
+
+public function message($email,  $pass) {
     $mensaje = wordwrap("<html>
                 
 <div bgcolor='#E9E9E9' style='background:#fff;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
@@ -389,7 +365,7 @@ align='center'>
           <tr>
             <td style='padding:0 30px;display:block;background:#fafafa'>
               <p style='padding:32px 32px 0;color:#333333;background:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;line-height:14px;margin:0;font-size:14px;border-radius:5px 5px 0 0'
-                align='left'>Hola $name,</p>
+                align='left'>Hola Emprendedor,</p>
             </td>
           </tr>
           <tr>
