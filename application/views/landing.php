@@ -46,6 +46,9 @@
     <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script src="https://checkout.culqi.com/js/v3"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
@@ -159,6 +162,9 @@
                   <div>
                     <div class="checkout-wrapper" data-v-4b7ee574>
                       <div data-v-4b7ee574></div> 
+                      <div id="alert_message" class="alert alert-danger" role="alert" style="margin-top:10px;display:none">
+                        Ingrese y verifique sus datos personales
+                      </div>
                       <form name="form_pay" id="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_hotmark();">
                         <div class="col-xl-12 col-md-12 m-b-30" style="margin-top:20px;">
                           <ul class="nav nav-tabs" id="myTab1" role="tablist">
@@ -194,6 +200,13 @@
                                     <br/>
                                     <div class="input-group">
                                           <div class="input-group-prepend">
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
+                                          </div>
+                                          <input type="password" onkeypress="show_second();" class="form-control" id="pass" name="pass" placeholder="Ingrese su Contraseña" required="">
+                                    </div>
+                                    <br/>
+                                    <div class="input-group">
+                                          <div class="input-group-prepend">
                                               <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                           </div>
                                           <input type="email" onkeypress="show_second();" class="form-control" id="email" name="email" placeholder="Ingrese su correo" required="">
@@ -201,9 +214,9 @@
                                     <br/>
                                     <div class="input-group">
                                           <div class="input-group-prepend">
-                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shopping-basket"></i></span>
                                           </div>
-                                          <input type="password" onkeypress="show_second();" class="form-control" id="pass" name="pass" placeholder="Ingrese su Contraseña" required="">
+                                          <input type="text" onkeypress="show_second();" class="form-control" id="qty" name="qty" placeholder="Ingrese Cantidad (Kg) / (Und)" required="">
                                     </div>
                                     <br/>
                                     <div class="hotpay-advantages hotpay-advantages-vertical small-container dark">
@@ -259,11 +272,10 @@
                                         <div class="col-md-12"><br/>
                                           <?php 
                                             if($hot_link != ""){ ?>
-                                                <button type="submit" class="btn-success btn-block btn" id="submit_hot"> Métodos de Pago 1</button>
+                                                <button type="submit" class="btn-success btn-block btn" id="submit_hot"><i class="fa fa-shopping-bag text-c-white"></i> Métodos de Pago 1</button>
                                           <?php }else{ ?>
-                                                
+                                            <button id="submit_culqi" type="button" style="color:white" data-price="<?php echo quitar_punto_number($obj_catalog->price); ?>" data-price2="<?php echo $obj_catalog->price; ?>" data-kit="<?php echo $obj_catalog->catalog_id; ?>" class="buyButton btn theme-bg shadow-2 text-uppercase btn-block"><i class="fa fa-shopping-bag text-c-white"></i> <b>Metodo de Pago</b></button>
                                           <?php } ?>
-                                          
                                         </div>
                                     </div>
                                     <br/>
@@ -335,8 +347,18 @@
   </script>
   <script>
   function change_title_designer(){
-    $designer_tab = document.getElementById("designer-tab").classList.add("active");
-    $user_tab = document.getElementById("user-tab").classList.remove("active");
+    $first_name = document.getElementById("first_name").value;
+    $last_name = document.getElementById("last_name").value;
+    $email = document.getElementById("email").value;
+    $pass = document.getElementById("pass").value;
+    $qty = document.getElementById("qty").value;
+    if($first_name != "" && $last_name != "" && $email != "" && $pass != "" && $qty != ""){ 
+      $designer_tab = document.getElementById("designer-tab").classList.add("active");
+      $user_tab = document.getElementById("user-tab").classList.remove("active");
+    }else{
+      document.getElementById("alert_message").style.display = "block";
+    }
+    
   }
   </script>
 <script>
@@ -345,5 +367,108 @@
     $user_tab = document.getElementById("user-tab").classList.add("active");
   }
   </script>
+  <script>
+//    pk_test_igI3EctoA17FeNUD
+//pk_live_d4ZedlvJFWdrXoiI
+    Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+    var price = "";
+    var price2 = "";
+    var kit_id = "";
+
+    $('.buyButton').on('click', function (e) {
+      document.getElementById("submit_culqi").disabled = true;
+      document.getElementById("submit_culqi").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
+      first_name = document.getElementById("first_name").value;
+      last_name = document.getElementById("last_name").value;
+      email_nuevo = document.getElementById("email").value;
+      pass = document.getElementById("pass").value;
+      qty = document.getElementById("qty").value;
+      customer_id = document.getElementById("customer_id").value;
+      if(first_name != "" && last_name != "" && email_nuevo != "" && pass != "" && qty != ""){
+        document.getElementById("alert_message").style.display = "none";
+        price = $(this).attr('data-price');
+        price = price * 3.5;
+        price2 = $(this).attr('data-price2');
+        kit_id = $(this).attr('data-kit');
+        Culqi.options({
+            lang: 'auto',
+            modal: true,
+            style: {
+                logo: '<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>',
+                maincolor: '#0ec1c1',
+                buttontext: '#ffffff',
+                maintext: '#4A4A4A',
+                desctext: '#4A4A4A'
+            }
+        });
+        Culqi.settings({
+            title: 'Cultura Emprendedora',
+            currency: 'PEN',
+            description: 'Venta de Producto y/o Servicio',
+            amount: price
+        });
+        Culqi.open();
+        e.preventDefault();
+      }else{
+        document.getElementById("alert_message").style.display = "block";
+      }
+    });
+
+    function culqi() {
+        if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+            var token = Culqi.token.id;
+            var email = Culqi.token.email;
+            var url = site + "landing/create_invoice";
+            $.ajax({
+                url: url,
+                method: 'post',
+                data: {
+                    price: price,
+                    price2: price2,
+                    kit_id: kit_id,
+                    email: email,
+                    token: token,
+                    first_name: first_name,
+                    last_name: last_name,
+                    email_nuevo: email_nuevo,
+                    pass: pass,
+                    customer_id: customer_id,
+                    qty: qty
+                },
+                dataType: 'JSON',
+                success: function (data) {
+                    if (data.object == "charge") {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Pago Procesado',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        url = site + "mi_catalogo/order";
+                        setTimeout(function(){location.href=url} , 1500);  
+                    } else {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'info',
+                            title: 'Ups! Sucedio un error ',
+                            footer: "Verifique los datos y/o fondo de la tarjeta"
+                        });
+                        document.getElementById("submit_culqi").disabled = false;
+                        document.getElementById("submit_culqi").innerHTML = "Metodos de Pago";
+                    }
+                },
+                error: function (data) {
+                    alert(data.user_message);
+                }
+            });
+        } else {
+            console.log(Culqi.error);
+            alert(Culqi.error.user_message);
+        }
+    }
+    ;
+
+</script>
 </body>
 </html>

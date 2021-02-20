@@ -8,6 +8,11 @@ class Landing extends CI_Controller {
         $this->load->model("catalog_model","obj_catalog");
         $this->load->model("customer_model","obj_customer");
         $this->load->model("unilevel_model","obj_unilevel");
+        $this->load->model("invoices_model", "obj_invoices");
+        $this->load->model("invoice_catalog_model", "obj_invoice_catalog");
+        $this->load->model("commissions_model", "obj_commissions");
+        $this->load->library('culqi');
+
     }   
 
 	/**
@@ -85,7 +90,6 @@ class Landing extends CI_Controller {
         date_default_timezone_set('America/Lima');
             //set pass
             //create passtowrd rand
-            $pass = $this->crear_pass_rand();
             $parent_id = $this->input->post("customer_id");
             //create user
             $data_param = array(
@@ -96,7 +100,6 @@ class Landing extends CI_Controller {
                 'range_id' => 0,
                 'active_month' => 0,
                 'email' => $this->input->post("email"),
-                'password' => $pass,
                 'country' => 89,
                 'active' => 0,
                 'status_value' => 1,
@@ -133,6 +136,243 @@ class Landing extends CI_Controller {
             echo json_encode($data);            
     exit();
         }
+}
+
+public function create_invoice() {
+  try {
+      date_default_timezone_set('America/Lima');
+      //SELECT ID FROM CUSTOMER
+      $token = $this->input->post('token');
+      $catalog_id = trim($this->input->post('kit_id'));
+      $email = $this->input->post('email');
+      $email_nuevo = $this->input->post('email_nuevo');
+      $price = $this->input->post('price');
+      $price2 = $this->input->post('price2');
+      $first_name =  $this->input->post("first_name");
+      $last_name =  $this->input->post("last_name");
+      $pass =  $this->input->post("pass");
+      $qty =  $this->input->post("qty");
+      $sub_total = $price2 * $qty;
+      //create user
+      $parent_id = $this->input->post("customer_id");
+      $date_month = date("Y-m-d", strtotime("+30 day"));
+      //MAKE CHARGE
+      $charge = $this->culqi->charge($token, $price, $email, $first_name, $last_name, "", "");
+       //create user
+       $data_param = array(
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'password' => $pass,
+        'kit_id' => 0,
+        'range_id' => 0,
+        'email' => $email_nuevo,
+        'active' => 1,
+        'date_start' => date("Y-m-d H:i:s"),
+        'date_month' => $date_month,
+        'active_month' => 1,
+        'country' => 89,
+        'status_value' => 1,
+        'landing' => 1,
+        'created_at' => date("Y-m-d H:i:s"),
+      );
+      $customer_id = $this->obj_customer->insert($data_param);
+      //create unilevel      
+      //confition
+      if ($parent_id == 1) {
+      $new_ident = 1;
+      } else {
+      $param_customer = array(
+          "select" => "ident",
+          "where" => "customer_id = $parent_id");
+      $customer = $this->obj_unilevel->get_search_row($param_customer);
+      $ident = $customer->ident;
+      $new_ident = $ident . ",$parent_id";
+      }
+      //CREATE UNILEVEL
+      $data_unilevel = array(
+        'customer_id' => $customer_id,
+        'parend_id' => $parent_id,
+        'new_parend_id' => $parent_id,
+        'ident' => $new_ident,
+        'status_value' => 1,
+        'created_at' => date("Y-m-d H:i:s"),
+        'created_by' => $customer_id,
+        );
+      $this->obj_unilevel->insert($data_unilevel);
+      //send message
+      //    $this->message($name, $email, $pass);
+      //INSERT INVOICE
+      $data_invoice = array(
+        'customer_id' => $customer_id,
+        'sub_total' => $sub_total,
+        'igv' => 0,
+        'total' => $sub_total,
+        'type' => 2,
+        'delivery' => 0,
+        'date' => date("Y-m-d H:i:s"),
+        'active' => 0,
+        'status_value' => 1,
+        'created_at' => date("Y-m-d H:i:s"),
+        'created_by' => $customer_id,
+    );
+    $invoice_id = $this->obj_invoices->insert($data_invoice);
+    //create inovice catalog
+    $data_invoice_catalog = array(
+        'invoice_id' => $invoice_id,
+        'catalog_id' => $catalog_id,
+        'price' => $price2,
+        'quantity' => $qty,
+        'sub_total' => $price2,
+        'date' => date("Y-m-d H:i:s")
+    );
+    $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+      //get productos by invoice_id
+      $params = array(
+          "select" => "invoice_catalog.quantity,
+                      catalog.bono_n1,
+                      catalog.bono_n2,
+                      catalog.bono_n3,
+                      catalog.bono_n4,
+                      catalog.bono_n5",
+          "where" => "invoice_catalog.invoice_id = $invoice_id",
+          "join" => array('catalog, invoice_catalog.catalog_id = catalog.catalog_id'),
+      );
+      $obj_invoice_catalog = $this->obj_invoice_catalog->get_search_row($params);
+        if(!empty($new_ident)){
+          //INSERT AMOUNT ON COMMISION TABLE    
+          $this->pay_unilevel($new_ident, $invoice_id, $obj_invoice_catalog->bono_n1, $obj_invoice_catalog->bono_n2, $obj_invoice_catalog->bono_n3, $obj_invoice_catalog->bono_n4, $obj_invoice_catalog->bono_n5, $customer_id, $obj_invoice_catalog->quantity);
+        }
+         //iniciar sesion
+         $data_customer_session['customer_id'] = $customer_id;
+         $data_customer_session['name'] = $first_name . ' ' . $last_name;
+         $data_customer_session['username'] = "";
+         $data_customer_session['email'] = $email;
+         $data_customer_session['kit_id'] = 0;
+         $data_customer_session['active_month'] = 1;
+         $data_customer_session['active'] = 1;
+         $data_customer_session['logged_customer'] = "TRUE";
+         $data_customer_session['status'] = 1;
+         $_SESSION['customer'] = $data_customer_session;
+      
+      echo json_encode($charge);
+  } catch (Exception $e) {
+      $data['status'] = false;
+      echo json_encode($e->getMessage());
+  }
+}
+
+public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5, $customer_id, $qty) {
+
+  //get active moth from customer
+  $params = array(
+      "select" => "active_month",
+      "where" => "customer_id = $customer_id"
+  );
+  //GET DATA FROM BONUS
+  $obj_customer = $this->obj_customer->get_search_row($params);
+  $active_month = $obj_customer->active_month;
+  //verify
+  if ($active_month == 1) {
+      $amount = $bono_n1 * $qty;
+      $noventa_percent = $amount * 0.9;
+      $diez_percent = $amount * 0.1;
+      //set patam
+      $data_param = array(
+          'invoice_id' => $invoice_id,
+          'customer_id' => $customer_id,
+          'bonus_id' => 3,
+          'amount' => $noventa_percent,
+          'active' => 1,
+          'pago' => 0,
+          'status_value' => 1,
+          'date' => date("Y-m-d H:i:s"),
+          'created_at' => date("Y-m-d H:i:s"),
+          'created_by' => $customer_id,
+      );
+      $this->obj_commissions->insert($data_param);
+      //insert commission 10%
+      $data_param_2 = array(
+          'invoice_id' => $invoice_id,
+          'customer_id' => $customer_id,
+          'bonus_id' => 3,
+          'amount' => $diez_percent,
+          'active' => 1,
+          'pago' => 0,
+          'compras' => 1,
+          'status_value' => 1,
+          'date' => date("Y-m-d H:i:s"),
+          'created_at' => date("Y-m-d H:i:s"),
+          'created_by' => $customer_id,
+      );
+      $this->obj_commissions->insert($data_param_2);
+  }
+  //make upline
+  $new_ident = explode(",", $ident);
+  rsort($new_ident);
+  //BOUCLE ULTI 5 LEVEL
+  if (!empty($new_ident)) {
+      for ($x = 0; $x <= 3; $x++) {
+          if (isset($new_ident[$x])) {
+              if ($new_ident[$x] != "") {
+                  //get customer active
+                  $params = array(
+                      "select" => "active_month",
+                      "where" => "customer_id = $new_ident[$x]"
+                  );
+                  //GET DATA FROM BONUS
+                  $obj_customer = $this->obj_customer->get_search_row($params);
+                  if (isset($obj_customer->active_month) && $obj_customer->active_month == 1) {
+                      //INSERT COMMISSION TABLE
+                      switch ($x) {
+                          case 0:
+                              $amount = $bono_n2 * $qty;
+                              break;
+                          case 1:
+                              $amount = $bono_n3 * $qty;
+                              break;
+                          case 2:
+                              $amount = $bono_n4 * $qty;
+                              break;
+                          case 3:
+                              $amount = $bono_n5 * $qty;
+                              break;
+                      }
+                      $noventa_percent = $amount * 0.9;
+                      $diez_percent = $amount * 0.1;
+                      //insert on table commision
+                      $data_unilevel = array(
+                          'invoice_id' => $invoice_id,
+                          'customer_id' => $new_ident[$x],
+                          'bonus_id' => 3,
+                          'amount' => $noventa_percent,
+                          'active' => 1,
+                          'pago' => 0,
+                          'status_value' => 1,
+                          'date' => date("Y-m-d H:i:s"),
+                          'created_at' => date("Y-m-d H:i:s"),
+                          'created_by' => $customer_id,
+                      );
+                      $this->obj_commissions->insert($data_unilevel);
+                      //insert commission 10%
+                      $data_unilevel_2 = array(
+                          'invoice_id' => $invoice_id,
+                          'customer_id' => $new_ident[$x],
+                          'bonus_id' => 3,
+                          'amount' => $diez_percent,
+                          'active' => 1,
+                          'pago' => 0,
+                          'compras' => 1,
+                          'status_value' => 1,
+                          'date' => date("Y-m-d H:i:s"),
+                          'created_at' => date("Y-m-d H:i:s"),
+                          'created_by' => $customer_id,
+                      );
+                      $this->obj_commissions->insert($data_unilevel_2);
+                  }
+              }
+          }
+      }
+  }
 }
 
 public function message($name, $email,  $pass) {
