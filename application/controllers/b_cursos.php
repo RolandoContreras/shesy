@@ -266,12 +266,15 @@ class B_cursos extends CI_Controller {
             //total comission compra
             $obj_total_compra = $this->total_comissions($customer_id);
             $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
+            //set url sell
+            $url =  site_url()."cursosporhoy/$obj_courses->category_slug/$obj_courses->slug?d=$customer_id";    
             //SEND DATA
             $this->tmp_catalog->set("obj_profile",$obj_profile);
             $this->tmp_catalog->set("total_compra",$total_compra);
             $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
             $this->tmp_catalog->set("obj_courses_all",$obj_courses_all);
             $this->tmp_catalog->set("obj_courses",$obj_courses);
+            $this->tmp_catalog->set("url",$url);
             $this->tmp_catalog->render("backoffice/b_cursos_detail");
 	}
 

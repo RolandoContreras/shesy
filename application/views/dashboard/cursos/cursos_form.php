@@ -145,6 +145,10 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label>Enlace del Vídeo (Vimeo o Youtube)</label>
+                                                        <input class="form-control" type="text" id="video" name="video" value="<?php echo isset($obj_courses->video) ? $obj_courses->video : ""; ?>" class="input-xlarge-fluid" placeholder="Ingrese Enlace de Vídeo">
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label>Hot Link</label>
                                                         <input class="form-control" type="text" id="hot_link" name="hot_link" value="<?php echo isset($obj_courses->hot_link) ? $obj_courses->hot_link : ""; ?>" class="input-xlarge-fluid" placeholder="Ingrese Hot Link">
                                                     </div>

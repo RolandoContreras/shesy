@@ -58,6 +58,14 @@
                                                                         <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>');"><i data-feather="shopping-cart"></i> Agregar al Carrito</button>
                                                                 </div>
                                                             </div>
+                                                            <div class="row form-group">
+                                                                <div class="col-sm-6">
+                                                                    <input type="text" id="copy" value="<?php echo $url;?>" class="form-control" readonly=""/>
+                                                                </div>           
+                                                                <div class="col-sm-6">
+                                                                    <button type="button" class="btn btn-info btn-block" title="Copiar Enlace"  onclick="copy();"><i data-feather="copy"></i> Copiar Enlace del Vídeo</button>
+                                                                </div>
+                                                            </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
@@ -90,4 +98,15 @@
                         color:white !important;
                     }
                 </style>
+                <script>
+                    function copy() {
+                            var copyText = document.getElementById("copy");
+                            copyText.select();
+                            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+                            /* Copy the text inside the text field */
+                            document.execCommand("copy");
+                            /* Alert the copied text */
+                            alert("Copiado");
+                            }
+                </script>
 

@@ -11,6 +11,9 @@ class Landing extends CI_Controller {
         $this->load->model("invoices_model", "obj_invoices");
         $this->load->model("invoice_catalog_model", "obj_invoice_catalog");
         $this->load->model("commissions_model", "obj_commissions");
+        $this->load->model("courses_model", "obj_courses");
+        $this->load->model("customer_courses_model", "obj_customer_courses");
+        
         $this->load->library('culqi');
 
     }   
@@ -84,7 +87,58 @@ class Landing extends CI_Controller {
         $this->load->view('landing',$data);
 	}
 
-    public function validate_hot(){
+  public function cursos()
+	{   
+        if(isset($_GET["d"])){
+            $customer_id = $_GET["d"];
+        }else{
+            $customer_id = 1;            
+        }
+        $data['customer_id'] = $customer_id;
+        //get data nav
+        $url = explode("/", uri_string());
+        $category_slug = $url[1];
+        $slug = $url[2];   
+        //get cursos
+        $params = array( 
+          "select" => "courses.course_id,
+                       courses.name,
+                       courses.slug,
+                       category.category_id,
+                       category.name as category_name,
+                       category.slug as category_slug,
+                       courses.description,
+                       courses.img,
+                       courses.price,
+                       courses.price_del,
+                       courses.bono_1,
+                       courses.bono_2,
+                       courses.bono_3,
+                       courses.bono_4,
+                       courses.bono_5,
+                       courses.free,
+                       courses.video,
+                       courses.duration,
+                       courses.active,
+                       courses.hot_link,
+                       courses.date",
+          "join" => array('category, category.category_id = courses.category_id'),
+          "where" => "category.slug = '$category_slug'");
+          $data['obj_courses'] = $this->obj_courses->get_search_row($params);
+          $data['hot_link'] = $data['obj_courses']->hot_link;
+        if($data['obj_courses']->video != null){
+            $video = $data['obj_courses']->video;
+            $explode =  explode("/",$video);
+            $host = $explode[2];
+            $video_id = $explode[3];
+            $data['host'] = $host;
+            $data['video_id'] = $video_id;
+        }
+        //SEND DATA
+        $this->load->view('landing_cursos',$data);
+	}
+
+  public function validate_hot(){
         //UPDATE DATA ORDERS
     if($this->input->is_ajax_request()){  
         date_default_timezone_set('America/Lima');
@@ -93,8 +147,8 @@ class Landing extends CI_Controller {
             $parent_id = $this->input->post("customer_id");
             //create user
             $data_param = array(
-                'first_name' => $this->input->post("first_name"),
-                'last_name' => $this->input->post("last_name"),
+                'first_name' => "Cultura",
+                'last_name' => "Emprendedora",
                 'password' => $this->input->post("pass"),
                 'kit_id' => 0,
                 'range_id' => 0,
@@ -136,139 +190,314 @@ class Landing extends CI_Controller {
             echo json_encode($data);            
     exit();
         }
-}
+  }
 
-public function create_invoice() {
-  try {
-      date_default_timezone_set('America/Lima');
-      //SELECT ID FROM CUSTOMER
-      $token = $this->input->post('token');
-      $catalog_id = trim($this->input->post('kit_id'));
-      $email = $this->input->post('email');
-      $email_nuevo = $this->input->post('email_nuevo');
-      $price = $this->input->post('price');
-      $price2 = $this->input->post('price2');
-      $phone =  $this->input->post("phone");
-      $pass =  $this->input->post("pass");
-      $qty =  $this->input->post("qty");
-      $sub_total = $price2 * $qty;
-      //create user
-      $parent_id = $this->input->post("customer_id");
-      $date_month = date("Y-m-d", strtotime("+30 day"));
-      //MAKE CHARGE
-      $charge = $this->culqi->charge($token, $price, $email, "", "", "", "");
-      //verify customer
-      $obj_customer = $this->verify_email($email);
-      if (!empty($obj_customer)) {
-        //start session
-        $customer_id = $obj_customer->customer_id;
-    } else {
-        //create user
-        $data_param = array(
-          'first_name' => "Cultura",
-          'last_name' => "Emprendedora",
-          'password' => $pass,
-          'kit_id' => 0,
-          'range_id' => 0,
-          'phone' => $phone,
-          'email' => $email_nuevo,
-          'active' => 1,
-          'date_start' => date("Y-m-d H:i:s"),
-          'date_month' => $date_month,
-          'active_month' => 1,
-          'country' => 89,
-          'status_value' => 1,
-          'landing' => 1,
-          'created_at' => date("Y-m-d H:i:s"),
-      );
-      $customer_id = $this->obj_customer->insert($data_param);
-      //create unilevel      
-      //confition
-      if ($parent_id == 1) {
-        $new_ident = 1;
-        } else {
-        $param_customer = array(
-            "select" => "ident",
-            "where" => "customer_id = $parent_id");
-        $customer = $this->obj_unilevel->get_search_row($param_customer);
-        $ident = $customer->ident;
-        $new_ident = $ident . ",$parent_id";
+  public function cursos_validate_hot(){
+    //UPDATE DATA ORDERS
+    if($this->input->is_ajax_request()){  
+    date_default_timezone_set('America/Lima');
+        //set pass
+        $email = $this->input->post("email");
+        //create passtowrd rand
+        $obj_customer = $this->verify_email($email);
+        if (!empty($obj_customer)) {
+          //send message
+          $this->message($email, $pass);
+        }else{
+          $parent_id = $this->input->post("customer_id");
+          //create user
+          $data_param = array(
+              'first_name' => "Cultura",
+              'last_name' => "Emprendedora",
+              'password' => $this->input->post("pass"),
+              'kit_id' => 0,
+              'range_id' => 0,
+              'active_month' => 0,
+              'email' => $this->input->post("email"),
+              'country' => 89,
+              'active' => 0,
+              'status_value' => 1,
+              'landing' => 1,
+              'created_at' => date("Y-m-d H:i:s"),
+          );
+          $customer_id = $this->obj_customer->insert($data_param);
+          //confition
+          if ($parent_id == 1) {
+              $new_ident = 1;
+          } else {
+              $param_customer = array(
+                  "select" => "ident",
+                  "where" => "customer_id = $parent_id");
+              $customer = $this->obj_unilevel->get_search_row($param_customer);
+              $ident = $customer->ident;
+              $new_ident = $ident . ",$parent_id";
+          }
+          //CREATE UNILEVEL
+          $data_unilevel = array(
+              'customer_id' => $customer_id,
+              'parend_id' => $parent_id,
+              'new_parend_id' => $parent_id,
+              'ident' => $new_ident,
+              'status_value' => 1,
+              'created_at' => date("Y-m-d H:i:s"),
+              'created_by' => $customer_id,
+          );
+          $this->obj_unilevel->insert($data_unilevel);
+          //send message
+          $this->message($email, $pass);
         }
-        //CREATE UNILEVEL
-        $data_unilevel = array(
+        //send 
+        $data['status'] = true;
+        echo json_encode($data);            
+    exit();
+      }
+  }
+
+  public function create_invoice() {
+    try {
+        date_default_timezone_set('America/Lima');
+        //SELECT ID FROM CUSTOMER
+        $token = $this->input->post('token');
+        $catalog_id = trim($this->input->post('kit_id'));
+        $email = $this->input->post('email');
+        $email_nuevo = $this->input->post('email_nuevo');
+        $price = $this->input->post('price');
+        $price2 = $this->input->post('price2');
+        $phone =  $this->input->post("phone");
+        $pass =  $this->input->post("pass");
+        $qty =  $this->input->post("qty");
+        $sub_total = $price2 * $qty;
+        //create user
+        $parent_id = $this->input->post("customer_id");
+        $date_month = date("Y-m-d", strtotime("+30 day"));
+        //MAKE CHARGE
+        $charge = $this->culqi->charge($token, $price, $email, "", "", "", "");
+        //verify customer
+        $obj_customer = $this->verify_email($email);
+        if (!empty($obj_customer)) {
+          //start session
+          $customer_id = $obj_customer->customer_id;
+      } else {
+          //create user
+          $data_param = array(
+            'first_name' => "Cultura",
+            'last_name' => "Emprendedora",
+            'password' => $pass,
+            'kit_id' => 0,
+            'range_id' => 0,
+            'phone' => $phone,
+            'email' => $email_nuevo,
+            'active' => 1,
+            'date_start' => date("Y-m-d H:i:s"),
+            'date_month' => $date_month,
+            'active_month' => 1,
+            'country' => 89,
+            'status_value' => 1,
+            'landing' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+        );
+        $customer_id = $this->obj_customer->insert($data_param);
+        //create unilevel      
+        if ($parent_id == 1) {
+          $new_ident = 1;
+          } else {
+          $param_customer = array(
+              "select" => "ident",
+              "where" => "customer_id = $parent_id");
+          $customer = $this->obj_unilevel->get_search_row($param_customer);
+          $ident = $customer->ident;
+          $new_ident = $ident . ",$parent_id";
+          }
+          //CREATE UNILEVEL
+          $data_unilevel = array(
+            'customer_id' => $customer_id,
+            'parend_id' => $parent_id,
+            'new_parend_id' => $parent_id,
+            'ident' => $new_ident,
+            'status_value' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $customer_id,
+            );
+          $this->obj_unilevel->insert($data_unilevel);
+      }
+        //send message
+        $this->message($email, $pass);
+        //INSERT INVOICE
+        $data_invoice = array(
           'customer_id' => $customer_id,
-          'parend_id' => $parent_id,
-          'new_parend_id' => $parent_id,
-          'ident' => $new_ident,
+          'sub_total' => $sub_total,
+          'igv' => 0,
+          'total' => $sub_total,
+          'type' => 2,
+          'delivery' => 0,
+          'date' => date("Y-m-d H:i:s"),
+          'active' => 0,
           'status_value' => 1,
           'created_at' => date("Y-m-d H:i:s"),
           'created_by' => $customer_id,
-          );
-        $this->obj_unilevel->insert($data_unilevel);
-        //send message
-    }
-      $this->message($email, $pass);
-      //INSERT INVOICE
-      $data_invoice = array(
-        'customer_id' => $customer_id,
-        'sub_total' => $sub_total,
-        'igv' => 0,
-        'total' => $sub_total,
-        'type' => 2,
-        'delivery' => 0,
-        'date' => date("Y-m-d H:i:s"),
-        'active' => 0,
-        'status_value' => 1,
-        'created_at' => date("Y-m-d H:i:s"),
-        'created_by' => $customer_id,
-    );
-    $invoice_id = $this->obj_invoices->insert($data_invoice);
-    //create inovice catalog
-    $data_invoice_catalog = array(
-        'invoice_id' => $invoice_id,
-        'catalog_id' => $catalog_id,
-        'price' => $price2,
-        'quantity' => $qty,
-        'sub_total' => $sub_total,
-        'landing' => 1,
-        'pending' => 1,
-        'date' => date("Y-m-d H:i:s")
-    );
-    $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
-      //get productos by invoice_id
-      $params = array(
-          "select" => "invoice_catalog.quantity,
-                      catalog.bono_n1,
-                      catalog.bono_n2,
-                      catalog.bono_n3,
-                      catalog.bono_n4,
-                      catalog.bono_n5",
-          "where" => "invoice_catalog.invoice_id = $invoice_id",
-          "join" => array('catalog, invoice_catalog.catalog_id = catalog.catalog_id'),
       );
-      $obj_invoice_catalog = $this->obj_invoice_catalog->get_search_row($params);
-        if(!empty($new_ident)){
-          //INSERT AMOUNT ON COMMISION TABLE    
-          $this->pay_unilevel($new_ident, $invoice_id, $obj_invoice_catalog->bono_n1, $obj_invoice_catalog->bono_n2, $obj_invoice_catalog->bono_n3, $obj_invoice_catalog->bono_n4, $obj_invoice_catalog->bono_n5, $customer_id, $obj_invoice_catalog->quantity);
-        }
-         //iniciar sesion
-         $data_customer_session['customer_id'] = $customer_id;
-         $data_customer_session['name'] = "Cultura Imparable";
-         $data_customer_session['username'] = "";
-         $data_customer_session['email'] = $email;
-         $data_customer_session['kit_id'] = 0;
-         $data_customer_session['active_month'] = 1;
-         $data_customer_session['active'] = 1;
-         $data_customer_session['logged_customer'] = "TRUE";
-         $data_customer_session['status'] = 1;
-         $_SESSION['customer'] = $data_customer_session;
-      
-      echo json_encode($charge);
-  } catch (Exception $e) {
-      $data['status'] = false;
-      echo json_encode($e->getMessage());
+      $invoice_id = $this->obj_invoices->insert($data_invoice);
+      //create inovice catalog
+      $data_invoice_catalog = array(
+          'invoice_id' => $invoice_id,
+          'catalog_id' => $catalog_id,
+          'price' => $price2,
+          'quantity' => $qty,
+          'sub_total' => $sub_total,
+          'landing' => 1,
+          'pending' => 1,
+          'date' => date("Y-m-d H:i:s")
+      );
+      $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+        //get productos by invoice_id
+        $params = array(
+            "select" => "invoice_catalog.quantity,
+                        catalog.bono_n1,
+                        catalog.bono_n2,
+                        catalog.bono_n3,
+                        catalog.bono_n4,
+                        catalog.bono_n5",
+            "where" => "invoice_catalog.invoice_id = $invoice_id",
+            "join" => array('catalog, invoice_catalog.catalog_id = catalog.catalog_id'),
+        );
+        $obj_invoice_catalog = $this->obj_invoice_catalog->get_search_row($params);
+          if(!empty($new_ident)){
+            //INSERT AMOUNT ON COMMISION TABLE    
+            $this->pay_unilevel($new_ident, $invoice_id, $obj_invoice_catalog->bono_n1, $obj_invoice_catalog->bono_n2, $obj_invoice_catalog->bono_n3, $obj_invoice_catalog->bono_n4, $obj_invoice_catalog->bono_n5, $customer_id, $obj_invoice_catalog->quantity);
+          }
+          //iniciar sesion
+          $data_customer_session['customer_id'] = $customer_id;
+          $data_customer_session['name'] = "Cultura Imparable";
+          $data_customer_session['username'] = "";
+          $data_customer_session['email'] = $email;
+          $data_customer_session['kit_id'] = 0;
+          $data_customer_session['active_month'] = 1;
+          $data_customer_session['active'] = 1;
+          $data_customer_session['logged_customer'] = "TRUE";
+          $data_customer_session['status'] = 1;
+          $_SESSION['customer'] = $data_customer_session;
+        
+        echo json_encode($charge);
+    } catch (Exception $e) {
+        $data['status'] = false;
+        echo json_encode($e->getMessage());
+    }
   }
-}
+
+  public function create_invoice_cursos() {
+    try {
+        date_default_timezone_set('America/Lima');
+        //SELECT ID FROM CUSTOMER
+        $token = $this->input->post('token');
+        $course_id = trim($this->input->post('kit_id'));
+        $email = $this->input->post('email');
+        $email_nuevo = $this->input->post('email_nuevo');
+        $price = $this->input->post('price');
+        $price2 = $this->input->post('price2');
+        $phone =  $this->input->post("phone");
+        $pass =  $this->input->post("pass");
+        $bono_1 =  $this->input->post("bono_1");
+        $bono_2 =  $this->input->post("bono_2");
+        $bono_3 =  $this->input->post("bono_3");
+        $bono_4 =  $this->input->post("bono_4");
+        $bono_5 =  $this->input->post("bono_5");
+        $sub_total = $price2;
+        //create user
+        $parent_id = $this->input->post("customer_id");
+        $date_month = date("Y-m-d", strtotime("+30 day"));
+        //MAKE CHARGE
+        $charge = $this->culqi->charge($token, $price, $email, "", "", "", "");
+        //verify customer
+        $obj_customer = $this->verify_email($email_nuevo);
+        if (!empty($obj_customer)) {
+          //start session
+          $customer_id = $obj_customer->customer_id;
+      } else {
+          //create user
+          $data_param = array(
+            'first_name' => "Cultura",
+            'last_name' => "Emprendedora",
+            'password' => $pass,
+            'kit_id' => 0,
+            'range_id' => 0,
+            'phone' => $phone,
+            'email' => $email_nuevo,
+            'active' => 1,
+            'date_start' => date("Y-m-d H:i:s"),
+            'date_month' => $date_month,
+            'active_month' => 1,
+            'country' => 89,
+            'status_value' => 1,
+            'landing' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+        );
+        $customer_id = $this->obj_customer->insert($data_param);
+        //create unilevel      
+        //confition
+        if ($parent_id == 1) {
+          $new_ident = 1;
+          } else {
+          $param_customer = array(
+              "select" => "ident",
+              "where" => "customer_id = $parent_id");
+          $customer = $this->obj_unilevel->get_search_row($param_customer);
+          $ident = $customer->ident;
+          $new_ident = $ident . ",$parent_id";
+          }
+          //CREATE UNILEVEL
+          $data_unilevel = array(
+            'customer_id' => $customer_id,
+            'parend_id' => $parent_id,
+            'new_parend_id' => $parent_id,
+            'ident' => $new_ident,
+            'status_value' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $customer_id,
+            );
+          $this->obj_unilevel->insert($data_unilevel);
+          
+      }
+      //send message
+        $this->message($email, $pass);
+        //CREATE INVOICE
+        $data_invoice = array(
+          'customer_id' => $customer_id,
+          'course_id' => $course_id,
+          'total' => $price2,
+          'date' => date("Y-m-d H:i:s"),
+          'active' => 2,
+      );
+      $invoice_id = $this->obj_invoices->insert($data_invoice);
+      //CREATE CUSTOMER COURSE
+      //sumar el tiempo de duración
+      $data = array(
+          'customer_id' => $customer_id,
+          'course_id' => $course_id,
+          'date_start' => date("Y-m-d H:i:s"),
+      );
+      $this->obj_customer_courses->insert($data);
+          if(!empty($new_ident)){
+            //INSERT AMOUNT ON COMMISION TABLE    
+            $this->pay_unilevel($new_ident, $invoice_id, $bono_1, $bono_2, $bono_3, $bono_4, $bono_5, $customer_id, 1);
+          }
+          //iniciar sesion
+          $data_customer_session['customer_id'] = $customer_id;
+          $data_customer_session['name'] = "Cultura Imparable";
+          $data_customer_session['username'] = "";
+          $data_customer_session['email'] = $email;
+          $data_customer_session['kit_id'] = 0;
+          $data_customer_session['active_month'] = 1;
+          $data_customer_session['active'] = 1;
+          $data_customer_session['logged_customer'] = "TRUE";
+          $data_customer_session['status'] = 1;
+          $_SESSION['customer'] = $data_customer_session;
+        
+        echo json_encode($charge);
+    } catch (Exception $e) {
+        $data['status'] = false;
+        echo json_encode($e->getMessage());
+    }
+  }
 
 public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5, $customer_id, $qty) {
 //make upline
