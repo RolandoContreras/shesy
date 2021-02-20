@@ -42,6 +42,7 @@ $route['default_controller'] = "home";
 $route['404_override'] = 'errors/error_404';
 
 $route['landing'] = 'landing';
+$route['landing/create_invoice'] = 'landing/create_invoice';
 
 $route['home'] = 'home';
 $route['postula'] = 'home/postula';

@@ -72,7 +72,7 @@
                                                     <div class="col-lg-3 col-sm-6">
                                                         <div class="card-block p-0">
                                                             <a href="<?php echo site_url() . "mi_catalogo/$value->category_slug/$value->catalog_id/$value->slug"; ?>">
-                                                                <img class="img-fluid" style="width:100%;" src="<?php echo site_url() . "static/catalog/$value->img"; ?>" alt="dashboard-user">
+                                                                <img class="img-fluid" style="width:100%;" src="<?php echo site_url() . "static/catalog/$value->img3"; ?>" alt="dashboard-user">
                                                             </a>
                                                             <div class="ux-designer">
                                                                 <button onclick="add_cart_granel_1('<?php echo $value->catalog_id; ?>', '<?php echo $value->price; ?>', '<?php echo $value->name; ?>');" class="btn btn-primary" style="background-color: white;">

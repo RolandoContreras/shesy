@@ -9,6 +9,29 @@
     <meta name="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
     <meta name="author" content="Cultura Emprendedora">
     <meta name="keyword" content="Cultura Emprendedora, Movimiento Emprendedor, Emprendedor Perú, embajadores, Imparable social, red social, mlm, mmn, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
+
+    <meta name="robots" content="Index, Follow">
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="Evolution Web">
+    <meta name="distribution" content="Global">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo site_url();?>">
+    <meta property="og:title" content="Market Cultura Emprendedora | Organización Neuronal de emprendedores">
+    <meta property="og:url" content="<?php echo site_url();?>">
+    <meta property="og:description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
+    <meta property="og:image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
+    <meta property="og:site_name" content="Market Cultura Emprendedora">
+    <meta property="og:locale" content="es_PE">
+    <meta itemprop="name" content=" Market Cultura Emprendedora | Organización Neuronal de emprendedores">
+    <meta itemprop="url" content="<?php echo site_url();?>">
+    <meta itemprop="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
+    <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
+    <meta name="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas."> 
+    <meta itemprop="url" content="<?php echo site_url();?>"> 
+    <meta itemprop="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas."> 
+    <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>"> 
+    <meta name="twitter:card" content="summary_large_image"> 
+    <meta name="twitter:title" content="Cultura Emprendedora | Organización Neuronal de emprendedores"> 
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
@@ -18,9 +41,14 @@
     <link href="<?php echo site_url() . 'static/page_front/css/hot.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="<?php echo site_url() . 'static/page_front/css/bootstrap.min.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link href="<?php echo site_url() . 'static/page_front/css/new_style.css';?>" rel="stylesheet" >
     <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script src="https://checkout.culqi.com/js/v3"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
@@ -50,35 +78,50 @@
               </div>
               <div class="custom-skin-row">
                 <div class="custom-skin-column width-3">
-                  <div class="hotpay-image crop-default size-default">
-                    <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img4";?>" data-v-49edbfa8>
-                    </div>
+                  <?php 
+                  if($obj_catalog->img4 != null){ ?>
+                    <div class="hotpay-image crop-default size-default">
+                      <div class="hotpay-image-crop" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/catalog/$obj_catalog->img4";?>" data-v-49edbfa8>
+                      </div>
                   </div>
-                  <div class="hotpay-video" data-v-4d187430>
-                    <h2 class="hotpay-subtitle" data-v-176b9906 data-v-4d187430></h2>
-                    <div class="hotpay-video-container large" data-v-4d187430>
-                    <iframe src="https://player.vimeo.com/video/<?php echo $video_id;?>" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
-                      <div class="hotpay-video-wrapper" data-v-4d187430></div>
-                    </div>
-                  </div>
+                  <?php } ?>
+                  <?php 
+                  if($obj_catalog->video != null){ ?>
+                      <div class="hotpay-video" data-v-4d187430>
+                        <h2 class="hotpay-subtitle" data-v-176b9906 data-v-4d187430></h2>
+                        <div class="hotpay-video-container large" data-v-4d187430>
+                        <?php
+                          if($host == "vimeo.com"){ ?>
+                            <iframe src="https://player.vimeo.com/video/<?php echo $video_id;?>" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
+                        <?php  }else{ ?>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id;?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
+                        <?php } ?>
+                          <div class="hotpay-video-wrapper" data-v-4d187430></div>
+                        </div>
+                      </div>
+                  <?php } ?>
                 </div>
               </div>
               <div class="custom-skin-row">
                 <div class="custom-skin-column width-2">
-                  <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
-                    <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img";?>" data-v-49edbfa8>
+                <?php 
+                  if($obj_catalog->img != null){ ?>
+                    <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
+                      <div class="hotpay-image-crop" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/catalog/$obj_catalog->img";?>" data-v-49edbfa8>
+                      </div>
                     </div>
-                  </div>
+                  <?php } ?>
+                  <?php 
+                  if($obj_catalog->img2 != null){ ?>
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
                         <img src="<?php echo site_url()."static/catalog/$obj_catalog->img2";?>" data-v-49edbfa8>
                     </div>
                   </div>
-                  
+                  <?php } ?>
                   <div class="hotpay-text ql-editor" data-v-490f5234>
-                  <h1 style="color:#ffff00" style="text-align:center"><?php echo $obj_catalog->name;?></h1>
                      <?php echo $obj_catalog->description;?>     
                   </div>
                 </div>
@@ -115,75 +158,162 @@
                 </div>
               </div>
               <div class="custom-skin-row">
-                <div class="custom-skin-column width-2" style="background-color:white;border-radius:10px;">
+              <style>
+                    .card-header {
+                        padding: .75rem 1.25rem;
+                        margin-bottom: 0;
+                        background-color: rgba(0, 0, 0, .03);
+                        border-bottom: 1px solid rgba(0, 0, 0, .125);
+                        background-color: black;
+                    }
+                    .card-header:first-child {
+                        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+                    }
+                    </style>
+                    
+                <div class="custom-skin-column width-2" style="background-color:#f4f7fa;border-radius:10px;padding:0px;border-radius: 10px;">
+                <div class="card-header" style="blackground-color:black !important:border-radius:20px;">
+                      <h3 style="text-align:center"><b>¡OBTENLO AHORA!</b></h3>
+                  </div>
                   <div>
                     <div class="checkout-wrapper" data-v-4b7ee574>
                       <div data-v-4b7ee574></div> 
-                      <div class="bd-example" style="padding:25px;">
-                          <div data-v-402bdc66="" class="disclaimer-product">
-                              <a data-v-402bdc66="" href="javascript:void(0);">
-                                Ingrese sus datos y adquiera su compra
-                              </a>
-                          </div>
-                        <form name="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);"  style="padding-top:25px;" onsubmit="validate_hotmark('<?php echo $hot_link;?>');">
-                            <div class="input-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                      <div id="alert_message" class="alert alert-danger" role="alert" style="margin-top:10px;display:none">
+                        Ingrese y verifique sus datos personales
+                      </div>
+                      <form name="form_pay" id="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_hotmark();">
+                        <div class="col-xl-12 col-md-12 m-b-30" style="margin-top:20px;">
+                          <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                              <li class="nav-item complete">
+                                  <a class="nav-link show active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="home" aria-selected="false"><b>PASO 1</b> <br/>Datos Personales</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link show" id="designer-tab" data-toggle="tab" href="#designer" role="tab" aria-controls="profile" aria-selected="true"><b>PASO 2</b> <br/>Metodo de Pago</a>
+                              </li>
+                          </ul>
+                          <div class="tab-content User-Lists active" id="myTabContent1" style="padding:18px;">
+                              <div class="tab-pane active" id="user" role="tabpanel" aria-labelledby="home-tab">
+                                <div style="padding:10px;">
+                                  <div data-v-402bdc66="" class="disclaimer-product">
+                                      <a data-v-402bdc66="" href="javascript:void(0);">
+                                      Enviaremos a tu correo el acceso de tu plataforma educativa
+                                      </a>
                                   </div>
-                                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Ingrese sus nombres"  required="">
-                              </div>
-                              <br/>
-                              <div class="input-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                                  <br/>
+                                  <label style="color:#888;margin-bottom:.5em;">+ Correo Electrónico</label>
+                                  <div class="input-group" style="padding-bottom:15px;">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                          </div>
+                                          <input type="email" onkeypress="show_second();" class="form-control" id="email" name="email" placeholder="Ingrese su correo" required="">
+                                    </div>
+                                    <label style="color:#888;margin-bottom:.5em;">+ Nueva Contraseña</label>
+                                    <div class="input-group" style="padding-bottom:15px;">
+                                          <div class="input-group-prepend">
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
+                                          </div>
+                                          <input type="password" onkeypress="show_second();" class="form-control" id="pass" name="pass" placeholder="Crear nueva Contraseña" required="">
+                                    </div>
+                                    <label style="color:#888;margin-bottom:.5em;">+ Teléfono Celular</label>
+                                    <div class="input-group" style="padding-bottom:15px;">
+                                          <div class="input-group-prepend">
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
+                                          </div>
+                                          <input type="text" onkeypress="show_second();" class="form-control" id="phone" name="phone" placeholder="Ingrese Celular" required="">
+                                    </div>
+                                    <label style="color:#888;margin-bottom:.5em;">+ Cantidad</label>
+                                    <div class="input-group">
+                                          <div class="input-group-prepend">
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shopping-basket"></i></span>
+                                          </div>
+                                          <input type="text" onkeypress="show_second();" class="form-control" id="qty" name="qty" placeholder="Cantidad (Kg) / (Und)" required="">
+                                    </div>
+                                    <br/>
+                                    <div class="hotpay-advantages hotpay-advantages-vertical small-container dark">
+                                        <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
+                                        <?php 
+                                          if($obj_catalog->img3 != null){ ?>
+                                            <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
+                                              <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
+                                            </div>
+                                          <?php } ?>
+                                          <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
+                                            <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
+                                          </div>
+                                        </div>
+                                    </div> 
+                                    <br/>
+                                    <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
+                                        <div class="hotpay-advantage-info" data-v-76f37c86="">
+                                        <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
+                                          Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
+                                          Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><br/>
+                                          <input type="hidden" name="hot_link" id="hot_link" value="<?php echo $hot_link;?>"/>
+                                          <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customer_id;?>"/>
+                                          <a onclick="change_title_designer();" class="btn-info btn nav-link show" style="position: absolute; right: 0;" class="btn btn-info" id="button-second" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="true">Siguiente <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <br/>
                                   </div>
-                                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Ingrese sus apellidos" required="">
                               </div>
-                              <br/>
-                              <div class="input-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-envelope-open"></i></span>
+                              <div class="tab-pane fade show" id="designer" role="tabpanel" aria-labelledby="profile-tab">
+                              <div style="padding:10px;">
+                                  <div data-v-402bdc66="" class="disclaimer-product">
+                                      <a data-v-402bdc66="" href="javascript:void(0);">
+                                        Utilice el método de pago de su preferencia
+                                      </a>
                                   </div>
-                                  <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese sus correo" required="">
+                                  <br/>
+                                    <div class="hotpay-advantages hotpay-advantages-vertical small-container dark">
+                                        <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
+                                          <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
+                                            <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
+                                          </div>
+                                          <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
+                                            <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
+                                          </div>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-md-12"><br/>
+                                          <?php 
+                                            if($hot_link != ""){ ?>
+                                                <button type="submit" class="btn-success btn-block btn" id="submit_hot"><i class="fa fa-shopping-bag text-c-white"></i> Métodos de Pago</button>
+                                          <?php }else{ ?>
+                                            <button id="submit_culqi" type="button" style="color:white" data-price="<?php echo quitar_punto_number($obj_catalog->price); ?>" data-price2="<?php echo $obj_catalog->price; ?>" data-kit="<?php echo $obj_catalog->catalog_id; ?>" class="buyButton btn theme-bg shadow-2 text-uppercase btn-block"><i class="fa fa-shopping-bag text-c-white"></i> <b>Metodo de Pago</b></button>
+                                          <?php } ?>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
+                                        <div class="hotpay-advantage-info" data-v-76f37c86="">
+                                        <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
+                                          Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
+                                          Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><br/>
+                                          <a onclick="change_title_user();"; class="btn-info btn nav-link show" style="position: absolute; right: 0;" id="button-second" data-toggle="tab" href="#user" role="tab" aria-controls="profile" aria-selected="true"><i class="fa fa-arrow-left" aria-hidden="true"></i> Atrás</a>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                  </div>
                               </div>
-                              <br/>
-                        <div class="hotpay-advantages hotpay-advantages-vertical small-container dark" data-v-76f37c86="">
-                          <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86="">
-                            <div class="icon-ssl hotpay-advantage-icon" data-v-91351540="" data-v-76f37c86="">
-                              <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>">
-                            </div>
-                            <div class="hotpay-advantage-info" data-v-76f37c86=""><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86=""> Información de la Compra </span> 
-                              <span class="hotpay-advantage-content" style="color:#92e32e;" data-v-76f37c86=""><?php echo $obj_catalog->name;?> - <?php echo format_number_moneda_dolares($obj_catalog->price);?></span>
-                            </div>
                           </div>
-                        </div> 
-                        <div class="row">
-                        <div class="col-md-6"><br/>
-                          <input type="hidden" name="hot_link" id="hot_link" value="<?php echo $hot_link;?>"/>
-                          <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customer_id;?>"/>
-                          <button type="submit" id="submit_hot" class="btn btn-block btn-danger" <?php echo $hot_link==""?"disabled":"";?> >Metodos de Pagos - Hotmart</button>
-                        </div>
-                        <div class="col-md-6"><br/>
-                          <!--<button type="submit" class="btn btn-block btn-primary" onsubmit="validate_culqi();">Tarjeta de Crédito / Debito</button>-->
-                        </div>
-                        </div>
-                        <br/>
-                          <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
-                            <div class="hotpay-advantage-info" data-v-76f37c86="">
-                            <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
-                              Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
-                              Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
-                            </div>
-                          </div>
-                        </form>
-                        </div>
+                      </div>
+                      </form>
                       </div>
                   </div>
                 </div>
                 <div class="custom-skin-column width-1">
                   <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                     <div class="hotpay-image-crop" data-v-49edbfa8>
-                      <img src="<?php echo site_url()."static/page_front/images/landing/comercial.jpg";?>" data-v-49edbfa8>
+                      <img src="<?php echo site_url()."static/catalog/$obj_catalog->img3";?>" data-v-49edbfa8>
                     </div>
                   </div>
                   <div class="hotpay-advantages hotpay-advantages-vertical small-container dark" data-v-76f37c86>
@@ -202,11 +332,6 @@
                       <div class="hotpay-advantage-info" data-v-76f37c86><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86> Delivery Seguro </span> <span class="hotpay-advantage-content"
                           style="color:#92e32e;" data-v-76f37c86>Acceso al producto inmediatamente.</span></div>
                     </div>
-                    <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86>
-                      <div class="icon-content hotpay-advantage-icon" data-v-5577a166 data-v-76f37c86><svg viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg" data-v-5577a166><path d="M19.716 16.916l-8.248-8.347-1.067-1.08-1.067 1.08-5.256 5.32-1.042 1.054 1.042 1.054 5.552 5.619 9.019 9.127 1.067 1.08 1.067-1.08 9.475-9.59 9.664-9.78 1.042-1.055-1.042-1.055-5.257-5.318-1.067-1.079-1.067 1.08-12.815 12.97z" stroke="#128ECE" stroke-width="3" fill="none" style="stroke:#92e32e;" data-v-5577a166></path></svg></div>
-                      <div class="hotpay-advantage-info" data-v-76f37c86><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86> Contenido Aprobado </span> <span class="hotpay-advantage-content"
-                          style="color:#92e32e;" data-v-76f37c86>100% revisado bajo políticas de privacidad</span></div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -217,5 +342,140 @@
     </div>
   </div>
   <script src="<?php echo site_url();?>static/page_front/js/pagos.js"></script>
+  <script src="<?php echo site_url();?>static/page_front/js/bootstrap.min.js"></script>
+  <script>
+  function show_second(){
+    $email = document.getElementById("email").value;
+    $pass = document.getElementById("pass").value;
+    $qty = document.getElementById("qty").value;
+    $phone = document.getElementById("phone").value;
+    if($qty != "" && $email != "" && $pass != "" && $phone != ""){
+      var a = document.getElementById('button-second'); //or grab it by tagname etc
+      a.href = "#designer"
+    }
+  }
+  </script>
+  <script>
+  function change_title_designer(){
+    $email = document.getElementById("email").value;
+    $pass = document.getElementById("pass").value;
+    $qty = document.getElementById("qty").value;
+    $phone = document.getElementById("phone").value;
+    if($email != "" && $pass != "" && $qty != "" && $phone != ""){ 
+      $designer_tab = document.getElementById("designer-tab").classList.add("active");
+      $user_tab = document.getElementById("user-tab").classList.remove("active");
+    }else{
+      document.getElementById("alert_message").style.display = "block";
+    }
+    
+  }
+  </script>
+<script>
+  function change_title_user(){
+    $designer_tab = document.getElementById("designer-tab").classList.remove("active");
+    $user_tab = document.getElementById("user-tab").classList.add("active");
+  }
+  </script>
+  <script>
+//    pk_test_igI3EctoA17FeNUD
+//pk_live_d4ZedlvJFWdrXoiI
+    Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+    var price = "";
+    var price2 = "";
+    var kit_id = "";
+
+    $('.buyButton').on('click', function (e) {
+      document.getElementById("submit_culqi").disabled = true;
+      document.getElementById("submit_culqi").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
+      email_nuevo = document.getElementById("email").value;
+      pass = document.getElementById("pass").value;
+      qty = document.getElementById("qty").value;
+      phone = document.getElementById("phone").value;
+      customer_id = document.getElementById("customer_id").value;
+      if(email_nuevo != "" && pass != "" && qty != ""){
+        document.getElementById("alert_message").style.display = "none";
+        price = $(this).attr('data-price');
+        price = price * 3.5;
+        price2 = $(this).attr('data-price2');
+        kit_id = $(this).attr('data-kit');
+        Culqi.options({
+            lang: 'auto',
+            modal: true,
+            style: {
+                logo: '<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>',
+                maincolor: '#0ec1c1',
+                buttontext: '#ffffff',
+                maintext: '#4A4A4A',
+                desctext: '#4A4A4A'
+            }
+        });
+        Culqi.settings({
+            title: 'Cultura Emprendedora',
+            currency: 'PEN',
+            description: 'Venta de Producto y/o Servicio',
+            amount: price
+        });
+        Culqi.open();
+        e.preventDefault();
+      }else{
+        document.getElementById("alert_message").style.display = "block";
+      }
+    });
+
+    function culqi() {
+        if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+            var token = Culqi.token.id;
+            var email = Culqi.token.email;
+            var url = site + "landing/create_invoice";
+            $.ajax({
+                url: url,
+                method: 'post',
+                data: {
+                    price: price,
+                    price2: price2,
+                    kit_id: kit_id,
+                    email: email,
+                    token: token,
+                    email_nuevo: email_nuevo,
+                    pass: pass,
+                    phone: phone,
+                    customer_id: customer_id,
+                    qty: qty
+                },
+                dataType: 'JSON',
+                success: function (data) {
+                    if (data.object == "charge") {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Pago Procesado',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        url = site + "mi_catalogo/order";
+                        setTimeout(function(){location.href=url} , 1500);  
+                    } else {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'info',
+                            title: 'Ups! Sucedio un error ',
+                            footer: "Verifique los datos y/o fondo de la tarjeta"
+                        });
+                        document.getElementById("submit_culqi").disabled = false;
+                        document.getElementById("submit_culqi").innerHTML = "Metodos de Pago";
+                    }
+                },
+                error: function (data) {
+                    alert(data.user_message);
+                }
+            });
+        } else {
+            console.log(Culqi.error);
+            alert(Culqi.error.user_message);
+        }
+    }
+    ;
+
+</script>
 </body>
 </html>
