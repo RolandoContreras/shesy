@@ -71,7 +71,7 @@ class Catalogo_home extends CI_Controller {
                                     catalog.summary,
                                     catalog.description,
                                     catalog.price,
-                                    catalog.img,
+                                    catalog.img3,
                                     catalog.date,
                                     catalog.active,
                                     category.slug as category_slug,
