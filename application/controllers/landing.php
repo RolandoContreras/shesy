@@ -207,7 +207,7 @@ public function create_invoice() {
         $this->obj_unilevel->insert($data_unilevel);
         //send message
     }
-      //$this->message($email, $pass);
+      $this->message($email, $pass);
       //INSERT INVOICE
       $data_invoice = array(
         'customer_id' => $customer_id,
