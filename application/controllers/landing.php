@@ -112,6 +112,7 @@ class Landing extends CI_Controller {
                        category.slug as category_slug,
                        courses.description,
                        courses.img,
+                       courses.img2,
                        courses.price,
                        courses.price_del,
                        courses.bono_1,

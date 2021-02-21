@@ -78,10 +78,10 @@
               <div class="custom-skin-row">
                 <div class="custom-skin-column width-3">
                   <?php 
-                  if($obj_courses->img != null){ ?>
+                  if($obj_courses->img2 != null){ ?>
                     <div class="hotpay-image crop-default size-default">
                       <div class="hotpay-image-crop" data-v-49edbfa8>
-                        <img src="<?php echo site_url()."static/cms/images/cursos/$obj_courses->img";?>" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/cms/images/cursos/$obj_courses->img2";?>" data-v-49edbfa8>
                       </div>
                   </div>
                   <?php } ?>
