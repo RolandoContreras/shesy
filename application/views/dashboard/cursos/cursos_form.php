@@ -92,9 +92,24 @@
                                                     <div class="form-group">
                                                         <label>Imagen 1 (Tamaño 600 x 600)</label>
                                                         <div class="custom-file">
-                                                            <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();" <?php echo isset($obj_courses) ? "" : "required"; ?> >
+                                                            <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();">
                                                             <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img"></div>
+                                                        </div>
+                                                    </div>
+                                                    <?php if (isset($obj_courses)) { ?>
+                                                        <div class="form-group">
+                                                            <label>Banner Landing </label><br/>
+                                                            <img src='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img2"; ?>' width="100" />
+                                                            <input class="form-control" type="hidden" name="img_3" id="img_3" value="<?php echo isset($obj_courses) ? $obj_courses->img2 : ""; ?>">
+                                                        </div>
+                                                    <?php } ?>
+                                                    <div class="form-group">
+                                                        <label>Banner Landing (Tamaño 1024 x 469)</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" name="image_file2" id="image_file2" class="custom-file-input" onchange="upload_img2();">
+                                                            <label id="label_img2" class="custom-file-label invalid">Elegir archivos...</label>
+                                                            <div id="respose_img2"></div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">

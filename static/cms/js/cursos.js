@@ -64,7 +64,19 @@ function upload_img() {
         $("#label_img").removeClass("valid").addClass("invalid");
     }
 }
-
+function upload_img2() {
+    var input = document.getElementById('image_file2').value;
+    if (input != null) {
+        $("#respose_img2").html();
+        var texto = "";
+        texto = texto + 'Seleccionado: ';
+        texto = texto + input;
+        $("#respose_img2").html(texto);
+        $("#label_img2").removeClass("invalid").addClass("valid");
+    } else {
+        $("#label_img2").removeClass("valid").addClass("invalid");
+    }
+}
 
 function delete_curso(catalog_id) {
     bootbox.confirm({
