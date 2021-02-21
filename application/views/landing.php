@@ -2,13 +2,13 @@
 <!doctype html>
 <html data-n-head-ssr class="page--loading" data-version="prod/2021.02.09-1" data-n-head="%7B%22class%22:%7B%22ssr%22:%22page--loading%22%7D,%22data-version%22:%7B%22ssr%22:%22prod/2021.02.09-1%22%7D%7D">
   <head >
-    <title>Cultura Emprendedora - Market</title>
+    <title><?php echo $obj_catalog->name;?> | Tienda | Cultura Emprendedora</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" name="referrer" content="no-referrer-when-downgrade">
-    <meta name="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
+    <meta name="description" content="><?php echo corta_texto($obj_catalog->description, 160);?>">
     <meta name="author" content="Cultura Emprendedora">
-    <meta name="keyword" content="Cultura Emprendedora, Movimiento Emprendedor, Emprendedor Perú, embajadores, Imparable social, red social, mlm, mmn, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
+    <meta name="keyword" content="Tienda, Market, Cultura Emprendedora, Movimiento Emprendedor, Emprendedor Perú, embajadores, Imparable social, red social, mlm, mmn, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
 
     <meta name="robots" content="Index, Follow">
     <meta name="googlebot" content="index, follow" />
@@ -16,22 +16,22 @@
     <meta name="distribution" content="Global">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo site_url();?>">
-    <meta property="og:title" content="Market Cultura Emprendedora | Organización Neuronal de emprendedores">
+    <meta property="og:title" content="<?php echo $obj_catalog->name;?> | Tienda | Cultura Emprendedora">
     <meta property="og:url" content="<?php echo site_url();?>">
-    <meta property="og:description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
-    <meta property="og:image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
+    <meta property="og:description" content="<?php echo corta_texto($obj_catalog->description, 160);?>">
+    <meta property="og:image" content="<?php echo site_url()."static/catalog/$obj_catalog->img";?>">
     <meta property="og:site_name" content="Market Cultura Emprendedora">
     <meta property="og:locale" content="es_PE">
-    <meta itemprop="name" content=" Market Cultura Emprendedora | Organización Neuronal de emprendedores">
+    <meta itemprop="name" content=" <?php echo $obj_catalog->name;?> | Tienda | Cultura Emprendedoras">
     <meta itemprop="url" content="<?php echo site_url();?>">
-    <meta itemprop="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas.">
-    <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>">
-    <meta name="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas."> 
+    <meta itemprop="description" content="<?php echo corta_texto($obj_catalog->description, 160);?>">
+    <meta itemprop="image" content="<?php echo site_url()."static/catalog/$obj_catalog->img";?>">
+    <meta name="description" content="<?php echo corta_texto($obj_catalog->description, 160);?>"> 
     <meta itemprop="url" content="<?php echo site_url();?>"> 
-    <meta itemprop="description" content="Adquiere todos tus productos con nosotros. Somos el primer market de emprendedora. Obtén descuentos y participa de un plan de recompensas."> 
-    <meta itemprop="image" content="<?php echo site_url().'static/page_front/images/logo/logo-fuego.png';?>"> 
+    <meta itemprop="description" content="<?php echo corta_texto($obj_catalog->description, 160);?>"> 
+    <meta itemprop="image" content="<?php echo site_url()."static/catalog/$obj_catalog->img";?>"> 
     <meta name="twitter:card" content="summary_large_image"> 
-    <meta name="twitter:title" content="Cultura Emprendedora | Organización Neuronal de emprendedores"> 
+    <meta name="twitter:title" content="<?php echo $obj_catalog->name;?> | Tienda | Cultura Emprendedora"> 
     <!--//STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
