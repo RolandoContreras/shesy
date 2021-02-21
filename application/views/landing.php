@@ -217,7 +217,7 @@
                                     <label style="color:#888;margin-bottom:.5em;">+ Teléfono Celular</label>
                                     <div class="input-group" style="padding-bottom:15px;">
                                           <div class="input-group-prepend">
-                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-shield"></i></span>
+                                          <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-phone"></i></span>
                                           </div>
                                           <input type="text" onkeypress="show_second();" class="form-control" id="phone" name="phone" placeholder="Ingrese Celular" required="">
                                     </div>
@@ -284,7 +284,7 @@
                                             if($hot_link != ""){ ?>
                                                 <button type="submit" class="btn-success btn-block btn" id="submit_hot"><i class="fa fa-shopping-bag text-c-white"></i> Métodos de Pago</button>
                                           <?php }else{ ?>
-                                            <button id="submit_culqi" type="button" style="color:white" data-price="<?php echo quitar_punto_number($obj_catalog->price); ?>" data-price2="<?php echo $obj_catalog->price; ?>" data-kit="<?php echo $obj_catalog->catalog_id; ?>" class="buyButton btn theme-bg shadow-2 text-uppercase btn-block"><i class="fa fa-shopping-bag text-c-white"></i> <b>Metodo de Pago</b></button>
+                                            <button id="submit_culqi" type="button" style="color:white" data-price="<?php echo quitar_punto_number($price); ?>" data-price2="<?php echo $obj_catalog->price; ?>" data-kit="<?php echo $obj_catalog->catalog_id; ?>" class="buyButton btn theme-bg shadow-2 text-uppercase btn-block"><i class="fa fa-shopping-bag text-c-white"></i> <b>Metodo de Pago</b></button>
                                           <?php } ?>
                                         </div>
                                     </div>
@@ -343,39 +343,7 @@
   </div>
   <script src="<?php echo site_url();?>static/page_front/js/pagos.js"></script>
   <script src="<?php echo site_url();?>static/page_front/js/bootstrap.min.js"></script>
-  <script>
-  function show_second(){
-    $email = document.getElementById("email").value;
-    $pass = document.getElementById("pass").value;
-    $qty = document.getElementById("qty").value;
-    $phone = document.getElementById("phone").value;
-    if($qty != "" && $email != "" && $pass != "" && $phone != ""){
-      var a = document.getElementById('button-second'); //or grab it by tagname etc
-      a.href = "#designer"
-    }
-  }
-  </script>
-  <script>
-  function change_title_designer(){
-    $email = document.getElementById("email").value;
-    $pass = document.getElementById("pass").value;
-    $qty = document.getElementById("qty").value;
-    $phone = document.getElementById("phone").value;
-    if($email != "" && $pass != "" && $qty != "" && $phone != ""){ 
-      $designer_tab = document.getElementById("designer-tab").classList.add("active");
-      $user_tab = document.getElementById("user-tab").classList.remove("active");
-    }else{
-      document.getElementById("alert_message").style.display = "block";
-    }
-    
-  }
-  </script>
-<script>
-  function change_title_user(){
-    $designer_tab = document.getElementById("designer-tab").classList.remove("active");
-    $user_tab = document.getElementById("user-tab").classList.add("active");
-  }
-  </script>
+  <script src="<?php echo site_url();?>static/page_front/js/landing_culqi.js"></script>
   <script>
 //    pk_test_igI3EctoA17FeNUD
 //pk_live_d4ZedlvJFWdrXoiI

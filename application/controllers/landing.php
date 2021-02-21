@@ -74,6 +74,9 @@ class Landing extends CI_Controller {
             "join" => array('category, category.category_id = catalog.category_id'),
             "where" => "catalog.slug = '$slug' and category.slug = '$category_slug' and catalog.active = 1");
         $data['obj_catalog'] = $this->obj_catalog->get_search_row($params);
+        $price = ceil($data['obj_catalog']->price);
+        $price = number_format ($price ,2);
+        $data['price'] = $price;
         $data['hot_link'] = $data['obj_catalog']->hot_link;
         if($data['obj_catalog']->video != null){
             $video = $data['obj_catalog']->video;
@@ -125,6 +128,9 @@ class Landing extends CI_Controller {
           "join" => array('category, category.category_id = courses.category_id'),
           "where" => "category.slug = '$category_slug' and courses.slug = '$slug'");
           $data['obj_courses'] = $this->obj_courses->get_search_row($params);
+          $price = ceil($data['obj_courses']->price);
+          $price = number_format ($price ,2);
+          $data['price'] = $price;
           $data['hot_link'] = $data['obj_courses']->hot_link;
         if($data['obj_courses']->video != null){
             $video = $data['obj_courses']->video;
