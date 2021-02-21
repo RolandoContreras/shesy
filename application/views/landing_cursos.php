@@ -104,14 +104,14 @@
               </div>
               <div class="custom-skin-row">
                 <div class="custom-skin-column width-2">
-                <?php /*
-                  if($obj_courses->img2 != null){ ?>
+                <?php 
+                  if($obj_courses->img3 != null){ ?>
                     <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                       <div class="hotpay-image-crop" data-v-49edbfa8>
-                        <img src="<?php echo site_url()."static/catalog/$obj_catalog->img";?>" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/catalog/$obj_courses->img3";?>" data-v-49edbfa8>
                       </div>
                     </div>
-                  <?php } */?>
+                  <?php } ?>
                   <div class="hotpay-text ql-editor" data-v-490f5234>
                      <?php echo $obj_courses->description;?>     
                   </div>

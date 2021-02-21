@@ -38,6 +38,7 @@ class d_cursos extends CI_Controller {
                          courses.description,
                          courses.img,
                          courses.img2,
+                         courses.img3,
                          courses.price,
                          courses.video,
                          courses.price_del,
@@ -76,6 +77,7 @@ class d_cursos extends CI_Controller {
             $course_id = $this->input->post("course_id");
             $img_2 = $this->input->post("img_2");
             $img_3 = $this->input->post("img_3");
+            $img_4 = $this->input->post("img_4");
             $name = $this->input->post('name');
             $slug =  convert_slug($this->input->post('name'));
             //upload img  
@@ -121,6 +123,28 @@ class d_cursos extends CI_Controller {
             }else{
                 $img2 = $this->input->post("img_3");
             }
+
+            //upload img  
+            if($_FILES["image_file3"]["name"] != null){
+                if (isset($_FILES["image_file3"]["name"])) {
+                    $config['upload_path'] = './static/cms/images/cursos';
+                    $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                    $config['max_size'] = 3000;
+                    $this->load->library('upload', $config);
+                    if (!$this->upload->do_upload('image_file3')) {
+                        $error = array('error' => $this->upload->display_errors());
+                        echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+                    } else {
+                        $data = array('upload_data' => $this->upload->data());
+                    }
+                    $img3 = $_FILES["image_file3"]["name"];
+                    if ($img3 == "") {
+                        $img2 = $img_4;
+                    }
+                }
+            }else{
+                $img3 = $this->input->post("img_4");
+            }
                 //if
                 if ($course_id != "") {
                     $data = array(
@@ -132,6 +156,7 @@ class d_cursos extends CI_Controller {
                         'price_del' => $this->input->post('price_del'),
                         'img' => $img,
                         'img2' => $img2,
+                        'img3' => $img3,
                         'duration' => $this->input->post('duration'),
                         'free' => $this->input->post('free'),
                         'bono_1' => $this->input->post('bono_1'),
@@ -157,6 +182,7 @@ class d_cursos extends CI_Controller {
                         'duration' => $this->input->post('duration'),
                         'img' => $img,
                         'img2' => $img2,
+                        'img3' => $img3,
                         'date' => date("Y-m-d"),
                         'free' => $this->input->post('free'),
                         'bono_1' => $this->input->post('bono_1'),

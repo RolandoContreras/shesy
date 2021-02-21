@@ -112,6 +112,21 @@
                                                             <div id="respose_img2"></div>
                                                         </div>
                                                     </div>
+                                                    <?php if (isset($obj_courses)) { ?>
+                                                        <div class="form-group">
+                                                            <label>Banner Landing </label><br/>
+                                                            <img src='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img3"; ?>' width="100" />
+                                                            <input class="form-control" type="hidden" name="img_4" id="img_4" value="<?php echo isset($obj_courses) ? $obj_courses->img3 : ""; ?>">
+                                                        </div>
+                                                    <?php } ?>
+                                                    <div class="form-group">
+                                                        <label>Imagen Certificado (Tamaño 1024 x 469)</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" name="image_file3" id="image_file3" class="custom-file-input" onchange="upload_img3();">
+                                                            <label id="label_img3" class="custom-file-label invalid">Elegir archivos...</label>
+                                                            <div id="respose_img3"></div>
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group">
                                                         <label>Duración Horas</label>
                                                         <input class="form-control" type="text" id="duration" name="duration" value="<?php echo isset($obj_courses->duration) ? $obj_courses->duration : ""; ?>" class="input-xlarge-fluid" placeholder="Duración Hrs">

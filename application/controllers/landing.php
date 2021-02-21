@@ -113,6 +113,7 @@ class Landing extends CI_Controller {
                        courses.description,
                        courses.img,
                        courses.img2,
+                       courses.img3,
                        courses.price,
                        courses.price_del,
                        courses.bono_1,
