@@ -160,6 +160,10 @@
                     .card-header:first-child {
                         border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
                     }
+                    li{
+                      margin-top: -32px !important;
+                    }
+                    
                     </style>
                     
                 <div class="custom-skin-column width-2" style="background-color:#f4f7fa;border-radius:10px;padding:0px;border-radius: 10px;">
