@@ -108,7 +108,7 @@
                   if($obj_courses->img3 != null){ ?>
                     <div class="hotpay-image crop-default size-default" data-v-49edbfa8>
                       <div class="hotpay-image-crop" data-v-49edbfa8>
-                        <img src="<?php echo site_url()."static/catalog/$obj_courses->img3";?>" data-v-49edbfa8>
+                        <img src="<?php echo site_url()."static/cms/images/cursos/$obj_courses->img3";?>" data-v-49edbfa8>
                       </div>
                     </div>
                   <?php } ?>
