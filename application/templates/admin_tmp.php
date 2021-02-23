@@ -20,9 +20,9 @@
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/animate.min.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
   <!--Jquery Editor text-->
-    <link type="text/css" rel="stylesheet" href="<?php echo site_url()."static/cms/jquery-te_v.1.4.0/jquery-te-1.4.0.css"?>">
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url()."static/cms/jquery-te/jquery-te.css"?>">
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="<?php echo site_url()."static/cms/jquery-te_v.1.4.0/jquery-te-1.4.0.min.js"?>" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo site_url()."static/cms/jquery-te/jquery-te.min.js"?>" charset="utf-8"></script>
   <!--end -->
   <script type="text/javascript">
     var site = '<?php echo site_url();?>';
