@@ -6,7 +6,7 @@
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" name="referrer" content="no-referrer-when-downgrade">
-    <meta name="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero.">
+    <meta name="description" content="Edúcate con la Cultura Emprendedora y adquiere el conocimiento que necesitas para ser un triunfador. Adquiere hoy tu curso por nuestro Tienda Online, acumula puntos y dinero. ">
     <meta name="author" content="Cultura Emprendedora">
     <meta name="keyword" content="<?php echo $obj_courses->name;?>, Cultura Emprendedora, Movimiento Emprendedor, Emprendedor Perú, embajadores, Imparable social, red social, mlm, mmn, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
     <meta name="robots" content="Index, Follow">
@@ -17,17 +17,17 @@
     <meta property="og:url" content="<?php echo site_url();?>">
     <meta property="og:title" content="<?php echo $obj_courses->name;?> | Cursos | Cultura Emprendedora">
     <meta property="og:url" content="<?php echo site_url();?>">
-    <meta property="og:description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero.">
+    <meta property="og:description" content="Edúcate con la Cultura Emprendedora y adquiere el conocimiento que necesitas para ser un triunfador. Adquiere hoy tu curso por nuestro Tienda Online, acumula puntos y dinero. ">
     <meta property="og:image" content="<?php echo site_url()."static/cms/images/cursos/$obj_courses->img";?>">
     <meta property="og:site_name" content="<?php echo $obj_courses->name;?> | Cursos | Cultura Emprendedora">
     <meta property="og:locale" content="es_PE">
     <meta itemprop="name" content=" <?php echo $obj_courses->name;?> | Cursos | Cultura Emprendedora">
     <meta itemprop="url" content="<?php echo site_url();?>">
-    <meta itemprop="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero.">
+    <meta itemprop="description" content="Edúcate con la Cultura Emprendedora y adquiere el conocimiento que necesitas para ser un triunfador. Adquiere hoy tu curso por nuestro Tienda Online, acumula puntos y dinero. ">
     <meta itemprop="image" content="<?php echo site_url()."static/cms/images/cursos/$obj_courses->img";?>">
-    <meta name="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero."> 
+    <meta name="description" content="Edúcate con la Cultura Emprendedora y adquiere el conocimiento que necesitas para ser un triunfador. Adquiere hoy tu curso por nuestro Tienda Online, acumula puntos y dinero. "> 
     <meta itemprop="url" content="<?php echo site_url();?>"> 
-    <meta itemprop="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero."> 
+    <meta itemprop="description" content="Edúcate con la Cultura Emprendedora y adquiere el conocimiento que necesitas para ser un triunfador. Adquiere hoy tu curso por nuestro Tienda Online, acumula puntos y dinero. "> 
     <meta itemprop="image" content="<?php echo site_url()."static/cms/images/cursos/$obj_courses->img";?>"> 
     <meta name="twitter:card" content="summary_large_image"> 
     <meta name="twitter:title" content="<?php echo $obj_courses->name;?> | Cursos | Cultura Emprendedora"> 

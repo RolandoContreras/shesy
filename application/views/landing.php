@@ -6,7 +6,7 @@
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" name="referrer" content="no-referrer-when-downgrade">
-    <meta name="description" content="><?php echo corta_texto($obj_catalog->description, 160);?>">
+    <meta name="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero. ">
     <meta name="author" content="Cultura Emprendedora">
     <meta name="keyword" content="Tienda, Market, Cultura Emprendedora, Movimiento Emprendedor, Emprendedor Perú, embajadores, Imparable social, red social, mlm, mmn, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
 
@@ -18,17 +18,17 @@
     <meta property="og:url" content="<?php echo site_url();?>">
     <meta property="og:title" content="<?php echo $obj_catalog->name;?> | Tienda | Cultura Emprendedora">
     <meta property="og:url" content="<?php echo site_url();?>">
-    <meta property="og:description" content="<?php echo corta_texto($obj_catalog->description, 160);?>">
+    <meta property="og:description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero. ">
     <meta property="og:image" content="<?php echo site_url()."static/catalog/$obj_catalog->img";?>">
     <meta property="og:site_name" content="Market Cultura Emprendedora">
     <meta property="og:locale" content="es_PE">
     <meta itemprop="name" content=" <?php echo $obj_catalog->name;?> | Tienda | Cultura Emprendedoras">
     <meta itemprop="url" content="<?php echo site_url();?>">
-    <meta itemprop="description" content="<?php echo corta_texto($obj_catalog->description, 160);?>">
+    <meta itemprop="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero. ">
     <meta itemprop="image" content="<?php echo site_url()."static/catalog/$obj_catalog->img";?>">
-    <meta name="description" content="<?php echo corta_texto($obj_catalog->description, 160);?>"> 
+    <meta name="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero. "> 
     <meta itemprop="url" content="<?php echo site_url();?>"> 
-    <meta itemprop="description" content="<?php echo corta_texto($obj_catalog->description, 160);?>"> 
+    <meta itemprop="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero. "> 
     <meta itemprop="image" content="<?php echo site_url()."static/catalog/$obj_catalog->img";?>"> 
     <meta name="twitter:card" content="summary_large_image"> 
     <meta name="twitter:title" content="<?php echo $obj_catalog->name;?> | Tienda | Cultura Emprendedora"> 
@@ -170,7 +170,6 @@
                         border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
                     }
                     </style>
-                    
                 <div class="custom-skin-column width-2" style="background-color:#f4f7fa;border-radius:10px;padding:0px;border-radius: 10px;">
                 <div class="card-header" style="blackground-color:black !important:border-radius:20px;">
                       <h3 style="text-align:center"><b>¡OBTENLO AHORA!</b></h3>

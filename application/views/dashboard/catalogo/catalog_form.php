@@ -53,12 +53,10 @@
                                                         <label>Precio</label>
                                                         <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
                                                     </div>
+                                                    <!--description-->
                                                     <div class="form-group">
-                                                        <label>Descripción</label>
-                                                        <textarea name="description" id="description"><?php echo isset($obj_catalog->description) ? $obj_catalog->description : ""; ?></textarea>
-                                                        <script>
-                                                            CKEDITOR.replace('description');
-                                                        </script>
+                                                        <label>Descripción del Curso</label>
+                                                        <textarea name="textarea" name="description" id="description" class="jqte-test"><?php echo isset($obj_catalog->description) ? $obj_catalog->description : ""; ?></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label><b>Enlace Vídeo</b><br/> VIMEO - <b>(https://vimeo.com/12149946)</b><br/>
@@ -264,10 +262,7 @@
     </div>
 </div>
 <script src="<?php echo site_url() . 'static/cms/js/catalog.js' ?>"></script>
-<script type="text/javascript">
-                                                $(window).on('load', function () {
-                                                    // classic editor
-                                                    ClassicEditor.create(document.querySelector('#sumilla'))
-                                                });
+<script>
+    $('.jqte-test').jqte();
 </script>
 
