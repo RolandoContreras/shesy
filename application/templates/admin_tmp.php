@@ -19,12 +19,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/animate.min.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
-  <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+  <!--Jquery Editor text-->
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url()."static/cms/jquery-te_v.1.4.0/jquery-te-1.4.0.css"?>">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo site_url()."static/cms/jquery-te_v.1.4.0/jquery-te-1.4.0.min.js"?>" charset="utf-8"></script>
+  <!--end -->
   <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
   <script src="<?php echo site_url().'static/cms/js/core/bootbox.all.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
   <script src="<?php echo site_url().'static/cms/js/core/bootstrap.min.js';?>"></script>
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/core/bootstrap-datepicker3.min.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/mystyle.css';?>">

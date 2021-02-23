@@ -53,12 +53,10 @@
                                                         <label>Precio</label>
                                                         <input class="form-control" type="number" step="any" id="price" name="price" value="<?php echo isset($obj_courses->price) ? $obj_courses->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
                                                     </div>
+                                                    <!--description-->
                                                     <div class="form-group">
-                                                        <label>Descripción</label>
-                                                        <textarea name="description" id="description" class="form-control"><?php echo isset($obj_courses->description) ? $obj_courses->description : ""; ?></textarea>
-                                                        <script>
-                                                            CKEDITOR.replace('description');
-                                                        </script>
+                                                        <label>Descripción del Curso</label>
+                                                        <textarea name="textarea" name="description" id="description" class="jqte-test"><?php echo isset($obj_courses->description) ? $obj_courses->description : ""; ?></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label><b>Bono 1 Nivel</b> - (3 decimales)</label>
@@ -223,10 +221,15 @@
     </div>
 </div>
 <script src="<?php echo site_url() . 'static/cms/js/cursos.js' ?>"></script>
-<script type="text/javascript">
-    $(window).on('load', function () {
-        // classic editor
-        ClassicEditor.create(document.querySelector('#sumilla'))
-    });
+<script>
+    $('.jqte-test').jqte({placeholder: "Ingresa la descripción del Vídeo"
+      });
+	// settings of status
+	var jqteStatus = true;
+	$(".status").click(function()
+	{
+		jqteStatus = jqteStatus ? false : true;
+		$('.jqte-test').jqte({"status" : jqteStatus})
+	});
 </script>
 

@@ -1,7 +1,7 @@
 function validate() {
     document.getElementById("submit").disabled = true;
     document.getElementById("submit").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
-    description = CKEDITOR.instances.description.getData();
+    description = $('#description').val();
     oData = new FormData(document.forms.namedItem("cursos_form"));
     oData.append("description", description);
     $.ajax({

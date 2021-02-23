@@ -40,7 +40,6 @@
                                   <th class="sorting_asc" tabindex="0" >ID</th>
                                   <th class="sorting">Nombre</th>
                                   <th class="sorting">Categoría</th>
-                                  <th class="sorting">Descripción</th>
                                   <th class="sorting">Imagen</th>
                                   <th class="sorting">Precio</th>
                                   <th class="sorting">Tipo</th>
@@ -56,7 +55,6 @@
                                 <th><?php echo $value->course_id;?></th>
                                 <td><h6><?php echo strtoupper($value->name);?><h6></td>
                                 <td><span class="badge badge-pill badge-info" style="font-size: 90%;"><?php echo $value->category;?></span></td>
-                                <td><?php echo corta_texto($value->description, 70);?></td>
                                 <td><img src='<?php echo site_url()."static/cms/images/cursos/$value->img";?>' width="60"/></td>                                    
                                 <td><h6><?php echo strtoupper($value->price);?><h6></td>
                                 <td>
