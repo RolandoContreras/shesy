@@ -222,14 +222,6 @@
 </div>
 <script src="<?php echo site_url() . 'static/cms/js/cursos.js' ?>"></script>
 <script>
-    $('.jqte-test').jqte({placeholder: "Ingresa la descripción del Vídeo"
-      });
-	// settings of status
-	var jqteStatus = true;
-	$(".status").click(function()
-	{
-		jqteStatus = jqteStatus ? false : true;
-		$('.jqte-test').jqte({"status" : jqteStatus})
-	});
+    $('.jqte-test').jqte();
 </script>
 

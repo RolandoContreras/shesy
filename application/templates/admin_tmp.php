@@ -21,7 +21,7 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <!--Jquery Editor text-->
     <link type="text/css" rel="stylesheet" href="<?php echo site_url()."static/cms/jquery-te/jquery-te.css"?>">
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="<?php echo site_url()."static/cms/jquery-te/jquery-te.min.js"?>" charset="utf-8"></script>
   <!--end -->
   <script type="text/javascript">
