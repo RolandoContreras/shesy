@@ -57,7 +57,7 @@
                                                         <?php 
                                                             if($video != null){  ?>
                                                                 <a href='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' data-toggle="lightbox" data-gallery="<?php echo $obj_catalog->name; ?>">
-                                                                    <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' class="img-fluid m-b-10" alt="<?php echo $obj_catalog->name; ?>">
+                                                                    <img width="400" src='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' class="img-fluid center m-b-10" alt="<?php echo $obj_catalog->name; ?>">
                                                                 </a>  
                                                           <?php }?>
                                                                 
@@ -163,6 +163,11 @@
                 </section>
                 <script src="<?php echo site_url(); ?>static/catalog/js/pay_order_new.js"></script>
                 <style>
+                .center {
+                    margin: auto;
+                    width: 50%;
+                    padding: 10px;
+                    }
                     .white{
                         color:white !important;
                     }
