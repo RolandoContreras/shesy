@@ -28,20 +28,40 @@
                                     <div class="card-block">
                                         <div class="row">
                                             <div class="col-xl-5 col-lg-5 col-sm-5 col-xs-12">
-                                                <a href='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' data-toggle="lightbox" data-gallery="<?php echo $obj_catalog->name; ?>">
-                                                    <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' class="img-fluid m-b-10" alt="<?php echo $obj_catalog->name; ?>">
-                                                </a>
+                                                <?php 
+                                                    if($video != null){ 
+                                                        if($host == "vimeo.com"){ ?>
+                                                        <?php  }else{ ?>
+                                                            <div class="video-wrapper">
+                                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video;?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
+                                                            </div>
+                                                        <?php } 
+                                                    }else{ ?>
+                                                          <a href='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' data-toggle="lightbox" data-gallery="<?php echo $obj_catalog->name; ?>">
+                                                            <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' class="img-fluid m-b-10" alt="<?php echo $obj_catalog->name; ?>">
+                                                          </a>  
+                                                   <?php } ?>
                                             </div>
                                             <div class="col-xl-7 col-lg-7 col-sm-7 col-xs-12">
                                                 <div class="tab-content" id="v-pills-tabContent">
                                                     <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" style="color:#888 !important;">
-                                                        <h2 class="mt-3"><?php echo $obj_catalog->name; ?></h2>
-                                                        <h2>
+                                                        <h3 class="mt-3"><?php echo $obj_catalog->name; ?></h3>
+                                                        <h3>
                                                             &dollar; <?php echo $obj_catalog->price; ?>
-                                                        </h2>
+                                                        </h3>
                                                         <p><span id="comparePrice-product-template" class="sale-tag large title-price"><span class="money conversion-bear-money">16/Sep</span></span></p>
                                                         <br/>
                                                         <?php echo $obj_catalog->description; ?>
+                                                        <br/><br/>
+                                                        
+                                                        <?php 
+                                                            if($video != null){  ?>
+                                                                <a href='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' data-toggle="lightbox" data-gallery="<?php echo $obj_catalog->name; ?>">
+                                                                    <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' class="img-fluid m-b-10" alt="<?php echo $obj_catalog->name; ?>">
+                                                                </a>  
+                                                          <?php }?>
+                                                                
+                                                        
                                                         <h6 class="mt-3">Código de Producto</h6>
                                                         <p class="mb-1">
                                                             #<?php echo $obj_catalog->catalog_id; ?>
@@ -146,6 +166,20 @@
                     .white{
                         color:white !important;
                     }
+                    .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.video-wrapper iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
                 </style>
 <script>
  function copy() {

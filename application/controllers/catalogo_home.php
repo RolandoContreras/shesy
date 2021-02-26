@@ -329,6 +329,8 @@ class Catalogo_home extends CI_Controller {
         //get data nav
         $url = explode("/", uri_string());
         $catalog_id = $url[2];
+        $video = null;
+        $host = null;
         //get catalog
         $params = array(
             "select" => "catalog.catalog_id,
@@ -342,6 +344,7 @@ class Catalogo_home extends CI_Controller {
                                     catalog.img,
                                     catalog.img2,
                                     catalog.img3,
+                                    catalog.video,
                                     catalog.date,
                                     catalog.active,
                                     category.slug as category_slug,
@@ -349,7 +352,12 @@ class Catalogo_home extends CI_Controller {
             "join" => array('category, category.category_id = catalog.category_id'),
             "where" => "catalog.catalog_id = '$catalog_id' and catalog.active = 1");
         $obj_catalog = $this->obj_catalog->get_search_row($params);
-
+        $video = $obj_catalog->video;
+            if($video != null){
+                $explode =  explode("/",$video);
+                $host = $explode[2];
+                $video = $explode[3];
+            }
         $params = array(
             "select" => "catalog.catalog_id,
                                     catalog.name,
@@ -375,6 +383,8 @@ class Catalogo_home extends CI_Controller {
         //set url sell
         $url =  site_url()."soloporhoy/$obj_catalog->category_slug/$obj_catalog->slug?d=$customer_id";    
         //SEND DATA
+        $this->tmp_catalog->set("video", $video);
+        $this->tmp_catalog->set("host", $host);
         $this->tmp_catalog->set("obj_total_compra", $obj_total_compra);
         $this->tmp_catalog->set("total_compra", $total_compra);
         $this->tmp_catalog->set("obj_profile", $obj_profile);
