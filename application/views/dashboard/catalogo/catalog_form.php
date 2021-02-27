@@ -112,7 +112,7 @@
                                                     <div class="form-group">
                                                         <label>Imagen 1 (Tamaño 1024 x 469)</label>
                                                         <div class="custom-file">
-                                                            <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();" <?php echo isset($obj_catalog->img) ? "" : "required"; ?> >
+                                                            <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();" <?php echo isset($obj_catalog->img) ? "" : ""; ?> >
                                                             <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img"></div>
                                                         </div>
@@ -128,7 +128,7 @@
                                                     <div class="form-group">
                                                         <label>Imagen 2 (Tamaño 1024 x 469)</label>
                                                         <div class="custom-file">
-                                                            <input type="file" name="image_file2" id="image_file2" class="custom-file-input" onchange="upload_img2();" <?php echo isset($obj_catalog->img2) ? "" : "required"; ?>>
+                                                            <input type="file" name="image_file2" id="image_file2" class="custom-file-input" onchange="upload_img2();" <?php echo isset($obj_catalog->img2) ? "" : ""; ?>>
                                                             <label id="label_img2" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img2"></div>
                                                         </div>
@@ -143,7 +143,7 @@
                                                     <div class="form-group">
                                                         <label>Imagen 3 (Tamaño 600 x 600 lado derecho) </label>
                                                         <div class="custom-file">
-                                                            <input type="file" name="image_file3" id="image_file3" class="custom-file-input" onchange="upload_img3();" <?php echo isset($obj_catalog->img3) ? "" : "required"; ?>>
+                                                            <input type="file" name="image_file3" id="image_file3" class="custom-file-input" onchange="upload_img3();" <?php echo isset($obj_catalog->img3) ? "" : ""; ?>>
                                                             <label id="label_img3" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img3"></div>
                                                         </div>
