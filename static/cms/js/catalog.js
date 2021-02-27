@@ -1,8 +1,9 @@
 function validate() {
     document.getElementById("submit").disabled = true;
     document.getElementById("submit").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
+    description =  tinyMCE.activeEditor.getContent();
     oData = new FormData(document.forms.namedItem("form-validate"));
-    oData
+    oData.append("description", description);
     $.ajax({
         url: site + "dashboard/catalogo/validate",
         method: "POST",

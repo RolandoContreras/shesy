@@ -54,9 +54,7 @@
                                                         <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
                                                     </div>
                                                     <div class="form-group">
-                                                    <textarea id='description' name='description' style="margin-top: 30px;">
-                                                        <?php echo isset($obj_catalog->description) ? $obj_catalog->description : ""; ?>
-                                                    </textarea>
+                                                        <textarea id='description' name='description'><?php echo isset($obj_catalog->description) ? $obj_catalog->description : ""; ?></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label><b>Enlace Vídeo</b><br/> VIMEO - <b>(https://vimeo.com/12149946)</b><br/>
@@ -262,39 +260,23 @@
     </div>
 </div>
 <script src="<?php echo site_url() . 'static/cms/js/catalog.js' ?>"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/froala_editor.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/align.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/code_beautifier.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/code_view.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/draggable.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/image.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/image_manager.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/link.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/lists.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/paragraph_format.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/paragraph_style.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/table.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/video.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/url.min.js";?>"></script>
-  <script type="text/javascript" src="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/js/plugins/js/plugins/entities.min.js";?>"></script>
   <script>
-    (function () {
-      const editorInstance = new FroalaEditor('#description', {
-        enter: FroalaEditor.ENTER_P,
-        placeholderText: "Ingrese Descripción",
-        events: {
-          initialized: function () {
-            const editor = this
-            this.el.closest('form').addEventListener('submit', function (e) {
-              console.log(editor.$oel.val())
-              e.preventDefault()
-            })
-          }
-        }
-      })
-    })();
-  </script>
+  tinymce.init({
+  selector: 'textarea#description',
+  height: 600,
+  menubar: false,
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help wordcount'
+  ],
+  toolbar: 'undo redo | formatselect | ' +
+  'bold italic backcolor | alignleft aligncenter ' +
+  'alignright alignjustify | bullist numlist outdent indent | ' +
+  'removeformat | help',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+});
+</script>
+
 
 
