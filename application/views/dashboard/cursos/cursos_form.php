@@ -56,7 +56,7 @@
                                                     <!--description-->
                                                     <div class="form-group">
                                                         <label>Descripción del Curso</label>
-                                                        <textarea name="textarea" name="description" id="description" class="jqte-test"><?php echo isset($obj_courses->description) ? $obj_courses->description : ""; ?></textarea>
+                                                        <textarea id='description' name='description'><?php echo isset($obj_courses->description) ? $obj_courses->description : ""; ?></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label><b>Bono 1 Nivel</b> - (3 decimales)</label>
@@ -222,6 +222,20 @@
 </div>
 <script src="<?php echo site_url() . 'static/cms/js/cursos.js' ?>"></script>
 <script>
-    $('.jqte-test').jqte();
+  tinymce.init({
+  selector: 'textarea#description',
+  height: 600,
+  menubar: false,
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help wordcount'
+  ],
+  toolbar: 'undo redo | formatselect | ' +
+  'bold italic backcolor | alignleft aligncenter ' +
+  'alignright alignjustify | bullist numlist outdent indent | ' +
+  'removeformat | help',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+});
 </script>
 
