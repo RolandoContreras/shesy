@@ -47,11 +47,11 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Precio Eliminado</label>
-                                                        <input class="form-control" type="text" id="price_del" name="price_del" value="<?php echo isset($obj_catalog->price_del) ? $obj_catalog->price_del : ""; ?>" class="input-xlarge-fluid" placeholder="Precio Marketing" required>
+                                                        <input class="form-control" type="text" id="price_del" name="price_del" value="<?php echo isset($obj_catalog->price_del) ? $obj_catalog->price_del : ""; ?>" class="input-xlarge-fluid" placeholder="Precio Marketing">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Precio</label>
-                                                        <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
+                                                        <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio">
                                                     </div>
                                                     <div class="form-group">
                                                         <textarea id='description' name='description'><?php echo isset($obj_catalog->description) ? $obj_catalog->description : ""; ?></textarea>
@@ -79,25 +79,25 @@
                                                     <div class="form-group col-md-3">
                                                         <div class="form-group">
                                                             <label>Bonificación N°1</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_catalog->bono_n1) ? $obj_catalog->bono_n1 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°1" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n1" name="bono_n1" value="<?php echo isset($obj_catalog->bono_n1) ? $obj_catalog->bono_n1 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°1">
                                                         </div>    
                                                         <div class="form-group">
                                                             <label>Bonificación N°2</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_catalog->bono_n2) ? $obj_catalog->bono_n2 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°2" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n2" name="bono_n2" value="<?php echo isset($obj_catalog->bono_n2) ? $obj_catalog->bono_n2 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°2">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Bonificación N°3</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_catalog->bono_n3) ? $obj_catalog->bono_n3 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°3" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n3" name="bono_n3" value="<?php echo isset($obj_catalog->bono_n3) ? $obj_catalog->bono_n3 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°3">
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <div class="form-group">
                                                             <label>Bonificación N°4</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_catalog->bono_n4) ? $obj_catalog->bono_n4 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°4" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n4" name="bono_n4" value="<?php echo isset($obj_catalog->bono_n4) ? $obj_catalog->bono_n4 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°4">
                                                         </div>    
                                                         <div class="form-group">
                                                             <label>Bonificación N°5</label>
-                                                            <input class="form-control" type="text" step="any" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_catalog->bono_n5) ? $obj_catalog->bono_n5 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°5" required>
+                                                            <input class="form-control" type="text" step="any" id="bono_n5" name="bono_n5" value="<?php echo isset($obj_catalog->bono_n5) ? $obj_catalog->bono_n5 : ""; ?>" class="input-xlarge-fluid" placeholder="Bonificación N°5">
                                                         </div>
                                                     </div>
                                                 </div>
