@@ -54,9 +54,8 @@
                                                         <input class="form-control" type="text" id="price" name="price" value="<?php echo isset($obj_catalog->price) ? $obj_catalog->price : ""; ?>" class="input-xlarge-fluid" placeholder="Precio" required>
                                                     </div>
                                                     <div class="form-group">
-                                                    <textarea id='description' name='description' style="margin-top: 30px;" placeholder="Type some text">
-                                                        <h1>Textarea</h1>
-                                                        <p>The editor can also be initialized on a textarea.</p>
+                                                    <textarea id='description' name='description' style="margin-top: 30px;">
+                                                        <?php echo isset($obj_catalog->description) ? $obj_catalog->description : ""; ?>
                                                     </textarea>
                                                     </div>
                                                     <div class="form-group">
@@ -284,7 +283,7 @@
     (function () {
       const editorInstance = new FroalaEditor('#description', {
         enter: FroalaEditor.ENTER_P,
-        placeholderText: null,
+        placeholderText: "Ingrese Descripción",
         events: {
           initialized: function () {
             const editor = this
