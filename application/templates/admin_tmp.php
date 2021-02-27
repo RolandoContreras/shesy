@@ -21,7 +21,7 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <!--Jquery Editor text-->
     <link type="text/css" rel="stylesheet" href="<?php echo site_url()."static/cms/jquery-te/jquery-te.css"?>">
-    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo site_url()."static/cms/js/jquery.min.js"?>" charset="utf-8"></script>
     <script type="text/javascript" src="<?php echo site_url()."static/cms/jquery-te/jquery-te.min.js"?>" charset="utf-8"></script>
   <!--end -->
   <script type="text/javascript">
@@ -36,6 +36,17 @@
   <!----- SWEET ALER  ---->
   <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+  <!----- FROALA ---->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/css/froala_editor.css";?>">
+  <link rel="stylesheet" href="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/css/froala_style.css";?>">
+  <link rel="stylesheet" href="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/css/code_view.css";?>">
+  <link rel="stylesheet" href="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/css/image_manager.css";?>">
+  <link rel="stylesheet" href="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/css/image.css";?>">
+  <link rel="stylesheet" href="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/css/table.css";?>">
+  <link rel="stylesheet" href="<?php echo site_url()."static/cms/froala_editor_3.2.6-1/css/video.css";?>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
   <script>
         var page = {
             bootstrap: 3
