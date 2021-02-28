@@ -5,6 +5,16 @@
                 <div class="main-body">
                     <div class="page-wrapper">
                         <div class="row">
+                            <?php  if($_SESSION['customer']['active_month'] == 0){ ?>
+                                <div class="col-md-12 col-xl-12">
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <b>NOTICIA IMPORTANTE</b>
+                                        <hr>
+                                        Bienvenido a la embajada empresarial <b> <?php echo $_SESSION['customer']['name']?></b>, acumula puntos de canje por cada consumo o recomendación.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    </div>
+                                </div>
+                             <?php } ?>   
                             <?php
                             if (isset($result_date)) {
                                 if ($result_date < 11) {
@@ -65,7 +75,7 @@
                                                 </div>
                                             </div>
                                         </div>
-<?php } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-4">
@@ -88,6 +98,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
@@ -108,8 +119,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php 
-                        if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
@@ -145,6 +154,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                             <div class="col-md-12 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -168,7 +178,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <?php } ?>
                             <div class="col-md-12 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -192,6 +202,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -213,6 +224,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
                             <div class="col-md-12 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -257,6 +269,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                             <div class="col-md-6 col-xl-6 offset-2">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -276,6 +289,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
                             <div class="col-xl-12 col-md-12">
                                 <div class="card Recent-Users">
                                     <div class="card-header">
