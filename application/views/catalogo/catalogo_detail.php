@@ -115,7 +115,7 @@
                                                                     <input type="text" id="copy" value="<?php echo $url;?>" class="form-control" readonly=""/>
                                                                 </div>           
                                                                 <div class="col-sm-6">
-                                                                    <button type="button" class="btn btn-info btn-block" title="Copiar Enlace"  onclick="copy();" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="copy"></i> Copiar Enlace del Producto</button>
+                                                                    <button type="button" class="btn btn-info btn-block" title="Copiar Enlace"  onclick="copy();" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="copy"></i> Enlace de Recomendación</button>
                                                                 </div>
                                                             </div>
 
