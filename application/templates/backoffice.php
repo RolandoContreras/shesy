@@ -84,13 +84,16 @@
                             </div>
                             <hr class="border-color-white">
                         </li>
-                        <li data-username="Tablero" class="nav-item">
-                            <a href="#" class="btn">
-                                <div class="access-dam-yellow" align="center"> 
-                                    <span>ACADEMIA</span>                
-                                </div>
-                            </a>
-                        </li>
+                        <?php 
+                        if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
+                             <li data-username="Tablero" class="nav-item">
+                                <a href="#" class="btn">
+                                    <div class="access-dam-yellow" align="center"> 
+                                        <span>ACADEMIA</span>                
+                                    </div>
+                                </a>
+                            </li>   
+                        <?php } ?>            
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url()."backoffice/cursos";?>" class="btn" style="width: 100%">
                                 <div class="access-dam-purple" align="center"> 
@@ -153,6 +156,10 @@
                                 <span class="pcoded-mtext">Cobros</span>
                             </a>
                         </li>
+
+                        <?php 
+                        if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
+
                         <li class="nav-item pcoded-menu-caption"><label>Red</label></li>
                         <li class="nav-item pcoded-hasmenu">
                             <a href="#!" class="nav-link <?php echo $red_syle; ?>">  
@@ -170,6 +177,7 @@
                                 <span class="pcoded-mtext">Plan Carrera</span>
                             </a>
                         </li>
+                        <?php } ?>
                         <li data-username="Materiales" class="nav-item">
                             <a href="<?php echo site_url() . 'backoffice/files'; ?>" class="nav-link <?php echo $files; ?>">
                                 <span class="pcoded-micon"><i class="feather icon-book"></i></span>

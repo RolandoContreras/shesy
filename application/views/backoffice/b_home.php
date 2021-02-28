@@ -128,7 +128,7 @@
                             <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
-                                        <h6 class="mb-4">Puntos de Compra</h6>
+                                        <h6 class="mb-4">Puntos de Canje</h6>
                                         <div class="row d-flex align-items-center">
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">

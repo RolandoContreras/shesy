@@ -206,6 +206,7 @@ class Landing extends CI_Controller {
     date_default_timezone_set('America/Lima');
         //set pass
         $email = $this->input->post("email");
+        $pass = $this->input->post("pass");
         //create passtowrd rand
         $obj_customer = $this->verify_email($email);
         if (!empty($obj_customer)) {
@@ -217,11 +218,11 @@ class Landing extends CI_Controller {
           $data_param = array(
               'first_name' => "Cultura",
               'last_name' => "Emprendedora",
-              'password' => $this->input->post("pass"),
+              'password' => $pass,
               'kit_id' => 0,
               'range_id' => 0,
               'active_month' => 0,
-              'email' => $this->input->post("email"),
+              'email' => $email,
               'country' => 89,
               'active' => 0,
               'status_value' => 1,
