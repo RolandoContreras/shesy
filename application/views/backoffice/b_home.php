@@ -108,6 +108,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php 
+                        if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
@@ -125,6 +127,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
