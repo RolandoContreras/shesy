@@ -5,7 +5,7 @@
                 <div class="main-body">
                     <div class="page-wrapper">
                         <div class="row">
-                            <?php  if($_SESSION['customer']['active_month'] == 0){ ?>
+                            <?php  if($obj_profile->active_month == 0){ ?>
                                 <div class="col-md-12 col-xl-12">
                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                         <b>NOTICIA IMPORTANTE</b>
@@ -98,7 +98,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
+                            <?php  if($obj_profile->kit_id != 0 && $obj_profile->active_month != 0){ ?>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card">
                                     <div class="card-block">
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
+                            <?php  if($obj_profile->kit_id != 0 && $obj_profile->active_month != 0){ ?>
                             <div class="col-md-12 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -202,7 +202,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
+                            <?php  if($obj_profile->kit_id != 0 && $obj_profile->active_month != 0){ ?>
                             <div class="col-md-6 col-xl-4">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
@@ -269,7 +269,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
+                            <?php  if($obj_profile->kit_id != 0 && $obj_profile->active_month != 0){ ?>
                             <div class="col-md-6 col-xl-6 offset-2">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">

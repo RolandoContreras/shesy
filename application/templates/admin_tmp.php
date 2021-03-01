@@ -19,10 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/animate.min.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
-  <!--Jquery Editor text-->
-    <link type="text/css" rel="stylesheet" href="<?php echo site_url()."static/cms/jquery-te/jquery-te.css"?>">
-    <script type="text/javascript" src="<?php echo site_url()."static/cms/js/jquery.min.js"?>" charset="utf-8"></script>
-    <script type="text/javascript" src="<?php echo site_url()."static/cms/jquery-te/jquery-te.min.js"?>" charset="utf-8"></script>
+  <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
   <!--end -->
   <script type="text/javascript">
     var site = '<?php echo site_url();?>';

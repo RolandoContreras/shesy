@@ -139,8 +139,10 @@ class B_home extends CI_Controller {
             "select" => "customer.customer_id,
                                     customer.first_name,
                                     customer.username,
+                                    customer.kit_id,
                                     customer.last_name,
                                     customer.img,
+                                    customer.active_month
                                     ",
             "where" => "customer.customer_id = $customer_id"
         );
