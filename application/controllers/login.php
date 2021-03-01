@@ -32,7 +32,7 @@ class Login extends CI_Controller {
                                         customer.email,
                                         customer.active,
                                         customer.status_value",
-                        "where" => "customer.username = '$code' or customer.email like '%$code%' and customer.password = '$pass' and customer.status_value = 1");
+                        "where" => "customer.username = '$code' or customer.email = '%$code%' and customer.password = '$pass' and customer.status_value = 1");
                     $obj_customer = $this->obj_customer->get_search_row($params);
                     //verify
                     if (!empty($obj_customer)) {
