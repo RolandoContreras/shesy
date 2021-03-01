@@ -114,10 +114,7 @@
                                                         <div class="card-block text-center">
                                                             <button type="button" class="btn btn-primary" id="buyButton" data-price="<?php echo quitar_punto_number($this->cart->format_number($this->cart->total())); ?>" data-price2="<?php echo $this->cart->format_number($this->cart->total()); ?>">Pagar con Tarjeta &nbsp;&nbsp;<i data-feather="credit-card"></i></button>
                                                             <button type="button" onclick="contra_entrega();" class="btn btn-primary" id="buyButton">Contra Entrega &nbsp;&nbsp;<i data-feather="user-check"></i></button>
-                                                            <?php 
-                                                                if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                                                             <button type="button" onclick="ganancia_disponible_view();" id="puntos_button" class="btn btn-primary" id="buyButton">Ganancia Disponible &nbsp;&nbsp;<i data-feather="dollar-sign"></i></button>
-                                                            <?php } ?>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-8">

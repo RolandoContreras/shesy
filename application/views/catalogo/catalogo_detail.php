@@ -104,7 +104,6 @@
                                                                     
                                                                 </div>
                                                             </div>
-                                                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                                                                 <hr style="color:white"/>
                                                                     <p>
                                                                         <a>
@@ -119,7 +118,6 @@
                                                                         <button type="button" class="btn btn-info btn-block" title="Copiar Enlace"  onclick="copy();" onclick="add_cart('<?php echo $obj_catalog->catalog_id; ?>', '<?php echo $obj_catalog->price; ?>', '<?php echo $obj_catalog->name; ?>');"><i data-feather="copy"></i> Enlace de Recomendación</button>
                                                                     </div>
                                                                 </div>
-                                                            <?php } ?>     
                                                         <?php } else { ?>
                                                             <div class="sale-tag medium--right">
                                                                 <span class="money conversion-bear-money">Sin Stock</span>

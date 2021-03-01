@@ -58,16 +58,14 @@
                                                                         <button type="button" class="btn btn-glow-success btn-success" title="Agregar al Carrito" onclick="add_cart('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>');"><i data-feather="shopping-cart"></i> Agregar al Carrito</button>
                                                                 </div>
                                                             </div>
-                                                            <?php  if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
-                                                                <div class="row form-group">
-                                                                    <div class="col-sm-6">
-                                                                        <input type="text" id="copy" value="<?php echo $url;?>" class="form-control" readonly=""/>
-                                                                    </div>           
-                                                                    <div class="col-sm-6">
-                                                                        <button type="button" class="btn btn-info btn-block" title="Copiar Enlace"  onclick="copy();"><i data-feather="copy"></i> Enlace de Recomendación</button>
-                                                                    </div>
+                                                            <div class="row form-group">
+                                                                <div class="col-sm-6">
+                                                                    <input type="text" id="copy" value="<?php echo $url;?>" class="form-control" readonly=""/>
+                                                                </div>           
+                                                                <div class="col-sm-6">
+                                                                    <button type="button" class="btn btn-info btn-block" title="Copiar Enlace"  onclick="copy();"><i data-feather="copy"></i> Enlace de Recomendación</button>
                                                                 </div>
-                                                            <?php } ?>
+                                                            </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
