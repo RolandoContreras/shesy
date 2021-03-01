@@ -157,7 +157,7 @@ class D_activate extends CI_Controller {
         if ($this->input->is_ajax_request()) {
             date_default_timezone_set('America/Lima');
             //SELECT CUSTOMER_ID
-//                $invoice_id = $this->input->post("invoice_id");
+//           $invoice_id = $this->input->post("invoice_id");
             $customer_id = $this->input->post("customer_id");
             $kit_id = $this->input->post("kit_id");
             $type = $this->input->post("type");
@@ -231,13 +231,10 @@ class D_activate extends CI_Controller {
     }
 
     public function pay_unilevel($ident, $new_parend_id, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5) {
-
         $new_ident = explode(",", $ident);
         rsort($new_ident);
-
         //BOUCLE ULTI 5 LEVEL
         for ($x = 0; $x <= 4; $x++) {
-
             if ($new_parend_id != null) {
                 if ($x == 0) {
                     //get customer active
@@ -247,10 +244,9 @@ class D_activate extends CI_Controller {
                     );
                     //GET DATA FROM BONUS
                     $obj_customer = $this->obj_customer->get_search_row($params);
+                    $noventa_percent = $bono_n1 *0.9;
+                    $diez_percent = $bono_n1 *0.1;
                     if (isset($obj_customer->active_month) &&  $obj_customer->active_month == 1 ) {
-                        //set 90% 10%
-                        $noventa_percent = $bono_n1 *0.9;
-                        $diez_percent = $bono_n1 *0.1;
                         //INSERT COMMISSION TABLE 90%
                         $data = array(
                             'invoice_id' => $invoice_id,
@@ -265,7 +261,23 @@ class D_activate extends CI_Controller {
                             'created_by' => $_SESSION['usercms']['user_id'],
                         );
                         $this->obj_commissions->insert($data);
-                        //INSERT COMMISSION TABLE 90%
+                        //INSERT COMMISSION TABLE 10%
+                        $data = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $new_parend_id,
+                            'bonus_id' => 1,
+                            'amount' => $diez_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'compras' => 1,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $_SESSION['usercms']['user_id'],
+                        );
+                        $this->obj_commissions->insert($data);
+                    }else{
+                        //INSERT COMMISSION TABLE 10%
                         $data = array(
                             'invoice_id' => $invoice_id,
                             'customer_id' => $new_parend_id,
@@ -291,57 +303,73 @@ class D_activate extends CI_Controller {
                             );
                             //GET DATA FROM BONUS
                             $obj_customer = $this->obj_customer->get_search_row($params);
-
-                            if (isset($obj_customer->active_month) &&  $obj_customer->active_month == 1 ) {
-                                //INSERT COMMISSION TABLE
-                                switch ($x) {
-                                    case 1:
-                                        $amount = $bono_n2;
-                                        break;
-                                    case 2:
-                                        $amount = $bono_n3;
-                                        break;
-                                    case 3:
-                                        $amount = $bono_n4;
-                                        break;
-                                    case 4:
-                                        $amount = $bono_n5;
-                                        break;
-                                }
-                                //set percent
+                            switch ($x) {
+                                case 1:
+                                    $amount = $bono_n2;
+                                    break;
+                                case 2:
+                                    $amount = $bono_n3;
+                                    break;
+                                case 3:
+                                    $amount = $bono_n4;
+                                    break;
+                                case 4:
+                                    $amount = $bono_n5;
+                                    break;
+                            }
+                            //set percent
+                            if($amount > 0){
                                 $noventa_percent = $amount *0.9;
                                 $diez_percent = $amount *0.1;
-                                //insert commission 90%
-                                $data = array(
-                                    'invoice_id' => $invoice_id,
-                                    'customer_id' => $new_ident[$x],
-                                    'bonus_id' => 1,
-                                    'amount' => $noventa_percent,
-                                    'active' => 1,
-                                    'pago' => 0,
-                                    'status_value' => 1,
-                                    'date' => date("Y-m-d H:i:s"),
-                                    'created_at' => date("Y-m-d H:i:s"),
-                                    'created_by' => $_SESSION['usercms']['user_id'],
-                                );
-                                $this->obj_commissions->insert($data);
-                                //insert commission 10%
-                                $data = array(
-                                    'invoice_id' => $invoice_id,
-                                    'customer_id' => $new_ident[$x],
-                                    'bonus_id' => 1,
-                                    'amount' => $diez_percent,
-                                    'active' => 1,
-                                    'pago' => 0,
-                                    'compras' => 1,
-                                    'status_value' => 1,
-                                    'date' => date("Y-m-d H:i:s"),
-                                    'created_at' => date("Y-m-d H:i:s"),
-                                    'created_by' => $_SESSION['usercms']['user_id'],
-                                );
-                                $this->obj_commissions->insert($data);
-                                
+                                if (isset($obj_customer->active_month) &&  $obj_customer->active_month == 1 ) {
+                                    //insert commission 90%
+                                    $data = array(
+                                        'invoice_id' => $invoice_id,
+                                        'customer_id' => $new_ident[$x],
+                                        'bonus_id' => 1,
+                                        'amount' => $noventa_percent,
+                                        'active' => 1,
+                                        'pago' => 0,
+                                        'status_value' => 1,
+                                        'date' => date("Y-m-d H:i:s"),
+                                        'created_at' => date("Y-m-d H:i:s"),
+                                        'created_by' => $_SESSION['usercms']['user_id'],
+                                    );
+                                    $this->obj_commissions->insert($data);
+                                    //insert commission 10%
+                                    $data = array(
+                                        'invoice_id' => $invoice_id,
+                                        'customer_id' => $new_ident[$x],
+                                        'bonus_id' => 1,
+                                        'amount' => $diez_percent,
+                                        'active' => 1,
+                                        'pago' => 0,
+                                        'compras' => 1,
+                                        'status_value' => 1,
+                                        'date' => date("Y-m-d H:i:s"),
+                                        'created_at' => date("Y-m-d H:i:s"),
+                                        'created_by' => $_SESSION['usercms']['user_id'],
+                                    );
+                                    $this->obj_commissions->insert($data);
+                                }else{
+                                    //insert commission 10%
+                                    $data = array(
+                                        'invoice_id' => $invoice_id,
+                                        'customer_id' => $new_ident[$x],
+                                        'bonus_id' => 1,
+                                        'amount' => $diez_percent,
+                                        'active' => 1,
+                                        'pago' => 0,
+                                        'compras' => 1,
+                                        'status_value' => 1,
+                                        'date' => date("Y-m-d H:i:s"),
+                                        'created_at' => date("Y-m-d H:i:s"),
+                                        'created_by' => $_SESSION['usercms']['user_id'],
+                                    );
+                                    $this->obj_commissions->insert($data);
+                                }
                             }
+                            
                         }
                     }
                 }
@@ -354,30 +382,28 @@ class D_activate extends CI_Controller {
                     );
                     //GET DATA FROM BONUS
                     $obj_customer = $this->obj_customer->get_search_row($params);
-
+                    switch ($x) {
+                        case 0:
+                            $amount = $bono_n1;
+                            break;
+                        case 1:
+                            $amount = $bono_n2;
+                            break;
+                        case 2:
+                            $amount = $bono_n3;
+                            break;
+                        case 3:
+                            $amount = $bono_n4;
+                            break;
+                        case 4:
+                            $amount = $bono_n5;
+                            break;
+                    }
+                    //set percent
+                    $noventa_percent = $amount *0.9;
+                    $diez_percent = $amount *0.1;
                     if (isset($obj_customer->active_month) &&  $obj_customer->active_month == 1 ) {
                         //INSERT COMMISSION TABLE
-                        switch ($x) {
-                            case 0:
-                                $amount = $bono_n1;
-                                break;
-                            case 1:
-                                $amount = $bono_n2;
-                                break;
-                            case 2:
-                                $amount = $bono_n3;
-                                break;
-                            case 3:
-                                $amount = $bono_n4;
-                                break;
-                            case 4:
-                                $amount = $bono_n5;
-                                break;
-                        }
-                        
-                        //set percent
-                        $noventa_percent = $amount *0.9;
-                        $diez_percent = $amount *0.1;
                         //insert commission 90%
                         $data = array(
                             'invoice_id' => $invoice_id,
@@ -392,6 +418,22 @@ class D_activate extends CI_Controller {
                             'created_by' => $_SESSION['usercms']['user_id'],
                         );
                         $this->obj_commissions->insert($data);
+                        //insert commission 10%
+                        $data = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $new_ident[$x],
+                            'bonus_id' => 1,
+                            'amount' => $diez_percent,
+                            'active' => 1,
+                            'compras' => 1,
+                            'pago' => 0,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $_SESSION['usercms']['user_id'],
+                        );
+                        $this->obj_commissions->insert($data);
+                    }else{
                         //insert commission 10%
                         $data = array(
                             'invoice_id' => $invoice_id,
