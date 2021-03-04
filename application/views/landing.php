@@ -41,13 +41,11 @@
     <link href="<?php echo site_url() . 'static/page_front/css/hot.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="<?php echo site_url() . 'static/page_front/css/bootstrap.min.css?version=4.4.0'; ?>" rel="stylesheet" >
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
     <link href="<?php echo site_url() . 'static/page_front/css/new_style.css';?>" rel="stylesheet" >
     <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://checkout.culqi.com/js/v3"></script>
-        <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript">
     var site = '<?php echo site_url();?>';
