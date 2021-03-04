@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="row">
-                                            <div class="col-xl-5 col-lg-5 col-sm-5 col-xs-12">
+                                            <div class="col-xl-4 col-lg-4 col-sm-5 col-xs-12">
                                                 <?php 
                                                     if($video != null){ 
                                                         if($host == "vimeo.com"){ ?>
@@ -42,7 +42,7 @@
                                                           </a>  
                                                    <?php } ?>
                                             </div>
-                                            <div class="col-xl-7 col-lg-7 col-sm-7 col-xs-12">
+                                            <div class="col-xl-8 col-lg-8 col-sm-7 col-xs-12">
                                                 <div class="tab-content" id="v-pills-tabContent">
                                                     <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" style="color:#888 !important;">
                                                         <h3 class="mt-3"><?php echo $obj_catalog->name; ?></h3>

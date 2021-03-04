@@ -27,12 +27,12 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="row">
-                                            <div class="col-xl-5 col-lg-5 col-sm-5 col-xs-12">
+                                            <div class="col-xl-4 col-lg-4 col-sm-5 col-xs-12">
                                                 <a href='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img"; ?>' data-toggle="lightbox" data-gallery="<?php echo $obj_courses->name; ?>">   
                                                     <img src='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img"; ?>' class="img-fluid m-b-10" alt="<?php echo $obj_courses->name; ?>">
                                                 </a>
                                             </div>
-                                            <div class="col-xl-7 col-lg-7 col-sm-7 col-xs-12">
+                                            <div class="col-xl-8 col-lg-8 col-sm-7 col-xs-12">
                                                 <div class="tab-content" id="v-pills-tabContent">
                                                     <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" style="color:#888 !important;">
                                                         <h2 class="mt-3"><?php echo $obj_courses->name; ?></h2>
@@ -42,10 +42,7 @@
                                                         <p><span id="comparePrice-product-template" class="sale-tag large title-price"><span class="money conversion-bear-money">16/Sep</span></span></p>
                                                         <br/>
                                                         <?php echo $obj_courses->description; ?>
-                                                        <h6 class="mt-3">Código de Producto</h6>
-                                                        <p class="mb-1">
-                                                            #<?php echo $obj_courses->course_id; ?>
-                                                        </p>
+                                                        
                                                         <h6 class="mt-3">Categoría</h6>
                                                         <p>
                                                             <a href="<?php echo site_url() . "backoffice/cursos/$obj_courses->category_slug"; ?>">
