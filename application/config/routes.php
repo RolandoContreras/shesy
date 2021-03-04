@@ -202,8 +202,6 @@ $route['dashboard/catalogo/validate'] = "d_catalog/validate";
 $route['dashboard/catalogo/delete'] = "d_catalog/delete";
 $route['dashboard/catalogo/delete_img'] = "d_catalog/delete_img";
 
-
-
 $route['dashboard/videos'] = "d_videos";
 $route['dashboard/videos/load'] = "d_videos/load";
 $route['dashboard/videos/load/([0-9]+)'] = "d_videos/load/$1";
@@ -257,6 +255,7 @@ $route['dashboard/mis-cursos/load'] = "d_cursos/load";
 $route['dashboard/mis-cursos/load/([0-9]+)'] = "d_cursos/load/$1";
 $route['dashboard/mis-cursos/validate'] = "d_cursos/validate";
 $route['dashboard/mis-cursos/delete'] = "d_cursos/delete";
+$route['dashboard/mis-cursos/delete_img'] = "d_cursos/delete_img";
 
 //DASHBOARD activaciones de cursos
 $route['dashboard/cursos-activaciones'] = "d_activate_cursos";

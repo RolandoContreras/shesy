@@ -80,42 +80,30 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <?php if (isset($obj_courses)) { ?>
+                                                    
+                                                    <?php if (isset($obj_courses->img2) && $obj_courses->img2 != null) { ?>
                                                         <div class="form-group">
-                                                            <label>Imagen 1</label><br/>
-                                                            <img src='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img"; ?>' width="100" />
-                                                            <input class="form-control" type="hidden" name="img_2" id="img_2" value="<?php echo isset($obj_courses) ? $obj_courses->img : ""; ?>">
-                                                        </div>
-                                                    <?php } ?>
-                                                    <div class="form-group">
-                                                        <label>Imagen 1 (Tamaño 600 x 600)</label>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();">
-                                                            <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
-                                                            <div id="respose_img"></div>
-                                                        </div>
-                                                    </div>
-                                                    <?php if (isset($obj_courses)) { ?>
-                                                        <div class="form-group">
-                                                            <label>Banner Landing </label><br/>
+                                                            <label>Primera Imagen Landing - Portada</label><br/>
                                                             <img src='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img2"; ?>' width="100" />
                                                             <input class="form-control" type="hidden" name="img_3" id="img_3" value="<?php echo isset($obj_courses) ? $obj_courses->img2 : ""; ?>">
                                                         </div>
+                                                        <button class="btn btn-danger" type="reset" onclick="delete_img('<?php echo $obj_courses->course_id;?>', '<?php echo 'img2';?>');"><i data-feather="trash-2"></i> Eliminar</button>
                                                     <?php } ?>
                                                     <div class="form-group">
-                                                        <label>Banner Landing (Tamaño 1024 x 469)</label>
+                                                        <label>Primera Imagen Landing - Portada (Tamaño 1024 x 469)</label>
                                                         <div class="custom-file">
                                                             <input type="file" name="image_file2" id="image_file2" class="custom-file-input" onchange="upload_img2();">
                                                             <label id="label_img2" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img2"></div>
                                                         </div>
                                                     </div>
-                                                    <?php if (isset($obj_courses)) { ?>
+                                                    <?php if (isset($obj_courses->img3) && $obj_courses->img3 != null) { ?>
                                                         <div class="form-group">
-                                                            <label>Banner Landing </label><br/>
+                                                            <label>Imagen Certificado</label><br/>
                                                             <img src='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img3"; ?>' width="100" />
                                                             <input class="form-control" type="hidden" name="img_4" id="img_4" value="<?php echo isset($obj_courses) ? $obj_courses->img3 : ""; ?>">
                                                         </div>
+                                                        <button class="btn btn-danger" type="reset" onclick="delete_img('<?php echo $obj_courses->course_id;?>', '<?php echo 'img3';?>');"><i data-feather="trash-2"></i> Eliminar</button>
                                                     <?php } ?>
                                                     <div class="form-group">
                                                         <label>Imagen Certificado (Tamaño 1024 x 469)</label>
@@ -123,6 +111,22 @@
                                                             <input type="file" name="image_file3" id="image_file3" class="custom-file-input" onchange="upload_img3();">
                                                             <label id="label_img3" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img3"></div>
+                                                        </div>
+                                                    </div>
+                                                    <?php if (isset($obj_courses->img) && $obj_courses->img != null) { ?>
+                                                        <div class="form-group">
+                                                            <label>Imagen Interna del Backoffice / Landing Derecha</label><br/>
+                                                            <img src='<?php echo site_url() . "static/cms/images/cursos/$obj_courses->img"; ?>' width="100" />
+                                                            <input class="form-control" type="hidden" name="img_2" id="img_2" value="<?php echo isset($obj_courses) ? $obj_courses->img : ""; ?>">
+                                                        </div>
+                                                        <button class="btn btn-danger" type="reset" onclick="delete_img('<?php echo $obj_courses->course_id;?>', '<?php echo 'img';?>');"><i data-feather="trash-2"></i> Eliminar</button>
+                                                    <?php } ?>
+                                                    <div class="form-group">
+                                                        <label>Imagen Interna del Backoffice / Landing Derecha (Tamaño 600 x 600)</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" name="image_file" id="image_file" class="custom-file-input" onchange="upload_img();">
+                                                            <label id="label_img" class="custom-file-label invalid">Elegir archivos...</label>
+                                                            <div id="respose_img"></div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">

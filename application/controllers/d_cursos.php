@@ -240,6 +240,25 @@ class d_cursos extends CI_Controller {
         }
     }
 
+    public function delete_img() {
+        if ($this->input->is_ajax_request()) {
+            //OBETENER CATALOGO ID
+            $course_id = $this->input->post("course_id");
+            $img = $this->input->post("img");
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($course_id != "") {
+                $param = array(
+                    "$img" => null,
+                );
+                $this->obj_courses->update($course_id, $param);
+                $data['status'] = true;
+            } else {
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+    }
+
     public function get_session() {
         if (isset($_SESSION['usercms'])) {
             if ($_SESSION['usercms']['logged_usercms'] == "TRUE" && $_SESSION['usercms']['status'] == 1) {
