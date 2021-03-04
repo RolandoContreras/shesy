@@ -61,12 +61,13 @@
                                                                     Youtube - <b>(https://youtu.be/3uUJCvdbH3k)</b></label>
                                                         <input class="form-control" type="text" id="video" name="video" value="<?php echo isset($obj_catalog->video) ? $obj_catalog->video : ""; ?>" class="input-xlarge-fluid" placeholder="Ingrese Enlace Vimeo / Youtube">
                                                     </div>
-                                                    <?php if (isset($obj_catalog)) { ?>
+                                                    <?php if (isset($obj_catalog->img4) && $obj_catalog->img4 != null) { ?>
                                                         <div class="form-group">
                                                             <label>Banner Principal</label><br/>
                                                             <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img4"; ?>' width="100" />
                                                             <input class="form-control" type="hidden" name="img_5" id="img_5" value="<?php echo isset($obj_catalog) ? $obj_catalog->img4 : ""; ?>">
                                                         </div>
+                                                        <button class="btn btn-danger" type="reset" onclick="delete_img('<?php echo $obj_catalog->catalog_id;?>', '<?php echo 'img4';?>');"><i data-feather="trash-2"></i> Eliminar</button>
                                                     <?php } ?>
                                                     <div class="form-group">
                                                         <label>Banner Principal (Tamaño 1024 x 469)</label>
@@ -102,12 +103,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <?php if (isset($obj_catalog)) { ?>
+                                                    <?php if (isset($obj_catalog->img) && $obj_catalog->img != null) { ?>
                                                         <div class="form-group">
                                                             <label>Imagen 1</label><br/>
                                                             <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img"; ?>' width="100" />
                                                             <input class="form-control" type="hidden" name="img_2" id="img_2" value="<?php echo isset($obj_catalog) ? $obj_catalog->img : ""; ?>">
                                                         </div>
+                                                        <button class="btn btn-danger" type="reset" onclick="delete_img('<?php echo $obj_catalog->catalog_id;?>', '<?php echo 'img';?>');"><i data-feather="trash-2"></i> Eliminar</button>
                                                     <?php } ?>
                                                     <div class="form-group">
                                                         <label>Imagen 1 (Tamaño 1024 x 469)</label>
@@ -118,12 +120,13 @@
                                                         </div>
                                                     </div>
 
-                                                    <?php if (isset($obj_catalog->img2)) { ?>
+                                                    <?php if (isset($obj_catalog->img2) && $obj_catalog->img2 != null) { ?>
                                                         <div class="form-group">
                                                             <label>Imagen 2</label><br/>
                                                             <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img2"; ?>' width="100" />
                                                             <input class="form-control" type="hidden" name="img_3" id="img_3" value="<?php echo isset($obj_catalog) ? $obj_catalog->img2 : ""; ?>">
                                                         </div>
+                                                        <button class="btn btn-danger" type="reset" onclick="delete_img('<?php echo $obj_catalog->catalog_id;?>', '<?php echo 'img2';?>');"><i data-feather="trash-2"></i> Eliminar</button>
                                                     <?php } ?>
                                                     <div class="form-group">
                                                         <label>Imagen 2 (Tamaño 1024 x 469)</label>
@@ -133,12 +136,13 @@
                                                             <div id="respose_img2"></div>
                                                         </div>
                                                     </div>
-                                                    <?php if (isset($obj_catalog->img3)) { ?>
+                                                    <?php if (isset($obj_catalog->img3) && $obj_catalog->img3 != null) { ?>
                                                         <div class="form-group">
                                                             <label>Imagen 3</label><br/>
                                                             <img src='<?php echo site_url() . "static/catalog/$obj_catalog->img3"; ?>' width="100" />
                                                             <input class="form-control" type="hidden" name="img_4" id="img_4" value="<?php echo isset($obj_catalog) ? $obj_catalog->img3 : ""; ?>">
                                                         </div>
+                                                        <button class="btn btn-danger" type="reset" onclick="delete_img('<?php echo $obj_catalog->catalog_id;?>', '<?php echo 'img3';?>');"><i data-feather="trash-2"></i> Eliminar</button>
                                                     <?php } ?>
                                                     <div class="form-group">
                                                         <label>Imagen 3 (Tamaño 600 x 600 lado derecho) </label>

@@ -38,7 +38,6 @@ class B_home extends CI_Controller {
         $date = date("Y-m-d");
         if ($date_month != null) {
             if ($date_month < $date) {
-
                 //UPDATE SESSION
                 $data_month = 0;
                 $this->update_session_active_month($data_month);

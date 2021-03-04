@@ -211,6 +211,25 @@ class D_catalog extends CI_Controller {
       }
     }
 
+    public function delete_img() {
+        if ($this->input->is_ajax_request()) {
+            //OBETENER CATALOGO ID
+            $catalog_id = $this->input->post("catalog_id");
+            $img = $this->input->post("img");
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($catalog_id != "") {
+                $param = array(
+                    "$img" => null,
+                );
+                $this->obj_catalog->update($catalog_id, $param);
+                $data['status'] = true;
+            } else {
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+    }
+
     public function delete() {
         if ($this->input->is_ajax_request()) {
             //OBETENER CATALOGO ID

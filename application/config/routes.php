@@ -200,6 +200,9 @@ $route['dashboard/catalogo/show_sub_category'] = "d_catalog/show_sub_category";
 $route['dashboard/catalogo/load/([0-9]+)'] = "d_catalog/load/$1";
 $route['dashboard/catalogo/validate'] = "d_catalog/validate";
 $route['dashboard/catalogo/delete'] = "d_catalog/delete";
+$route['dashboard/catalogo/delete_img'] = "d_catalog/delete_img";
+
+
 
 $route['dashboard/videos'] = "d_videos";
 $route['dashboard/videos/load'] = "d_videos/load";

@@ -147,6 +147,56 @@ function delete_catalog(catalog_id) {
         }
     });
 }
+
+function delete_img(catalog_id, img) {
+    bootbox.confirm({
+        message: "¿Confirma que desea eliminar la imagen?",
+        buttons: {
+            confirm: {
+                label: 'Confirmar',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'Cerrar',
+                className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+            if (result == true) {
+                $.ajax({
+                    type: "post",
+                    url: site + "dashboard/catalogo/delete_img",
+                    dataType: "json",
+                    data: {catalog_id:catalog_id,
+                           img: img},
+                    success: function (data) {
+                        if (data.status == true) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Imagen Eliminada.',
+                                showConfirmButton: false,
+                                timer: 1000
+                            })
+                            setTimeout('document.location.reload()', 1000);
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ups...',
+                                text: 'Sucedió un error',
+                                footer: '<a href>Vuelve a intentarlo!</a>'
+                            });
+                        }
+                    }
+                });
+            }
+        }
+    });
+}
+
+
+
+
 function show_sub_category(category_id) {
     $.ajax({
         type: "post",
