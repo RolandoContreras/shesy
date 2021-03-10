@@ -65,6 +65,10 @@
                                                         <h6 class="mt-3">Código de Producto</h6>
                                                         <p class="mb-1">
                                                             #<?php echo $obj_catalog->catalog_id; ?>
+                                                            <br/>
+                                                            <a href="<?php echo site_url() . "backoffice/files"; ?>">
+                                                                <span id="comparePrice-product-template" class="sale-tag large title-price"><span class="money conversion-bear-money">Consultar Beneficios</span></span>
+                                                            </a>
                                                         </p>
                                                         <h6 class="mt-3">Categoría</h6>
                                                         <p>

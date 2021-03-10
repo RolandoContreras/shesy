@@ -33,16 +33,23 @@
                                                 </a>
                                             </div>
                                             <div class="col-xl-8 col-lg-8 col-sm-7 col-xs-12">
-                                                <div class="tab-content" id="v-pills-tabContent">
+                                                <div id="v-pills-tabContent">
                                                     <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" style="color:#888 !important;">
-                                                        <h2 class="mt-3"><?php echo $obj_courses->name; ?></h2>
+                                                        <h3 class="mt-3"><?php echo $obj_courses->name; ?></h3>
                                                         <h2>
                                                             &dollar; <?php echo $obj_courses->price; ?>
                                                         </h2>
                                                         <p><span id="comparePrice-product-template" class="sale-tag large title-price"><span class="money conversion-bear-money">16/Sep</span></span></p>
                                                         <br/>
                                                         <?php echo $obj_courses->description; ?>
-                                                        
+                                                        <h6 class="mt-3">Código de Producto</h6>
+                                                        <p class="mb-1">
+                                                            #<?php echo $obj_courses->course_id; ?>
+                                                            <br/>
+                                                            <a href="<?php echo site_url() . "backoffice/files"; ?>">
+                                                                <span id="comparePrice-product-template" class="sale-tag large title-price"><span class="money conversion-bear-money">Consultar Beneficios</span></span>
+                                                            </a>
+                                                        </p>
                                                         <h6 class="mt-3">Categoría</h6>
                                                         <p>
                                                             <a href="<?php echo site_url() . "backoffice/cursos/$obj_courses->category_slug"; ?>">
