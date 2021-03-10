@@ -24,7 +24,7 @@
                             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Información de Producto</h5>
+                                        <h5>Información de Catalogo</h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
@@ -44,6 +44,38 @@
                                             <div class="col-md-6">
                                                 <div class="element-box" id="show_information" style="display:none;">
                                                     <div id="res">
+                                                        <p>Sin Información</p>
+                                                        <p>Código no valido</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Información de Cursos</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form class="form-horizontal" enctype="multipart/form-data" action="javascript:void(0);" onsubmit="show_information_course();"> 
+                                                    <div class="form-group"> 
+                                                        <label class="control-label"> Ingrese código de curso </label> 
+                                                        <input type="text" name="course_id" id="course_id" class="form-control" placeholder="Ingrese Código de Curso" required="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-lg-12"> 
+                                                            <button class="btn btn-success" type="submit" style="margin-top: 30px;">Buscar <i class="fa fa-search"></i></button>        
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="element-box" id="show_information_course" style="display:none;">
+                                                    <div id="res_course">
                                                         <p>Sin Información</p>
                                                         <p>Código no valido</p>
                                                     </div>

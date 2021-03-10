@@ -5,6 +5,7 @@ class B_files extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model("catalog_model", "obj_catalog");
+        $this->load->model("courses_model", "obj_courses");
         $this->load->model("customer_model", "obj_customer");
         $this->load->model("investment_model", "obj_investment");
     }
@@ -64,6 +65,36 @@ class B_files extends CI_Controller {
             exit();
         }
     }
+
+    public function show_information_course() {
+        if ($this->input->is_ajax_request()) {
+            //GET SESION ACTUALY
+            $this->get_session();
+            $course_id = $this->input->post('course_id');
+            //get data
+            $params = array(
+                        "select" =>"course_id,
+                                    name,
+                                    price,
+                                    bono_1,
+                                    bono_2,
+                                    bono_3,
+                                    bono_4,
+                                    bono_5",
+                        "where" => "course_id = $course_id",
+                        );
+            $obj_courses = $this->obj_courses->get_search_row($params);
+            if(!empty($obj_courses)){
+                $data['obj_courses'] = $obj_courses;
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+            exit();
+        }
+    }
+    
     
     public function get_investment() {
             $params = array(
