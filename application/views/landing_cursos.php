@@ -130,9 +130,9 @@
                           style="color:#92e32e;" data-v-76f37c86>Sitio Web Seguro y Verificado</span></div>
                     </div>
                     <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86>
-                      <div class="icon-email hotpay-advantage-icon" data-v-06f4fbf0 data-v-76f37c86><svg viewBox="0 0 52 36" xmlns="http://www.w3.org/2000/svg" data-v-06f4fbf0><path d="M37.99 1.092a1.417 1.417 0 0 0-.629-.88 1.4 1.4 0 0 0-1.064-.174L1.099 8.398a1.408 1.408 0 0 0-.874.634c-.197.32-.259.705-.173 1.071l5.733 24.463A1.411 1.411 0 0 0 7.48 35.62l35.197-8.36a1.41 1.41 0 0 0 .874-.634c.197-.32.259-.705.173-1.071L37.991 1.092zm.176 13.1l-6.03-3.527 3.853-5.763 2.177 9.29zM3.534 12.61l6.006 3.422L5.71 21.9l-2.175-9.29zm1.711-2.284L33.444 3.63l-11.02 16.487-17.179-9.79zm2.958 22.208L6.602 25.7l5.395-8.267L22.17 23.23a1.406 1.406 0 0 0 1.863-.442l6.527-9.765 8.497 4.969 1.601 6.834-32.455 7.708zM50.578.952c.777 0 1.408.635 1.408 1.418 0 .783-.63 1.418-1.408 1.418h-8.85a1.413 1.413 0 0 1-1.409-1.418c0-.783.63-1.418 1.408-1.418h8.85zM49.09 8.174c.778 0 1.408.635 1.408 1.418 0 .784-.63 1.418-1.408 1.418h-5.875a1.413 1.413 0 0 1-1.409-1.418c0-.783.63-1.418 1.409-1.418h5.875zm-1.41 7.223c.778 0 1.409.634 1.409 1.417s-.631 1.419-1.409 1.419h-3.055a1.414 1.414 0 0 1-1.408-1.419c0-.783.63-1.417 1.408-1.417h3.055z" fill="#128ECE" fill-rule="evenodd" style="fill:#92e32e;" data-v-06f4fbf0></path></svg></div>
-                      <div class="hotpay-advantage-info" data-v-76f37c86><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86> Delivery Seguro </span> <span class="hotpay-advantage-content"
-                          style="color:#92e32e;" data-v-76f37c86>Acceso al producto inmediatamente.</span></div>
+                      <div class="icon-email" data-v-06f4fbf0 data-v-76f37c86><img src="<?php echo site_url()."static/page_front/images/respaldo.png";?>" alt="La Cultura"/></div>
+                      <div class="hotpay-advantage-info" data-v-76f37c86><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86> Respaldo </span> <span class="hotpay-advantage-content"
+                          style="color:#92e32e;" data-v-76f37c86>Todas las compras son respaldadas por la Cultura Emprendedora.</span></div>
                     </div>
                     <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86>
                       <div class="icon-content hotpay-advantage-icon" data-v-5577a166 data-v-76f37c86><svg viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg" data-v-5577a166><path d="M19.716 16.916l-8.248-8.347-1.067-1.08-1.067 1.08-5.256 5.32-1.042 1.054 1.042 1.054 5.552 5.619 9.019 9.127 1.067 1.08 1.067-1.08 9.475-9.59 9.664-9.78 1.042-1.055-1.042-1.055-5.257-5.318-1.067-1.079-1.067 1.08-12.815 12.97z" stroke="#128ECE" stroke-width="3" fill="none" style="stroke:#92e32e;" data-v-5577a166></path></svg></div>
@@ -229,7 +229,7 @@
                                     <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
                                         <div class="hotpay-advantage-info" data-v-76f37c86="">
                                         <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
-                                          Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
+                                          Cultura Emprendedora está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
                                           Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
                                         </div>
                                     </div>
@@ -280,7 +280,7 @@
                                     <div class="hotpay-advantage" style="border-color:#92e32e;" style="max-width: 100% !important;">
                                         <div class="hotpay-advantage-info" data-v-76f37c86="">
                                         <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
-                                          Cultura Imparable está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
+                                          Cultura Emprendedora está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
                                           Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
                                         </div>
                                     </div>
@@ -316,9 +316,9 @@
                           style="color:#92e32e;" data-v-76f37c86>Sitio Web Seguro y Verificado</span></div>
                     </div>
                     <div class="hotpay-advantage" style="border-color:#92e32e;" data-v-76f37c86>
-                      <div class="icon-email hotpay-advantage-icon" data-v-06f4fbf0 data-v-76f37c86><svg viewBox="0 0 52 36" xmlns="http://www.w3.org/2000/svg" data-v-06f4fbf0><path d="M37.99 1.092a1.417 1.417 0 0 0-.629-.88 1.4 1.4 0 0 0-1.064-.174L1.099 8.398a1.408 1.408 0 0 0-.874.634c-.197.32-.259.705-.173 1.071l5.733 24.463A1.411 1.411 0 0 0 7.48 35.62l35.197-8.36a1.41 1.41 0 0 0 .874-.634c.197-.32.259-.705.173-1.071L37.991 1.092zm.176 13.1l-6.03-3.527 3.853-5.763 2.177 9.29zM3.534 12.61l6.006 3.422L5.71 21.9l-2.175-9.29zm1.711-2.284L33.444 3.63l-11.02 16.487-17.179-9.79zm2.958 22.208L6.602 25.7l5.395-8.267L22.17 23.23a1.406 1.406 0 0 0 1.863-.442l6.527-9.765 8.497 4.969 1.601 6.834-32.455 7.708zM50.578.952c.777 0 1.408.635 1.408 1.418 0 .783-.63 1.418-1.408 1.418h-8.85a1.413 1.413 0 0 1-1.409-1.418c0-.783.63-1.418 1.408-1.418h8.85zM49.09 8.174c.778 0 1.408.635 1.408 1.418 0 .784-.63 1.418-1.408 1.418h-5.875a1.413 1.413 0 0 1-1.409-1.418c0-.783.63-1.418 1.409-1.418h5.875zm-1.41 7.223c.778 0 1.409.634 1.409 1.417s-.631 1.419-1.409 1.419h-3.055a1.414 1.414 0 0 1-1.408-1.419c0-.783.63-1.417 1.408-1.417h3.055z" fill="#128ECE" fill-rule="evenodd" style="fill:#92e32e;" data-v-06f4fbf0></path></svg></div>
-                      <div class="hotpay-advantage-info" data-v-76f37c86><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86> Delivery Seguro </span> <span class="hotpay-advantage-content"
-                          style="color:#92e32e;" data-v-76f37c86>Acceso al producto inmediatamente.</span></div>
+                      <div class="icon-email" data-v-06f4fbf0 data-v-76f37c86><img src="<?php echo site_url()."static/page_front/images/respaldo.png";?>" alt="La Cultura"/></div>
+                      <div class="hotpay-advantage-info" data-v-76f37c86><span class="hotpay-advantage-title" style="color:#ffffff;" data-v-76f37c86> Respaldo </span> <span class="hotpay-advantage-content"
+                          style="color:#92e32e;" data-v-76f37c86>Todas las compras son respaldadas por la Cultura Emprendedora</span></div>
                     </div>
                   </div>
                 </div>
