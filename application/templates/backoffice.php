@@ -89,7 +89,7 @@
                              <li data-username="Tablero" class="nav-item">
                                 <a href="#" class="btn">
                                     <div class="access-dam-yellow" align="center"> 
-                                        <span>ACADEMIA</span>                
+                                        <span><i class="fa fa-university" aria-hidden="true"></i>&nbsp; ACADEMIA</span>                
                                     </div>
                                 </a>
                             </li>   
@@ -97,21 +97,28 @@
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url()."backoffice/cursos";?>" class="btn" style="width: 100%">
                                 <div class="access-dam-purple" align="center"> 
-                                    <span>CURSOS</span>                
+                                    <span><i class="fa fa-video-camera" aria-hidden="true"></i>&nbsp; CURSOS</span>                
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="btn" style="width: 100%">
                                 <div class="access-dam-green" align="center"> 
-                                    <span>EMPRESAS</span>
+                                    <span><i class="fa fa-building" aria-hidden="true"></i>&nbsp; EMPRESAS</span>
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'backoffice/inversiones' ?>" class="btn" style="width: 100%">
                                 <div class="access-dam-black" align="center"> 
-                                    <span>PORTAFOLIO DE INVERSIÓN</span>
+                                    <span><i class="fa fa-money" aria-hidden="true"></i>&nbsp; PORTAFOLIO DE INVERSIÓN</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li data-username="Tablero" class="nav-item">
+                            <a href="<?php echo site_url() . 'publicidad'; ?>" class="btn" style="width: 100%">
+                                <div class="access-dam-green" align="center"> 
+                                    <span><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; PUBLICIDAD</span>
                                 </div>
                             </a>
                         </li>

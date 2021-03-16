@@ -396,5 +396,8 @@ $route['dashboard/report_pay/export'] = "d_report_pay/export";
 
 $route['dashboard/report_global'] = "d_report_global";
 $route['salir'] = "login/logout";
+
+$route['publicidad'] = "publicitycontroller";
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
