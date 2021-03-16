@@ -1,28 +1,29 @@
-<?php
-$url = explode("/", uri_string());
-if (isset($url[0])) {
-    $nav = $url[0];
-}
-if ($nav == "catalogo") {
-    $style = "responsive-movil";
-} else {
-    $style = "";
-}
-?>
-<header class="header header--static <?php echo $style; ?>">
+<?php 
+      $url = explode("/", uri_string());
+      if (isset($url[0])) {
+          $nav = $url[0];
+      }
+    if($nav == "catalogo"){ 
+        $style = "responsive-movil";
+     }else{
+        $style = "";
+     } ?>
+<header class="header header--static <?php echo $style;?>">
     <div class="header__wrap">
         <div class="header__content header__content--desktop background-dark">
             <div class="container header__container media">
                 <div id="block-1555988494486" class="header__block header__block--logo header__block--show">
-                    <a class="logo" href="<?php echo site_url(); ?>">
+                    <a class="logo" href="<?php echo site_url();?>">
                         <img class="logo__image" src="<?php echo site_url() . 'static/page_front/images/logo/logo-fuego.png'; ?>" alt="Logo" width="50"/>
                     </a>
                 </div>
-                <div id="block-1555988491313" class="header__block header__switch-content header__block--menu media__body">
-                    <div class="link-list justify-content-right">
+                <div id="block-1555988491313"
+                    class="header__block header__switch-content header__block--menu media__body">
+                    <div class="link-list justify-content-right"
+                        kjb-settings-id="sections_header_blocks_1555988491313_settings_menu">
                         <a class="link-list__link" href="<?php echo site_url(); ?>">Inicio</a>
                         <a class="link-list__link" href="#">Cursos</a>
-                        <a class="link-list__link" href="<?php echo site_url() . 'catalogo'; ?>">Catalogo</a>
+                        <a class="link-list__link" href="<?php echo site_url() . "catalogo"; ?>">Catalogo</a>
                         <a class="link-list__link" href="<?php echo site_url() . 'contacto'; ?>">Contacto</a>
                         <a class="link-list__link" href="<?php echo site_url() . 'registro'; ?>">Registro</a>
                     </div>
@@ -51,44 +52,22 @@ if ($nav == "catalogo") {
 <div class="header__content header__content--mobile background-light hidden--desktop" id="nav_mobile" style="display:none">
     <div id="block-1555988491313" class="header__block header__switch-content header__block--menu media__body">
         <div class="link-list justify-content-right"
-             kjb-settings-id="sections_header_blocks_1555988491313_settings_menu">
+            kjb-settings-id="sections_header_blocks_1555988491313_settings_menu">
             <a class="link-list__link" href="<?php echo site_url(); ?>">Inicio</a>
             <a class="link-list__link" href="#">Cursos</a>
-            <a class="link-list__link" href="javascript:void(0);" onclick="show_category();">Catalogo</a>
-            <ul style="display:none; list-style-type:none !important;" id="ul_category">
-                <?php foreach ($obj_category_catalog as $value) { ?>
-                    <li><a class="link-list__link style_nav_mobile" href="<?php echo site_url() . "catalogo/$value->slug"; ?>"><i class="fa fa-chevron-right green"></i> <?php echo $value->slug; ?></a></li>
-                <?php } ?>
-            </ul>
-
+            <a class="link-list__link" href="<?php echo site_url() . 'catalogo'; ?>">Catalogo</a>
             <a class="link-list__link" href="<?php echo site_url() . 'contacto'; ?>">Contacto</a>
             <a class="link-list__link" href="<?php echo site_url() . 'registro'; ?>">Registro</a>
         </div>
     </div>
 </div>
 <script>
-    function show_nav_mobile() {
-        var value = document.getElementById('nav_mobile');
-        if (value.style.display === 'none') {
-            value.style.display = 'block';
-        } else {
-            value.style.display = 'none';
-        }
+function show_nav_mobile() {
+    var value = document.getElementById('nav_mobile');
+    if (value.style.display === 'none') {
+        value.style.display = 'block';
+    } else {
+        value.style.display = 'none';
     }
-    function show_category() {
-        var value = document.getElementById('ul_category');
-        if (value.style.display === 'none') {
-            value.style.display = 'block';
-        } else {
-            value.style.display = 'none';
-        }
-    }
-    function show_sub_category() {
-        var value = document.getElementById('ul_category');
-        if (value.style.display === 'none') {
-            value.style.display = 'block';
-        } else {
-            value.style.display = 'none';
-        }
-    }
+}
 </script>

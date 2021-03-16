@@ -384,4 +384,16 @@ function get_session() {
         redirect(site_url() . 'dashboard');
     }
 }
+
+function get_session_customer() {
+    if (isset($_SESSION['customer'])) {
+        if ($_SESSION['customer']['logged_customer'] == "TRUE" && $_SESSION['customer']['status'] == '1') {
+            return true;
+        } else {
+            redirect(site_url() . 'home');
+        }
+    } else {
+        redirect(site_url() . 'home');
+    }
+}
 ?>

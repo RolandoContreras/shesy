@@ -19,7 +19,7 @@
     <div id=main-content>
       <section class=content-area>
         <div class="page-title layout-1">
-          <div class="main-top no-parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/03.jpeg';?>)"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
+          <div class="main-top no-parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/background.jpg';?>)"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
             <div class="content container">
               <div class=row>
                 <div class="text-title col-md-6">
