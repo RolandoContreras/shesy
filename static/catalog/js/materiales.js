@@ -58,7 +58,7 @@ function show_information() {
                 
                 texto = texto+'<div class="col-sm-4">';
                 texto = texto+'<div class="form-group"> ';
-                texto = texto+'<label class="control-label">Puntos 25°</label> ';
+                texto = texto+'<label class="control-label">Puntos 5°</label> ';
                 texto = texto+'<input type="text" class="form-control" value="'+ data.obj_catalog.bono_n5 +'" disabled="">';
                 texto = texto+'</div>';   
                 
