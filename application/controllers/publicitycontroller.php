@@ -7,6 +7,7 @@ class PublicityController extends CI_Controller {
         $this->load->model("courses_model", "obj_courses");
         $this->load->model("category_model", "obj_category");
         $this->load->model("publicity_model", "obj_publicity_courses");
+        $this->load->model("publicity_catalog_model", "obj_publicity_catalog");
     }
 
     public function index() {
@@ -17,25 +18,60 @@ class PublicityController extends CI_Controller {
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_cursos();
         //get data campañas videos
+        $obj_publicity_courses = $this->get_all_publicity_course($customer_id);
         //get data campañas catalog
+        $obj_publicity_catalog = $this->get_all_publicity_catalog($customer_id);
+        //GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //send data
+        $this->tmp_publicity->set("obj_profile", $obj_profile);
+        $this->tmp_publicity->set("obj_publicity_courses", $obj_publicity_courses);
+        $this->tmp_publicity->set("obj_publicity_catalog", $obj_publicity_catalog);
+        $this->tmp_publicity->render("publicity/index");
+    }
 
-        //get catalog
+    public function get_all_publicity_course($customer_id)
+	{   
         $params = array( 
-            "select" => "publicity.id",
+            "select" => "publicity.id,
+                         publicity.pexel,
+                         publicity.total_view,
+                         publicity.total_sell,
+                         publicity.date,
+                         publicity.status,
+                         courses.name as course_name,
+                         courses.course_id as course_id
+                         ",
             "join" => array('customer, publicity.customer_id = customer.customer_id',
                             'courses, publicity.course_id = courses.course_id'),
             "where" => "publicity.customer_id = $customer_id",
             "order" => "publicity.id DESC");
-       
-        $obj_publicity_courses = $this->obj_publicity_courses->search($params);
-        //GET DATA FROM CUSTOMER
-        $obj_profile = $this->get_profile($customer_id);
-        //total comission compra
-        //send data
-        $this->tmp_publicity->set("obj_profile", $obj_profile);
-        $this->tmp_publicity->set("obj_publicity_courses", $obj_publicity_courses);
-        $this->tmp_publicity->render("publicity/index");
-    }
+         $obj_publicity_courses = $this->obj_publicity_courses->search($params);
+         return $obj_publicity_courses; 
+	}   
+        
+    public function get_all_publicity_catalog($customer_id)
+	{   
+        //get publicity catalog by customer
+        $params = array( 
+            "select" => "publicity_catalog.id,
+                         publicity_catalog.pexel,
+                         publicity_catalog.total_view,
+                         publicity_catalog.total_sell,
+                         publicity_catalog.date,
+                         publicity_catalog.status,
+                         catalog.name as catalog_name,
+                         catalog.catalog_id as catalog_id
+                         ",
+            "join" => array('customer, publicity_catalog.customer_id = customer.customer_id',
+                            'catalog, publicity_catalog.catalog_id = catalog.catalog_id'),
+            "where" => "publicity_catalog.customer_id = $customer_id",
+            "order" => "publicity_catalog.id DESC");
+        $obj_publicity_catalog = $this->obj_publicity_catalog->search($params);;
+        return $obj_publicity_catalog; 
+	}
+
+    
 
     public function category($category)
 	{   
