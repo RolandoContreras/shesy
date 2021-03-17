@@ -62,7 +62,7 @@
                     <div class="b-bg padding-top-10">
                         <a href="<?php echo site_url() . 'backoffice/profile'; ?>">
                             <?php if (!empty($obj_profile->img)) { ?>
-                                <img alt="avatar" class="radius-50" src="<?php echo site_url() . "static/backoffice/images/profile/$obj_profile->customer_id/$obj_profile->img"; ?>" width="60" height="60" style="border">
+                                <img alt="avatar" clas="radius-50" src="<?php echo site_url() . "static/backoffice/images/profile/$obj_profile->customer_id/$obj_profile->img"; ?>" width="60" height="60" style="border">
                             <?php } else { ?>
                                 <img alt="avatar" class="radius-50" src="<?php echo site_url() . 'static/backoffice/images/avatar.png'; ?>" width="60" style="border">
                             <?php } ?>
@@ -111,14 +111,14 @@
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'backoffice/inversiones' ?>" class="btn" style="width: 100%">
                                 <div class="access-dam-black" align="center"> 
-                                    <span><i class="fa fa-money" aria-hidden="true"></i>&nbsp; PORTAFOLIO DE INVERSIÓN</span>
+                                    <span>PORTAFOLIO DE INVERSIÓN</span>
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="javascript:void(0);" class="btn" style="width: 100%">
-                                <div class="access-dam-green" align="center"> 
-                                    <span><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; PUBLICIDAD (Muy Pronto)</span>
+                                <div class="access-dam-blue" align="center"> 
+                                    <span><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; CAMPAÑAS (Pronto)</span>
                                 </div>
                             </a>
                         </li>

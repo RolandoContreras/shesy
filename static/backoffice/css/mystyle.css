@@ -99,6 +99,17 @@
     -webkit-box-shadow: 0px 0px 10px #D1F509;
     box-shadow: 0px 0px 10px #D1F509;
 }
+.access-dam-blue {
+    background: #0362c6;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 600;
+    padding: 15px;
+    width: 100%;
+    -moz-box-shadow: 0px 0px 10px blue;
+    -webkit-box-shadow: 0px 0px 10px blue;
+    box-shadow: 0px 0px 10px blue;
+}
 .access-dam-purple{
     background: #3b36a1; 
     border-radius: 3px; 

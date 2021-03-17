@@ -10,24 +10,15 @@
   <style media="print">
     @media print{.pmpro_a-print{display:none;position:absolute;left:-9999px}}
   </style>
-  <title>User Account – Education &amp; Online Course Management WordPress Theme – Masterstudy</title>
-  <link rel="stylesheet" id="rs-roboto-css" href="//fonts.googleapis.com/css?family=Roboto&amp;ver=5.6.2"
-    type="text/css" media="all">
+  <title>Campañas Publicitarias | Cultura Emprendedora</title>
+  <link rel="stylesheet" id="rs-roboto-css" href="//fonts.googleapis.com/css?family=Roboto&amp;ver=5.6.2" type="text/css" media="all">
   <link rel="stylesheet" id="tp-material-icons-css" href="//fonts.googleapis.com/icon?family=Material+Icons&amp;ver=5.6.2" type="text/css" media="all">
   <link rel="stylesheet" id="stm_demos_rus-css" href="https://stylemixthemes.com/api/right-popup/popup.css?ver=7" type="text/css" media="all">
-  <link rel="stylesheet" id="stm_theme_custom_styles-css" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/css/autoptimize_single_6d6bdd62ba43f165976d724fa8653254.css?ver=117"
-    type="text/css" media="all">
-  <link rel="stylesheet" id="redux-google-fonts-stm_option-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7COpen+Sans%3A300%2C400%2C600%2C700%2C800%2C300italic%2C400italic%2C600italic%2C700italic%2C800italic&amp;subset=latin&amp;ver=5.6.2"
-    type="text/css" media="all">
+  <link rel="stylesheet" id="stm_theme_custom_styles-css" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/css/autoptimize_single_6d6bdd62ba43f165976d724fa8653254.css?ver=117" type="text/css" media="all">
+  <link rel="stylesheet" id="redux-google-fonts-stm_option-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7COpen+Sans%3A300%2C400%2C600%2C700%2C800%2C300italic%2C400italic%2C600italic%2C700italic%2C800italic&amp;subset=latin&amp;ver=5.6.2"  type="text/css" media="all">
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
-    id="jquery-migrate-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_32c015d5fe3cf30387c516c13ea42efe.js?ver=3.4.6"
-    id="apsl-frontend-js-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/wpcfto/metaboxes/assets/js/vue.min.js?ver=2.4.4"
-    id="vue.js-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/wpcfto/metaboxes/assets/js/vue-resource.min.js?ver=2.4.4"
-    id="vue-resource.js-js"></script>
+  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_32c015d5fe3cf30387c516c13ea42efe.js?ver=3.4.6" id="apsl-frontend-js-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/wpcfto/metaboxes/assets/js/vue2-datepicker.min.js?ver=2.4.4"
     id="vue2-datepicker-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_aa013c99f8cc008682d56a64a2819359.js?ver=117"
@@ -39,7 +30,6 @@
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70"
     id="jquery-blockui-js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/favicon.ico"> <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-  <meta name="googlebot" content="index, follow">
   <style type="text/css">
     .fancybox-margin{margin-right:17px;}
   </style>
@@ -81,32 +71,18 @@
               <div class="header_top">
                 <div class="logo-unit">
                   <!--logo-->
-                  <a href="https://stylemixthemes.com/masterstudy/white-lms/" data-wpel-link="internal" rel="nofollow"> <img class="img-responsive logo_transparent_static visible" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/uploads/sites/7/2018/08/MasterStudy_logo.svg"
-                      style="width: 253px;" alt="Education &amp; Online Course Management WordPress Theme – Masterstudy"> </a>
-                </div>
-                <div class="center-unit">
-                  <div class="stm_courses_search">
-                    <div class="stm_lms_categories"> <i class="stmlms-hamburger"></i> <span class="heading_font">Category</span>
-                      <div class="stm_lms_categories_dropdown">
-                        <div class="stm_lms_categories_dropdown__parents">
-                          <div class="stm_lms_categories_dropdown__parent "> <a href="https://stylemixthemes.com/masterstudy/white-lms/course/exercise/" class="sbc_h" data-wpel-link="internal" rel="nofollow"> Exercise </a>                            <span class="stm_lms_cat_toggle"></span>
-                            <div class="stm_lms_categories_dropdown__childs">
-                              <div class="stm_lms_categories_dropdown__child"> <a href="https://stylemixthemes.com/masterstudy/white-lms/course/bicycling/" data-wpel-link="internal" rel="nofollow"> Bicycling </a></div>
-                              <div class="stm_lms_categories_dropdown__child"> <a href="https://stylemixthemes.com/masterstudy/white-lms/course/bodybuilding/" data-wpel-link="internal" rel="nofollow"> BodyBuilding </a></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <a href="" data-wpel-link="internal" rel="nofollow"> 
+                    <img class="img-responsive logo_transparent_static visible" src="<?php echo site_url()."static/page_front/images/logo/logo-fuego.png";?>" style="width: 80px;" alt="Cultura Emprendedora"> 
+                    </a>
                 </div>
                 <div class="right-unit">
                   <div class="stm_lms_account_dropdown">
                     <div class="dropdown">
-                      <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="lnr lnr-user"></i> <span class="login_name">Hey, Demo In...</span> <span class="caret"></span> </button>
+                      <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                      Hola,<?php echo $obj_profile->first_name;?>  &nbsp;<i class="lnr lnr-user"></i> <span class="caret"></span> 
+                      </button>
                       <ul class="dropdown-menu" aria-labelledby="dLabel">
-                        <li> <a href="<?php echo site_url()." backoffice ";?>">Oficina Virtual</a> 
-                        <a href="<?php echo site_url()." salir ";?>" class="stm_lms_logout">Salir</a></li>
+                        <li> <a href="<?php echo site_url()."backoffice ";?>">Oficina Virtual</a></li>
                       </ul>
                     </div>
                   </div>
@@ -137,7 +113,10 @@
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5"> <a href="<?php echo site_url()." publicidad/campana "?>">Nueva Campaña</a>
               <div class="magic_line" style="max-width: 0px;"></div>
             </li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5"> <a href="<?php echo site_url()." publicidad/campana "?>">Nuevo Producto</a>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5"> <a href="<?php echo site_url()." publicidad/campana "?>">Nuevo Catalogo</a>
+              <div class="magic_line" style="max-width: 0px;"></div>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5"> <a href="<?php echo site_url()." publicidad/campana "?>">Nuevo Catalogo</a>
               <div class="magic_line" style="max-width: 0px;"></div>
             </li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5"> <a href="<?php echo site_url()." publicidad/campana "?>">Oficina Virtual</a>
@@ -162,8 +141,13 @@
               <div class="col-md-3 col-sm-12">
                 <div class="stm_lms_user_side">
                   <div class="stm-lms-user-avatar-edit ">
-                    <div class="stm-lms-user_avatar"> <img src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy-child/assets/images/avatars/demo-instructor.jpg"
-                        alt="Demo Instructor"></div>
+                    <div class="stm-lms-user_avatar"> 
+                        <?php if (!empty($obj_profile->img)) { ?>
+                           <img src="<?php echo site_url() . "static/backoffice/images/profile/$obj_profile->customer_id/$obj_profile->img"; ?>" alt="<?php echo $obj_profile->first_name;?>">
+                        <?php } else { ?>
+                           <img src="<?php echo site_url() . 'static/backoffice/images/avatar.png'; ?>" alt="<?php echo $obj_profile->first_name;?>">
+                        <?php } ?>
+                    </div>
                   </div>
                   <h3 class="stm_lms_update_field__first_name">Demo Instructor</h3>
                   <h5 class="stm_lms_update_field__position">Teacher</h5>
@@ -216,56 +200,25 @@
       </div>
     </div>
   </footer>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_5d701cd9a89b489e6fd5de9dd4fde12e.js?ver=1.1.3"
-    id="stm_zoom_main-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.3.9"
     id="tp-tools-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.3.9"
     id="revmin-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4"
-    id="js-cookie-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/assets/js/bootstrap.min.js?ver=3.3.40"
     id="bootstrap-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_371bd037e954abfb3ae29625be3ad616.js?ver=3.3.40"
     id="fancybox-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min.js?ver=4.0.3"
     id="select2-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_0f28b2ebf9a498aa2f4b66c15cb791f3.js?ver=3.3.40"
-    id="stm_theme_scripts-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_3dfc45f7295f6c5ec660dec8511dd12f.js?ver=3.3.40"
     id="ajaxsubmit-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-includes/js/wp-embed.min.js?ver=5.6.2" id="wp-embed-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_9c68cc5476a6153db135f4ecdf8560a3.js?ver=3.3.40"
     id="stm-header_js-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_a346a922959709da530296d5683e1e7b.js?ver=3.3.40"
-    id="stm-vue-autocomplete-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_270ad17045f34b94579846716d235116.js?ver=3.3.40"
-    id="stm-courses_search-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_4f32585716a3f89c4e7780cf5adbfced.js?ver=117"
-    id="stm-lms-instructor_courses-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_6543d5f5743e2d4651049db49a5aca20.js?ver=117"
-    id="stm-lms-co_courses-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_9f2cbef328d310edb724cf017de3ceb5.js?ver=117"
     id="stm-lms-user-tabs-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system//assets/vendors/moment.min.js?ver=5.6.2"
     id="moment.min-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system//assets/vendors/chart.min.js?ver=5.6.2"
-    id="chart.min-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system//assets/vendors/vue-chartjs.min.js?ver=5.6.2"
-    id="vue-chartjs.min-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_6c8f78606b24d73139c404dc87d6e6f0.js?ver=117"
-    id="stm-lms-account-statistics-js"></script>
-  <script type="text/javascript" id="stm-lms-account-statistics-js-after">
-    Vue.http.options.root = 'https://stylemixthemes.com/masterstudy/white-lms/wp-json/lms'; var account_statistics_data = JSON.parse('{\"author_id\":3139,\"paypal_email\":\"radames@dicembrino.it\",\"currency_symbol\":\"$\",\"labels_earnings\":[\"October\",\"November\",\"December\",\"January\",\"February\",\"March\"],\"datasets_earnings\":{\"9\":{\"label\":\"How to be a DJ? Make Electronic Music\",\"backgroundColor\":\"rgba(67, 126, 48, 0.5)\",\"data\":[0,0,0,49,0,0]}},\"sales_statisticas\":[{\"id\":\"997\",\"title\":\"Real Things Art Painting by Jason Ni\",\"backgroundColor\":\"rgba(35, 253, 155, 0.5)\",\"order_item_count\":\"1\"},{\"id\":\"999\",\"title\":\"Road Bike Manual or How to Be a Champion.\",\"backgroundColor\":\"rgba(25, 250, 240, 0.5)\",\"order_item_count\":\"2\"},{\"id\":\"1000\",\"title\":\"Make your Concept Right and Beautiful\",\"backgroundColor\":\"rgba(206, 255, 94, 0.5)\",\"order_item_count\":\"2\"},{\"id\":\"1001\",\"title\":\"Design Instruments for Communication\",\"backgroundColor\":\"rgba(212, 89, 25, 0.5)\",\"order_item_count\":\"2\"},{\"id\":\"1072\",\"title\":\"Nvidia and UE4 Technologies Practice\",\"backgroundColor\":\"rgba(234, 155, 114, 0.5)\",\"order_item_count\":\"4\"},{\"id\":\"1073\",\"title\":\"How to be a DJ? Make Electronic Music\",\"backgroundColor\":\"rgba(12, 136, 81, 0.5)\",\"order_item_count\":\"4\"}]}');
-  </script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_d46c7761fd5296a8ee981cc77da2db35.js?ver=117"
-    id="stm-lms-edit_account-js"></script>
-  <script type="text/javascript" id="stm-lms-edit_account-js-after">
-    var stm_lms_edit_account_info = {"id":3139,"login":"Demo Instructor","avatar":"<img src='https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/wp-content\/themes\/masterstudy-child\/assets\/images\/avatars\/demo-instructor.jpg' alt='Demo Instructor' \/>","avatar_url":"https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/wp-content\/themes\/masterstudy-child\/assets\/images\/avatars\/demo-instructor.jpg","email":"instructor@stylemixthemes.com","url":"https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/user-public-account\/3139","roles":["stm_lms_instructor","editor"],"meta":{"facebook":"https:\/\/www.facebook.com\/","twitter":"","instagram":"https:\/\/www.instagram.com\/","google-plus":"google.com\/home","position":"Teacher","description":"Demo Biography of Demo Instructor. \r\n\r\nTogether won't. Darkness make hath also moved dominion, they're. Don't is subdue had them sixth, cattle evening divided had fowl, kind cattle seas lesser made thing. Sea replenish doesn't it two given. Gathered life.\r\n\r\nOne blessed there thing good don't very stars thing. Kind moveth hath greater seasons Whose kind. Saying after divided that dominion. Our saw him.\r\n\r\nMeat beast. Said second. Kind, open meat beast air in behold likeness they're. Very. Seasons fourth first thing set from one one great open have two dominion fowl fourth. Cattle fish. Brought firmament our for stars without their waters. Isn't brought they're.","first_name":"Demo","last_name":"Instructor"}}
-  </script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_dc186c833c961edb5fb9039e7391b503.js?ver=117"
-    id="stm-lms-create_announcement-js"></script>
   <div>
 </body>
-
 </html>
