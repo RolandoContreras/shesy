@@ -66,7 +66,12 @@
                                 <td align="center">
                                     <div class="operation">
                                             <div class="btn-group">
-                                                    <button class="btn btn-secondary" type="button" onclick="active_catalog('<?php echo $value->id;?>');"><span class="pcoded-micon"><i data-feather="check"></i></span>  Activar</button>
+                                                <?php 
+                                                if($value->status == 0){ ?>
+                                                    <button type="button" class="btn btn-success" onclick="active_catalog('<?php echo $value->id;?>');"><i class="fa fa-check"></i> Activar</button>
+                                                <?php } ?>
+                                                <button type="button" class="btn btn-info" onclick="edit_catalog('<?php echo $value->id;?>')"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-danger" onclick="delete_catalog('<?php echo $value->id;?>')"><i class="fa fa-trash"></i></button>
                                           </div>
                                     </div>
                                 </td>

@@ -397,6 +397,10 @@ $route['dashboard/publicidad/activar_curso'] = "d_publicity/activate_course";
 
 $route['dashboard/publicidad_catalogo'] = "d_publicity/catalog";
 $route['dashboard/publicidad/activar_catalogo'] = "d_publicity/activate_catalog";
+$route['dashboard/publicidad/delete_curso'] = "d_publicity/delete_course";
+$route['dashboard/publicidad/delete_catalogo'] = "d_publicity/delete_catalog";
+
+
 
 
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";

@@ -22,6 +22,21 @@ class D_publicity extends CI_Controller {
         $this->tmp_mastercms->render("dashboard/publicidad/publicity_list");
     }
 
+    public function edit_course($id) {
+        //GER SESSION   
+        get_session();
+
+        var_dump($id);
+        die();
+
+        //get data campañas videos
+        $obj_publicity_courses = $this->get_all_publicity_course($id);
+        //GET DATA COMMISSIONS
+        /// VISTA
+        $this->tmp_mastercms->set("obj_publicity_courses", $obj_publicity_courses);
+        $this->tmp_mastercms->render("dashboard/publicidad/publicity_list");
+    }
+
     public function catalog() {
         //GER SESSION   
         get_session();
@@ -35,6 +50,31 @@ class D_publicity extends CI_Controller {
     
 
     public function get_all_publicity_course(){   
+        $params = array( 
+            "select" => "publicity.id,
+                         publicity.pexel,
+                         publicity.name,
+                         publicity.total_view,
+                         publicity.total_sell,
+                         publicity.date,
+                         publicity.status,
+                         customer.first_name,
+                         customer.last_name,
+                         category.name as category_name,
+                         category.slug as category_slug,
+                         courses.name as course_name,
+                         courses.slug as course_slug,
+                         courses.course_id as course_id
+                         ",
+            "join" => array('customer, publicity.customer_id = customer.customer_id',
+                            'courses, publicity.course_id = courses.course_id',
+                            'category, category.category_id = courses.category_id'),
+            "order" => "publicity.id DESC");
+         $obj_publicity_courses = $this->obj_publicity_courses->search($params);
+         return $obj_publicity_courses; 
+	}
+
+    public function get_all_publicity_course_id($id){   
         $params = array( 
             "select" => "publicity.id,
                          publicity.pexel,
@@ -125,6 +165,40 @@ class D_publicity extends CI_Controller {
             exit();
             }
 
+        }
+    }
+
+    public function delete_course() {
+        if ($this->input->is_ajax_request()) {
+            $id = $this->input->post('id');
+            if ($id != null) {
+                //delete campaña course
+                $result = $this->obj_publicity_courses->delete($id);
+                if($result != null){
+                    $data['status'] = true;
+                }else{
+                    $data['status'] = true;
+                }
+            echo json_encode($data);
+            exit();
+            }
+        }
+    }
+
+    public function delete_catalog() {
+        if ($this->input->is_ajax_request()) {
+            $id = $this->input->post('id');
+            if ($id != null) {
+                //delete campaña course
+                $result = $this->obj_publicity_catalog->delete($id);
+                if($result != null){
+                    $data['status'] = true;
+                }else{
+                    $data['status'] = true;
+                }
+            echo json_encode($data);
+            exit();
+            }
         }
     }
 

@@ -157,7 +157,7 @@ class Landing extends CI_Controller {
             "select" => "id,
                         pexel,
                         total_view",
-            "where" => "customer_id = $customer_id and course_id = $id");
+            "where" => "customer_id = $customer_id and course_id = $id and status = 1");
             $obj_publicity = $this->obj_publicity_courses->get_search_row($params);
             
             if($obj_publicity != null){
@@ -178,7 +178,7 @@ class Landing extends CI_Controller {
           "select" => "id,
                       pexel,
                       total_view",
-          "where" => "customer_id = $customer_id and catalog_id = $id");
+          "where" => "customer_id = $customer_id and catalog_id = $id and status = 1");
           $obj_publicity = $this->obj_publicity_catalog->get_search_row($params);
           
           if($obj_publicity != null){
