@@ -9,7 +9,6 @@
     <meta name="description" content="Todos los productos que necesitas en un solo lugar. Adquiere tu producto por nuestro Market Online, acumula puntos y dinero. ">
     <meta name="author" content="Cultura Emprendedora">
     <meta name="keyword" content="Tienda, Market, Cultura Emprendedora, Movimiento Emprendedor, Emprendedor Perú, embajadores, Imparable social, red social, mlm, mmn, culturaemprendedora.online, desarrollo personal, catalogo de productos, productos, plataforma de cursos online">
-
     <meta name="robots" content="Index, Follow">
     <meta name="googlebot" content="index, follow" />
     <meta name="author" content="Evolution Web">
@@ -48,8 +47,13 @@
     <script src="https://checkout.culqi.com/js/v3"></script>
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript">
-    var site = '<?php echo site_url();?>';
-  </script>
+      var site = '<?php echo site_url();?>';
+    </script>
+  <?php 
+    if(isset($pexel) && $pexel!=null){
+      echo $pexel;
+    }
+    ?>
   </head>
   <body>
   <div data-server-rendered="true">

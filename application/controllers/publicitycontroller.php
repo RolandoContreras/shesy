@@ -5,6 +5,7 @@ class PublicityController extends CI_Controller {
         parent::__construct();
         $this->load->model("customer_model", "obj_customer");
         $this->load->model("courses_model", "obj_courses");
+        $this->load->model("catalog_model", "obj_catalog");
         $this->load->model("category_model", "obj_category");
         $this->load->model("publicity_model", "obj_publicity_courses");
         $this->load->model("publicity_catalog_model", "obj_publicity_catalog");
@@ -30,48 +31,277 @@ class PublicityController extends CI_Controller {
         $this->tmp_publicity->render("publicity/index");
     }
 
-    public function get_all_publicity_course($customer_id)
-	{   
+    
+    public function new_campana(){   
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //send data
+        $this->tmp_publicity->set("obj_profile", $obj_profile);
+        $this->tmp_publicity->render("publicity/new_publicity");
+	}
+
+
+    public function save_campana(){  
+        if ($this->input->is_ajax_request()) {
+            //get publicity catalog by customer
+            $customer_id = $_SESSION['customer']['customer_id'];
+            $id = $this->input->post("id");
+            $type = $this->input->post("type");
+            //condition
+            if($type == false){
+                $type = $this->input->post("type_2");
+            }
+            if($type == 1){
+                //insert on publicity course
+                if($id != null){
+                    $param = array(
+                        'course_id' => $this->input->post("campana"),
+                        'name' => $this->input->post("name"),
+                        'pexel' => $this->input->post("pexel"),
+                    ); 
+                    $id = $this->obj_publicity_courses->update($id, $param);
+                }else{
+                    $param = array(
+                        'customer_id' => $customer_id,
+                        'course_id' => $this->input->post("campana"),
+                        'name' => $this->input->post("name"),
+                        'pexel' => $this->input->post("pexel"),
+                        'total_view' => 0,
+                        'total_sell' => 0,
+                        'date' => date("Y-m-d"),
+                        'status' => 0,
+                    ); 
+                    $id = $this->obj_publicity_courses->insert($param);
+                }
+                if($id != null){
+                    $data['status'] = true;    
+                }else{
+                    $data['status'] = false;    
+                }
+            }else{
+                //insert on publicity course
+                if($id != null){
+                    $param = array(
+                        'catalog_id' => $this->input->post("campana"),
+                        'name' => $this->input->post("name"),
+                        'pexel' => $this->input->post("pexel"),
+                    ); 
+                    $id = $this->obj_publicity_catalog->update($id, $param);
+                }else{
+                    $param = array(
+                        'customer_id' => $customer_id,
+                        'catalog_id' => $this->input->post("campana"),
+                        'name' => $this->input->post("name"),
+                        'pexel' => $this->input->post("pexel"),
+                        'total_view' => 0,
+                        'total_sell' => 0,
+                        'date' => date("Y-m-d"),
+                        'status' => 0,
+                    ); 
+                    $id = $this->obj_publicity_catalog->insert($param);
+                }
+                //insert on publicity catalog
+               
+                if($id != null){
+                    $data['status'] = true;    
+                }else{
+                    $data['status'] = false;    
+                }
+            }
+            echo json_encode($data);
+        }
+	}
+
+    public function edit_course($id=null){ 
+        //GET PUBLICITY COURSE ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //GET DATA FROM CUSTOMER
+        if($id != null){
+            $obj_publicity = $this->get_publicity_course_id($id);
+            //get all camapañas
+            $obj_campana_type = $this->get_courses();
+            $type = 1;
+            $this->tmp_publicity->set("obj_publicity", $obj_publicity);
+            $this->tmp_publicity->set("obj_campana_type", $obj_campana_type);
+            $this->tmp_publicity->set("type", $type);
+        }
+        $obj_profile = $this->get_profile($customer_id);
+        //send data
+        $this->tmp_publicity->set("obj_profile", $obj_profile);
+        $this->tmp_publicity->render("publicity/new_publicity");
+    }
+    
+    public function edit_catalog($id=null){ 
+        //GET PUBLICITY COURSE ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //GET DATA FROM CUSTOMER
+        if($id != null){
+            $obj_publicity = $this->get_publicity_catalog_id($id);
+            //get all camapañas
+            $obj_campana_type = $this->get_catalog();
+            $type = 2;
+            $this->tmp_publicity->set("obj_publicity", $obj_publicity);
+            $this->tmp_publicity->set("obj_campana_type", $obj_campana_type);
+            $this->tmp_publicity->set("type", $type);
+        }
+        $obj_profile = $this->get_profile($customer_id);
+        //send data
+        $this->tmp_publicity->set("obj_profile", $obj_profile);
+        $this->tmp_publicity->render("publicity/new_publicity");
+    }
+
+    public function delete_course(){   
+        if ($this->input->is_ajax_request()) {
+            //OBETENER customer_id
+            $id = $this->input->post("id");
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($id != "") {
+                $result = $this->obj_publicity_courses->delete($id);
+                if($result != null){
+                    $data['status'] = true;
+                }else{
+                    $data['status'] = false;
+                }
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+	}  
+
+    public function delete_catalog(){   
+        if ($this->input->is_ajax_request()) {
+            //OBETENER customer_id
+            $id = $this->input->post("id");
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($id != "") {
+                $result = $this->obj_publicity_catalog->delete($id);
+                if($result != null){
+                    $data['status'] = true;
+                }else{
+                    $data['status'] = false;
+                }
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+	}  
+
+    public function get_publicity_course_id($id){   
         $params = array( 
             "select" => "publicity.id,
                          publicity.pexel,
+                         publicity.course_id,
+                         publicity.name",
+            "where" => "id = $id");
+         $obj_publicity_courses = $this->obj_publicity_courses->get_search_row($params);
+         return $obj_publicity_courses; 
+	}  
+
+    public function get_publicity_catalog_id($id){   
+        $params = array( 
+            "select" => "id,
+                         pexel,
+                         catalog_id,
+                         name",
+            "where" => "id = $id");
+         $obj_publicity_catalog = $this->obj_publicity_catalog->get_search_row($params);
+         return $obj_publicity_catalog; 
+	}  
+
+    public function get_all_publicity_course($customer_id){   
+        $params = array( 
+            "select" => "publicity.id,
+                         publicity.pexel,
+                         publicity.name,
                          publicity.total_view,
                          publicity.total_sell,
                          publicity.date,
                          publicity.status,
+                         category.name as category_name,
+                         category.slug as category_slug,
                          courses.name as course_name,
+                         courses.slug as course_slug,
                          courses.course_id as course_id
                          ",
             "join" => array('customer, publicity.customer_id = customer.customer_id',
-                            'courses, publicity.course_id = courses.course_id'),
+                            'courses, publicity.course_id = courses.course_id',
+                            'category, category.category_id = courses.category_id'),
             "where" => "publicity.customer_id = $customer_id",
             "order" => "publicity.id DESC");
          $obj_publicity_courses = $this->obj_publicity_courses->search($params);
          return $obj_publicity_courses; 
 	}   
         
-    public function get_all_publicity_catalog($customer_id)
-	{   
+    public function get_all_publicity_catalog($customer_id){   
         //get publicity catalog by customer
         $params = array( 
             "select" => "publicity_catalog.id,
-                         publicity_catalog.pexel,
+                         publicity_catalog.name,
                          publicity_catalog.total_view,
                          publicity_catalog.total_sell,
                          publicity_catalog.date,
                          publicity_catalog.status,
+                         category.name as category_name,
+                         category.slug as category_slug,
                          catalog.name as catalog_name,
+                         catalog.slug as catalog_slug,
                          catalog.catalog_id as catalog_id
                          ",
             "join" => array('customer, publicity_catalog.customer_id = customer.customer_id',
-                            'catalog, publicity_catalog.catalog_id = catalog.catalog_id'),
+                            'catalog, publicity_catalog.catalog_id = catalog.catalog_id',
+                            'category, category.category_id = catalog.category_id'),
             "where" => "publicity_catalog.customer_id = $customer_id",
             "order" => "publicity_catalog.id DESC");
         $obj_publicity_catalog = $this->obj_publicity_catalog->search($params);;
         return $obj_publicity_catalog; 
 	}
 
+    public function get_campana(){  
+        if ($this->input->is_ajax_request()) {
+            //get publicity catalog by customer
+            $type = $this->input->post("type");
+            if($type == 1){
+                //get all course
+                $obj_courses = $this->get_courses();
+                //save data
+                $data['status'] = true;
+                $data['obj_data'] = $obj_courses;
+            }else{
+                //get all catalog
+                $obj_catalog = $this->get_catalog();
+                //save data
+                $data['status'] = true;
+                $data['obj_data'] = $obj_catalog;
+            }
+            echo json_encode($data);
+        }
+	}
     
+    public function get_courses(){  
+        //get all course
+        $params = array( 
+            "select" => "course_id as id,
+                        name",
+            "where" => "active = 1",
+            "order" => "name ASC");
+        $obj_courses = $this->obj_courses->search($params);
+        return $obj_courses;
+	}
+
+    public function get_catalog(){  
+        //get all course
+        $params = array( 
+            "select" => "catalog_id as id,
+                        name",
+            "where" => "active = 1",
+            "order" => "name ASC");
+        $obj_catalog = $this->obj_catalog->search($params);
+        return $obj_catalog;
+	}
 
     public function category($category)
 	{   

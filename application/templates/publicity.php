@@ -24,14 +24,17 @@
        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_41b6eed416c68a9a2cbd8d8496d16b11.js?ver=5' id='stm_remove_envato_frame-js'></script> 
        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70' id='jquery-blockui-js'></script> 
        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=4.8.0' id='wc-add-to-cart-js'></script> 
-
+       <!--//swetaler2-->
+       <link href="<?php echo site_url("static/sweetalert2/dark.css");?>" rel="stylesheet" media="none" onload="if (media != 'all') media = 'all'">
+            <script src="<?php echo site_url("static/sweetalert2/sweetalert2.min.js");?>"></script>
+       <script>
+        var site = "<?php echo site_url(); ?>"
+    </script>
       <link rel="shortcut icon" type="image/x-icon" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/favicon.ico" />
    </head>
-<body class="page-template-default page page-id-7392 logged-in stm_lms_button theme-masterstudy pmpro-body-has-access woocommerce-js skin_custom_color online-light wpb-js-composer js-comp-ver-6.5.0 vc_responsive stm_lms_chat_page"
-  ontouchstart="" style="padding-bottom: 332px;"> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLKCH25" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<body class="page-template-default page page-id-7392 logged-in stm_lms_button theme-masterstudy pmpro-body-has-access woocommerce-js skin_custom_color online-light wpb-js-composer js-comp-ver-6.5.0 vc_responsive stm_lms_chat_page" ontouchstart="" style="padding-bottom: 332px;"> 
   <div id="wrapper">
-  
-  <div id="header" class="transparent_header_off" data-color="">
+  <div id="header" class="transparent_header_off">
    <div class="header_2">
       <div class="header_top_bar header_2_top_bar">
          <div class="container">
@@ -168,10 +171,10 @@
                   <div class="stm_lms_profile_buttons_set 22">
                     <div class="stm_lms_profile_buttons_set__inner">
                       <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn" data-container=".stm_lms_create_announcement">
-                        <a href="<?php echo site_url()." publicidad/campana "?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Campaña</span> </a>
+                        <a href="<?php echo site_url()."publicidad/nueva_campana"?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Campaña</span> </a>
                       </div>
                       <div class="stm-lms-user_create_announcement_btn stm-lms-user_certificates_btn">
-                        <a href="https://stylemixthemes.com/masterstudy/white-lms/user-account/certificates/" data-wpel-link="internal" rel="nofollow"> <i class="fa fa-medal"></i> <span>Nuevo Productos</span> </a>
+                        <a href="#" data-wpel-link="internal" rel="nofollow"> <i class="fa fa-medal"></i> <span>Nuevo Productos</span> </a>
                       </div>
                       <div class="stm-lms-user_create_announcement_btn stm_assignment_btn">
                         <a href="<?php echo site_url()." backoffice ";?>"> <i class="fa fa-layer-group"></i> <span>Oficina Virtual</span> </a>
@@ -215,8 +218,6 @@
   </footer>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.3.9"
     id="tp-tools-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.3.9"
-    id="revmin-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/assets/js/bootstrap.min.js?ver=3.3.40"
     id="bootstrap-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_371bd037e954abfb3ae29625be3ad616.js?ver=3.3.40"
@@ -225,7 +226,6 @@
     id="select2-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_3dfc45f7295f6c5ec660dec8511dd12f.js?ver=3.3.40"
     id="ajaxsubmit-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-includes/js/wp-embed.min.js?ver=5.6.2" id="wp-embed-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_9c68cc5476a6153db135f4ecdf8560a3.js?ver=3.3.40"
     id="stm-header_js-js"></script>
   <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_9f2cbef328d310edb724cf017de3ceb5.js?ver=117"

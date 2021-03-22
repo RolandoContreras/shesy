@@ -51,6 +51,11 @@
     <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
+  <?php 
+    if(isset($pexel) && $pexel!=null){
+      echo $pexel;
+    }
+    ?>
   </head>
   <body>
   <div data-server-rendered="true">

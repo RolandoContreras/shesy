@@ -399,5 +399,15 @@ $route['salir'] = "login/logout";
 
 $route['publicidad'] = "publicitycontroller";
 
+$route['publicidad/nueva_campana'] = "publicitycontroller/new_campana";
+
+$route['publicidad/get_campana'] = "publicitycontroller/get_campana";
+$route['publicidad/save_campana'] = "publicitycontroller/save_campana";
+$route['publicidad/editar_curso/([0-9]+)'] = "publicitycontroller/edit_course/$1";
+$route['publicidad/editar_catalogo/([0-9]+)'] = "publicitycontroller/edit_catalog/$1";
+$route['publicidad/delete_course'] = "publicitycontroller/delete_course";
+$route['publicidad/delete_catalog'] = "publicitycontroller/delete_catalog";
+
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

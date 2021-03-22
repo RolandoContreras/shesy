@@ -13,7 +13,8 @@ class Landing extends CI_Controller {
         $this->load->model("commissions_model", "obj_commissions");
         $this->load->model("courses_model", "obj_courses");
         $this->load->model("customer_courses_model", "obj_customer_courses");
-        
+        $this->load->model("publicity_catalog_model", "obj_publicity_catalog");
+        $this->load->model("publicity_model", "obj_publicity_courses");
         $this->load->library('culqi');
 
     }   
@@ -33,8 +34,7 @@ class Landing extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{   
+	public function index(){   
         if(isset($_GET["d"])){
             $customer_id = $_GET["d"];
         }else{
@@ -86,12 +86,14 @@ class Landing extends CI_Controller {
             $data['host'] = $host;
             $data['video_id'] = $video_id;
         }
+        //verify pexel customer
+        $data['pexel'] = $this->get_publicity($customer_id, $data['obj_catalog']->catalog_id, 2);
         //SEND DATA
         $this->load->view('landing',$data);
 	}
 
-  public function cursos()
-	{   
+  
+  public function cursos(){   
         if(isset($_GET["d"])){
             $customer_id = $_GET["d"];
         }else{
@@ -142,9 +144,58 @@ class Landing extends CI_Controller {
             $data['host'] = $host;
             $data['video_id'] = $video_id;
         }
+        //verify pexel customer
+        $data['pexel'] = $this->get_publicity($customer_id, $data['obj_courses']->course_id, 1);
         //SEND DATA
         $this->load->view('landing_cursos',$data);
 	}
+
+  public function get_publicity($customer_id, $id, $type){   
+      //get cursos
+      if($type == 1){
+          $params = array( 
+            "select" => "id,
+                        pexel,
+                        total_view",
+            "where" => "customer_id = $customer_id and course_id = $id");
+            $obj_publicity = $this->obj_publicity_courses->get_search_row($params);
+            
+            if($obj_publicity != null){
+              //updated total view
+              $total_view = $obj_publicity->total_view;
+              $total_view = $total_view + 1;
+              //updated publicity_catalog
+              $data_param = array(
+                'total_view' => $total_view,
+              );
+              $customer_id = $this->obj_publicity_courses->update($obj_publicity->id, $data_param);
+              return $obj_publicity->pexel;
+            }else{
+              return null;
+            }
+      }else{
+        $params = array( 
+          "select" => "id,
+                      pexel,
+                      total_view",
+          "where" => "customer_id = $customer_id and catalog_id = $id");
+          $obj_publicity = $this->obj_publicity_catalog->get_search_row($params);
+          
+          if($obj_publicity != null){
+            //updated total view
+            $total_view = $obj_publicity->total_view;
+            $total_view = $total_view + 1;
+            //updated publicity_catalog
+            $data_param = array(
+              'total_view' => $total_view,
+            );
+            $customer_id = $this->obj_publicity_catalog->update($obj_publicity->id, $data_param);
+            return $obj_publicity->pexel;
+          }else{
+            return null;
+          }
+      }
+  }
 
   public function validate_hot(){
         //UPDATE DATA ORDERS
