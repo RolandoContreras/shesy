@@ -376,7 +376,6 @@ $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
 $route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
 
 $route['dashboard/usuarios'] = "d_users";
-$route['dashboard/usuarios'] = "d_users";
 $route['dashboard/usuarios/load'] = "d_users/load";
 $route['dashboard/usuarios/load/([0-9]+)'] = "d_users/load/$1";
 $route['dashboard/usuarios/validate'] = "d_users/validate";
@@ -389,6 +388,15 @@ $route['dashboard/report_customer/export'] = "d_report_customer/export";
 $route['dashboard/report_invoice'] = "d_report_invoice";
 $route['dashboard/report_invoice/load'] = "d_report_invoice/load";
 $route['dashboard/report_invoice/export'] = "d_report_invoice/export";
+
+
+//publicidad
+
+$route['dashboard/publicidad'] = "d_publicity";
+$route['dashboard/publicidad/activar_curso'] = "d_publicity/activate_course";
+
+$route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
+$route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
 
 $route['dashboard/report_pay'] = "d_report_pay";
 $route['dashboard/report_pay/load'] = "d_report_pay/load";

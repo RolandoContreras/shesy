@@ -179,6 +179,19 @@
                 <?php } ?>
             </ul>
         </li>
+        <li class="nav-item pcoded-menu-caption"><label>Campañas</label></li>
+        <li class="nav-item pcoded-hasmenu <?php echo $activaciones_syle;?>">
+            <a href="#!" class="nav-link ">
+                <span class="pcoded-micon">
+                    <i data-feather="check-circle"></i>
+                </span>
+                <span class="pcoded-mtext">Activaciones de Campaña</span>
+            </a>
+            <ul class="pcoded-submenu">
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/publicidad";?>"><i class="icon-large icon-th"></i>Cursos</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/publicidad_catalog";?>"><i class="icon-large icon-th"></i>Empresas</a></li>
+            </ul>
+        </li>
         <li class="nav-item pcoded-menu-caption"><label>Activar</label></li>
         <li class="nav-item pcoded-hasmenu <?php echo $activaciones_syle;?>">
             <a href="#!" class="nav-link ">
