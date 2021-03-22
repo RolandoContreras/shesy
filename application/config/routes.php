@@ -400,6 +400,12 @@ $route['dashboard/publicidad/activar_catalogo'] = "d_publicity/activate_catalog"
 $route['dashboard/publicidad/delete_curso'] = "d_publicity/delete_course";
 $route['dashboard/publicidad/delete_catalogo'] = "d_publicity/delete_catalog";
 
+$route['dashboard/publicidad/editar_curso/([0-9]+)'] = "d_publicity/edit_course/$1";
+
+$route['dashboard/publicidad/validate'] = "d_publicity/validate";
+
+
+
 
 
 

@@ -9,6 +9,8 @@ class D_publicity extends CI_Controller {
         parent::__construct();
         $this->load->model("publicity_model", "obj_publicity_courses");
         $this->load->model("publicity_catalog_model", "obj_publicity_catalog");
+        $this->load->model("courses_model", "obj_courses");
+        $this->load->model("catalog_model", "obj_catalog");
     }
 
     public function index() {
@@ -22,19 +24,17 @@ class D_publicity extends CI_Controller {
         $this->tmp_mastercms->render("dashboard/publicidad/publicity_list");
     }
 
-    public function edit_course($id) {
-        //GER SESSION   
-        get_session();
-
-        var_dump($id);
-        die();
-
-        //get data campañas videos
-        $obj_publicity_courses = $this->get_all_publicity_course($id);
-        //GET DATA COMMISSIONS
-        /// VISTA
-        $this->tmp_mastercms->set("obj_publicity_courses", $obj_publicity_courses);
-        $this->tmp_mastercms->render("dashboard/publicidad/publicity_list");
+    public function edit_course($id = NULL) {
+        //VERIFY IF ISSET CUSTOMER_ID
+        if ($id != "") {
+            //get course_id
+            $obj_publicity_courses = $this->get_all_publicity_course_id($id);
+            $obj_courses = $this->get_courses();
+            //RENDER
+            $this->tmp_mastercms->set("obj_publicity_courses", $obj_publicity_courses);
+            $this->tmp_mastercms->set("obj_courses", $obj_courses);
+        }
+        $this->tmp_mastercms->render("dashboard/publicidad/publicity_form");
     }
 
     public function catalog() {
@@ -48,7 +48,6 @@ class D_publicity extends CI_Controller {
         $this->tmp_mastercms->render("dashboard/publicidad/publicity_catalog_list");
     }
     
-
     public function get_all_publicity_course(){   
         $params = array( 
             "select" => "publicity.id,
@@ -94,8 +93,8 @@ class D_publicity extends CI_Controller {
             "join" => array('customer, publicity.customer_id = customer.customer_id',
                             'courses, publicity.course_id = courses.course_id',
                             'category, category.category_id = courses.category_id'),
-            "order" => "publicity.id DESC");
-         $obj_publicity_courses = $this->obj_publicity_courses->search($params);
+            "where" => "publicity.id = $id");
+         $obj_publicity_courses = $this->obj_publicity_courses->get_search_row($params);
          return $obj_publicity_courses; 
 	}
 
@@ -122,6 +121,38 @@ class D_publicity extends CI_Controller {
             "order" => "publicity_catalog.id DESC");
         $obj_publicity_catalog = $this->obj_publicity_catalog->search($params);;
         return $obj_publicity_catalog; 
+	}
+
+    public function get_campana(){  
+        if ($this->input->is_ajax_request()) {
+            //get publicity catalog by customer
+            $type = $this->input->post("type");
+            if($type == 1){
+                //get all course
+                $obj_courses = $this->get_courses();
+                //save data
+                $data['status'] = true;
+                $data['obj_data'] = $obj_courses;
+            }else{
+                //get all catalog
+                $obj_catalog = $this->get_catalog();
+                //save data
+                $data['status'] = true;
+                $data['obj_data'] = $obj_catalog;
+            }
+            echo json_encode($data);
+        }
+	}
+    
+    public function get_courses(){  
+        //get all course
+        $params = array( 
+            "select" => "course_id as id,
+                        name",
+            "where" => "active = 1",
+            "order" => "name ASC");
+        $obj_courses = $this->obj_courses->search($params);
+        return $obj_courses;
 	}
 
     public function activate_course() {
@@ -202,56 +233,25 @@ class D_publicity extends CI_Controller {
         }
     }
 
-    public function load($bonus_id = NULL) {
-        //VERIFY IF ISSET CUSTOMER_ID
-
-        if ($bonus_id != "") {
-            /// PARAM FOR SELECT 
-            $params = array(
-                "select" => "*",
-                "where" => "bonus_id = $bonus_id",
-            );
-            $obj_bonus = $this->obj_bonus->get_search_row($params);
-
-            //RENDER
-            $this->tmp_mastercms->set("obj_bonus", $obj_bonus);
-        }
-        $this->tmp_mastercms->render("dashboard/bonus/bonus_form");
-    }
-
     public function validate() {
-
         //GET CUSTOMER_ID
-        $bonus_id = $this->input->post("bonus_id");
-        $name = $this->input->post('name');
-        $percent = $this->input->post('percent');
-        $active = $this->input->post('active');
-        if ($bonus_id != "") {
+        $id = $this->input->post("id");
+        if ($id != "") {
             //UPDATE DATA
             $data = array(
-                'bonus_id' => $bonus_id,
-                'name' => $name,
-                'percent' => $percent,
-                'active' => $active,
-                'updated_at' => date("Y-m-d H:i:s"),
-                'updated_by' => $_SESSION['usercms']['user_id']
+                'name' => $this->input->post("name"),
+                'course_id' => $this->input->post("course_id"),
+                'status' => $this->input->post("status"),
             );
             //SAVE DATA IN TABLE    
-            $this->obj_bonus->update($bonus_id, $data);
-        } else {
-                //UPDATE DATA
-            $data = array(
-                'name' => $name,
-                'percent' => $percent,
-                'active' => $active,
-                'status_value' => 1,
-                'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $_SESSION['usercms']['user_id']
-            );
-            //SAVE DATA IN TABLE    
-            $this->obj_bonus->insert($data);
+            $result =  $this->obj_publicity_courses->update($id, $data);
+            if($result != null){
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
         }
-        redirect(site_url() . "dashboard/bonos");
     }
 }
 

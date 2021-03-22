@@ -1,9 +1,47 @@
-function new_activate() {
-    var url = 'dashboard/activaciones/load';
+function validate_courses() {
+    document.getElementById("submit").disabled = true;
+    document.getElementById("submit").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
+    oData = new FormData(document.forms.namedItem("courses-form"));
+    $.ajax({
+        url: site + "dashboard/publicidad/validate",
+        method: "POST",
+        data: oData,
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function (data) {
+            var data = JSON.parse(data);
+            if (data.status == true) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Cambios Guardado',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                window.setTimeout(function () {
+                    window.location = site + "dashboard/publicidad";
+                }, 1500);
+            } else {
+                document.getElementById("submit").disabled = false;
+                document.getElementById("submit").innerHTML = "Guardar";
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Sucedio un error',
+                    footer: 'Comunique a soporte'
+                });
+            }
+        }
+    });
+}
+function cancel_courses() {
+    var url = 'dashboard/publicidad';
     location.href = site + url;
 }
-function cancel_activate_kit() {
-    var url = 'dashboard/activaciones';
+
+function edit_course(id) {
+    var url = 'dashboard/publicidad/editar_curso/'+ id;
     location.href = site + url;
 }
 
