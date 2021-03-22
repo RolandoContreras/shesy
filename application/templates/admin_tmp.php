@@ -189,7 +189,7 @@
             </a>
             <ul class="pcoded-submenu">
                 <li class="pcoded"><a href="<?php echo site_url()."dashboard/publicidad";?>"><i class="icon-large icon-th"></i>Cursos</a></li>
-                <li class="pcoded"><a href="<?php echo site_url()."dashboard/publicidad_catalog";?>"><i class="icon-large icon-th"></i>Empresas</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/publicidad_catalogo";?>"><i class="icon-large icon-th"></i>Empresas</a></li>
             </ul>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Activar</label></li>

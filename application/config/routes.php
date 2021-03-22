@@ -395,6 +395,10 @@ $route['dashboard/report_invoice/export'] = "d_report_invoice/export";
 $route['dashboard/publicidad'] = "d_publicity";
 $route['dashboard/publicidad/activar_curso'] = "d_publicity/activate_course";
 
+$route['dashboard/publicidad_catalogo'] = "d_publicity/catalog";
+$route['dashboard/publicidad/activar_catalogo'] = "d_publicity/activate_catalog";
+
+
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
 $route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
 
