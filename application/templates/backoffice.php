@@ -116,9 +116,9 @@
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
-                            <a href="javascript:void(0);" class="btn" style="width: 100%">
+                            <a href="<?php echo site_url() . 'publicidad' ?>" class="btn" style="width: 100%">
                                 <div class="access-dam-blue" align="center"> 
-                                    <span><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; CAMPAÑAS (Pronto)</span>
+                                    <span><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; CAMPAÑAS</span>
                                 </div>
                             </a>
                         </li>
