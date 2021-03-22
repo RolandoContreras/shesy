@@ -16,10 +16,10 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label class="heading_font">Tipo de Campaña</label> 
-                        <select name="type" class="disable-select form-control" required="" <?php echo isset($type)?"disabled":"";?>>
+                        <select name="type" class="disable-select form-control" required="" <?php echo isset($type)?"disabled":"";?> onchange="get_campana(this.value)">
                             <option value=""> Seleccionar tipo de campaña</option>
-                            <option value="1" onclick="get_campana('1');" <?php if(isset($type) && $type ==1){echo 'selected';}?>> Cursos</option>
-                            <option value="2" onclick="get_campana('2');" <?php if(isset($type) && $type ==2){echo 'selected';}?>> Empresas</option>
+                            <option value="1"  <?php if(isset($type) && $type ==1){echo 'selected';}?>> Cursos</option>
+                            <option value="2"  <?php if(isset($type) && $type ==2){echo 'selected';}?>> Empresas</option>
                         </select>
                     </div>
                 </div>
