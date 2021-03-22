@@ -6,7 +6,7 @@
       <link media="all" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/css/autoptimize_33c2259777e0d8311f021c5f6b35f212.css" rel="stylesheet" />
       <link media="screen" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/css/autoptimize_1d4fd3349ff81e144b46d505a11e06ad.css" rel="stylesheet" />
       <style media="print">@media print{.pmpro_a-print{display:none;position:absolute;left:-9999px}}</style>
-      <title>User Account &#8211; Education &amp; Online Course Management WordPress Theme – Masterstudy</title>
+      <title>Publicidad |  La Cultura Imparable</title>
       <link rel='stylesheet' id='rs-roboto-css'  href='//fonts.googleapis.com/css?family=Roboto&#038;ver=5.6.2' type='text/css' media='all' />
       <link rel='stylesheet' id='tp-material-icons-css'  href='//fonts.googleapis.com/icon?family=Material+Icons&#038;ver=5.6.2' type='text/css' media='all' />
       <link rel='stylesheet' id='stm_demos_rus-css'  href='https://stylemixthemes.com/api/right-popup/popup.css?ver=7' type='text/css' media='all' />
@@ -30,7 +30,11 @@
        <script>
         var site = "<?php echo site_url(); ?>"
     </script>
-      <link rel="shortcut icon" type="image/x-icon" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/favicon.ico" />
+      <!--//STAR FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-touch-icon.png';?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-32x32.png';?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-16x16.png';?>">
+    <!--//END FAVICON-->
    </head>
 <body class="page-template-default page page-id-7392 logged-in stm_lms_button theme-masterstudy pmpro-body-has-access woocommerce-js skin_custom_color online-light wpb-js-composer js-comp-ver-6.5.0 vc_responsive stm_lms_chat_page" ontouchstart="" style="padding-bottom: 332px;"> 
   <div id="wrapper">
@@ -96,7 +100,7 @@
                      <div class="stm_lms_account_dropdown">
                         <div class="dropdown">
                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>  
-                            <i class="lnr lnr-user"></i> <span class="login_name">Hola, <?php echo $_SESSION['customer']['name']; ?></span> <span class="caret"></span> 
+                            <i class="lnr lnr-user"></i> <span class="login_name">Hola, <?php echo $obj_profile->first_name; ?></span> <span class="caret"></span> 
                            </button>
                         </div>
                      </div>
@@ -177,7 +181,7 @@
                         <a href="#" data-wpel-link="internal" rel="nofollow"> <i class="fa fa-medal"></i> <span>Nuevo Productos</span> </a>
                       </div>
                       <div class="stm-lms-user_create_announcement_btn stm_assignment_btn">
-                        <a href="<?php echo site_url()." backoffice ";?>"> <i class="fa fa-layer-group"></i> <span>Oficina Virtual</span> </a>
+                        <a href="<?php echo site_url()."backoffice";?>"> <i class="fa fa-layer-group"></i> <span>Oficina Virtual</span> </a>
                       </div>
                     </div>
                   </div>
@@ -198,17 +202,14 @@
         <div class="footer_widgets_wrapper kek text-normal">
           <div class="container">
             <div class="widgets cols_4 clearfix">
-              <aside id="stm_text-3" class="widget stm_wp_widget_text">
+              <aside id="stm_text-4" class="widget stm_wp_widget_text">
                 <div class="widget_title">
-                  <h3>About</h3>
+                  <h3>Cultura Imparable</h3>
                 </div>
                 <div class="textwidget">
-                  <p><a href="https://stylemixthemes.com/masterstudy/" data-wpel-link="exclude"> Masterstudy</a> is Education WordPress theme featured by
-                    Learning Management System (LMS) for online education.<br> Developed by <a href="https://stylemixthemes.com/" data-wpel-link="exclude">StylemixThemes</a>.</p>
+                  <p>
+                      <a href="" data-wpel-link="exclude"> La Cultura</a> hoy se complace en presentar la sección de campaña publicitaria. Impulsamos que todos nuestros embajadores participen activamente en el posicionamiento de su marca, con el respaldo y soporte de la cultura.</p>
                 </div>
-                <div class="socials_widget_wrapper socials_widget_wrapper__text"> <a href="https://www.facebook.com/" target="_blank" data-wpel-link="external" rel="nofollow"><i class="fab fa-facebook"></i></a> <a href="https://www.twitter.com/"
-                    target="_blank" data-wpel-link="external" rel="nofollow"><i class="fab fa-twitter"></i></a> <a href="https://www.instagram.com/" target="_blank"
-                    data-wpel-link="external" rel="nofollow"><i class="fab fa-instagram"></i></a></div>
               </aside>
             </div>
           </div>
