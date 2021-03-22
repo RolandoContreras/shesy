@@ -37,6 +37,7 @@
                                 <tr role="row">
                                   <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" aria-sort="ascending" >ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" >Fecha</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" >Nombre</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" >Embajador</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" >Empresa</th>
                                     <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" >Categoría</th>
@@ -50,7 +51,8 @@
                             <tr>
                                 <td><?php echo $value->id;?></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
-                                <td><h6><?php echo $value->first_name." ".$value->last_name;?></h6></td>
+                                <td><h6><?php echo $value->name;?></h6></td>
+                                <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td><h6><?php echo $value->catalog_name;?></h6></td>
                                 <td><h6><?php echo $value->category_name;?></h6></td>
                                 <td>
@@ -70,8 +72,8 @@
                                                 if($value->status == 0){ ?>
                                                     <button type="button" class="btn btn-success" onclick="active_catalog('<?php echo $value->id;?>');"><i class="fa fa-check"></i> Activar</button>
                                                 <?php } ?>
-                                                <button type="button" class="btn btn-info" onclick="edit_catalog('<?php echo $value->id;?>')"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-danger" onclick="delete_catalog('<?php echo $value->id;?>')"><i class="fa fa-trash"></i></button>
+                                                <button type="button" class="btn btn-icon btn-info" onclick="edit_catalog('<?php echo $value->id;?>')"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-icon btn-danger" onclick="delete_catalog('<?php echo $value->id;?>')"><i class="fa fa-trash"></i></button>
                                           </div>
                                     </div>
                                 </td>
@@ -82,6 +84,7 @@
                                 <tr>
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">Fecha</th>
+                                  <th rowspan="1" colspan="1">Nombre</th>
                                   <th rowspan="1" colspan="1">Embajador</th>
                                   <th rowspan="1" colspan="1">Empresa</th>
                                   <th rowspan="1" colspan="1">Categoría</th>

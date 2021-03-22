@@ -37,6 +37,19 @@ class D_publicity extends CI_Controller {
         $this->tmp_mastercms->render("dashboard/publicidad/publicity_form");
     }
 
+    public function edit_catalog($id = NULL) {
+        //VERIFY IF ISSET CUSTOMER_ID
+        if ($id != "") {
+            //get course_id
+            $obj_publicity_catalog = $this->get_all_publicity_catalog_id($id);
+            $obj_catalog = $this->get_catalog();
+            //RENDER
+            $this->tmp_mastercms->set("obj_publicity_catalog", $obj_publicity_catalog);
+            $this->tmp_mastercms->set("obj_catalog", $obj_catalog);
+        }
+        $this->tmp_mastercms->render("dashboard/publicidad/publicity_form_catalog");
+    }
+
     public function catalog() {
         //GER SESSION   
         get_session();
@@ -123,6 +136,31 @@ class D_publicity extends CI_Controller {
         return $obj_publicity_catalog; 
 	}
 
+    public function get_all_publicity_catalog_id($id){   
+        //get publicity catalog by customer
+        $params = array( 
+            "select" => "publicity_catalog.id,
+                         publicity_catalog.name,
+                         publicity_catalog.total_view,
+                         publicity_catalog.total_sell,
+                         publicity_catalog.date,
+                         publicity_catalog.status,
+                         customer.first_name,
+                         customer.last_name,
+                         category.name as category_name,
+                         category.slug as category_slug,
+                         catalog.name as catalog_name,
+                         catalog.slug as catalog_slug,
+                         catalog.catalog_id as catalog_id
+                         ",
+            "join" => array('customer, publicity_catalog.customer_id = customer.customer_id',
+                            'catalog, publicity_catalog.catalog_id = catalog.catalog_id',
+                            'category, category.category_id = catalog.category_id'),
+            "where" => "publicity_catalog.id = $id");
+        $obj_publicity_catalog = $this->obj_publicity_catalog->get_search_row($params);;
+        return $obj_publicity_catalog; 
+	}
+
     public function get_campana(){  
         if ($this->input->is_ajax_request()) {
             //get publicity catalog by customer
@@ -153,6 +191,17 @@ class D_publicity extends CI_Controller {
             "order" => "name ASC");
         $obj_courses = $this->obj_courses->search($params);
         return $obj_courses;
+	}
+
+    public function get_catalog(){  
+        //get all course
+        $params = array( 
+            "select" => "catalog_id as id,
+                        name",
+            "where" => "active = 1",
+            "order" => "name ASC");
+        $obj_catalog = $this->obj_catalog->search($params);
+        return $obj_catalog;
 	}
 
     public function activate_course() {
@@ -253,6 +302,28 @@ class D_publicity extends CI_Controller {
             echo json_encode($data);
         }
     }
+
+    public function validate_catalog() {
+        //GET CUSTOMER_ID
+        $id = $this->input->post("id");
+        if ($id != "") {
+            //UPDATE DATA
+            $data = array(
+                'name' => $this->input->post("name"),
+                'catalog_id' => $this->input->post("catalog_id"),
+                'status' => $this->input->post("status"),
+            );
+            //SAVE DATA IN TABLE    
+            $result =  $this->obj_publicity_catalog->update($id, $data);
+            if($result != null){
+                $data['status'] = true;
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+    }
+    
 }
 
 ?>
