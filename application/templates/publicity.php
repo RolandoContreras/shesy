@@ -12,6 +12,13 @@
       <link rel='stylesheet' id='tp-material-icons-css'  href='//fonts.googleapis.com/icon?family=Material+Icons&#038;ver=5.6.2' type='text/css' media='all' />
       <link rel='stylesheet' id='redux-google-fonts-stm_option-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7COpen+Sans%3A300%2C400%2C600%2C700%2C800%2C300italic%2C400italic%2C600italic%2C700italic%2C800italic&#038;subset=latin&#038;ver=5.6.2' type='text/css' media='all' />
       <link rel='stylesheet' id='stm_theme_custom_styles-css'  href='<?php echo site_url()."static/publicity/css/autoptimize_single_6d6bdd62ba43f165976d724fa8653254.css?ver=117";?>' type='text/css' media='all' />
+
+      <link rel='stylesheet' id='stm_theme_custom_styles-css'  href='https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/css/autoptimize_b0c6853aa766b9d5eec1f4ec0b41b1a5.css' type='text/css' media='all' />
+      
+      
+
+
+
       <script src='<?php echo site_url()."static/publicity/js/jquery.min.js?ver=3.5.1";?>' id='jquery-core-js'></script> 
       <script src='<?php echo site_url()."static/publicity/js/jquery-migrate.min.js?ver=3.3.2";?>' id='jquery-migrate-js'></script> 
       <script src='<?php echo site_url()."static/publicity/js/autoptimize_single_32c015d5fe3cf30387c516c13ea42efe.js?ver=3.4.6";?>' id='apsl-frontend-js-js'></script>
@@ -20,6 +27,9 @@
        <script src='<?php echo site_url()."static/publicity/js/lazysizes.min.js?ver=5.6.2";?>' id='lazysizes.js-js'></script> 
        <script src='<?php echo site_url()."static/publicity/js/autoptimize_single_8341b9b2e5b09a7f9cb7cef9dbaa7311.js?ver=5.6.2";?>' id='stm_lms_lazysizes-js'></script> 
        <script src='<?php echo site_url()."static/publicity/js/jquery.blockUI.min.js?ver=2.70";?>' id='jquery-blockui-js'></script> 
+
+
+
        <!--//swetaler2-->
        <link href="<?php echo site_url("static/sweetalert2/dark.css");?>" rel="stylesheet" media="none" onload="if (media != 'all') media = 'all'">
        <script src="<?php echo site_url("static/sweetalert2/sweetalert2.min.js");?>"></script>
