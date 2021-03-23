@@ -170,11 +170,11 @@
                   <hr/>
                   <div class="stm_lms_profile_buttons_set 22">
                     <div class="stm_lms_profile_buttons_set__inner">
-                      <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn" data-container=".stm_lms_create_announcement">
-                        <a href="<?php echo site_url()."publicidad/nueva_campana"?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Campaña</span> </a>
+                      <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
+                        <a href="<?php echo site_url()."publicidad";?>"> <i class="fa fa-home"></i> <span>Inicio</span> </a>
                       </div>
-                      <div class="stm-lms-user_create_announcement_btn stm-lms-user_certificates_btn">
-                        <a href="#" data-wpel-link="internal" rel="nofollow"> <i class="fa fa-medal"></i> <span>Nuevo Productos</span> </a>
+                      <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
+                        <a href="<?php echo site_url()."publicidad/nueva_campana";?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Campaña</span> </a>
                       </div>
                       <div class="stm-lms-user_create_announcement_btn stm_assignment_btn">
                         <a href="<?php echo site_url()."backoffice";?>"> <i class="fa fa-layer-group"></i> <span>Oficina Virtual</span> </a>
