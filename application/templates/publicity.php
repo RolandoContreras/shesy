@@ -3,30 +3,26 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link media="all" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/css/autoptimize_33c2259777e0d8311f021c5f6b35f212.css" rel="stylesheet" />
-      <link media="screen" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/css/autoptimize_1d4fd3349ff81e144b46d505a11e06ad.css" rel="stylesheet" />
+      <link media="all" href="<?php echo site_url()."static/publicity/css/autoptimize_33c2259777e0d8311f021c5f6b35f212.css";?>" rel="stylesheet" />
+      <link media="screen" href="<?php echo site_url()."static/publicity/css/autoptimize_1d4fd3349ff81e144b46d505a11e06ad.css";?>" rel="stylesheet" />
+      
       <style media="print">@media print{.pmpro_a-print{display:none;position:absolute;left:-9999px}}</style>
       <title>Publicidad |  La Cultura Imparable</title>
       <link rel='stylesheet' id='rs-roboto-css'  href='//fonts.googleapis.com/css?family=Roboto&#038;ver=5.6.2' type='text/css' media='all' />
       <link rel='stylesheet' id='tp-material-icons-css'  href='//fonts.googleapis.com/icon?family=Material+Icons&#038;ver=5.6.2' type='text/css' media='all' />
-      <link rel='stylesheet' id='stm_demos_rus-css'  href='https://stylemixthemes.com/api/right-popup/popup.css?ver=7' type='text/css' media='all' />
-      <link rel='stylesheet' id='stm_theme_custom_styles-css'  href='https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/css/autoptimize_single_6d6bdd62ba43f165976d724fa8653254.css?ver=117' type='text/css' media='all' />
       <link rel='stylesheet' id='redux-google-fonts-stm_option-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7COpen+Sans%3A300%2C400%2C600%2C700%2C800%2C300italic%2C400italic%2C600italic%2C700italic%2C800italic&#038;subset=latin&#038;ver=5.6.2' type='text/css' media='all' />
-      <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script> 
-      <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script> 
-      <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_32c015d5fe3cf30387c516c13ea42efe.js?ver=3.4.6' id='apsl-frontend-js-js'></script>
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/wpcfto/metaboxes/assets/js/vue-resource.min.js?ver=2.4.4' id='vue-resource.js-js'></script> 
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/wpcfto/metaboxes/assets/js/vue2-datepicker.min.js?ver=2.4.4' id='vue2-datepicker-js'></script> 
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_45762400b9d7ad50d39e64f290b88879.js?ver=117' id='stm-lms-become_instructor-js'></script> 
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_f10ca52fe1aa11f74c9bce745fff4e20.js?ver=117' id='stm-lms-lms-js'></script> 
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/stm-post-type/theme/assets/lazysizes.min.js?ver=5.6.2' id='lazysizes.js-js'></script> 
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_8341b9b2e5b09a7f9cb7cef9dbaa7311.js?ver=5.6.2' id='stm_lms_lazysizes-js'></script> 
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_41b6eed416c68a9a2cbd8d8496d16b11.js?ver=5' id='stm_remove_envato_frame-js'></script> 
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70' id='jquery-blockui-js'></script> 
-       <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=4.8.0' id='wc-add-to-cart-js'></script> 
+      <link rel='stylesheet' id='stm_theme_custom_styles-css'  href='<?php echo site_url()."static/publicity/css/autoptimize_single_6d6bdd62ba43f165976d724fa8653254.css?ver=117";?>' type='text/css' media='all' />
+      <script src='<?php echo site_url()."static/publicity/js/jquery.min.js?ver=3.5.1";?>' id='jquery-core-js'></script> 
+      <script src='<?php echo site_url()."static/publicity/js/jquery-migrate.min.js?ver=3.3.2";?>' id='jquery-migrate-js'></script> 
+      <script src='<?php echo site_url()."static/publicity/js/autoptimize_single_32c015d5fe3cf30387c516c13ea42efe.js?ver=3.4.6";?>' id='apsl-frontend-js-js'></script>
+       <script src='<?php echo site_url()."static/publicity/js/autoptimize_single_45762400b9d7ad50d39e64f290b88879.js?ver=117";?>' id='stm-lms-become_instructor-js'></script> 
+       <script src='<?php echo site_url()."static/publicity/js/autoptimize_single_f10ca52fe1aa11f74c9bce745fff4e20.js?ver=117";?>' id='stm-lms-lms-js'></script> 
+       <script src='<?php echo site_url()."static/publicity/js/lazysizes.min.js?ver=5.6.2";?>' id='lazysizes.js-js'></script> 
+       <script src='<?php echo site_url()."static/publicity/js/autoptimize_single_8341b9b2e5b09a7f9cb7cef9dbaa7311.js?ver=5.6.2";?>' id='stm_lms_lazysizes-js'></script> 
+       <script src='<?php echo site_url()."static/publicity/js/jquery.blockUI.min.js?ver=2.70";?>' id='jquery-blockui-js'></script> 
        <!--//swetaler2-->
        <link href="<?php echo site_url("static/sweetalert2/dark.css");?>" rel="stylesheet" media="none" onload="if (media != 'all') media = 'all'">
-            <script src="<?php echo site_url("static/sweetalert2/sweetalert2.min.js");?>"></script>
+       <script src="<?php echo site_url("static/sweetalert2/sweetalert2.min.js");?>"></script>
        <script>
         var site = "<?php echo site_url(); ?>"
     </script>
@@ -208,7 +204,7 @@
                 </div>
                 <div class="textwidget">
                   <p>
-                      <a href="" data-wpel-link="exclude"> La Cultura</a> hoy se complace en presentar la sección de campaña publicitaria. Impulsamos que todos nuestros embajadores participen activamente en el posicionamiento de su marca, con el respaldo y soporte de la cultura.</p>
+                      <a data-wpel-link="exclude"> La Cultura</a> hoy se complace en presentar la sección de campaña publicitaria. Impulsamos que todos nuestros embajadores participen activamente en el posicionamiento de su marca, con el respaldo y soporte de la cultura.</p>
                 </div>
               </aside>
             </div>
@@ -217,22 +213,14 @@
       </div>
     </div>
   </footer>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.3.9"
-    id="tp-tools-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/assets/js/bootstrap.min.js?ver=3.3.40"
-    id="bootstrap-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_371bd037e954abfb3ae29625be3ad616.js?ver=3.3.40"
-    id="fancybox-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min.js?ver=4.0.3"
-    id="select2-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_3dfc45f7295f6c5ec660dec8511dd12f.js?ver=3.3.40"
-    id="ajaxsubmit-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_9c68cc5476a6153db135f4ecdf8560a3.js?ver=3.3.40"
-    id="stm-header_js-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_9f2cbef328d310edb724cf017de3ceb5.js?ver=117"
-    id="stm-lms-user-tabs-js"></script>
-  <script type="text/javascript" src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system//assets/vendors/moment.min.js?ver=5.6.2"
-    id="moment.min-js"></script>
+  <script src="<?php echo site_url()."static/publicity/js/rbtools.min.js?ver=6.3.9";?>" id="tp-tools-js"></script>
+  <script src="<?php echo site_url()."static/publicity/js/bootstrap.min.js?ver=3.3.40";?>" id="bootstrap-js"></script>
+  <script src="<?php echo site_url()."static/publicity/js/autoptimize_single_371bd037e954abfb3ae29625be3ad616.js?ver=3.3.40";?>" id="fancybox-js"></script>
+  <script src="<?php echo site_url()."static/publicity/js/select2.full.min.js?ver=4.0.3";?>" id="select2-js"></script>
+  <script src="<?php echo site_url()."static/publicity/js/autoptimize_single_3dfc45f7295f6c5ec660dec8511dd12f.js?ver=3.3.40";?>" id="ajaxsubmit-js"></script>
+  <script src="<?php echo site_url()."static/publicity/js/autoptimize_single_9c68cc5476a6153db135f4ecdf8560a3.js?ver=3.3.40";?>" id="stm-header_js-js"></script>
+  <!--<script src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_9f2cbef328d310edb724cf017de3ceb5.js?ver=117" id="stm-lms-user-tabs-js"></script>-->
+  <script src="<?php echo site_url()."static/publicity/js/moment.min.js?ver=5.6.2";?>" id="moment.min-js"></script>
   <div>
 </body>
 </html>
