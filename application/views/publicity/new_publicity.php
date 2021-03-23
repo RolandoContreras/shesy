@@ -53,7 +53,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <button type="submit" id="submit" class="btn btn-success"><span>Crear Campaña</span></button>
+                        <button type="submit" id="submit" style="background-color:green" class="btn btn-default"><span>Crear Campaña</span></button>
                         <a href="<?php echo site_url()."publicidad";?>" class="btn btn-default"><span>Regresar</span></a>
                     </div>
                 </div>
