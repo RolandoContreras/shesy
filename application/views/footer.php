@@ -13,11 +13,12 @@
           <div id="block-1555988509126" class="footer__block media__body">
             <div class="link-list justify-content-right" kjb-settings-id="sections_footer_blocks_1555988509126_settings_menu"> 
                 <a class="link-list__link" href="<?php echo site_url();?>" >Inicio</a> 
-                <a class="link-list__link" href="<?php echo site_url()."cursos";?>">Cursos</a> 
+                <a class="link-list__link" href="#">Cursos</a> 
                 <a class="link-list__link" href="<?php echo site_url()."catalogo";?>">Catalogo</a>             
                 <a class="link-list__link" href="<?php echo site_url()."contacto";?>">Contacto</a> 
                 <a class="link-list__link" href="<?php echo site_url()."registro";?>">Registro</a> 
                 <a class="link-list__link" href="<?php echo site_url()."iniciar-sesion";?>">Iniciar Sesion</a> 
+                <a class="link-list__link" href="<?php echo site_url()."terminos-condiciones";?>">Términos y Condiciones</a> 
             </div>
           </div>
           <div class="footer__block "> 

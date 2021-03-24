@@ -54,6 +54,16 @@ class Home extends CI_Controller {
         $this->load->view('postula', $data);
     }
 
+    public function terminos() {
+        //GET 
+        $data['obj_category_videos'] = $this->nav_videos();
+        $data['obj_category_catalog'] = $this->nav_catalogo();
+        //SEND META TITLE 
+        $data['title'] = "Cultura Emprendedora | Términos y Condiciones";
+        $this->load->view('terminos', $data);
+    }
+    
+
     //vista pagos por referencia
     public function pagos_referencia() {
         //GET NAV

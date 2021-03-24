@@ -2,6 +2,9 @@
 const CACHE_NAME = 'v1_cache_cultura_emprendedora',
   urlsToCache = [
     '//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Fira+Sans:400,700,400italic,700italic',
+    'https://code.jquery.com/jquery-3.3.1.slim.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
+    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
     'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
     'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
     '//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js',
