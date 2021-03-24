@@ -88,16 +88,16 @@
 .padding-top-10{
     padding-top: 10px;
 }
-.access-dam-yellow{
-    background: #efb810;
+.access-dam-one{
+    background: #009afe;
     border-radius: 3px; 
     color: #fff; 
     font-weight: 600; 
     padding: 15px;
     width: 100%;     
-    -moz-box-shadow: 0px 0px 10px #D1F509;
-    -webkit-box-shadow: 0px 0px 10px #D1F509;
-    box-shadow: 0px 0px 10px #D1F509;
+    -moz-box-shadow: 0px 0px 10px #009afe;
+    -webkit-box-shadow: 0px 0px 10px #009afe;
+    box-shadow: 0px 0px 10px #009afe;
 }
 .access-dam-blue {
     background: #0362c6;
@@ -110,39 +110,63 @@
     -webkit-box-shadow: 0px 0px 10px blue;
     box-shadow: 0px 0px 10px blue;
 }
-.access-dam-purple{
-    background: #3b36a1; 
+.access-dam-two{
+    background: #019b9b; 
     border-radius: 3px; 
     color: #fff; 
     font-weight: 600; 
     padding: 15px;
     width: 100%;   
-    -moz-box-shadow: 0px 0px 10px #5E28F0;
-    -webkit-box-shadow: 0px 0px 10px #5E28F0;
-    box-shadow: 0px 0px 10px #5E28F0;
+    -moz-box-shadow: 0px 0px 10px #019b9b;
+    -webkit-box-shadow: 0px 0px 10px #019b9b;
+    box-shadow: 0px 0px 10px #019b9b;
 }
-.access-dam-green{
-    background: #2e8b57;
+.access-dam-three{
+    background: #003169;
     border-radius: 3px; 
     color: #fff; 
     font-weight: 600; 
     padding: 15px;
     width: 100%;
-    -moz-box-shadow: 0px 0px 10px #0EDC3E;
-    -webkit-box-shadow: 0px 0px 10px #0EDC3E;
-    box-shadow: 0px 0px 10px #0EDC3E;
+    -moz-box-shadow: 0px 0px 10px #003169;
+    -webkit-box-shadow: 0px 0px 10px #003169;
+    box-shadow: 0px 0px 10px #003169;
 }
-.access-dam-black{
-    background: black;
+.access-dam-four{
+    background: #ff6600;
     border-radius: 3px; 
     color: #fff; 
     font-weight: 600; 
     padding: 15px;
     width: 100%;     
-    -moz-box-shadow: 0px 0px 10px #fff;
-    -webkit-box-shadow: 0px 0px 10px #fff;
-    box-shadow: 0px 0px 10px #fff;
+    -moz-box-shadow: 0px 0px 10px #ff6600;
+    -webkit-box-shadow: 0px 0px 10px #ff6600;
+    box-shadow: 0px 0px 10px #ff6600;
 }
+.access-dam-five{
+    background: #ab6600;
+    border-radius: 3px; 
+    color: #fff; 
+    font-weight: 600; 
+    padding: 15px;
+    width: 100%;     
+    -moz-box-shadow: 0px 0px 10px #ab6600;
+    -webkit-box-shadow: 0px 0px 10px #ab6600;
+    box-shadow: 0px 0px 10px #ab6600;
+}
+.access-dam-six{
+    background: #000;
+    border-radius: 3px; 
+    color: #fff; 
+    font-weight: 600; 
+    padding: 15px;
+    width: 100%;     
+    -moz-box-shadow: 0px 0px 10px #ab6600;
+    -webkit-box-shadow: 0px 0px 10px #ab6600;
+    box-shadow: 0px 0px 10px #ab6600;
+}
+
+
 .os-progress-bar {
     margin-bottom: 1rem;
 }

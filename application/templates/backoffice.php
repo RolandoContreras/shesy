@@ -88,7 +88,7 @@
                         if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                              <li data-username="Tablero" class="nav-item">
                                 <a href="#" class="btn">
-                                    <div class="access-dam-yellow" align="center"> 
+                                    <div class="access-dam-one" align="center"> 
                                         <span><i class="fa fa-university" aria-hidden="true"></i>&nbsp; ACADEMIA</span>                
                                     </div>
                                 </a>
@@ -96,29 +96,36 @@
                         <?php } ?>            
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url()."backoffice/cursos";?>" class="btn" style="width: 100%">
-                                <div class="access-dam-purple" align="center"> 
+                                <div class="access-dam-two" align="center"> 
                                     <span><i class="fa fa-video-camera" aria-hidden="true"></i>&nbsp; CURSOS</span>                
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'mi_catalogo'; ?>" class="btn" style="width: 100%">
-                                <div class="access-dam-green" align="center"> 
+                                <div class="access-dam-three" align="center"> 
                                     <span><i class="fa fa-building" aria-hidden="true"></i>&nbsp; EMPRESAS</span>
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'backoffice/inversiones' ?>" class="btn" style="width: 100%">
-                                <div class="access-dam-black" align="center"> 
+                                <div class="access-dam-four" align="center"> 
                                     <span>PORTAFOLIO DE INVERSIÓN</span>
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
                             <a href="<?php echo site_url() . 'publicidad' ?>" class="btn" style="width: 100%">
-                                <div class="access-dam-blue" align="center"> 
+                                <div class="access-dam-five" align="center"> 
                                     <span><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; CAMPAÑAS</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li data-username="Tablero" class="nav-item">
+                            <a href="#" class="btn" style="width: 100%">
+                                <div class="access-dam-six" align="center"> 
+                                    <span><i class="fa fa-shopping-bag"></i>&nbsp; MI TIENDA</span>
                                 </div>
                             </a>
                         </li>
