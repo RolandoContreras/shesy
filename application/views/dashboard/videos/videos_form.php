@@ -46,8 +46,8 @@
                                                         <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_videos->name) ? $obj_videos->name : ""; ?>" class="input-xlarge-fluid" placeholder="Titulo" required="">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Descripción del Vídeo</label>
-                                                        <textarea class="form-control" id="description" name="description" rows="3" required=""><?php echo isset($obj_videos->description) ? $obj_videos->description : ""; ?></textarea>
+                                                        <label>Descripción del Curso</label>
+                                                        <textarea id='description' name='description'><?php echo isset($obj_videos->description) ? $obj_videos->description : ""; ?></textarea>
                                                         <script>
                                                             CKEDITOR.replace('description');
                                                         </script>
@@ -139,3 +139,20 @@
     </div>
 </div>
 <script src="<?php echo site_url() . 'static/cms/js/videos.js' ?>"></script>
+<script>
+  tinymce.init({
+  selector: 'textarea#description',
+  height: 600,
+  menubar: false,
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help wordcount'
+  ],
+  toolbar: 'undo redo | formatselect | ' +
+  'bold italic backcolor | alignleft aligncenter ' +
+  'alignright alignjustify | bullist numlist outdent indent | ' +
+  'removeformat | help',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+});
+</script>

@@ -1,8 +1,8 @@
 function validate_videos(course_id, module_id) {
     document.getElementById("send").disabled = true;
     document.getElementById("send").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
+    description =  tinyMCE.activeEditor.getContent();
     oData = new FormData(document.forms.namedItem("form"));
-    description = CKEDITOR.instances.description.getData();
     oData.append("description", description);
     oData.append("course_id", course_id);
     oData.append("module_id", module_id);
