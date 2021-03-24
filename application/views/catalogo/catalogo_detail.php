@@ -31,6 +31,7 @@
                                                 <?php 
                                                     if($video != null){ 
                                                         if($host == "vimeo.com"){ ?>
+                                                            <iframe src="https://player.vimeo.com/video/<?php echo $video_id;?>" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
                                                         <?php  }else{ ?>
                                                             <div class="video-wrapper">
                                                             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video;?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-v-4d187430></iframe>
