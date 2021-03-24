@@ -1,0 +1,67 @@
+{
+  "name": "Cultura Emprendedora",
+  "short_name": "Cultura Emprendedora",
+  "description": "Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica",
+  "icons": [
+      {
+        "src": "./static/page_front/images/logo/favico/android-chrome-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/android-chrome-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/apple-touch-icon.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/favicon-16x16.png",
+        "type": "image/png",
+        "sizes": "16x16"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/favicon-32x32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/android-chrome-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/android-chrome-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/favicon-16x16.png",
+        "type": "image/png",
+        "sizes": "16x16",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/apple-touch-icon.png",
+        "type": "image/png",
+        "sizes": "32x32",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./assets/page_front/images/logo/favico/favicon-32x32.png",
+        "type": "image/png",
+        "sizes": "32x32",
+        "purpose": "maskable"
+      }
+  ],
+  "start_url": "https://culturaemprendedora.online",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFF",
+  "theme_color": "#f39321"
+}

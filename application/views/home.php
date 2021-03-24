@@ -248,6 +248,7 @@
         src="<?php echo site_url() . "static/page_front/js/encore_core-391b174ddfaf72e8ec9615d1579235b5c2c755e7cd65e22cf10938c815f7f394.js"; ?>">
     </script>
     <script src="<?php echo site_url() . "static/page_front/js/scripts.js?15964308185009978"; ?>"></script>
+    <script src="<?php echo site_url() . 'script.js'; ?>"></script>
 </body>
 
 </html>

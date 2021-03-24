@@ -46,7 +46,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-16x16.png'; ?>">
-    <link rel="manifest" href="<?php echo site_url() . 'static/page_front/images/logo/favico/site.webmanifest'; ?>">
     <!--//END FAVICON-->
     <link rel="canonical" href="<?php echo site_url(); ?>" />
     <!-- Google Fonts ====================================================== -->
@@ -58,7 +57,15 @@
     <!-- Customer CSS ====================================================== -->
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/my_style.css";?>"/>
     <link rel="stylesheet" media="screen" href="<?php echo site_url()."static/page_front/css/catalog.css";?>"/>
-    <!-- Shopping ====================================================== -->
+      <!-- pwa -->
+    <link rel="manifest" href="<?php echo site_url() . "manifest.json";?>">
+    <meta name="theme-color" content="#072C69"/>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="<?php echo site_url() . 'assets/cms/img/logo/favico/favicon-32x32.png'; ?>">
+    <link rel="apple-touch-startup-image" href="<?php echo site_url() . 'assets/cms/img/logo/favico/favicon-32x32.png'; ?>">
     <?php 
       $url = explode("/", uri_string());
       if (isset($url[0])) {
