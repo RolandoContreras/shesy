@@ -1,6 +1,6 @@
 {
-  "name": "Cultura Emprendedora",
-  "short_name": "Cultura Emprendedora",
+  "name": "Embajada Empresarial",
+  "short_name": "Embajada Empresarial",
   "description": "Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica",
   "icons": [
       {
@@ -62,6 +62,6 @@
   "start_url": "https://culturaemprendedora.online",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#FFF",
+  "background_color": "#000",
   "theme_color": "#f39321"
 }
