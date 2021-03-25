@@ -81,7 +81,7 @@ function get_campana(type){
         data: {type: type},
         success:function(data){            
             if(data.status == true){  
-                var sub_campana = document.getElementById("sub_campana");
+                var sub_campana = document.getElementByClass("dropdown-menu");
                 var str = '';
                 data.obj_data.forEach(function(value) {
                     str += "<option value="+value.id+"> "+value.name+"</option>";
@@ -131,12 +131,12 @@ function save_campana(){
                     icon: 'success',
                     title: 'Campaña Creada',
                     showConfirmButton: false,
-                    footer: 'Estaremos validando su campaña en las próximas horas',
-                    timer: 2000
+                    footer: 'Su campaña se encuentra activa',
+                    timer: 1500
                   });
                   window.setTimeout( function(){
                     window.location = site+"publicidad";
-                }, 2000 );  
+                }, 1500 );  
             } else {
                 document.getElementById("submit").disabled = false;
                 document.getElementById("submit").innerHTML = "Crear Campaña";

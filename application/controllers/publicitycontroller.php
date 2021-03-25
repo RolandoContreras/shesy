@@ -32,13 +32,22 @@ class PublicityController extends CI_Controller {
     }
 
     
-    public function new_campana(){   
+    public function new_campana($type_campana=null){   
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //GET DATA FROM CUSTOMER
         $obj_profile = $this->get_profile($customer_id);
+
+        if($type_campana == 1){
+            $obj_courses = $this->get_courses();
+            $this->tmp_publicity->set("obj_courses", $obj_courses);
+        }else{
+            $obj_catalog = $this->get_catalog();
+            $this->tmp_publicity->set("obj_catalog", $obj_catalog);
+        }
         //send data
         $this->tmp_publicity->set("obj_profile", $obj_profile);
+        $this->tmp_publicity->set("type_campana", $type_campana);
         $this->tmp_publicity->render("publicity/new_publicity");
 	}
 
@@ -48,12 +57,9 @@ class PublicityController extends CI_Controller {
             //get publicity catalog by customer
             $customer_id = $_SESSION['customer']['customer_id'];
             $id = $this->input->post("id");
-            $type = $this->input->post("type");
+            $type_campana = $this->input->post("type_campana");
             //condition
-            if($type == false){
-                $type = $this->input->post("type_2");
-            }
-            if($type == 1){
+            if($type_campana == 1){
                 //insert on publicity course
                 if($id != null){
                     $param = array(
@@ -122,10 +128,10 @@ class PublicityController extends CI_Controller {
             $obj_publicity = $this->get_publicity_course_id($id);
             //get all camapañas
             $obj_campana_type = $this->get_courses();
-            $type = 1;
+            $type_campana = 1;
             $this->tmp_publicity->set("obj_publicity", $obj_publicity);
             $this->tmp_publicity->set("obj_campana_type", $obj_campana_type);
-            $this->tmp_publicity->set("type", $type);
+            $this->tmp_publicity->set("type_campana", $type_campana);
         }
         $obj_profile = $this->get_profile($customer_id);
         //send data
@@ -141,10 +147,10 @@ class PublicityController extends CI_Controller {
             $obj_publicity = $this->get_publicity_catalog_id($id);
             //get all camapañas
             $obj_campana_type = $this->get_catalog();
-            $type = 2;
+            $type_campana = 2;
             $this->tmp_publicity->set("obj_publicity", $obj_publicity);
             $this->tmp_publicity->set("obj_campana_type", $obj_campana_type);
-            $this->tmp_publicity->set("type", $type);
+            $this->tmp_publicity->set("type_campana", $type_campana);
         }
         $obj_profile = $this->get_profile($customer_id);
         //send data
