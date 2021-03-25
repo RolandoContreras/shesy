@@ -142,11 +142,13 @@
                       <div class="stm-lms-user-quiz__head heading_font">
                           <div class="stm-lms-user-quiz__head_title"> Campaña</div>
                           <div class="stm-lms-user-quiz__head_status"> Concepto</div>
-                          <div class="stm-lms-user-quiz__head_status"> Vista</div>
                       </div>
                       <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/how-to-work-with-legendary-red-camera/" data-wpel-link="internal" rel="nofollow"> How to Work with Legendary RED camera? </a></div>
-                          <a href="#" data-course-id="869" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
+                          <div class="stm-lms-user-quiz__title"> 
+                            How to Work with Legendary RED camera?
+                          </div>
+                          <a data-course-id="869" class="stm-lms-user-quiz__name stm_preview_certificate"> Cursos </a>
+                          <div class="affiliate_points heading_font" data-copy="lmsx33x869"> <span class="hidden" id="lmsx33x869">lmsx33x869</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
                           <div class="affiliate_points heading_font" data-copy="lmsx33x869"> <span class="hidden" id="lmsx33x869">lmsx33x869</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
                       </div>
                       <div class="stm-lms-user-quiz">
