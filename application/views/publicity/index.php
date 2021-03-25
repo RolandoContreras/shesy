@@ -10,7 +10,6 @@
                   </div>
                   <div class="stm_lms_instructor_courses__top">
                     <h4>Todas las Campañas</h4>
-                    <a href="<?php echo site_url()."publicidad/nueva_campana";?>" class="btn btn-default"> <i class="fa fa-plus"></i> Campaña</a>
                   </div>
                   <!-- campañas -->
                   <ul class="nav nav-tabs" role="tablist">
