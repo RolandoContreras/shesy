@@ -71,7 +71,7 @@ class PublicityController extends CI_Controller {
                         'total_view' => 0,
                         'total_sell' => 0,
                         'date' => date("Y-m-d"),
-                        'status' => 0,
+                        'status' => 1,
                     ); 
                     $id = $this->obj_publicity_courses->insert($param);
                 }
@@ -98,7 +98,7 @@ class PublicityController extends CI_Controller {
                         'total_view' => 0,
                         'total_sell' => 0,
                         'date' => date("Y-m-d"),
-                        'status' => 0,
+                        'status' => 1,
                     ); 
                     $id = $this->obj_publicity_catalog->insert($param);
                 }
