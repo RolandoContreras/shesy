@@ -140,70 +140,48 @@
                     <div role="tabpanel" class="tab-pane vue_is_disabled " v-bind:class="{'is_vue_loaded' : vue_loaded}" id="statistics">
                     <div class="stm-lms-user-quizzes stm-lms-user-certificates">
                       <div class="stm-lms-user-quiz__head heading_font">
-                          <div class="stm-lms-user-quiz__head_title"> Campaña</div>
-                          <div class="stm-lms-user-quiz__head_status"> Concepto</div>
-                          <div class="stm-lms-user-quiz__head_status"> Vista</div>
+                          <div class="stm-lms-user-quiz__head_title">Campaña</div>
+                          <div class="stm-lms-user-quiz__head_title">Concepto</div>
+                          <div class="stm-lms-user-quiz__head_status">Visitas</div>
                       </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/how-to-work-with-legendary-red-camera/" data-wpel-link="internal" rel="nofollow"> How to Work with Legendary RED camera? </a></div>
-                          <a href="#" data-course-id="869" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx33x869"> <span class="hidden" id="lmsx33x869">lmsx33x869</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/engine-creating-for-xbox-one-x/" data-wpel-link="internal" rel="nofollow"> Engine Creating for Xbox One X </a></div>
-                          <a href="#" data-course-id="881" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx38x881"> <span class="hidden" id="lmsx38x881">lmsx38x881</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/web-coding-and-apache-basics/" data-wpel-link="internal" rel="nofollow"> Web Coding and Apache Basics </a></div>
-                          <a href="#" data-course-id="882" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx41x882"> <span class="hidden" id="lmsx41x882">lmsx41x882</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/concept-art-printing-on-3d-printer/" data-wpel-link="internal" rel="nofollow"> Concept Art Printing on 3d Printer </a></div>
-                          <a href="#" data-course-id="815" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx43x815"> <span class="hidden" id="lmsx43x815">lmsx43x815</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/how-to-make-beautiful-landscape-photos/" data-wpel-link="internal" rel="nofollow"> How to Make Beautiful Landscape photos? </a></div>
-                          <a href="#" data-course-id="996" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx50x996"> <span class="hidden" id="lmsx50x996">lmsx50x996</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/fashion-photography-from-professional/" data-wpel-link="internal" rel="nofollow"> Fashion Photography from professional </a></div>
-                          <a href="#" data-course-id="1002" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx409x1002"> <span class="hidden" id="lmsx409x1002">lmsx409x1002</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/road-bike-manual-or-how-to-be-a-champion/" data-wpel-link="internal" rel="nofollow"> Road Bike Manual or How to Be a Champion. </a></div>
-                          <a href="#" data-course-id="999" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx20491x999"> <span class="hidden" id="lmsx20491x999">lmsx20491x999</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/basics-of-masterstudy/" data-wpel-link="internal" rel="nofollow"> Basics of Masterstudy </a></div>
-                          <a href="#" data-course-id="880" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx47585x880"> <span class="hidden" id="lmsx47585x880">lmsx47585x880</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/masterstudy-mobile-lms-app/" data-wpel-link="internal" rel="nofollow"> MasterStudy Mobile LMS App </a></div>
-                          <a href="#" data-course-id="4040" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx347658x4040"> <span class="hidden" id="lmsx347658x4040">lmsx347658x4040</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/how-to-be-a-dj-make-electronic-music/" data-wpel-link="internal" rel="nofollow"> How to be a DJ? Make Electronic Music </a></div>
-                          <a href="#" data-course-id="1073" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx830042x1073"> <span class="hidden" id="lmsx830042x1073">lmsx830042x1073</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/real-things-art-painting-by-jason-ni/" data-wpel-link="internal" rel="nofollow"> Real Things Art Painting by Jason Ni </a></div>
-                          <a href="#" data-course-id="997" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx784251x997"> <span class="hidden" id="lmsx784251x997">lmsx784251x997</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
-                      <div class="stm-lms-user-quiz">
-                          <div class="stm-lms-user-quiz__title"> <a href="https://stylemixthemes.com/masterstudy/white-lms/courses/run-forest-run-how-to-create-running-route/" data-wpel-link="internal" rel="nofollow"> Run Forest, Run, How to create Running Route </a></div>
-                          <a href="#" data-course-id="819" class="stm-lms-user-quiz__name stm_preview_certificate"> Download </a>
-                          <div class="affiliate_points heading_font" data-copy="lmsx795359x819"> <span class="hidden" id="lmsx795359x819">lmsx795359x819</span> <span class="affiliate_points__btn"> <i class="fa fa-link"></i> <span class="text">Copy code</span> </span></div>
-                      </div>
+                      <?php 
+                      if($obj_publicity_courses != null || $obj_publicity_catalog != null){
+                        foreach($obj_publicity_courses as $value){ ?>
+                          <div class="stm-lms-user-quiz">
+                            <div class="stm-lms-user-quiz__title"> 
+                              <a><?php echo $value->name;?></a>
+                            </div>
+                            <a class="stm-lms-user-quiz__name stm_preview_certificate">Cursos</a>
+                            <div class="affiliate_points heading_font"> 
+                                <span class="affiliate_points__btn"><i class="fa fa-eye"></i> 
+                                <span class="text"><?php echo $value->total_view;?> Visitas</span> </span>
+                            </div>
+                            <div class="affiliate_points heading_font" data-copy="lmsx33x869"> 
+                                <span class="affiliate_points__btn"> <i class="fa fa-eye"></i> 
+                                <span class="text"><?php echo $value->total_sell;?> Ventas</span> </span>
+                            </div>
+                        </div>
+                      <?php } ?>
+                      <?php 
+                      foreach($obj_publicity_catalog as $value){ ?>
+                          <div class="stm-lms-user-quiz">
+                            <div class="stm-lms-user-quiz__title"> 
+                              <a><?php echo $value->name;?></a>
+                            </div>
+                            <a class="stm-lms-user-quiz__name stm_preview_certificate">Empresas</a>
+                            <div class="affiliate_points heading_font"> 
+                                <span class="affiliate_points__btn"><i class="fa fa-eye"></i> 
+                                <span class="text"><?php echo $value->total_view;?> Visitas</span> </span>
+                            </div>
+                            <div class="affiliate_points heading_font" data-copy="lmsx33x869"> 
+                                <span class="affiliate_points__btn"> <i class="fa fa-eye"></i> 
+                                <span class="text"><?php echo $value->total_sell;?> Ventas</span> </span>
+                            </div>
+                        </div>
+                      <?php } 
+                      }else{ ?>
+                          <p>No hay registros</p>
+                      <?php } ?>
                     </div>
                     </div>
                   </div>
