@@ -272,7 +272,7 @@ class Landing extends CI_Controller {
               );
               $this->obj_unilevel->insert($data_unilevel);
               //send message
-      //  $this->message($email, $pass);
+        $this->message($email, $pass);
           }
           $catalog_id = $this->input->post("catalog_id");
           $price = $this->input->post("price");
@@ -374,25 +374,6 @@ class Landing extends CI_Controller {
           $price = $this->input->post("price");
           $qty = 1;
           $sub_total = $price * $qty;
-          //INSERT INVOICE
-          $data_invoice = array(
-            'customer_id' => $customer_id,
-            'sub_total' => $sub_total,
-            'igv' => 0,
-            'total' => $sub_total,
-            'type' => 2,
-            'delivery' => 0,
-            'date' => date("Y-m-d H:i:s"),
-            'active' => 0,
-            'status_value' => 1,
-            'landing' => 1,
-            'parent_id' => $parent_id,
-            'pending' => 1,
-            'hotmark' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'created_by' => $customer_id,
-        );
-        $invoice_id = $this->obj_invoices->insert($data_invoice);
         //CREATE INVOICE course
         $data_invoice = array(
           'customer_id' => $customer_id,
@@ -406,16 +387,8 @@ class Landing extends CI_Controller {
           'active' => 2,
       );
       $invoice_id = $this->obj_invoices->insert($data_invoice);
-      //sumar el tiempo de duración
-      $data = array(
-          'customer_id' => $customer_id,
-          'course_id' => $course_id,
-          'date_start' => date("Y-m-d H:i:s"),
-          'status' => 0,
-      );
-      $this->obj_customer_courses->insert($data);
        //send message
-//       $this->message($email, $pass);
+       $this->message($email, $pass);
         //send 
         $data['status'] = true;
         echo json_encode($data);            

@@ -364,6 +364,14 @@ $route['dashboard/activaciones_catalogo'] = "d_activate/activaciones_catalogo";
 $route['dashboard/activaciones_catalogo/([0-9]+)'] = "d_activate/order_catalog/$1";
 $route['dashboard/activaciones_catalogo/active_catalogo'] = "d_activate/active_catalogo";
 
+$route['dashboard/hotmart'] = "d_activate_hotmart";
+$route['dashboard/hotmart_active'] = "d_activate_hotmart/active";
+
+$route['dashboard/hotmart_cursos'] = "d_activate_hotmart/hotmart_cursos";
+$route['dashboard/hotmart_active_course'] = "d_activate_hotmart/active_cursos";
+
+
+
 $route['dashboard/activar_pagos'] = "d_active_pays";
 $route['dashboard/activar_pagos/pagado'] = "d_active_pays/pagado";
 $route['dashboard/activar_pagos/devolver'] = "d_active_pays/devolver";

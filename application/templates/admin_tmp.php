@@ -204,6 +204,18 @@
                 <li class="pcoded"><a href="<?php echo site_url()."dashboard/activaciones";?>"><i class="icon-large icon-th"></i>Pack</a></li>
             </ul>
         </li>
+        <li class="nav-item pcoded-hasmenu <?php echo $activaciones_syle;?>">
+            <a href="#!" class="nav-link ">
+                <span class="pcoded-micon">
+                    <i data-feather="check-circle"></i>
+                </span>
+                <span class="pcoded-mtext">Hotmart</span>
+            </a>
+            <ul class="pcoded-submenu">
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/hotmart";?>"><i class="icon-large icon-th"></i>Empresas</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/hotmart_cursos";?>"><i class="icon-large icon-th"></i>Cursos</a></li>
+            </ul>
+        </li>
         <li class="nav-item pcoded">
             <a href="<?php echo site_url()."dashboard/contra-entrega";?>" class="nav-link <?php echo $contra_entrega_syle;?>">
                 <span class="pcoded-micon">

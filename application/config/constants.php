@@ -36,10 +36,10 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
-define('PUBLIC_KEY','pk_test_igI3EctoA17FeNUD');
+define('PUBLIC_KEY','pk_live_d4ZedlvJFWdrXoiI');
 //pk_test_igI3EctoA17FeNUD
 //pk_live_d4ZedlvJFWdrXoiI
-define('SECRET_KEY','sk_test_CPp73DuovXPdX0Dh');
+define('SECRET_KEY','sk_live_gtpjfAyyoTK2Uf4v');
 //sk_test_CPp73DuovXPdX0Dh
 //sk_live_gtpjfAyyoTK2Uf4v
 
