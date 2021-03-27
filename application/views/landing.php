@@ -194,6 +194,8 @@
                       <?php }else{ ?>
                           <input type="hidden" id="type" name="type" value="" />  
                       <?php } ?>
+                      <input type="hidden" id="catalog_id" name="catalog_id" value="<?php echo $obj_catalog->catalog_id;?>" />  
+                      <input type="hidden" id="price" name="price" value="<?php echo $obj_catalog->price;?>" />  
                         <div class="col-xl-12 col-md-12 m-b-30" style="margin-top:20px;">
                           <ul class="nav nav-tabs" id="myTab1" role="tablist">
                               <li class="nav-item complete">

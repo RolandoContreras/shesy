@@ -61,8 +61,7 @@ function validate_hotmark() {
 }
 
 function validate_hotmark_cursos() {
-    document.getElementById("submit_hot").disabled = true;
-    document.getElementById("submit_hot").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
+    
     hot_link = document.getElementById("hot_link").value;
     oData = new FormData(document.forms.namedItem("form_pay"));
     $.ajax({

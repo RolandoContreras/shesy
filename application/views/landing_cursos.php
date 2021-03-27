@@ -177,6 +177,9 @@
                         Ingrese y verifique sus datos personales
                       </div>
                       <form name="form_pay" id="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_hotmark_cursos();">
+                        <input type="hidden" name="course_id" value="<?php echo $obj_courses->course_id; ?>" />
+                        <input type="hidden" name="course_id" value="<?php echo $obj_courses->course_id; ?>" />
+                        <input type="hidden" name="price" value="<?php echo $obj_courses->price; ?>" />
                         <?php 
                         if(isset($id) && $id!=null){ ?>
                             <input type="hidden" id="id" name="id" value="<?php echo $id;?>" />  

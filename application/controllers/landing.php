@@ -225,8 +225,16 @@ class Landing extends CI_Controller {
             //set pass
             //create passtowrd rand
             $parent_id = $this->input->post("customer_id");
-            //create user
-            $data_param = array(
+            $email = $this->input->post("email");
+            
+            //verify customer
+            $obj_customer = $this->verify_email($email);
+            if (!empty($obj_customer)) {
+              //start session
+              $customer_id = $obj_customer->customer_id;
+          } else {
+              //create user
+              $data_param = array(
                 'first_name' => "Cultura",
                 'last_name' => "Emprendedora",
                 'password' => $this->input->post("pass"),
@@ -241,33 +249,69 @@ class Landing extends CI_Controller {
                 'created_at' => date("Y-m-d H:i:s"),
             );
             $customer_id = $this->obj_customer->insert($data_param);
-            //confition
-            if ($parent_id == 1) {
+              //confition
+              if ($parent_id == 1) {
                 $new_ident = 1;
-            } else {
-                $param_customer = array(
-                    "select" => "ident",
-                    "where" => "customer_id = $parent_id");
-                $customer = $this->obj_unilevel->get_search_row($param_customer);
-                $ident = $customer->ident;
-                $new_ident = $ident . ",$parent_id";
-            }
-            //CREATE UNILEVEL
-            $data_unilevel = array(
-                'customer_id' => $customer_id,
-                'parend_id' => $parent_id,
-                'new_parend_id' => $parent_id,
-                'ident' => $new_ident,
-                'status_value' => 1,
-                'created_at' => date("Y-m-d H:i:s"),
-                'created_by' => $customer_id,
-            );
-            $this->obj_unilevel->insert($data_unilevel);
-            //send message
-            $this->message($email, $pass);
-            //send 
-            $data['status'] = true;
-            echo json_encode($data);            
+              } else {
+                  $param_customer = array(
+                      "select" => "ident",
+                      "where" => "customer_id = $parent_id");
+                  $customer = $this->obj_unilevel->get_search_row($param_customer);
+                  $ident = $customer->ident;
+                  $new_ident = $ident . ",$parent_id";
+              }
+              //CREATE UNILEVEL
+              $data_unilevel = array(
+                  'customer_id' => $customer_id,
+                  'parend_id' => $parent_id,
+                  'new_parend_id' => $parent_id,
+                  'ident' => $new_ident,
+                  'status_value' => 1,
+                  'created_at' => date("Y-m-d H:i:s"),
+                  'created_by' => $customer_id,
+              );
+              $this->obj_unilevel->insert($data_unilevel);
+              //send message
+      //  $this->message($email, $pass);
+          }
+          $catalog_id = $this->input->post("catalog_id");
+          $price = $this->input->post("price");
+          $qty = $this->input->post("qty");
+          $sub_total = $price * $qty;
+          //INSERT INVOICE
+          $data_invoice = array(
+            'customer_id' => $customer_id,
+            'sub_total' => $sub_total,
+            'igv' => 0,
+            'total' => $sub_total,
+            'type' => 2,
+            'delivery' => 0,
+            'date' => date("Y-m-d H:i:s"),
+            'active' => 0,
+            'status_value' => 1,
+            'landing' => 1,
+            'parent_id' => $parent_id,
+            'pending' => 1,
+            'hotmark' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $customer_id,
+        );
+        $invoice_id = $this->obj_invoices->insert($data_invoice);
+        //create inovice catalog
+        $data_invoice_catalog = array(
+            'invoice_id' => $invoice_id,
+            'catalog_id' => $catalog_id,
+            'price' => $price,
+            'quantity' => $qty,
+            'sub_total' => $sub_total,
+            'landing' => 1,
+            'pending' => 1,
+            'date' => date("Y-m-d H:i:s")
+        );
+        $result = $this->obj_invoice_catalog->insert($data_invoice_catalog);
+        //send 
+        $data['status'] = true;
+        echo json_encode($data);            
     exit();
         }
   }
@@ -279,13 +323,13 @@ class Landing extends CI_Controller {
         //set pass
         $email = $this->input->post("email");
         $pass = $this->input->post("pass");
+        $parent_id = $this->input->post("customer_id");
         //create passtowrd rand
         $obj_customer = $this->verify_email($email);
         if (!empty($obj_customer)) {
-          //send message
-          $this->message($email, $pass);
+          //start session
+          $customer_id = $obj_customer->customer_id;
         }else{
-          $parent_id = $this->input->post("customer_id");
           //create user
           $data_param = array(
               'first_name' => "Cultura",
@@ -324,9 +368,54 @@ class Landing extends CI_Controller {
               'created_by' => $customer_id,
           );
           $this->obj_unilevel->insert($data_unilevel);
-          //send message
-          $this->message($email, $pass);
         }
+          //get data post
+          $course_id = $this->input->post("course_id");
+          $price = $this->input->post("price");
+          $qty = 1;
+          $sub_total = $price * $qty;
+          //INSERT INVOICE
+          $data_invoice = array(
+            'customer_id' => $customer_id,
+            'sub_total' => $sub_total,
+            'igv' => 0,
+            'total' => $sub_total,
+            'type' => 2,
+            'delivery' => 0,
+            'date' => date("Y-m-d H:i:s"),
+            'active' => 0,
+            'status_value' => 1,
+            'landing' => 1,
+            'parent_id' => $parent_id,
+            'pending' => 1,
+            'hotmark' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'created_by' => $customer_id,
+        );
+        $invoice_id = $this->obj_invoices->insert($data_invoice);
+        //CREATE INVOICE course
+        $data_invoice = array(
+          'customer_id' => $customer_id,
+          'course_id' => $course_id,
+          'total' => $price,
+          'landing' => 1,
+          'parent_id' => $parent_id,
+          'pending' => 1,
+          'hotmark' => 1,
+          'date' => date("Y-m-d H:i:s"),
+          'active' => 2,
+      );
+      $invoice_id = $this->obj_invoices->insert($data_invoice);
+      //sumar el tiempo de duración
+      $data = array(
+          'customer_id' => $customer_id,
+          'course_id' => $course_id,
+          'date_start' => date("Y-m-d H:i:s"),
+          'status' => 0,
+      );
+      $this->obj_customer_courses->insert($data);
+       //send message
+//       $this->message($email, $pass);
         //send 
         $data['status'] = true;
         echo json_encode($data);            
