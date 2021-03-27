@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html data-n-head-ssr class="page--loading" data-version="prod/2021.02.09-1" data-n-head="%7B%22class%22:%7B%22ssr%22:%22page--loading%22%7D,%22data-version%22:%7B%22ssr%22:%22prod/2021.02.09-1%22%7D%7D">
+<html data-n-head-ssr class="page--loading">
   <head >
     <title><?php echo $obj_courses->name;?> | Cursos | Cultura Emprendedora</title>
     <meta data-n-head="ssr" charset="utf-8">
@@ -351,7 +351,7 @@
   <script src="<?php echo site_url();?>static/page_front/js/landing_culqi.js"></script>
   <script>
 
-    Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+    Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
     var price = "";
     var price2 = "";
     var kit_id = "";

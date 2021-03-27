@@ -269,27 +269,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php  if($obj_profile->kit_id != 0 && $obj_profile->active_month != 0){ ?>
                             <div class="col-md-6 col-xl-6 offset-2">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
                                         <div class="row align-items-center justify-content-center">
                                             <div class="col-auto"><i class="fa fa-user-plus text-c-red fa-2x"></i></div>
                                             <div class="col text-right">
-                                                <h3>Enlace de Referencia & Compra</h3>
+                                                <h3>Enlace de Referencia</h3>
                                                 <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Nuevo Socio: <a target="_blank" href="<?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'registro/' . convert_slug($obj_profile->username); ?></a></span></h6>
                                             </div>
                                         </div>
-                                        <hr/>
+                                        <!--<hr/>
                                         <div class="row align-items-center justify-content-center card-active text-right">
                                             <div class="col-12">
                                                 <h6 class="text-c-blue mb-0"><i class="feather icon-arrow-down text-c-green m-r-10"></i> <span class="text-muted">Compra: <a target="_blank" href="<?php echo site_url() . 'catalogo/referencia/' . convert_slug($obj_profile->username); ?>"><?php echo site_url() . 'catalogo/referencia/' . convert_slug($obj_profile->username); ?></a></span></h6>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                             </div>
-                            <?php } ?>
                             <div class="col-xl-12 col-md-12">
                                 <div class="card Recent-Users">
                                     <div class="card-header">
