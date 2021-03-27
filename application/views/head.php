@@ -64,8 +64,8 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="<?php echo site_url() . 'assets/cms/img/logo/favico/favicon-32x32.png'; ?>">
-    <link rel="apple-touch-startup-image" href="<?php echo site_url() . 'assets/cms/img/logo/favico/favicon-32x32.png'; ?>">
+    <link rel="apple-touch-icon" href="<?php echo site_url() . 'static/page_front/images/logo/favico/pwa/android-icon-36x36.png'; ?>">
+    <link rel="apple-touch-startup-image" href="<?php echo site_url() . 'static/page_front/images/logo/favico/pwa/android-icon-36x36.png'; ?>">
     <?php 
       $url = explode("/", uri_string());
       if (isset($url[0])) {

@@ -4,56 +4,221 @@
   "description": "Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica",
   "icons": [
       {
-        "src": "./static/page_front/images/logo/favico/android-chrome-192x192.png",
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-36x36.png",
         "type": "image/png",
-        "sizes": "192x192"
+        "sizes": "36x36"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/android-chrome-512x512.png",
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-48x48.png",
         "type": "image/png",
-        "sizes": "512x512"
+        "sizes": "48x48"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/apple-touch-icon.png",
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-72x72.png",
         "type": "image/png",
-        "sizes": "32x32"
+        "sizes": "72x72"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/favicon-16x16.png",
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-96x96.png",
         "type": "image/png",
         "sizes": "16x16"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/favicon-32x32.png",
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-144x144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-57x57.png",
+        "type": "image/png",
+        "sizes": "57x57"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-60x60.png",
+        "type": "image/png",
+        "sizes": "60x60"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-72x72.png",
+        "type": "image/png",
+        "sizes": "72x72"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-76x76.png",
+        "type": "image/png",
+        "sizes": "76x76"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-114x114.png",
+        "type": "image/png",
+        "sizes": "114x114"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-120x120.png",
+        "type": "image/png",
+        "sizes": "120x120"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-144x144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-152x152.png",
+        "type": "image/png",
+        "sizes": "152x152"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-180x180.png",
+        "type": "image/png",
+        "sizes": "180x180"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-precomposed.png",
         "type": "image/png",
         "sizes": "32x32"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/android-chrome-192x192.png",
+        "src": "./static/page_front/images/logo/favico/pwa/ms-icon-70x70.png",
         "type": "image/png",
-        "sizes": "192x192",
+        "sizes": "70x70"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/ms-icon-150x150.png",
+        "type": "image/png",
+        "sizes": "150x150"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/ms-icon-310x310.png",
+        "type": "image/png",
+        "sizes": "310x310"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/ms-icon-144x144.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-36x36.png",
+        "type": "image/png",
+        "sizes": "36x36",
         "purpose": "maskable"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/android-chrome-512x512.png",
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-48x48.png",
         "type": "image/png",
-        "sizes": "512x512",
+        "sizes": "48x48",
         "purpose": "maskable"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/favicon-16x16.png",
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-72x72.png",
+        "type": "image/png",
+        "sizes": "72x72",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-96x96.png",
         "type": "image/png",
         "sizes": "16x16",
         "purpose": "maskable"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/apple-touch-icon.png",
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-144x144.png",
+        "type": "image/png",
+        "sizes": "144x144",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/android-icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-57x57.png",
+        "type": "image/png",
+        "sizes": "57x57",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-60x60.png",
+        "type": "image/png",
+        "sizes": "60x60",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-72x72.png",
+        "type": "image/png",
+        "sizes": "72x72",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-76x76.png",
+        "type": "image/png",
+        "sizes": "76x76",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-114x114.png",
+        "type": "image/png",
+        "sizes": "114x114",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-120x120.png",
+        "type": "image/png",
+        "sizes": "120x120",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-144x144.png",
+        "type": "image/png",
+        "sizes": "144x144",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-152x152.png",
+        "type": "image/png",
+        "sizes": "152x152",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-180x180.png",
+        "type": "image/png",
+        "sizes": "180x180",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/apple-icon-precomposed.png",
         "type": "image/png",
         "sizes": "32x32",
         "purpose": "maskable"
       },
       {
-        "src": "./assets/page_front/images/logo/favico/favicon-32x32.png",
+        "src": "./static/page_front/images/logo/favico/pwa/ms-icon-70x70.png",
+        "type": "image/png",
+        "sizes": "70x70",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/ms-icon-150x150.png",
+        "type": "image/png",
+        "sizes": "150x150",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/ms-icon-310x310.png",
+        "type": "image/png",
+        "sizes": "310x310",
+        "purpose": "maskable"
+      },
+      {
+        "src": "./static/page_front/images/logo/favico/pwa/ms-icon-144x144.png",
         "type": "image/png",
         "sizes": "32x32",
         "purpose": "maskable"
