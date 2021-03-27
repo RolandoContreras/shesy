@@ -36,6 +36,12 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+define('PUBLIC_KEY','pk_test_igI3EctoA17FeNUD');
+//pk_test_igI3EctoA17FeNUD
+//pk_live_d4ZedlvJFWdrXoiI
+define('SECRET_KEY','sk_test_CPp73DuovXPdX0Dh');
+//sk_test_CPp73DuovXPdX0Dh
+//sk_live_gtpjfAyyoTK2Uf4v
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

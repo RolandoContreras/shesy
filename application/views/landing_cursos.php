@@ -177,6 +177,18 @@
                         Ingrese y verifique sus datos personales
                       </div>
                       <form name="form_pay" id="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_hotmark_cursos();">
+                        <?php 
+                        if(isset($id) && $id!=null){ ?>
+                            <input type="hidden" id="id" name="id" value="<?php echo $id;?>" />  
+                        <?php }else{ ?>
+                            <input type="hidden" id="id" name="id" value="" />  
+                        <?php } ?>
+                        <?php 
+                        if(isset($type) && $type!=null){ ?>
+                            <input type="hidden" id="type" name="type" value="<?php echo $type;?>" />  
+                        <?php }else{ ?>
+                            <input type="hidden" id="type" name="type" value="" />  
+                        <?php } ?>
                         <div class="col-xl-12 col-md-12 m-b-30" style="margin-top:20px;">
                           <ul class="nav nav-tabs" id="myTab1" role="tablist">
                               <li class="nav-item complete">
@@ -338,9 +350,8 @@
   <script src="<?php echo site_url();?>static/page_front/js/bootstrap.min.js"></script>
   <script src="<?php echo site_url();?>static/page_front/js/landing_culqi.js"></script>
   <script>
-//    pk_test_igI3EctoA17FeNUD
-//pk_live_d4ZedlvJFWdrXoiI
-    Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
+
+    Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
     var price = "";
     var price2 = "";
     var kit_id = "";
@@ -351,6 +362,8 @@
       email_nuevo = document.getElementById("email").value;
       pass = document.getElementById("pass").value;
       phone = document.getElementById("phone").value;
+      id = document.getElementById("id").value;
+      type = document.getElementById("type").value;
       customer_id = document.getElementById("customer_id").value;
       bono_1 = document.getElementById("bono_1").value;
       bono_2 = document.getElementById("bono_2").value;
@@ -421,7 +434,13 @@
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        url = site + "backoffice/mis-cursos";
+                        if(type == 1){
+                          url = site + "cursosporhoy/gracias?id=" + id + "_" + type;
+                        }else if(type == 2){
+                          url = site + "soloporhoy/gracias?d=" + id + "_" + type;
+                        }else{
+                          url = site + "gracias_cursos";
+                        }
                         setTimeout(function(){location.href=url} , 1500);  
                     } else {
                         Swal.fire({

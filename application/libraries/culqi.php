@@ -7,7 +7,7 @@ class Culqi {
         
         //sk_test_CPp73DuovXPdX0Dh
         //sk_live_gtpjfAyyoTK2Uf4v
-        $SECRET_KEY = "sk_live_gtpjfAyyoTK2Uf4v";
+        $SECRET_KEY = SECRET_KEY;
         $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
         
         $charge = $culqi->Charges->create(

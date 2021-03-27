@@ -87,12 +87,16 @@ class Landing extends CI_Controller {
             $data['video_id'] = $video_id;
         }
         //verify pexel customer
-        $data['pexel'] = $this->get_publicity($customer_id, $data['obj_catalog']->catalog_id, 2);
+        $obj_publicity = $this->get_publicity($customer_id, $data['obj_catalog']->catalog_id, 2);
+        if($obj_publicity != null){
+          $data['id'] = $obj_publicity['id'];
+          $data['type'] = $obj_publicity['type'];
+          $data['pexel'] = $obj_publicity['pexel'];
+        }
         //SEND DATA
         $this->load->view('landing',$data);
 	}
 
-  
   public function cursos(){   
         if(isset($_GET["d"])){
             $customer_id = $_GET["d"];
@@ -145,7 +149,12 @@ class Landing extends CI_Controller {
             $data['video_id'] = $video_id;
         }
         //verify pexel customer
-        $data['pexel'] = $this->get_publicity($customer_id, $data['obj_courses']->course_id, 1);
+        $obj_publicity = $this->get_publicity($customer_id, $data['obj_courses']->course_id, 1);
+        if($obj_publicity != null){
+          $data['id'] = $obj_publicity['id'];
+          $data['type'] = $obj_publicity['type'];
+          $data['pexel'] = $obj_publicity['pexel'];
+        }
         //SEND DATA
         $this->load->view('landing_cursos',$data);
 	}
@@ -169,7 +178,13 @@ class Landing extends CI_Controller {
                 'total_view' => $total_view,
               );
               $customer_id = $this->obj_publicity_courses->update($obj_publicity->id, $data_param);
-              return $obj_publicity->pexel;
+              //send data
+              $data = array(
+                'id' => $obj_publicity->id,
+                'pexel' => $obj_publicity->pexel,
+                'type' => 1,
+              );
+              return $data;
             }else{
               return null;
             }
@@ -190,7 +205,13 @@ class Landing extends CI_Controller {
               'total_view' => $total_view,
             );
             $customer_id = $this->obj_publicity_catalog->update($obj_publicity->id, $data_param);
-            return $obj_publicity->pexel;
+            //send data
+            $data = array(
+              'id' => $obj_publicity->id,
+              'pexel' => $obj_publicity->pexel,
+              'type' => 2,
+            );
+            return $data;
           }else{
             return null;
           }
@@ -332,6 +353,18 @@ class Landing extends CI_Controller {
         $date_month = date("Y-m-d", strtotime("+30 day"));
         //MAKE CHARGE
         $charge = $this->culqi->charge($token, $price, $email, "", "", "", "");
+        //ident
+        if ($parent_id == 1) {
+          $new_ident = 1;
+          } else {
+          $param_customer = array(
+              "select" => "ident",
+              "where" => "customer_id = $parent_id");
+          $customer = $this->obj_unilevel->get_search_row($param_customer);
+          $ident = $customer->ident;
+          $new_ident = $ident . ",$parent_id";
+          }
+
         //verify customer
         $obj_customer = $this->verify_email($email);
         if (!empty($obj_customer)) {
@@ -357,17 +390,6 @@ class Landing extends CI_Controller {
             'created_at' => date("Y-m-d H:i:s"),
         );
         $customer_id = $this->obj_customer->insert($data_param);
-        //create unilevel      
-        if ($parent_id == 1) {
-          $new_ident = 1;
-          } else {
-          $param_customer = array(
-              "select" => "ident",
-              "where" => "customer_id = $parent_id");
-          $customer = $this->obj_unilevel->get_search_row($param_customer);
-          $ident = $customer->ident;
-          $new_ident = $ident . ",$parent_id";
-          }
           //CREATE UNILEVEL
           $data_unilevel = array(
             'customer_id' => $customer_id,
@@ -436,7 +458,6 @@ class Landing extends CI_Controller {
           $data_customer_session['logged_customer'] = "TRUE";
           $data_customer_session['status'] = 1;
           $_SESSION['customer'] = $data_customer_session;
-        
         echo json_encode($charge);
     } catch (Exception $e) {
         $data['status'] = false;
@@ -467,6 +488,17 @@ class Landing extends CI_Controller {
         $date_month = date("Y-m-d", strtotime("+30 day"));
         //MAKE CHARGE
         $charge = $this->culqi->charge($token, $price, $email, "", "", "", "");
+        //ident
+        if ($parent_id == 1) {
+          $new_ident = 1;
+          } else {
+          $param_customer = array(
+              "select" => "ident",
+              "where" => "customer_id = $parent_id");
+          $customer = $this->obj_unilevel->get_search_row($param_customer);
+          $ident = $customer->ident;
+          $new_ident = $ident . ",$parent_id";
+        }
         //verify customer
         $obj_customer = $this->verify_email($email_nuevo);
         if (!empty($obj_customer)) {
@@ -492,18 +524,6 @@ class Landing extends CI_Controller {
             'created_at' => date("Y-m-d H:i:s"),
         );
         $customer_id = $this->obj_customer->insert($data_param);
-        //create unilevel      
-        //confition
-        if ($parent_id == 1) {
-          $new_ident = 1;
-          } else {
-          $param_customer = array(
-              "select" => "ident",
-              "where" => "customer_id = $parent_id");
-          $customer = $this->obj_unilevel->get_search_row($param_customer);
-          $ident = $customer->ident;
-          $new_ident = $ident . ",$parent_id";
-          }
           //CREATE UNILEVEL
           $data_unilevel = array(
             'customer_id' => $customer_id,
@@ -559,163 +579,240 @@ class Landing extends CI_Controller {
     }
   }
 
-public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5, $customer_id, $qty) {
-//make upline
-  $new_ident = explode(",", $ident);
-  rsort($new_ident);
-  //BOUCLE ULTI 5 LEVEL
-  if (!empty($new_ident)) {
-      for ($x = 0; $x <= 4; $x++) {
-          if (isset($new_ident[$x])) {
-              if ($new_ident[$x] != "") {
-                  //get customer active
-                  $params = array(
-                      "select" => "active_month",
-                      "where" => "customer_id = $new_ident[$x]"
-                  );
-                  //GET DATA FROM BONUS
-                  $obj_customer = $this->obj_customer->get_search_row($params);
-                  if (isset($obj_customer->active_month) && $obj_customer->active_month == 1) {
-                      //INSERT COMMISSION TABLE
-                      switch ($x) {
-                          case 0:
-                              $amount = $bono_n1 * $qty;
-                              break;
-                          case 1:
-                              $amount = $bono_n2 * $qty;
-                              break;
-                          case 2:
-                              $amount = $bono_n3 * $qty;
-                              break;
-                          case 3:
-                              $amount = $bono_n4 * $qty;
-                              break;
-                          case 4:
-                              $amount = $bono_n5 * $qty;
-                            break;    
-                      }
-                      $noventa_percent = $amount * 0.9;
-                      $diez_percent = $amount * 0.1;
-                      //insert on table commision
-                      $data_unilevel = array(
-                          'invoice_id' => $invoice_id,
-                          'customer_id' => $new_ident[$x],
-                          'bonus_id' => 3,
-                          'amount' => $noventa_percent,
-                          'active' => 1,
-                          'pago' => 0,
-                          'status_value' => 1,
-                          'date' => date("Y-m-d H:i:s"),
-                          'created_at' => date("Y-m-d H:i:s"),
-                          'created_by' => $customer_id,
-                      );
-                      $this->obj_commissions->insert($data_unilevel);
+  public function pay_unilevel($ident, $invoice_id, $bono_n1, $bono_n2, $bono_n3, $bono_n4, $bono_n5, $customer_id, $qty) {
+  //make upline
+    $new_ident = explode(",", $ident);
+    rsort($new_ident);
+    //BOUCLE ULTI 5 LEVEL
+    if (!empty($new_ident)) {
+        for ($x = 0; $x <= 4; $x++) {
+            if (isset($new_ident[$x])) {
+                if ($new_ident[$x] != "") {
+                    //get customer active
+                    $params = array(
+                        "select" => "active_month",
+                        "where" => "customer_id = $new_ident[$x]"
+                    );
+                    //GET DATA FROM BONUS
+                    $obj_customer = $this->obj_customer->get_search_row($params);
+                    //set calculate
+                    switch ($x) {
+                      case 0:
+                          $amount = $bono_n1 * $qty;
+                          break;
+                      case 1:
+                          $amount = $bono_n2 * $qty;
+                          break;
+                      case 2:
+                          $amount = $bono_n3 * $qty;
+                          break;
+                      case 3:
+                          $amount = $bono_n4 * $qty;
+                          break;
+                      case 4:
+                          $amount = $bono_n5 * $qty;
+                        break;    
+                  }
+                  $noventa_percent = $amount * 0.9;
+                  $diez_percent = $amount * 0.1;
+                    if (isset($obj_customer->active_month) && $obj_customer->active_month == 1) {
+                        //INSERT COMMISSION TABLE
+                        $data_unilevel = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $new_ident[$x],
+                            'bonus_id' => 3,
+                            'amount' => $noventa_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $this->obj_commissions->insert($data_unilevel);
+                        //insert commission 10%
+                        $data_unilevel_2 = array(
+                            'invoice_id' => $invoice_id,
+                            'customer_id' => $new_ident[$x],
+                            'bonus_id' => 3,
+                            'amount' => $diez_percent,
+                            'active' => 1,
+                            'pago' => 0,
+                            'compras' => 1,
+                            'status_value' => 1,
+                            'date' => date("Y-m-d H:i:s"),
+                            'created_at' => date("Y-m-d H:i:s"),
+                            'created_by' => $customer_id,
+                        );
+                        $this->obj_commissions->insert($data_unilevel_2);
+                    }else{
                       //insert commission 10%
                       $data_unilevel_2 = array(
-                          'invoice_id' => $invoice_id,
-                          'customer_id' => $new_ident[$x],
-                          'bonus_id' => 3,
-                          'amount' => $diez_percent,
-                          'active' => 1,
-                          'pago' => 0,
-                          'compras' => 1,
-                          'status_value' => 1,
-                          'date' => date("Y-m-d H:i:s"),
-                          'created_at' => date("Y-m-d H:i:s"),
-                          'created_by' => $customer_id,
+                        'invoice_id' => $invoice_id,
+                        'customer_id' => $new_ident[$x],
+                        'bonus_id' => 3,
+                        'amount' => $diez_percent,
+                        'active' => 1,
+                        'pago' => 0,
+                        'compras' => 1,
+                        'status_value' => 1,
+                        'date' => date("Y-m-d H:i:s"),
+                        'created_at' => date("Y-m-d H:i:s"),
+                        'created_by' => $customer_id,
                       );
                       $this->obj_commissions->insert($data_unilevel_2);
-                  }
-              }
+
+                    }
+                }
+            }
+        }
+    }
+  }
+
+  public function gracias(){   
+    if(isset($_GET["id"])){
+        $id = $_GET["id"];
+        $split = explode("_", $id);
+        //get id publicty
+        $id = $split[0];
+        //get type publicity
+        $type = $split[1];
+        //sum view
+        if($type == 1){
+          $params = array( 
+            "select" => "id,
+                        total_sell",
+            "where" => "id = $id");
+            $obj_publicity = $this->obj_publicity_courses->get_search_row($params);
+            if($obj_publicity != null){
+              //updated total view
+              $total_sell = $obj_publicity->total_sell;
+              $total_sell = $total_sell + 1;
+              //updated publicity_catalog
+              $data_param = array(
+                'total_sell' => $total_sell,
+              );
+              $this->obj_publicity_courses->update($obj_publicity->id, $data_param);
+            }
+      }else{
+        $params = array( 
+          "select" => "id,
+                      total_sell",
+          "where" => "id = $id");
+          $obj_publicity = $this->obj_publicity_catalog->get_search_row($params);
+          if($obj_publicity != null){
+            //updated total view
+            $total_sell = $obj_publicity->total_sell;
+            $total_sell = $total_sell + 1;
+            //updated publicity_catalog
+            $data_param = array(
+              'total_sell' => $total_sell,
+            );
+            $this->obj_publicity_catalog->update($obj_publicity->id, $data_param);
           }
       }
+    }
+    if(isset($type) && $type != null){
+      if($type == 1){
+        $data['url'] = site_url()."backoffice/mis-cursos";
+      }else{
+        $data['url'] = site_url()."mi_catalogo/order";
+      }
+    }else{
+      $url = explode("/", uri_string());;
+      if($url[0] == "gracias_cursos"){
+        $data['url'] = site_url()."backoffice/mis-cursos";
+      }else{
+        $data['url'] = site_url()."mi_catalogo/order";
+      }
+    }
+    //SEND DATA
+    $this->load->view('gracias',$data);
+}
+
+  public function verify_email($email) {
+    $params = array(
+        "select" => "customer_id,
+                    first_name,
+                    last_name",
+        "where" => "email = '$email'");
+    $obj_customer = $this->obj_customer->get_search_row($params);
+    return $obj_customer;
   }
-}
 
-public function verify_email($email) {
-  $params = array(
-      "select" => "customer_id,
-                  first_name,
-                  last_name",
-      "where" => "email = '$email'");
-  $obj_customer = $this->obj_customer->get_search_row($params);
-  return $obj_customer;
-}
+  public function message($email,  $pass) {
+      $mensaje = wordwrap("<html>
+                  
+    <div bgcolor='#E9E9E9' style='background:#fff;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
+    <table style='background-color:#fff;border-collapse:collapse;margin:0;padding:0' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0'
+    align='center'>
+    <tbody>
+      <tr>
+        <td valign='top' align='center'>
+          <table style='border-collapse:collapse;margin:0;padding:0;max-width:600px' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0' align='center'>
+            <tbody>
+              <tr>
+                <td style='padding:0 30px;display:block;background:#fafafa'>
+                  <p style='padding:32px 32px 0;color:#333333;background:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;line-height:14px;margin:0;font-size:14px;border-radius:5px 5px 0 0'
+                    align='left'>Hola Emprendedor,</p>
+                </td>
+              </tr>
+              <tr>
+                <td style='padding:0 30px;display:block;background:#fafafa'>
+                  <table style='width:100%;border-collapse:collapse;padding:0' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0' align='center'>
+                    <tbody>
+                      <tr>
+                        <td style='padding:0;background-color:#fff;border-radius:0 0 5px 5px;padding:32px'>
+                          <p style='margin:0;padding-bottom:20px;color:#333333;line-height:22px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
+                          Tu cuenta ha sido creada exitosamente accede a tu oficina virtual a través del siguiente enlace  <a href='https://culturaemprendedora.online/iniciar-sesion/' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://culturaemprendedora.online&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>culturaemprendedora.online</a> <br/>Encuentra aquí tus credenciales de ingreso. </p>
+                          <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
+                            <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$email</strong></span>
+                          </p> 
+                          <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
+                            <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Contraseña: </span><strong>$pass</strong></span>
+                          </p> 
+                          <a href='https://culturaemprendedora.online/iniciar-sesion' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
+                            target='_blank'>Iniciar Sesión</a>                          
+                          </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style='padding:30px 30px 0;display:block;background:#fafafa'>
+                  <table style='width:100%;border-collapse:collapse;padding:0;text-align:center' width='100%' height='100%' cellspacing='0' cellpadding='0'
+                    border='0' align='center'>
+                    <tbody>
+                      <tr>
+                        <td style='max-width:290px;display:inline-block;padding:0 19px 30px;box-sizing:border-box;text-align:left'>
+                          <p style='margin:0;text-align:center;line-height:20px;color:#888888;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:12px'>
+                          Visítanos en  <a href='https://culturaemprendedora.online' style='color:#2d6ced;text-decoration:none' target='_blank'>www.culturaemprendedora.online</a></p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
+                          .</html>", 70, "\n", true);
+      $titulo = "Bienvenido - [CULTURA EMPRENDEDORA]";
+      $headers = "MIME-Version: 1.0\r\n";
+      $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+      $headers .= "From: CULTURA EMPRENDEDORA <contacto@culturaemprendedora.online>\r\n";
+      $bool = mail("$email", $titulo, $mensaje, $headers);
+  }
 
-public function message($email,  $pass) {
-    $mensaje = wordwrap("<html>
-                
-<div bgcolor='#E9E9E9' style='background:#fff;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-<table style='background-color:#fff;border-collapse:collapse;margin:0;padding:0' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0'
-align='center'>
-<tbody>
-  <tr>
-    <td valign='top' align='center'>
-      <table style='border-collapse:collapse;margin:0;padding:0;max-width:600px' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0' align='center'>
-        <tbody>
-          <tr>
-            <td style='padding:0 30px;display:block;background:#fafafa'>
-              <p style='padding:32px 32px 0;color:#333333;background:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;line-height:14px;margin:0;font-size:14px;border-radius:5px 5px 0 0'
-                align='left'>Hola Emprendedor,</p>
-            </td>
-          </tr>
-          <tr>
-            <td style='padding:0 30px;display:block;background:#fafafa'>
-              <table style='width:100%;border-collapse:collapse;padding:0' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0' align='center'>
-                <tbody>
-                  <tr>
-                    <td style='padding:0;background-color:#fff;border-radius:0 0 5px 5px;padding:32px'>
-                      <p style='margin:0;padding-bottom:20px;color:#333333;line-height:22px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-                      Tu cuenta ha sido creada exitosamente accede a tu oficina virtual a través del siguiente enlace  <a href='https://culturaemprendedora.online/iniciar-sesion/' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://culturaemprendedora.online&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>culturaemprendedora.online</a> <br/>Encuentra aquí tus credenciales de ingreso. </p>
-                      <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-                        <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$email</strong></span>
-                      </p> 
-                      <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-                        <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Contraseña: </span><strong>$pass</strong></span>
-                      </p> 
-                      <a href='https://culturaemprendedora.online/iniciar-sesion' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
-                        target='_blank'>Iniciar Sesión</a>                          
-                      </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style='padding:30px 30px 0;display:block;background:#fafafa'>
-              <table style='width:100%;border-collapse:collapse;padding:0;text-align:center' width='100%' height='100%' cellspacing='0' cellpadding='0'
-                border='0' align='center'>
-                <tbody>
-                  <tr>
-                    <td style='max-width:290px;display:inline-block;padding:0 19px 30px;box-sizing:border-box;text-align:left'>
-                      <p style='margin:0;text-align:center;line-height:20px;color:#888888;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:12px'>
-                      Visítanos en  <a href='https://culturaemprendedora.online' style='color:#2d6ced;text-decoration:none' target='_blank'>www.culturaemprendedora.online</a></p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-  </tr>
-</tbody>
-</table>
-</div>
-                        .</html>", 70, "\n", true);
-    $titulo = "Bienvenido - [CULTURA EMPRENDEDORA]";
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    $headers .= "From: CULTURA EMPRENDEDORA <contacto@culturaemprendedora.online>\r\n";
-    $bool = mail("$email", $titulo, $mensaje, $headers);
-}
-
-
-public function crear_pass_rand() {
-    $longitud = 8; // longitud del password.
-    $pass = substr(md5(rand()), 0, $longitud);
-    return($pass); // devuelve el password.
-}
+  public function crear_pass_rand() {
+      $longitud = 8; // longitud del password.
+      $pass = substr(md5(rand()), 0, $longitud);
+      return($pass); // devuelve el password.
+  }
 
 }
