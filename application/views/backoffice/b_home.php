@@ -269,7 +269,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xl-6 offset-2">
+                            <?php
+                            if($obj_profile->kit_id != 0 && $obj_profile->active_month != 0){ 
+                                $class = "col-md-6 col-xl-6 offset-2";
+                            }else{
+                                $class = "col-md-6 col-xl-4";
+                            } ?>
+                            <div class="<?php echo $class;?>">
                                 <div class="card card-social">
                                     <div class="card-block border-bottom">
                                         <div class="row align-items-center justify-content-center">
