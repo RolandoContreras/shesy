@@ -182,6 +182,18 @@
                         Ingrese y verifique sus datos personales
                       </div>
                       <form name="form_pay" id="form_pay" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_hotmark();">
+                      <?php 
+                      if(isset($id) && $id!=null){ ?>
+                          <input type="hidden" id="id" name="id" value="<?php echo $id;?>" />  
+                      <?php }else{ ?>
+                          <input type="hidden" id="id" name="id" value="" />  
+                      <?php } ?>
+                      <?php 
+                      if(isset($type) && $type!=null){ ?>
+                          <input type="hidden" id="type" name="type" value="<?php echo $type;?>" />  
+                      <?php }else{ ?>
+                          <input type="hidden" id="type" name="type" value="" />  
+                      <?php } ?>
                         <div class="col-xl-12 col-md-12 m-b-30" style="margin-top:20px;">
                           <ul class="nav nav-tabs" id="myTab1" role="tablist">
                               <li class="nav-item complete">
@@ -298,7 +310,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12"><br/>
-                                          <a onclick="change_title_user();"; class="btn-info btn nav-link show" style="position: absolute; right: 0;" id="button-second" data-toggle="tab" href="#user" role="tab" aria-controls="profile" aria-selected="true"><i class="fa fa-arrow-left" aria-hidden="true"></i> Atrás</a>
+                                          <a onclick="change_title_user();" class="btn-info btn nav-link show" style="position: absolute; right: 0;" id="button-second" data-toggle="tab" href="#user" role="tab" aria-controls="profile" aria-selected="true"><i class="fa fa-arrow-left" aria-hidden="true"></i> Atrás</a>
                                         </div>
                                     </div>
                                     <br/>
@@ -345,7 +357,7 @@
   <script src="<?php echo site_url();?>static/page_front/js/bootstrap.min.js"></script>
   <script src="<?php echo site_url();?>static/page_front/js/landing_culqi.js"></script>
   <script>
-    Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
+    Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
     var price = "";
     var price2 = "";
     var kit_id = "";
@@ -356,6 +368,8 @@
       email_nuevo = document.getElementById("email").value;
       pass = document.getElementById("pass").value;
       qty = document.getElementById("qty").value;
+      id = document.getElementById("id").value;
+      type = document.getElementById("type").value;
       phone = document.getElementById("phone").value;
       customer_id = document.getElementById("customer_id").value;
       if(email_nuevo != "" && pass != "" && qty != ""){
@@ -418,7 +432,13 @@
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        url = site + "mi_catalogo/order";
+                        if(type == 1){
+                          url = site + "cursosporhoy/gracias?id=" + id + "_" + type;
+                        }else if(type == 2){
+                          url = site + "soloporhoy/gracias?id=" + id + "_" + type;
+                        }else{
+                          url = site + "gracias";
+                        }
                         setTimeout(function(){location.href=url} , 1500);  
                     } else {
                         Swal.fire({

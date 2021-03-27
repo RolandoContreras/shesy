@@ -86,6 +86,13 @@ $route['cursos/([0-9a-z_-]+)'] = 'courses/category/$1';
 $route['cursos/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
 $route['cursos/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
 
+
+$route['gracias'] = 'landing/gracias';
+$route['gracias_cursos'] = 'landing/gracias';
+$route['cursosporhoy/gracias'] = 'landing/gracias';
+$route['soloporhoy/gracias'] = 'landing/gracias';
+
+
 $route['registro/([0-9a-z_-]+)'] = "register/index/$1";
 $route['registro/validate_username'] = "register/validate_username";
 $route['registro/validate_username_2'] = "register/validate_username_2";
