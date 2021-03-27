@@ -357,7 +357,7 @@
   <script src="<?php echo site_url();?>static/page_front/js/bootstrap.min.js"></script>
   <script src="<?php echo site_url();?>static/page_front/js/landing_culqi.js"></script>
   <script>
-    Culqi.publicKey = 'pk_test_igI3EctoA17FeNUD';
+    Culqi.publicKey = 'pk_live_d4ZedlvJFWdrXoiI';
     var price = "";
     var price2 = "";
     var kit_id = "";
