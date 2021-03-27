@@ -66,7 +66,7 @@
                                       <br/>
                                       <br/>
                                       <div class="stm_lms_instructor_courses__single--enroll">
-                                        <a href="<?php echo site_url()."cursosporhoy/$value->category_slug/$value->course_slug?d=$obj_profile->customer_id";?>" data-wpel-link="internal" rel="nofollow" class="btn btn-default"><span>Ver Campaña</span>
+                                        <a href="<?php echo site_url()."cursosporhoy/$value->category_slug/$value->course_slug?d=$obj_profile->customer_id";?>" data-wpel-link="internal" rel="nofollow" class="btn btn-default" target="_blank"><span>Ver Campaña</span>
                                         </a>
                                         <br/>
                                         <br/>
@@ -121,7 +121,7 @@
                                       <br/>
                                       <br/>
                                       <div class="stm_lms_instructor_courses__single--enroll">
-                                        <a href="<?php echo site_url()."soloporhoy/$value->category_slug/$value->catalog_slug?d=$obj_profile->customer_id";?>" data-wpel-link="internal" rel="nofollow" class="btn btn-default"><span>Ver Campaña</span>
+                                        <a href="<?php echo site_url()."soloporhoy/$value->category_slug/$value->catalog_slug?d=$obj_profile->customer_id";?>" data-wpel-link="internal" rel="nofollow" class="btn btn-default"  target="_blank"><span>Ver Campaña</span>
                                         </a>
                                         <br/>
                                         <br/>

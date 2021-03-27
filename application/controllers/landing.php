@@ -403,7 +403,7 @@ class Landing extends CI_Controller {
           $this->obj_unilevel->insert($data_unilevel);
       }
         //send message
-     //   $this->message($email, $pass);
+        $this->message($email, $pass);
         //INSERT INVOICE
         $data_invoice = array(
           'customer_id' => $customer_id,
@@ -538,7 +538,7 @@ class Landing extends CI_Controller {
           
       }
       //send message
-  //      $this->message($email, $pass);
+        $this->message($email, $pass);
         //CREATE INVOICE
         $data_invoice = array(
           'customer_id' => $customer_id,
