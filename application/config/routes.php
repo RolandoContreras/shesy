@@ -179,9 +179,9 @@ $route['backoffice/invoice/upload'] = "b_finance/upload";
 $route['backoffice/files'] = "b_files";
 $route['backoffice/files/show_information'] = "b_files/show_information";
 $route['backoffice/files/show_information_course'] = "b_files/show_information_course";
+
 $route['backoffice/inversiones'] = "b_files/inversiones";
-
-
+$route['backoffice/inversiones'] = "b_files/inversiones";
 
 
 $route['backoffice/carrera'] = "b_carrera";
