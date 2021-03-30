@@ -53,12 +53,21 @@
         <!--//END FAVICON-->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
         <link href="<?php echo site_url() . 'static/page_front/css/login/main.css?version=4.4.0'; ?>" rel="stylesheet" >
-        <!----- SWEET ALER  ---->
+        <!--SWEET ALER -->
         <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
         <script>
             var site = '<?php echo site_url(); ?>';
         </script>
+        <!-- pwa -->
+        <link rel="manifest" href="<?php echo site_url() . "manifest.json";?>">
+        <meta name="theme-color" content="#072C69"/>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon" href="<?php echo site_url() . 'static/page_front/images/logo/favico/pwa/android-icon-36x36.png'; ?>">
+        <link rel="apple-touch-startup-image" href="<?php echo site_url() . 'static/page_front/images/logo/favico/pwa/android-icon-36x36.png'; ?>">
     </head>
     <body class="auth-wrapper vanta-bg">
         <div class="all-wrapper menu-side">
@@ -87,7 +96,7 @@
                     <div class="buttons-w">
                         <a href="<?php echo site_url() . 'registro'; ?>" style="width: 100%; display: block; text-align: center;" class="link">¿Aún no tienes una cuenta?</a>
                         <a href="<?php echo site_url() . 'forget'; ?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
-                        <a href="<?php echo site_url(); ?>" style="width: 100%; display: block; text-align: center;" class="link">Volver al Inicio</a>
+                        <a href="<?php echo site_url().'inicio'; ?>" style="width: 100%; display: block; text-align: center;" class="link">Volver al Inicio</a>
                     </div>
                 </form>
             </div>

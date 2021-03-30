@@ -53,13 +53,22 @@
         <!--//END FAVICON-->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
         <link href="<?php echo site_url() . 'static/page_front/css/login/main.css?version=4.4.0'; ?>" rel="stylesheet">
-        <!----- SWEET ALER  ---->
+        <!--SWEET ALER-->
         <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
         <script>
             var site = '<?php echo site_url(); ?>';
         </script>
         <script src="https://use.fontawesome.com/3aa4a6fd0b.js"></script>
+        <!-- pwa -->
+        <link rel="manifest" href="<?php echo site_url() . "manifest.json";?>">
+        <meta name="theme-color" content="#072C69"/>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon" href="<?php echo site_url() . 'static/page_front/images/logo/favico/pwa/android-icon-36x36.png'; ?>">
+        <link rel="apple-touch-startup-image" href="<?php echo site_url() . 'static/page_front/images/logo/favico/pwa/android-icon-36x36.png'; ?>">
     </head>
     <body class="auth-wrapper vanta-bg">
         <div class="all-wrapper menu-side">
@@ -156,7 +165,7 @@
                     <input type="hidden" name="google-response-token" id="google-response-token">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" id="register_boton">Registar</button>
                     <div class="buttons-w">
-                        <a href="<?php echo site_url() . 'forget'; ?>" style="width: 100%; display: block; text-align: center;" class="link">¿Olvido su contraseña?</a>
+                        <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" style="width: 100%; display: block; text-align: center;" class="link">Iniciar Sesión</a>
                         <a href="<?php echo site_url(); ?>" style="width: 100%; display: block; text-align: center;" class="link">Volver Inicio</a>
                     </div>
                 </form>
@@ -234,8 +243,6 @@
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/jquery-confirm.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/jquery.blockUI.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/stats.min.js'; ?>"></script>
-        
-
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/functions.js?r=3617'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/three.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/vanta.globe.min.js'; ?>"></script>
@@ -265,5 +272,6 @@
                 backgroundColor: 0x141316
             });
         </script>
+        <script src="<?php echo site_url() . 'script.js'; ?>"></script>
     </body>
 </html>
