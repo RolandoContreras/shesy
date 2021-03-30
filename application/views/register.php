@@ -234,22 +234,19 @@
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/jquery-confirm.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/jquery.blockUI.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/stats.min.js'; ?>"></script>
+        
+
+        <script src="<?php echo site_url() . 'static/page_front/js/script/login/functions.js?r=3617'; ?>"></script>
+        <script src="<?php echo site_url() . 'static/page_front/js/script/login/three.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'static/page_front/js/script/login/vanta.globe.min.js'; ?>"></script>
         <script>
-                                    $(document).ready(function () {
-                                        $('#cbox2').click(function () {
-                                            if ($(this).is(':checked')) {
-                                                $("#show").show(500);
-                                            }
-                                        });
-                                    });
-        </script>
-        <script>
-            VANTA.GLOBE({
-                el: ".vanta-bg",
-                color: 0xa49b0a,
-                backgroundColor: 0x141316
-            });
+                $(document).ready(function () {
+                    $('#cbox2').click(function () {
+                        if ($(this).is(':checked')) {
+                            $("#show").show(500);
+                        }
+                    });
+                });
         </script>
         <script>
             function show_pass() {
@@ -260,6 +257,13 @@
                     tipo.type = "password";
                 }
             }
+        </script>
+        <script>
+            VANTA.GLOBE({
+                el: ".vanta-bg",
+                color: 0xa49b0a,
+                backgroundColor: 0x141316
+            });
         </script>
     </body>
 </html>
