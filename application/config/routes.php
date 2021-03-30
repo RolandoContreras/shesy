@@ -38,13 +38,14 @@
 |
 */
 
-$route['default_controller'] = "register";
+$route['default_controller'] = "home";
 $route['404_override'] = 'errors/error_404';
 
 $route['landing'] = 'landing';
 $route['landing/create_invoice'] = 'landing/create_invoice';
 
 $route['home'] = 'home';
+$route['inicio'] = 'home';
 $route['postula'] = 'home/postula';
 $route['home/sitemap'] = 'home/sitemap';
 $route['pagos_referencia'] = 'home/pagos_referencia';
@@ -409,8 +410,7 @@ $route['dashboard/report_invoice/load'] = "d_report_invoice/load";
 $route['dashboard/report_invoice/export'] = "d_report_invoice/export";
 
 
-//publicidad
-
+//publicidad campañas
 $route['dashboard/publicidad'] = "d_publicity";
 $route['dashboard/publicidad/activar_curso'] = "d_publicity/activate_course";
 
@@ -421,7 +421,6 @@ $route['dashboard/publicidad/delete_catalogo'] = "d_publicity/delete_catalog";
 
 $route['dashboard/publicidad/editar_curso/([0-9]+)'] = "d_publicity/edit_course/$1";
 $route['dashboard/publicidad/editar_catalogo/([0-9]+)'] = "d_publicity/edit_catalog/$1";
-
 
 $route['dashboard/publicidad/validate'] = "d_publicity/validate";
 $route['dashboard/publicidad/validate_catalogo'] = "d_publicity/validate_catalog";
@@ -441,16 +440,20 @@ $route['dashboard/report_pay/export'] = "d_report_pay/export";
 $route['dashboard/report_global'] = "d_report_global";
 $route['salir'] = "login/logout";
 
+//publicidad campañas
 $route['publicidad'] = "publicitycontroller";
-
 $route['publicidad/nueva_campana/([0-9]+)'] = "publicitycontroller/new_campana/$1";
-
 $route['publicidad/get_campana'] = "publicitycontroller/get_campana";
 $route['publicidad/save_campana'] = "publicitycontroller/save_campana";
 $route['publicidad/editar_curso/([0-9]+)'] = "publicitycontroller/edit_course/$1";
 $route['publicidad/editar_catalogo/([0-9]+)'] = "publicitycontroller/edit_catalog/$1";
 $route['publicidad/delete_course'] = "publicitycontroller/delete_course";
 $route['publicidad/delete_catalog'] = "publicitycontroller/delete_catalog";
+//publicidad mi tienda
+$route['tienda'] = "publicitycontroller/shop";
+$route['tienda/nuevo_catalogo'] = "publicitycontroller/new_catalog";
+
+$route['dashboard/publicidad/activar_curso'] = "d_publicity/activate_course";
 
 
 /* End of file routes.php */

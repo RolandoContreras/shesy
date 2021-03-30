@@ -5,7 +5,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link media="all" href="<?php echo site_url()."static/publicity/css/autoptimize_33c2259777e0d8311f021c5f6b35f212.css";?>" rel="stylesheet" />
       <link media="screen" href="<?php echo site_url()."static/publicity/css/autoptimize_1d4fd3349ff81e144b46d505a11e06ad.css";?>" rel="stylesheet" />
-      
       <style media="print">@media print{.pmpro_a-print{display:none;position:absolute;left:-9999px}}</style>
       <title>Publicidad |  La Cultura Imparable</title>
       <link rel='stylesheet' id='rs-roboto-css'  href='//fonts.googleapis.com/css?family=Roboto&#038;ver=5.6.2' type='text/css' media='all' />
@@ -24,6 +23,13 @@
        <!--//swetaler2-->
        <link href="<?php echo site_url("static/sweetalert2/dark.css");?>" rel="stylesheet" media="none" onload="if (media != 'all') media = 'all'">
        <script src="<?php echo site_url("static/sweetalert2/sweetalert2.min.js");?>"></script>
+       <!----- TinyMCE EDITOR TEXT ---->
+      <script src='https://cdn.tiny.cloud/1/wy30gmswsngllat86td2q95wwfhhn7tan1bxqenxyjxzoznh/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+      <script>
+        tinymce.init({
+          selector: 'textarea#description'
+        });
+      </script>
        <script>
         var site = "<?php echo site_url(); ?>"
     </script>
@@ -71,6 +77,9 @@
                                       </li>
                                       <li id="menu-item-2926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2926">
                                           <a href="<?php echo site_url()."publicidad";?>" data-wpel-link="internal" rel="nofollow">Campañas</a>
+                                      </li>
+                                      <li id="menu-item-2926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2926">
+                                          <a href="<?php echo site_url()."tienda";?>" data-wpel-link="internal" rel="nofollow">Mi Tienda</a>
                                       </li>
                                     </ul>
                                   </div>
@@ -138,6 +147,9 @@
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5"> 
               <a href="<?php echo site_url()."publicidad";?>">Campañas</a>
             </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5"> 
+              <a href="<?php echo site_url()."tienda";?>">Mi Tienda</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -170,15 +182,29 @@
                   <hr/>
                   <div class="stm_lms_profile_buttons_set 22">
                     <div class="stm_lms_profile_buttons_set__inner">
-                      <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
-                        <a href="<?php echo site_url()."publicidad";?>"> <i class="fa fa-home"></i> <span>Inicio</span> </a>
-                      </div>
-                      <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
-                        <a href="<?php echo site_url()."publicidad/nueva_campana/1";?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Campaña Cursos</span> </a>
-                      </div>
-                      <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
-                        <a href="<?php echo site_url()."publicidad/nueva_campana/2";?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Campaña Empresas</span> </a>
-                      </div>
+                      <?php 
+                      $url = explode("/",uri_string());
+                      if($url[0] == "tienda"){ ?>
+                          <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
+                            <a href="<?php echo site_url()."tienda";?>"> <i class="fa fa-home"></i> <span>Inicio</span> </a>
+                          </div>
+                          <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
+                            <a href="<?php echo site_url()."tienda/nuevo_curso";?>"> <i class="fa fa-bullhorn"></i> <span>Nuevo Cursos</span> </a>
+                          </div>
+                          <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
+                            <a href="<?php echo site_url()."tienda/nuevo_catalogo";?>"> <i class="fa fa-bullhorn"></i> <span>Nuevo Emppresa </span> </a>
+                          </div>
+                      <?php }else{ ?>
+                        <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
+                          <a href="<?php echo site_url()."publicidad";?>"> <i class="fa fa-home"></i> <span>Inicio</span> </a>
+                        </div>
+                        <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
+                          <a href="<?php echo site_url()."publicidad/nueva_campana/1";?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Campaña Cursos</span> </a>
+                        </div>
+                        <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
+                          <a href="<?php echo site_url()."publicidad/nueva_campana/2";?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Campaña Empresas</span> </a>
+                        </div>
+                      <?php } ?>   
                       <div class="stm-lms-user_create_announcement_btn stm_assignment_btn">
                         <a href="<?php echo site_url()."backoffice";?>"> <i class="fa fa-layer-group"></i> <span>Oficina Virtual</span> </a>
                       </div>

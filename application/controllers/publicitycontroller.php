@@ -7,6 +7,7 @@ class PublicityController extends CI_Controller {
         $this->load->model("courses_model", "obj_courses");
         $this->load->model("catalog_model", "obj_catalog");
         $this->load->model("category_model", "obj_category");
+        $this->load->model("sub_category_model", "obj_sub_category");
         $this->load->model("publicity_model", "obj_publicity_courses");
         $this->load->model("publicity_catalog_model", "obj_publicity_catalog");
     }
@@ -31,7 +32,6 @@ class PublicityController extends CI_Controller {
         $this->tmp_publicity->render("publicity/index");
     }
 
-    
     public function new_campana($type_campana=null){   
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
@@ -50,7 +50,6 @@ class PublicityController extends CI_Controller {
         $this->tmp_publicity->set("type_campana", $type_campana);
         $this->tmp_publicity->render("publicity/new_publicity");
 	}
-
 
     public function save_campana(){  
         if ($this->input->is_ajax_request()) {
@@ -298,6 +297,20 @@ class PublicityController extends CI_Controller {
         return $obj_courses;
 	}
 
+    public function get_courses_by_customer($customer_id){  
+        //get all course
+        $params = array( 
+            "select" => "course_id as id,
+                        name,
+                        price,
+                        date,
+                        img3",
+            "where" => "customer_id = $customer_id",
+            "order" => "name ASC");
+        $obj_courses = $this->obj_courses->search($params);
+        return $obj_courses;
+	}
+
     public function get_catalog(){  
         //get all course
         $params = array( 
@@ -309,80 +322,74 @@ class PublicityController extends CI_Controller {
         return $obj_catalog;
 	}
 
-    public function category($category)
-	{   
-            //GET CUSTOMER_ID
-            $customer_id = $_SESSION['customer']['customer_id'];
-            //GET NAV CURSOS
-            $obj_category_catalogo = $this->nav_cursos();
-            //get data catalog
-            $params_categogory_id = array(
-                        "select" =>"category_id,
-                                    name,
-                                    slug",
-                "where" => "slug like '%$category%'");
-            $obj_category = $this->obj_category->get_search_row($params_categogory_id);
-            $category_id = $obj_category->category_id;
-            $slug = $obj_category->slug;
-            $category_name = "Cursos - ".$obj_category->name;
-             //get catalog
-            $params = array(
-                "select" => "courses.course_id,
-                            courses.name,
-                            courses.slug,
-                            category.category_id,
-                            category.name as category_name,
-                            category.slug as category_slug,
-                            courses.description,
-                            courses.img,
-                            courses.price,
-                            courses.price_del,
-                            courses.free,
-                            courses.duration,
-                            courses.active,
-                            courses.date",
-                "join" => array('category, category.category_id = courses.category_id'), 
-                "where" => "courses.category_id = $category_id and courses.active = 1");
-            
-             /// PAGINADO
-            $config=array();
-            $config["base_url"] = site_url("backoffice/cursos/$slug"); 
-            $config["total_rows"] = $this->obj_courses->total_records($params);  
-            $config["per_page"] = 12; 
-            $config["num_links"] = 1;
-            $config["uri_segment"] = 4;   
-            
-            $config['first_tag_open'] = '<li>';
-            $config['first_tag_close'] = '</li>';
-            $config['prev_tag_open'] = '<li>';
-            $config['prev_tag_close'] = '</li>';            
-            $config['num_tag_open']='<li>';
-            $config['num_tag_close'] = '</li>';            
-            $config['cur_tag_open']= '<li class="page-item active"><span aria-current="page" class="page-link page-numbers current">';
-            $config['cur_tag_close']= '</span></li>';            
-            $config['next_tag_open'] = '<li>';
-            $config['next_tag_close'] = '</li>';            
-            $config['last_tag_open'] = '<li>';
-            $config['last_tag_close'] = '</li>';
-            
-            $this->pagination->initialize($config);        
-            $obj_pagination = $this->pagination->create_links();
-            /// DATA
-            $obj_courses = $this->obj_courses->search_data($params, $config["per_page"],$this->uri->segment(4));
-            //GET DATA FROM CUSTOMER
-            $obj_profile = $this->get_profile($customer_id);
-            //total comission compra
-            $obj_total_compra = $this->total_comissions($customer_id);
-            $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
-            //SEND DATA
-            $url = 'backoffice/cursos';
-            $this->tmp_catalog->set("url",$url);    
-            $this->tmp_catalog->set("total_compra",$total_compra);    
-            $this->tmp_catalog->set("category_name",$category_name);
-            $this->tmp_catalog->set("obj_pagination",$obj_pagination);
-            $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
-            $this->tmp_catalog->set("obj_courses",$obj_courses);
-            $this->tmp_catalog->render("backoffice/b_cursos");
+    public function get_catalog_by_customer($customer_id){  
+        //get all course
+        $params = array( 
+            "select" => "catalog_id as id,
+                        name,
+                        price,
+                        date,
+                        img3",
+            "where" => "customer_id = $customer_id",
+            "order" => "name ASC");
+        $obj_catalog = $this->obj_catalog->search($params);
+        return $obj_catalog;
+	}
+
+    public function shop() {
+        //get session customer
+        get_session_customer();
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //get_courses_by_customer
+        $obj_courses = $this->get_courses_by_customer($customer_id);
+        //get_catalog_by_customer
+        $obj_catalog = $this->get_catalog_by_customer($customer_id);
+        //GET DATA FROM CUSTOMER
+        $obj_profile = $this->get_profile($customer_id);
+        //send data
+        $this->tmp_publicity->set("obj_profile", $obj_profile);
+        $this->tmp_publicity->set("obj_courses", $obj_courses);
+        $this->tmp_publicity->set("obj_catalog", $obj_catalog);
+        $this->tmp_publicity->render("publicity/tienda");
+    }
+
+    public function new_catalog() {
+        //GET CUSTOMER_ID
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //GET CATEGORY
+        $obj_category = $this->get_category();
+        //get data sub category
+        $obj_sub_category = $this->get_sub_category();
+        $obj_profile = $this->get_profile($customer_id);
+        //send data
+        $this->tmp_publicity->set("obj_category", $obj_category);
+        $this->tmp_mastercms->set("obj_sub_category", $obj_sub_category);
+        $this->tmp_publicity->set("obj_profile", $obj_profile);
+        $this->tmp_publicity->render("publicity/nuevo_catalogo");
+
+    }
+
+    public function get_sub_category(){   
+        $params = array(
+            "select" => "sub_category_id,
+                     name",
+            "where" => "active = 1",
+        );
+        //GET DATA COMMENTS
+        $obj_sub_category = $this->obj_sub_category->search($params);
+        return $obj_sub_category;
+	}
+
+    public function get_category(){   
+        $params = array(
+            "select" => "category_id,
+                                    name",
+            "where" => "type = 2 and active = 1",
+        );
+        //GET DATA COMMENTS
+        $obj_category = $this->obj_category->search($params);
+        return $obj_category;
 	}
 
     public function mis_cursos()

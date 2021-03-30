@@ -116,14 +116,14 @@
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
-                            <a href="<?php echo site_url() . 'publicidad' ?>" class="btn" style="width: 100%">
+                            <a href="<?php echo site_url() . 'publicidad';?>" class="btn" style="width: 100%">
                                 <div class="access-dam-five" align="center"> 
                                     <span><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; CAMPAÑAS</span>
                                 </div>
                             </a>
                         </li>
                         <li data-username="Tablero" class="nav-item">
-                            <a href="#" class="btn" style="width: 100%">
+                            <a href="<?php echo site_url() . 'tienda';?>" class="btn" style="width: 100%">
                                 <div class="access-dam-six" align="center"> 
                                     <span><i class="fa fa-shopping-bag"></i>&nbsp; MI TIENDA</span>
                                 </div>
