@@ -166,7 +166,7 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block" id="register_boton">Registar</button>
                     <div class="buttons-w">
                         <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" style="width: 100%; display: block; text-align: center;" class="link">Iniciar Sesión</a>
-                        <a href="<?php echo site_url(); ?>" style="width: 100%; display: block; text-align: center;" class="link">Volver Inicio</a>
+                        <a href="<?php echo site_url()."inicio"; ?>" style="width: 100%; display: block; text-align: center;" class="link">Volver Inicio</a>
                     </div>
                 </form>
             </div>
