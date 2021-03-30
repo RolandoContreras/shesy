@@ -44,12 +44,11 @@
     <meta name="twitter:card" content="summary_large_image"> 
     <meta name="twitter:title" content="Cultura Emprendedora | Organización Neuronal de emprendedores"> 
     <link rel="canonical" href="<?php echo site_url(); ?>" /> 
-        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--//STAR FAVICON-->
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'static/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
         <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-32x32.png'; ?>">
         <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url() . 'static/page_front/images/logo/favico/favicon-16x16.png'; ?>">
-        <link rel="manifest" href="<?php echo site_url() . 'static/page_front/images/logo/favico/site.webmanifest'; ?>">
         <!--//END FAVICON-->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
         <link href="<?php echo site_url() . 'static/page_front/css/login/main.css?version=4.4.0'; ?>" rel="stylesheet" >
