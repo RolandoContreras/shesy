@@ -1,7 +1,7 @@
 <div class="col-md-9 col-sm-12">
                 <div class="stm_lms_private_information" data-container-open=".stm_lms_private_information">
                   <div class="stm_lms_user_info_top">
-                    <h1>MI Tienda</h1>
+                    <h1>Mi Tienda</h1>
                   </div>
                   <div class="stm_lms_user_bio">
                     <h3>Publicidad la Cultura</h3>
@@ -27,7 +27,7 @@
                                   <div class="stm_lms_instructor_courses__single__inner">
                                     <div class="stm_lms_instructor_courses__single--image">
                                       <div class="image_wrapper"> 
-                                        <img srcset="<?php echo site_url()."static/publicity/img/publi_curso.jpg";?> 2x" src="<?php echo site_url()."static/publicity/img/publi_curso.jpg";?>" alt="Publicidad" title="Publicidad" width="272" height="161">
+                                        <img srcset="<?php echo site_url()."static/catalog/$value->img3";?> 2x" src="<?php echo site_url()."static/catalog/$value->img3";?>" alt="Publicidad" title="Publicidad" width="272" height="161">
                                       </div>
                                     </div>
                                     <div class="stm_lms_instructor_courses__single--inner">
@@ -91,13 +91,14 @@
                                   <div class="stm_lms_instructor_courses__single__inner">
                                     <div class="stm_lms_instructor_courses__single--image">
                                       <div class="image_wrapper"> 
-                                        <img srcset="<?php echo site_url()."static/publicity/img/publi_curso.jpg";?> 2x" src="<?php echo site_url()."static/publicity/img/publi_curso.jpg";?>" alt="Publicidad" title="Publicidad" width="272" height="161">
+                                        <img srcset="<?php echo site_url()."static/catalog/$value->img3";?> 2x" src="<?php echo site_url()."static/catalog/$value->img3";?>" alt="Publicidad" title="Publicidad" width="272" height="161">
                                       </div>
                                     </div>
                                     <div class="stm_lms_instructor_courses__single--inner">
                                       <div class="stm_lms_instructor_courses__single--terms">
                                         <div class="stm_lms_instructor_courses__single--term">
-                                          <a href="<?php echo site_url().""?>" title="Cursos">Empresas</a>
+                                          <a title="Cursos">Categoría:</a>
+                                          <b><?php echo $value->category_name;?></b>
                                         </div>
                                       </div>
                                       <div class="stm_lms_instructor_courses__single--title">
@@ -108,7 +109,7 @@
                                           <div class="stm_lms_instructor_courses__single--status publish">
                                               <div class="stm_lms_instructor_courses__single--status-inner">
                                                 <div class="stm_lms_instructor_courses__single--choice publish chosen">
-                                                <?php if($value->status == 1){ ?>
+                                                <?php if($value->active == 1){ ?>
                                                   <i class="fa fa-check-circle"></i> <span>Activo</span>
                                                 <?php }else{ ?>
                                                   <span>Inactivo</span>  
@@ -125,12 +126,13 @@
                                       <br/>
                                       <br/>
                                       <div class="stm_lms_instructor_courses__single--enroll">
-                                        <a href="<?php echo site_url()."soloporhoy/$value->category_slug/$value->catalog_slug?d=$obj_profile->customer_id";?>" data-wpel-link="internal" rel="nofollow" class="btn btn-default"  target="_blank"><span>Ver Campaña</span>
+                                        <a href="<?php echo site_url()."soloporhoy/$value->category_slug/$value->catalog_slug?d=$obj_profile->customer_id";?>" data-wpel-link="internal" rel="nofollow" class="btn btn-default" target="_blank">
+                                          <span>Ver Empresa</span>
                                         </a>
-                                        <br/>
-                                        <br/>
+                                        <br/><br/>
                                         <a href="javascript:void(0);" onclick="edit_catalog('<?php echo $value->id;?>');" data-wpel-link="internal" rel="nofollow"><span><i class="fa fa-edit"></i> Editar</span></a> |
                                         <a href="javascript:void(0);" onclick="delete_catalog('<?php echo $value->id;?>');" data-wpel-link="internal" rel="nofollow" style="color:red;"><span><i aria-hidden="true" class="fa fa-trash"></i> Eliminar</span></a>
+                                        <br/>
                                       </div>
                                       <div class="stm_lms_instructor_courses__single--started"> Creado: <?php echo formato_fecha($value->date);?></div>
                                     </div>
@@ -145,5 +147,5 @@
                   </div>
               </div>
             </div>
-            <script src='<?php echo site_url().'static/publicity/js/campana.js';?>'></script>
+            <script src='<?php echo site_url().'static/publicity/js/shop.js';?>'></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

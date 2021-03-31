@@ -425,11 +425,6 @@ $route['dashboard/publicidad/editar_catalogo/([0-9]+)'] = "d_publicity/edit_cata
 $route['dashboard/publicidad/validate'] = "d_publicity/validate";
 $route['dashboard/publicidad/validate_catalogo'] = "d_publicity/validate_catalog";
 
-
-
-
-
-
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
 $route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
 
@@ -452,6 +447,8 @@ $route['publicidad/delete_catalog'] = "publicitycontroller/delete_catalog";
 //publicidad mi tienda
 $route['tienda'] = "publicitycontroller/shop";
 $route['tienda/nuevo_catalogo'] = "publicitycontroller/new_catalog";
+$route['tienda/editar_catalogo/([0-9]+)'] = "publicitycontroller/new_catalog/$1";
+$route['tienda/validar_catalogo'] = "publicitycontroller/validate_catalog";
 
 $route['dashboard/publicidad/activar_curso'] = "d_publicity/activate_course";
 

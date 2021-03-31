@@ -325,12 +325,17 @@ class PublicityController extends CI_Controller {
     public function get_catalog_by_customer($customer_id){  
         //get all course
         $params = array( 
-            "select" => "catalog_id as id,
-                        name,
-                        price,
-                        date,
-                        img3",
+            "select" => "catalog.catalog_id as id,
+                        catalog.name,
+                        catalog.slug as catalog_slug,
+                        catalog.price,
+                        catalog.date,
+                        catalog.img3,
+                        catalog.active,
+                        category.name as category_name,
+                        category.slug as category_slug",
             "where" => "customer_id = $customer_id",
+            "join" => array('category, catalog.category_id = category.category_id'),
             "order" => "name ASC");
         $obj_catalog = $this->obj_catalog->search($params);
         return $obj_catalog;
@@ -345,6 +350,10 @@ class PublicityController extends CI_Controller {
         $obj_courses = $this->get_courses_by_customer($customer_id);
         //get_catalog_by_customer
         $obj_catalog = $this->get_catalog_by_customer($customer_id);
+      /*  var_dump($obj_catalog);
+        die(); */
+    
+
         //GET DATA FROM CUSTOMER
         $obj_profile = $this->get_profile($customer_id);
         //send data
@@ -354,9 +363,14 @@ class PublicityController extends CI_Controller {
         $this->tmp_publicity->render("publicity/tienda");
     }
 
-    public function new_catalog() {
+    public function new_catalog($id=null) {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        //get data catalog id
+        if($id != null){
+            $obj_catalog = $this->get_catalog_by_id($id);
+            $this->tmp_publicity->set("obj_catalog", $obj_catalog);
+        }
         //GET CATEGORY
         $obj_category = $this->get_category();
         //get data sub category
@@ -368,6 +382,130 @@ class PublicityController extends CI_Controller {
         $this->tmp_publicity->set("obj_profile", $obj_profile);
         $this->tmp_publicity->render("publicity/nuevo_catalogo");
 
+    }
+
+    public function get_catalog_by_id($id){   
+        $params = array(
+            "select" => "catalog_id,
+                        category_id,
+                        customer_id,
+                        name,
+                        video,
+                        price,
+                        price_del,
+                        stock,
+                        description,
+                        img,
+                        img2,
+                        img3,
+                        img4,
+                        granel,
+                        hot_link
+                        ",
+            "where" => "catalog_id = $id",
+        );
+        $obj_catalog = $this->obj_catalog->get_search_row($params);
+        return $obj_catalog;
+	}
+
+    public function validate_catalog() {
+        if ($this->input->is_ajax_request()) {
+            //GET CUSTOMER_ID
+            $catalog_id = $this->input->post("catalog_id");
+            $customer_id = $this->input->post("customer_id");
+            $name = $this->input->post("name");
+            $slug = convert_slug($name);
+
+            //set percent
+            /*'bono_n1' => $this->input->post('bono_n1'),
+            'bono_n2' => $this->input->post('bono_n2'),
+            'bono_n3' => $this->input->post('bono_n3'),
+            'bono_n4' => $this->input->post('bono_n4'),
+            'bono_n5' => $this->input->post('bono_n5'),*/
+
+            if (isset($_FILES["image_file3"]["name"]) && $_FILES["image_file3"]["name"] != "") {
+                $config['upload_path'] = './static/catalog';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = 3000;
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('image_file3')) {
+                    $error = array('error' => $this->upload->display_errors());
+                    echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                }
+                $img3 = $_FILES["image_file3"]["name"];
+            }else{
+                $img3 = $this->input->post("img_4");
+            }
+
+            if (isset($_FILES["image_file4"]["name"]) && $_FILES["image_file4"]["name"] != "") {
+                $config['upload_path'] = './static/catalog';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = 3000;
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('image_file4')) {
+                    $error = array('error' => $this->upload->display_errors());
+                    echo '<div class="alert alert-danger">' . $error['error'] . '</div>';
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                }
+                $img4 = $_FILES["image_file4"]["name"];
+            }else{
+                $img4 = $this->input->post("img_5");
+            }
+
+            if ($catalog_id != "") {
+                $param = array(
+                    'name' => $name,
+                    'slug' => $slug,
+                    'customer_id' => $customer_id,
+                    'price_del' => $this->input->post('price_del'),
+                    'price' => $this->input->post('price'),
+                    'stock' => $this->input->post("stock"),
+                    'category_id' => $this->input->post('category_id'),
+                    'sub_category_id' => null,
+                    'description' => $this->input->post('description'),
+                    'img3' => $img3,
+                    'img4' => $img4,
+                    'video' => $this->input->post('video'),
+                    'hot_link' => $this->input->post('hot_link'),
+                    'granel' => $this->input->post('granel')
+                );
+                $this->obj_catalog->update($catalog_id, $param);
+                //SAVE DATA IN TABLE    
+                $data['status'] = true;
+            } else {
+                $param = array(
+                    'name' => $name,
+                    'slug' => $slug,
+                    'customer_id' => $customer_id,
+                    'price_del' => $this->input->post('price_del'),
+                    'price' => $this->input->post('price'),
+                    /*'bono_n1' => $this->input->post('bono_n1'),
+                    'bono_n2' => $this->input->post('bono_n2'),
+                    'bono_n3' => $this->input->post('bono_n3'),
+                    'bono_n4' => $this->input->post('bono_n4'),
+                    'bono_n5' => $this->input->post('bono_n5'),*/
+                    'stock' => $this->input->post("stock"),
+                    'category_id' => $this->input->post('category_id'),
+                    'sub_category_id' => "",
+                    'description' => $this->input->post('description'),
+                    'img3' => $img3,
+                    'img4' => $img4,
+                    'video' => $this->input->post('video'),
+                    'hot_link' => $this->input->post('hot_link'),
+                    'date' => date("Y-m-d H:i:s"),
+                    'granel' => $this->input->post('granel'),
+                    'active' => 0,
+                    'status_value' => 1,
+                );
+                $this->obj_catalog->insert($param);
+                //SAVE DATA IN TABLE    
+                $data['status'] = true;
+        }
+        echo json_encode($data);
+      }
     }
 
     public function get_sub_category(){   
@@ -605,7 +743,6 @@ class PublicityController extends CI_Controller {
         return $obj_category_catalogo = $this->obj_category->search($params_category_catalogo);
     }
 
-
     public function total_comissions($customer_id) {
         //GET TOTAL COMMISION
         $params = array(
@@ -666,7 +803,4 @@ class PublicityController extends CI_Controller {
         );
         return $obj_customer_courses = $this->obj_customer_courses->search($params_customer_courses);
     }
-
-    
-
 }

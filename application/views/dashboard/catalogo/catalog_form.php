@@ -72,7 +72,7 @@
                                                     <div class="form-group">
                                                         <label>Primera Imagen Landing - Portada (Tamaño 1024 x 469)</label>
                                                         <div class="custom-file">
-                                                            <input type="file" name="image_file4" id="image_file4" class="custom-file-input" onchange="upload_img4();">
+                                                        <input type="file" name="image_file4" id="image_file4" class="custom-file-input" onchange="upload_img4();">
                                                             <label id="label_img4" class="custom-file-label invalid">Elegir archivos...</label>
                                                             <div id="respose_img4"></div>
                                                         </div>
