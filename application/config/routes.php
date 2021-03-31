@@ -448,6 +448,8 @@ $route['publicidad/delete_catalog'] = "publicitycontroller/delete_catalog";
 $route['tienda'] = "publicitycontroller/shop";
 $route['tienda/nuevo_catalogo'] = "publicitycontroller/new_catalog";
 $route['tienda/editar_catalogo/([0-9]+)'] = "publicitycontroller/new_catalog/$1";
+$route['tienda/delete_catalog_shop'] = "publicitycontroller/delete_catalog_shop";
+
 $route['tienda/validar_catalogo'] = "publicitycontroller/validate_catalog";
 
 $route['dashboard/publicidad/activar_curso'] = "d_publicity/activate_course";

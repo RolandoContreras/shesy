@@ -508,6 +508,30 @@ class PublicityController extends CI_Controller {
       }
     }
 
+    public function delete_catalog_shop(){   
+        if ($this->input->is_ajax_request()) {
+            //OBETENER customer_id
+            $id = $this->input->post("id");
+
+            var_dump($id);
+            die();
+
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($id != "") {
+                $result = $this->obj_catalog->delete($id);
+                if($result != null){
+                    $data['status'] = true;
+                }else{
+                    $data['status'] = false;
+                }
+            }else{
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+	}  
+    
+
     public function get_sub_category(){   
         $params = array(
             "select" => "sub_category_id,

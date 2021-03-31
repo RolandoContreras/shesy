@@ -7,9 +7,9 @@ function edit_catalog(id) {
     location.href = site + url;
 }
 
-function delete_course(id) {
+function delete_catalog(id) {
     Swal.fire({
-        title: '¿Desea eliminar la campaña?',
+        title: '¿Desea eliminar la empresa?',
         text: "Esta se eliminará permanentemente!",
         type: 'warning',
         showCancelButton: true,
@@ -21,14 +21,14 @@ function delete_course(id) {
             return new Promise(function(resolve) {
                 $.ajax({
                     type: "post",
-                    url: site + "publicidad/delete_course",
+                    url: site + "tienda/delete_catalog_shop",
                     dataType: "json",
                     data: {id: id},
                     success:function(data){     
                         if(data.status == true){  
-                            Swal.fire('Eliminado', 'La campaña fue eliminada.', 'success');
+                            Swal.fire('Eliminado', 'La empresa fue eliminada.', 'success');
                             window.setTimeout( function(){
-                                window.location = site+"publicidad";
+                                window.location = site+"tienda";
                             }, 1500 );    
                         }else{
                             Swal.fire('Oops...', 'Sucedio un problema !', 'error')
