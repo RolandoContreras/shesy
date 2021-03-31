@@ -17,6 +17,12 @@ class C_home extends CI_Controller {
     public function detail($slug) {
         //GET SESION ACTUALY
         $this->get_session();
+        //set variable
+        $obj_videos = null;
+        $obj_video_ant = null;
+        $obj_video_next = null;
+        $obj_courses_overview = null;
+        $total_videos = null;
         //get customer_id
         $customer_id = $_SESSION['customer']['customer_id'];
         //get slug
@@ -24,6 +30,7 @@ class C_home extends CI_Controller {
         $slug_category = $url[1];
         $slug_2 = $url[2];
         $slug_3 = isset($url[3]) ? $url[3] : "";
+        
         //obtener curso
         $params = array(
             "select" => "courses.course_id,
@@ -37,64 +44,70 @@ class C_home extends CI_Controller {
             "where" => "courses.slug = '$slug_2' and category.slug = '$slug_category'");
         $obj_courses = $this->obj_courses->get_search_row($params);
         $course_id = $obj_courses->course_id;
+
         //obtener modulos por cursos
         $params = array(
             "select" => "module_id,
                                         name",
             "where" => "course_id = $course_id");
         $obj_modules = $this->obj_modules->search($params);
-        //establecer modulos id para busqqueda
-        $array_data = "";
-        foreach ($obj_modules as $value) {
-            $array_data .= $value->module_id . ",";
-        }
-        $array_data = eliminar_ultimo_caracter($array_data);
-        //GET videos by course
-        $params = array(
-            "select" => "videos.video_id,
-                                        videos.name,
-                                        videos.module_id,
-                                        videos.video,
-                                        videos.date,
-                                        videos.type,
-                                        videos.slug,
-                                        videos.time",
-            "where" => "videos.module_id in ($array_data) and videos.active = 1",
-            "order" => "videos.video_id ASC");
-        $obj_videos = $this->obj_videos->search($params);
-        $total_videos = count($obj_videos);
-        //obtener video actual
-        if ($slug_3 != "") {
-            $where = "and slug = '$slug_3'";
-        } else {
-            $where = "";
-        }
-        //GET videos by course
-        $params = array(
-            "select" => "video_id,
-                        slug,
-                        name,
-                        video,
-                        description,
-                        (SELECT video_actual FROM customer_courses WHERE customer_id = $customer_id AND course_id = $course_id) as video_actual,
-                        time,
-                        date",
-            "where" => "videos.module_id in ($array_data) $where");
-        $obj_courses_overview = $this->obj_videos->get_search_row($params);
-        //VIDEO LINK
-        $params = array(
-            "select" => "slug,
-                        name",
-            "where" => "videos.module_id in ($array_data) and video_id < $obj_courses_overview->video_id",
-            "order" => "video_id DESC");
-        $obj_video_ant = $this->obj_videos->get_search_row($params);
-        //VIDEO LINK
-        $params = array(
-            "select" => "slug,
-                        name",
-            "where" => "videos.module_id in ($array_data) and video_id > $obj_courses_overview->video_id",
-            "order" => "video_id ASC");
-        $obj_video_next = $this->obj_videos->get_search_row($params);
+
+        if($obj_modules != null){
+            //establecer modulos id para busqqueda
+            $array_data = "";
+            foreach ($obj_modules as $value) {
+                $array_data .= $value->module_id . ",";
+            }
+            $array_data = eliminar_ultimo_caracter($array_data);
+            //GET videos by course
+            $params = array(
+                "select" => "videos.video_id,
+                                            videos.name,
+                                            videos.module_id,
+                                            videos.video,
+                                            videos.date,
+                                            videos.type,
+                                            videos.slug,
+                                            videos.time",
+                "where" => "videos.module_id in ($array_data) and videos.active = 1",
+                "order" => "videos.video_id ASC");
+            $obj_videos = $this->obj_videos->search($params);
+            $total_videos = count($obj_videos);
+
+            //obtener video actual
+            if ($slug_3 != "") {
+                $where = "and slug = '$slug_3'";
+            } else {
+                $where = "";
+            }
+            //GET videos by course
+            $params = array(
+                "select" => "video_id,
+                            slug,
+                            name,
+                            video,
+                            description,
+                            (SELECT video_actual FROM customer_courses WHERE customer_id = $customer_id AND course_id = $course_id) as video_actual,
+                            time,
+                            date",
+                "where" => "videos.module_id in ($array_data) $where");
+            $obj_courses_overview = $this->obj_videos->get_search_row($params);
+            //VIDEO LINK
+            $params = array(
+                "select" => "slug,
+                            name",
+                "where" => "videos.module_id in ($array_data) and video_id < $obj_courses_overview->video_id",
+                "order" => "video_id DESC");
+            $obj_video_ant = $this->obj_videos->get_search_row($params);
+            //VIDEO LINK
+            $params = array(
+                "select" => "slug,
+                            name",
+                "where" => "videos.module_id in ($array_data) and video_id > $obj_courses_overview->video_id",
+                "order" => "video_id ASC");
+            $obj_video_next = $this->obj_videos->get_search_row($params);
+        }    
+        
         //send data
         $this->tmp_course->set("slug", $slug);
         $this->tmp_course->set("course_id", $course_id);

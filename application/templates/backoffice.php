@@ -87,7 +87,7 @@
                         <?php 
                         if($_SESSION['customer']['kit_id'] != 0 && $_SESSION['customer']['active_month'] != 0){ ?>
                              <li data-username="Tablero" class="nav-item">
-                                <a href="#" class="btn">
+                                <a href="<?php echo site_url()."virtual/crecimiento-personal/academia-para-embajadores"?>" class="btn">
                                     <div class="access-dam-one" align="center"> 
                                         <span><i class="fa fa-university" aria-hidden="true"></i>&nbsp; ACADEMIA</span>                
                                     </div>
