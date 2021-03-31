@@ -156,6 +156,15 @@
                 <?php } ?>
             </div>
         </div>
+        <?php 
+        $url = explode("/",uri_string());
+        if($url[2] == "academia-para-embajadores"){ ?>
+        <script>
+            $( document ).ready(function() {
+                $('body').toggleClass('curriculum-opened');
+            });
+        </script>
+        <?php } ?>
         <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/curriculum_trigger.css?ver=29'; ?>' type='text/css' media='all' />
         <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/lesson.css?ver=29'; ?>' type='text/css' media='all' />
         <link rel='stylesheet' href='<?php echo site_url() . 'static/course/css/curriculum.css?ver=29'; ?>' type='text/css' media='all' />
