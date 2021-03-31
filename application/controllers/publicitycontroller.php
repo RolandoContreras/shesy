@@ -512,10 +512,6 @@ class PublicityController extends CI_Controller {
         if ($this->input->is_ajax_request()) {
             //OBETENER customer_id
             $id = $this->input->post("id");
-
-            var_dump($id);
-            die();
-
             //VERIFY IF ISSET CUSTOMER_ID
             if ($id != "") {
                 $result = $this->obj_catalog->delete($id);
