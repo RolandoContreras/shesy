@@ -5,7 +5,7 @@
                   </div>
                   <div class="stm_lms_user_bio">
                     <div class="stm_lms_update_field__description"> La embajada emprendedora hoy se complace en presentar la sección de campaña publicitaria. Impulsamos que todos nuestros embajadores
-                      participen activamente en el posicionamiento de su marca, con el respaldo y soporte de la cultura. Conseguiremos el éxito. </div>
+                      participen activamente en el posicionamiento de su marca, con el respaldo y soporte de la embajada. Conseguiremos el éxito. </div>
                   </div>
                   <div class="stm_lms_instructor_courses__top">
                     <h4>Todas las Campañas</h4>
