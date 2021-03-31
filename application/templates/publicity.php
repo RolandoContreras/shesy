@@ -189,10 +189,10 @@
                             <a href="<?php echo site_url()."tienda";?>"> <i class="fa fa-home"></i> <span>Inicio</span> </a>
                           </div>
                           <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
-                            <a href="<?php echo site_url()."tienda/nuevo_curso";?>"> <i class="fa fa-bullhorn"></i> <span>Nuevo Cursos</span> </a>
+                            <a href="<?php echo site_url()."tienda/nuevo_curso";?>"> <i class="fa fa-bullhorn"></i> <span>Nuevo Curso</span> </a>
                           </div>
                           <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
-                            <a href="<?php echo site_url()."tienda/nuevo_catalogo";?>"> <i class="fa fa-bullhorn"></i> <span>Nuevo Emppresa </span> </a>
+                            <a href="<?php echo site_url()."tienda/nuevo_catalogo";?>"> <i class="fa fa-bullhorn"></i> <span>Nueva Empresa </span> </a>
                           </div>
                       <?php }else{ ?>
                         <div class="stm-lms-user_create_announcement_btn stm-lms-user_announcement_btn">
