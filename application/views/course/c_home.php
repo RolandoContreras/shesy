@@ -5,7 +5,10 @@
                 <div class="col-md-12">
                     <div class="stm-lms-course__lesson-content__top">
                         <h3>Video Actual</h3>
-                        <h1><?php echo $obj_courses_overview->name; ?></h1>
+                        <?php
+                        if(isset($obj_courses_overview)){ ?>
+                             <h1><?php echo $obj_courses_overview->name; ?></h1>       
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -18,6 +21,8 @@
                             <div class="vc_row wpb_row vc_row-fluid">
                                 <div class="wpb_column vc_column_container vc_col-sm-12">
                                     <div class="vc_column-inner">
+                                    <?php
+                                        if(isset($obj_courses_overview)){ ?>
                                         <div class="wpb_wrapper">
                                                     <?php echo $obj_courses_overview->video;?>
                                             <div class="wpb_text_column wpb_content_element ">
@@ -28,6 +33,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>

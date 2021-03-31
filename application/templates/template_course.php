@@ -129,11 +129,12 @@
         </div>
         <!--footer-->
         <?php
-        if ($obj_courses_overview->video_id <= $obj_courses_overview->video_actual) {
-            $style = "completed";
-        } else {
-            $style = "";
-        }
+        if(isset($obj_courses_overview)){ 
+            if ($obj_courses_overview->video_id <= $obj_courses_overview->video_actual) {
+                $style = "completed";
+            } else {
+                $style = "";
+            }
         ?>
         <div id="complete"  class="stm-lms-lesson_navigation heading_font uncompleted <?php echo $style; ?>">
             <div class="stm-lms-lesson_navigation_side stm-lms-lesson_navigation_prev">
@@ -144,6 +145,7 @@
                     </a>
                 <?php } ?>
             </div>
+            
             <div class="stm-lms-lesson_navigation_complete">
                 <a onclick="complete('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses_overview->video_id; ?>', <?php echo $total_videos; ?>);" class="btn btn-default stm_lms_complete_lesson uncompleted"><span>Completo</span> </a>
             </div>
@@ -156,6 +158,7 @@
                 <?php } ?>
             </div>
         </div>
+        <?php } ?>
         <?php 
         $url = explode("/",uri_string());
         if($url[2] == "academia-para-embajadores"){ ?>
