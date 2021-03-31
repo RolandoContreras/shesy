@@ -250,7 +250,7 @@
                                         <div class="hotpay-advantage-info" data-v-76f37c86="">
                                         <span class="hotpay-advantage-content" style="color:black;" data-v-76f37c86="">¿Necesitas ayuda? Entra en contacto a través del chat de Facebook<br/><br/>
                                           Cultura Emprendedora está procesando esta solicitud al servicio de nuestra tienda en línea®, al continuar estás de acuerdo con los Términos de Compra<br/>
-                                          Cultura Emprendedora © 20221 - Todos los derechos reservados</span>
+                                          Cultura Emprendedora © 2021 - Todos los derechos reservados</span>
                                         </div>
                                     </div>
                                     <div class="row">
