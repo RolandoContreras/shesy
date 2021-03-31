@@ -24,7 +24,9 @@
                                     <?php
                                         if(isset($obj_courses_overview)){ ?>
                                         <div class="wpb_wrapper">
-                                                    <?php echo $obj_courses_overview->video;?>
+                                            <div class="embed-container">   
+                                                <?php echo $obj_courses_overview->video;?>
+                                            </div>
                                             <div class="wpb_text_column wpb_content_element ">
                                                 <div class="wpb_wrapper">
                                                     <p>
@@ -46,5 +48,20 @@
 </div>
 <script src="<?php echo site_url() . 'static/course/js/script/c_home.js'; ?>"></script>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.embed-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
 
 
