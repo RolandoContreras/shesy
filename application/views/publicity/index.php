@@ -1,11 +1,10 @@
 <div class="col-md-9 col-sm-12">
                 <div class="stm_lms_private_information" data-container-open=".stm_lms_private_information">
                   <div class="stm_lms_user_info_top">
-                    <h1>Posiciona tu marca</h1>
+                    <h1>Mi Publicidad</h1>
                   </div>
                   <div class="stm_lms_user_bio">
-                    <h3>Publicidad la Cultura</h3>
-                    <div class="stm_lms_update_field__description"> La cultura emprendedora hoy se complace en presentar la sección de campaña publicitaria. Impulsamos que todos nuestros embajadores
+                    <div class="stm_lms_update_field__description"> La embajada emprendedora hoy se complace en presentar la sección de campaña publicitaria. Impulsamos que todos nuestros embajadores
                       participen activamente en el posicionamiento de su marca, con el respaldo y soporte de la cultura. Conseguiremos el éxito. </div>
                   </div>
                   <div class="stm_lms_instructor_courses__top">
