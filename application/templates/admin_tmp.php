@@ -21,9 +21,7 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
   <!--end -->
-  <script type="text/javascript">
-    var site = '<?php echo site_url();?>';
-  </script>
+  <link rel='stylesheet' id='stm_theme_custom_styles-css'  href='<?php echo site_url()."static/publicity/css/bootstrap-select.min.css";?>' type='text/css' media='all' />
   <script src="<?php echo site_url().'static/cms/js/core/bootbox.all.min.js';?>"></script>
   <script src="<?php echo site_url().'static/cms/js/core/bootstrap.min.js';?>"></script>
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/core/bootstrap-datepicker3.min.css';?>">
@@ -40,7 +38,8 @@
       selector: '#mytextarea'
     });
   </script>
-  <!----- End ---->
+  <!----- End ---->}
+  
   <script>
         var page = {
             bootstrap: 3
@@ -61,6 +60,9 @@
   <!--//swetaler2-->
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+    var site = '<?php echo site_url();?>';
+  </script>
 </head>
 
 <body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/sc-step-bg-2.png';?>'); background-size: cover;">
@@ -358,6 +360,8 @@
   </header>
   <?php echo $body;?>
 <!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
+    <script src="<?php echo site_url()."static/publicity/js/bootstrap-select.min.js";?>"></script>
+    <script src="<?php echo site_url()."static/publicity/js/bootstrap.min.js?ver=3.3.40";?>" id="bootstrap-js"></script>
 <script src="<?php echo site_url().'static/catalog/js/vendor-all.min.js';?>"></script>
 <script src="<?php echo site_url().'static/catalog/js/pcoded.min.js';?>"></script>
 <script src="<?php echo site_url().'static/catalog/js/ekko-lightbox.min.js';?>"></script>

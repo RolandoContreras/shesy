@@ -153,6 +153,49 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label for="inputState">Industria</label>
+                                                        <select name="industry_id" id="industry_id" class="disable-select form-control" data-live-search="true" onchange="get_sub_industry(this.value)">
+                                                            <option value="">[ Seleccionar ]</option>
+                                                            <?php foreach ($obj_industry as $value): ?>
+                                                                <option value="<?php echo $value->id; ?>"
+                                                                <?php
+                                                                if (isset($obj_catalog->industry_id)) {
+                                                                    if ($obj_catalog->industry_id == $value->id) {
+                                                                        echo "selected";
+                                                                    }
+                                                                } else {
+                                                                    echo "";
+                                                                }
+                                                                ?>><?php echo $value->name; ?>
+                                                                </option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputState">Sub Industria</label>
+                                                        <?php 
+                                                        if(isset($obj_catalog)){ ?>
+                                                            <select name="sub_industry_id" id="sub_industry_id" class="disable-select form-control" data-live-search="true">
+                                                                <option value="">[ Seleccionar Sub Industria]</option>
+                                                                <?php foreach ($obj_sub_industry as $value): ?>
+                                                                    <option value="<?php echo $value->id; ?>"
+                                                                    <?php
+                                                                    if (isset($obj_catalog->sub_industry_id)) {
+                                                                        if ($obj_catalog->sub_industry_id == $value->id) {
+                                                                            echo "selected";
+                                                                        }
+                                                                    } else {
+                                                                        echo "";
+                                                                    }
+                                                                    ?>><?php echo $value->name; ?>
+                                                                    </option>
+                                                                <?php endforeach; ?>
+                                                            </select>
+                                                        <?php  }else{ ?>
+                                                            <select name="sub_industry_id" id="sub_industry_id" class="disable-select form-control"></select>    
+                                                        <?php } ?>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label for="inputState">Categoría</label>
                                                         <select name="category_id" id="category_id" class="form-control" required>
                                                             <option value="">[ Seleccionar ]</option>

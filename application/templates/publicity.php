@@ -242,7 +242,7 @@
       </div>
     </div>
   </footer>
-  
+  <script src="<?php echo site_url()."static/publicity/js/bootstrap-select.min.js";?>"></script>
   <script src="<?php echo site_url()."static/publicity/js/rbtools.min.js?ver=6.3.9";?>" id="tp-tools-js"></script>
   <script src="<?php echo site_url()."static/publicity/js/bootstrap.min.js?ver=3.3.40";?>" id="bootstrap-js"></script>
   <script src="<?php echo site_url()."static/publicity/js/autoptimize_single_371bd037e954abfb3ae29625be3ad616.js?ver=3.3.40";?>" id="fancybox-js"></script>
@@ -251,7 +251,7 @@
   <script src="<?php echo site_url()."static/publicity/js/autoptimize_single_9c68cc5476a6153db135f4ecdf8560a3.js?ver=3.3.40";?>" id="stm-header_js-js"></script>
   <!--<script src="https://stylemixthemes.com/masterstudy/white-lms/wp-content/cache/autoptimize/7/js/autoptimize_single_9f2cbef328d310edb724cf017de3ceb5.js?ver=117" id="stm-lms-user-tabs-js"></script>-->
   <script src="<?php echo site_url()."static/publicity/js/moment.min.js?ver=5.6.2";?>" id="moment.min-js"></script>
-  <script src="<?php echo site_url()."static/publicity/js/bootstrap-select.min.js";?>"></script>
+  
   <div>
 </body>
 </html>

@@ -194,9 +194,6 @@ function delete_img(catalog_id, img) {
     });
 }
 
-
-
-
 function show_sub_category(category_id) {
     $.ajax({
         type: "post",
@@ -223,3 +220,25 @@ function show_sub_category(category_id) {
     });
 }
 
+function get_sub_industry(id) {
+    $.ajax({
+        type: "post",
+        url: site + "dashboard/catalogo/get_sub_category",
+        dataType: "json",
+        data: {id: id},
+        success: function (data) {
+            if(data.status == true){         
+                    var str = '';
+                    str += "<option value=''>Seleccionar Sub Industria</option>";
+                    data.obj_data.forEach(function(value) {
+                        str += "<option value="+value.id+"> "+value.name+"</option>";
+                    });
+                    sub_industry_id.innerHTML = str;
+            }else{
+                    var texto = "";
+                    texto = texto+'<option value="">Seleccionar País</option>';
+                    $("#sub_category_id").html(texto);
+            }
+        }
+    });
+}

@@ -11,6 +11,9 @@ class D_catalog extends CI_Controller {
         $this->load->model("catalog_model", "obj_catalog");
         $this->load->model("category_model", "obj_category");
         $this->load->model("sub_category_model", "obj_sub_category");
+        $this->load->model("industry_model", "obj_industry");
+        $this->load->model("sub_industry_model", "obj_sub_industry");
+        
     }
 
     public function index() {
@@ -25,7 +28,7 @@ class D_catalog extends CI_Controller {
                                     catalog.description,
                                     catalog.img,
                                     catalog.active,
-                                    category.name category_name,
+                                    category.name as category_name,
                                     catalog.date",
             "where" => "catalog.status_value = 1",
             "join" => array('category, catalog.category_id = category.category_id'),
@@ -39,16 +42,43 @@ class D_catalog extends CI_Controller {
 
     public function load($catalog_id = NULL) {
         //VERIFY IF ISSET CUSTOMER_ID
-
+        $obj_sub_industry = null;
         if ($catalog_id != "") {
             /// PARAM FOR SELECT 
-            $where = "catalog_id = $catalog_id";
             $params = array(
-                "select" => "*",
-                "where" => $where,
+                "select" => "catalog.catalog_id,
+                                    catalog.stock,
+                                    catalog.name,
+                                    catalog.price,
+                                    catalog.price_del,
+                                    catalog.granel,
+                                    catalog.description,
+                                    catalog.category_id,
+                                    catalog.sub_category_id,
+                                    catalog.img,
+                                    catalog.img2,
+                                    catalog.img3,
+                                    catalog.img4,
+                                    catalog.video,
+                                    catalog.hot_link,
+                                    catalog.active,
+                                    catalog.bono_n1,
+                                    catalog.bono_n2,
+                                    catalog.bono_n3,
+                                    catalog.bono_n4,
+                                    catalog.bono_n5,
+                                    catalog.date,
+                                    sub_industry.industry_id,
+                                    sub_industry.id as sub_industry_id",
+                "join" => array('sub_industry, catalog.sub_industry_id = sub_industry.id'),
+                "where" => "catalog.catalog_id = $catalog_id",
             );
             $obj_catalog = $this->obj_catalog->get_search_row($params);
-            //RENDER
+            //get sub_industry
+            if($obj_catalog->industry_id != ""){
+                $obj_sub_industry = $this->get_sub_industry($obj_catalog->industry_id);
+                $this->tmp_mastercms->set("obj_sub_industry", $obj_sub_industry);    
+            }
             $this->tmp_mastercms->set("obj_catalog", $obj_catalog);
             //get data sub category
         }
@@ -58,8 +88,10 @@ class D_catalog extends CI_Controller {
                                     name",
             "where" => "type = 2 and active = 1",
         );
-        //GET DATA COMMENTS
+        //get data category
         $obj_category = $this->obj_category->search($params);
+        //get data industry type = 1 (catalogo)
+        $obj_industry = $this->get_industry(1);
         //get data sub category
             $params = array(
                 "select" => "sub_category_id,
@@ -70,6 +102,7 @@ class D_catalog extends CI_Controller {
             $obj_sub_category = $this->obj_sub_category->search($params);
 
         $this->tmp_mastercms->set("obj_category", $obj_category);
+        $this->tmp_mastercms->set("obj_industry", $obj_industry);
         $this->tmp_mastercms->set("obj_sub_category", $obj_sub_category);
         $this->tmp_mastercms->render("dashboard/catalogo/catalog_form");
     }
@@ -159,6 +192,7 @@ class D_catalog extends CI_Controller {
                     'stock' => $this->input->post("stock"),
                     'category_id' => $this->input->post('category_id'),
                     'sub_category_id' => $this->input->post("sub_category_id"),
+                    'sub_industry_id' => $this->input->post("sub_industry_id"),
                     'description' => $description,
                     'img' => $img,
                     'img2' => $img2,
@@ -189,6 +223,7 @@ class D_catalog extends CI_Controller {
                     'stock' => $this->input->post("stock"),
                     'category_id' => $this->input->post('category_id'),
                     'sub_category_id' => $this->input->post("sub_category_id"),
+                    'sub_industry_id' => $this->input->post("sub_industry_id"),
                     'description' => $description,
                     'img' => $img,
                     'img2' => $img2,
@@ -245,6 +280,30 @@ class D_catalog extends CI_Controller {
         }
     }
 
+    public function get_industry($type) {
+        $params = array(
+            "select" => "id,
+                            name",
+            "where" => "active = 1 and type = $type",
+            "order" => "name ASC",
+        );
+        //GET DATA COMMENTS
+        $obj_industry = $this->obj_industry->search($params);
+        return $obj_industry;
+    }
+
+    public function get_sub_industry($industry_id) {
+        $params = array(
+            "select" => "id,
+                        name",
+            "where" => "active = 1 and industry_id = $industry_id",
+            "order" => "name ASC",
+        );
+        //GET DATA COMMENTS
+        $obj_sub_industry = $this->obj_sub_industry->search($params);
+        return $obj_sub_industry;
+    }
+
     public function show_sub_category() {
         if ($this->input->is_ajax_request()) {
             //OBETENER CATALOGO ID
@@ -259,6 +318,26 @@ class D_catalog extends CI_Controller {
                 $obj_sub_category = $this->obj_sub_category->search($params);
                 $data['status'] = true;
                 $data['obj_category'] = $obj_sub_category;
+            } else {
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+    }
+
+    public function get_sub_category() {
+        if ($this->input->is_ajax_request()) {
+            //OBETENER CATALOGO ID
+            $id = $this->input->post("id");
+            if ($id != null) {
+                $params = array(
+                    "select" => "id,
+                                 name",
+                    "where" => "industry_id = $id and active = 1");
+                //GET DATA FROM CUSTOMER
+                $obj_sub_industry = $this->obj_sub_industry->search($params);
+                $data['status'] = true;
+                $data['obj_data'] = $obj_sub_industry;
             } else {
                 $data['status'] = false;
             }
