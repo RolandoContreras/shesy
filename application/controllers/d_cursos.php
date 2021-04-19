@@ -5,6 +5,8 @@ class d_cursos extends CI_Controller {
         parent::__construct();
         $this->load->model("courses_model", "obj_courses");
         $this->load->model("category_model", "obj_category");
+        $this->load->model("industry_model", "obj_industry");
+        $this->load->model("sub_industry_model", "obj_sub_industry");
     }
     public function index() {
         $this->get_session();
@@ -39,8 +41,11 @@ class d_cursos extends CI_Controller {
                          courses.img,
                          courses.img2,
                          courses.img3,
+                         sub_industry.industry_id,
+                         sub_industry.id as sub_industry_id,
                          courses.price,
                          courses.video,
+                         courses.price_del,
                          courses.price_del,
                          courses.free,
                          courses.bono_1,
@@ -52,9 +57,16 @@ class d_cursos extends CI_Controller {
                          courses.duration,
                          courses.active,
                          courses.date",
-            "join" => array('category, category.category_id = courses.category_id'),
+            "join" => array('category, category.category_id = courses.category_id',
+                            'sub_industry, courses.sub_industry_id = sub_industry.id'),
             "where" => "courses.course_id = $id");
             $obj_courses = $this->obj_courses->get_search_row($params);
+            //get sub_industry
+            if($obj_courses->industry_id != ""){
+                $obj_sub_industry = $this->get_sub_industry($obj_courses->industry_id);
+                $this->tmp_mastercms->set("obj_sub_industry", $obj_sub_industry);    
+            }
+            
             //RENDER
             $this->tmp_mastercms->set("obj_courses", $obj_courses);
             //get data sub category
@@ -67,6 +79,10 @@ class d_cursos extends CI_Controller {
         );
         //GET DATA COMMENTS
         $obj_category = $this->obj_category->search($params);
+        //get data industry type = 1 (catalogo)
+        $obj_industry = $this->get_industry(2);
+        //render
+        $this->tmp_mastercms->set("obj_industry", $obj_industry);
         $this->tmp_mastercms->set("obj_category", $obj_category);
         $this->tmp_mastercms->render("dashboard/cursos/cursos_form");
     }
@@ -152,6 +168,7 @@ class d_cursos extends CI_Controller {
                         'slug' => $slug,
                         'description' => $this->input->post('description'),
                         'category_id' => $this->input->post('category_id'),
+                        'sub_industry_id' => $this->input->post("sub_industry_id"),
                         'price' => $this->input->post('price'),
                         'price_del' => $this->input->post('price_del'),
                         'img' => $img,
@@ -177,6 +194,7 @@ class d_cursos extends CI_Controller {
                         'slug' => $slug,
                         'description' => $this->input->post('description'),
                         'category_id' => $this->input->post('category_id'),
+                        'sub_industry_id' => $this->input->post("sub_industry_id"),
                         'price' => $this->input->post('price'),
                         'price_del' => $this->input->post('price_del'),
                         'duration' => $this->input->post('duration'),
@@ -256,6 +274,49 @@ class d_cursos extends CI_Controller {
                 $data['status'] = false;
             }
             echo json_encode($data);
+        }
+    }
+
+    public function get_industry($type) {
+        $params = array(
+            "select" => "id,
+                            name",
+            "where" => "active = 1 and type = $type",
+            "order" => "name ASC",
+        );
+        //GET DATA COMMENTS
+        $obj_industry = $this->obj_industry->search($params);
+        return $obj_industry;
+    }
+
+    public function get_sub_industry($industry_id) {
+        if ($this->input->is_ajax_request()) {
+            //OBETENER CATALOGO ID
+            $id = $this->input->post("id");
+            //VERIFY IF ISSET CUSTOMER_ID
+            if ($id != null) {
+                $params = array(
+                    "select" => "id,
+                                 name",
+                    "where" => "industry_id = $id and active = 1");
+                //GET DATA FROM CUSTOMER
+                $obj_sub_industry = $this->obj_sub_industry->search($params);
+                $data['status'] = true;
+                $data['obj_data'] = $obj_sub_industry;
+            } else {
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }else{
+            $params = array(
+                "select" => "id,
+                            name",
+                "where" => "active = 1 and industry_id = $industry_id",
+                "order" => "name ASC",
+            );
+            //GET DATA COMMENTS
+            $obj_sub_industry = $this->obj_sub_industry->search($params);
+            return $obj_sub_industry;
         }
     }
 

@@ -130,6 +130,49 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label for="inputState">Industria</label>
+                                                        <select name="industry_id" id="industry_id" class="disable-select form-control" data-live-search="true" onchange="get_sub_industry(this.value)">
+                                                            <option value="">[ Seleccionar ]</option>
+                                                            <?php foreach ($obj_industry as $value): ?>
+                                                                <option value="<?php echo $value->id; ?>"
+                                                                <?php
+                                                                if (isset($obj_courses->industry_id)) {
+                                                                    if ($obj_courses->industry_id == $value->id) {
+                                                                        echo "selected";
+                                                                    }
+                                                                } else {
+                                                                    echo "";
+                                                                }
+                                                                ?>><?php echo $value->name; ?>
+                                                                </option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputState">Sub Industria</label>
+                                                        <?php 
+                                                        if(isset($obj_courses)){ ?>
+                                                            <select name="sub_industry_id" id="sub_industry_id" class="disable-select form-control" data-live-search="true">
+                                                                <option value="">[ Seleccionar Sub Industria]</option>
+                                                                <?php foreach ($obj_sub_industry as $value): ?>
+                                                                    <option value="<?php echo $value->id; ?>"
+                                                                    <?php
+                                                                    if (isset($obj_courses->sub_industry_id)) {
+                                                                        if ($obj_courses->sub_industry_id == $value->id) {
+                                                                            echo "selected";
+                                                                        }
+                                                                    } else {
+                                                                        echo "";
+                                                                    }
+                                                                    ?>><?php echo $value->name; ?>
+                                                                    </option>
+                                                                <?php endforeach; ?>
+                                                            </select>
+                                                        <?php  }else{ ?>
+                                                            <select name="sub_industry_id" id="sub_industry_id" class="disable-select form-control"></select>    
+                                                        <?php } ?>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label>Duración Horas</label>
                                                         <input class="form-control" type="text" id="duration" name="duration" value="<?php echo isset($obj_courses->duration) ? $obj_courses->duration : ""; ?>" class="input-xlarge-fluid" placeholder="Duración Hrs">
                                                     </div>

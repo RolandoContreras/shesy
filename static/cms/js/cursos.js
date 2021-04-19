@@ -211,6 +211,24 @@ function delete_img(course_id, img) {
     });
 }
 
+function get_sub_industry(id) {
+    $.ajax({
+        type: "post",
+        url: site + "dashboard/mis-cursos/get_sub_industry",
+        dataType: "json",
+        data: {id: id},
+        success: function (data) {
+            if(data.status == true){         
+                    var str = '';
+                    str += "<option value=''>Seleccionar Sub Industria</option>";
+                    data.obj_data.forEach(function(value) {
+                        str += "<option value="+value.id+"> "+value.name+"</option>";
+                    });
+                    sub_industry_id.innerHTML = str;
+            }
+        }
+    });
+}
 
 
 

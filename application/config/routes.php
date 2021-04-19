@@ -271,6 +271,7 @@ $route['dashboard/mis-cursos/load/([0-9]+)'] = "d_cursos/load/$1";
 $route['dashboard/mis-cursos/validate'] = "d_cursos/validate";
 $route['dashboard/mis-cursos/delete'] = "d_cursos/delete";
 $route['dashboard/mis-cursos/delete_img'] = "d_cursos/delete_img";
+$route['dashboard/mis-cursos/get_sub_industry'] = "d_cursos/get_sub_industry";
 
 //DASHBOARD activaciones de cursos
 $route['dashboard/cursos-activaciones'] = "d_activate_cursos";
