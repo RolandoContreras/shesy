@@ -92,6 +92,7 @@
             $contra_entrega_syle = null;
             $enlace_compra = null;
             $mis_cursos = null;
+            $industrias_syle =null;
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active pcoded-trigger";
@@ -110,6 +111,12 @@
                     break;
                 case "activar_pagos":
                     $pagos_syle = "active pcoded-trigger";
+                    break;
+                case "sub-industrias":
+                    $industrias_syle = "active pcoded-trigger";
+                    break;
+                case "industrias":
+                    $industrias_syle = "active pcoded-trigger";
                     break;
                 case "recargas_comisiones":
                     $recargas_syle = "active pcoded-trigger";
@@ -152,7 +159,7 @@
               </a>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Industrias</label></li>
-        <li class="nav-item pcoded-hasmenu <?php echo $mantenimiento_syle;?>">
+        <li class="nav-item pcoded-hasmenu <?php echo $industrias_syle;?>">
             <a href="#!">
                 <span class="pcoded-micon">
                     <i data-feather="sliders"></i>
