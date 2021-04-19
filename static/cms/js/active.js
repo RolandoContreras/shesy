@@ -9,10 +9,11 @@ function cancel_activate_kit() {
 
 function active() {
 
+    document.getElementById("submit").disabled = true;
+    document.getElementById("submit").innerHTML = "<span class='spinner-border spinner-border-sm' role='status'></span> Procesando...";
     var customer_id = document.getElementById("customer_id").value;
     var kit_id = document.getElementById("kit_id").value;
     var type = document.getElementById("type").value;
-
     if (customer_id == "") {
         var texto = "";
         texto = texto + '<div class="alert alert-danger">';
@@ -28,6 +29,48 @@ function active() {
         $("#message").html(texto);
         $("#kit_id").focus();
     } else {
+        Swal.fire({
+            title: 'Confirma que desea activar al Cliente?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Confirmo'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "post",
+                    url: site + "dashboard/activaciones/active",
+                    dataType: "json",
+                    data: {customer_id: customer_id,
+                        kit_id: kit_id,
+                        type: type},
+                    success: function (data) {
+                        if (data.status == "true") {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Cliente Activo',
+                                showConfirmButton: false,
+                                timer: 1000
+                            });
+                            setTimeout(function () {
+                                location.href = site + "dashboard/activaciones"
+                            }, 1000);
+                        } else {
+                            var texto = "";
+                            texto = texto + '<div class="alert alert-danger">';
+                            texto = texto + '<p style="text-align: center;">Hubo un error</p>';
+                            texto = texto + '</div>';
+                            $("#message").html(texto);
+                        }
+                    }
+                });
+            }else{
+                document.getElementById("submit").disabled = false;
+                document.getElementById("submit").innerHTML = "Guardar";
+            }
+          })
         bootbox.confirm({
             message: "Confirma que desea activar al Cliente?",
             buttons: {
@@ -40,43 +83,10 @@ function active() {
                     className: 'btn-danger'
                 }
             },
-            callback: function (e) {
-                if (e === true) {
-                    $.ajax({
-                        type: "post",
-                        url: site + "dashboard/activaciones/active",
-                        dataType: "json",
-                        data: {customer_id: customer_id,
-                            kit_id: kit_id,
-                            type: type},
-                        success: function (data) {
-                            if (data.status == "true") {
-                                Swal.fire({
-                                    position: 'top-end',
-                                    icon: 'success',
-                                    title: 'Activado Éxitosamente',
-                                    showConfirmButton: false
-                                  });
-                                  var url = site + "dashboard/activaciones";
-                                    setTimeout(function () {
-                                        location.href = url
-                                    }, 1500);
-                            } else {
-                                var texto = "";
-                                texto = texto + '<div class="alert alert-danger">';
-                                texto = texto + '<p style="text-align: center;">Hubo un error</p>';
-                                texto = texto + '</div>';
-                                $("#message").html(texto);
-                            }
-                        }
-                    });
-                }
-            }
         });
     }
-
-
 }
+
 function modal_img(id) {
     // Get the modal
     var modal = document.getElementById('myModal');

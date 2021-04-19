@@ -28,7 +28,7 @@
                     <h5>Datos</h5>
                   </div>
                   <div class="card-body">
-                      <form enctype="multipart/form-data" method="post" action="javascript:void(0);">
+                      <form name="form" enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="active();">
                         <div class="form-row">
                           <div class="form-group col-md-6">
                               <div class="form-group">
@@ -61,7 +61,7 @@
                                 </select>
                               </div>
                         </div>
-                        <button onclick="active();" class="btn btn-primary">Guardar</button>
+                        <button type="submit" id="submit" class="btn btn-primary">Guardar</button>
                         <button class="btn btn-danger" type="reset" onclick="cancel_activate_kit();">Cancelar</button>                    
                         </div>
                     </form>
