@@ -289,7 +289,7 @@ class d_cursos extends CI_Controller {
         return $obj_industry;
     }
 
-    public function get_sub_industry($industry_id) {
+    public function get_sub_industry($industry_id=null) {
         if ($this->input->is_ajax_request()) {
             //OBETENER CATALOGO ID
             $id = $this->input->post("id");
