@@ -161,7 +161,7 @@
             </a>
             <ul class="pcoded-submenu">
                 <li class="pcoded"><a href="<?php echo site_url()."dashboard/industrias";?>"><i class="icon-large icon-th"></i>Industrias</a></li>
-                <li class="pcoded"><a href="<?php echo site_url()."dashboard/sub-indsutrias";?>"><i class="icon-large icon-th"></i>Sub Industrias</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/sub-industrias";?>"><i class="icon-large icon-th"></i>Sub Industrias</a></li>
             </ul>
         </li>
         <li class="nav-item pcoded-menu-caption"><label>Mantenimientos</label></li>

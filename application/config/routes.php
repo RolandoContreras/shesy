@@ -312,6 +312,13 @@ $route['dashboard/industrias/load/([0-9]+)'] = "d_industry/load/$1";
 $route['dashboard/industrias/validate'] = "d_industry/validate";
 $route['dashboard/industrias/delete'] = "d_industry/delete";
 
+$route['dashboard/sub-industrias'] = "d_sub_industry";
+$route['dashboard/sub-industrias/load'] = "d_sub_industry/load";
+$route['dashboard/sub-industrias/load/([0-9]+)'] = "d_sub_industry/load/$1";
+$route['dashboard/sub-industrias/validate'] = "d_sub_industry/validate";
+$route['dashboard/sub-industrias/delete'] = "d_sub_industry/delete";
+$route['dashboard/sub-industrias/get_industry'] = "d_sub_industry/get_industry";
+
 
 $route['dashboard/comentarios'] = "d_comments";
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
