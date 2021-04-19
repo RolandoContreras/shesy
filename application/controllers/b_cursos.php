@@ -210,11 +210,14 @@ class B_cursos extends CI_Controller {
             //GET DATA FROM CUSTOMER
             $obj_profile = $this->get_profile($customer_id);
             //GET NAV CURSOS
-            $obj_category_catalogo = $this->nav_cursos();
+            $obj_category_catalogo = $this->nav_industry(2);
+            $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
             //total comission compra
             $obj_total_compra = $this->total_comissions($customer_id);
             $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
             //SEND DATA
+            $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+            $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
             $this->tmp_catalog->set("obj_profile",$obj_profile);
             $this->tmp_catalog->set("total_compra",$total_compra);
             $this->tmp_catalog->set("obj_courses_by_customer", $obj_courses_by_customer);
@@ -229,7 +232,8 @@ class B_cursos extends CI_Controller {
             //GET CUSTOMER_ID
             $customer_id = $_SESSION['customer']['customer_id'];
             //GET NAV CURSOS
-            $obj_category_catalogo = $this->nav_cursos();
+            $obj_category_catalogo = $this->nav_industry(2);
+            $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
             $url = explode("/",uri_string());
             //get course_id
             $category_slug = $url[2];
@@ -281,6 +285,8 @@ class B_cursos extends CI_Controller {
             //set url sell
             $url =  site_url()."cursosporhoy/$obj_courses->category_slug/$obj_courses->slug?d=$customer_id";    
             //SEND DATA
+            $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+            $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
             $this->tmp_catalog->set("obj_profile",$obj_profile);
             $this->tmp_catalog->set("total_compra",$total_compra);
             $this->tmp_catalog->set("obj_category_catalogo",$obj_category_catalogo);
@@ -296,7 +302,8 @@ class B_cursos extends CI_Controller {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //get nav ctalogo
-        $obj_category_catalogo = $this->nav_cursos();
+        $obj_category_catalogo = $this->nav_industry(2);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
         //Type 1 = pagos de membresia
         //Type 2 = pagos de catalogo
         //Type 3 = pagos de cursos
@@ -331,6 +338,8 @@ class B_cursos extends CI_Controller {
         $obj_total_compra = $this->total_comissions($customer_id);
         $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
         //send data
+        $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_total_compra", $obj_total_compra);
         $this->tmp_catalog->set("total_compra", $total_compra);
         $this->tmp_catalog->set("obj_profile", $obj_profile);
