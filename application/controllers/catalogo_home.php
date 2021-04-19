@@ -100,7 +100,7 @@ class Catalogo_home extends CI_Controller {
         $config['prev_tag_close'] = '</li>';
         $config['num_tag_open'] = '<li class="paginate_button page-item">';
         $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class=" paginate_button page-item"><a class="page-link">';
+        $config['cur_tag_open']= '<li class="page-item active"><span aria-current="page" class="page-link page-numbers current">';
         $config['cur_tag_close'] = '</a></li>';
         $config['next_tag_open'] = '<li class="paginate_button page-item">';
         $config['next_tag_close'] = '</a></li>';
@@ -133,8 +133,8 @@ class Catalogo_home extends CI_Controller {
     public function category($category) {
         //GET NAV CURSOS
         $this->get_session();
-        $obj_category_catalogo = $this->nav_catalogo();
-        $obj_sub_category = $this->nav_sub_category();
+        $obj_category_catalogo = $this->nav_industry(1);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         if (isset($_GET['orderby'])) {
@@ -192,17 +192,17 @@ class Catalogo_home extends CI_Controller {
         $config["num_links"] = 1;
         $config["uri_segment"] = 3;
 
-        $config['first_tag_open'] = '<li>';
+        $config['first_tag_open'] = '<li class="paginate_button page-item">';
         $config['first_tag_close'] = '</li>';
-        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_open'] = '<li class="paginate_button page-item">';
         $config['prev_tag_close'] = '</li>';
-        $config['num_tag_open'] = '<li>';
+        $config['num_tag_open'] = '<li class="paginate_button page-item">';
         $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="page-item active"><span class="page-link current">';
-        $config['cur_tag_close'] = '</span></li>';
-        $config['next_tag_open'] = '<li>';
-        $config['next_tag_close'] = '</li>';
-        $config['last_tag_open'] = '<li>';
+        $config['cur_tag_open']= '<li class="page-item active"><span aria-current="page" class="page-link page-numbers current">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['next_tag_open'] = '<li class="paginate_button page-item">';
+        $config['next_tag_close'] = '</a></li>';
+        $config['last_tag_open'] = '<li class="paginate_button page-item">';
         $config['last_tag_close'] = '</li>';
 
         $this->pagination->initialize($config);
@@ -228,13 +228,12 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->render("catalogo/catalogo_home");
     }
 
-    public function sub_category($sub_category) {
+    public function sub_category($sub_category_id) {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //GET NAV CURSOS
-        $obj_category_catalogo = $this->nav_catalogo();
-        $obj_sub_category = $this->nav_sub_category();
-
+        $obj_category_catalogo = $this->nav_industry(1);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
 
@@ -256,14 +255,7 @@ class Catalogo_home extends CI_Controller {
             $order = "catalog.catalog_id DESC";
         }
 
-        //get data catalog
-        $params_sub_categogory = array(
-            "select" => "sub_category_id,
-                         name",
-            "where" => "slug like '%$sub_category%'");
-        $obj_sub_category_meta = $this->obj_sub_category->get_search_row($params_sub_categogory);
-        $sub_category_id = $obj_sub_category_meta->sub_category_id;
-        $category_name = "Productos - " . $obj_sub_category_meta->name;
+        $category_name = "Productos";
 
         $params = array(
             "select" => "catalog.catalog_id,
@@ -277,42 +269,42 @@ class Catalogo_home extends CI_Controller {
                         category.slug as category_slug,
                         catalog.date",
             "join" => array('category, category.category_id = catalog.category_id',
-                'sub_category, sub_category.sub_category_id = catalog.sub_category_id'),
-            "where" => "catalog.sub_category_id = $sub_category_id and catalog.active = 1",
+                            'sub_category, sub_category.sub_category_id = catalog.sub_category_id'),
+            "where" => "catalog.sub_industry_id = $sub_category_id and catalog.active = 1",
             "order" => $order);
 
         /// PAGINADO
         $config = array();
-        $config["base_url"] = site_url("mi_catalogo/subcategoria/$sub_category");
+        $config["base_url"] = site_url("mi_catalogo/subcategoria/$sub_category_id");
         $config["total_rows"] = $this->obj_catalog->total_records($params);
         $config["per_page"] = 12;
         $config["num_links"] = 1;
-        $config["uri_segment"] = 3;
+        $config["uri_segment"] = 4;
 
-        $config['first_tag_open'] = '<li>';
+        $config['first_tag_open'] = '<li class="paginate_button page-item">';
         $config['first_tag_close'] = '</li>';
-        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_open'] = '<li class="paginate_button page-item">';
         $config['prev_tag_close'] = '</li>';
-        $config['num_tag_open'] = '<li>';
+        $config['num_tag_open'] = '<li class="paginate_button page-item">';
         $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="active"><span aria-current="page" class="page-numbers current">';
-        $config['cur_tag_close'] = '</span></li>';
-        $config['next_tag_open'] = '<li>';
-        $config['next_tag_close'] = '</li>';
-        $config['last_tag_open'] = '<li>';
+        $config['cur_tag_open']= '<li class="page-item active"><span aria-current="page" class="page-link page-numbers current">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['next_tag_open'] = '<li class="paginate_button page-item">';
+        $config['next_tag_close'] = '</a></li>';
+        $config['last_tag_open'] = '<li class="paginate_button page-item">';
         $config['last_tag_close'] = '</li>';
 
         $this->pagination->initialize($config);
         $obj_pagination = $this->pagination->create_links();
         /// DATA
-        $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(2));
+        $obj_catalog = $this->obj_catalog->search_data($params, $config["per_page"], $this->uri->segment(4));
         ////GET DATA FROM CUSTOMER
         $obj_profile = $this->get_profile($customer_id);
         //total commission compra
         $obj_total_compra = $this->total_comissions($customer_id);
         $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
         //SEND DATA
-        $url = "mi_catalogo/subcategoria/$sub_category";
+        $url = "mi_catalogo/subcategoria/$sub_category_id";
         $this->tmp_catalog->set("url", $url);
         $this->tmp_catalog->set("obj_total_compra", $obj_total_compra);
         $this->tmp_catalog->set("total_compra", $total_compra);
@@ -330,8 +322,8 @@ class Catalogo_home extends CI_Controller {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //get nav cursos
-        $obj_category_catalogo = $this->nav_catalogo();
-        $obj_sub_category = $this->nav_sub_category();
+        $obj_category_catalogo = $this->nav_industry(1);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
         //get data nav
         $url = explode("/", uri_string());
         $catalog_id = $url[2];
@@ -410,8 +402,8 @@ class Catalogo_home extends CI_Controller {
         $customer_id = $_SESSION['customer']['customer_id'];
 
         //get nav ctalogo
-        $obj_category_catalogo = $this->nav_catalogo();
-        $obj_sub_category = $this->nav_sub_category();
+        $obj_category_catalogo = $this->nav_industry(1);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
 
         //GET DATA PRICE CRIPTOCURRENCY
         $params = array(
@@ -451,8 +443,8 @@ class Catalogo_home extends CI_Controller {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //get nav ctalogo
-        $obj_category_catalogo = $this->nav_catalogo();
-        $obj_sub_category = $this->nav_sub_category();
+        $obj_category_catalogo = $this->nav_industry(1);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
         ////GET DATA FROM CUSTOMER
         $obj_profile = $this->get_profile($customer_id);
         //total commission compra
@@ -508,8 +500,8 @@ class Catalogo_home extends CI_Controller {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //get nav ctalogo
-        $obj_category_catalogo = $this->nav_catalogo();
-        $obj_sub_category = $this->nav_sub_category();
+        $obj_category_catalogo = $this->nav_industry(1);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
         ////GET DATA FROM CUSTOMER
         $obj_profile = $this->get_profile($customer_id);
         //total commission compra
@@ -578,8 +570,8 @@ class Catalogo_home extends CI_Controller {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //get nav ctalogo
-        $obj_category_catalogo = $this->nav_catalogo();
-        $obj_sub_category = $this->nav_sub_category();
+        $obj_category_catalogo = $this->nav_industry(1);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
         //GET DATA PRICE CRIPTOCURRENCY
         $params = array(
             "select" => "invoices.invoice_id,
@@ -1400,7 +1392,8 @@ class Catalogo_home extends CI_Controller {
         //GET id type  1
         $ids = substr ($ids, 0, strlen($ids) - 1);
         $params = array(
-            "select" => "name,
+            "select" => "id,
+                         name,
                          industry_id,        
                          slug",
             "where" => "industry_id in ($ids) and active = 1",

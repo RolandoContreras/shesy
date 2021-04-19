@@ -175,7 +175,7 @@
                                                 foreach ($obj_sub_category as $key => $value_sub) {
                                                     if ($value_sub->industry_id == $value->id && $value_sub != "") {?>
                                                             <li>
-                                                                <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
+                                                                <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->id"; ?>'><?php echo $value_sub->name; ?></a>
                                                             </li>
                                                     <?php }
                                                 }
