@@ -306,6 +306,12 @@ $route['dashboard/categorias/validate'] = "d_category/validate";
 $route['dashboard/categorias/validate_sub_category'] = "d_category/validate_sub_category";
 $route['dashboard/categorias/delete_sub_category'] = "d_category/delete_sub_category";
 
+$route['dashboard/industrias'] = "d_industry";
+$route['dashboard/industrias/load'] = "d_industry/load";
+$route['dashboard/industrias/load/([0-9]+)'] = "d_industry/load/$1";
+$route['dashboard/industrias/validate'] = "d_industry/validate";
+$route['dashboard/industrias/delete'] = "d_industry/delete";
+
 
 $route['dashboard/comentarios'] = "d_comments";
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";

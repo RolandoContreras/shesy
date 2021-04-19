@@ -151,6 +151,19 @@
                   <span class="pcoded-mtext">Panel</span>
               </a>
         </li>
+        <li class="nav-item pcoded-menu-caption"><label>Industrias</label></li>
+        <li class="nav-item pcoded-hasmenu <?php echo $mantenimiento_syle;?>">
+            <a href="#!">
+                <span class="pcoded-micon">
+                    <i data-feather="sliders"></i>
+                </span>
+                <span class="pcoded-mtext">Industrias</span>
+            </a>
+            <ul class="pcoded-submenu">
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/industrias";?>"><i class="icon-large icon-th"></i>Industrias</a></li>
+                <li class="pcoded"><a href="<?php echo site_url()."dashboard/sub-indsutrias";?>"><i class="icon-large icon-th"></i>Sub Industrias</a></li>
+            </ul>
+        </li>
         <li class="nav-item pcoded-menu-caption"><label>Mantenimientos</label></li>
         <li class="nav-item pcoded-hasmenu <?php echo $mantenimiento_syle;?>">
             <a href="#!">
