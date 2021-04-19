@@ -8,12 +8,12 @@
   <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
   <meta name="author" content="Cultura Imparable">
   <meta name="keyword" content="Cultura Imparable, Movimiento Imparable, Imparable Perú, embajadores, Imparable social, Imparable corporación, mlm, mmn, culturaimprable.com">
-   <!--//STAR FAVICON-->
+   <!--STAR FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-touch-icon.png';?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-32x32.png';?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-16x16.png';?>">
     <link rel="manifest" href="<?php echo site_url().'static/page_front/images/logo/favico/site.webmanifest';?>">
-    <!--//END FAVICON-->
+    <!--END FAVICON-->
   <link rel="stylesheet" href="<?php echo site_url().'static/catalog/css/style.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/mystyle.css';?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
@@ -26,20 +26,18 @@
   <script src="<?php echo site_url().'static/cms/js/core/bootstrap.min.js';?>"></script>
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/core/bootstrap-datepicker3.min.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/mystyle.css';?>">
-  <!----- LIGHTBOX  ---->
+  <!--LIGHTBOX -->
   <link rel="stylesheet" href="<?php echo site_url().'static/backoffice/css/lightbox.min.css';?>">
-  <!----- SWEET ALER  ---->
+  <!--SWEET ALER-->
   <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
-  <!----- TinyMCE EDITOR TEXT ---->
+  <!--TinyMCE EDITOR TEXT-->
   <script src='https://cdn.tiny.cloud/1/wy30gmswsngllat86td2q95wwfhhn7tan1bxqenxyjxzoznh/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
   <script>
     tinymce.init({
       selector: '#mytextarea'
     });
   </script>
-  <!----- End ---->}
-  
   <script>
         var page = {
             bootstrap: 3
@@ -57,7 +55,7 @@
             margin: 0 0 0 -8px;
         }
     </style>
-  <!--//swetaler2-->
+  <!--swetaler2-->
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script type="text/javascript">
