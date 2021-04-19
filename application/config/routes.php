@@ -137,13 +137,21 @@ $route['course/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'c_home/detail/$1';
 //CURSOS BACKOFFICE
 $route['backoffice/cursos'] = "b_cursos";
 $route['backoffice/cursos/([0-9]+)'] = 'b_cursos/index/$1';
-$route['backoffice/cursos/([0-9a-z_-]+)'] = 'b_cursos/category/$1';
-$route['backoffice/cursos/([0-9a-z_-]+)/([0-9]+)'] = 'b_cursos/category/$1';
+
+//$route['backoffice/cursos/([0-9a-z_-]+)'] = 'b_cursos/category/$1';
+//$route['backoffice/cursos/([0-9a-z_-]+)/([0-9]+)'] = 'b_cursos/category/$1';
+
+$route['backoffice/cursos/([0-9a-z_-]+)'] = 'b_cursos/sub_category/$1';
+$route['backoffice/cursos/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'b_cursos/sub_category/$1';
+$route['backoffice/cursos/([0-9a-z_-]+)/([0-9a-z_-]+)/([0-9]+)'] = 'b_cursos/sub_category/$1';
+
 $route['backoffice/cursos/([0-9a-z_-]+)/([0-9]+)/([0-9a-z_-]+)'] = 'b_cursos/detail/$1';
+
 $route['backoffice/cursos/pay_order'] = 'b_cursos/pay_order';
 $route['backoffice/cursos/pay_order/add_cart'] = 'b_cursos/add_cart';
 $route['backoffice/cursos/pay_order/update_cart'] = "b_cursos/update_cart";
 $route['backoffice/cursos/pay_order/delete_cart'] = "b_cursos/delete_cart";
+
 $route['backoffice/mis-cursos'] = 'b_cursos/mis_cursos';
 
 $route['virtual'] = "c_home";

@@ -122,16 +122,27 @@
                             <li class="nav-item pcoded-hasmenu">
                                 <a href="#!" class="nav-link">
                                     <span class="pcoded-micon">
-                                        <i data-feather="airplay"></i>
+                                        <i data-feather="shopping-bag"></i>
                                     </span>
                                     <span class="pcoded-mtext">Industrias</span></a>
-                                        <ul class="pcoded-submenu">
-                                            <?php foreach ($obj_category_catalogo as $value) { ?>
-                                                <li class="pcoded-trigger">
-                                                    <a href="<?php echo site_url()."backoffice/cursos/".$value->slug;?>"><b><?php echo $value->name; ?></b></a>
-                                                </li>
-                                            <?php } ?>
-                                        </ul>
+                                    <ul class="pcoded-submenu">
+                                    <?php foreach ($obj_category_catalogo as $value) { ?>
+                                        <li class="pcoded-hasmenu pcoded-trigger">
+                                            <a href="#"><b><?php echo $value->name; ?></b></a>
+                                            <ul class="pcoded-submenu" style="display: block;">
+                                                <?php
+                                                foreach ($obj_sub_category as $key => $value_sub) {
+                                                    if ($value_sub->industry_id == $value->id && $value_sub != "") {?>
+                                                            <li>
+                                                                <a href='<?php echo site_url() . "backoffice/cursos/$value->slug/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
+                                                            </li>
+                                                    <?php }
+                                                }
+                                                ?> 
+                                            </ul>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">

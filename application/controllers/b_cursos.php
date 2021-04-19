@@ -13,6 +13,8 @@ class B_cursos extends CI_Controller {
         $this->load->model("points_model", "obj_points");
         $this->load->model("contra_entrega_model", "obj_contra_entrega");
         $this->load->model("customer_courses_model", "obj_customer_courses");
+        $this->load->model("industry_model", "obj_industry");
+        $this->load->model("sub_industry_model", "obj_sub_industry");
     }
 
     public function index() {
@@ -22,7 +24,9 @@ class B_cursos extends CI_Controller {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //GET NAV CURSOS
-        $obj_category_catalogo = $this->nav_cursos();
+        //$obj_category_catalogo = $this->nav_cursos();
+        $obj_category_catalogo = $this->nav_industry(2);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
 
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
@@ -108,27 +112,34 @@ class B_cursos extends CI_Controller {
         $this->tmp_catalog->set("category_name", $category_name);
         $this->tmp_catalog->set("obj_pagination", $obj_pagination);
         $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+        $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
         $this->tmp_catalog->set("obj_profile", $obj_profile);
         $this->tmp_catalog->set("obj_courses", $obj_courses);
         $this->tmp_catalog->render("backoffice/b_cursos");
     }
 
-    public function category($category)
+    public function sub_category($slug)
 	{   
+
+        $url = explode("/", uri_string());
+        if (isset($url[3])) {
+            $slug_sub_industry = $url[3];
+        }
             //GET CUSTOMER_ID
             $customer_id = $_SESSION['customer']['customer_id'];
             //GET NAV CURSOS
-            $obj_category_catalogo = $this->nav_cursos();
-            //get data catalog
-            $params_categogory_id = array(
-                        "select" =>"category_id,
+            $obj_category_catalogo = $this->nav_industry(2);
+            $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
+            //get data course
+            $params = array(
+                        "select" =>"id,
                                     name,
                                     slug",
-                "where" => "slug like '%$category%'");
-            $obj_category = $this->obj_category->get_search_row($params_categogory_id);
-            $category_id = $obj_category->category_id;
-            $slug = $obj_category->slug;
-            $category_name = "Cursos - ".$obj_category->name;
+                "where" => "slug = '$slug'");
+            $obj_industry = $this->obj_industry->get_search_row($params);
+            $industry_id = $obj_industry->id;
+            $slug = $obj_industry->slug;
+            $category_name = "Cursos - ".$obj_industry->name;
              //get catalog
             $params = array(
                 "select" => "courses.course_id,
@@ -145,16 +156,16 @@ class B_cursos extends CI_Controller {
                             courses.duration,
                             courses.active,
                             courses.date",
-                "join" => array('category, category.category_id = courses.category_id'), 
-                "where" => "courses.category_id = $category_id and courses.active = 1");
-            
+                "join" => array('category, category.category_id = courses.category_id',
+                                'sub_industry, courses.sub_industry_id = sub_industry.id'), 
+                "where" => "sub_industry.industry_id = '$industry_id' and sub_industry.slug = '$slug_sub_industry' and courses.active = 1");
              /// PAGINADO
             $config=array();
-            $config["base_url"] = site_url("backoffice/cursos/$slug"); 
+            $config["base_url"] = site_url("backoffice/cursos/$slug/$slug_sub_industry"); 
             $config["total_rows"] = $this->obj_courses->total_records($params);  
             $config["per_page"] = 12; 
             $config["num_links"] = 1;
-            $config["uri_segment"] = 4;   
+            $config["uri_segment"] = 5;   
             
             $config['first_tag_open'] = '<li>';
             $config['first_tag_close'] = '</li>';
@@ -172,7 +183,7 @@ class B_cursos extends CI_Controller {
             $this->pagination->initialize($config);        
             $obj_pagination = $this->pagination->create_links();
             /// DATA
-            $obj_courses = $this->obj_courses->search_data($params, $config["per_page"],$this->uri->segment(4));
+            $obj_courses = $this->obj_courses->search_data($params, $config["per_page"],$this->uri->segment(5));
             //GET DATA FROM CUSTOMER
             $obj_profile = $this->get_profile($customer_id);
             //total comission compra
@@ -183,8 +194,9 @@ class B_cursos extends CI_Controller {
             $this->tmp_catalog->set("url",$url);    
             $this->tmp_catalog->set("total_compra",$total_compra);    
             $this->tmp_catalog->set("category_name",$category_name);
-            $this->tmp_catalog->set("obj_pagination",$obj_pagination);
             $this->tmp_catalog->set("obj_category_catalogo", $obj_category_catalogo);
+            $this->tmp_catalog->set("obj_sub_category", $obj_sub_category);
+            $this->tmp_catalog->set("obj_pagination",$obj_pagination);
             $this->tmp_catalog->set("obj_courses",$obj_courses);
             $this->tmp_catalog->render("backoffice/b_cursos");
 	}
@@ -400,6 +412,37 @@ class B_cursos extends CI_Controller {
         );
         //GET DATA COMMENTS
         return $obj_category_catalogo = $this->obj_category->search($params_category_catalogo);
+    }
+
+    public function nav_industry($type) {
+        $params = array(
+            "select" => "id,
+                         slug,
+                         name",
+            "where" => "type = $type and active = 1",
+        );
+        //GET DATA COMMENTS
+        $obj_industry = $this->obj_industry->search($params);
+        return $obj_industry;
+    }
+    
+    public function nav_sub_industry($obj_industry) {
+        $ids = null;
+        foreach ($obj_industry as $key => $value) {
+            $ids .= $value->id.",";
+        }
+        //GET id type  1
+        $ids = substr ($ids, 0, strlen($ids) - 1);
+        $params = array(
+            "select" => "id,
+                         name,
+                         industry_id,        
+                         slug",
+            "where" => "industry_id in ($ids) and active = 1",
+        );
+        //GET DATA CATALOGO
+        $obj_sub_industry = $this->obj_sub_industry->search($params);
+        return $obj_sub_industry;
     }
 
 
