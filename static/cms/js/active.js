@@ -71,19 +71,6 @@ function active() {
                 document.getElementById("submit").innerHTML = "Guardar";
             }
           })
-        bootbox.confirm({
-            message: "Confirma que desea activar al Cliente?",
-            buttons: {
-                confirm: {
-                    label: 'Confirmar',
-                    className: 'btn-success'
-                },
-                cancel: {
-                    label: 'Cerrar',
-                    className: 'btn-danger'
-                }
-            },
-        });
     }
 }
 
