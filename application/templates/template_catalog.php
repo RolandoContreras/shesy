@@ -124,7 +124,7 @@
                                     <span class="pcoded-micon">
                                         <i data-feather="airplay"></i>
                                     </span>
-                                    <span class="pcoded-mtext">Mis Categorías</span></a>
+                                    <span class="pcoded-mtext">Industrias</span></a>
                                         <ul class="pcoded-submenu">
                                             <?php foreach ($obj_category_catalogo as $value) { ?>
                                                 <li class="pcoded-trigger">
@@ -160,12 +160,12 @@
                                     <span class="pcoded-mtext">Inicio</span>
                                 </a>
                             </li>
-                            <li class="nav-item pcoded-hasmenu pcoded-trigger">
+                            <li class="nav-item pcoded-hasmenu">
                                 <a href="#!" class="nav-link <?php echo $catalog_syle; ?>">
                                     <span class="pcoded-micon">
-                                        <i data-feather="airplay"></i>
+                                        <i data-feather="shopping-bag"></i>
                                     </span>
-                                    <span class="pcoded-mtext">Mis Categorías</span></a>
+                                    <span class="pcoded-mtext">Industrias</span></a>
                                 <ul class="pcoded-submenu">
                                     <?php foreach ($obj_category_catalogo as $value) { ?>
                                         <li class="pcoded-hasmenu pcoded-trigger">
@@ -173,18 +173,11 @@
                                             <ul class="pcoded-submenu" style="display: block;">
                                                 <?php
                                                 foreach ($obj_sub_category as $key => $value_sub) {
-                                                    if ($value_sub->category_id == $value->category_id && $value_sub != "") {?>
+                                                    if ($value_sub->industry_id == $value->id && $value_sub != "") {?>
                                                             <li>
                                                                 <a href='<?php echo site_url() . "mi_catalogo/subcategoria/$value_sub->slug"; ?>'><?php echo $value_sub->name; ?></a>
                                                             </li>
-                                                    <?php } else {
-                                                        if ($key == 0) { ?>
-                                                            <li>
-                                                                <a href='<?php echo site_url() . "mi_catalogo/$value->slug"; ?>'>Ver</a>
-                                                            </li>
-                                                        <?php } ?>
-                                                        <?php
-                                                    }
+                                                    <?php }
                                                 }
                                                 ?> 
                                             </ul>

@@ -17,6 +17,8 @@ class Catalogo_home extends CI_Controller {
         $this->load->model("points_model", "obj_points");
         $this->load->model("contra_entrega_model", "obj_contra_entrega");
         $this->load->model("sub_category_model", "obj_sub_category");
+        $this->load->model("industry_model", "obj_industry");
+        $this->load->model("sub_industry_model", "obj_sub_industry");
         $this->load->library('culqi');
     }
 
@@ -28,8 +30,12 @@ class Catalogo_home extends CI_Controller {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //GET NAV CURSOS
-        $obj_category_catalogo = $this->nav_catalogo();
-        $obj_sub_category = $this->nav_sub_category();
+        //$obj_category_catalogo = $this->nav_catalogo();
+        //$obj_sub_category = $this->nav_sub_category();
+
+        $obj_category_catalogo = $this->nav_industry(1);
+        $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
+        
 
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
@@ -1372,6 +1378,36 @@ class Catalogo_home extends CI_Controller {
                 }
             }
         }
+    }
+
+    public function nav_industry($type) {
+        $params = array(
+            "select" => "id,
+                         slug,
+                         name",
+            "where" => "type = $type and active = 1",
+        );
+        //GET DATA COMMENTS
+        $obj_industry = $this->obj_industry->search($params);
+        return $obj_industry;
+    }
+    
+    public function nav_sub_industry($obj_industry) {
+        $ids = null;
+        foreach ($obj_industry as $key => $value) {
+            $ids .= $value->id.",";
+        }
+        //GET id type  1
+        $ids = substr ($ids, 0, strlen($ids) - 1);
+        $params = array(
+            "select" => "name,
+                         industry_id,        
+                         slug",
+            "where" => "industry_id in ($ids) and active = 1",
+        );
+        //GET DATA CATALOGO
+        $obj_sub_industry = $this->obj_sub_industry->search($params);
+        return $obj_sub_industry;
     }
 
     public function nav_catalogo() {
