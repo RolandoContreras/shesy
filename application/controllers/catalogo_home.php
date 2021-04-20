@@ -228,12 +228,13 @@ class Catalogo_home extends CI_Controller {
         $this->tmp_catalog->render("catalogo/catalogo_home");
     }
 
-    public function sub_category($sub_category_id) {
+    public function sub_category($slug) {
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
         //GET NAV CURSOS
         $obj_category_catalogo = $this->nav_industry(1);
         $obj_sub_category = $this->nav_sub_industry($obj_category_catalogo);
+
         if (isset($_GET['orderby'])) {
             $type = $_GET['orderby'];
 
@@ -254,13 +255,28 @@ class Catalogo_home extends CI_Controller {
         } else {
             $order = "catalog.catalog_id DESC";
         }
+        //get id isdustry
+        $params = array(
+            "select" =>"id,
+                        name,
+                        slug",
+            "where" => "slug = '$slug'");
+        $obj_industry = $this->obj_industry->get_search_row($params);
+        $industry_id = $obj_industry->id;
+        $slug = $obj_industry->slug;
+        $category_name = "Productos - ".$obj_industry->name;
 
-        $category_name = "Productos";
+        $url = explode("/", uri_string());
+        if (isset($url[2])) {
+            $slug_sub_industry = $url[2];
+        }
 
+         //get sub industry   
         $params = array(
             "select" => "catalog.catalog_id,
                         catalog.summary,
                         catalog.name,
+                        catalog.sub_industry_id,
                         catalog.slug,
                         catalog.price,
                         catalog.img,
@@ -269,15 +285,14 @@ class Catalogo_home extends CI_Controller {
                         category.slug as category_slug,
                         catalog.date",
             "join" => array('category, category.category_id = catalog.category_id',
-                            'sub_category, sub_category.sub_category_id = catalog.sub_category_id'),
-            "where" => "catalog.sub_industry_id = $sub_category_id and catalog.active = 1",
+                            'sub_industry, catalog.sub_industry_id = sub_industry.id'),
+            "where" => "sub_industry.industry_id = '$industry_id' and sub_industry.slug = '$slug_sub_industry' and catalog.active = 1",
             "order" => $order);
-
         /// PAGINADO
         $config = array();
-        $config["base_url"] = site_url("mi_catalogo/subcategoria/$sub_category_id");
+        $config["base_url"] = site_url("mi_catalogo/$slug/$slug_sub_industry");
         $config["total_rows"] = $this->obj_catalog->total_records($params);
-        $config["per_page"] = 12;
+        $config["per_page"] = 100;
         $config["num_links"] = 1;
         $config["uri_segment"] = 4;
 
@@ -304,7 +319,7 @@ class Catalogo_home extends CI_Controller {
         $obj_total_compra = $this->total_comissions($customer_id);
         $total_compra = $obj_total_compra->total_disponible + $obj_total_compra->total_compra;
         //SEND DATA
-        $url = "mi_catalogo/subcategoria/$sub_category_id";
+        $url = "mi_catalogo/$slug/$slug_sub_industry";
         $this->tmp_catalog->set("url", $url);
         $this->tmp_catalog->set("obj_total_compra", $obj_total_compra);
         $this->tmp_catalog->set("total_compra", $total_compra);
