@@ -166,49 +166,47 @@ function view_modulos(course_id){
     location.href = site+url;   
 }
 function delete_img(course_id, img) {
-    bootbox.confirm({
-        message: "¿Confirma que desea eliminar la imagen?",
-        buttons: {
-            confirm: {
-                label: 'Confirmar',
-                className: 'btn-success'
-            },
-            cancel: {
-                label: 'Cerrar',
-                className: 'btn-danger'
-            }
-        },
-        callback: function (result) {
-            if (result == true) {
-                $.ajax({
-                    type: "post",
-                    url: site + "dashboard/mis-cursos/delete_img",
-                    dataType: "json",
-                    data: {course_id:course_id,
-                           img: img},
-                    success: function (data) {
-                        if (data.status == true) {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'Imagen Eliminada.',
-                                showConfirmButton: false,
-                                timer: 1000
-                            })
-                            setTimeout('document.location.reload()', 1000);
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Ups...',
-                                text: 'Sucedió un error',
-                                footer: '<a href>Vuelve a intentarlo!</a>'
-                            });
-                        }
+
+    Swal.fire({
+        title: '¿Confirma que desea eliminar la imagen?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Confirmo'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "post",
+                url: site + "dashboard/mis-cursos/delete_img",
+                dataType: "json",
+                data: {course_id:course_id,
+                    img: img},
+                success: function (data) {
+                    if (data.status == true) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Imagen Eliminada.',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                        setTimeout('document.location.reload()', 1000);
+                    } else {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Ups...',
+                            text: 'Sucedió un error',
+                            footer: '<a href>Vuelve a intentarlo!</a>'
+                        });
                     }
-                });
-            }
+                }
+            });
+        }else{
+            document.getElementById("submit").disabled = false;
+            document.getElementById("submit").innerHTML = "Guardar";
         }
-    });
+      })
 }
 
 function get_sub_industry(id) {
