@@ -28,7 +28,7 @@
                     <h5>Datos</h5>
                   </div>
                   <div class="card-body">
-                      <form enctype="multipart/form-data" action="javascript:void(0);" onsubmit="recargar_comisiones();">
+                      <form enctype="multipart/form-data" action="javascript:void(0);" onsubmit="recargar_comisiones();" method="post">
                         <div class="form-row">
                           <div class="form-group col-md-6">
                               <div class="form-group">

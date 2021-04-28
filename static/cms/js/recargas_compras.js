@@ -84,52 +84,54 @@ function recargar_compra(){
     var amount = document.getElementById("amount").value;
     var commissions_id = document.getElementById("commissions_id").value;
     var active = document.getElementById("active").value;
-    bootbox.confirm({
-    message: "¿Confirma que desea hacer la recarga de compra?",
-    buttons: {
-        confirm: {
-            label: 'Confirmar',
-            className: 'btn-success'
-        },
-        cancel: {
-            label: 'Cerrar',
-            className: 'btn-danger'
-        }
-    },
-    callback: function (result) {
-        if(result == true){
+
+
+    Swal.fire({
+        title: '¿Confirma que desea hacer la recarga de compra?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Confirmo'
+      }).then((result) => {
+        if (result.isConfirmed) {
             $.ajax({
-                   type: "post",
-                   url: site+"dashboard/recargas_compras/validate",
-                   dataType: "json",
-                   data: {customer_id : customer_id,
-                          amount:amount,
-                          commissions_id:commissions_id,
-                          active:active},
-                   success:function(data){ 
-                       if(data.status == true){
-                           Swal.fire({
-                              position: 'top-end',
-                              icon: 'success',
-                              title: 'Recarga Exitosa',
-                              showConfirmButton: false,
-                              timer: 1500
-                            });
-                            window.setInterval(href_recargas, 1500);
-                       }else{
-                           Swal.fire({
-                              icon: 'error',
-                              title: 'Ups...',
-                              text: 'Sucedió un error',
-                              footer: '<a href>Vuelve a intentarlo!</a>'
-                            });
-                       }
-                   }         
-           });
+                type: "post",
+                url: site + "dashboard/recargas_compras/validate",
+                dataType: "json",
+                data: {customer_id : customer_id,
+                    amount:amount,
+                    commissions_id:commissions_id,
+                    active:active},
+                success: function (data) {
+                    if (data.status == true) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Recarga Exitosa',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                        setTimeout(function () {
+                            location.href = site + "dashboard/recargas_compras"
+                        }, 1000);
+                    } else {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Ups...',
+                            text: 'Sucedió un error',
+                            footer: '<a href>Vuelve a intentarlo!</a>'
+                          });
+                    }
+                }
+            });
+        }else{
+            document.getElementById("submit").disabled = false;
+            document.getElementById("submit").innerHTML = "Guardar";
         }
-      }
-    });
+      })
 }
+
 function href_recargas() {
       var url =  site+"dashboard/recargas_compras";
       $(location).attr('href',url);  

@@ -84,53 +84,47 @@ function recargar_comisiones(){
     var amount = document.getElementById("amount").value;
     var commissions_id = document.getElementById("commissions_id").value;
     var active = document.getElementById("active").value;
-    bootbox.confirm({
-    message: "¿Confirma que desea hacer la recarga?",
-    buttons: {
-        confirm: {
-            label: 'Confirmar',
-            className: 'btn-success'
-        },
-        cancel: {
-            label: 'Cerrar',
-            className: 'btn-danger'
-        }
-    },
-    callback: function (result) {
-        if(result == true){
+    Swal.fire({
+        title: '¿Confirma que desea hacer la recarga?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Confirmo'
+      }).then((result) => {
+        if (result.isConfirmed) {
             $.ajax({
-                   type: "post",
-                   url: site+"dashboard/recargas_comisiones/validate",
-                   dataType: "json",
-                   data: {customer_id : customer_id,
-                          amount:amount,
-                          commissions_id:commissions_id,
-                          active:active},
-                   success:function(data){ 
-                       if(data.status == true){
-                           Swal.fire({
-                              position: 'top-end',
-                              icon: 'success',
-                              title: 'Recarga Exitosa',
-                              showConfirmButton: false,
-                              timer: 1500
-                            });
-                            window.setInterval(href_recargas, 1500);
-                       }else{
-                           Swal.fire({
-                              icon: 'error',
-                              title: 'Ups...',
-                              text: 'Sucedió un error',
-                              footer: '<a href>Vuelve a intentarlo!</a>'
-                            });
-                       }
-                   }         
-           });
+                type: "post",
+                url: site + "dashboard/recargas_comisiones/validate",
+                dataType: "json",
+                data: {customer_id : customer_id,
+                    amount:amount,
+                    commissions_id:commissions_id,
+                    active:active},
+                success: function (data) {
+                    if (data.status == true) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Recarga Exitosa',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                        setTimeout(function () {
+                            location.href = site + "dashboard/recargas_comisiones"
+                        }, 1000);
+                    } else {
+                        var texto = "";
+                        texto = texto + '<div class="alert alert-danger">';
+                        texto = texto + '<p style="text-align: center;">Hubo un error</p>';
+                        texto = texto + '</div>';
+                        $("#message").html(texto);
+                    }
+                }
+            });
+        }else{
+            document.getElementById("submit").disabled = false;
+            document.getElementById("submit").innerHTML = "Guardar";
         }
-      }
-    });
-}
-function href_recargas() {
-      var url =  site+"dashboard/recargas_comisiones";
-      $(location).attr('href',url);  
+      })
 }
